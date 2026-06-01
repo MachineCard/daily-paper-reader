@@ -25,3 +25,65 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: ENZ
+      description: 帮我查找epsilon-near-zero相关的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: epsilon-near-zero materials
+          keyword_cn: 近零介电常数材料
+          query: study of materials with epsilon near zero permittivity
+        - keyword: permittivity near zero
+          keyword_cn: 介电常数近零
+          query: permittivity approaching zero in optical materials
+        - keyword: epsilon-near-zero metamaterials
+          keyword_cn: 近零介电常数超材料
+          query: metamaterials with epsilon near zero properties
+        - keyword: zero-index materials
+          keyword_cn: 零折射率材料
+          query: materials with zero refractive index
+        - keyword: nonlinear epsilon-near-zero
+          keyword_cn: 非线性近零介电常数材料
+          query: nonlinear optical behavior in epsilon near zero media
+        - keyword: tunable permittivity
+          keyword_cn: 可调介电常数
+          query: tunable epsilon near zero response
+      intent_queries:
+        - query: ultrafast response in epsilon near zero materials
+          query_cn: 近零介电常数材料中的超快响应
+          enabled: true
+          source: manual
+          note: ''
+        - query: research on epsilon near zero materials for optical applications
+          query_cn: 关于近零介电常数材料在光学应用中的研究
+          enabled: true
+          source: manual
+          note: ''
+        - query: applications of zero index metamaterials
+          query_cn: 零折射率超材料的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: nonlinear effects in epsilon near zero devices
+          query_cn: 近零介电常数器件中的非线性效应
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-01T16:09:43.707Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
