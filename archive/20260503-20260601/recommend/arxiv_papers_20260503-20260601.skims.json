@@ -1,0 +1,104 @@
+{
+  "mode": "skims",
+  "generated_at": "2026-06-01T16:17:39.845381+00:00",
+  "stats": {
+    "mode": "skims",
+    "forced_all_quick": true,
+    "min_score": 8.0,
+    "deep_divecandidates": 2,
+    "deep_cap": null,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": null,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2605.21432v1",
+      "source": "arxiv",
+      "title": "Intraband and Interband Competition Drives Ultrafast Modulations of Indium Tin Oxide",
+      "abstract": "Transparent conducting oxides near their epsilon-near-zero frequency exhibit near-unity ultrafast modulations of the refractive index which have enabled the field of time-varying metamaterials, yet the underlying carrier dynamics at high driving fluences remain poorly understood. Here, we report ultrafast modulations in the reflectivity and transmissivity of indium tin oxide, and a non-monotonic oscillatory behavior. This is especially evident in the time evolution of the complex Fresnel coefficients retrieved directly from pump-probe spectrograms using a optical gating technique, GRUMPY FROG. The dynamics of the retrieved plasma frequency and damping coefficient are well captured by an extended two-temperature model incorporating a competing nonlinear interband process: at high fluences, Auger-type scattering of hot conduction electrons promotes valence band carriers, increasing the plasma frequency while accelerating hot-electron cooling and raising the damping coefficient. These results clarify the origin of anomalous high-fluence dynamics in indium tin oxide and identify a fluence-tuneable modulation dynamic with direct implications for ultrafast refractive index engineering in time-varying photonic devices and optical switching",
+      "authors": [
+        "Anthony C Harwood",
+        "Sean Z J Lim",
+        "T V Raziman",
+        "Yan Li",
+        "Joseph Stones",
+        "John W G Tisch",
+        "Simon A R Horsley",
+        "Stefano Vezzoli",
+        "John B Pendry",
+        "Riccardo Sapienza"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-05-20T17:23:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.21432v1",
+      "tags": [
+        "keyword:ENZ",
+        "query:ENZ"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Transparent conducting oxides near their epsilon-near-zero frequency; ultrafast modulations of indium tin oxide reflectivity and transmissivity.",
+      "llm_evidence_cn": "透明导电氧化物在ε近零频率附近；氧化铟锡反射率和透射率的超快调制。",
+      "llm_evidence": "透明导电氧化物在ε近零频率附近；氧化铟锡反射率和透射率的超快调制。",
+      "canonical_evidence": "透明导电氧化物在ε近零频率附近；氧化铟锡反射率和透射率的超快调制。",
+      "llm_tldr_en": "Ultrafast optical modulation dynamics in indium tin oxide near its epsilon-near-zero frequency are investigated, revealing non-monotonic oscillatory behavior governed by competition between intraband and interband carrier dynamics.",
+      "llm_tldr_cn": "针对透明导电氧化物在ε近零频率处的超快光学调制行为，本文揭示了氧化铟锡在高激发通量下反射率和透射率的非单调振荡现象。通过泵浦-探测光谱和光学选通技术，结合扩展的双温模型，阐明了带内与带间载流子动力学竞争对超快响应的主导作用。该结果深化了对时间超材料中载流子超快动力学的理解，为基于ENZ材料的超快调制器件提供了物理指导。",
+      "llm_tldr": "针对透明导电氧化物在ε近零频率处的超快光学调制行为，本文揭示了氧化铟锡在高激发通量下反射率和透射率的非单调振荡现象。通过泵浦-探测光谱和光学选通技术，结合扩展的双温模型，阐明了带内与带间载流子动力学竞争对超快响应的主导作用。该结果深化了对时间超材料中载流子超快动力学的理解，为基于ENZ材料的超快调制器件提供了物理指导。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "ultrafast response in epsilon near zero materials",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.22246v1",
+      "source": "arxiv",
+      "title": "Single-pump hybrid nonlinearities in transparent conductors",
+      "abstract": "Low-index transparent conducting oxides have attracted significant attention because ultrafast optical excitation in these materials can induce exceptionally large temporal index gradients. Due to this remarkable nonlinear optical behaviour, this material platform enables sub-picosecond, all-optical control of photon energy and momentum, with growing relevance for integrated photonics, quantum optics, and optical computation. Owing to their hybrid electronic structure, transparent conductors exhibit both intraband and interband nonlinearities, previously accessed using dual-colour excitation with near-infrared and ultraviolet pumps. Here, we show that both excitation regimes can be activated using a single, intense near-infrared pump. Above a threshold intensity, the pump drives hot-electron intraband dynamics while simultaneously generating higher harmonics that trigger interband excitation. The interplay of these two effects sharpens the temporal features of the recorded transmissivity which in turn substantially broadens the effective material bandwidth. Finally, by comparing linear and circular pumping conditions, we further demonstrate that the observed interband nonlinearities originate from harmonic generation rather than from direct multiphoton absorption. Our results provide key insights into the strong-field optical response in these time-varying photonic materials, opening new frontiers for the ultra-fast manipulation of photons in both classic and quantum regimes.",
+      "authors": [
+        "Wallace Jaffray",
+        "Sven Stengel",
+        "Alexandra Boltasseva",
+        "Vladimir M. Shalaev",
+        "Carlo Rizza",
+        "Domenico de Ceglia",
+        "Maria Antonietta Vincenti",
+        "Michael Scalora",
+        "Matteo Clerici",
+        "Marcello Ferrera"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-05-21T09:52:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.22246v1",
+      "tags": [
+        "keyword:ENZ",
+        "query:ENZ"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Low-index transparent conducting oxides exhibit ultrafast nonlinear optical behavior, enabling sub-picosecond control related to epsilon-near-zero properties.",
+      "llm_evidence_cn": "低折射率透明导电氧化物（epsilon近零材料）展现超快非线性光学行为，实现亚皮秒控制。",
+      "llm_evidence": "低折射率透明导电氧化物（epsilon近零材料）展现超快非线性光学行为，实现亚皮秒控制。",
+      "canonical_evidence": "低折射率透明导电氧化物（epsilon近零材料）展现超快非线性光学行为，实现亚皮秒控制。",
+      "llm_tldr_en": "This paper demonstrates single-pump excitation of hybrid intraband and interband nonlinearities in transparent conducting oxides, enabling sub-picosecond all-optical control of photon energy and momentum, relevant for epsilon-near-zero photonics.",
+      "llm_tldr_cn": "该论文针对透明导电氧化物（一类典型的epsilon近零材料）中需双色泵浦激发混合非线性效应的局限，提出利用单一强近红外泵浦即可同时激活带内和带间非线性效应的方法。实验显示，超过阈值强度后，材料折射率发生超快大幅变化，实现了对光子能量和动量的亚皮秒全光控制。这一工作简化了透明导体的非线性激发方案，为集成光子学、量子光学和光学计算等应用提供了更便捷的epsilon近零材料调控途径。",
+      "llm_tldr": "该论文针对透明导电氧化物（一类典型的epsilon近零材料）中需双色泵浦激发混合非线性效应的局限，提出利用单一强近红外泵浦即可同时激活带内和带间非线性效应的方法。实验显示，超过阈值强度后，材料折射率发生超快大幅变化，实现了对光子能量和动量的亚皮秒全光控制。这一工作简化了透明导体的非线性激发方案，为集成光子学、量子光学和光学计算等应用提供了更便捷的epsilon近零材料调控途径。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "nonlinear optical behavior in epsilon near zero media",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ]
+}
