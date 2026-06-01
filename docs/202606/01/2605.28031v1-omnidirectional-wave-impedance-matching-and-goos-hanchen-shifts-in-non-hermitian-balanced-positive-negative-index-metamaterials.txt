@@ -1,0 +1,1662 @@
+Title: Omnidirectional wave impedance matching and Goos-Hanchen shifts in non-Hermitian balanced positive-negative index metamaterials
+
+URL Source: https://arxiv.org/pdf/2605.28031v1
+
+Published Time: Thu, 28 May 2026 00:46:06 GMT
+
+Number of Pages: 15
+
+Markdown Content:
+## Omnidirectional wave impedance matching and Goos–H¨ anchen shifts in non-Hermitian balanced positive–negative index metamaterials 
+
+Jeng Yi Lee 1, Chia-Heng Sun 2, Ke-Hsiang Huang 1 and Pai-Yen Chen 2
+
+> 1
+
+Department of Opto-Electronic Engineering, National Dong Hwa University, Hualien 974301, Taiwan, 
+
+> 2
+
+Department of Electrical and Computer Engineering, University of Illinois at Chicago, Illinois 60607, USA 
+
+Wave reflection by non-Hermitian antisymmetric parity-time (APT) photonics made of a balanced positive index material (PIM) and negative index material (NIM) is investigated. As one class of them satisfies a unitary relation, wave impedance matching (WIM) can be achieved not only for polarization independence but also for omnidirection. Remarkably, the result is regardless of system sizes, material parameters, and polarization. As gain or loss are involved, any non-Hermitian sys-tems are unable to support WIM; instead, there occurs a reflection dip, i.e., a minimum reflectance, at some system configurations, a certain incident angle, and polarization dependence. Our finding is in contrast to the parity time (PT) symmetric paradigms, in which the well known exceptional point can be recognized as a WIM. Additionally, in vicinity of a reflection dip, it is accompanied by a jump of reflection phase, offering an opportunity to observe a significant Goos-H¨ anchen (GH) beam shift in APT systems. We provides associated systems and numerically verify the GH shifts. Mean-while, we derive a closed-form expression for a reflection dip in terms of incident angle, operating wavelengths, and material parameters. To imitate the electromagnetic responses of APT photonics for their angular dispersion, we discuss a dielectric heterostructure consisting of spatially symmetric multilayer slabs so as to have the same reflection and transmission for each APT component over a specific angular spread. 
+
+I. INTRODUCTION 
+
+Wave reflection at an interface of two adjacent different media is driven by wave impedance mismatch. Formation of omnidirectional wave impedance matching (OWIM) i.e, wave impedance matching for all incident angles, is challenge, that relies on specific designs or unusual elec-tromagnetic materials [1–6]. For instance, by prescrib-ing wave-impedance boundary conditions at each inter-faces and exploiting an ansatz for the spatial distribu-tion of material parameters, spatiotemporal modulated media are derived from reduced wave equations, thereby enabling OWIM [1, 2]. Engineering photonic crystals with a shifted elliptically spatial dispersion, such pho-tonic crystals exhibit not only transparent media but also aberration-free virtual images [5]. As a single planar slab in free space exhibits OWIM, it can be achieved by si-multaneously relative permittivity ϵ = −1 and relative permeability μ = −1 [6, 7]. Hence, the refracted ray is reversed and the evanescent waves are amplified, allowing the planar slab to function as a lens and surpassing the diffraction limit [6]. Interestingly, the antiparallel orien-tation between the wave vector and the Poynting vector is not an exclusive signature of negative-index materials (NIMs), while it can also occur in certain lossy dielec-tric–magnetic media [8, 9]. Evidently, extending the standard Hermitian systems into non-Hermitian regimes is foresight, as they can re-veal extraordinary wave phenomena and thereby inspire novel wave-based designs [10–12]. A representative man-ifestation is parity–time (PT) symmetric systems made of a balanced gain-loss, moving forward development of novel devices with unique functionalities, such as neg-ative refraction [13], stably high efficient power trans-fer [14–16], ultra-sensitive sensors [17–19], cryptographic key generation [20–22] to name a few. Significantly, one unique feature brought from non-Hermitian systems is an exceptional point, which is characterized by the co-alescence of eigenvalues and their corresponding eigen-states [23], in contrast to the diabolic points in Hermi-tian systems. In PT-symmetric systems, the exceptional point characterized by R = 0 and T = 1 is essentially a wave impedance matching [24], which is polarization sensitivity as well as incidence dependence. Regarding reflection, the reflection phase in the vicinity of the ex-ceptional point undergoes a π jump, which can be ex-ploited to enhance the transverse spin Hall shift [25]. Moreover, surface polaritons can arise at a non-Hermitian interface in a stable and undissipative manner, accompa-nied by anomalous energy flux, spin-orbit angular mo-mentum locking, and abrupt reflection-phase variations [26, 27]. A balanced gain-loss metasurface can have one-sided wave impedance matching, thereby providing uni-directional reflectionless [28]. In complex PT-symmetric crystals, reflection in stop band can be amplified [29, 30]. More appealingly, that becomes significantly enhanced in broken PT-symmetric phases. On the other hand, another closely related non-Hermitian system involving NIMs satisfies n(−x) =
+
+−n∗(x), known as an antisymmetric parity–time (APT) system, which was first explored in [31]. APT systems enable a flat transmission band [31], a continuous lasing and coherent perfect absorption [32, 33], approaching the quantum limit of sensing and squeezing [34], constant re-fraction in coupled waveguides [35, 36], energy-difference conserving in electric circuits [37], and superior sensing as well as strong robust against error by APT-based elec-tric elements [38]. Interestingly, although the concept 
+
+> arXiv:2605.28031v1 [physics.optics] 27 May 2026
+
+2           
+
+> FIG. 1. (a) Schematic of a bilayer configuration with APT condition. By the parametrization, we depict the logarithm of reflectance ln (R) and the logarithm of transmittance ln (T) in (b). (c) By taking ϕ(s,p )
+> R= 0 .5 rad and ϕ(s,p )
+> R= 0 .5πrad, we display the regions with symmetry phase marked by green, EP by purple lines, and symmetry broken phase by blue. Here, the yellow line, the black line, and the red lines are denoted as coherent perfect absorption, lasing, and reflectionless, respectively. By considering energy conservation as well as the parametrization, we illustrate light blue region for lossy bilayer APT systems, dark red one for amplifying ones, and a green dot for lossless ones in the parametric space of (d).
+
+based on APT has found successful exploration and ap-plications in many physical disciplines, such as acoustics, electrical circuits, quantum entanglement to name a few [31–39], a complete understanding of reflection in APT photonics is still lacking. In this work, we investigate the electromagnetic wave reflection by a bilayer slab configuration having APT condition, where their refractive index satisfies n(−x) = 
+
+−n∗(x). To elucidate their limits, we first provide a parametric space, where is derived from a consideration of APT symmetry as well as reciprocity principle. We observe that when one class of APT systems satisfies a unitary relation, the corresponding systems can enable OWIM. Interestingly, this finding is irrespective of in-cident polarization, refractive indices, and system sizes. To further understand the behind mechanism, we pro-vide wave impedance analysis. We state that as loss or gain is involved, the OWIM condition is broken. Instead, there occurs a reflection dip depending on specific sys-tem configurations, operating wavelengths, incident po-larization, and incident angles. We derive an analytical expression to indicate their formation. Additionally, a jump of reflection phase by π is observed in vicinity of this dip, offering an opportunity to observe an enhanced Goos–H¨ anchen beam shift. Accordingly, we numerically simulate the phenomena by employing a Gaussian beam upon the corresponding systems. Interestingly, natural materials exhibiting simultaneous negative permeability and negative permittivity had found in Dirac semimetals such as Cd 3As 2 at gigahertz frequencies [40]. However, APT systems require strict material parameters, which become an obstacle to being realized. Therefore, we dis-cuss an all-dielectric heterostructure with a spatial sym-metry to imitate the electromagnetic responses of each APT slab component in their angular dispersion of re-flection. Specifically, the mimicking heterostructure can nearly generate the same electromagnetic transmission and reflection fields of APT systems over a finite angu-lar range. We remark that similar architectures have previously been explored under normal incidence, as in Ref. [33]. We believe that our work can promote po-tential applications, including optical sensing, subwave-length imaging, precise metrology, spin-based devices, radar stealth, and invisibility cloaking to name a few. 3
+
+II. THEORETICAL FORMALISM A. System Configuration, Transfer Matrix Parametrization, and Parametric Space 
+
+We consider a bilayer slab system having APT condi-tion, namely n(−x) = −n∗(x), embedded in free space, as in Fig. 1(a). Following Ref.[31], the relative perme-ability is accordingly with μ(−x) = −μ(x), while the relative permittivity satisfies ϵ(−x) = −ϵ∗(x). Within a bilayer configuration, the APT systems have purely loss-less, purely lossy, or purely gain. Without loss of any generality, we let the left slab made of a positive-index material (PIM) and the right one made of a negative-index material (NIM), while the thickness of both slabs is accordingly set to be l.We discuss a linearly polarized electromagnetic plane wave obliquely incident upon ours system, where the in-cident angle is denoted by θin . Then, we let the plane of incidence be embedded in the x-z plane. The incident polarization can be either TE polarization ( s,⃗ E ∥ ˆy) or TM polarization ( p,⃗ H ∥ ˆy). The complex amplitudes of the incident incoming plane waves are represented by 
+
+A(s,p ) and D(s,p ), while those of the outgoing scattering waves are by B(s,p ) and C(s,p ). Here the superscripts by (s, p ) are exploited to distinguish two different polariza-tion incidences. Throughout this work, we choose the time harmonic of these waves be e−iωt , where ω is angu-lar frequency. Next, we analyze the transfer matrix with APT, denoted by M (s,p ), while it reads [ C(s,p ), D (s,p )]T =
+
+M (s,p )[A(s,p ), B (s,p )]T . Here, T represents the trans-pose operator. On the other hand, unlike PT-symmetric paradigms, APT systems lack any explicit physical symmetry operators. Instead, one can directly ob-serve that the APT-symmetric transfer matrix satisfies 
+
+M (s,p )∗σM (s,p ) = σ. Here σ is parity operator. We pro-vide the detailed derivation in Appendix A. Benefiting from this relation, we can thus introduce the parametrization for M (s,p ). Moreover, since the APT system is embedded in a symmetric environment, the reciprocity principle holds. We can obtain that the parametrization for arbitrary APT-symmetric transfer matrix can be in terms of three independent real vari-ables, namely, M (s,p )11 , M (s,p )22 , and ϕ(s,p ) 
+
+> R
+
+[33]. Here ϕ(s,p )
+
+> R
+
+is denoted as the reflection phase for right incidence. Strikingly, we find M (s,p )11 M (s,p )22 ≤ 1. Meanwhile, the transmission coefficient t, reflection coefficient at left side 
+
+rL, and reflection coefficient at right side rR can be gen-erally expressed in terms of parametrization, 
+
+
+
+t(s,p ) = 1 
+
+> M(s,p )22
+
+r(s,p ) 
+
+> L
+
+=    
+
+> q
+> 1−M(s,p )11 M(s,p )22
+> M22
+
+e−iϕ (s,p )
+
+> R
+
+r(s,p ) 
+
+> R
+
+=    
+
+> q
+> 1−M(s,p )11 M(s,p )22
+> M22
+
+eiϕ (s,p )
+
+> R
+
+(1) [33]. Therefore, we can state that the phase of t can be only in-phase or out-of-phase, while r(s,p ) 
+
+> L
+
+= r(s,p )∗
+
+> R
+
+represents that their magnitudes are identical and their phases form a pair with opposite signs. To understand the limits of reflectance |r|2 and trans-mittance |t|2 for any APT systems, with the parametriza-tion, we present a parametric space in Fig. 1 (b). The re-sult is independent of specific system configurations, fre-quency, and material parameters. We mark that various colors correspond to different values of their logarithm, whereas the white region represents parameters that are not allowed by APT condition. Most notably, the reflec-tionless appears at the boundary between the color region and the white one, where satisfies M (s,p )11 M (s,p )22 = 1. We also discover that any APT systems with reflectionless can enable different levels of transmittance. In contrast, PT-symmetric systems with reflectionless would be ac-companied by a unit transmittance, since they obey the conservation relation [41]. In addition, we observe that both R(s,p ) and T (s,p ) can diverge to infinity, as marked by a red line of Fig. 1 (b), corresponding to lasing, which had explored in Refs. [31–33]. Moreover, APT systems also support coherent perfect absorption, which two counterpropagating incident waves with appropriate amplitudes and phases are completely absorbed, already stated and explored in Refs. [31–33]. 
+
+B. Scattering matrix 
+
+By analysis of the scattering matrix, i.e., S matrix, PT-symmetric architectures can have a symmetry phase with norm power preserving or a symmetry broken phase having a net power amplification and dissipation [42]. In between, there is an exceptional point (EP), charac-tered by the coalescence of both scattering eigenvalues and their scattering eigenvectors [23]. However, there have two different expressions for S matrix, leading to different scattering phase explanations [41, 42]. Here, the S matrix we employ is written as 
+
+B(s,p )
+
+C(s,p )
+
+
+
+= S(s,p )
+
+A(s,p )
+
+D(s,p )
+
+
+
+, where S(s,p ) =
+
+"
+
+r(s,p ) 
+
+> L
+
+t(s,p )
+
+t(s,p ) r(s,p )
+
+> R
+
+#
+
+is a symmetric matrix and possesses pseudo-Hermitian [31, 43]. With the parametrization, the corresponding scattering eigenvalues and scattering eigenvectors can be expressed as λ(s,p ) 
+
+> ±
+
+=    
+
+> q
+> 1−M(s,p )11 M(s,p )22
+> M(s,p )22
+
+cos ϕ(s,p ) 
+
+> R
+
+±
+
+r M (s,p )11 M (s,p )22 +cos 2 ϕ(s,p )      
+
+> R[1 −M(s,p )11 M(s,p )22 ]
+> M(s,p )2 22
+
+and 
+
+|S± >= [− 1 
+
+> M(s,p )22
+
+, −i    
+
+> q
+> 1−M(s,p )11 M(s,p )22
+> M(s,p )22
+
+sin ϕ(s,p ) 
+
+> R
+
+∓
+
+r 
+
+> 1
+> M(s,p )2 22
+
+− 1−M (s,p )11 M (s,p )22  
+
+> M(s,p )2 22
+
+sin 2 ϕ(s,p ) 
+
+> R
+
+]T , respectively. By analyzing λ(s,p ) 
+
+> ±
+
+and |S(s,p ) 
+
+> ±
+
+>, the scattering phases can be inferred. In symmetry phase, the scattering eigenvalues λ(s,p ) 
+
+> ±
+
+are two distinct reals, resulting in amplification or dissipation in outgoing waves. More-4over, input intensities corresponding to each scattering eigenvectors are same. On contrary, in broken symmetry phase, two scattering eigenvalues are same in magni-tudes, i.e., |λ(s,p )+ | = |λ(s,p ) 
+
+> −
+
+|, while the input intensity ratio with each scattering eigenvectors can establish a pair with reciprocal moduli. An EP appears in (r(s,p ) 
+
+> L
+
+− r(s,p ) 
+
+> R
+
+)2 + 4 t(s,p )2 = 0. Again, with parametriza-tion, we can depict these scattering phases and EP by various ϕ(s,p ) 
+
+> R
+
+in the parametric space of Fig. 1 (c). Here the purple lines represent an EP, while the blue and green color regions are denoted by symmetry broken phase and symmetry phase, respectively. We should mention that the EP of APT systems allows various 
+
+R and T . By comparison, an EP in PT-symmetric systems exhibits the characteristic of R = 0 and T = 1 [24, 44, 45]. 
+
+FIG. 2. A bilayer APT system made of l = 1 .775 λ0,μ =1.56, ϵ = 2 .3 + iϵ i, and θin = 1 .19 rad is considered. As we tune ϵi, we analyze their parametrization in (a), while the corresponding R(s) + T (s) is shown in (b). 
+
+C. Parametric space for APT-symmetric bilayer systems with lossless, loss, and gain media 
+
+The imaginary part of n(x) in arbitrary bilayer APT systems can have three situations, namely, all positive (loss), all negative (gain), or zero (lossless). Moreover, from power conservation, we argue that T + R < 1, T +
+
+R > 1, and T + R = 1 can be established in lossy, gain, and lossless, respectively. To support the result, we discuss a APT bilayer system made of l = 1 .775 λ0, μ = 1 .56, ϵ = 2 .3 + iϵ i, and θin =1.19 rad . Here λ0 is operating wavelength. Under TE polarization incidence, the parametrization is shown in Fig 2. (a), while we tune ϵi ∈ [−0.05 , 0.13]. We can see that as ϵi ∈ [−0.05 , 0), ϵi ∈ (0 , 0.13], and ϵi = 0, wave in associated systems experiences amplification with T (s) +
+
+R(s) > 1, dissipation with T (s) + R(s) < 1, and lossless propagation with T (s) + R(s) = 1, respectively, as shown in Fig. 2 (b). 
+
+III. OMNIDIRECTIONAL WAVE IMPEDANCE MATCHING 
+
+We utilize wave impedance analysis to characterize any bilayer APT systems. We first derive a propagation ma-trix M (W I ) for arbitrary bilayer systems having APT property. Under TE polarization incidence, it reads 
+
+"
+
+E(s) 
+
+> y
+
+(l)
+
+H(s) 
+
+> x
+
+(l)
+
+#
+
+= M (W I,s )
+
+"
+
+E(s) 
+
+> y
+
+(−l)
+
+H(s) 
+
+> x
+
+(−l)
+
+#
+
+(2) where 
+
+
+
+M (W I,s )11 = cos[ νl ] cos[ ν∗l] + νν∗ sin[ νl ] sin[ ν∗l]
+
+M (W I,s )12 = −i{ μω ν cos[ ν∗l] sin[ νl ] − μω ν∗ cos[ νl ] sin[ ν∗l]}
+
+M (W I,s )21 = −i{ νμω cos[ ν∗l] sin[ νl ] − ν∗ 
+
+> μω
+
+cos[ νl ] sin[ ν∗l]}
+
+M (W I,s )22 = cos[ νl ] cos[ ν∗l] + ν∗ 
+
+> ν
+
+sin[ νl ] sin[ ν∗l](3) here E(s) 
+
+> y
+
+and H(s) 
+
+> x
+
+are denoted as y-component of total electric field and x-component of total magnetic field, re-spectively, while ν is z-component of wave number at the left slab, i.e., k1z = k0
+
+pμϵ − sin 2 θin ≡ ν, and k0 is wave number of free space. The detailed derivation is placed in Appendix B. Utilizing lossless ϵ to the propagation matrix M (W I,s ), we obtain 
+
+"
+
+E(s) 
+
+> y
+
+(l)
+
+H(s) 
+
+> x
+
+(l)
+
+#
+
+=
+
+1 0 0 1 
+
+ "
+
+E(s) 
+
+> y
+
+(−l)
+
+H(s) 
+
+> x
+
+(−l)
+
+#
+
+. (4) Interestingly, M (W I,s ) becomes a unit matrix. Accord-ingly, it represents t(s) = 1 and r(s) 
+
+> L
+
+= r(s) 
+
+> R
+
+= 0. By the parametrization, it corresponds to M (s)11 = 1 and 
+
+M (s)22 = 1, as marked by a red dot in Figs. 1 (c)-(d). 5On the other hand, based on Eq.(2), we derive a rela-tion for wave impedances at z = −l and z = l,
+
+Z(s)(l) = M (W I,s )12 − Z(s)(−l)M (W I,s )11 
+
+M (W I,s )21 Z(s)(−l) − M (W I,s )22 
+
+. (5) Suppose that there exists reflectionless, the correspond-ing wave impedances at z = −l and z = l should meet 
+
+Z(−l) = η0  
+
+> cos θin
+
+and Z(l) = η0  
+
+> cos θin
+
+, respectively. Here 
+
+η0 =
+
+q μ0 
+
+> ϵ0
+
+is intrinsic impedance of free space. Taking these wave impedance boundary conditions into Eq.(5), we have 2iIm [ ν∗
+
+ν ]| sin( νl )|2 = 2 Re [i cos[ ν∗l] sin[ νl ] μk 0 cos[ θin ]
+
+ν ] − 2Re [ iν μk 0 cos[ θin ] cos[ ν∗l] sin[ νl ]] . (6) Remarkably, the left-hand expression is purely imaginary, whereas the right-hand one is purely real. This seemingly contradiction can be resolved only when ϵ and μ are real. Accordingly, both left-hand and right-hand expressions become zero, resulting in WIM. Interestingly, the forma-tion of WIM is irrespective of l, any values of refractive indexes, and incident angles. Furthermore, under TM po-larization incidence, we also find that a WIM covering all incident angles can also be established, as the APT sys-tem is lossless. The formulation is placed in Appendix B. We further refer to this remarkable result as polarization-independent omnidirectional wave impedance matching (polarization-independent OWIM), i.e., wave impedance matching that holds for all incident angles and polariza-tions. On the other hand, Eq. (6) implies that when gain or loss is introduced into an APT system, the formation of polarization-independent OWIM is disrupted, result-ing in wave reflection. To illustrate the polarization-independent OWIM phe-nomenon, an electric dipole, whose its dipole moment is along y, is placed in vicinity of a lossless bilayer APT system, as shown in Fig. 3 (a). For this system, we let 
+
+μ = 0 .01, ϵ = 0 .01, and l = 5 λ. For comparison, we also consider the same electric dipole placed in a free space in Fig. 3 (b). It confirms the formation of polarization-independent OWIM. However, as for PIM or NIM alone, a total internal reflection occurs at an incident angle be-yond the associated critical angle, as in Fig. 3 (c). We re-mark that the polarization-independent OWIM appeared in our lossless APT-symmetric systems is a generaliza-tion of the classic example of a flat slab with ϵ = −1 and 
+
+μ = −1 [31]. 
+
+IV. REFLECTION DIPS 
+
+In non-Hermitian domain, we can express relative per-mittivity by ϵ = ϵ′
+
++iϵ ′′ 
+
+and z-component of wave number in the left slab by ν = ν′
+
++ iν ′′ 
+
+, where ϵ′
+
+, ϵ′′ 
+
+, ν′
+
+, and ν′
+
+are real. ν′′ 
+
+is responsible for lossy when ν′′ 
+
+> 0 or for gain when ν′′ 
+
+< 0. Given that lossless APT systems exhibit wave impedance matching for all incident angles and polarizations, we consider the influence of a small amount of loss or gain, i.e., |ϵ′′ 
+
+| << 1. We thus derive 
+
+FIG. 3. Electric field distributions of an electric dipole placed in close to a lossless APT bilayer system and in free space are shown in (a) and (b), respectively. The red and blue boxes represent the bilayer system made of PIM and NIM. (c) As for a PIM’s slab alone, there occurs a total internal reflection as their incident angle is beyond the critical one. In this APT system, we use μ = 0 .01, ϵ = 0 .01, l = 5 λ0, and θin = π/ 4 rad. Here, the color bars represent the magnitude of the electric field in units of V /m. 
+
+ν′
+
+=
+
+q
+
+k20 μϵ ′ − k20 sin 2 θin and ν′′ 
+
+= k20 μϵ ′′  
+
+> 2ν′
+
+. Accordingly, we obtain the reflection coefficient for left incidence un-der TE polarization, 6
+
+FIG. 4. Contour plots of reflectances for left incidence and their associated reflection phase with respect to incident angles θin 
+
+and real parts of ϵ are shown in the top and bottom panels, respectively. In (a) and (b), they are obtained from Eq.(7) and COMSOL simulation, respectively, while in (c) and (d), they are obtained from Eq.(9) and COMSOL simulation, respectively. 
+
+r(s) 
+
+> L
+
+≈ − 2i ν′′ 
+
+ν′ sin 2[ν′
+
+l] + cos θin μr k0
+
+ν′′ 
+
+2ν′2 (2 ν′
+
+l − sin[2 ν′
+
+l]) − ν′′ 
+
+2 cos θin μr k0
+
+(2 ν′
+
+l + sin[2 ν′
+
+l]) . (7) The derivation is given in Appendix C. Additionally, we note that with APT condition, it satisfies r(s,p ) 
+
+> L
+
+= r(s,p )∗ 
+
+> R
+
+.Based on Eq.(7), we provide contour plots for the log-arithm of reflectance Ln (R(s)) and the reflection phase 
+
+Arg [r(s) 
+
+> L
+
+] by scanning incident angles θin and real parts of 
+
+ϵ, that is, ϵ′
+
+, shown in the top and bottom panels of Fig. 4 (a), respectively. Here we consider a lossy APT bilayer system made of μ = 2 .1, l = 0 .8λ0, Im [ϵ] = 0 .01. By comparison, we also provide associated calculation but with COMSOL simulation in Fig. 4 (b), supporting the accuracy of our analytical expression in Eq. (7). Addi-tionally, when ϵ′′ 
+
+= 0, we have r(s) 
+
+> L
+
+= 0 in Eq.(7), con-sistent with our previous statement. Moreover, we can observe that reflection dips, i.e., minimum reflectance, are accompanied by a jump of reflection phase. To un-derstand the underlying mechanism, we analyze Eq.(7), which is constituted by the real and the imaginary parts. There are two terms in the real part. We can argue that the reflection phase jump is caused by the sign change of the real part term. Accordingly, we obtain the condition of a minimum R(s),(k0μr cos θin )2 = ν′2 ν′
+
+l + sin[ ν′
+
+l] cos[ ν′
+
+l]
+
+ν′ l − sin[ ν′ l] cos[ ν′ l] . (8) With this relation, we numerically solve ϵ′
+
+in terms of 
+
+θin , as marked by black arrows in the top panel of Fig. 4 (b), confirming the location of reflection dips. Next, we consider TM polarization incidence. The cor-responding reflection coefficient for left incidence reads 
+
+r(p) 
+
+> L
+
+≈ 2i sin 2[ν′
+
+l]( ϵ′′ 
+
+> r
+
+ϵ′
+
+> r
+
+− ν′′ 
+
+ν′ ) − k0 cos θin 
+
+2ν′2 [−2lϵ ′ 
+
+> r
+
+ν′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′
+
+ϵ′′  
+
+> r
+
+− ϵ′ 
+
+> r
+
+ν′′ 
+
+)] − 12k0 cos θin ϵ′
+
+> r
+
+[2 lν ′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′ ϵ′′ 
+
+> r
+
+ϵ′
+
+> r
+
+− ν′′ 
+
+)] .
+
+(9) The derivation is given in Appendix C. Again, as ϵ′′ 
+
+= 0, we have r(p) 
+
+> L
+
+= 0 as expected. Now, we employ a gain APT bilayered system made of μ = 1 .3, l = 2 λ0, and 
+
+Im [ϵ] = −0.01. Based on Eq.(9), we calculate the cor-responding contourplots for the logarithm of reflectance 
+
+Ln (R(p)) and associated reflection phase Arg [r(p) 
+
+> L
+
+] in the 7   
+
+> FIG. 5. Reflectances and their reflection phases with respect to θin in (a) for TE polarization incidence and (c) for TM polarization incidence. Here the green lines are obtained from Eqs.(7) and (9), while the red dots are obtained from COMSOL. A reflection dip is accompanied by a reflection phase jump. With the parametric space, we analyze these systems in (b) and (d), corresponding to (a) and (b), respectively.
+
+top and bottom panels of Fig. 4 (c), respectively. Meanwhile, we provide associated numericals by COM-SOL simulation in Fig. 4 (d), which they match very well. In Figs. 4 (c)-(d), we also observe that the occurrence of reflection dips is accompanied by reflection phase jumps. Here, it is from π to 2 π. We state that the cause of a re-flection phase jump is due to the sign change of Re [r(p) 
+
+> L
+
+]. Thus, we derive the condition of minimum R(p)
+
+(k0 cos θin )2 =
+
+ν′2[2 lν ′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′ ϵ′′ 
+
+> r
+> ϵ′
+> r
+
+− ν′′ 
+
+)] 
+
+ϵ′2 
+
+> r
+
+[2 lν ′ ν′′ + sin[2 ν′ l]( ν′ ϵ′′ 
+
+> r
+> ϵ′
+> r
+
+− ν′′ )] 
+
+. (10) Accordingly, we numerically solve ϵ′
+
+in terms of θin as illustrated by black arrows in Fig. 4 (d), consistent with the locations of reflection dips.  
+
+> A. Examples
+
+To verify our finding of the reflection dip in non-Hermitian bilayer APT systems, we provide two systems. Following the result of Figs. 4 (a)-(b), we present a lossy system made of l = 0 .8λ0, μ = 2 .1, and ϵ = 1 .14 + 0 .01 i,while we calculate the reflectance for left incidence and associated reflection phase with respect to incident angles 
+
+θin under TE polarization incidence in Fig. 5 (a). We can observe that there has a reflection dip at θin = 0 .815 rad, with R(s) = 1 .08 × 10 −5. Notably, the reflection phase exhibits a jump from 2 π rad to π rad around θin = 0 .8rad. However, the reflection phase by the right incidence would become π rad to 2 π rad, due to APT. Next, we discuss the parametric space for this system, as shown in Fig. 5 (b). The system lies in the lossy domain as ex-pected. Meanwhile, the parametric trajectories are close to the boundary of reflectionless, corresponding to evi-dence of a low reflectance. Next, we consider a gain APT system under TM polar-ization incidence. Here we exploit l = 2 λ0, μ = 1 .3, and 
+
+ϵ = 2 .45 −0.01 i. In Fig. 5 (c), we provide the correspond-ing reflectance R(p) and reflection phase Arg [r(p) 
+
+> L
+
+]. We can observe that the reflection dip occurs at θin = 0 .85 rad, with R(p) 
+
+> L
+
+= 1 .23 × 10 −5. Again, we employ the parametric space to analyze this system. As shown in Fig. 5 (d), the parametric trajectories lie in the gain do-main as expected, while they are close to the boundary of reflectionless.  
+
+> V. GOOS-H ¨ ANCHEN EFFECT
+
+As the incident field is a beam packet, the reflection beam would encounter a longitudinal shift as well as a transverse shift, which cannot be described by geomet-ric optics [46–50]. The former effect is known as the Goos–H¨ anchen (GH) shift, first reported in total inter-nal reflection, which occurs within the incidence plane [46, 47]. This effect is attributed to the fact that each plane wave component, whose wave vectors slightly devi-ate from the beam coordinate, undergoes different reflec-8   
+
+> FIG. 6. The GH shifts of the systems in Figs. 5(a) and 5(c) are calculated in (a) and (c), respectively. A TE- and a TM-polarized Gaussian beams are incident upon the corresponding APT systems in the right panels of (a) and (c), respectively. Here the pink arrows indicate the direction of the incident beam, while the color bars represent the magnitude of the electric field in units of V /m. The electric field intensities of the reflection beams along Xraxis are evaluated in (b) and (d), corresponding to the results demonstrated in the right panels of (a) and (c).
+
+tion phases. The latter one is referred to as the spin Hall effect of light, also known as the Imbert-Fedorov effect, predicted by F.I. Fedorov in 1955 [49]. In this effect, the beam shift occurs perpendicular to the incidence plane and can be attributed to the conservation of the total angular momentum of light accounting for orbital mo-mentum and spin momentum [51, 52]. Although the GH shift has been extensively investi-gated in weakly dissipative media [53, 54], metal [55], negative index media [56], epsilon-near-zero metamateri-als [57–59], photonic crystals [60–62], PT symmetry sys-tems [29, 63], Weyl semimetals [64, 65], topological ma-terials [66] to name a few, we find that the GH effect related to APT systems remains unexplored. Following Artmann’s formulation for a total internal reflection [67], the description of the GH shift, i.e., a longitudinal shift, is given by 
+
+△(s,p ) = − 1
+
+k0 cos θin 
+
+dϕ (s,p )
+
+> r
+
+dθ |θin , (11) indicating that a variation of the reflection phase with respect to θin results in the GH effect. We should note that the GH shift is polarization dependence. Though this expression is originally derived within the framework of a total internal reflection, that is, the stationary-phase method, it remains valid for partial reflections, as well ex-plored in Brewster angle effect and PT-symmetry crys-tals [29, 54, 68]. Now, by the results in Figs. 5 (a) and 5 (c), we evaluate the corresponding GH shift as shown in Figs. 6 (a) and 6(c), respectively. As expected, a significant GH shift occurs at the jump of reflection phase, although both cases have low reflectance. To fur-ther verify the GH phenomenon, we perform COMSOL simulations, as shown in the right panels of Figs. 6 (a) and 6 (c), where the incident fields are TE-polarized and TM-polarized Gaussian beams, respectively. The central wavelengths of the Gaussian beams in Figs. 6 (b) and 6 (d) are both λ0 = 700 nm. We observe that both trans-mission beams are dominant, while reflection beams have almost vanished. Moreover, the transmission beams are attenuated and amplified in Figs. 6 (a) and (c), owing to loss and gain in APT systems. Especially, the transmit-ted beam in NIM exhibits negative refraction, as clearly shown in the right panel of Fig. 6 (c). Next, we evaluate the electric field intensity of the reflection beams along 
+
+Xr axis, as shown in the right panels of Figs. 6 (b) and 6 (d), where the positive and negative shifts are observed, respectively. As a consequence of APT condition, the GH shift on the opposite side is equal in magnitude but opposite in sign. Last but not least, the enhanced GH effect is facilitated by a phase jump occurred at a reflec-tion dip, analogous to the Brewster angle effect, as well stated in Ref. [54, 68]. 9 
+
+> FIG. 7. (a) Schematic of a mimicking heterostructure with six slabs, where the index denotes the slab order. Reflectance and reflection phase for the two mimicking heterostructures and the corresponding component slabs of the bilayer APT system are shown in (b) and (c). (b) mimics the left slab, whereas (c) mimics the right slab. The blue dashed curves represent the results calculated from each all-dielectric heterostructure, while the red curves correspond to those component slabs of the APT system. By combining the two heterostructures into a composite system, the corresponding reflectance and reflection phase are calculated and shown by the blue circles in (d), whereas the red crosses denote those of the mimicked APT system.
+> VI. EMULATION OF ELECTROMAGNETIC RESPONSE IN BILAYER APT SYSTEMS USING AN ALL-DIELECTRIC HETEROSTRUCTURE
+
+Interestingly, the NIM, regarded as a hallmark of meta-materials, has been found in Dirac semimetals [40]. How-ever, realizing APT systems generally requires stringent constraints on the electromagnetic materials, which may be difficult to find in natural materials. Instead, we seek an effective medium theory together with a simple im-plementation architecture. Recently, it has been demon-strated that one dimensional photonic crystals with unit cells composed of spatially symmetric dielectric con-stituents can exhibit the electromagnetic response of neg-ative permittivity [69]. More recently, with proper struc-tural designs, all-dielectric heterostructures can emulate the same electromagnetic fields of APT systems [33]. The approach is to require an all-dielectric symmetric het-erostructure having the same transmission and reflection as the target slab. Now, we adopt an all-dielectric heterostructure to mimic the electromagnetic angular dispersion of APT systems within a finite frequency window. As demon-stration, we consider a gain bilayer APT system. For the left slab of the gain APT system, we employ λ0 = 600 nm, l = 1 .22 λ, ϵL = 2 .1 − 0.01 i, and μL = 1 .3. We calculate the reflectance and associated reflection phase with θin under a TM-polarized incidence as shown in the red lines Fig. 7 (b). We can observe that there is a reflection dip at θin = 0 .78, while it is also accompa-nied by a reflection phase jump from 0 rad to 2 π rad. Now, we employ an all-dielectric heterostructure with six slabs, whose the structure is symmetry in space as shown in Fig. 7 (a). Then we choose each thickness parameters with l1 = 110[ nm ], l2 = 120 nm, l3 = 100 nm, l4 = 30 nm, l5 = 30 nm, and l6 = 31 nm. Next, we require this all-dielectric symmetric heterostructure to have the same transmission and reflection as the left slab at θin = [0 .7rad , 0.73rad , 0.77rad]. As a result, we numerically find that to construct the mimicking all-dielectric heterostructure, it needs ϵ1 = 4 .09 − 0.89 i,
+
+ϵ2 = 3 .65 + 0 .99 i, ϵ3 = 2 .02 − 0.39 i, ϵ4 = 2 .24 + 0 .76 i,
+
+ϵ5 = 1 .56 − 1.64 i, and ϵ6 = 1 .12 + 0 .28 i. We calculate the corresponding reflectance and associated reflection phase within 0 .4rad < θ in < 1.07rad as shown in the blue dashed lines of Fig. 7 (b), whose their angular dis-persion of reflection matches that of the left slab. Next, we consider the right slab of the target APT sys-tem. The corresponding reflectance and reflection phase are given by the red lines in Fig. 7 (c). Again, we employ another all-dielectric heterostructure made of six slabs whose spatial placement is in a symmetric manner. We use the same thickness parameters as that in Fig. 7 (b), but with different material parameters. Following the 10 same approach, we numerically find that the electromag-netic material parameters given by ϵ1 = 6 .06 + 14 .19 i,
+
+ϵ2 = 2 .43 − 0.77 i, ϵ3 = −0.86 − 0.025 i, ϵ4 = 13 .31 + 1 .43 i,
+
+ϵ5 = 0 .03 −1.26 i, and ϵ6 = 12 .97+8 .58 i] can meet the con-ditions. The calculated reflectance and reflection phase of the all-dielectric heterostructure are given by the blue dashed curves in Fig. 7 (c). Even small deviations for two reflectances can occur at θin < 0.6rad and θin > 0.9rad, we can state that two systems have nearly identical angu-lar dispersion. Next, by combining the two all-dielectric heterostructures into a composite system, we evaluate the corresponding reflectance and reflection phase shown in the blue circles of Fig. 7 (d). For comparison, the reflectance and reflection phase of the gain APT system are presented by the red crosses in Fig. 7 (d). We can see that, as θin ∈ [0 .68rad , 0.79rad], two systems perform nearly identical dispersion relation of reflection. So far we have mimicked electromagnetic responses from the target APT system by all-dielectric heterostruc-tures made of a total of eleven slabs in a range of in-cident angles. We expect that, with a complexity of slabs involved, the mimicked electromagnetic response can be improved over a broader range of incident an-gles. Last but not least, we emphasize that polarization-independent OWIM realized in balanced and lossless PIM–NIM metamaterials offers greater flexibility and simplicity than more complex artificial structures, such as spatiotemporally modulated media, anisotropic meta-materials, Chebyshev transformer metasurfaces, and photonic crystals [1–5]. Furthermore, the required ma-terial condition for polarization-independent OWIM is scalable across different frequency ranges and irrespec-tive of system size. 
+
+VII. CONCLUSIONS 
+
+In summary, we consider electromagnetic wave reflec-tion from arbitrary bilayer APT systems. With the para-metric space as well as wave impedance analysis, any loss-less APT systems enable WIM for all incident angles and incident polarization, irrespective of system’s size and re-fractive index. In the presence of a small gain or loss, the WIM result can not be satisfied; instead, a reflection dip emerges. We analytically derive a closed form for reflec-tion. The reflection dip is accompanied by a jump of reflection phase. By leveraging the phase jump, we dis-cuss the GH effect enhanced, which remains unexplored in APT systems. To mimic the electromagnetic field gen-erated from the APT systems, we employ all-dielectric symmetric heterostructure to have the same electromag-netic response of each slab components over a specific angular spread. Our work may inspire a variety of appli-cations, including optical sensing, subwavelength imag-ing, precise metrology, spin-based devices, radar stealth, and invisibility cloaking. 
+
+[1] K. Im, J.-H. Kang, and Q.-H. Park, ”Universal impedance matching and the perfect transmission of white light,” Nat. Photonics 12 , 143 (2018). [2] K. Imlogo and Q.-H. Park, ”Omni-Directional and Broadband Acoustic Anti-Reflection and Universal Acoustic Impedance Matching,” Nanophotonics 11 (9), 2191-2198 (2022). [3] X. Li, W. Zheng, W. Zhang, et al., ”Broadband bilayer antireflective coating with metasurfaces and Chebyshev transformer,” Phys. Rev. Appl. 18 , 054057 (2022). [4] Q. Wei, Y. Wang, D. Bi, Z. Guo, Y. Sun, Y. Li, Y. Chen, H. Jiang, Y. Yang, H. Chen, ”Photonic twistronics-induced broadband omnidirectional perfect transparency,” Optica 12 (7), 1044-1053 (2025). [5] J. Luo, Y. Yang, Z. Yao, W. Lu, B. Hou, Z. H. Hang, C. T. Chan, and Y. Lai, ”Ultratransparent Media and Transformation Optics with Shifted Spatial Dispersions,” Phys. Rev. Lett. 117 , 223901 (2016). [6] J. B. Pendry, ”Negative Refraction Makes a Perfect Lens,” Phys. Rev. Lett. 85 , 3966 (2000). [7] V.G. Veselago, ”The electrodynamics of substances with simultaneously negative values of ϵ and μ,” Sov Phys Usp 
+
+10 , 509-514 (1968). [8] R. A. Depine and A. A. Lakhtakia, ”A new condition to identify isotropic dielectric-magnetic materials displaying negative phase velocity,” Microw. Opt. Technol. Lett. 41 ,315 (2004). [9] M. W. McCall, A. Lakhtakia, and W. S. Weiglhofer, ”The negative index of refraction demystified,” Eur. J. Phys. 
+
+23 , 353 (2002). [10] L. Feng, R. El-Ganainy, and L. Ge, ”Non-Hermitian pho-tonics based on parity-time symmetry,” Nat. Photonics 
+
+11 , 752 (2017). [11] M.-A. Miri and A. Al´ u, ”Exceptional points in optics and photonics,” Science 363 , eaar7709 (2019). [12] Y. Ashida, Z. Gong, and M. Ueda, ”Non-Hermitian physics,” Adv. Phys. 69 , 249 (2020). [13] R. Fleury, D. L. Sounas, and A. Al´ u, ”Negative Refrac-tion and Planar Focusing Based on Parity-Time Symmet-ric Metasurfaces,” Phys. Rev. Lett. 113 , 023903 (2014). [14] Y. Wu, L. Kang, and D. H. Werner, ”Generalized PT symmetry in non-Hermitian wireless power transfer sys-tems,” Phys. Rev. Lett. 129 , 200201 (2022). [15] H. Kim, S. Yoo, H. Joo, J. Lee, D. An, S. Nam, H. Han, D.-H. Kim, and S. Kim, ”Wide-range robust wire-less power transfer using heterogeneously coupled and flippable neutrals in parity-time symmetry,” Sci. Adv. 8,eabo4610 (2022). [16] C. Zeng, Y. Sun, G. Li, Y. Li, H. Jiang, Y. Yang, and H. Chen, ”High-order parity-time symmetric model for sta-ble three-coil wireless power transfer,” Phys. Rev. Appl. 
+
+13 , 034054 (2020). [17] M. Yang, Z. Ye, M. Farhat, and P.-Y. Chen, ”Enhanced radiofrequency sensors based on a self-dual emitter-absorber,” Phys. Rev. Appl. 15, 014026 (2021). [18] Z. Wang, Z. Liang, J. Hu, P. Zhou, L. Liu, G. Hu, W. Wang, and M. Ye, ”Sensing applications of PT -symmetry in non-Hermitian photonic systems,” Adv. 11 
+
+Quantum Technol. 8, 2400349 (2025). [19] P.-Y. Chen and J. Jung, ”PT Symmetry and Singularity-Enhanced Sensing Based on Photoexcited Graphene Metasurfaces,” Phys. Rev. Appl. 5, 064018 (2016). [20] M. Yang, Z. Ye, H. Pan, M. Farhat, A. E. Cetin, and P.-Y. Chen, ”Electromagnetically unclonable functions generated by non-Hermitian absorber-emitter,” Sci. Adv. 
+
+9, eadg7481 (2023). [21] Y. Ren, C.-H. Sun, M. D. Silva, H. Pan, X. Nie, E. Hamdan, Z. Zhou, A. E. Cetin, P.-Y. Chen, ”Reconfig-urable Electromagnetically Unclonable Functions Based on Graphene Radio-Frequency Modulators,” ACS Nano 
+
+20 , 421-431 (2025). [22] M. Yang, L. Zhu, Q. Zhong, R. El-Ganainy, and P.-Y. Chen, ”Spectral sensitivity near exceptional points as a resource for hardware encryption,” Nat. Commun. 14 ,1145 (2023). [23] W. D. Heiss, ”The physics of exceptional points,” J. Phys. A Math. Theor. 45 , 444016 (2012). [24] Z. Lin, H. Ramezani, T. Eichelkraut, T. Kottos, H. Cao, and D. N. Christodoulides, ”Unidirectional Invisibility Induced by PT-Symmetric Periodic Structures,” Phys. Rev. Lett. 106 , 213901 (2011). [25] X. Zhou, X. Lin, Z. Xiao, T. Low, A. Al´ u, B. Zhang, and H. Sun, ”Controlling photonic spin Hall effect via exceptional points,” Phys. Rev. B 100 , 115429 (2019). [26] Y. Cao, Y. Fu, Q. Zhou, Y. Xu, L. Gao, and H. Chen, ”Giant Goos-H¨ nchen shift induced by bounded states in optical PTsymmetric bilayer structures,” Opt. Express 
+
+27 , 7857 (2019). [27] Y. Xu, J. Jiang, and H. Chen, ”Stable lossless polari-tons on non-Hermitian optical interfaces,” Phys. Rev. B 
+
+95 (4), 041409 (2017). [28] D. L. Sounas, R. Fleury, and A. Al´ u, ”Unidirectional Cloaking Based on Metasurfaces with Balanced Loss and Gain,” Phys. Rev. Appl. 4, 014005 (2015). [29] S. Longhi, G. D. Valle, and K. Staliunas, ”Goos-H¨ anchen shift in complex crystals,” Phys. Rev. A 84 , 042119 (2011). [30] J. Y. Lee and P.-Y. Chen, ”Wave propagation, bi-directional reflectionless, and coherent perfect absorption-lasing in finite periodic PT-symmetric photonic systems,” Nanophotonics 12 , 3099 (2023). [31] L. Ge and H. E. T¨ ureci, ”Antisymmetric PT-photonic structures with balanced positive- and negative-index materials,” Phys. Rev. A 88 , 053810 (2013). [32] T. Hu, Q. Wei, X. F. Zhu, J. Yao, and D. J. Wu, ”Acous-tic anti-parity-time symmetric structure enabling equiv-alent lasing and coherent perfect absorption,” Phys. Rev. B 104 , 134110 (2021). [33] J. Y. Lee, ”Coherent perfect absorption and lasing at an exceptional point of anti-parity-time-symmetric pho-tonic structures and its implementation by all-dielectric heterostructures,” Phys. Rev. A 113 , 013504 (2026). [34] X.-W. Luo, C. Zhang, and S. Du, ”Quantum squeez-ing and sensing with pseudo-anti-parity-time symmetry,” Phys. Rev. Lett. 128 , 173602 (2022). [35] P. Peng, W. Cao, C. Shen, W. Qu, J. Wen, L. Jiang, and Y. Xiao, ”Anti-parity–time symmetry with flying atoms,” Nat. Phys. 12 , 1139 (2016). [36] F. Yang, Y.-C. Liu, and L. You, ”Anti-PT symmetry in dissipatively coupled optical systems,” Phys. Rev. A 96 ,053845 (2017). [37] Y. Choi, C. Hahn, J. W. Yoon, and S. H. Song, ”Ob-servation of an anti-PT-symmetric exceptional point and energy difference conserving dynamics in electrical circuit resonators,” Nat. Commun. 9, 2182 (2018). [38] M. Yang, Q. Zhong, Z. Ye, ¸S. K. ¨Ozdemir, M. Farhat, R. El-Ganainy, and P.-Y. Chen, ”Experimental observation of coherent-perfect-absorber and laser points in anti-PT symmetry,” Phys. Rev. A 110 , 033504 (2024). [39] Y.-L. Fang, J.-L. Zhao, D.-X. Chen, Y.-H. Zhou, Y. Zhang, Q.-C. Wu, C.-P. Yang, and F. Nori, ”Entangle-ment dynamics in anti-PT -symmetric systems,” Phys. Rev. Res. 4, 033022 (2022). [40] C.-Y. Chen, M.-C. Hsu, C. D. Hu, and Y. c. Lin, ”Natural Negative-Refractive-Index Materials,” Phys. Rev. Lett. 
+
+127 , 237401 (2021). [41] L. Ge, Y. D. Chong, and A. D. Stone, ”Conservation re-lations and anisotropic transmission resonances in one-dimensional PT-symmetric photonic heterostructures,” Phys. Rev. A 85 , 023802(2012). [42] Y. D. Chong, L. Ge, and A. D. Stone, ”PT-Symmetry Breaking and Laser-Absorber Modes in Optical Scatter-ing Systems,” Phys. Rev. Lett. 106 , 093902 (2011). [43] A. Mostafazadeh, ”Pseudo-hermiticity versus PT sym-metry: The necessary condition for the reality of the spectrum of a nonHermitian Hamiltonian,” J. Math. Phys. 43 , 205 (2002). [44] X. Zhu, H. Ramezani, C. Shi, J. Zhu, and X. Zhang, ”PT -Symmetric Acoustics,” Phys. Rev. X 4, 031042 (2014). [45] J. Y. Lee, ” Unidirectional polarization beam splitter via an exceptional point and finite periodicity of non-Hermitian PT symmetry,” Phys. Rev. A 110 , 033521 (2024). [46] F. Goos and H. H¨ anchen, ”About the penetration of the totally reflected light into the thinner medium,” Ann. Phys. (NY) 435 , 383 (1943). [47] F. Goos and H. H¨ anchen, ”A new and fundamental at-tempt at total reflection,” Ann. Phys. (NY) 436 , 333 (1947). [48] F. Goos and H. H¨ anchen, ”New measurement of the beam displacement effect in total internal reflection,” Ann. Phys. (NY) 440 , 251 (1949). [49] F. I. Fedorov, Dokl. Akad. Nauk SSSR 105, 465 (1955). [50] C. Imbert, ”Calculation and experimental proof of the transverse shift induced by total internal reflection of a circularly polarized light beam,” Phys. Rev. D 5, 787 (1972). [51] K. Y. Bliokh and Y. P. Bliokh, ”Conservation of angular momentum, transverse shift, and spin Hall effect in reflec-tion and refraction of an electromagnetic wave packet,” Phys. Rev. Lett. 96 , 073903 (2006). [52] M. Onoda, S. Murakami, and N. Nagaosa, ”Hall effect of light,” Phys. Rev. Lett. 93 , 083901 (2004). [53] H. M. Lai and S. W. Chan, ”Large and negative Goos-H¨ anchen shift near the Brewster dip on reflection from weakly absorbing media,” Opt. Lett. 27, 680 (2002). [54] L. Wang, H. Chen, and S. Zhu, ”Large negative Goos-H¨ anchen shift from a weakly absorbing dielectric slab,” Opt. Lett. 30 , 2936 (2005) [55] M. Merano, A. Aiello, G. W.’t Hooft, M. P. Van Exter, E. R. Eliel, and J. P. Woerdman, ”Observation of Goos-H¨ anchen shifts in metallic reflection,” Opt. Express 15 ,15928 (2007). 12 
+
+[56] P. R. Berman, ”Goos-H¨ anchen shift in negatively refrac-tive media,” Phys. Rev. E 66 , 067603 (2002) [57] Y. Xu, C. T. Chan, and H. Chen, ”Goos-H¨ anchen effect in epsilon-near-zero metamaterials,” Sci. Rep. 5, 8681 (2015). [58] J. Wen, J. Zhang, L. Wang, and S. Zhu, ”Goos-H¨ anchen shifts in an epsilon-near-zero slab,” J. Opt. Soc. Am. B 
+
+34 , 2310 (2017). [59] X. Chen, L. Wang, and C. Li, ”Transmission gap, Bragg-like reflection, and Goos-H¨ anchen shifts near the Dirac point inside a negative-zero-positive index metamaterial slab,” Phys. Rev. A 80 , 043839 (2009). [60] I. V. Soboleva, V. V. Moskalenko, and A. A. Fedyanin, ”Giant Goos-H¨ anchen Effect and Fano Resonance at Photonic Crystal Surfaces,” Phys. Rev. Lett. 108 , 123901 (2012). [61] J. Wu, F. Wu, K. Lv, Z. Guo, H. Jiang, Y. Sun, Y. Li, and H. Chen, ”Giant Goos-H¨ anchen shift with a high reflectance assisted by interface states in photonic het-erostructures,” Phys. Rev. A 101 , 053838 (2020). [62] D. Felbacq, A. Moreau, and R. Smaˆ ali, ”Goos-H¨ anchen effect in the gaps of photonic crystals,” Opt. Lett. 28 ,1633 (2003). [63] Y. Cao, Y. Fu, Q. Zhou, Y. Xu, L. Gao, and H. Chen, ”Giant Goos-H¨ anchen shift induced by bounded states in optical PT-symmetric bilayer structures,” Opt. Express 
+
+27 , 7857 (2019). [64] G. Ye, W. Zhang, W. Wu, S. Chen, W. Shu, H. Luo, and S. Wen, ”Goos-H¨ anchen and Imbert-Fedorov effects in Weyl semimetals,” Phys. Rev. A 99 , 023807 (2019). [65] N. K. Dongre and K. Roychowdhury, ”Effects of surface potentials on Goos-H¨ anchen and Imbert-Fedorov shifts in Weyl semimetals,” Phys. Rev. B 106 , 075414 (2022). [66] J. Wu, F. Wu, K. Lv, Z. Guo, H. Jiang, Y. Sun, Y. Li, and H. Chen, ”Giant Goos-H¨ anchen shift with a high reflectance assisted by interface states in photonic het-erostructures,” Phys. Rev. A 101 , 053838 (2020). [67] K. Artmann, ”Berechnung der Seitenversetzung des to-talreflektierten Strahles,” Ann. Phys. 437 , 87 (1948). [68] W. J. Wild and C. L. Giles, ”Goos-H¨ anchen shifts from absorbing media,” Phys. Rev. A 25, 2099 (1982). [69] X. Shi, C. Xue, H. Jiang, and H. Chen, ”Topological description for gaps of one-dimensional symmetric all-dielectric photonic crystals,” Opt. Express 24 , 18580 (2016). 
+
+VIII. APPENDIX A 
+
+Consider an APT system consisting of an even number 
+
+N of slabs, where the refractive index, relative permeabil-ity, and thickness of the ith slab are denoted by ni, μr,i ,and li, respectively, with i = 1 , . . . , N .Under TE (i.e., s) polarization, we derive the transfer matrix for the interface between free space (on the right) and the first slab (on the left): 
+
+M (s) 
+
+> f ree →n1
+
+= 12
+
+"1 + μ1k0z 
+
+> μ0k1z
+
+1 − μ1k0z
+
+> μ0k1z
+
+1 − μ1k0z 
+
+> μ0k1z
+
+1 + μ1k0z
+
+> μ0k1z
+
+#
+
+(12) where k0 is wave number in free space, k0z =q
+
+k20 − k20 sin 2 θin is z-component of wave number in free space and k1z =
+
+q
+
+k21 − k20 sin 2 θin is z-component of wave number in the first slab with [ ϵ1, μ 1, l 1]. At an interface between free space on the left sideand the N -th slab on the right side, the corresponding trans-fer matrix can be expressed as 
+
+M (s)  
+
+> nN→f ree
+
+= 12
+
+"1 + μ0kN z   
+
+> μNk0z
+
+1 − μ0kN z  
+
+> μNk0z
+
+1 − μ0kN z   
+
+> μNk0z
+
+1 + μ0kN z  
+
+> μNk0z
+
+#
+
+(13) here kN z =
+
+q
+
+k2 
+
+> N
+
+− k20 sin 2 θin is z-component of wave number in the N-th slab with [ ϵN , μ N , l N ]. At the interface of each slabs, the transfer matrix can be expressed as 
+
+M (s) 
+
+> ni→ni+1
+
+= 12
+
+"1 + μj kiz  
+
+> μikjz
+
+1 − μj kiz 
+
+> μikjz
+
+1 − μj kiz  
+
+> μikjz
+
+1 + μj kiz 
+
+> μikjz
+
+#
+
+(14) where i = 1 , . . . , N − 1 and kiz = k0
+
+q
+
+n2 
+
+> i
+
+− sin 2 θin is z-component of wave number in the i-th slab. The transfer matrix for wave propagation in each slab is 
+
+Mni,l i =
+
+eik iz li 00 e−ik iz li
+
+
+
+. (15) Finally, the transfer matrix for a system consisting of 
+
+N slabs is given by 
+
+M (s) 
+
+> tot
+
+= M (s) 
+
+> nN→f ree
+
+MnN ,l N [Π i=N −1 
+
+> i=1
+
+M (s) 
+
+> ni→ni+1
+
+Mni,l i ]M (s) 
+
+> f ree →n1
+
+.
+
+(16) Now, under a spatial inversion with respect to the ori-gin of coordinate, i.e., −z → z, the APT condition re-quires n → − n∗ and μ → − μ. So we have 
+
+q
+
+n2 − sin 2 θin =
+
+q
+
+(n2 
+
+> r
+
+− n2 
+
+> i
+
+− sin 2 θin ) + 2 in r ni
+
+→
+
+q
+
+(n2 
+
+> r
+
+− n2 
+
+> i
+
+− sin 2 θin ) − 2in r ni,
+
+(17) where we write n = nr + in i where nr and ni are the real part and the imaginary part of n, respectively. It leads to 
+
+kiz −→ k∗ 
+
+> iz
+
+, (18) i.e., a complex conjugation. Therefore, under a spatial inversion, we can observe that M (s) 
+
+> tot
+
+→ M (s)∗ 
+
+> tot
+
+. We state that 
+
+M (s)∗σM (s) = σ. (19) For TM polarization, the corresponding result can be obtained in the same manner as M (p)∗σM (p) = σ.Accordingly, we can derive 
+
+
+
+M (s,p )∗ 
+
+> 12
+
+= −M (s,p )21 
+
+M (s,p )∗ 
+
+> 22
+
+= M (s,p )22 
+
+M (s,p )∗ 
+
+> 11
+
+= M (s,p )11 
+
+(20) 13 
+
+IX. APPENDIX B 
+
+We consider an electromagnetic plane wave with TE (i.e., s) polarization propagating in a medium character-ized by ϵ1 and μ1. The y component of the electric field and the x component of the magnetic field are given by 
+
+
+
+E(s) 
+
+> y
+
+(x, z ) = E+0 eik 1 cos θ1z+ik 1 sin θ1x + E− 
+
+> 0
+
+e−ik 1 cos θ1z+ik 1 sin θ1x
+
+H(s) 
+
+> x
+
+(x, z ) = − cos θ1 
+
+> η1
+
+{E+0 eik 1 cos θ1z+ik 1 sin θ1x
+
+−E− 
+
+> 0
+
+e−ik 1 cos θ1z+ik 1 sin θ1x}
+
+(21) where η1 =
+
+q μ1 
+
+> ϵ1
+
+is intrinsic impedance of the mate-rial, θ1 is wave propagation direction with respect to z-axis, E+0 and E− 
+
+> 0
+
+are complex amplitudes of the forward (+ z) and backward ( −z) propagating waves, respectively. Given that electric field, the magnetic field can be derived by Faraday’s law. Based on the continuity of the electric and magnetic fields established along an interface, we define a wave impedance for TE polarization at any z by 
+
+Z(s)(z) ≡ − E(s) 
+
+> y
+
+(x, z )
+
+H(s) 
+
+> x
+
+(x, z ) . (22) Next, we derive the propagation matrix. We thus rewrite the total fields at z,
+
+(
+
+E(s) 
+
+> y
+
+(z) = E+(z) + E−(z)
+
+H(s) 
+
+> x
+
+(z) = − cos θ1 
+
+> η1
+
+(E+(z) − E−(z)) (23) where E+(z) = E+0 ei(k1 cos θ1z+k1 sin θ1x) and E−(z) = 
+
+E− 
+
+> 0
+
+ei(−k1 cos θ1z+k1 sin θ1x).With Eq.(23), we obtain the propagation matrix as follows 
+
+"
+
+E(s) 
+
+> y
+
+(z)
+
+H(s) 
+
+> x
+
+(z)
+
+#
+
+=
+
+ 1 1
+
+− cos θ1 
+
+> η1
+> cos θ1
+> η1
+
+  E+(z)
+
+E−(z)
+
+
+
+=
+
+ 1 1
+
+− cos θ1 
+
+> η1
+> cos θ1
+> η1
+
+  eik 1 cos θ1z 00 e−ik 1 cos θ1z
+
+  E+(0) 
+
+E−(0) 
+
+
+
+=
+
+ 1 1
+
+− cos θ1 
+
+> η1
+> cos θ1
+> η1
+
+  eik 1 cos θ1z 00 e−ik 1 cos θ1z
+
+  1 1
+
+− cos θ1 
+
+> η1
+> cos θ1
+> η1
+
+−1 "
+
+E(s) 
+
+> y
+
+(0) 
+
+H(s) 
+
+> x
+
+(0) 
+
+#
+
+=
+
+"
+
+cos[ k1 cos θ1z] − iη 1 sin[ k1 cos θ1z]cos θ1
+
+− i cos θ1 
+
+> η1
+
+sin[ k1 cos θ1z] cos[ k1 cos θ1z]
+
+# " 
+
+E(s) 
+
+> y
+
+(0) 
+
+H(s) 
+
+> x
+
+(0) 
+
+#
+
+(24) where we already consider a phase accumulation due to wave propagation, namely, E+(z) = eik 1 cos θ1z E+(0) and 
+
+E−(z) = e−ik 1 cos θ1z E−(0). For the bilayer system illustrated in Fig. 1 (a), with Eq. (24), we derive the corresponding propagation ma-trix M (W I,s ) for TE polarization as follows, 
+
+"
+
+E(s) 
+
+> y
+
+(l)
+
+H(s) 
+
+> x
+
+(l)
+
+#
+
+=
+
+"
+
+cos[ k2z l] − ik 2η2 
+
+> k2z
+
+sin[ k2z l]
+
+− ik 2z 
+
+> k2η2
+
+sin[ k2z l] cos[ k2z l]
+
+# " 
+
+cos[ k1z l] − ik 1η1 
+
+> k1z
+
+sin[ k1z l]
+
+− ik 1z 
+
+> k1η1
+
+sin[ k1z l] cos[ k1z l]
+
+# " 
+
+E(s) 
+
+> y
+
+(−l)
+
+H(s) 
+
+> x
+
+(−l)
+
+#
+
+= M (W I,s )
+
+"
+
+E(s) 
+
+> y
+
+(−l)
+
+H(s) 
+
+> x
+
+(−l)
+
+# (25) where ηi =
+
+q μi 
+
+> ϵi
+
+is intrinsic impedance of the medium in the i-th slab. Applying the APT condition, we find k1z = −k∗ 
+
+> 2z
+
+≡
+
+ν. Consequently, the propagation matrix M (W I,s ) for generic APT bilayer systems is given by 
+
+
+
+M (W I,s )11 = cos[ νl ] cos[ ν∗l] + νν∗ sin[ νl ] sin[ ν∗l]
+
+M (W I,s )12 = −i{ μω ν cos[ ν∗l] sin[ νl ] − μω ν∗ cos[ νl ] sin[ ν∗l]}
+
+M (W I,s )21 = −i{ νμω cos[ ν∗l] sin[ νl ] − ν∗ 
+
+> μω
+
+cos[ νl ] sin[ ν∗l]}
+
+M (W I,s )22 = cos[ νl ] cos[ ν∗l] + ν∗ 
+
+> ν
+
+sin[ νl ] sin[ ν∗l].
+
+(26) For TM polarization incidence, the wave impedance at 14 arbitrary z is defined by 
+
+Z(p)(z) ≡ E(p) 
+
+> x
+
+(x, z )
+
+H(p) 
+
+> y
+
+(x, z ) (27) here E(p) 
+
+> x
+
+(x, z ) is x-component of total electric field and 
+
+H(p) 
+
+> y
+
+(x, z ) is y-component of total magnetic field. By invoking the electromagnetic duality theorem and the APT condition, the propagation matrix for a generic APT bilayer system under TM polarization is obtained as 
+
+"
+
+E(p) 
+
+> x
+
+(l)
+
+H(p) 
+
+> y
+
+(l)
+
+#
+
+= M (W I,p )
+
+"
+
+E(p) 
+
+> y
+
+(−l)
+
+H(p) 
+
+> x
+
+(−l)
+
+#
+
+(28) where 
+
+
+
+M (W I,p )11 = | cos[ νl ]|2 + ϵν ∗ 
+
+> ϵ∗ν
+
+| sin[ νl ]|2
+
+M (W I,p )12 = iν ωϵ sin[ νl ] cos[ ν∗l] − iν ∗ 
+
+> ωϵ ∗
+
+sin[ ν∗l] cos[ νl ]
+
+M (W I,p )22 = | cos[ νl ]|2 + ϵ∗νϵν ∗ | sin[ νl ]|2
+
+M (W I,p )21 = iωϵ ν sin[ νl ] cos[ ν∗l] − iωϵ ∗ 
+
+> ν∗
+
+sin[ ν∗l] cos[ νl ].
+
+(29) With above relation, we further derive a relation of the wave impedances at z = l and z = −l,
+
+Z(p)(l) = M (W I,p )11 Z(p)(−l) + M (W I,p )12 
+
+M (W I,p )21 Z(p)(−l) + M (W I,p )22 
+
+. (30) In case of reflectionless, the corresponding wave impedance conditions at z = −l and z = l are Z(−l) = 
+
+η0 cos θin and Z(2 l) = η0 cos θin , respectively. Substitut-ing these conditions into Eq. (30), we obtain the reflec-tionless condition for TM polarization, 2iIm [ νϵ ∗
+
+ν∗ϵ ]| sin( νl )|2 = 2 Re [ iν η0k0cϵ cos θin 
+
+cos[ ν∗l] sin[ νl ]] + 2 Re [ −iϵk 0cη 0 cos θin 
+
+ν cos[ ν∗l] sin[ νl ]. (31) The above result holds only when ϵ and μ are real. 
+
+X. APPENDIX C 
+
+Based on Eq. (25), we formulate the reflection coeffi-cient for left incidence under TE polarization, 
+
+r(s) 
+
+> L
+
+= (M (W I,s )22 − M (W I,s )11 ) + ( M (W I,s )12  
+
+> Z(l)
+
+− M (W I,s )21 Z(l)) (M (W I,s )22 + M (W I,s )11 ) + ( M (W I,s )12  
+
+> Z(l)
+
++ M (W I,s )21 Z(l)) 
+
+.
+
+(32) For non-Hermitian systems, the relative permittivity can be expressed as 
+
+ϵ = ϵ′
+
++ iϵ ′′ 
+
+(33) here ϵ′
+
+and ϵ′′ 
+
+are real. We now consider |ϵ′′ 
+
+| << 1. With a small ϵ′′ 
+
+introduced, we can express the z component of wave number by 
+
+k1z ≡ ν =
+
+s
+
+(k20 μr ϵ′ 
+
+> r
+
+− k20x)[1 + ik 20xμr ϵ′′ 
+
+> r
+
+k20 μr ϵ′ 
+
+> r
+
+− k20x
+
+]
+
+∼
+
+q
+
+k20 μr ϵ′ 
+
+> r
+
+− k20x + i
+
+2
+
+k20 μr ϵ′′ 
+
+> r
+
+pk20 μr ϵ′ 
+
+> r
+
+− k20x
+
+≡ ν′
+
++ iν ′′ 
+
+(34) to the first order. We note that ν′
+
+= pk20 μr ϵ′ 
+
+> r
+
+− k20x and 
+
+ν′′ 
+
+= 12  
+
+> k20μrϵ′′
+> r
+
+√k20 μr ϵ′ 
+
+> r−k20x
+
+are real. Noticeably, |ν′′ 
+
+| << 1. With |ν′′ 
+
+| << 1, we can approximate 
+
+
+
+cos[ νl ] ∼ cos[ ν′
+
+l] − iν ′′ 
+
+l sin[ ν′
+
+l]cos[ ν∗l] ∼ cos[ ν′
+
+l] + iν ′′ 
+
+l sin[ ν′
+
+l]sin[ νl ] ∼ sin[ ν′
+
+l] + iν ′′ 
+
+l cos[ ν′
+
+l]sin[ ν∗l] ∼ sin[ ν′
+
+l] − iν ′′ 
+
+l cos[ ν′
+
+l] 
+
+> 1
+> ν
+
+∼ 1 
+
+> ν′
+
+− i ν′′  
+
+> ν′2
+> 1
+> ν∗
+
+∼ 1 
+
+> ν′
+
++ i ν′′  
+
+> ν′2
+> νν∗
+
+∼ 1 + 2 i ν′′ 
+
+> ν′
+
+(35) to the first order. Consequently, the corresponding propagation matrix can be approximately as 
+
+
+
+M (W I,s )11 ∼ 1 + 2 i ν′′  
+
+> ν′
+
+sin 2[ν′
+
+l]
+
+M (W I,s )22 ∼ 1 − 2i ν′′  
+
+> ν′
+
+sin 2[ν′
+
+l]
+
+M (W I,s )12 ∼ μk 0c ν′′  
+
+> ν′2
+
+(2 lν ′
+
+− sin[2 ν′
+
+l]) 
+
+M (W I,s )21 ∼ ν′′  
+
+> μk 0c
+
+(2 lν ′
+
++ sin[2 ν′
+
+l]) .
+
+(36) Substituting these into Eq.(32), the reflection coeffi-cient for left incidence is given by 15 
+
+r(s)
+
+L ≈ − 2i ν′′ 
+
+ν′ sin 2[ν′
+
+l] + cos θin μr k0
+
+ν′′ 
+
+2ν′2 (2 ν′
+
+l − sin[2 ν′
+
+l]) − ν′′ 
+
+2 cos θin μr k0
+
+(2 ν′
+
+l + sin[2 ν′
+
+l]) . (37) In TM polarization, the corresponding reflection coef-ficient for left incidence is 
+
+r(p)
+
+L = (M (W I,p )22 − M (W I,p )11 ) + ( M (W I,p )21 Z0 − M (W I,p )12 
+
+Z0 )
+
+−(M22 + M (W I,p )11 ) + ( M (W I,p )12 
+
+Z0 + Z0M21 )
+
+.
+
+(38) In the presence of a small imaginary part |ϵ′′ | ≪ 1, the propagation matrix for TM polarization, i.e., Eq.(29), can be approximated as 
+
+
+
+M (W I,p )11 ∼ 1 + 2 i sin 2[ν′
+
+l]( ϵ′′ 
+
+ϵ′ − ν′′ 
+
+ν′ )
+
+M (W I,p )22 ∼ 1 − 2i sin 2[ν′
+
+l]( ϵ′′ 
+
+ϵ′ − ν′′ 
+
+ν′ )
+
+M (W I,p )12 ∼ − 1
+
+k0cϵ ′2 [2 lϵ ′
+
+ν′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′
+
+ϵ′′ 
+
+− ϵ′
+
+ν′′ 
+
+)] 
+
+M (W I,p )21 ∼ k0cν′2 [−2lϵ ′
+
+ν′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′
+
+ϵ′′ 
+
+− ϵ′
+
+ν′′ 
+
+)] .
+
+(39) Consequently, the reflection coefficient for left inci-dence is 
+
+r(p)
+
+L ≈ 2i sin 2[ν′
+
+l]( ϵ′′ 
+
+r
+
+ϵ′
+
+r
+
+− ν′′ 
+
+ν′ ) − k0 cos θin 
+
+2ν′2 [−2lϵ ′
+
+r ν′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′
+
+ϵ′′ 
+
+r − ϵ′
+
+r ν′′ 
+
+)] − 12k0 cos θin ϵ′
+
+r
+
+[2 lν ′
+
+ν′′ 
+
+− sin[2 ν′
+
+l]( ν′ ϵ′′ 
+
+r
+
+ϵ′
+
+r
+
+− ν′′ 
+
+)] .
+
+(40)

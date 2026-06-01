@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-01T23:03:23.597071+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2605.28031v1",
+      "source": "arxiv",
+      "title": "Omnidirectional wave impedance matching and Goos-Hanchen shifts in non-Hermitian balanced positive-negative index metamaterials",
+      "abstract": "Wave reflection by non-Hermitian antisymmetric parity-time (APT) photonics made of a balanced positive index material (PIM) and negative index material (NIM) is investigated. As one class of them satisfies a unitary relation, wave impedance matching (WIM) can be achieved not only for polarization independence but also for omnidirection. Remarkably, the result is independent of system sizes, material parameters, and polarization. As gain or loss is involved, any non-Hermitian systems are unable to support WIM; instead, there occurs a reflection dip, i.e., a minimum reflectance, at some system configurations, a certain incident angle, and polarization dependence.   Our finding is in contrast to the parity time (PT) symmetric paradigms, in which the well-known exceptional point can be recognized as a WIM. Additionally, in the vicinity of a reflection dip, it is accompanied by a jump of reflection phase, offering an opportunity to observe a significant Goos-Hanchen (GH) beam shift in APT systems. We provide associated systems and numerically verify the GH shifts.   Meanwhile, we derive a closed-form expression for a reflection dip in terms of incident angle, operating wavelengths, and material parameters. To imitate the electromagnetic responses of APT photonics for their angular dispersion, we discuss a dielectric heterostructure consisting of spatially symmetric multilayer slabs so as to have the same reflection and transmission for each APT component over a specific angular spread.",
+      "authors": [
+        "Jeng Yi Lee",
+        "Chia-Heng Sun",
+        "Ke-Hsiang Huang",
+        "Pai-Yen Chen"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-05-27T06:36:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.28031v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "balanced positive-negative index metamaterial achieves zero refractive index",
+      "llm_evidence_cn": "平衡正负折射率超材料实现零折射率",
+      "llm_evidence": "平衡正负折射率超材料实现零折射率",
+      "canonical_evidence": "平衡正负折射率超材料实现零折射率",
+      "llm_tldr_en": "Studies wave impedance matching in non-Hermitian PT-symmetric photonics with balanced positive-negative index materials, achieving omnidirectional and polarization-independent matching; gain/loss leads to reflectance dips and Goos-Hanchen shifts.",
+      "llm_tldr_cn": "本文研究非厄米宇称-时间对称光子中正负折射率平衡超材料的波反射。发现一类结构满足幺正关系，可实现偏振无关且全向的波阻抗匹配，与系统尺寸、材料参数和偏振无关。当包含增益或损耗时，出现反射极小值及Goos-Hanchen位移，为设计全向无反射光学元件提供了新思路。",
+      "llm_tldr": "本文研究非厄米宇称-时间对称光子中正负折射率平衡超材料的波反射。发现一类结构满足幺正关系，可实现偏振无关且全向的波阻抗匹配，与系统尺寸、材料参数和偏振无关。当包含增益或损耗时，出现反射极小值及Goos-Hanchen位移，为设计全向无反射光学元件提供了新思路。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "materials with zero refractive index",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

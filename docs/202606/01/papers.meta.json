@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-01",
+  "date": "2026-06-01",
+  "generated_at": "2026-06-01T23:07:13",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/01/2605.28031v1-omnidirectional-wave-impedance-matching-and-goos-hanchen-shifts-in-non-hermitian-balanced-positive-negative-index-metamaterials",
+      "section": "deep",
+      "title_en": "Omnidirectional wave impedance matching and Goos-Hanchen shifts in non-Hermitian balanced positive-negative index metamaterials",
+      "authors": "Jeng Yi Lee, Chia-Heng Sun, Ke-Hsiang Huang, Pai-Yen Chen",
+      "date": "2026-05-27",
+      "pdf": "https://arxiv.org/pdf/2605.28031v1",
+      "score": "9.0",
+      "evidence": "平衡正负折射率超材料实现零折射率",
+      "tldr": "针对非厄米反PT对称平衡正负折射率材料，发现一类满足酉关系的结构可实现全向波阻抗匹配，与偏振和入射角无关；引入增益/损耗时则出现反射谷及反射相位跳变，且伴随显著GH光束位移。推导了反射谷的闭合表达式，并利用介质异质结构模拟了角色散响应。该工作揭示了非厄米系统中反射谷与PT对称异常点的差异，为GH位移调控提供了新机制。",
+      "tags": "query:enz",
+      "abstract_en": "Wave reflection by non-Hermitian antisymmetric parity-time (APT) photonics made of a balanced positive index material (PIM) and negative index material (NIM) is investigated. As one class of them satisfies a unitary relation, wave impedance matching (WIM) can be achieved not only for polarization independence but also for omnidirection. Remarkably, the result is independent of system sizes, material parameters, and polarization. As gain or loss is involved, any non-Hermitian systems are unable to support WIM; instead, there occurs a reflection dip, i.e., a minimum reflectance, at some system configurations, a certain incident angle, and polarization dependence.   Our finding is in contrast to the parity time (PT) symmetric paradigms, in which the well-known exceptional point can be recognized as a WIM. Additionally, in the vicinity of a reflection dip, it is accompanied by a jump of reflection phase, offering an opportunity to observe a significant Goos-Hanchen (GH) beam shift in APT systems. We provide associated systems and numerically verify the GH shifts.   Meanwhile, we derive a closed-form expression for a reflection dip in terms of incident angle, operating wavelengths, and material parameters. To imitate the electromagnetic responses of APT photonics for their angular dispersion, we discuss a dielectric heterostructure consisting of spatially symmetric multilayer slabs so as to have the same reflection and transmission for each APT component over a specific angular spread.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
