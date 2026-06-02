@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-02T22:48:54.960430+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2605.25904v1",
+      "source": "arxiv",
+      "title": "Benchmarking Transparent Conductors",
+      "abstract": "Transparent conducting oxides (TCOs) are central to optoelectronic technologies, yet their design is often guided by popular figures of merit that are disconnected from the electrical requirement of actual devices. As a result, widely used metrics guide material design under conditions that can be impractical for devices. Here, we introduce a benchmarking framework to guide TCO development, in which transparent conductors are evaluated at fixed, application-relevant sheet resistance $(R_S)$. The resulting metric, $T_{app}(R_S)$, anchors comparison to device requirements, asking instead: What optical transparency can be obtained at the sheet resistance required by a given application? This approach provides a directly interpretable measure of performance, enabling materials to be benchmarked in terms of absolute transparency gains at a specified $R_S$. Applied to representative conventional and emerging TCOs, the framework defines the sheet-resistance landscape relevant to each application and maps how different materials perform within it. In doing so, it provides an application-rooted guide to material development and selection. More broadly, this approach establishes a general strategy for evaluating materials under fixed operational constraints, bridging the gap between materials design and device integration.",
+      "authors": [
+        "Amit Cohen",
+        "Lior Kornblum"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-05-25T14:37:53+00:00",
+      "link": "https://arxiv.org/pdf/2605.25904v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Introduces a benchmarking framework for transparent conducting oxides (TCOs)",
+      "llm_evidence_cn": "引入透明导电氧化物基准测试框架",
+      "llm_evidence": "引入透明导电氧化物基准测试框架",
+      "canonical_evidence": "引入透明导电氧化物基准测试框架",
+      "llm_tldr_en": "To bridge the gap between common TCO metrics and real device needs, this paper proposes a benchmarking framework that evaluates transparent conductors at application-relevant sheet resistance, assessing achievable optical transparency. This yields an interpretable performance measure for material design.",
+      "llm_tldr_cn": "当前透明导电氧化物(TCO)设计常用评价指标与实际器件电学需求脱节，本文提出一种基准测试框架，在固定应用相关方块电阻条件下评估TCO的可见光透过率，将性能比较锚定于器件要求。该框架提供了可直接解释的性能度量，便于对材料进行面向应用的基准测试与优化，为透明导体设计提供了更实用的指导。",
+      "llm_tldr": "当前透明导电氧化物(TCO)设计常用评价指标与实际器件电学需求脱节，本文提出一种基准测试框架，在固定应用相关方块电阻条件下评估TCO的可见光透过率，将性能比较锚定于器件要求。该框架提供了可直接解释的性能度量，便于对材料进行面向应用的基准测试与优化，为透明导体设计提供了更实用的指导。",
+      "llm_tags": [
+        "query:tco:composite"
+      ],
+      "matched_query_tag": "query:tco:composite",
+      "matched_query_text": "Papers central to 帮我查找关于透明导电氧化物相关的文章 基于透明导电氧化物的超快光学调制 透明导电氧化物的光学非线性 透明导电氧化物的电子动力学, especially work that connects or combines: indium tin oxide transparent conductor studies; zinc oxide based transparent conductors; ultrafast optical modulation in transparent conductive oxides; optical nonlinearity of transparent conductive oxides; epsilon-near-zero effects in TCOs; carrier dynamics in TCO thin films; Ultrafast all optical modulation based on transparent conductive oxides; Optical nonlinearity and epsilon near zero effects in TCOs; Carrier dynamics and electronic relaxation in transparent conductive oxide thin films; Nonlinear optical response and optical switching in transparent conductive oxides.",
+      "matched_requirement_id": "req-composite-tco",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

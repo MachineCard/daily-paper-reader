@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-02",
+  "date": "2026-06-02",
+  "generated_at": "2026-06-02T22:51:53",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/02/2605.25904v1-benchmarking-transparent-conductors",
+      "section": "deep",
+      "title_en": "Benchmarking Transparent Conductors",
+      "authors": "Amit Cohen, Lior Kornblum",
+      "date": "2026-05-25",
+      "pdf": "https://arxiv.org/pdf/2605.25904v1",
+      "score": "10.0",
+      "evidence": "引入透明导电氧化物基准测试框架",
+      "tldr": "透明导电氧化物（TCO）对光电器件至关重要，但现有品质因子常脱离实际器件的电学需求，导致设计指导不切实际。本文提出面向应用的基准框架，在固定薄层电阻R_S下评估材料，定义新度量T_app(R_S)，直接询问在所需R_S下可获得的最佳透明度。将框架应用于多种传统与新兴TCO，系统揭示了不同应用领域（如触摸屏、太阳能电池）对应的R_S需求范围，并比较了各材料在相应条件下的绝对透明度增益。该方法为TCO开发提供了扎根于器件需求的选择指南，并建立了在固定操作约束下评估材料的一般策略，有效衔接了材料设计与器件集成。",
+      "tags": "query:tco",
+      "abstract_en": "Transparent conducting oxides (TCOs) are central to optoelectronic technologies, yet their design is often guided by popular figures of merit that are disconnected from the electrical requirement of actual devices. As a result, widely used metrics guide material design under conditions that can be impractical for devices. Here, we introduce a benchmarking framework to guide TCO development, in which transparent conductors are evaluated at fixed, application-relevant sheet resistance $(R_S)$. The resulting metric, $T_{app}(R_S)$, anchors comparison to device requirements, asking instead: What optical transparency can be obtained at the sheet resistance required by a given application? This approach provides a directly interpretable measure of performance, enabling materials to be benchmarked in terms of absolute transparency gains at a specified $R_S$. Applied to representative conventional and emerging TCOs, the framework defines the sheet-resistance landscape relevant to each application and maps how different materials perform within it. In doing so, it provides an application-rooted guide to material development and selection. More broadly, this approach establishes a general strategy for evaluating materials under fixed operational constraints, bridging the gap between materials design and device integration.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

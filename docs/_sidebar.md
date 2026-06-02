@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-02 <!--dpr-date:20260602-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/02/2605.25904v1-benchmarking-transparent-conductors" data-sidebar-item="{&quot;title&quot;: &quot;Benchmarking Transparent Conductors&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.25904v1-benchmarking-transparent-conductors&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;tco&quot;}], &quot;evidence&quot;: &quot;引入透明导电氧化物基准测试框架&quot;}">Benchmarking Transparent Conductors</a>
   * 2026-06-01 <!--dpr-date:20260601-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/01/2605.28031v1-omnidirectional-wave-impedance-matching-and-goos-hanchen-shifts-in-non-hermitian-balanced-positive-negative-index-metamaterials" data-sidebar-item="{&quot;title&quot;: &quot;Omnidirectional wave impedance matching and Goos-Hanchen shifts in non-Hermitian balanced positive-negative index metamaterials&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.28031v1-omnidirectional-wave-impedance-matching-and-goos-hanchen-shifts-in-non-hermitian-balanced-positive-negative-index-metamaterials&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;平衡正负折射率超材料实现零折射率&quot;}">Omnidirectional wave impedance matching and Goos-Hanchen shifts in non-Hermitian balanced positive-negative index metamaterials</a>
