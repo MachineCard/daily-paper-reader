@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-03",
+  "date": "2026-06-03",
+  "generated_at": "2026-06-03T23:00:19",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/03/2606.00682v1-a-visible-frequency-excitonic-reststrahlen-band-in-pea2pbi4-slabs",
+      "section": "deep",
+      "title_en": "A Visible-Frequency Excitonic Reststrahlen Band in (PEA)$_2$PbI$_4$ Slabs",
+      "authors": "Michael Pfeufer, Patrick Grenzer, Friedrich Schöppler, Tobias Hertel",
+      "date": "2026-05-30",
+      "pdf": "https://arxiv.org/pdf/2606.00682v1",
+      "score": "8.0",
+      "evidence": "强激子驱动实介电常数变负，揭示了介电常数近零转变",
+      "tldr": "层状钙钛矿的强激子可重塑介电响应导致负介电常数，形成可见光波段的Reststrahlen反射带，但(PEA)₂PbI₄是否实现此机制尚不明确。本文通过低温透射实验和转移矩阵分析，观察到随厚度增加的透射光谱从激子凹陷演变为宽近零透射区间。结果表明(PEA)₂PbI₄薄片在可见光区存在负介电常数窗口和近超强激子-光子耦合，确认其为无腔激子Reststrahlen材料。",
+      "tags": "query:enz",
+      "abstract_en": "Layered halide perovskites host exceptionally strong excitons, whose optical signatures are usually interpreted as absorptive resonances on a smooth dielectric background. Strong excitons, however, can also reshape the dielectric response itself and drive the real permittivity negative, opening a reflective band: the visible, excitonic analogue of an infrared Reststrahlen band. Whether bare (PEA)$_2$PbI$_4$ slabs reach this regime has remained unclear. Here we show that low-temperature transmission of (PEA)$_2$PbI$_4$ slabs, driven by the intralayer-exciton manifold, evolves with increasing thickness from an excitonic dip into a broad near-zero-transmission interval with compressed Fabry-Pérot-like fringes. Transfer-matrix analysis with an effective Lorentz-oscillator dielectric response reproduces this crossover, reconstructs a finite negative-Re($\\varepsilon$) window, and implies near-ultrastrong exciton-photon coupling. Calculated field maps show suppressed in-plane field penetration within this interval and a driven longitudinal response near the high-energy ($\\varepsilon=0$) edge. These results identify (PEA)$_2$PbI$_4$ slabs as a cavity-free visible-frequency excitonic Reststrahlen material.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

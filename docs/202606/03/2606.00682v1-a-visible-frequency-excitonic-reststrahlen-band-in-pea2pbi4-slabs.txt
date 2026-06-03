@@ -1,0 +1,376 @@
+Title: A Visible-Frequency Excitonic Reststrahlen Band in (PEA)_2PbI_4 Slabs
+
+URL Source: https://arxiv.org/pdf/2606.00682v1
+
+Published Time: Tue, 02 Jun 2026 00:46:30 GMT
+
+Number of Pages: 10
+
+Markdown Content:
+# A Visible-Frequency Excitonic Reststrahlen Band in (PEA )2PbI 4 Slabs 
+
+Michael Pfeufer, Patrick Grenzer, Friedrich Schöppler, and Tobias Hertel ∗
+
+Institute of Physical and Theoretical Chemistry, Julius-Maximilians-University Würzburg, Germany 
+
+E-mail: tobias.hertel@uni-wuerzburg.de 
+
+# Abstract 
+
+Layered halide perovskites host exceptionally strong excitons, whose optical signatures are usu-ally read as absorptive resonances on a smooth dielectric background. Strong excitons, however, can also reshape the dielectric response itself and drive the real permittivity negative, opening a reflective band—the visible, excitonic analogue of an infrared Reststrahlen band. Whether bare 
+
+(PEA )2PbI 4 slabs reach this regime has remained unclear. Here we show that low-temperature transmission of (PEA )2PbI 4 slabs, driven by the intralayer-exciton manifold, evolves with increas-ing thickness from an excitonic dip into a broad near-zero-transmission interval with compressed Fabry–P’erot-like fringes. Transfer-matrix anal-ysis with an effective Lorentz-oscillator dielec-tric response reproduces this crossover and recon-structs a finite negative-Re (𝜀 ) window, and implies near-ultrastrong exciton–photon coupling. Calcu-lated field maps show suppressed in-plane field penetration within this interval and a driven lon-gitudinal response near the high-energy ( 𝜀 = 0)edge. These results identify (PEA )2PbI 4 slabs as a cavity-free visible-frequency excitonic Rest-strahlen material. 
+
+# 1 Introduction 
+
+Two-dimensional lead–halide perovskites are nat-ural multiple-quantum-well semiconductors in which atomically thin inorganic sheets are sep-arated by organic spacer layers. 1–3 In the (n=1) limit, quantum and dielectric confinement pro-duce tightly bound excitons with large oscillator strengths, 3–5 while the layered crystal structure gives rise to pronounced optical anisotropy. 6 To-gether, these properties make layered perovskites an attractive setting for studying strong light– matter interactions in a chemically tunable crys-talline platform. 5,7–9 Among them, phenethylam-monium lead iodide, (PEA )2PbI 4 (PEPI), has be-come an archetype of this family because its band-edge photoluminescence and absorption are dom-inated by strong excitonic resonances that persist as the defining spectral features from cryogenic to room temperature. 6,10,11 These same oscillator strengths also make the optical response of layered perovskites sensitive to exciton–photon hybridiza-tion once the electromagnetic boundary conditions allow optical modes to form. This sensitivity has motivated extensive work on exciton–photon coupling, mostly in engineered photonic environments such as microcavities, plas-monic structures, and metasurfaces, where large normal-mode splittings and room-temperature po-laritons have been demonstrated. 12,13 More re-cently, sufficiently thick layered-perovskite crys-tals have been shown to support cavity-free or self-hybridized exciton–polariton states, in which the crystal itself provides the photonic modes that hy-bridize with the excitons and the slab acts as a natural polaritonic medium. 14,15 
+
+These studies frame the slab response in terms of Fabry–Pérot-like photonic modes that hybridize with the exciton, yielding dispersive polariton branches with characteristic normal-mode split-tings. What remains open is whether the exci-1
+
+> arXiv:2606.00682v1 [cond-mat.mtrl-sci] 30 May 2026
+
+ton oscillator strength in a bare layered perovskite is sufficient to drive Re (𝜀 ) negative—producing a Reststrahlen-like stop band in the visible, where reflectivity arises from the intrinsic dielectric re-sponse rather than from confined photonic modes alone. PEPI is the obvious system in which to pose this question, since its exciton resonance is among the strongest and best characterized in the family. Yet the electrodynamic perspective has remained largely absent here, and its band-edge optical re-sponse has instead been discussed mainly in terms of exciton fine structure, dark states, out-of-plane transitions, and phonon- or polaron-dressed side-bands. 16–20 Accordingly, spectral shoulders and undulations around the main resonance have often been parsed into discrete excitonic features rather than into the electrodynamic response of a finite resonant slab. A recent combined experimental and theoretical study indeed shows that the low-temperature fine structure has a purely excitonic origin. 11 What has remained unclear, however, is how to interpret the unusual reflectance and trans-mission spectra of thicker layered-perovskite slabs, and how these relate to a possible cavity-polaritonic origin of the near-zero-transmission window. Resolving these questions requires modeling PEPI’s optical response consistently across the full thickness range. Here we show that an intralayer-dominated effective Lorentz oscillator, propagated through the slab geometry by the transfer ma-trix, captures a crossover from a Lorentzian ex-citonic dip in thin films to a broad near-zero-transmission band with compressed low-energy Fabry–Pérot fringes in thicker slabs. In the ex-tracted dielectric response, the exciton manifold drives Re (𝜀 ) negative over a finite spectral in-terval, 21,22 producing a visible polaritonic stop band with a model-implied Rabi splitting in the ultrastrong-coupling regime. A mode and field analysis links this negative-permittivity window to slab exciton–polariton structure and to the ex-citonic photoluminescence response, establishing bare PEPI as a natural cavity-free exciton–polariton system. 
+
+# 2 Results and Discussion 
+
+The low-temperature transmittance spectrum of a 
+
+𝑑 = 210 nm PEPI slab in Figure 1a provides the ex-perimental starting point. Between 2.35 and 2.41 
+
+eV, the transmittance falls to a near-zero plateau. On the low-energy side, this is preceded by one pro-nounced and several weaker, more closely spaced undulations, while on the high-energy side, the transmittance starts to recover above ∼ 2.41 eV. Within the broad transmission minimum, a narrow revival is visible near 2.38 eV. Comparable spectra have previously been used to assist with the iden-tification of exciton resonances within the PEPI optical response. 10,17,23,24 However, transmittance features do not map cleanly onto the different exci-ton manifolds resolved in the low-temperature PL spectrum of Figure 1b. 11 This mismatch suggests that the optical response of a finite-thickness PEPI slab is shaped by propagation effects that are typ-ically negligible in the spectral analysis of atom-ically thin semiconductors. 25–27 In the following, we examine whether the intralayer-exciton mani-fold is sufficiently strong to produce a visible stop-band response in the slab transmittance, in anal-ogy to the infrared Reststrahlen bands associated with LO–TO phonon-polariton resonances in ionic crystals. 28,29 
+
+The PL spectra in Figure 1b provide the exci-tonic energy scale for this investigation. At low temperature, the PL resolves a weak trion-like X±
+
+feature near 2.30 eV, the bright intralayer-exciton manifold X near 2.34 eV, and a very weak higher-energy doublet near 2.38 eV, recently assigned in PL to interlayer excitons in the two-layer unit cell of PEPI. 11 
+
+The temperature-dependent transmittance of a 
+
+𝑑 = 388 nm slab in Figure 1c shows that the near-zero transmission interval is a persistent feature of the slab optical response. At low temperature, the transmittance stays close to zero over a finite spectral range, with its low-energy onset broadly tracking the temperature-dependent upward shift of the X manifold seen in PL. 30,31 The compressed Fabry–Pérot fringes on the low-energy side of this range lose contrast with increasing temperature, consistent with thermal broadening of the exci-tonic response. A corresponding broadening is also evident in the room-temperature exciton PL in Figure 1b. The plateau itself, however, remains clearly resolved up to at least 160 K and becomes only gradually less pronounced toward room tem-perature. A weaker dip near 2.57 eV is consistent 20   
+
+> normalized PL intensity
+> 2.452.402.352.302.25
+> photonenergy/eV
+> 1
+> 0
+> norm. transm.
+> 5
+> 8.50 cm = 245 pt
+> 10
+> 8
+> 6
+> 4
+> 2
+> 0
+> normalized transmittance
+> 2.6 2.5 2.4 2.3 2.2 2.1
+> photon energy / eV
+> 2.7 2.6 2.5 2.4 2.3 2.2
+> photon energy / eV
+
+c dd = 388 nm    
+
+> 10 K
+> 20 K
+> 30 K
+> 40 K
+> 50 K
+> 75 K
+> 100 K
+> 130 K
+> 160 K
+> 200 K
+> 250 K
+> 300 K
+> T=10 K
+> 24 nm
+> 38 nm
+> 106 nm
+> 206 nm
+> 303 nm
+> 511 nm
+> 3,980 nm
+> 5,580 nm
+> 21,000 nm
+
+b
+
+a      
+
+> T=8K
+> T=298 K
+
+X± × 50 
+
+> 45 ∘
+
+IX 
+
+X      
+
+> T=10 K
+> d=210 nm
+
+Figure 1: Excitonic energy scales and slab-transmission phenomenology of PEPI. (a) Inverted normalized trans-mittance spectrum of a 𝑑 = 210 nm slab at 10 K, showing a stop-band-like response near the intralayer exciton. (b) Room- and low-temperature PL spectra of a ∼ 200 nm slab, resolving at 8 K a trion-like feature near 2.30 eV and the intralayer-exciton manifold near 2.34 eV. Inset: expanded PL of a comparable flake showing a weak doublet near 
+
+2.38 eV, assigned in PL to interlayer excitons. 11 (c) Temperature-dependent normalized transmittance of a 𝑑 = 388 
+
+nm slab from 10 to 300 K. (d) Thickness-dependent normalized transmittance at 10 K for slabs from 24 nm to 
+
+21 ,000 nm, showing the crossover from a Lorentzian-like excitonic dip to a broad near-zero-transmission band with low-energy Fabry–Pérot fringes. 
+
+with the onset of higher-energy band-to-band ab-sorption but is secondary to our discussion of the exciton-driven response. Figure 1d shows how the low-temperature trans-mittance evolves systematically with slab thick-ness. For the thinnest flakes, exemplified by a 24 
+
+nm slab, the spectrum is dominated by a single min-imum at the position of the intralayer exciton man-ifold, consistent with the absorption-dominated re-sponse expected for a quasi-two-dimensional semi-conductor in the thin-film limit. With increas-ing thickness, this minimum broadens asymmet-rically toward higher energy and, for thicknesses around 200 nm, develops into a broad near-zero-transmission plateau. As the slab thickness ap-proaches the wavelength scale, interference fringes emergy on the low energy side of the plateau, and their nonuniform fringe spacing indicates strong excitonic dispersion of the slab refractive index. In the thickest slabs, additional fringes extend far below the X resonance, where the refractive index varies more slowly and the response ap-proaches that of an ordinary dielectric cavity. Opti-cal thickness therefore governs the crossover from an absorptive excitonic resonance to a propagation-dominated stop band, where transmission through the slab is strongly suppressed over a finite spectral range. In the following, we use the term excitonic stop band for this finite-thickness slab regime and, after reconstructing the negative-permittivity win-dow, excitonic Reststrahlen band to emphasize the analogy to phonon-polaritonic Reststrahlen bands in ionic crystals. The thickness-dependent crossover motivates a transfer-matrix analysis of the slab transmit-tance. As summarized in Figure 2a, the model combines an effective Lorentz-oscillator dielec-tric response with optical propagation through an air/PEPI/sapphire stack and fits the resulting spec-tra to the measured transmittance. In this way, a consistent material response can be propagated through different optical thicknesses and compared directly with the thin-, intermediate-, and thick-slab spectra. The effective dielectric response was represented 3by the scalar Lorentz-oscillator form 32,33 
+
+𝜀 (𝐸 ) = 𝜀 ∞ +
+
+> 3
+
+∑︁ 
+
+> 𝑗 =1
+
+𝐴 𝑗 
+
+𝐸 20, 𝑗 − 𝐸 2 − 𝑖 Γ𝑗 𝐸 , (1) where 𝜀 ∞ is the background dielectric constant and 
+
+𝐴 𝑗 , 𝐸 0, 𝑗 , and Γ𝑗 are the oscillator strength, reso-nance energy, and damping of oscillator 𝑗 . The complex refractive index ˜𝑛 (𝐸 ) = 𝑛 (𝐸 ) + 𝑖𝑘 (𝐸 ) =√︁ 
+
+𝜀 (𝐸 ) enters the transfer-matrix calculation for the air/PEPI/sapphire stack at 45 ◦ incidence. The dominant oscillator describes the intralayer exci-ton. A weaker interlayer-related term is included phenomenologically, motivated by the IX emission feature in PL 11 and by the small transmission re-vival occasionally observed within the suppressed region for slabs near 200 nm thickness. A third, higher-energy term captures the onset of band-to-band absorption. The oscillator parameters were obtained by minimizing the mismatch between cal-culated and measured transmittance spectra across the thickness series. Details of the optimization procedure and parameter constraints are provided in the Supporting Information. Figure 2b shows that this effective dielectric re-sponse reproduces the qualitatively different trans-mittance spectra observed across the thickness range. The Lorentzian-like excitonic minimum of the 24 nm slab, the broad near-zero-transmission plateau and compressed low-energy fringes of the 
+
+388 nm slab, and the dense fringe pattern extending far below the resonance in the 18 .0 𝜇 m slab are all captured within the same transfer-matrix descrip-tion. The thickness-dependent crossover therefore follows from an intralayer-exciton-dominated di-electric response propagated through different op-tical thicknesses, rather than from distinct physical mechanisms in the thin-, intermediate-, and thick-slab regimes. For each analyzed slab, the transfer-matrix fit yields an effective complex dielectric response, 
+
+𝜀 = 𝜀 1 + 𝑖𝜀 2, from which a modal representation of the slab electrodynamics can be constructed. Fig-ure 3a shows the corresponding bulk-like polariton dispersion 𝑘 (𝜔 ) = 𝜔 ˜𝑛 (𝜔 )/ 𝑐 derived from the fitted dielectric function of a representative 520 nm slab at 10 K, together with the vacuum light cone and the associated finite-slab branches. Figure 3b expands the energy scale around the stop band and excitonic manifold, and compares this p-polarized slab-mode structure with the measured transmittance, plotted vertically at the right side of the graph. At the 45 ◦
+
+incidence used in the transfer-matrix fits, the inci-dent field fixes a specific in-plane momentum 𝑘 ∥ ,corresponding to the dashed 45 ◦ vacuum light line shown in Figures 3a,b. On the low-energy side of the stop band, the observed transmittance maxima track these resonant slab branches. Their com-pression toward the intralayer exciton reflects the strong curvature of the lower polariton branch in Figure 3a as it approaches the excitonic resonance. In this representation, the light blue shaded interval with Re (𝜀 ) < 0 corresponds to the excitonic stop band, where in-plane field penetration through the slab is strongly inhibited. 8.50 cm = 245 pt         
+
+> T=10 K24 nm
+> 18.0 μm
+> 388 nm
+> 1
+> 0
+> expt
+> fi t
+> 1
+> 0
+> norm. transmittance
+> 1
+> 0
+> 2.6 2.4 2.2
+> photon energy / eV
+> ωXωIX ωg
+> 1.0
+> 0.5
+> 0.0
+> -0.5
+> 10 86420
+> material
+> response parameter
+> extraction
+> χ 2(P)
+> I0
+> IRIT
+> θ
+> optical
+> propagation
+> 12
+
+b
+
+a
+
+Figure 2: Transfer-matrix modeling of the thickness-dependent transmittance. (a) Model workflow combining an effective Lorentz-oscillator dielectric response, transfer-matrix propagation through the air/PEPI/sapphire stack, and parameter extraction from measured spectra. (b) Normalized transmittance spectra and fits at 𝑇 = 10 K for representative slab thicknesses of 24 nm, 388 nm, and 18 .0 𝜇 m.
+
+The same per-flake dispersion also provides a model-derived measure of exciton–photon hy-bridization in the slab. For each fitted 10 K spec-42.6    
+
+> 2.5
+> 2.4
+> 2.3
+> 2.2
+> 10
+> k||/107
+> m-1
+> 1.00.0
+> T(expt)
+> 8.50 cm = 245 pt
+
+a b c
+
+> X
+> IX
+> Eg
+
+d           
+
+> 5
+> 0
+> ε''
+> 2.6 2.5 2.4 2.3
+> photon energy / eV
+> 15
+> 0
+> -15
+> ε'
+> expt (10K)
+> expt (300K)
+> ℜ(ε)ℑ(ε)
+> 10
+> 5
+> 0
+> counts
+> 0.8 0.6 0.4 0.2 0.0
+> Rabi splitting / eV
+> 3
+> 2
+> 1
+> 0
+> energy / eV
+> 3210
+> k||/107
+> m-1
+> polaritondispersion
+> uncoupledbulkphoton
+> vacuumlightcone
+> 45ºlightline
+> slabex.-pol.modes
+> /
+
+k|| 10 7 m−1 /k|| 10 7 m−1 T (expt) 
+
+> Reststrahlen band
+
+T = 10 K
+
+ℏΩR        
+
+> d=520 nm
+> T=10 K
+> ℜ(ε)<0
+> LO X
+
+Figure 3: (a) Bulk-like polariton dispersion derived from the reconstructed dielectric response of a representative 
+
+520 nm slab at 10 K, together with the vacuum light cone (solid blue), the corresponding 45 ◦ light line (dashed blue), the uncoupled bulk-photon dispersion (green dashed), and the calculated finite-slab exciton–polariton branches (gray). The resulting Rabi splitting between upper and lower branches is indicated by ℏΩ 𝑅 . (b) Mode structure calculated for the fitted 𝑑 = 520 nm slab at 10 K, shown together with the corresponding experimental transmittance spectrum. The blue background marks the spectral interval with Re (𝜀 ) < 0. Labels indicate the intralayer exciton (X), interlayer exciton ( 𝐼 𝑋 ), the model-derived longitudinal band-edge response ( LO X), and the band-edge energy (𝐸 𝑔 ). (c) Histogram of Rabi splittings extracted at 10 K from all analyzed slabs of different thicknesses. (d) Pointwise median of real and imaginary parts of the reconstructed dielectric function at 10 and 300 K. The blue shaded region again marks the range of negative Re (𝜀 ) at 10 K, corresponding to the excitonic Reststrahlen band. 
+
+trum, we determine ℏΩ 𝑅 from the minimum en-ergy separation between the upper and lower 𝑘 (𝜔 )
+
+branches, as illustrated for the 520 nm slab in Fig-ure 3a. Across the analyzed slabs, this procedure yields characteristic values around ℏΩ 𝑅 ≈ 0.5 eV, with the histogram in Figure 3c showing the cor-responding distribution. The resulting spread pri-marily reflects uncertainties in the transfer-matrix reconstruction. Relative to the intralayer-exciton energy 𝐸 X = ℏ 𝜔 X ≈ 2.34 eV, the corresponding ratio is Ω𝑅 /𝜔 X = ℏΩ 𝑅 /𝐸 X ≈ 0.2. Expressed in the common cavity-QED convention 𝑔 /𝜔 X, where 
+
+Ω𝑅 ≈ 2𝑔 , this corresponds to 𝑔 /𝜔 X ≈ 0.1, near the commonly used threshold for the ultrastrong-coupling regime. 34,35 
+
+The Rabi splitting defined in this way is con-ceptually distinct from the values commonly re-ported in layered-perovskite DBR microcavities, where the splitting quantifies the avoided crossing between a selected cavity mode and a single exci-tonic resonance. 12,13 The larger effective splitting obtained here reflects the collective oscillator re-sponse of the intralayer-exciton manifold through-out the optically active slab. It should therefore be understood as a model-derived splitting of the slab polariton dispersion, extracted from the recon-structed dielectric response, rather than as a direct experimental observable or a single-mode micro-cavity Rabi splitting. Figure 3d summarizes the pointwise median ef-fective dielectric functions obtained from the fitted spectra across the analyzed slabs. At 10 K, Im (𝜀 )
+
+shows a pronounced resonance at the intralayer ex-citon, while Re (𝜀 ) crosses into a bounded negative-permittivity window over the same spectral range as the excitonic stop band. The shaded regions indicate the pointwise median absolute deviation (MAD) across the analyzed slabs. At 300 K, the excitonic resonance is broader and the dielectric response is corresondingly reduced. Nevertheless, 
+
+Re (𝜀 ) still crosses zero and remains negative over a narrower interval, consistent with the weakened but persistent stop-band structure at higher temper-atures shown in Figure 1c. The combined evidence—a thickness-dependent near-zero-transmission interval, compressed low-52.48                            
+
+> 2.44
+> 2.40
+> 2.36
+> 2.32
+> 2.28
+> 10
+> x107
+> 101960196
+> 2
+> 1
+> 0
+> energy / eV
+> distance to surface / nm /k||10 7m−1T(expt)
+> X
+> IX
+> Lε=0
+> |EL|2
+> |ET|2
+> 840-4
+> 2.48
+> 2.44
+> 2.40
+> 2.36
+> 2.32
+> 2.28
+> 10
+> x107
+> 1019601960
+> 2
+> 1
+> 0
+> LO X
+> energy / eV
+> distance to surface / nm
+> X
+> IX
+> /k||10 7m−1T(expt)
+> abcd
+> ℜ(ε) < 0
+> |E⊥|2
+> |E|||2
+> ε(E)
+> ℜ(ε)
+> ℑ(ε)
+
+Figure 4: Calculated 𝑝 -polarized field distributions, 𝑝 -polarized slab-mode structure and dielectric response for a 
+
+196 nm PEPI slab on a substrate. Panels (a,b) show false color plots of the field intensities parallel and perpendicular to the slab surface, |𝐸 ∥ |2 and |𝐸 ⊥ |2, as functions of photon energy and distance from the air/slab interface. Panel (c) shows the corresponding slab-mode dispersion together with the experimental transmittance spectrum, using the same color code convention as in Figure 3b. Within the negative-Re (𝜀 ) stop-band region, |𝐸 ∥ |2 is strongly suppressed inside the slab, whereas |𝐸 ⊥ |2 develops a slab-spanning high-field feature near the upper 𝜀 = 0 crossing, labeled LO X for its longitudinal, near-zero-permittivity character. Panel (d) shows the fitted dielectric response, 
+
+𝜀 (𝐸 ), plotted on the same energy axis, with the interval Re (𝜀 ) < 0 shaded in blue. 
+
+energy fringes near the intralayer exciton, and a bounded negative-Re (𝜀 ) window—supports iden-tifying the stop-band regime in PEPI as an excitonic Reststrahlen band in the visible. 28,36 We there-fore analyze the internal field distribution in slabs near 200 nm thickness, where the optical response crosses over from a primarily excitonic transmis-sion dip to a developed stop-band regime. De-composing the field into components parallel and perpendicular to the slab surface reveals distinct field structures within and near the negative-Re (𝜀 )
+
+interval. Figure 4 combines the calculated 𝑝 -polarized field distribution at 45 ◦ incidence, the correspond-ing dielectric response, the 𝑝 -polarized slab-mode dispersion, and the measured transmittance for a representative 196 nm slab. This allows the stop-band regime to be viewed simultaneously in real space, in (𝐸, 𝑘 ) space and in 𝜀 (𝐸 ). We resolve the field inside the slab into components paral-lel and perpendicular to the slab surface, |𝐸 ∥ |
+
+(in-plane, tangential) and |𝐸 ⊥ | (out-of-plane, nor-mal). The in-plane component |𝐸 ∥ |2 captures the propagating, cavity-like field responsible for the Fabry–Pérot-type interference pattern, whereas the surface-normal component |𝐸 ⊥ |2 highlights the longitudinal, near-zero-permittivity response near the high-energy edge of the negative-Re (𝜀 ) win-dow. Within the stop-band region, marked by the blue shaded interval in Figures 4c and d, |𝐸 ∥ |2 shown in Figure 4a is strongly suppressed inside the PEPI slab and decays rapidly away from the air/slab in-terface. This evanescent profile is the real-space representation of the stop-band response associ-ated with the negative-Re (𝜀 ) window. The Fabry– Pérot-like standing-wave pattern re-emerges on the low-energy side of the stop band, where Re (𝜀 ) be-comes positive again. The normal field component shows complemen-tary behavior near the high-energy edge of the stop band. As shown in Figure 4b, |𝐸 ⊥ |2 develops a pronounced high-field feature near 2.43 eV, about 
+
+15 meV above the upper end of the stop band, and extends through the entire slab thickness. The ap-parent field enhancement and its small offset are consistent with a longitudinal Berreman-like thin-film response: 21 in a lossy finite slab at oblique incidence, the longitudinal-field maximum is gov-erned by −Im (1/𝜀 ) and by the full slab geometry, rather than by the bulk Re (𝜀 ) = 0 condition alone. It can therefore be shifted by damping, slab thick-ness, substrate boundary conditions, and the finite in-plane momentum of the incident 𝑝 -polarized 6field. Because this response appears most clearly in the calculated driven field distribution and not as a well-separated branch in the slab-mode disper-sion, we use the label LO X only as a descriptor for a model-derived longitudinal band-edge response, rather than as the name of an independently ob-served slab eigenmode. A weaker field feature is also obtained for slabs with thicknesses near 200 nm that show faint in-ternal structure within the stop-band region. Its energy overlaps with the weak interlayer-exciton doublet near 2.38 eV seen in the low-temperature PL of Figure 1b, which has been associated with the layer inequivalence of the AB-type stacking order in PEPI. 11 Within the effective dielectric model, this feature can be described as an interlayer-related (IX) perturbation of the longitudinal field response. Because it is weak and thickness-sensitive, how-ever, we treat it as a secondary observation. Transmission spectroscopy and transfer-matrix modeling show that PEPI slabs cross over from a Lorentzian-like excitonic thin-film response to a thickness-enabled stop-band regime with near-zero transmission and strongly compressed low-energy Fabry–Pérot-like fringes. The reconstructed di-electric response contains a finite negative-Re (𝜀 )
+
+interval over the same spectral range. The cor-responding mode and field analysis further links this regime to slab exciton–polariton structure, sup-pressed in-plane field penetration, and a longitudi-nal band-edge response near the high-energy 𝜀 = 0
+
+edge. 
+
+# 3 Conclusion 
+
+We have shown that (PEA )2PbI 4 slabs exhibit a thickness-dependent crossover from a thin-film excitonic absorption feature to a broad visible-frequency stop-band response governed by the strong intralayer-exciton manifold, with the char-acteristic signatures of an excitonic Reststrahlen band in the visible. 28,36 The measured transmission spectra are consistently described by a transfer-matrix model with an excitonic dielectric response that develops a finite interval of negative Re (𝜀 )
+
+at low temperature. From the same fitted dielec-tric response, the slab-polariton dispersion yields a model-derived Rabi splitting ℏΩ 𝑅 ≈ 0.5 eV, cor-responding to 𝑔 /𝜔 X ≈ 0.1 near the commonly used threshold for the ultrastrong-coupling regime. This splitting reflects the collective oscillator re-sponse of the intralayer-exciton manifold across the slab and is conceptually distinct from the single-mode Rabi splittings reported for layered-perovskite DBR microcavities. 35 
+
+An important implication is that the pronounced spectral undulations observed in slabs with aclear stop-band signature arise from the slab elec-trodynamics of a strongly dispersive excitonic medium, including thickness-dependent interfer-ence, model-derived exciton–polariton mode struc-ture, and the formation of the negative-permittivity stop-band regime. In this thickness range, they are therefore better viewed as slab-electrodynamic features than as a direct spectral map of the es-tablished layer-resolved excitonic fine structure 
+
+D𝐿 , X𝐿 , Y𝐿 , Z𝐿 with 𝐿 ∈ { 1, 2}. This distinction matters more broadly for the interpretation of re-flectance and transmittance spectra in layered per-ovskites, where slab-optical and polaritonic effects can mimic or obscure intrinsic excitonic fine struc-ture. The reconstructed dielectric response, modal analysis, and calculated field maps together indi-cate that the low-temperature stop-band regime is accompanied by suppressed in-plane field pene-tration and a driven normal field enhancement on the high-energy side of the excitonic stop-band re-gion, analogous to Berreman-like thin-film physics near an 𝜀 ≈ 0 condition. 21 This identifies PEPI as a chemically tunable layered semiconductor plat-form in which strong excitonic resonances directly reshape slab electrodynamics, including longitudi-nal band-edge responses, without the need for an external cavity. 37 
+
+Several questions remain open. Moving be-yond the present isotropic description toward an anisotropic dielectric model will require angle-and polarization-resolved reflectance and spec-troscopic ellipsometry on the same slab geome-tries, 6,38,39 clarifying how in-plane and out-of-plane oscillator strength, damping, and dispersion shape the stop-band response. 3,40 This direction is motivated by Steger et al. , whose uniaxial analy-sis of PEPI resolved a weak out-of-plane exciton roughly 40 meV above the intralayer manifold 6—a separation matching that between the intralayer and interlayer manifolds in the low-temperature PL of Figure 1b 11 and supporting its inclusion 7as an additional weak Lorentzian oscillator. Afully anisotropic model may thus refine the mi-croscopic interpretation of the longitudinal band-edge enhancement identified here. A targeted thickness series near 200 nm would further clarify why weak interlayer-exciton structure appears most prominently in the crossover between the thin-film excitonic response and the developed stop-band regime. 
+
+# References 
+
+(1) Ishihara, T.; Takahashi, J.; Goto, T. Op-tical Properties Due to Electronic Transi-tions in Two-Dimensional Semiconductors 
+
+(CnH2n +1NH 3)2PbI 4. Phys. Rev. B 1990 , 42 ,11099–11107. (2) Tanaka, K.; Takahashi, T.; Kondo, T.; Umeda, K.; Ema, K.; Umebayashi, T.; Asai, K.; Uchida, K.; Miura, N. Electronic and Excitonic Structures of Inorganic-Organic Perovskite-Type Quantum-Well Crystal (C4H9NH 3)2PbBr 4. Jpn. J. Appl. Phys. 2005 , 44 , 5923–5932. (3) Katan, C.; Mercier, N.; Even, J. Quantum and Dielectric Confinement Effects in Lower-Dimensional Hybrid Perovskite Semiconduc-tors. Chem. Rev. 2019 , 119 , 3140–3192. (4) Blancon, J.-C. et al. Scaling Law for Exci-tons in 2D Perovskite Quantum Wells. Nat. Commun. 2018 , 9, 2254. (5) Mauck, C. M.; Tisdale, W. A. Excitons in 2D Organic–Inorganic Halide Perovskites. 
+
+Trends Chem. 2019 , 1, 380–393. (6) Steger, M.; Janke, S. M.; Sercel, P. C.; Lar-son, B. W.; Lu, H.; Qin, X.; Yu, V. W.-z.; Blum, V.; Blackburn, J. L. On the Optical Anisotropy in 2D Metal-Halide Perovskites. 
+
+Nanoscale 2022 , 14 , 752–765. (7) Tamaki, R.; Arai, Y.; Ichikawa, D.; Inoue, M.; Kunugita, H.; Ema, K. Exciton Polariton in an Organic–Inorganic Multiple-Quantum-Well Crystal (C4H9NH 3)2PbBr 4. J. Lumin. 
+
+2008 , 128 , 842–844. (8) Yamamoto, Y.; Oohata, G.; Mizoguchi, K.; Ichida, H.; Kanematsu, Y. Photolumi-nescence of Excitons and Biexcitons in 
+
+(C4H9NH 3)2PbBr 4 Crystals Under High Ex-citation Density. Phys. Status Solidi C 2012 ,
+
+9, 2501–2504. (9) Straus, D. B.; Kagan, C. R. Electrons, Ex-citons, and Phonons in Two-Dimensional Hybrid Perovskites: Connecting Structural, Optical, and Electronic Properties. J. Phys. Chem. Lett. 2018 , 9, 1434–1447. (10) Gauthron, K.; Lauret, J.-S.; Doyen-nette, L.; Lanty, G.; Al Choueiry, A.; Zhang, S.; Bréhier, A.; Largeau, L.; Mau-guin, O.; Bloch, J.; Deleporte, E. Optical Spectroscopy of Two-Dimensional Layered 
+
+(C6H5C2H4NH 3)2PbI 4 Perovskite. Opt. Ex-press 2010 , 18 , 5912–5919. (11) Grenzer, P.; Lie, F.; Eckstein, K. H.; Her-tel, T.; Leppert, L. Intra- and Interlayer Exci-tonic Fine Structure of the Two-Dimensional Perovskite (PEA )2PbI 4. 2026. (12) Wang, J.; Su, R.; Xing, J.; Bao, D.; Diederichs, C.; Liu, S.; Liew, T. C. H.; Chen, Z.; Xiong, Q. Room Temperature Co-herently Coupled Exciton–Polaritons in Two-Dimensional Organic–Inorganic Perovskite. 
+
+ACS Nano 2018 , 12 , 8382–8389. (13) Laitz, M.; Kaplan, A. E. K.; Deschamps, J.; Barotov, U.; Proppe, A. H.; García-Benito, I.; Osherov, A.; Grancini, G.; deQuilettes, D. W.; Nelson, K. A.; Bawendi, M. G.; Bulović, V. Un-covering Temperature-Dependent Exciton-Polariton Relaxation Mechanisms in Hybrid Organic-Inorganic Perovskites. Nat. Com-mun. 2023 , 14 , 2426. (14) Anantharaman, S. B.; Stevens, C. E.; Lynch, J.; Song, B.; Hou, J.; Zhang, H.; Jo, K.; Kumar, P.; Blancon, J.-C.; Mo-hite, A. D.; Hendrickson, J. R.; Jariwala, D. Self-Hybridized Polaritonic Emission from Layered Perovskites. Nano Lett. 2021 , 21 ,6245–6252. 8(15) Black, M.; Asadi, M.; Darman, P.; Seçkin, S.; Schillmöller, F.; König, T. A. F.; Darbari, S.; Talebi, N. Long-Range Self-Hybridized Exciton-Polaritons in Two-Dimensional Ruddlesden–Popper Per-ovskites. ACS Photonics 2024 , 11 , 4065– 4075. (16) Posmyk, K.; Zawadzka, N.; Dyksik, M.; Surrente, A.; Maude, D. K.; Kazimier-czuk, T.; Babiński, A.; Molas, M. R.; Par-itmongkol, W.; Mączka, M.; Tisdale, W. A.; Płochocka, P.; Baranowski, M. Quantification of Exciton Fine Structure Splitting in a Two-Dimensional Perovskite Compound. J. Phys. Chem. Lett. 2022 , 13 , 4463–4469. (17) Posmyk, K.; Dyksik, M.; Surrente, A.; Maude, D. K.; Zawadzka, N.; Babiński, A.; Molas, M. R.; Paritmongkol, W.; Mączka, M.; Tisdale, W. A.; Płochocka, P.; Baranowski, M. Exciton Fine Structure in 2D Perovskites: The Out-of-Plane Excitonic State. Adv. Opt. Mater. 2024 , 12 , 2300877. (18) Posmyk, K.; Dyksik, M.; Surrente, A.; Zalewska, K.; Śmiertka, M.; Cybula, E.; Paritmongkol, W.; Tisdale, W. A.; Pło-chocka, P.; Baranowski, M. Fine Structure Splitting of Phonon-Assisted Excitonic Tran-sition in (PEA )2PbI 4 Two-Dimensional Per-ovskites. Nanomaterials 2023 , 13 , 1119. (19) Posmyk, K.; Zawadzka, N.; Kipczak, Ł.; Dyksik, M.; Surrente, A.; Maude, D. K.; Kazimierczuk, T.; Babiński, A.; Mo-las, M. R.; Bumrungsan, W.; Chooseng, C.; Paritmongkol, W.; Tisdale, W. A.; Bara-nowski, M.; Płochocka, P. Bright Excitonic Fine Structure in Metal-Halide Perovskites: From Two-Dimensional to Bulk. J. Am. Chem. Soc. 2024 , 146 , 4687–4694. (20) Dyksik, M.; Beret, D.; Baranowski, M.; Duim, H.; Moyano, S.; Posmyk, K.; Mlayah, A.; Adjokatse, S.; Maude, D. K.; Loi, M. A.; Puech, P.; Płochocka, P. Polaron Vibronic Progression Shapes the Optical Re-sponse of 2D Perovskites. Adv. Sci. 2024 , 11 ,2305182. (21) Berreman, D. W. Infrared Absorption at Lon-gitudinal Optic Frequency in Cubic Crystal Films. Phys. Rev. 1963 , 130 , 2193–2198. (22) Vassant, S.; Hugonin, J.-P.; Marquier, F.; Gr-effet, J.-J. Berreman Mode and Epsilon Near Zero Mode. Opt. Express 2012 , 20 , 23971– 23977. (23) Do, T. T. H.; Del Granados Águila, A.; Zhang, D.; Xing, J.; Liu, S.; Prosnikov, M. A.; Gao, W.; Chang, K.; Christianen, P. C. M.; Xiong, Q. Bright Exciton Fine-Structure in Two-Dimensional Lead Halide Perovskites. 
+
+Nano Lett. 2020 , 20 , 5141–5148. (24) Posmyk, K.; Dyksik, M.; Surrente, A.; Zalewska, K.; Śmiertka, M.; Cybula, E.; Paritmongkol, W.; Tisdale, W. A.; Plo-chocka, P.; Baranowski, M. Fine Structure Splitting of Phonon-Assisted Excitonic Tran-sition in (PEA )2PbI 4 Two-Dimensional Per-ovskites. Nanomaterials (Basel, Switzerland) 
+
+2023 , 13 .(25) Mak, K. F.; Lee, C.; Hone, J.; Shan, J.; Heinz, T. F. Atomically Thin MoS 2: A New Direct-Gap Semiconductor. Phys. Rev. Lett. 
+
+2010 , 105 , 136805. (26) Li, Y.; Chernikov, A.; Zhang, X.; Rigosi, A.; Hill, H. M.; van der Zande, A. M.; Chenet, D. A.; Shih, E.-M.; Hone, J.; Heinz, T. F. Measurement of the Optical Di-electric Function of Monolayer Transition-Metal Dichalcogenides: MoS 2, MoSe 2, WS 2,and WSe 2. Phys. Rev. B 2014 , 90 , 205422. (27) Chernikov, A.; Berkelbach, T. C.; Hill, H. M.; Rigosi, A.; Li, Y.; Aslan, O. B.; Reich-man, D. R.; Hybertsen, M. S.; Heinz, T. F. Exciton Binding Energy and Nonhydrogenic Rydberg Series in Monolayer WS 2. Phys. Rev. Lett. 2014 , 113 , 076802. (28) Caldwell, J. D.; Lindsay, L.; Giannini, V.; Vurgaftman, I.; Reinecke, T. L.; Maier, S. A.; Glembocki, O. J. Low-Loss, Infrared and Ter-ahertz Nanophotonics Using Surface Phonon Polaritons. Nanophotonics 2015 , 4, 44–68. 9(29) Ma, E. Y.; Hu, J.; Waldecker, L.; Watan-abe, K.; Taniguchi, T.; Liu, F.; Heinz, T. F. The Reststrahlen Effect in the Optically Thin Limit: A Framework for Resonant Response in Thin Media. Nano Lett. 2022 , 22 , 8389– 8393. (30) Feldstein, D.; Perea-Causín, R.; Wang, S.; Dyksik, M.; Watanabe, K.; Taniguchi, T.; Plochocka, P.; Malic, E. Microscopic Pic-ture of Electron–Phonon Interaction in Two-Dimensional Halide Perovskites. J. Phys. Chem. Lett. 2020 , 11 , 9975–9982. (31) Kaiser, M.; Li, Y.; Schwenzer, J.; Jakoby, M.; Allegro, I.; Gerhard, M.; Koch, M.; Ducin-skas, A.; Richards, B. S.; Graetzel, M.; Milić, J. V.; Paetzold, U. W.; Howard, I. A. How Free Exciton–Exciton Annihilation Lets Bound Exciton Emission Dominate the Pho-toluminescence of 2D Perovskites under High-Fluence Pulsed Excitation at Cryogenic Temperatures. J. Appl. Phys. 2021 , 129 ,123101. (32) Yeh, P. Optical Waves in Layered Media ; John Wiley & Sons: New York, 1988. (33) Born, M.; Wolf, E. Principles of Optics: Electromagnetic Theory of Propagation, In-terference and Diffraction of Light ; Cam-bridge University Press: Cambridge, 1999. (34) Forn-Díaz, P.; Lamata, L.; Rico, E.; Kono, J.; Solano, E. Ultrastrong Coupling Regimes of Light–Matter Interaction. Rev. Mod. Phys. 
+
+2019 , 91 , 025005. (35) Kockum, A. F.; Miranowicz, A.; De Liber-ato, S.; Savasta, S.; Nori, F. Ultrastrong Cou-pling between Light and Matter. Nat. Rev. Phys. 2019 , 1, 19–40. (36) Paßler, N. C.; Paarmann, A. Generalized 4 
+
+×4 Matrix Formalism for Light Propagation in Anisotropic Stratified Media: Study of Sur-face Phonon Polaritons in Polar Dielectric Heterostructures. J. Opt. Soc. Am. B 2017 ,
+
+34 , 2128–2139. (37) Anantharaman, S. B. et al. Dynamics of Self-Hybridized Exciton–Polaritons in 2D Halide Perovskites. Light Sci. Appl. 2024 , 13 , 1. (38) Song, B.; Hou, J.; Wang, H.; Sidhik, S.; Miao, J.; Gu, H.; Zhang, H.; Liu, S.; Fakhraai, Z.; Even, J.; Blancon, J.-C.; Mo-hite, A. D.; Jariwala, D. Determination of Dielectric Functions and Exciton Oscillator Strength of Two-Dimensional Hybrid Per-ovskites. ACS Mater. Lett. 2021 , 3, 148–159. (39) Guo, P. et al. Hyperbolic Dispersion Aris-ing from Anisotropic Excitons in Two-Dimensional Perovskites. Phys. Rev. Lett. 
+
+2018 , 121 , 127401. (40) Li, J.; Ma, J.; Cheng, X.; Liu, Z.; Chen, Y.; Li, D. Anisotropy of Excitons in Two-Dimensional Perovskite Crystals. ACS Nano 
+
+2020 , 14 , 2156–2161. 10

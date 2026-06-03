@@ -1,0 +1,58 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-03T22:57:34.634036+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.00682v1",
+      "source": "arxiv",
+      "title": "A Visible-Frequency Excitonic Reststrahlen Band in (PEA)$_2$PbI$_4$ Slabs",
+      "abstract": "Layered halide perovskites host exceptionally strong excitons, whose optical signatures are usually interpreted as absorptive resonances on a smooth dielectric background. Strong excitons, however, can also reshape the dielectric response itself and drive the real permittivity negative, opening a reflective band: the visible, excitonic analogue of an infrared Reststrahlen band. Whether bare (PEA)$_2$PbI$_4$ slabs reach this regime has remained unclear. Here we show that low-temperature transmission of (PEA)$_2$PbI$_4$ slabs, driven by the intralayer-exciton manifold, evolves with increasing thickness from an excitonic dip into a broad near-zero-transmission interval with compressed Fabry-Pérot-like fringes. Transfer-matrix analysis with an effective Lorentz-oscillator dielectric response reproduces this crossover, reconstructs a finite negative-Re($\\varepsilon$) window, and implies near-ultrastrong exciton-photon coupling. Calculated field maps show suppressed in-plane field penetration within this interval and a driven longitudinal response near the high-energy ($\\varepsilon=0$) edge. These results identify (PEA)$_2$PbI$_4$ slabs as a cavity-free visible-frequency excitonic Reststrahlen material.",
+      "authors": [
+        "Michael Pfeufer",
+        "Patrick Grenzer",
+        "Friedrich Schöppler",
+        "Tobias Hertel"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cond-mat.mes-hall",
+        "physics.optics"
+      ],
+      "published": "2026-05-30T11:38:49+00:00",
+      "link": "https://arxiv.org/pdf/2606.00682v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Strong excitons drive real permittivity negative, revealing epsilon-near-zero transition",
+      "llm_evidence_cn": "强激子驱动实介电常数变负，揭示了介电常数近零转变",
+      "llm_evidence": "强激子驱动实介电常数变负，揭示了介电常数近零转变",
+      "canonical_evidence": "强激子驱动实介电常数变负，揭示了介电常数近零转变",
+      "llm_tldr_en": "The paper demonstrates that strong excitons in layered perovskite (PEA)2PbI4 slabs can lead to negative real permittivity and a visible-frequency excitonic Reststrahlen band, with near-zero transmission emerging from thickness-dependent Fabry-Pérot-like fringes, revealing an epsilon-near-zero regime.",
+      "llm_tldr_cn": "该论文解决了层状钙钛矿(PEA)2PbI4中强激子能否使介电常数反转的问题。通过变温透射光谱和转移矩阵方法，作者展示了随着厚度增加，透射谱从激子吸收谷演变为宽近零透射区间，并伴随压缩的Fabry-Pérot条纹。这表明强激子重塑了光学响应，在激子共振附近实现了介电常数从正到负的过渡，即epsilon近零状态。该工作揭示了可见光波段的激子Reststrahlen带，为可见光零折射率材料和激子-极化激元研究提供了新平台。",
+      "llm_tldr": "该论文解决了层状钙钛矿(PEA)2PbI4中强激子能否使介电常数反转的问题。通过变温透射光谱和转移矩阵方法，作者展示了随着厚度增加，透射谱从激子吸收谷演变为宽近零透射区间，并伴随压缩的Fabry-Pérot条纹。这表明强激子重塑了光学响应，在激子共振附近实现了介电常数从正到负的过渡，即epsilon近零状态。该工作揭示了可见光波段的激子Reststrahlen带，为可见光零折射率材料和激子-极化激元研究提供了新平台。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "permittivity approaching zero in optical materials",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
