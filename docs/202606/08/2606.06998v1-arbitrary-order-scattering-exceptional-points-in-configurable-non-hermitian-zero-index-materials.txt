@@ -1,0 +1,2133 @@
+Title: 2606.06998v1.pdf
+
+URL Source: https://arxiv.org/pdf/2606.06998v1
+
+Published Time: Mon, 08 Jun 2026 00:35:11 GMT
+
+Number of Pages: 35
+
+Markdown Content:
+1
+
+# Arbitrary -Order  Scattering Exceptional Points in Configurable 
+
+# Non -Hermitian Zero -Index Materials 
+
+Yucheng Xu a, Ling Yin a, Yongxing Wang b,*, Jie Luo a,c,*
+
+> a
+
+School  of Physical Science and Technology, Soochow University, Suzhou 215006, China 
+
+> b
+
+Zhangjiagang Campus, Jiangsu University of Science and Technology, Zhangjiagang 215600, 
+
+China 
+
+> c
+
+Jiangsu Physical Science Research Center, Nanjing 210093, China 
+
+*Email : 201900000107@just.edu.cn (Yongxing Wang); luojie@suda.edu.cn (Jie Luo) 
+
+ABSTRACT : Scattering exceptional points (EPs)  are non -Hermitian degeneracies  where  the 
+
+eigenvalues and eigenvectors of scattering matrices coalesce,  enabling  many intriguing 
+
+phenomena in optical systems.  Higher -order  scattering  EPs  are particularly notable for their 
+
+ultrasensitive response to perturbations, yet achieving flexible, arbitrary -order control remains 
+
+challenging . Here, we propose a configurable non -Hermitian  zero -index material  (ZIM) 
+
+network that  enables  arbitrary -order scattering EPs, as  rigorously  proved  theoretically  and 
+
+validate d numerically . Specifically, we  show  that in an  𝑁 -port non -Hermitian ZIM network 
+
+embedded with loss/gain dopants , the maximum  ac hievable  EP order is  𝑁 , and the order can 
+
+be flexibly tuned from 2 to  𝑁  or completely  eliminated  by adjusting the dopants.  Furthermore, 
+
+we compare  conventional  coherent perfect absorption with  absorbing  EP s of different orders .
+
+Although  both achieve perfect absorption of all incident waves,  a second -order EP already 
+
+outperforms coherent perfect absorption, and higher -order EPs provide further power‑law 
+
+enhancement . These findings establish a pathway toward realizing arbitrary -order EPs in open 
+
+scattering systems, holding significant promise for advanced sensing applications .
+
+KEYWORDS:  Excep tional poi nts; Scattering matrix; Zero -index materi als; Photonic doping ;
+
+Enhanced sensitivity 2
+
+INTRODUCTION 
+
+Exceptional points (EPs) are branch -point singularities in the parameter space of non -Hermitian 
+
+systems, at which two or more eigenvalues and their associated eigenvectors simultaneously 
+
+coalesce  1-7. In optical systems,  EPs can be broadly categorized into two related but 
+
+fundamentally distinct classes : resonant EPs and scattering EPs . Resonant EPs correspond to 
+
+degeneracies of the non -Hermitian Hamiltonian (or the eigenvalue problem  of  quasinormal 
+
+modes) , and are intrinsic to the modal structure of open systems, typically  defined  in the 
+
+complex frequency plane  1-3. Scattering EPs, by contrast, arise as degeneracies of the scattering 
+
+matrix  under real -frequency excitation , and manifest in  physical  observables such as reflection 
+
+and transmission  1-3. Although these two types of EPs  originate from  distinct theoretical 
+
+frameworks , they  both  give rise to a  variety  of remarkable  physical  phenomena, including 
+
+anomalous transmission or reflection  8-14 , cloaking  15 -17 , lasing  18 -21 , coherent perfect absorption 
+
+(CPA)  22 -27 , enhanced sensing capabilities  7, 28 -33 , and polarization manipulation  34 -36 .
+
+Higher -order EPs  25, 31, 37 -46 , associated with  the coalescence of multiple eigenvalues, 
+
+provide  a promising  route to  substantially  enhance  the sensitivity of optical systems to 
+
+perturbations. An  𝑁 th -order EP exhibits an  𝑁 th -root dependence of eigenvalue splitting on 
+
+perturbations  7, 28 -33 , making  such degeneracies particularly attractive  for sensing and detection 
+
+applications.  In systems operating  near  a resonant EP , the  perturbation -induced  frequency 
+
+splitting  serves as the primary  observable , and higher -order resonant EPs have been shown to 
+
+produce  larger frequency splitting and  thus  greatly enhanced sensitivity  7, 28 . In principle, 
+
+resonant EPs of arbitrary order can be realized by increasing the number of coupled resonators 
+
+with appropriately  engineered  parameters, offering flexible sensing capabilities  42 -45 . Very 
+
+recently, ultrasensitive  responses have  also been  reported  in systems operating near  higher -
+
+order scattering EPs  25 , where  perturbations can induce pronounced variations in output 
+
+intensity at a fixed excitation frequency, particularly in the vicinity of absorbing EPs . However, 
+
+despite these advances, achieving flexible control and systematic realization of scattering EPs 
+
+of  arbitrary order remains a significant challenge. 
+
+In this work,  we propose a configurable non -Hermitian zero -index material (ZIM) network 
+
+that enables  the realization of scattering EPs of arbitrary order , as  demonstrated through 3
+
+rigorous theoretical analysis and numerical validation . ZIMs  47 -54 , characterized by  near -zero 
+
+permittivity and/or permeability,  support  coherent interference  among waves incident from 
+
+multiple channels  25, 55 -57 , and their  effective electromagnetic response  can be  readily tailored 
+
+via embedded dopants  17, 58 -62 . Specifically , we  show that in an  𝑁 -channel  non -Hermitian ZIM 
+
+network  incorporating  with loss/gain dopants, the maximum  attainable order of a scattering EP 
+
+is  𝑁  , and the  EP  order can be flexibly tuned from 2 to  𝑁  , or completely eliminated , by 
+
+adjusting the dopants. Furthermore, we compare conventional  CPA  with absorbing EPs of 
+
+different orders.  While  both  enable complete absorption of incident waves , a 2nd -order EP 
+
+already outperforms CPA, and higher -order EPs provide further power‑law enhancement .
+
+These  results  establish a pathway toward realizing  and controlling  arbitrary -order  scattering 
+
+EPs in open systems,  paving the way for advanced sensing functionalities .
+
+RESULTS 
+
+Figure 1.  (a) Schematic of  a configurable non -Hermitian ZIM network. A central ZIM  is 
+
+connected to  𝑁  channels, each comprising a hollow straight section for wave input and output, 
+
+and a ZIM -filled region interfacing with the central ZIM.  The  ZIM components within the 
+
+channels are embedded with cylindrical loss/gain dopants. These doped ZIMs can be 
+
+homogenized as  effective ENZ media ( wit h 𝜀 eff  ≈ 0 and tunable  𝜇 eff ) or MNZ media (with 
+
+𝜇 eff  ≈ 0 and tunable  𝜀 eff ), depending on the orientation of dopants (insets). (b) Corresponding 
+
+two -dimensional  effective -medium model.  The label “C” denote s a channel. 
+
+Model  and  EP analysis . Figure 1 (a)  illustrates the studied  non -Hermitian ZIM  ne twork .
+
+It consists of a central ZIM  region characterized by near -zero permittivity and permeability 4
+
+(𝜀  ≈ 𝜇  ≈ 0), which  is connected to  𝑁  waveguide  channels . This central  ZIM  plays a crucial 
+
+role in  mediating coherent  interference  among waves incident from different channels . Each 
+
+channel has a square cross -section  (side  length  𝑤  ) and  comprises two  sections : a hollow 
+
+straight section for wave input and output, and a ZIM -filled region  of  length  𝑙  that  interfaces 
+
+with the central ZIM.  All  ZIM components  within the channels are identical , and  they  share the 
+
+same  material properties  as the central ZIM , but are  embedded with cylindrical  nonmagnetic 
+
+loss/gain dopants  (cross -sectional  radius  𝑟 d,𝑚 , relative permittivity  𝜀 d,𝑚  for the dopant  in the 
+
+𝑚  th channel).  We note that such ZIM s with  𝜀  ≈ 𝜇  ≈ 0 can be  practically  realized using 
+
+photonic crystals  17, 63, 64  or metamaterials  65 .
+
+We consider transverse -magnetic polarization with magnetic field  oriented along the  𝑧 
+
+direction  and assume  a time variation term of  e−𝑖𝜔𝑡 , where  𝜔  is the angular frequency.  The 
+
+upper and lower boundaries of the network  are  modeled  as perfect magnetic conductors  (PMCs) ,
+
+while  its  side  boundaries are perfect electric conductors  (PECs) . Although PMCs are assumed 
+
+for simplicity, effective PMC boundaries can be realized experimentally using high -impedance 
+
+surfaces  66 -68 , grooved metallic structures  69 , all -dielectric metasurfaces supporting magnetic 
+
+resonances  70 -72 , or PEC walls placed a quarter wavelength away from the ZIM  59, 73 . Under 
+
+these conditions, only the fundamental transverse electromagnetic mode, characterized by the 
+
+magnetic field component  𝐻 𝑧  , is  supported in each channel . Within this framework,  the doped 
+
+ZIM s can be homogenized  into  effective media  [insets of Fig. 1(a) ] according to photonic 
+
+doping theory  58 . Specifically,  a vertically doped ZIM  behaves as  an effective epsilon -near -zero 
+
+(ENZ) medium , with a n effective relative permittivity  𝜀 eff ,𝑚  ≈ 0 and  a dopant -dependent 
+
+effective relative permeability  𝜇 eff ,𝑚  expressed as  58 ,
+
+𝜇 eff ,𝑚  = 2π𝑟 d,𝑚 𝐽 1(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+> 𝑘 0𝑙𝑤 √𝜀 d,𝑚 𝐽 0(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+, (1) 
+
+where  𝑘 0 = 𝜔 /𝑐  is the free -space wavenumbe r,  𝑐  is the  speed  of light in vacuum , and 
+
+𝐽 0(… ) and  𝐽 1(… ) denote  the  zeroth - and first -order Bessel functions , respectively.  In contrast, 
+
+a horizontally doped ZIM  can be homogenized  as  an effective mu -near -zero (MNZ) medium ,
+
+with a n effective relative permeability  𝜇 eff ,𝑚  ≈ 0 and  a dopant -dependent effective relative 
+
+permittivity  𝜀 eff ,𝑚  given by  58 ,
+
+𝜀 eff ,𝑚  = 2π𝑟 d,𝑚 √𝜀 d,𝑚 𝐽 1(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 ) 
+
+> 𝑘 0𝑙𝑤 𝐽 0(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+. (2) 5
+
+Detail ed  derivations  of  𝜇 eff ,𝑚  and  𝜀 eff ,𝑚  are provided in  Supporting Information Section 1 .
+
+The distinct homogenization behaviors  for the two  doping configurations  can  be understood 
+
+from the underlying field distributions. For vertically oriented dopants (aligned with the 
+
+magnetic field), the uniformity of the magnetic field within the ZIM host is preserved, while 
+
+the electric  field  is perturbed  74 , resulting in an effective ENZ medium with spatially uniform 
+
+magnetic field. Conversely, for horizontally oriented dopants (aligned with the electric field), 
+
+the electric field distribution remains nearly uniform, while the magnetic  field  is modified, 
+
+leading to an effective MNZ medium with a uniform electric field profile. 
+
+Using  this effective -medium description, the system can be reduced to a two -dimensional 
+
+model  on  the  𝑥𝑦  plane  [Fig. 1(b)] . The wave behavior within th is two -dimensional  𝑁 -channel 
+
+ZIM network can be described by an  𝑁  × 𝑁  scattering matrix  𝐒 . To derive  an explicit form 
+
+of  𝐒 , we  consider a general configuration in which  𝑀  channels  (indexed from 1 to  𝑀 ) are 
+
+filled with effective  MNZ  media,  and  the remaining  𝑁  − 𝑀  channels  (indexed from  𝑀  + 1
+
+to  𝑁 ) are filled with effective  ENZ  media , realized via orientation -controlled photonic doping .
+
+The complex  amplitudes o f the  input and output magnetic  field s are denoted by  𝐚  =
+
+(𝑎 1, 𝑎 2, … , 𝑎 𝑁 ) and  𝐛  = (𝑏 1, 𝑏 2, … , 𝑏 𝑁 ) , respectively,  and are related  through  𝐛  = 𝐒𝐚  . By 
+
+applying  Faraday’s law, Ampère’s circuital law, and boundary conditions, the scattering matrix 
+
+can be  derived  in a closed form as a rank -1 perturbation of a diagonal matrix  (see Supporting 
+
+Information Section 2) :
+
+𝐒  = 𝐃  − 𝜉 𝐯 𝐯 𝑇 , (3) 
+
+where  𝐃  = diag (1 + 2𝛼 1, 1 + 2𝛼 2, … ,1 + 2𝛼 𝑁 ) , 𝐯  = (𝛼 1, 𝛼 2, … , 𝛼 𝑁 )𝑇  𝜉  = 2/
+
+(∑ 𝛼 𝑚  
+
+> 𝑀
+> 𝑚 =1
+
+− (𝑁  − 𝑀 ) + 𝑖𝛽 ) , 𝛼 𝑚  = 1/(𝑖 𝑘 0𝜀 eff ,𝑚 𝑙  − 1) when  (0 < 𝑚  ≤ 𝑀  < 𝑁 ) , 𝛼 𝑚  =
+
+−1 when  (𝑀  < 𝑚  ≤ 𝑁 ) , and  𝛽  = 𝑘 0 ∑ 𝜇 eff ,𝑚  
+
+> 𝑁
+> 𝑚 =𝑀 +1
+
+𝑙  . Here,  𝜀 eff ,𝑚  (or  𝜇 eff ,𝑚  ) is the 
+
+relative permittivity  (or permeability)  of the effective MNZ (or ENZ) medium in the  𝑚  th 
+
+channel.  The  parameters  𝛼 𝑚  and  𝛽 , governed by  𝜀 eff  and  𝜇 eff , respectively,  characterize the 
+
+effective response of the MNZ and ENZ media within the channels .
+
+The conditions for  the  emergence of  EP s can be derived by analyzing  the  characteristic 
+
+polynomial of the scattering matrix  𝐒 , which  is given by 
+
+𝑃 (𝑠 ) = 𝜉 [∏ (𝑠  − 1 − 2𝛼 𝑚 )𝑀  
+
+> 𝑚 =1
+
+](𝑠  + 1)(𝑁 −𝑀 −1)𝑄 (𝑠 ), (4) 6
+
+with 
+
+𝑄 (𝑠 ) = − (𝑠 −1)(𝑁 −𝑀 ) 
+
+> 2
+
++ 𝑖𝛽 (𝑠 +1) 
+
+> 2
+
++ ∑ (𝑠  + 1) ( 𝛼 𝑚 
+
+> 2
+> 𝑠 −1−2𝛼 𝑚
+
++ 𝛼 𝑚  
+
+> 2
+
+)𝑀  
+
+> 𝑚 =1
+
+, (5) 
+
+where  𝑠  denotes an  eigenvalue of  𝐒 . A 𝑘 th -order EP corresponds to a  𝑘 -fold root of  𝑃 (𝑠 ) =
+
+0 accompanied by the coalescence of the associated eigenvectors . Although  𝑠  = −1 is an 
+
+(𝑁  − 𝑀  − 1)-fold root of  𝑃 (𝑠 ) = 0, its eigenspace has dimension  𝑁  − 𝑀  − 1; it therefore 
+
+represents  a diabolic point  (DP)  75, 76  rather than an EP.  The remaining  𝑀  + 1 eigenvalues  are 
+
+determined by  the equation  𝑄 (𝑠 ) = 0 . Since  the rational  function  𝑄 (𝑠 ) contains  𝑀  + 1
+
+independent complex parameters  {𝛽 , 𝛼 1, 𝛼 2, … , 𝛼 𝑀 } that  can be tuned via the dopants , higher -
+
+order degeneracies  can be engineered at a prescribed  target eigenvalue  𝑠 EP . Specifically,  the 
+
+conditions  for  𝑘  (𝑘  ≤ 𝑀  + 1) eigenvalue s to coalesce  at  𝑠 EP  are 
+
+𝑄 (𝑠 EP ) = 0 and  𝜕 𝑛 𝑄 (𝑠 ) 
+
+> 𝜕 𝑠 𝑛
+
+|𝑠 =𝑠 EP 
+
+= 0 (𝑛  = 1,2, … , 𝑘  − 1), (6) 
+
+which  constitute  𝑘  constraints  in  the  (𝑀  + 1) -dimensional complex parameter space . For 
+
+𝑘  ≤ 𝑀  + 1, these constraints can  generally  be satisfied  for any  𝑠 EP , yielding a  set of solution s
+
+{𝛽 , 𝛼 1, 𝛼 2, … , 𝛼 𝑀 } that  correspond to specific ZIM network configuration s (see Supporting 
+
+Information Section 3 ). Under these conditions,  𝑠 EP  becomes a root of multiplicity  𝑘 , leading 
+
+to the  degeneracy  of  𝑘  eigenvalues at  𝑠 EP . Moreover , for  th ese  𝑘  degenerate  eigenvalue s,
+
+the ir  eigenvectors  become linearly dependent and collapse onto a single vector  as 
+
+𝐮  = (𝐃  − 𝑠 EP 𝐈 )−1 𝐯 , (7)
+
+where  𝐈  is  the  identity matrix.  The  simultaneous coalescence of eigenvalues and their 
+
+eigenvectors  confirms  th e emergence  of  a 𝑘 th -order EP  in  an  𝑁 -channel ZIM network  under 
+
+appropriate parameter tuning .
+
+Table 1 . Maximum  achievable  EP order for  different configurations in an  𝑁  -channel  non -
+
+Hermitian  ZIM network. 
+
+Number of MNZ 
+
+channels 
+
+Number of ENZ 
+
+channels  Maximum EP order 
+
+𝟎  𝑁  None ( DP  of order  𝑁  − 1)
+
+𝑴  (𝟎  < 𝑴  < 𝑵  − 𝟏 ) 𝑁  − 𝑀  𝑀  + 1
+
+𝑵  − 𝟏  1 𝑁 
+
+𝑵  0 𝑁  − 17
+
+Equations (6)  and (7)  not only specify the conditions for realizing a  𝑘 th -order EP, but also 
+
+establish a general design principle. In an  𝑁  -channel ZIM network with  𝑀  (0 < 𝑀  < 𝑁  )
+
+MNZ channels and  𝑁  − 𝑀  ENZ channels,  EP s of order up to  𝑀  + 1 can be achieved. In 
+
+particular, a configuration with  𝑀  = 𝑁  − 1 support s an  𝑁  th -order  scattering  EP.  Table 1 
+
+summarizes the maximum achievable EP order for different configurations in an  𝑁 -channel 
+
+ZIM network. Detail ed  proofs are provided in Supporting Information Section 3. 
+
+We note that two special cases, not captured by Eqs. (6) and (7), require separate 
+
+consideration. First, when  𝑀  = 0 (all channels filled with  effective  ENZ media), no EP arises .
+
+In t his case , the  magnetic field  is uniform  across  the central ZIM and all doped ZIMs  within 
+
+channel s, imposing  the  constraint  1 + 𝑆 𝑛𝑛  = 𝑆 𝑚𝑛  (𝑚  ≠ 𝑛 ) on scattering matrix  𝐒 . Under this 
+
+condition , the eigenvalues of  𝐒  are  𝑠 1 = 𝑁  − 1 + ∑ 𝑆 𝑛𝑛  
+
+> 𝑁
+> 𝑛 =1
+
+and  𝑠 2 = 𝑠 3 = ⋯ = 𝑠 𝑁  = −1.
+
+Although  𝑁  − 1 eigenvalues  are  degenerate, their eigenvectors  remain linearly independent ,
+
+yielding  an  (𝑁  − 1)-fold DP at  𝑠  = −1.
+
+This  behavior  can be understood intuitively.  In the all -ENZ network, only the  in -phase 
+
+excitation , corresponding to the eigenv ector  𝐮  = (1,1, … ,1)𝑇  of  𝐒 , can couple energy into the 
+
+network  and interact with the gain/loss y dopants  59, 60 . In contrast, all out -of -phase excitations ,
+
+corresponding to the remaining  𝑁  − 1 out -of -phase  eigenstates of  𝐒  , produce a vanishing 
+
+magnetic field inside the ZIM region  and therefore cannot couple  with  the dopants,  behaving 
+
+analogously  to dark states . Incident waves associated with these  out -of -phase  excitations  are 
+
+completely reflected and share the same eigenvalue  𝑠  = −1. Consequently, only the  in -phase 
+
+eigenstate  is affected by the non -Hermitian tuning,  whereas  the  remaining  (𝑁  − 1)-dimensional 
+
+subspace remains frozen, giving rise to an ( 𝑁  − 1)-fold DP rather than an EP.  Physically, these 
+
+out -of -phase  eigenstates  cannot “see” the non -Hermitian tuning and therefore retain their 
+
+Hermitian degeneracy.  From this perspective, the absence of EPs originates from the field -
+
+uniformity constraint imposed by the ENZ medium, which locks the relative scattering 
+
+responses among different ports.  Breaking this  constraint  is therefore essential for enabling 
+
+flexible  control over individual port responses and achieving eigenvector coalescence . Unlike 
+
+our previous  approach  25 , which  introduced air gaps between the central ZIM and the channels 
+
+to break  th e field  uniformity , the present  strategy  achieves this by  reorienting  the dopants to 8
+
+switch ENZ medi a to MNZ medi a, thereby enabling both the emergence of EPs and flexible 
+
+control over their order .
+
+Second, when  𝑀  = 𝑁  (all channels filled  with  effective  MNZ media),  the situation is 
+
+reversed. In this case, the  in -phase  excitation , corresponding to the eigenvector  𝐮  =
+
+(1,1, … ,1)𝑇  , becomes  a dark state . The forward and backward waves satisfy  𝑎 𝑚  = 𝑏 𝑚  ,
+
+resulting in a vanishing electric field throughout the MNZ channels. Consequently, this 
+
+eigenstate  is completely decoupled from the gain/loss distribution and always corresponds to 
+
+the fixed eigenvalue  𝑠  = 1 (total reflection). T he remaining  𝑁  − 1 out -of -phase  modes ,
+
+however, support non -zero fields inside the  network  and therefore remain accessible to non -
+
+Hermitian tuning.  Their eigenvalues and eigenvectors can be continuously modified and 
+
+ultimately driven to coalescence , yielding an EP of maximum order  𝑁  − 1.
+
+Thus, the  all -ENZ and all -MNZ cases  exhibit a  striking  modal duality: in the all -ENZ case, 
+
+only the in -phase mode remains tunable, while  the  remaining  (𝑁  − 1)-dimensional subspace is 
+
+frozen; in the all -MNZ case, the  in -phase  mode is frozen while the remaining  𝑁  − 1 modes 
+
+remain  dopant -tunable and can coalesce into a higher -order EP.  Representative examples are 
+
+provided  in Supporting Information Section 4. 
+
+Three -channel model.  The above theoretical analysis  shows  that the  order o f EP s in the 
+
+non -Hermitian ZIM network  is governed by  the filling materials  within the channels, or 
+
+equivalently, by the orientation of the embedded dopants . This property provides a  direct and 
+
+versatile route for controlling the EP order . For illustration, we consider a three -channel 
+
+effective -medium model as a representative example, as shown in Fig. 2 . Three configurations 
+
+are examined: (i)  all three channels filled with ENZ media  [Fig. 2(a)], (ii) two ENZ channels 
+
+and one MNZ channel [Fig. 2(d)], and (iii) one ENZ channel and two MNZ channels [Fig. 2(g)] .
+
+Acc ording to the  general  analysis (Table 1),  no EP exists in the first configuration, whereas the 
+
+maximum achievable EP orders in the second and third configurations are 2 and 3, respect ively. 9
+
+Figure 2.  (a) Three -channel effective -medium model with all channels filled with effective 
+
+ENZ media. (b) Non -degenerate scattering matrix eigenvalue  log (|𝑠 1|) in the { Re (𝛽 ), Im (𝛽 )}
+
+parameter space. The dashed line that passes through the pole and zero corresponds to  Re (𝛽 ) =
+
+0. (c) Three eigenvalues  log (|𝑠 1,2,3|) as a function of  Im (𝛽 ) along the dashed line in (b). ( d)
+
+Three -channel model with two ENZ channels and one MNZ channel. (e) Degenerate 
+
+eigenvalues  log (|𝑠 1,2|) in the { Re (𝛽 ) , Im (𝛽 ) } parameter space. The dashed line indicates 
+
+Re (𝛽 ) = − Im (𝛽 ) √2⁄ . (f) Three eigenvalues  log (|𝑠 1,2,3|) as a function of  Im (𝛽 ) along the 
+
+line in ( e). (g) Three -channel model with one ENZ channel and two MNZ channels. (h) 
+
+Degenerate eigenvalues  log (|𝑠 1,2,3|) in the { Re (𝛽 ), Im (𝛽 )} parameter space. The dashed line 
+
+corresponds to  Re (𝛽 ) = 0. (i) Three eigenvalues  log (|𝑠 1,2,3|) as a function of  Im (𝛽 ) along 
+
+the line in (h). Insets in (c), (f), and (i) show the simulated distributions of normalized magnetic 
+
+field  𝐻 𝑧  /𝐻 0 (color map) and time -averaged Poynting vectors (arrows) at their corresponding 
+
+lasing point (scattering  pole ) and the CPA point or absorbing EP (scattering zero). The labels 
+
+“L” and “G” denote the presence of loss or gain in the ENZ/MNZ media, respectively. 10 
+
+To verify these predictions , we derive the  corresponding  scattering matrices for the three 
+
+configurations as 
+
+𝐒  = −2 
+
+> 𝑖𝛽 −3
+
+(
+
+1 1 1
+
+1 1 1
+
+1 1 1
+
+) − 𝐈 , (8)
+
+𝐒  = 2 
+
+> 𝑖𝛽 +𝛼 1−2
+
+(
+
+(1 + 𝛼 1)(𝑖𝛽  − 2) + 𝛼 1 𝛼 1 𝛼 1
+
+𝛼 1 −1 −1
+
+𝛼 1 −1 −1
+
+) − 𝐈 , (9)
+
+and  𝐒  = 2 
+
+> 𝑖𝛽 +𝛼 1+𝛼 2−1
+
+(
+
+(1 + 𝛼 1)(𝑖𝛽  + 𝛼 2) − 1 −𝛼 1𝛼 2 𝛼 1
+
+−𝛼 1𝛼 2 (1 + 𝛼 2)(𝑖𝛽  + 𝛼 1) − 1 𝛼 2
+
+𝛼 1 𝛼 2 −1
+
+) − 𝐈 , (10 )
+
+where  𝛼 1 = 1 
+
+> 𝑖 𝑘 0𝜀 eff ,1𝑙 −1
+
+, 𝛼 2 = 1 
+
+> 𝑖 𝑘 0𝜀 eff ,2𝑙 −1
+
+, and  𝛽  = 𝑘 0 ∑ 𝜇 eff ,𝑚  
+
+> 3
+> 𝑚 =𝑀 +1
+
+𝑙  with  𝑀  denoting 
+
+the number of MNZ channels.  As  𝛽  depends on  𝜇 eff  of the  effective  ENZ  media , its 
+
+imaginary part  reflects  material loss ( Im (𝛽 ) > 0) or gain ( Im (𝛽 ) < 0). 
+
+For  the first configuration,  the scattering matrix  𝐒  in  Eq. (8)  yields one tunable 
+
+eigenvalue  𝑠 1 = 3+𝑖𝛽  
+
+> 3−𝑖𝛽
+
+and two fixed eigenvalues  𝑠 2,3 = −1. The eigenvectors associated with 
+
+the degenerate eigenvalue  𝑠 2,3 = −1 remain linearly independent, indicating a DP rather than 
+
+an EP; hence no EP  exists . The  expression  for  𝑠 1 reveals  two scattering singularities: a 
+
+scattering zero ( 𝑠 1 = 0) at  𝛽  = 3𝑖  and a scattering pole ( 𝑠 1 → ∞) at  𝛽  = −3𝑖 . For clarity,  we 
+
+plot  log |𝑠 1| in the { Re (𝛽 ), Im (𝛽 )} parameter space  in Fig. 2(b) , with  structural parameters 
+
+𝑙  = 𝑤  = 2𝜆 0 (𝜆 0 is  the free -space wavelength ). As expected, a  scattering  zero and a  scattering 
+
+pole  appear  along the line  Re (𝛽 ) = 0 (dashed line) , as further  shown  in  Fig. 2(c) , which  plots 
+
+all three eigenvalues along this line . Specifically,  𝑠 1 = 0 at  Im (𝛽 ) = 3 and  𝑠 1 → ∞ at 
+
+Im (𝛽 ) = −3, while the other two eigenvalues remain constant.  The  scattering zero corresponds 
+
+to  CPA , whereas  the scattering pole is  associated  wit h lasing  77, 78 .
+
+To further  confirm  the wave behavior at the  two  singularities,  full -wave simulations are 
+
+performed using the finite -element software COMSOL Multiphysics . The  insets in Fig. 2(c) 
+
+show the simulated distributions of normalized magnetic field  𝐻 𝑧  /𝐻 0 (color map) and time -
+
+averaged Poynting vectors (arrows) at  the  CPA  and lasing  points . For the CPA configuration, 
+
+the three channels are filled with MNZ media characterized by  𝜇 eff ,1 = 𝜇 eff ,2 = 𝜇 eff ,3 =
+
+𝑖 /(4π) ; for the lasing configuration, the corresponding parameters are  𝜇 eff ,1 = 𝜇 eff ,2 =
+
+𝜇 eff ,3 = −𝑖 /(4π). In both cases, the incident excitation is identical, with complex magnetic -11 
+
+field amplitudes  given  by the eigenvector  𝐮  = 𝐻 0(1,1,1)𝑇  . At the CPA point, the Poynting 
+
+vectors are directed inward, indicating complete absorption of the incident waves. By contrast, 
+
+at the lasing point, the Poynting vectors point outward, signifying pronounced energy emission 
+
+consistent with lasing behavior. 
+
+For the second configuration,  the scattering matrix  𝐒  in Eq. (9)  exhibits two variable 
+
+eigenvalues  𝑠 1 and  𝑠 2, and  one  fixed eigenvalue  𝑠 3 = −1. Interestingly, based on Eq s. (6) 
+
+and (7),  two distinct parameter sets can realize a  2nd -order EP  with  𝑠 1 = 𝑠 2 ≡ 𝑠 1,2 under the 
+
+condition 
+
+(1 + 𝛼 1 + 2−𝛼 1
+
+> 2
+> 𝑖𝛽 +𝛼 1−2
+
+)2 + 8𝛼 1 
+
+> 2
+> (𝑖𝛽 +𝛼 1−2)2
+
+= 0. (11) 
+
+Here, we focus on  one representative  solution 
+
+𝑠 1,2 = −18 +(−4√2+2𝑖 )𝛽 +(−1+2√2𝑖 )𝛽 2+𝑖 𝛽 3 
+
+> −18 +(2√2+14 𝑖 )𝛽 +5𝛽 2−𝑖 𝛽 3
+
+, (12) 
+
+which  yields an absorbing EP ( 𝑠 1,2 = 0) at  𝛽  = −√2 + 2𝑖  and a lasing EP ( 𝑠 1,2 → ∞) at  𝛽  =
+
+√2 − 2𝑖  . These singularities are evident in the map  of  log |𝑠 1,2| in the { Re (𝛽 ) , Im (𝛽 ) }
+
+parameter space  [Fig. 2(e),  with  𝑙  = 𝑤  = 2𝜆 0 ]. When plotting this map , 𝛼 1 is varied 
+
+continuously according to Eq. (11)  to maintain the EP condition . The two singular EPs  lie  along 
+
+the line  Re (𝛽 ) = − Im (𝛽 ) √2⁄ (dashed line) , as illustrated in Fig. 2(f), which  shows  all three 
+
+eigenvalues along this  trajectory . A fixed eigenvalue  𝑠 3 and two coalesced eigenvalues  𝑠 1,2
+
+are observed,  varying  from zero to infinity, corresponding to 2nd -order absorbing and lasing 
+
+EPs, respectively.  The insets in Fig. 2(f)  confirm  the wave behaviors at the two  singular  EPs 
+
+under  the excitation of their corresponding eigenvector  𝐮  = 𝐻 0(√2𝑖 , 1,1)𝑇  . Here, the 
+
+electromagnetic parameters are  𝜇 eff ,2 = 𝜇 eff ,3 = 𝜀 eff ,1 = (−√2 + 2𝑖 )/(8π) for the  absorbing 
+
+EP,  with  opposite  values  for the lasing EP.  At the absorbing EP, all  the  incident waves are 
+
+complete ly  absorbed, whereas at the lasing EP, pronounced energy emission  is observed .
+
+For the third configuration,  all three eigenvalues of  𝐒  in Eq. (10)  are  tunable , allowing 
+
+their coalescence into a  3rd -order EP  according to Eqs. (6) and (7) . In this case, the relations 
+
+among  𝛼 1 , 𝛼 2 , and  𝛽  , as well as the expression for the degenerate eigenvalues  𝑠 1,2,3 are 
+
+considerably complicated and cannot be expressed in a compact analytical form . We therefore 
+
+numerically  plot  the degenerate eigenvalue s log (|𝑠 1,2,3|) in the { Re (𝛽 ), Im (𝛽 )} parameter 
+
+space with  𝑙  = 𝑤  = 2𝜆 0 [Fig. 2(h)] . Simultaneously, both  𝛼 1 and  𝛼 2 are numerically 12 
+
+adjusted according to  the  (𝑀  + 1) nonlinear equations in Eq. (6) to satisfy the EP condition . A
+
+scattering zero ( 𝑠 1,2,3 = 0) and a scattering pole ( 𝑠 1,2,3 → ∞) are observed , corresponding to 
+
+3rd -order absorbing and lasing EP s, respectively.  These singularities  occur along the line 
+
+Re (𝛽 ) = 0 (dashed line) , as  shown  in Fig. 2( i), which plots  log (|𝑠 1,2,3|) along this line.  The 
+
+3rd -order absorbing EP  appears  at  𝛽  = 1.596 𝑖  and the  3rd -order lasing EP occurs at  𝛽  =
+
+−1.596 𝑖 . Simulations under excitation of the eigenvector  𝐮  = 𝐻 0(0.823 e1.2𝑖  , 0.823 e−1.2𝑖  , 1)𝑇 
+
+further verify the wave  behaviors  at the two EPs , as shown by the  insets  of  Fig. 2(i).  In 
+
+simulations, we set  𝜇 eff ,3 = 0.399 𝑖 /π and  𝜀 eff ,1 = −𝜀 eff ,2 
+
+> ∗
+
+= (−0.283  + 0.140 𝑖 )/π for the 
+
+absorbing EP,  with  opposite  values  for the lasing EP. 
+
+These results demonstrate that both the emergence and the order of EPs in non -Hermitian 
+
+ZIM networks can be systematically controlled by  choosing different filling materials within 
+
+the channels.  Notably,  although the CPA  in Fig. 2(a) and absorbing  EP s in Fig s. 2(d)  and  2(g) 
+
+exhibit  similar wave behavior, as observed in insets of Figs. 2(c), 2(f) , and 2(i),  their responses 
+
+to perturbations differ markedly, as discussed in the following . Importantly,  both the CPA and 
+
+absorbing  EPs can be realized using purely passive components, as  evidenced  by the positive 
+
+imaginary part of the required parameters  𝜇 eff  and  𝜀 eff  (labelled  “L” in simulation results) .
+
+This  feature  mak es  them  particularly  attractive  for  practical sensing applications .
+
+Photonic -doped  implementation . In the following, we show that switching between 
+
+effective ENZ and MNZ media within each channel can be readily achieved by reorienting the 
+
+embedded dopants, thereby providing a practical and versatile route for controlling the EP order. 
+
+Alth ough the  required  complex or purely imaginary values of  𝜀 eff  and  𝜇 eff  may appear 
+
+extreme, they can be  realized  via  the photonic doping approach  described by  Eqs. (1) and (2) 
+
+> 58
+
+. With this approach,  nearly arbitrary  complex  values of  𝜀 eff  and  𝜇 eff  can, in principle, be 
+
+engineered using appropriately designed nonmagnetic dopants with tailored loss/gain in 
+
+permittivity  17, 25, 59 .
+
+For demonstration, we construct three -dimensional photonic -doped models to realize CPA 
+
+and absorbing EPs, as shown in Figs. 3(a) -3(c), corresponding to the two -dimensional effective -
+
+medium models in Figs. 2(a), 2(d), and 2(g), respectively. The geometrical  parameters  𝑙  and 
+
+𝑤  are  the same as in the effective -medium models, and all dopants have identical radius  𝑟 d =13 
+
+0.5𝜆 0. Using Eqs. (1) and (2) together with the target values of  𝜇 eff  and  𝜀 eff  extracted from 
+
+Fig. 2, we determine the required dopant permittivities in each channel. 
+
+Figure 3.  [(a) -(c)] Simulated distributions of normalized magnetic field  𝐻 𝑧  /𝐻 0 (color map) 
+
+and time -averaged Poynting vectors (arrows) at the CPA point or absorbing EPs for the 
+
+photonic -doped models, corresponding to the effective -medium models in Figs. 2(a), 2(d), and 
+
+2(g), respectively. [(d) -(f)] Corresponding results for parallel -channel configurations, where the 
+
+original triangular central ZIM in (a) -(c) is replaced with a flat geometry while all other 
+
+parameters remain unchanged. 
+
+For the CPA case [Fig. 3(a)],  all three dopants are  identical,  with  𝜀 d,1 = 𝜀 d,2 = 𝜀 d,3 =
+
+1.169  + 0.519 𝑖 , and  are oriented vertically , such that the doped ZIM in each channel behaves 
+
+as an effective ENZ medium . The simulated distributions of normalized magnetic field  𝐻 𝑧  /𝐻 0
+
+(color map) and time -averaged Poynting vectors (arrows)  show complete absorption of all 
+
+incident waves, consistent with the effective -medium model  [inset of Fig. 3(c)].  Figures 3(b) 
+
+and 3(c)  present  the  photonic -doped  realizations of  the 2nd - and 3rd -order absorbing EPs,  wit h
+
+dopant  permittivities  𝜀 d,1 = 1.115  + 0.374 𝑖  and  𝜀 d,2 = 𝜀 d,3 = 1.045  + 0.258 𝑖  for  Fig. 3(b), 
+
+and  𝜀 d,1 = 1.053  + 0.152 𝑖  , 𝜀 d,2 = 0.296  + 0.076 𝑖  , and  𝜀 d,3 = 0.885  + 0.494 𝑖  for  Fig. 
+
+3(c).  Here , horizontally oriented dopants  produce effective MNZ media . The simulated field 
+
+and power -flow distributions agree with the effective -medium  counterparts  [insets of Figs. 3(f) 
+
+and 3(i)],  validating the photonic -doped implementation s using purely lossy dopants .14 
+
+Notably , the shape and area of the central ZIM do not affect the CPA or EP s, allowing 
+
+substantial geometric flexibility . As shown in Figs. 3(d) -3(f),  the triangular central ZIM in Figs. 
+
+3(a) -3(c) is replaced by a flat geomet ry,  making  all channels parallel , while  leaving all other 
+
+parameters unchanged . Simulations of these parallel -channel configurations again  show  perfect 
+
+absorption of all incident waves . These results not only  demonstrate  the robustness of the 
+
+photonic -doped implementation s, but also highlight the  flexibility of controlling EP emergence 
+
+and  EP  order through dopant orientation in non -Hermitian ZIM networks .
+
+To evaluate the practical feasibility of the proposed photonic -dop ed  models, we perform 
+
+a comprehensive Monte Carlo tolerance analysis by introducing random fluctuations into the 
+
+key geometric al  and material parameters of the models in Figs. 3(a) -3(c). We find that the 
+
+higher -order EPs do not suffer from anomalous error amplification, and the photonic -dop ed 
+
+platform maintains a reasonable degree of robustness against fabrication variations. Detailed 
+
+analysis is provided in Supporting Information Section  5.
+
+Furthermore,  we evaluate the  influence of material dispersion and frequency detuning  by 
+
+assuming linear dispersion for the model exhibiting  a 3rd -order absorbing EP [Figs. 2(g) -2(i)]. 
+
+We find  that the characteristic cube -root eigenvalue splitting scaling remain s well preserved for 
+
+frequency detuning  up to  0.3%  , indicating that the platform maintains a finite operational 
+
+bandwidth . Detailed results are provided in Supporting Information  Section 6 .
+
+Enhanced sensitivity . Higher -order EPs  provide  a powerful route to enhancing  the 
+
+sensitivity of optical systems to perturbations . An  𝑁  th -order EP exhibits an  𝑁  th -root 
+
+dependence of eigenvalue splitting on perturbation  strength  7, 28 -33 , enabling amplified response s.
+
+Beyond the extensively studied resonant E Ps 7, 28 -33 , higher -order scattering EPs have shown 
+
+similarly enhanced sensitivity  25 . Here , we systematically compare the perturbation response of 
+
+configurable non -Hermitian ZIM networks operating at  the  CPA  point , 2nd -order, and 3rd -order 
+
+absorbing EPs , corresponding to the models in Fig. 2(a), 2(d), and 2(g), respectively . These 
+
+operating states can be flexibly switched by controlling the orientation of dopants within the 
+
+channels.  Importantly,  operation  at  the se states  requires only passive components , making  th is
+
+platform  particular ly  attractive for practical sensing and detection applications. 15 
+
+Figure 4.  (a)  Schematic of a refractive -index sensor employing a three -channel ZIM network. 
+
+The central ZIM hosts a core -shell dopant (dielectric shell with hollow core)  designed to keep 
+
+the effective permittivity and permeability of the doped central ZIM near zero. The hollow core 
+
+allows analyte gases to introduce a refractive -index perturbation  𝛿𝑛 . Without perturbation, all 
+
+incident waves are perfectly absorbed  at the CPA point or absorbing EPs (left). A finite 
+
+perturbation  𝛿𝑛  induces reflection, leading to a measurable change  in the output power at the 
+
+operating frequency (right). [ (b) -(d)] Real parts of scattering matrix eigenvalues  𝑠 1,2,3 in the 
+
+{Re (𝛿𝑛 ), Im (𝛿𝑛 )} parameter space near the (b) CPA point, (c) 2nd -order absorbing EP, and 
+
+(d) 3rd -order absorbing EP. The black lines indicate the eigenvalue variation on the plane 
+
+Im (𝛿𝑛 ) = 0 . (e) Eigenvalue shift and (f) sensitivity versus  𝛿𝑛  (with  Im (𝛿𝑛 ) = 0 ) in the 
+
+vicinity of the CPA point, 2nd -order, and 3rd -order absorbing EP s. Dashed lines in (e) represent 
+
+theoretical fits to linear, square -root, and cubic -root scaling laws. 
+
+For  clarity , we  re consider  the  three -channel  effective -medium mode ls studied  in  Fig . 2 ,
+
+with perturbation s introduced via a core -shell dopant embedded in the central ZIM . The dopant 16 
+
+consists of a dielectric shell  (relative permittivity  𝜀 s = 4) and  a hollow core . The hollow core 
+
+serves as the sensing region, allowing analyte gases to pass through and modify the refractive 
+
+index inside it.  Specifically, the refractive index inside the core is expressed as  𝑛  = 1 + 𝛿𝑛 ,
+
+where the baseline value  𝑛  = 1 corresponds to vacuum, and  𝛿𝑛  denotes the refractive -index 
+
+variation induced by the analyte gas. The inner and outer radii are chosen as  𝑟 c = 0.2925 𝜆 0
+
+and  𝑟 s = 0.3235 𝜆 0, respectively,  such that the effective medium of the doped central ZIM 
+
+remains near‑zero in both permittivity and permeability, and the unperturbed system  (𝛿𝑛  = 0)
+
+operates exactly at the CPA or absorbing EP condition.  In this unperturbed  case , all incident 
+
+waves are perfectly absorbed [Fig. 4(a), left panel]. When analyte gases enter the hollow core, 
+
+the induced refractive -index perturbation  𝛿𝑛  shifts the scattering  matrix  eigenvalues away 
+
+from zero, and reflection emerges, leading to a measurable change in output power at the 
+
+operating frequency [Fig. 4(a), right panel]. Since  𝛿𝑛  is directly related to the gas 
+
+concentration, this mechanism can be exploited for low‑concentration gas sensing  79 .
+
+We  next  examine the eigenvalue  shift  induced by  𝛿𝑛 . Figures 4( b)-4(d) show the real  part 
+
+of eigenvalues  near  the  CPA  point , 2nd -order , and 3rd -order absorbing EPs, respectively,  in the 
+
+{Re (𝛿𝑛 ) , Im (𝛿𝑛 ) } parameter space.  For the CPA  case , the eigenvalue  𝑠 1 varies linearly 
+
+across zero  [Fig. 4(b)] . By contrast , the EP cases  exhibit markedly  enhanced variations .
+
+Specifically,  the 3rd -order EP [Fig. 4(d)]  produces  a substantially larger eigenvalue shift than 
+
+the  2nd -order EP [Fig. 4(c)] , as evident from the eigenvalue variation on the  plane  Im (𝛿𝑛 ) =
+
+0 (black lines) . For  a clearer comparison , we fix  Im (𝛿𝑛 ) = 0 (i.e.,  𝛿𝑛  is real)  and plot the 
+
+eigenvalue shift  versus  𝛿𝑛  [solid lines  in Fig. 4(e) ]. The  res ults  agree well with the theoretical 
+
+linear, square -root , and cubic -root scaling laws  (dashed line s), confirming the  characteristic 
+
+𝑁 th -root dependence  of the eigenvalue splitting  at an  𝑁 th -order  EP .
+
+In practice,  the  scattering matrix  eigenvalue shift is not directly measurable. Instead,  the 
+
+experimentally accessible quantity is the change in output power induced by the refractive -
+
+index perturbation  𝛿𝑛 . To quantify this response , we define the total reflectance  𝑅  as  the  ratio 
+
+of the total output power to the total input power, which  reduces to  𝑅  = |𝑠 𝑛 |2 when the input 
+
+is adjusted to  match  the eigenvector associated with the shifted eigenvalue  𝑠 𝑛 . The sensing 
+
+performance is then characterized by the sensitivity  ∆𝑅  𝛿𝑛 ⁄ . Figure 4( f) shows the sensitivity 17 
+
+as a function of  𝛿𝑛  (with  Im (𝛿𝑛 ) = 0) in the vicinity of the  CPA  point , 2nd -order, and 3rd -
+
+order  absorbing EP s, clearly  revealing  a substantial  enhancement near the  3rd -order absorbing 
+
+EP.  Notably,  the 2nd -order EP  already  outperforms  the CPA case , although it does not exhibit 
+
+the additional power -law enhancement associated with EPs of order  𝑛  ≥ 3. Specifically, while 
+
+the eigenvalue splitting follows a square -root dependence,  the reflectance  𝑅  = |𝑠 𝑛 |2 restores 
+
+linear scaling with  𝛿𝑛 , resulting in a comparatively weaker  sensitivity enhancement.  These 
+
+results validate the feasibility of ultrasensitive  refractive -index  sensing  using  higher -order 
+
+absorbing EPs  and demonstrate that , while both CPA and absorbing EPs achieve perfect 
+
+absorption,  absorbing EPs  can  provide a  substantially enhanced sensing performance .
+
+Discussion.  Unlike previous studies that  focus  on perturbation -induced frequency splitting 
+
+at resonant EPs or transmission -spectrum splitting near  resonant  EPs in coupled systems  7, 28 -33 ,
+
+our proposed ZIM network  operates at a fixed frequency and probes the perturbation -induced 
+
+change in output power, which  is  proportional to the square of the scattering matrix eigenvalue 
+
+shift . We  show that, in open scattering systems described by a scattering matrix, sensitivity 
+
+enhancement can likewise be achieved.  More specifically, for  an  𝑁 th -order absorbing EP, the 
+
+reflectance  at the operating frequency  scales as  𝑅  = |𝑠 |2 ∝ 𝛿𝑛 2/𝑁 , whereas conventional CPA 
+
+yields  a quadratic response  𝑅  = |𝑠 |2 ∝ 𝛿𝑛 2 (i.e.,  𝑁  = 1).  Thus,  even  a 2nd -order EP already 
+
+outperforms conventional  CPA,  while  higher -order EPs  provide further power‑law 
+
+enhancement . We note that the reflectance scaling ( 𝑅  ∝ 𝛿𝑛 2/𝑁 ) at  scattering EPs  is inherently 
+
+less steep than the frequency splitting at resonant EPs ( ∆𝜔  ∝ 𝛿𝑛 1/𝑁 ), which we acknowledge 
+
+as an inherent trade -off of the present scheme. 
+
+Compared with  sensing  schemes that track  the frequency shift of  scattering minima , such 
+
+as higher -order scattering zeros or CPA  33, 78  and parity -time -symmetric CPA -lasing systems  80, 
+
+> 81
+
+, our  approach directly measures the perturbation -induced elevation of the scattering signal 
+
+from zero at a single operating frequency . This single -frequency operation may simplify the 
+
+measurement requirements and reduce experimental complexity. 
+
+Although this work focuses on singular EPs  (i.e.,  absorbing EPs with  𝑠 EP  = 0 ), our 
+
+framework can be extended to non -singular EPs ( 𝑠 EP  ≠ 0) by relaxing the zero‑eigenvalue 
+
+condition while preserving eigenvector coalescence . Such non‑singular EPs generally impose 18 
+
+fewer constraints on system parameters, offering greater experimental flexibility. 
+
+Experimentally, they can be characterized via vector network analysis to reconstruct the full 
+
+scattering matrix. For sensing, the reflectance response near a non‑singular EP  follows  𝑅  =
+
+|𝑠 EP |2 + 2Re (𝑠 EP  
+
+> ∗
+
+𝐶 )𝛿 𝑛 1/𝑁  + |𝐶 |2𝛿 𝑛 2/𝑁  , where  𝐶  is a perturbation -dependent coefficient .
+
+The leading perturbation scales as  𝛿 𝑛 1/𝑁 , preserving enhanced sensitivity . However,  the finite 
+
+background  |𝑠 EP |2 requires baseline subtraction . By contrast,  absorbing  EPs provide a 
+
+zero‑background reflectance, which could simplify measurement and improve contrast. 
+
+Finally, it is  worth emphasizing  that  our approach enables flexible control of scattering EP 
+
+orders through orientation -controlled photonic doping,  offering  a distinct route toward s
+
+reconfigurable non -Hermitian wave manipulation . Unlike conventional resonant -EP platforms 
+
+> 7, 28 -33
+
+, where the EP order is determined by modal coupling configurations , our scheme allows 
+
+the EP order to be tuned without  altering  the overall system configuration . Moreover, in contrast 
+
+to our previous work on higher -order scattering EPs in  non -Hermitian ZIM networks  25 , where 
+
+the EP order  is  fixed  by  the number of channels and  relies on air gaps  between the central ZIM 
+
+and the ZIM channels to break field uniformity , the present approach  introduces dopant 
+
+orientation as a new degree of freedom for controlling both the emergence and the order of 
+
+scattering EPs . Furthermore,  this  work  establishes a rigorous theoretical framework that 
+
+determines the maximum achievable EP order for arbitrary configurations, which was not 
+
+addressed in  the  previous  wor k 25 .
+
+CONCLUSION 
+
+We have demonstrated  arbitrary -order scattering EPs in  configurable  non -Hermitian ZIM 
+
+network s. By controlling the orientation of dopants embedded in ZIM channels , the effective 
+
+medi a can be switched between ENZ and MNZ  behavior , providing direct and flexible control 
+
+over both the emergence and the order of EPs. Theoretically, we prove that an  𝑁 -channel  ZIM 
+
+network can support scattering EPs up to order  𝑁  , with the order tunable from 2 to  𝑁  or 
+
+completely  eliminated  by adjusting the dopants. These predictions  are  validated  by  numerical 
+
+simulations, including photonic -doped  implementations . More over, a  systematic comparison 
+
+between conventional CPA and absorbing EPs of different orders reveal s that,  while  both 19 
+
+achieve perfect absorption,  a 2nd -order EP already outperforms CPA, and EPs of order  𝑛  ≥ 3
+
+provide  further power‑law enhancement  in sensing performance. These findings establish a 
+
+practical platform for realizing arbitrary -order scattering EPs using dopant -controlled  ZIM 
+
+networks, with promising applications in ultrasensitive sensing and detection. 
+
+METHODS 
+
+We used a commercially available finite element method simulator (COMSOL Multiphysics) 
+
+to simulate the propagation of electromagnetic waves .
+
+ASSOCIATED CONTENT 
+
+Supporting Information 
+
+The Supporting Information is available free of charge at 
+
+Derivation of effective parameters of doped ZIMs; Derivation of scattering matrix for the 
+
+ZIM network;  Analysis of higher -order scattering EPs ; Modal duality between all -ENZ 
+
+and all -MNZ configurations; Monte Carlo evaluation of fabrication tolerances in the ZIM 
+
+networks; Frequency -detuning analysis for the ZIM networks 
+
+AUTHOR INFORMATION 
+
+Corresponding Authors 
+
+Jie Luo  - School of Physical Science and Technology, Soochow University, Suzhou 215006, 
+
+China;  Jiangsu Physical Science Research Center, Nanjing 210093, China ; Email: 
+
+luojie@suda.edu.cn 
+
+Yongxing Wang  - Zhangjiagang Campus, Jiangsu University of Science and Technology, 
+
+Zhangjiagang 215600, China ; Email: 201900000107@just.edu.cn 
+
+Authors 
+
+Yu chen g Xu  - School of Physical Science and Technology, Soochow University, Suzhou 215006, 
+
+China 
+
+Ling Yin  - School of Physical Science and Technology, Soochow University, Suzhou 215006, 20 
+
+China 
+
+Funding 
+
+National Natural Science Foundation of China (Grant No. 12374293); Natural Science 
+
+Foundation of Jiangsu Province (Grant No. BK20233001) , and the Undergraduate Training 
+
+Program for Innovation and Entrepreneurship, Soochow University .
+
+Notes 
+
+The authors declare no competing financial interest. 
+
+REFERENCES 
+
+(1)  Miri, M.; Alù , A. Exceptional points in optics and photonics.  Science  2019 , 363 , eaar7709. 
+
+(2) Krasnok, A.; Nefedkin, N.; Alù , A. Parity -time symmetry and exceptional points.  IEEE Antennas 
+
+Propag. Mag.  2021 , 63 , 110 -121. 
+
+(3) Qin, H.; Lv, W.; Zhang, Z.; Yang, Z.; Li, J.; Li, M.; Li, B.; Zhou, J.; Fleury, R.; Genevet, P.et al. 
+
+Photonic exceptional points in engineered materials and their emerging applications.  Nat. Rev. Mater. 
+
+2026 , DOI: 10.1038/s41578 -026 -00896 -5. 
+
+(4)  Li, A.; Wei, H.; Cotrufo, M.; Chen, W.; Mann, S.; Ni, X.; Xu, B.; Chen, J.; Wang, J.; Fan, S.et al. 
+
+Exceptional points and non -Hermitian photonics at the nanoscale.  Nat. Nanotechnol.  2023 , 18 , 706 -
+
+720. 
+
+(5) Ding, K.; Fang, C.; Ma, G. Non -Hermitian topology and exceptional -point geometries.  Nat. Rev. 
+
+Phys.  2022 , 4, 745 -760. 
+
+(6)  Shou, Y.; Wang, D.; Wang, Y.; Huang, Q.; Chen, H.; Yu, W.; Ju, R.; Chen, H.; Li, Y. Resonant and 
+
+scattering exceptional points in non -Hermitian metasurfaces.  npj Nanophotonics  2025 , 2, 29. 
+
+(7) Wiersig, J. Review of exceptional point -based sensors.  Photonics Res.  2020 , 8, 1457. 
+
+(8) Lin, Z.; Ramezani, H.; Eichelkraut, T.; Kottos, T.; Cao, H.; Christodoulides, D. N. Unidirectional 
+
+invisibility induced by PT -symmetric periodic structures.  Phys. Rev. Lett.  2011 , 106 , 213901. 
+
+(9) Feng, L.; Xu, Y. L.; Fegadolli, W. S.; Lu, M. H.; Oliveira, J. E.; Almeida, V. R.; Chen, Y. F.; Scherer, 
+
+A. Experimental demonstration of a unidirectional reflectionless parity -time metamaterial at optical 
+
+frequencies.  Nat. Mater.  2013 , 12 , 108 -113. 
+
+(10) Ramezani, H.; Li, H.; Wang, Y.; Zhang, X. Unidirectional spectral singularities.  Phys. Rev. Lett. 
+
+2014 , 113 , 263905. 
+
+(11) Huang, Y.; Shen, Y.; Min, C.; Fan, S.; Veronis, G. Unidirectional reflectionless light propagation at 
+
+exceptional points.  Nanophotonics  2017 , 6, 977 -996. 
+
+(12) Liu, Y.; Mei, R.; Zhang, Y.; Luo, J. Generalized parity -time symmetric metasurfaces.  ACS 21 
+
+Photonics  2025 , 12 , 6690 -6697. 
+
+(13) Hu, S.; Liu, Y.; Xu, Y.; Luo, J. Generalized Brewster effect at exceptional points via cascaded non -
+
+Hermitian metasurfaces.  Phys. Rev. Appl.  2025 , 24 , 034030. 
+
+(14) Wang, Z.; Peng, Y.; Wang, Y.; You, J. Q. Unidirectional exceptional point of reflectionless states 
+
+in a magnonic mirror array.  Sci. Adv.  2026 , 12 , eaea6000. 
+
+(15) Sounas, D. L.; Fleury, R.; Alù , A. Unidirectional cloaking based on metasurfaces with balanced loss 
+
+and gain.  Phys. Rev. Appl.  2015 , 4, 014005. 
+
+(16) Luo, J.; Li, J.; Lai, Y. Electromagnetic impurity -immunity induced by parity -time symmetry.  Phys. 
+
+Rev. X.  2018 , 8, 031035. 
+
+(17) Liu, C.; Yan, D.; Sun, B.; Xu, Y.; Cao, F.; Gao, L.; Luo, J. Low -gain generalized PT symmetry for 
+
+electromagnetic impurity -immunity via non -Hermitian doped zero -index materials.  Photonics Res. 
+
+2024 , 12 , 2424. 
+
+(18) Peng, B.; Özdemir, S. K.; Liertzer, M.; Chen, W.; Kramer, J.; Yılmaz, H.; Wiersig, J.; Rotter, S.; 
+
+Yang, L. Chiral modes and directional lasing at exceptional points.  Proc. Natl. Acad. Sci. U. S. A. 
+
+2016 , 113 , 6845 -6850. 
+
+(19) Miao, P.; Zhang, Z.; Sun, J.; Walasik, W.; Longhi, S.; Litchinitser, N. M.; Feng, L. Orbital angular 
+
+momentum microlaser.  Science  2016 , 353 , 464 -467. 
+
+(20) Zhang, J.; Peng, B.; Özdemir, Ş. K.; Pichler, K.; Krimer, D. O.; Zhao, G.; Nori, F.; Liu, Y.; Rotter, 
+
+S.; Yang, L. A phonon laser operating at an exceptional point.  Nat. Photonics  2018 , 12 , 479 -484. 
+
+(21)  Qi, B.; Chen, H. Z.; Ge, L.; Berini, P.; Ma, R. M. Parity -time symmetry synthetic lasers: Physics 
+
+and devices.  Adv. Opt. Mater.  2019 , 7, 1900694. 
+
+(22) Sweeney, W. R.; Hsu, C. W.; Rotter, S.; Stone, A. D. Perfectly absorbing exceptional points and 
+
+chiral absorbers.  Phys. Rev. Lett.  2019 , 122 , 093901. 
+
+(23) Wang, C.; Sweeney, W. R.; Stone, A. D.; Yang, L. Coherent perfect absorption at an exceptional 
+
+point.  Science  2021 , 373 , 1261 -1265. 
+
+(24) Ferise, C.; Del Hougne, P.; Fé lix, S.; Pagneux, V.; Davy, M. Exceptional Points of PT -Symmetric 
+
+Reflectionless States in Complex Scattering Systems.  Phys. Rev. Lett.  2022 , 128 , 203904. 
+
+(25) Yan, D.; Shalin, A. S.; Wang, Y.; Lai, Y.; Xu, Y.; Hang, Z. H.; Cao, F.; Gao, L.; Luo, J. 
+
+Ultrasensitive higher -order exceptional points via non -Hermitian zero -index materials.  Phys. Rev. 
+
+Lett.  2025 , 134 , 243802. 
+
+(26)  Erb, J.; Shaibe, N.; Calvo, R.; Lathrop, D. P.; Antonsen, T. M.; Kottos, T.; Anlage, S. M. Topology 
+
+and manipulation of scattering singularities in complex non -Hermitian systems: Two -channel case. 
+
+Phys. Rev. Res.  2025 , 7, 023090. 
+
+(27) Soleymani, S.; Zhong, Q.; Mokim, M.; Rotter, S.; El -Ganainy, R.; Özdemir, Ş. K. Chiral and 
+
+degenerate perfect absorption on exceptional surfaces.  Nat. Commun.  2022 , 13 , 599. 
+
+(28) Wiersig, J. Enhancing the sensitivity of frequency and energy splitting detection by using 
+
+exceptional points: Application to microcavity sensors for single -particle detection.  Phys. Rev. Lett. 22 
+
+2014 , 112 , 203901. 
+
+(29)  Liu, Z.; Zhang, J.; Ozdemir, S. K.; Peng, B.; Jing, H.; Lü , X.; Li, C.; Yang, L.; Nori, F.; Liu, Y. 
+
+Metrology with PT -symmetric cavities: Enhanced sensitivity near the PT -phase transition.  Phys. Rev. 
+
+Lett.  2016 , 117 , 110802. 
+
+(30) Chen, W.; Ozdemir, S. K.; Zhao, G.; Wiersig, J.; Yang, L. Exceptional points enhance sensing in an 
+
+optical microcavity.  Nature  2017 , 548 , 192 -196. 
+
+(31) Hodaei, H.; Hassan, A. U.; Wittek, S.; Garcia -Gracia, H.; El -Ganainy, R.; Christodoulides, D. N.; 
+
+Khajavikhan, M. Enhanced sensitivity at higher -order exceptional points.  Nature  2017 , 548 , 187. 
+
+(32) De Carlo, M.; De Leonardis, F.; Soref, R. A.; Colatorti, L.; Passaro, V. M. N. Non -Hermitian sensing 
+
+in photonics and electronics: A review.  Sensors  2022 , 22 , 3977. 
+
+(33) Feng, Y.; Wang, Y.; Li, Z.; Li, T. Enhanced sensing and broadened absorption with higher -order 
+
+scattering zeros.  Opt. Express  2024 , 32 , 32283. 
+
+(34) Lawrence, M.; Xu, N.; Zhang, X.; Cong, L.; Han, J.; Zhang, W.; Zhang, S. Manifestation of PT 
+
+symmetry breaking in polarization space with terahertz metasurfaces.  Phys. Rev. Lett.  2014 , 113 ,
+
+093901. 
+
+(35)  Qin, H.; Yang, Z.; Huang, P.; Mu, X.; Huang, S.; Shi, Y.; Zhao, W.; Li, B.; Zhou, J.; Zú ñiga -Pé rez, 
+
+J.et al. Sphere of arbitrarily polarized exceptional points with a single planar metasurface.  Nat. 
+
+Commun.  2025 , 16 , 2656. 
+
+(36) Zhao, X.; Wang, J.; Liu, W.; Shi, L.; Zi, J. Magnetically induced topological evolutions of 
+
+exceptional points in photonic bands.  Phys. Rev. Lett.  2025 , 135 , 046203. 
+
+(37) Ding, K.; Ma, G.; Xiao, M.; Zhang, Z. Q.; Chan, C. T. Emergence, coalescence, and topological 
+
+properties of multiple exceptional points and their experimental realization.  Phys. Rev. X.  2016 , 6,
+
+021007. 
+
+(38) Mandal, I.; Bergholtz, E. J. Symmetry and higher -order exceptional points.  Phys. Rev. Lett.  2021 ,
+
+127 , 186601. 
+
+(39)  Wang, K.; Xiao, L.; Lin, H.; Yi, W.; Bergholtz, E. J.; Xue, P. Experimental simulation of symmetry -
+
+protected higher -order exceptional points with single photons.  Sci. Adv.  2023 , 9, eadi0732. 
+
+(40) Chen, T.; Zou, D.; Zhou, Z.; Wang, R.; Feng, Y.; Sun, H.; Zhang, X. Ultra -sensitivity in 
+
+reconstructed exceptional systems.  Natl. Sci. Rev.  2024 , 11 , nwae278. 
+
+(41) Wang, K.; Wang, Q. J.; Foreman, M. R.; Luo, Y. Topological engineering of high‐order exceptional 
+
+points through transformation optics.  Laser Photon. Rev.  2025 , 2026 , e00593. 
+
+(42) Xiao, Y.; Zhang, Z.; Hang, Z. H.; Chan, C. T. Anisotropic exceptional points of arbitrary order. 
+
+Phys. Rev. B  2019 , 99 , 241403(R). 
+
+(43) Wang, S.; Hou, B.; Lu, W.; Chen, Y.; Zhang, Z. Q.; Chan, C. T. Arbitrary order exceptional point 
+
+induced by photonic spin -orbit interaction in coupled resonators.  Nat. Commun.  2019 , 10 , 832. 
+
+(44) Zhang, C.; Cheng, Y.; Wang, S. Enhanced optical forces on coupled chiral particles at arbitrary 
+
+order exceptional points.  Opt. Express  2023 , 31 , 28929. 23 
+
+(45) Kullig, J.; Grom, D.; Klembt, S.; Wiersig, J. Higher -order exceptional points in waveguide -coupled 
+
+microcavities: perturbation induced frequency splitting and mode patterns.  Photonics Res.  2023 , 11 ,
+
+A54. 
+
+(46)  Xu, H. S.; Xie, L. C.; Jin, L. High -order spectral singularity.  Phys. Rev. A  2023 , 107 , 062209. 
+
+(47) Liberal, I.; Engheta, N. Near -zero refractive index photonics.  Nat. Photonics  2017 , 11 , 149 -158. 
+
+(48) Niu, X.; Hu, X.; Chu, S.; Gong, Q. Epsilon -near -zero photonics: A new platform for integrated 
+
+devices.  Adv. Opt. Mater.  2018 , 6, 1701292. 
+
+(49) Liberal, I.; Li, Y.; Engheta, N. Reconfigurable epsilon -near -zero metasurfaces via photonic doping. 
+
+Nanophotonics  2018 , 7, 1117 -1127. 
+
+(50) Vulis, D. I.; Reshef, O.; Camayd -Muñ oz, P.; Mazur, E. Manipulating the flow of light using Dirac -
+
+cone zero -index metamaterials.  Rep. Prog. Phys.  2019 , 82 , 012001. 
+
+(51) Li, Y.; Chan, C. T.; Mazur, E. Dirac -like cone -based electromagnetic zero -index metamaterials. 
+
+Light -Sci . Appl . 2021 , 10 , 203. 
+
+(52) Luo, J.; Lai, Y. Hermitian and non -Hermitian Dirac -like cones in photonic and phononic structures. 
+
+Front. Physics  2022 , 10 , 845624. 
+
+(53)  Ji, W.; Zhou, X.; Lu, W.; Gao, L.; Kislov, D.; Shalin, A. S.; Luo, J. Dual -band omnidirectional 
+
+scattering suppression via anisotropic epsilon -near -zero metamaterials.  Laser Photon. Rev.  2026 ,
+
+DOI: 10.1002/lpor.202502520. 
+
+(54) Wang, D.; Lu, Z.; Warkander, S.; Gupta, N.; Wang, Q.; Ci, P.; Guo, R.; Li, J.; Javey, A.; Yao, J.et 
+
+al. Long -range optical coupling with epsilon -near -zero materials.  Nat. Commun.  2025 , 16 , 9172. 
+
+(55) Liberal, I.; Engheta, N. Multiqubit subradiant states in N -port waveguide devices: ε -and -μ-near -zero 
+
+hubs and nonreciprocal circulators.  Phys. Rev. A  2018 , 97 , 022309. 
+
+(56) Zhou, Z.; Li, Y. N -port equal/unequal -split power dividers using epsilon -near -zero metamaterials. 
+
+IEEE Trans. Microw. Theory Tech.  2021 , 69 , 1529 -1537. 
+
+(57) Wang, Y.; Du, Z.; Xu, Z.; Xiao, P.; Lin, J.; Zhang, Y.; Luo, J. Arbitrary reflectionless optical routing 
+
+via non -Hermitian zero -index networks.  2026 , arXiv: 2512.21926. 
+
+(58) Liberal, I.; Mahmoud, A. M.; Li, Y.; Edwards, B.; Engheta, N. Photonic doping of epsilon -near -
+
+zero media.  Science  2017 , 355 , 1058 -1062. 
+
+(59)  Luo, J.; Liu, B.; Hang, Z. H.; Lai, Y. Coherent perfect absorption via photonic doping of zero -index 
+
+media.  Laser Photon. Rev.  2018 , 12 , 1800001. 
+
+(60) Liberal, I.; Engheta, N. Manipulating thermal emission with spatially static fluctuating fields in 
+
+arbitrarily shaped epsilon -near -zero bodies.  Proc. Natl. Acad. Sci. U. S. A.  2018 , 115 , 2878 -2883. 
+
+(61) Zhou, Z.; Li, Y.; Li, H.; Sun, W.; Liberal, I.; Engheta, N. Substrate -integrated photonic doping for 
+
+near -zero -index devices.  Nat. Commun.  2019 , 10 , 4132. 
+
+(62) Yan, W.; Zhou, Z.; Li, H.; Li, Y. Transmission -type photonic doping for high -efficiency epsilon -
+
+near -zero supercoupling.  Nat. Commun.  2023 , 14 , 6154. 
+
+(63) Xu, C.; Chu, H.; Luo, J.; Hang, Z. H.; Wu, Y.; Lai, Y. Three -dimensional electromagnetic void 24 
+
+space.  Phys. Rev. Lett.  2021 , 127 , 123902. 
+
+(64) Zhang, R.; Cui, X.; Zeng, Y.; Chen, J.; Liu, W.; Wang, M.; Wang, D.; Zhang, Z.; Wang, N.; Wu, 
+
+G.et al. Bulk -spatiotemporal vortex correspondence in gyromagnetic zero -index media.  Nature  2025 ,
+
+641 , 1142 -1148. 
+
+(65) Mei, R.; Xu, Y.; Gao, L.; Xu, H. X.; Lai, Y.; Luo, J. Skin effect of electromagnetic flux in anisotropic 
+
+zero -index metamaterials.  Adv. Opt. Mater.  2024 , 12 , 2401569. 
+
+(66)  Yang, F. R.; Ma, K. P.; Qian, Y. X.; Itoh, T. A novel TEM waveguide using uniplanar compact 
+
+photonic -bandgap (UC -PBG) structure.  IEEE Trans. Microw. Theory Tech.  1999 , 47 , 2092. 
+
+(67) Huang, X.; Lai, Y.; Hang, Z. H.; Zheng, H.; Chan, C. T. Dirac cones induced by accidental 
+
+degeneracy in photonic crystals and zero -refractive -index materials.  Nat. Mater.  2011 , 10 , 582. 
+
+(68) Li, S.; Luo, J.; Anwar, S.; Li, S.; Lu, W.; Hang, Z. H.; Lai, Y.; Hou, B.; Shen, M.; Wang, C. An 
+
+equivalent realization of coherent perfect absorption under single beam illumination.  Sci. Rep.  2014 ,
+
+4, 7369. 
+
+(69) Esfandyarpour, M.; Garnett, E. C.; Cui, Y.; McGehee, M. D.; Brongersma, M. L. Metamaterial 
+
+mirrors in optoelectronic devices.  Nat. Nanotechnol.  2014 , 9, 542. 
+
+(70) Liu, S.; Sinclair, M. B.; Mahony, T. S.; Jun, Y. C.; Campione, S.; Ginn, J.; Bender, D. A.; Wendt, 
+
+J. R.; Ihlefeld, J. F.; Clem, P. G.et al. Optical magnetic mirrors without metals.  Optica  2014 , 1, 250. 
+
+(71) Ma, Z.; Hanham, S. M.; Albella, P.; Ng, B.; Lu, H. T.; Gong, Y.; Maier, S. A.; Hong, M. Terahertz 
+
+all -dielectric magnetic mirror metasurfaces.  ACS Photonics  2016 , 3, 1010. 
+
+(72) Liu, W. Generalized magnetic mirrors.  Phys. Rev. Lett.  2017 , 119 , 123902. 
+
+(73) Chu, H.; Li, Q.; Liu, B.; Luo, J.; Sun, S.; Hang, Z. H.; Zhou, L.; Lai, Y. A hybrid invisibility cloak 
+
+based on integration of transparent metasurfaces and zero -index materials.  Light -Sci . Appl . 2018 , 7,
+
+50. 
+
+(74)  Nguyen, V. C.; Chen, L.; Halterman, K. Total transmission and total reflection by zero index 
+
+metamaterials with defects.  Phys. Rev. Lett.  2010 , 105 , 233908. 
+
+(75) Berry, M. V.; Jeffrey, M. R. Conical diffraction: Hamilton's diabolical point at the heart of crystal 
+
+optics.  Prog. Opt.  2007 , 50 , 13. 
+
+(76)  Qin, H.; Shi, X.; Ou, H. Exceptional points at bound states in the continuum in photonic integrated 
+
+circuits.  Nanophotonics  2022 , 11 , 4909. 
+
+(77) Krasnok, A.; Baranov, D.; Li, H.; Miri, M.; Monticone, F.; Alú , A. Anomalies in light scattering. 
+
+Adv. Opt. Photonics  2019 , 11 , 892. 
+
+(78) Xu, H.; Wang, L.; Yuan, L.; Ji, L. High -order perfect absorption in the absence of exceptional point. 
+
+Phys. Rev. Lett.  2026 , 136 , 136902. 
+
+(79)  Njegovec, M.; Donlagic, D. A fiber -optic gas sensor and method for the measurement of refractive 
+
+index dispersion in NIR.  Sensors  2020 , 20 , 3717. 
+
+(80)  Farhat, M.; Yang, M.; Ye, Z.; Chen, P. PT -symmetric absorber -laser enables electromagnetic 
+
+sensors with unprecedented sensitivity.  ACS Photonics  2020 , 7, 2080. 25 
+
+(81) Yang, M.; Ye, Z.; Pan, H.; Farhat, M.; Cetin, A. E.; Chen, P. Electromagnetically unclonable 
+
+functions generated by non -Hermitian absorber -emitter.  Sci. Adv.  2023 , 9, eadg7481. 1
+
+Supporting Information 
+
+# Arbitrary -Order Scattering Exceptional Points in Configurable 
+
+# Non -Hermitian Zero -Index Materials 
+
+Yucheng Xu a, Ling Yin a, Yongxing Wang b, *, Jie Luo a,c, *
+
+> a
+
+School of Physical Science and Technology, Soochow University, Suzhou 215006, China 
+
+> b
+
+Zhangjiagang Campus, Jiangsu University of Science and Technology, Zhangjiagang 215600, 
+
+China 
+
+> c
+
+Jiangsu Physical Science Research Center, Nanjing 210093, China 
+
+*Email: 201900000107@just.edu.cn (Yongxing Wang); luojie@suda.edu.cn (Jie Luo) 
+
+1.  Derivation of effective parameters of doped ZIM s
+
+In the proposed non -Hermitian zer o-index material ( ZIM ) network (Fig. 1 in Main Text) , e ach 
+
+ZIM component with in a channel consists of a cuboid ZIM host (𝜀 ≈ 𝜇 ≈ 0) embedded with a 
+
+cylindrical nonmagnetic loss/gain dopant . The dopant in the 𝑚 th channel has cross -sectional 
+
+radius 𝑟 d,𝑚 and relative permittivity 𝜀 d,𝑚 . All ZIM hosts share identical geometric parameters :
+
+length 𝑙 and square cross -section side length 𝑤 . We consider transverse -magnetic 
+
+polarization with the magnetic field oriented along the 𝑧 -axis. 
+
+When the dopant in the 𝑚 th channel is aligned along the 𝑧 direction, the magnetic field 
+
+in the ZIM host remains spatially uniform due to the near -zero permittivity . In this case, the 
+
+doped ZIM behaves as an effective epsilon -near -zero (ENZ) medium. The uniform magnetic 
+
+field inside the ZIM host can be written as 
+
+𝐇 ZIM = 𝐻 0𝐞 𝑧 , (S1) 
+
+Inside the cylindrical dopant, the magnetic field satisfies the Helmholtz equation and takes the 
+
+form 
+
+𝐇 d,𝑚 (𝑟 ) = 𝐻 d,𝑚 𝐽 0(√𝜀 d,𝑚 𝑘 0𝑟 )𝐞 𝑧 , (S2) 
+
+where 𝑟 is the radial distance from the dopant axis, 𝑘 0 = 𝜔 /𝑐 is the free -space wavenumber, 
+
+and 𝑐 is the speed of light in vacuum . Continuity of tangential magnetic field at the interface 
+
+𝑟 = 𝑟 d,𝑚 yields 𝐻 d,𝑚 = 𝐻 0/𝐽 0(√𝜀 d,𝑚 𝑘 0𝑟 d,𝑚 ) . The presence of the dopant perturbs the 2
+
+magnetic flux in the ZIM host . This perturbation can be captured by introducing an effective 
+
+relative permeability 𝜇 eff ,𝑚 . Applying Faraday ’s law over the 𝑥𝑦 cross -section, we obtain 
+
+∮ 𝐄 ∙ d𝐥 = −𝑖𝜔 𝜇 0𝜇 eff ,𝑚 𝐻 0𝐴 𝑥𝑦 = −𝑖𝜔 𝜇 0 ∫ 𝐻 d,𝑚 𝐽 0(√𝜀 d,𝑚 𝑘 0𝑟 )d𝐴 𝐴 𝑥𝑦 , (S3)
+
+where 𝐴 𝑥𝑦 = 𝑙𝑤 is the cross -section area . 𝐽 0(… ) and 𝐽 1(… ) denote the zeroth - and first -
+
+order Bessel functions, respectively. From Eq. (S3), we obtain 
+
+𝜇 eff ,𝑚  = 2𝜋 𝑟 d,𝑚 𝐽 1(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+> 𝑘 0𝑙𝑤 √𝜀 d,𝑚 𝐽 0(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+. (S4)
+
+On the other hand, w hen the dopant is aligned along the electric field direction ( 𝑦 -axis), 
+
+the doped ZIM exhibits an effective mu -near -zero ( MNZ ) response. The electric field in the 
+
+ZIM host remains approximately uniform, 
+
+𝐄 ZIM = 𝐸 0𝐞 𝑦 , (S5) 
+
+while inside the dopant it takes the form 
+
+𝐄 d,𝑚 (𝑟 ) = 𝐸 d,𝑚 𝐽 0(√𝜀 d,𝑚 𝑘 0𝑟 )𝐞 𝑦 , (S6) 
+
+with 𝐸 d,𝑚 = 𝐻 0/𝐽 0(√𝜀 d,𝑚 𝑘 0𝑟 d,𝑚 ). The presence of the dopant modifies the electric flux within 
+
+the ZIM host , which can be characterized by an effective relative permittivity 𝜀 eff ,𝑚 . Applying 
+
+Ampère ’s law over the 𝑥𝑧 cross -section, we obtain 
+
+∮ 𝐇 ∙ d𝐥 = 𝑖𝜔 𝜀 0𝜀 eff ,𝑚 𝐸 0𝐴 𝑥𝑧 = 𝑖𝜔 𝜀 0𝜀 d,𝑚 ∫ 𝐸 d,𝑚 𝐽 0(𝑘 d,𝑚 𝑟 )𝐴 𝑥𝑧 d𝐴 , (S7) 
+
+where 𝐴 𝑥𝑧 = 𝑙𝑤 . Equation (S7) then leads to 
+
+𝜀 eff ,𝑚 = 2𝜋 𝑟 d,𝑚 √𝜀 d,𝑚 𝐽 1(𝑘 0√𝜀 d,𝑚 𝑟 𝑑 ,𝑚 ) 
+
+> 𝑘 0𝑙 𝑤 𝐽 0(𝑘 0√𝜀 d,𝑚 𝑟 d,𝑚 )
+
+. (S8) 
+
+2.  Derivation of scattering matrix for the ZIM network 
+
+We consider an 𝑁 -channel ZIM network in which each channel is loaded with a doped ZIM 
+
+component that behaves as an effective ENZ or MNZ medium . We assume that c hannels 1 to 
+
+𝑀 exhibit ENZ responses, while channels 𝑀 + 1 to 𝑁 exhibit MNZ responses. Under 
+
+transverse -magnetic illumination, t he magnetic field in the 𝑚 th channel can be expressed as 
+
+𝐇 𝑚 = 𝑎 𝑛 (𝛿 𝑚𝑛 𝑒 𝑖 𝑘 0𝑥 𝑚  + 𝑆 𝑚𝑛 𝑒 −𝑖 𝑘 0𝑥 𝑚 )𝐞 𝑧 , (S9) 
+
+where 𝑎 𝑛 is the input amplitude, 𝑆 𝑚𝑛 is the scattering parameter, and 𝑥 𝑚 denotes the 
+
+longitudinal coordinate along the 𝑚 th channel. The corresponding electric field is 3
+
+𝐄 𝑚 = 𝑍 0𝑎 𝑛 (𝑒 𝑖 𝑘 0𝑥 𝑚 − 𝑆 𝑚𝑛 𝑒 −𝑖 𝑘 0𝑥 𝑚 )𝐞 𝜏 , (S10) 
+
+where 𝑍 0 is the impedance of vacuum, and 𝐞 𝜏  is the unit tangential vector along the channel. 
+
+Applying Faraday ’s law over the cross -section perpendicular to the channel direction, we obtain 
+
+𝑤 [(𝛿 𝑚𝑛 + 𝑆 𝑚𝑛 ) − 𝐻 𝑐 ] = −𝑖 𝑘 0𝜀 eff ,𝑚 𝑤 𝑙 (𝛿 𝑚𝑛 − 𝑆 𝑚𝑛 ). (S11) 
+
+where 𝐻 𝑐 denotes the uniform magnetic field in the central ZIM region. Applying Faraday ’s
+
+law over the entire ZIM region yields 
+
+− ∑ 𝑤 𝑁  
+
+> 𝑚 =1
+
+(𝛿 𝑚𝑛 − 𝑆 𝑚𝑛 ) = 𝑖 𝑘 0 ∑ 𝜇 eff ,𝑚 𝑙𝑤 𝑁  
+
+> 𝑚 =1
+
+𝐻 𝑐 . (S12) 
+
+For MNZ channels ( 𝑚  ≤ 𝑀 ), 𝜇 eff ,𝑚  ≈ 0; for ENZ channels ( 𝑚 > 𝑀 ), 𝜀 eff ,𝑚 ≈ 0. Solving Eqs. 
+
+(S9) -(S12), we obtain 
+
+𝑆 𝑚𝑛 = (1 + 2𝛼 𝑚 )𝛿 𝑚𝑛 − 𝜉 𝛼 𝑚 𝛼 𝑛 , (S13) 
+
+where 𝛼 𝑚 = 1/(𝑖 𝑘 0𝜀 eff ,𝑚 𝑙 − 1) , 𝜉 = 2/(∑ 𝛼 𝑚  
+
+> 𝑀
+> 𝑚 =1
+
+− (𝑁 − 𝑀 ) + 𝑖 𝛽 ) , 𝛽 =
+
+𝑘 0𝑙 ∑ 𝜇 eff ,𝑚  
+
+> 𝑁
+> 𝑚 =𝑀 +1
+
+. In matrix form, the scattering matrix can be written as 
+
+𝐒 = 𝐃 − 𝜉 𝐯 𝐯 𝑇 , (S14) 
+
+where 𝐃 = diag (1 + 2𝛼 1, 1 + 2𝛼 2, … ,1 + 2𝛼 𝑁 ) and 𝐯 = (𝛼 1, 𝛼 2, … , 𝛼 𝑁 )𝑇 .
+
+3.  Analysis of h igh er -order sca ttering EP s
+
+Equation ( S14) shows that the scattering matrix 𝐒 is a standard rank -1 perturbation of a 
+
+diagonal matrix. Using the matrix determinant lemma, its characteristic polynomial can be 
+
+written as 
+
+𝑃 (𝑠 ) = det (𝑠 𝐈 − 𝐃 )(1 + 𝜉 𝐯 𝑇 (𝑠 𝐈 − 𝐃 )−1𝐯 ), (S15) 
+
+where 𝐈 is the identi fy matrix , and 𝑠 is the eigenvalue of 𝐒 . For 𝑚 > 𝑀 , we have 𝛼 𝑚 =
+
+−1, which leads to 
+
+𝑃 (𝑠 ) = 𝜉 [∏ (𝑠 − 1 − 2𝛼 𝑚 )𝑀  
+
+> 𝑚 =1
+
+](𝑠 + 1)(𝑁 −𝑀 −1)𝑄 (𝑠 ), (S16)
+
+with 
+
+𝑄 (𝑠 ) = − (𝑠 −1)(𝑁 −𝑀 ) 
+
+> 2
+
++ 𝑖𝛽 (𝑠 +1) 
+
+> 2
+
++ ∑ (𝑠 + 1) ( 𝛼 𝑚 
+
+> 2
+> 𝑠 −1−2𝛼 𝑚
+
++ 𝛼 𝑚  
+
+> 2
+
+)𝑀  
+
+> 𝑚 =1
+
+. (S17)
+
+It follows that 𝑠 = −1 is an (𝑁 − 𝑀 − 1)-fold root of 𝑃 (𝑠 ). However, the corresponding 
+
+eigenspace has dimension 𝑁 − 𝑀 − 1 , spanned by antisymmetric vectors 𝐮 𝑚 = 𝐞 𝑀 +𝑚 −
+
+𝐞 𝑀 +𝑚 +1 for 𝑚 = 1,2, … , 𝑁 − 𝑀 − 1 , where 𝐞 𝑛 denotes an 𝑁 dimensional vector whose 
+
+𝑛 th element are 1 and all others 0 . Therefore, the degeneracy at 𝑠 = −1 corresponds to a 4
+
+diabolic point (DP ) rather than an exceptional point (EP) .
+
+Consequently , EPs arise from the coalescence of remaining eigenvalues determined by 
+
+𝑄 (𝑠 ) = 0. A 𝑘 th -order EP at 𝑠 = 𝑠 EP requires that 𝑠 EP be a 𝑘 -fold root of 𝑄 (𝑠 ) = 0. Th is 
+
+imposes that the 𝑀 + 1 independent complex parameters {𝛽 , 𝛼 1, 𝛼 2, … , 𝛼 𝑀 } simultaneously 
+
+satisfy the following 𝑘 constraints 
+
+𝑄 (𝑠 𝐸𝑃 ) = 0, 𝜕 𝑛 𝑄 (𝑠 ) 
+
+> 𝜕 𝑠 𝑛
+
+|𝑠 =𝑠 𝐸𝑃 
+
+= 0 (𝑛 = 1,2, … , 𝑘 − 1; 𝑘 ≤ 𝑀 + 1). (S18 )
+
+We next prove the existence of such parameters . To simplify the analysis, we introduce the 
+
+rational function 
+
+𝑂 (𝑠 ) = 𝑄 (𝑠 ) 
+
+> 𝑠 +1
+
+= ( 1 
+
+> 𝑠 +1
+
+− 1 
+
+> 2
+
+) (𝑁 − 𝑀 ) + 𝑖𝛽  
+
+> 2
+
++ ∑ ( 𝛼 𝑚 
+
+> 2
+> 𝑠 −1−2𝛼 𝑚
+
++ 𝛼 𝑚  
+
+> 2
+
+)𝑀  
+
+> 𝑚 =1
+
+, (S19 )
+
+which shares common zero s with 𝑄 (𝑠 ) for 𝑠 ≠ −1. Hence , the 𝑘 constraints in Eq. ( S18) 
+
+are equi valent to 
+
+𝑂 (𝑠 EP ) = 0, 𝜕 𝑛 𝑂 (𝑠 ) 
+
+> 𝜕 𝑠 𝑛
+
+|𝑠 =𝑠 EP 
+
+= 0 (𝑛 = 1,2, … , 𝑘 − 1; 𝑘 ≤ 𝑀 + 1). (S20 )
+
+Eq uation (S20 ) define s a mapping from the (𝑀 + 1)-dimensional complex parameter space 
+
+{𝛽 , 𝛼 1, 𝛼 2, … , 𝛼 𝑀 } to a 𝑘 -dimensional complex space. To assess whether these 𝑘 constraints 
+
+can be satisfied simultaneously and whether parameters {𝛽 , 𝛼 1, 𝛼 2, … , 𝛼 𝑀 } can be found for 
+
+any target 𝑠 EP , we examine the Jacobian matrix of this mapping with respect to the selected set 
+
+of 𝑘 parameters {𝛽 , 𝛼 𝑙 1 , 𝛼 𝑙 2 , … , 𝛼 𝑙 𝑘 −1 }. The Jacobian matrix takes the form 
+
+𝐉 =
+
+( 
+
+> 𝑖
+> 2
+> (𝑠 EP −1)2
+> 2(𝑠 EP −1−2𝛼 𝑙 1)2
+
+… (𝑠 EP −1)2 
+
+> 2(𝑠 EP −1−2𝛼 𝑙 𝑘 −1)2
+
+0 −2𝛼 𝑙 1(𝑠 EP −1) 
+
+> (𝑠 EP −1−2𝛼 𝑙 1)3
+
+… −2𝛼 𝑙 𝑘 −1(𝑠 EP −1) 
+
+> (𝑠 EP −1−2𝛼 𝑙 𝑘 −1)3
+
+… … … …
+
+0 2(−1)𝑘 −1(𝑘 −1)!𝛼 𝑙 1[𝑠 EP −1+(𝑘 −2)𝛼 𝑙 1 ] 
+
+> (𝑠 EP −1−2𝛼 𝑙 1)𝑘 +1
+
+… 2(−1)𝑘 −1(𝑘 −1)!𝛼 𝑙 𝑘 −1[𝑠 EP −1+(𝑘 −2)𝛼 𝑙 𝑘 −1 ] 
+
+> (𝑠 EP −1−2𝛼 𝑙 𝑘 −1)𝑘 +1
+
+)
+
+. (S21) 
+
+The corresponding determinant can be written as 
+
+det (𝐉 ) = 𝑖  
+
+> 2
+
+𝐶 11 (𝐉 ), (S22) 
+
+where 𝐶 11 (𝐉 ) is the (1,1) -cofactor of 𝐉 . Notably , 𝐶 11 (𝐉 ) exhibits a generalized 
+
+Vandermonde -like structure. When the selected parameters are mutually distinct, the poles of 
+
+these rational terms are spatially separated in the complex plane, ensuring that the rows and 
+
+columns of the 𝐶 11 (𝐉 ) remain linearly independent. Consequently, det (𝐉 ) is generally 
+
+nonzero , implying that the mapping from the 𝑘 -dimensional parameter space 5
+
+{𝛽 , 𝛼 𝑙 1 , 𝛼 𝑙 2 , … , 𝛼 𝑙 𝑘 −1 } to the 𝑘 -dimensional condition space is locally surjective. This 
+
+guarantees that the mapping is locally non -degenerate and allows the system to reach a soluti on 
+
+through continuous parameter tuning. Finally, 𝑠 EP become a 𝑘 -fold root for the characteristic 
+
+polynomial 𝑃 (𝑠 ) = 0 with 𝑠 EP ≠ −1.
+
+For any eigenvalue 𝑠 𝑚 other than −1, the matrix 𝐃 − 𝑠 𝑚 𝐈 is non -singular, enabling the 
+
+eigenvector to be expressed as 
+
+𝐮 𝑚 = (𝜉 𝐯 𝑇 𝐮 𝑚 )(𝐃 − 𝑠 𝑚 𝐈 )−1 𝐯 . (S23) 
+
+Here, 𝜉 𝐯 𝑇 𝐮 𝑚 is a scal ar and can be omitted. When 𝑘 eigenvalue s coalesc e to 𝑠 EP , the 
+
+corresponding eigenvectors coalesce to the unique eigenvector 
+
+𝐮 = (𝐃 − 𝑠 EP 𝐈 )−1 𝐯 . (S24) 
+
+Lastly , we consider the two special cases. When 𝑀 = 0 (all channels filled with ENZ 
+
+media) , t he characteristic polynomial reduces to 
+
+𝑃 (𝑠 ) = 𝜉  
+
+> 2
+
+(𝑖𝛽 − 𝑁 ) (𝑠 + 𝑖𝛽 +𝑁 
+
+> 𝑖𝛽 −𝑁
+
+) (𝑠 + 1)(𝑁 −1). (S25)
+
+In this case , no EP arises. The (𝑁 − 1)-fold root 𝑠 = −1 corresponds to an (𝑁 − 1)rd-order 
+
+DP for antisymmetric inputs. The simple root 𝑠 = −(𝑖𝛽 + 𝑁 )/(𝑖𝛽 − 𝑁 ) = 𝑁 − 1 + ∑ 𝑆 𝑛𝑛 
+
+> 𝑁
+> 𝑛 =1
+
+corresponds to the symmetric input 𝐮 = (1,1, … ,1).
+
+In the case 𝑀 = 𝑁 (all channels filled with MNZ media) , the characteristic polynomial 
+
+reduces to 
+
+𝑃 (𝑠 ) = 𝜉 [∏ (𝑠 − 1 − 2𝛼 𝑚 )𝑁  
+
+> 𝑚 =1
+
+]𝑄 (𝑠 ), (S26)
+
+with 
+
+𝑄 (𝑠 ) = ∑ (𝑠 −1) 𝛼 𝑚   
+
+> 2(𝑠 −1−2𝛼 𝑚 )
+> 𝑁
+> 𝑚 =1
+
+, (S27)
+
+It can be verified that 𝑠 = 1 is a simple root of 𝑃 (𝑠 ), since  
+
+> 𝜕𝑄
+> 𝜕𝑠
+
+|𝑠 =1 = ∑ 𝛼 𝑚  
+
+> 2
+> (𝑠 −1−2𝛼 𝑚 )2
+> 𝑁
+> 𝑚 =1
+
+|𝑠 =1
+
+= 𝑁  
+
+> 4
+
+≠ 0. (S28)
+
+Hence, the maximum achievable EP order reduces to 𝑁 − 1.
+
+4.  Modal duality between all -ENZ and all -MNZ configurations 
+
+In a multiple -channel scattering system, the eigenvector 𝐮 of the scattering matrix represent s
+
+the relative responses among different ports. The key physical distinction between all -ENZ and 6
+
+all -MNZ configurations lies in their different “dark modes ” (i.e., excitation channels that cannot 
+
+couple energy into the network) imposed by the two zero -index limits. 
+
+In the all -ENZ network, the magnetic field is constrained to remain uniform throughout 
+
+the entire network. only the in -phase excitation, corresponding to the eigenvector 
+
+𝐮 = (1,1, … ,1)𝑇 of the scattering matrix 𝐒 , can couple into the ZIM network and interact with 
+
+the gain/lossy dopants 1, 2. Consequently, its eigenvalue depends on the non -Hermitian 
+
+configuration, as observed in Figs. 2(a) -2(c) of Main Text. In contrast, all out -of -phase 
+
+excitatio ns, corresponding to the remaining 𝑁 − 1 out -of -phase eigenstates of 𝐒 , produce a 
+
+vanishing magnetic field inside the ZIM region and therefore cannot couple with the dopants .
+
+These out -of -phase eigenstates therefore cannot interact with the gain/lossy comp onents, and 
+
+the incident waves are completely reflected, yielding the same eigenvalue 𝑠 = −1 .
+
+Consequently, only the in -phase eigenstate is affected by the non -Hermitian tuning, whereas 
+
+the remaining 𝑁 − 1 out -of -phase eigenve ctors remain decoupled from the gain/loss 
+
+distribution and share the same eigenvalue 𝑠 = −1. This gives rise to an ( 𝑁 − 1)-fold DP. 
+
+Physically, these modes cannot “see ” the non -Hermitian tun ing and therefore retain their 
+
+Hermitian degeneracy. 
+
+By contrast, in the all -MNZ network, the situation is reversed. In this case, the in -phase 
+
+excitation, corresponding to the eigenvector 𝐮 = (1,1, … ,1)𝑇 , cannot couple energy into 
+
+network. For this excitation, the forward and backward waves satisfy 𝑎 𝑚 = 𝑏 𝑚 , resulting in a 
+
+vanishing electric field throughout the MNZ channels. Consequently, this ei genstate is 
+
+completely independent of the loss/gain distribution, and its eigenvalue remains fixed at 𝑠 = 1
+
+(corresponding to total reflection). The remaining 𝑁 − 1 eigenstates, however, support non -
+
+zero fields inside the network and therefore remain accessible to non -Hermitian tuning. Their 
+
+eigenvalues and eigenvectors can be continuously modified and ultimately driven to 
+
+coalescence, giving rise to an ( 𝑁 − 1)th -orde r scattering EP. 
+
+From this perspective, the all -ENZ and all -MNZ cases exhibit a striking modal duality: in 
+
+the all -ENZ case, only the in -phase mode remains tunable, while the remaining ( 𝑁 − 1 )-
+
+dimensional subspace is frozen; in the all -MNZ case, the in -phas e mode is frozen while the 
+
+remaining 𝑁 − 1 modes remain dopant -tunable and can coalesce into a higher -order EP. 7
+
+Figure S1. Simulated nor malized field (color map) and time -averaged Poynting vectors (arrows) 
+
+for the three -channel [(a) -(c)] all -ENZ and [(d) -(f)] all -MNZ networks, under excitations 
+
+corresponding to the eigenvectors [(a) and (d)] 𝐮 𝟏 = (1,1,1)𝑇 , [(b) and (e)] 𝐮 𝟐 = (1, −1,0)𝑇 ,
+
+and [(c) and (f)] 𝐮 𝟑 = (0,1, −1)𝑇 , respectively. 
+
+To further illustrate this mechanism, we take the three -channel model as a representative 
+
+example, as shown in Fig. S1. For this three -channel configuration, the three eigenvectors are: 
+
+𝐮 𝟏 = (1,1,1)𝑇 (in -phase eigenstate), 𝐮 𝟐 = (1, −1,0)𝑇 , and 𝐮 𝟑 = (0,1, −1)𝑇 . In the all -ENZ 
+
+case, under excitation by these three eigenvectors, only the in -phase eigenstate (all incident 
+
+waves with identical phase) can enter the ZIM and be affected by the loss/gain [Fig. S1(a)]. By 
+
+contrast, the two out -of -phase excitations (corr esponding to 𝐮 𝟐 and 𝐮 𝟑 ) produce a vanishing 
+
+magnetic field inside the ZIM (both the central ZIM and all ENZ regions) [Figs. S1(b) and 
+
+S1(c)], and thus cannot “see ” the loss or gain. In the all‑MNZ case, the situation is reversed: 
+
+the in -phase excitatio n ( 𝐮 𝟏 ) produces a vanishing electric field inside the ZIM (both the central 
+
+ZIM and all MNZ regions) [Fig. S1(d)], whereas waves under out -of -phase excitations ( 𝐮 𝟐 and 
+
+𝐮 𝟐 ) can enter the network and couple to the loss and gain [Figs. S1(e) and S1(f)] .
+
+5.  Monte Carlo evaluation of fabrication tolerances in the ZIM network s
+
+To evaluate the robustness of the proposed photonic -dop ed platform against fabrication 8
+
+imperfections, we consider the models that realize CPA and absorbing EPs in Figs. 3(a) -3(c) of 
+
+the Main Text as representative examples. Specifically, we perform a Monte Carlo tolerance 
+
+analysis by introducing random perturbations into three key fabrication parameters: the dopant 
+
+permittivity 𝜀 d,𝑚 , the dopant radius 𝑟 d,𝑚 , and the channel width 𝑤 . For a given perturbation 
+
+level, all corresponding parameters are independently varied using uniformly distributed 
+
+random errors bounded by a prescribed maximum relative deviation. A total of 1000 
+
+independent random realizations were generated, and the resu lting perturbed scattering matrix 
+
+𝐒 is compared with the unperturbed scattering matrix 𝐒 un .
+
+Figure S2. Monte Carlo tolerance analysis for the photonic‑doping models in Figs. 3(a) -3(c) of 
+
+the Main Text . Random perturbations are introduced into (a) the dopant permittivity 𝜀 d,𝑚 , (b) 
+
+the dopant radius 𝑟 d,𝑚 , and (c) the channel width 𝑤 . The horizontal axis is the maximum 
+
+relative fabrication uncertainty; the vertical axis shows |Δ𝑆 max /𝑆 max |, the maximum absolute 
+
+deviation of any scattering‑matrix ele ment between the perturbed scattering matrix 𝐒 and the 
+
+unperturbated scattering matrix 𝐒 un , normalized by the largest element of 𝐒 un . Results are 
+
+presented for conventional CPA (green), 2nd ‑order absorbing EPs (blue) and 3rd‑order 
+
+absorbing EPs (red), corresponding to the models in Figs. 3(a) -3(c), respectively .
+
+The results are summarized in Fig. S2. The horizontal axis represents the prescribed 
+
+maximum relative fabrication uncertainty . The vertical axis is |Δ𝑆 max /𝑆 max |, where Δ𝑆 max 
+
+is the maximum absolute difference between the corresponding elements of the perturbed 𝐒 
+
+and the unperturbed 𝐒 un , while 𝑆 max is the maximum element magnitude of 𝐒 un . To provide 
+
+a conservative estimate of fabrication tolerance, the maximum value of |Δ𝑆 max /𝑆 max | among 
+
+the 1000 realizations is plotted for each perturbation level (Fig. S2). 
+
+As shown in Fig. S2, the normalized scattering -matrix deviation remains approximately 9
+
+proportional to the fabrication uncertainty over the entire perturbation range. Conventional 
+
+CPA, 2nd -order and 3rd -order absorbing EPs exhibit very similar scaling behaviors. Increasing 
+
+the EP order mainly leads to a moderate increase in the overall devia tion level while preserving 
+
+the same dependence on fabrication uncertainty. Therefore, although higher -order EPs are 
+
+somewhat more sensitive to fabrication imperfections, no anomalous amplification of 
+
+fabrication errors is observed. These results demonstra te that th e proposed photonic -dop ed 
+
+platform maintains a reasonable degree of robustness against fabrication variations. 
+
+6.  Frequency -detuning analysis for the ZIM networks 
+
+To evaluate the influence of material dispersion and frequency detuning on the proposed ZIM 
+
+net work, we take the third -order absorbing EP configuration [Figs. 2(g) -2(i) of the Main Text] 
+
+as a representative example for numerical studies. 
+
+Figure S3 . Frequency -detuning analysis for the third -order absorbing EP shown in Figs. 2(g) -
+
+2(i ) of the Main Text. (a) Magnitudes of the three scattering -matrix eigenvalues as functions of 
+
+the normalized frequency detuning 𝛿𝜔 /𝜔 ₀ . The black dashed line denotes the cube -root 
+
+scaling. (b) Corresponding reflectance 𝑅 = |𝑠 |2, with the black dashed line denoting the two -
+
+thirds -power scaling. 
+
+To model realistic ZIM platforms, we assume linear dispersion: 𝜀 = 𝜇 = (𝜔 − 𝜔 0)/𝜔 0
+
+for the central ZIM, 𝜇 = (𝜔 − 𝜔 0)/𝜔 0 for the two MNZ channels, and 𝜀 = (𝜔 − 𝜔 0)/𝜔 0
+
+for the ENZ channel. Here, 𝜔 ₀ denotes the central frequency at which the third -order 
+
+absorbing EP is obtained. Such linear dispersion is typical for effective ZIMs based on photonic 
+
+crystals 3, 4 . Full -wave simulations are then pe rformed for frequency detuning 0 ≤ 𝛿𝜔 /𝜔 0 ≤10 
+
+0.02 , and the corresponding scattering matrices are extracted to evaluate the eigenvalue 
+
+evolution. 
+
+The results are presented in Fig. S3 . Figure S3 (a) shows the magnitudes of the three 
+
+scattering matrix eigenvalues , while Fig. S3 (b) shows the corresponding reflectance 𝑅 = |𝑠 |².
+
+In the immediate vicinity of 𝜔 ₀ , both eigenvalues and reflectance closely follow the 
+
+characteristic third -order absorbing EP scaling 𝑠 ∝ 𝛿𝜔 1/3 and 𝑅 ∝ 𝛿𝜔 2/3, respectively. For 
+
+larger frequency detuning, gradual deviations from the ideal 1/3- and 2/3-power laws are 
+
+observed. Quantitatively, these fractional -power responses remain in good agreement with the 
+
+ideal third -order EP behavior for frequency detuning u p to approximately |𝛿𝜔 /𝜔 ₀| ≈ 0.3% .
+
+The se results demonstrate that moderate frequency detuning does not immediately disrupt the 
+
+EP -induced fractional -power response and confirm that the proposed platform retains a finite 
+
+operational bandwidth. 
+
+Ref erence s

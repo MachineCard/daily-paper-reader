@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-08 <!--dpr-date:20260608-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/08/2606.06998v1-arbitrary-order-scattering-exceptional-points-in-configurable-non-hermitian-zero-index-materials" data-sidebar-item="{&quot;title&quot;: &quot;Arbitrary-Order Scattering Exceptional Points in Configurable Non-Hermitian Zero-Index Materials&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.06998v1-arbitrary-order-scattering-exceptional-points-in-configurable-non-hermitian-zero-index-materials&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点&quot;}">Arbitrary-Order Scattering Exceptional Points in Configurable Non-Hermitian Zero-Index Materials</a>
   * 2026-06-03 <!--dpr-date:20260603-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/03/2606.00682v1-a-visible-frequency-excitonic-reststrahlen-band-in-pea2pbi4-slabs" data-sidebar-item="{&quot;title&quot;: &quot;A Visible-Frequency Excitonic Reststrahlen Band in (PEA)$_2$PbI$_4$ Slabs&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.00682v1-a-visible-frequency-excitonic-reststrahlen-band-in-pea2pbi4-slabs&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;强激子驱动实介电常数变负，揭示了介电常数近零转变&quot;}">A Visible-Frequency Excitonic Reststrahlen Band in (PEA)$_2$PbI$_4$ Slabs</a>

@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-08T22:02:02.279943+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.06998v1",
+      "source": "arxiv",
+      "title": "Arbitrary-Order Scattering Exceptional Points in Configurable Non-Hermitian Zero-Index Materials",
+      "abstract": "Scattering exceptional points (EPs) are non-Hermitian degeneracies where the eigenvalues and eigenvectors of scattering matrices coalesce, enabling many intriguing phenomena in optical systems. Higher-order scattering EPs are particularly notable for their ultrasensitive response to perturbations, yet achieving flexible, arbitrary-order control remains challenging. Here, we propose a configurable non-Hermitian zero-index material (ZIM) network that enables arbitrary-order scattering EPs, as rigorously proved theoretically and validated numerically. Specifically, we show that in an N-port non-Hermitian ZIM network embedded with loss/gain dopants, the maximum achievable EP order is N, and the order can be flexibly tuned from 2 to N or completely eliminated by adjusting the dopants. Furthermore, we compare conventional coherent perfect absorption with absorbing EPs of different orders. Although both achieve perfect absorption of all incident waves, a second-order EP already outperforms coherent perfect absorption, and higher-order EPs provide further power-law enhancement. These findings establish a pathway toward realizing arbitrary-order EPs in open scattering systems, holding significant promise for advanced sensing applications.",
+      "authors": [
+        "Yucheng Xu",
+        "Ling Yin",
+        "Yongxing Wang",
+        "Jie Luo"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-05T07:41:38+00:00",
+      "link": "https://arxiv.org/pdf/2606.06998v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes configurable non-Hermitian zero-index material network for arbitrary-order scattering exceptional points",
+      "llm_evidence_cn": "提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点",
+      "llm_evidence": "提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点",
+      "canonical_evidence": "提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点",
+      "llm_tldr_en": "This paper proposes a configurable non-Hermitian zero-index material network to achieve arbitrary-order scattering exceptional points, enabling ultrasensitive optical responses.",
+      "llm_tldr_cn": "本文针对高阶散射异常点灵活控制难题，提出一种可配置的非厄米零折射率材料网络，通过嵌入损耗/增益掺杂剂，理论上证明并数值验证了可实现从2到N的任意阶散射异常点，为超灵敏光学传感和应用提供了新平台。",
+      "llm_tldr": "本文针对高阶散射异常点灵活控制难题，提出一种可配置的非厄米零折射率材料网络，通过嵌入损耗/增益掺杂剂，理论上证明并数值验证了可实现从2到N的任意阶散射异常点，为超灵敏光学传感和应用提供了新平台。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "materials with zero refractive index",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-08",
+  "date": "2026-06-08",
+  "generated_at": "2026-06-08T22:04:20",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/08/2606.06998v1-arbitrary-order-scattering-exceptional-points-in-configurable-non-hermitian-zero-index-materials",
+      "section": "deep",
+      "title_en": "Arbitrary-Order Scattering Exceptional Points in Configurable Non-Hermitian Zero-Index Materials",
+      "authors": "Yucheng Xu, Ling Yin, Yongxing Wang, Jie Luo",
+      "date": "2026-06-05",
+      "pdf": "https://arxiv.org/pdf/2606.06998v1",
+      "score": "9.0",
+      "evidence": "提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点",
+      "tldr": "在非厄米光学系统中，散射例外点（EP）是散射矩阵本征值和本征矢同时简并的奇点，高阶EP因其对微扰的超灵敏响应而极具潜力，但灵活实现任意阶散射EP仍是一项挑战。本文提出一种可配置的非厄米零折射率材料（ZIM）网络，通过嵌入损耗/增益掺杂，可在N端口网络中实现最高N阶的散射EP，并可灵活调控EP阶数（从2至N或完全消除）。数值验证表明，与传统的相干完美吸收相比，二阶EP已展现更优的全入射波吸收性能，更高阶EP更带来幂律增强。该策略为开放散射系统中任意阶EP的设计实现提供了通用途径，在先进传感等应用中前景广阔。",
+      "tags": "query:enz",
+      "abstract_en": "Scattering exceptional points (EPs) are non-Hermitian degeneracies where the eigenvalues and eigenvectors of scattering matrices coalesce, enabling many intriguing phenomena in optical systems. Higher-order scattering EPs are particularly notable for their ultrasensitive response to perturbations, yet achieving flexible, arbitrary-order control remains challenging. Here, we propose a configurable non-Hermitian zero-index material (ZIM) network that enables arbitrary-order scattering EPs, as rigorously proved theoretically and validated numerically. Specifically, we show that in an N-port non-Hermitian ZIM network embedded with loss/gain dopants, the maximum achievable EP order is N, and the order can be flexibly tuned from 2 to N or completely eliminated by adjusting the dopants. Furthermore, we compare conventional coherent perfect absorption with absorbing EPs of different orders. Although both achieve perfect absorption of all incident waves, a second-order EP already outperforms coherent perfect absorption, and higher-order EPs provide further power-law enhancement. These findings establish a pathway toward realizing arbitrary-order EPs in open scattering systems, holding significant promise for advanced sensing applications.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
