@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-09",
+  "date": "2026-06-09",
+  "generated_at": "2026-06-09T22:01:31",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/09/2606.02033v1-dipolar-modeling-of-multipolar-metasurfaces",
+      "section": "quick",
+      "title_en": "Dipolar Modeling of Multipolar Metasurfaces",
+      "authors": "Hossein Allahverdizadeh, Karim Achouri",
+      "date": "2026-06-01",
+      "pdf": "https://arxiv.org/pdf/2606.02033v1",
+      "score": "6.0",
+      "evidence": "适用于epsilon近零超材料设计的高效多极建模方法。",
+      "tldr": "多极分解超表面建模需处理大量高阶矩，数学复杂；本文提出利用球多极矩对坐标原点的依赖性，通过将广义片转换条件按空间宇称分割，系统抑制四极和八极等高阶项，仅用偶极矩即可精确重建散射参数；两个数值算例验证了方法准确性；该框架将几何复杂超表面建模简化至纯偶极水平，兼具直观性与高效性。",
+      "tags": "query:enz",
+      "abstract_en": "Multipolar decomposition is a powerful tool for analyzing and designing metasurfaces, but its practical application is often limited by the mathematical complexity that arises when a large number of multipole moments must be taken in to account. To minimize this modeling complexity without sacrificing accuracy, we present an efficient method that exploits the coordinates origin dependence of spherical multipole moments. We show that the optimal origins for minimizing higher-order contributions, such as quadrupoles and octupoles, depend strictly on the spatial parity of the electromagnetic response. This is achieved by modeling a metasurface response using multipolar generalized sheet transition conditions (GSTCs). By separating the GSTCs into independent even and odd parity components, we can evaluate the electric and magnetic discontinuities at distinct physical positions. This parity-splitting framework allows us to systematically suppress unwanted higher-order terms and reconstruct the complete scattering parameters using only the dipole moments. We validate our analytical approach using two numerical examples: vertically asymmetric dielectric cones on a substrate, and a horizontally symmetry-broken metasurface supporting a double quasi-bound state in the continuum resonance. In both cases, the retrieved scattering parameters show excellent agreement with full-wave simulations. This method provides a simple, physically intuitive framework that simplifies the modeling of geometrically complex and non-local metasurfaces down to a purely dipolar level.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

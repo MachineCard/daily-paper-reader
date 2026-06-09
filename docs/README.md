@@ -6,26 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-08
-- 运行时间：2026-06-08 22:04:09 UTC
+- 最新运行日期：2026-06-09
+- 运行时间：2026-06-09 22:01:18 UTC
 - 运行状态：成功
 - 本次总论文数：1
-- 精读区：1
-- 速读区：0
+- 精读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-今日深入解读了一篇关于可配置非厄米零折射率材料的高分研究，揭示了其中任意阶散射例外点的实现机制。  
-核心看点：通过可控的非对称性与增益-损耗设计，可在零折射率平台中灵活构建任意高阶例外点，从而巨幅增强对微弱扰动的散射响应。  
-建议关注这类非厄米拓扑结构在超灵敏光学传感和片上非互易器件中的应用潜力。
-- 详情：[/202606/08/README](/202606/08/README)
+今日速读一篇关于多极超表面的偶极建模研究，延续对超构光学设计的关注。  
+该工作系统对比了单偶极、双偶极及多极子展开模型在预测电磁响应时的精度，指出双偶极模型在特定对称性下可大幅提升准确性。  
+若你对超表面逆向设计感兴趣，可优先阅读其中关于模型误差来源的讨论，这有助于选择更高效的设计初值。
+- 详情：[/202606/09/README](/202606/09/README)
 
 ### 精读区论文标签
-1. [Arbitrary-Order Scattering Exceptional Points in Configurable Non-Hermitian Zero-Index Materials](/202606/08/2606.06998v1-arbitrary-order-scattering-exceptional-points-in-configurable-non-hermitian-zero-index-materials)  
-   标签：评分：9.0/10、query:enz
-   evidence：提出可配置的非厄米零折射率材料网络以实现任意阶散射异常点
+- 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Dipolar Modeling of Multipolar Metasurfaces](/202606/09/2606.02033v1-dipolar-modeling-of-multipolar-metasurfaces)  
+   标签：评分：6.0/10、query:enz
+   evidence：适用于epsilon近零超材料设计的高效多极建模方法。
 
 
 <div class="dpr-home-promo-card">

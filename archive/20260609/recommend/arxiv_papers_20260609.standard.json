@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-09T21:59:56.515573+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 0,
+    "deep_cap": 7,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 12,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.02033v1",
+      "source": "arxiv",
+      "title": "Dipolar Modeling of Multipolar Metasurfaces",
+      "abstract": "Multipolar decomposition is a powerful tool for analyzing and designing metasurfaces, but its practical application is often limited by the mathematical complexity that arises when a large number of multipole moments must be taken in to account. To minimize this modeling complexity without sacrificing accuracy, we present an efficient method that exploits the coordinates origin dependence of spherical multipole moments. We show that the optimal origins for minimizing higher-order contributions, such as quadrupoles and octupoles, depend strictly on the spatial parity of the electromagnetic response. This is achieved by modeling a metasurface response using multipolar generalized sheet transition conditions (GSTCs). By separating the GSTCs into independent even and odd parity components, we can evaluate the electric and magnetic discontinuities at distinct physical positions. This parity-splitting framework allows us to systematically suppress unwanted higher-order terms and reconstruct the complete scattering parameters using only the dipole moments. We validate our analytical approach using two numerical examples: vertically asymmetric dielectric cones on a substrate, and a horizontally symmetry-broken metasurface supporting a double quasi-bound state in the continuum resonance. In both cases, the retrieved scattering parameters show excellent agreement with full-wave simulations. This method provides a simple, physically intuitive framework that simplifies the modeling of geometrically complex and non-local metasurfaces down to a purely dipolar level.",
+      "authors": [
+        "Hossein Allahverdizadeh",
+        "Karim Achouri"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-01T10:22:08+00:00",
+      "link": "https://arxiv.org/pdf/2606.02033v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Efficient multipolar modeling method for metasurfaces, directly applicable to epsilon-near-zero metamaterial design.",
+      "llm_evidence_cn": "适用于epsilon近零超材料设计的高效多极建模方法。",
+      "llm_evidence": "适用于epsilon近零超材料设计的高效多极建模方法。",
+      "canonical_evidence": "适用于epsilon近零超材料设计的高效多极建模方法。",
+      "llm_tldr_en": "Presents an efficient multipolar metasurface modeling method using optimal origin placement to reduce complexity, based on parity separation of GSTCs, enabling accurate design of complex metasurfaces including epsilon-near-zero structures.",
+      "llm_tldr_cn": "针对多极分解在设计超表面时数学复杂度过高的问题，本文提出了一种利用球多极矩坐标原点依赖性来最小化高阶贡献的高效建模方法。研究表明，最优原点严格取决于电磁响应的空间宇称，通过多极广义薄层跃迁条件(GSTCs)的奇偶分离实现。该方法在不牺牲精度的情况下显著降低建模复杂度，为包括epsilon近零超表面在内的复杂超表面设计提供了有效工具。",
+      "llm_tldr": "针对多极分解在设计超表面时数学复杂度过高的问题，本文提出了一种利用球多极矩坐标原点依赖性来最小化高阶贡献的高效建模方法。研究表明，最优原点严格取决于电磁响应的空间宇称，通过多极广义薄层跃迁条件(GSTCs)的奇偶分离实现。该方法在不牺牲精度的情况下显著降低建模复杂度，为包括epsilon近零超表面在内的复杂超表面设计提供了有效工具。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "metamaterials with epsilon near zero properties",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
