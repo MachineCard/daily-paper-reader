@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-11",
+  "date": "2026-06-11",
+  "generated_at": "2026-06-11T22:15:23",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/11/2606.11567v1-nonlinearity-reversal-in-epsilon-near-zero-indium-tin-oxide-driven-by-few-cycle-light-pulse",
+      "section": "deep",
+      "title_en": "Nonlinearity Reversal in Epsilon-Near-Zero Indium Tin Oxide Driven by Few-Cycle Light Pulse",
+      "authors": "Mustafa Goksu Ozlu, Colton Fruhling, Ian Hoffman, Jae Ik Choi, Marcello Ferrera, Alexandra Boltasseva, Vladimir M. Shalaev",
+      "date": "2026-06-10",
+      "pdf": "https://arxiv.org/pdf/2606.11567v1",
+      "score": "10.0",
+      "evidence": "用少周期脉冲研究ENZ ITO非线性反转，直接匹配透明导电氧化物的光学非线性和epsilon近零效应。",
+      "tldr": "透明导电氧化物（TCOs）在~1 TW/cm²极端光强下的非线性研究已取得突破，但进一步探索更高强度动态受限于材料损伤阈值。本研究利用亚8飞秒少周期激光脉冲，在保持光学通量低于损伤界限的同时最大化泵浦强度。实验发现，当泵浦光强超过约5 TW/cm²时，光学响应出现趋势反转，透射和反射调制符号完全改变，折射率调制在300飞秒内完成全周期振荡，且反转幅度与光强呈现二次方关系。为解释此现象，提出了基于双光子吸收（TPA）的物理模型，该过程因泡利阻塞通常被禁戒，但通过导带内非平衡态跃迁使阻塞解除，从而开启带间TPA通道。该模型与实验数据吻合，揭示了带间与带内跃迁竞争的动力学过程。此强度可控机制可能为TCOs在光子时间晶体等时变光子学中的应用提供关键驱动。",
+      "tags": "query:tco",
+      "abstract_en": "Recent breakthrough studies of nonlinearities at extreme pump intensities ($\\sim$1 $\\text{TW/cm}^2$) in transparent conducting oxides (TCOs) have rewritten our understanding of the dynamics in these materials. However, exploring TCO dynamics beyond these intensities is prohibited by the damage threshold of the material. In this work, we overcome this problem by using a few-cycle pump laser pulse (sub-8\\,fs) to maximize the intensity while keeping the optical fluence below the damage threshold. We observe a reversal in the optical response trend starting at optical pump laser intensities of $\\sim$5 $\\text{TW/cm}^2$ similar to Segal et al. At the highest pump pulse intensities, we obtain a complete change in the sign of the modulation for both transmission and reflection, producing a full-cycle oscillation of the refractive index modulation within 300\\,fs. The amplitude of the sign reversal scales quadratically with the intensity. We therefore propose a simple two-photon absorption (TPA) model to explain the observed behaviour. The TPA, which is normally forbidden by the Pauli blocking, is enabled here by intraband excitations from the lower to the upper non-equilibrium states of the conduction band (CB). Such excitations vacate the states at the bottom of the CB, lifting up the blocking and thus making interband TPA possible. The model is in good agreement with experimental results, capturing the essential trends in the observed data and revealing the dynamics of competing channels caused by the interplay between interband and intraband transitions. This intensity-controlled mechanism could be the key to unlocking new applications of TCOs for time-varying photonics such as photonic time crystals.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

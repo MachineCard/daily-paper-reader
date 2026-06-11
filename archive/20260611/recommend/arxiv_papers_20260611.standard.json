@@ -1,0 +1,59 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-11T22:13:42.561715+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.11567v1",
+      "source": "arxiv",
+      "title": "Nonlinearity Reversal in Epsilon-Near-Zero Indium Tin Oxide Driven by Few-Cycle Light Pulse",
+      "abstract": "Recent breakthrough studies of nonlinearities at extreme pump intensities ($\\sim$1 $\\text{TW/cm}^2$) in transparent conducting oxides (TCOs) have rewritten our understanding of the dynamics in these materials. However, exploring TCO dynamics beyond these intensities is prohibited by the damage threshold of the material. In this work, we overcome this problem by using a few-cycle pump laser pulse (sub-8\\,fs) to maximize the intensity while keeping the optical fluence below the damage threshold. We observe a reversal in the optical response trend starting at optical pump laser intensities of $\\sim$5 $\\text{TW/cm}^2$ similar to Segal et al. At the highest pump pulse intensities, we obtain a complete change in the sign of the modulation for both transmission and reflection, producing a full-cycle oscillation of the refractive index modulation within 300\\,fs. The amplitude of the sign reversal scales quadratically with the intensity. We therefore propose a simple two-photon absorption (TPA) model to explain the observed behaviour. The TPA, which is normally forbidden by the Pauli blocking, is enabled here by intraband excitations from the lower to the upper non-equilibrium states of the conduction band (CB). Such excitations vacate the states at the bottom of the CB, lifting up the blocking and thus making interband TPA possible. The model is in good agreement with experimental results, capturing the essential trends in the observed data and revealing the dynamics of competing channels caused by the interplay between interband and intraband transitions. This intensity-controlled mechanism could be the key to unlocking new applications of TCOs for time-varying photonics such as photonic time crystals.",
+      "authors": [
+        "Mustafa Goksu Ozlu",
+        "Colton Fruhling",
+        "Ian Hoffman",
+        "Jae Ik Choi",
+        "Marcello Ferrera",
+        "Alexandra Boltasseva",
+        "Vladimir M. Shalaev"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-10T01:47:29+00:00",
+      "link": "https://arxiv.org/pdf/2606.11567v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Studies ENZ ITO nonlinearity reversal with few-cycle pulses, directly matching optical nonlinearity and ENZ effects in TCOs.",
+      "llm_evidence_cn": "用少周期脉冲研究ENZ ITO非线性反转，直接匹配透明导电氧化物的光学非线性和epsilon近零效应。",
+      "llm_evidence": "用少周期脉冲研究ENZ ITO非线性反转，直接匹配透明导电氧化物的光学非线性和epsilon近零效应。",
+      "canonical_evidence": "用少周期脉冲研究ENZ ITO非线性反转，直接匹配透明导电氧化物的光学非线性和epsilon近零效应。",
+      "llm_tldr_en": "This paper uses sub-8 fs pulses to study ENZ ITO at extreme intensities beyond the damage threshold, observing a complete reversal of modulation sign at ~TW/cm^2.",
+      "llm_tldr_cn": "为解决透明导电氧化物在高光强下损伤阈值限制的研究难题，本文利用亚8飞秒少周期泵浦激光脉冲，在保持通量低于损伤阈值的同时最大化光强。实验观察到在约5 TW/cm^2光强下ITO光学响应趋势反转，并在最强泵浦下实现了调制信号的完全变号。该研究突破了ENZ材料超快非线性研究的强度壁垒，揭示了极强场下的非线性动力学机制。",
+      "llm_tldr": "为解决透明导电氧化物在高光强下损伤阈值限制的研究难题，本文利用亚8飞秒少周期泵浦激光脉冲，在保持通量低于损伤阈值的同时最大化光强。实验观察到在约5 TW/cm^2光强下ITO光学响应趋势反转，并在最强泵浦下实现了调制信号的完全变号。该研究突破了ENZ材料超快非线性研究的强度壁垒，揭示了极强场下的非线性动力学机制。",
+      "llm_tags": [
+        "query:tco"
+      ],
+      "matched_query_tag": "query:tco",
+      "matched_query_text": "Optical nonlinearity and epsilon near zero effects in TCOs",
+      "matched_requirement_id": "req-18",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
