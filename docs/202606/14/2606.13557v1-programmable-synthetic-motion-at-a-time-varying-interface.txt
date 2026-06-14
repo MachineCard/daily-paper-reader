@@ -1,0 +1,286 @@
+Title: Programmable Synthetic Motion at a Time-Varying Interface
+
+URL Source: https://arxiv.org/pdf/2606.13557v1
+
+Published Time: Fri, 12 Jun 2026 01:14:31 GMT
+
+Number of Pages: 10
+
+Markdown Content:
+# Programmable Synthetic Motion at a Time-Varying Interface 
+
+A. C. Harwood, 1, ∗ D. Cielecki, 1, † T. V. Raziman, 1, 2 S. A. Maier, 1, 3 S. Vezzoli, 1 and R. Sapienza 1, ‡
+
+> 1
+
+Blackett Laboratory, Department of Physics, Imperial College London, London SW7 2AZ, UK 
+
+> 2
+
+Department of Mathematics, Imperial College London, London, UK 
+
+> 3
+
+School of Physics and Astronomy, Monash University, Clayton, VIC 3800, Australia 
+
+(Dated: June 12, 2026) Space-time metamaterials that exhibit synthetic motion promise arbitrary control over the mo-mentum, frequency and energy of scattered light, but realising the required space-time modulation in a programmable way remains a challenge. Here we program synthetic motion using a single spatial light modulator in a 4f geometry which imprints a continuously tunable pulse-front tilt onto a high-intensity pump pulse, inducing reflectivity modulations at a sub-wavelength indium tin oxide thin film with synthetic velocities spanning the sub- and superluminal regimes. The angle-resolved spectrum of a scattered probe pulse reveals space-time diffraction patterns whose gradient and bandwidth vary continuously with synthetic velocity, in excellent agreement with theory. Splitting the shaped pump into two independently controlled pulses yields space-time double-slit diffraction with tunable fringe separation and frequency-momentum gradient. This programmable platform opens a path towards non-linear and periodic space-time trajectories for tabletop analogue studies of relativistic phenomena and space-time metasurfaces. 
+
+INTRODUCTION 
+
+Spatial metasurfaces harness subwavelength structur-ing to sculpt the momentum of light, enabling flat op-tics, beam steering, and holography [1], yet leave the fre-quency spectrum unchanged due to their temporal in-variance. Structuring the properties of a material on sub-cycle timescales instead breaks translational invari-ance in time and lifts the reciprocity constraints. Time-varying metamaterials have emerged as a versatile plat-form for simultaneously manipulating the energy and spectral content of waves, beyond conventional meta-materials [2–4]. In the optical domain, this is enabled by photo-induced ultrafast modulations of subwavelength thin films of transparent conductive oxides (TCOs) [5–8], leading to the observation of temporal refraction [9–11] and diffraction [12, 13], as well as ultrafast control of gain and loss [14] and polarisation [15]. Spatiotemporal metamaterials that exhibit synthetic motion, a space-time structured modulation of the op-tical properties of the device [16], combine the spec-tral control of time-varying media with the directional control of spatially structured media [17, 18], and have been predicted to support a wealth of phenomena in-cluding amplification [19–21], complex pulse shaping [22, 23], nonreciprocity [24], plasmonic coupling [25], analogue relativistic phenomena [26–28], and control-lable quantum emission [29, 30]. These prospects are now accessible, with recent studies of space-time modu-lated systems demonstrating magnet-less, non-reciprocal scattering [31], frequency-momentum splitting of light pulses [32, 33], ultrafast transient lensing via space-time refraction [34], and superluminal doppler effect [35]. Synthetic motion is often driven by structured light [17], where precise spatio-temporal control over op-tical pulses drives light-matter interactions. This has been shown at relativistic and ultrafast extremes [36], en-abling optical pulses with tuneable synthetic velocities in bulk laser-driven plasma wakefield motion [37–39], ana-logue Hawking radiation [40], synchrotron radiation [41] and superradiant light sources [42]. Here we demonstrate a platform for programmable space-time modulation at an indium tin oxide (ITO) in-terface. Using a single spatial light modulator (SLM) in a 4f pulse-shaping geometry, we achieve continuous, in-situ control over the synthetic velocity of reflectivity modula-tion, spanning subluminal to superluminal regimes. An-gularly resolved space-time diffraction spectra of probe pulses scattered by the modulation exhibit a velocity-dependent momentum-frequency gradient. Throughout, experimental results are matched to numerical simula-tions based on operator theory [35, 43] and an analytical Fourier model, providing a predictive description of pro-grammable synthetic motion. We further realise a space-time double slit with tuneable velocity and space-time separation, demonstrating independent control over the gradient and spacing of the diffraction fringes. 
+
+GENERATION OF PROGRAMMABLE SYNTHETIC MOTION 
+
+A laser pulse incident obliquely at an angle θ on a surface illuminates a spot that traverses a space-time trajectory with velocity v = c/ sin( θ) (Fig. 1a), mod-ulating the material properties of the surface along its path. Such synthetic motion transports no mass or in-formation and can travel at speeds equal to and greater than the speed of light.The angle of incidence fixes the speed, however, restricting this scheme to superluminal linear motion and requiring mechanical realignment for any adjustment. Tilting the front of an ultrafast pulse so that it arrives at different locations at different times 
+
+> arXiv:2606.13557v1 [physics.optics] 11 Jun 2026
+
+2a b c    
+
+> Space
+> Time speed of light
+> k
+> Structured illumination
+> θ
+> k
+> Oblique illumination
+> FIG. 1. Synthetic motion at a time-varying interface. (a) Oblique illumination of a pump pulse at angle θilluminates a region that sweeps across the sample surface at a fixed synthetic velocity, illustrated at four snapshots in time, restricted to the superluminal regime. (b) Spatio-temporal structuring of the pump pulse decouples the synthetic velocity from the angle of incidence, giving access to the full space-time trajectory of the illumination pattern within a single optical setup. (c) The corresponding space-time trajectories accessible under structured illumination span subluminal and superluminal regimes as well as continuously accelerating paths, in contrast to the fixed superluminal trajectory imposed by oblique illumination.
+
+(Fig. 1b) [44] decouples the synthetic velocity from the angle of incidence, making subluminal and superlumi-nal regimes continuously accessible without mechanical adjustment. Full spatiotemporal control of the pulse un-locks arbitrary synthetic trajectories, including accelera-tion and oscillation, giving access to a far broader exper-imental parameter space (Fig. 1c). We realise spatio-temporal pulse shaping by imprint-ing a tunable phase profile onto the joint frequency-momentum spectrum of the 180 fs pulses, centred at 1300 nm/230 THz, using a 2D space-time pulse shaper (Fig. 2a, inset) [45]. The pulse shaper comprises a reflec-tive grating, a cylindrical lens and a reflective SLM in a folded 4f configuration, placed at the back focal plane of a final spherical lens that focuses the pulse at the sam-ple. The horizontal rulings of the grating disperse the frequency content of the incident pulses vertically, which are then collimated by the cylindrical lens, leaving the horizontal momentum unchanged. With the SLM po-sitioned at the joint Fourier plane of the grating and focussing lens, its two axes map directly onto the fre-quency and transverse momentum of the pulse, such that any phase pattern imprinted on the SLM structures the spatio-temporal form of the pulse at the sample plane. By imprinting a quadratic phase pattern – which be-haves as a cylindrical Fresnel lens – either along the fre-quency axis or the momentum axis of the SLM, we can stretch the pulse in time or space at the sample plane. Rotating this pattern by angle ξSLM (Fig. 2a) relative to the frequency axis couples the spatial and temporal de-grees of freedom, enabling arbitrary rotation of the pulse-front. However, the synthetic velocity of the pulse at the sample is not determined by the pulse-front tilt alone but also by the finite sizes of the pulse in space and time, and its projection onto the obliquely orientated sample sur-face. For a temporally narrow pulse with no front tilt, oblique incidence at angle θ already imparts a synthetic velocity v = c/ sin( θ) to the illuminated spot, and the pulse-front tilt introduced by ξSLM acts to modify this baseline (see Supplemental Fig. S8). 
+
+> CHARACTERISATION OF SYNTHETIC MOTION
+
+We characterise the synthetic velocity of the structured pump pulse at the sample plane using a spatiotemporally resolved SFG cross-correlation scheme (Fig. 2a) [46]. The shaped pump is focused onto a 400 μm GaP wafer at an angle of 73 ◦, where it overlaps with a probe pulse in-cident at 65 ◦. Because of the lack of phase-matching conditions in GaP, frequency mixing only happens over the coherence length (a few μm), making the interac-tion length much shorter than the extension of the two pulses. The pump/probe angles match the geometry of the subsequent ITO diffraction experiments, correspond-ing to the Berreman resonance of the ITO nano-layer [13]. The probe pulse is stretched spatially to approximately 1000 μm on the sample, three times the spatial extent of the pump beam, and stretched temporally to ∼640 fs using a top-hat spectral filter (see Supplemental section “Optical set-up”). The pump and probe durations and geometry in the cross-correlation experiment are chosen to match the subsequent diffraction experiments, ensur-ing experimental consistency between the two measure-ments. Using a 2f imaging system, the SFG intensity profile is recorded on a camera for different values of probe de-lay δτ . We combine these intensity profiles to build up a spatio-temporal map ISFG (x, δτ ) that encodes the over-lap between the transverse trajectories of the probe and shaped pump pulse front at the sample. The spatio-3ξSLM 
+
+> SFG δτ
+> camera
+> χ(2)
+
+a bc      
+
+> Exp. Sim. pulse shaper
+> pump probe Momentum (k x)Frequency ( ω)
+> iii iii iv viii iii iv v
+> cross-correlator
+
+FIG. 2. Shaping and characterising pump pulses with a programmable pulse front tilt. (a) A pulse shaping setup, comprised of an SLM, cylindrical lens and grating in a 4f configuration, applies phase to the frequency and transverse momentum of the pump pulse. We characterise the shaped pulses with a spatially resolved cross-correlator setup based on sum-frequency generation (SFG) with a reference probe pulse in a χ(2) nonlinear crystal (400 μm GaP wafer). SFG signal recorded by a camera as a function of probe delay δτ yields a spatio-temporal map of the pump intensity profile. (b) Experimental (top) and simulated (bottom) SFG space-time maps ISFG (x, δτ ) for different rotation angles of frequency-momentum phase pattern 
+
+ξSLM , demonstrating programmable rotation of the pulse front. (c) Synthetic velocity vpump can be subluminal or superluminal depending on the pulse front tilt (illustrations i–v), tuned by ξSLM . The synthetic velocity at the GaP sample extracted from SFG signals agrees strongly with analytical Fourier-based theory (solid lines). 
+
+temporal maps are simultaneously fitted to retrieve the spatial extents and pulse durations for both probe and unshaped pump, which we then use for theoretical mod-elling. Figure 2b shows experimental and simulated SFG space-time maps for ξSLM = 20 ◦, 70 ◦ and 90 ◦. Knowl-edge of the probe pulse parameters allows the retrieval of the trajectory of the shaped pump at the sample plane from the SFG map (see Supplemental section “Sum fre-quency generation”), from which the synthetic velocity can be calculated. The observed synthetic velocity of the pump pulse, ex-tracted from experiments on the angled sample, is plot-ted as a function of ξSLM in Fig. 2c. Without any pro-grammed front tilt, the pump pulse at 73 ◦ incidence car-ries a baseline synthetic velocity of 1 .05 c, while the probe pulse at 65 ◦ carries a baseline of 1 .10 c. Since the pulse-front tilt must first overcome this geometric contribution, the velocity curve is asymmetric about ξSLM = 90 ◦, with the luminal crossing occurring at 70 ◦. The correspond-ing pulse orientations for different pattern rotations are sketched in Fig. 2c, i–v. The extracted velocities are in strong agreement with analytical theory (solid line, Fig. 2c) and also for Fresnel lenses of other parabolic strengths (Supplemental Fig. S6). 
+
+PROGRAMMABLE SPACE-TIME DIFFRACTION 
+
+The programmable synthetic velocity is now applied to drive space-time diffraction at a time-varying inter-face. The GaP wafer from the cross-correlator setup is replaced with an ITO sample comprising a 40 nm ITO film ( λENZ = 1320 nm /227 THz) sandwiched between a 100 nm gold layer and a SiO 2 substrate [13], Fig. 3a. The gold layer enhances the coupling of both pump and probe to the ITO film through the Berreman resonance of the bilayer, which occurs at approximately 65 ◦. Crucially, decoupling the synthetic velocity from the pump angle of incidence means the pump can be held fixed close to this Berreman resonant angle across all programmed veloci-ties, maximizing the induced refractive index modulation 4bcea 
+
+> SiO 2(1 mm) ITO (40 nm) Au (100 nm)
+
+probe 
+
+> δθ
+
+pump 65 73 Experimental Simulations Space Time 
+
+> = pump = probe vpump vprobe
+
+d
+
+fg        
+
+> vpump = v probe vpump = v probe vpump = 0.73v probe vpump = 0.73v probe vpump = 0.46v probe vpump = 0.46v probe vpump = 1.3v probe vpump = 1.3v probe
+
+FIG. 3. Space-time diffraction from programmable synthetic motion. (a) A pump pulse with a programmable pulse-front tilt is incident on ITO, creating a synthetically moving transient modulation. (b) Keeping the phase velocity of the probe (vprobe ) constant, we record the diffracted space-time spectrum as a function of angle from the reflected signal as we tune the synthetic velocity of the pump, vpump . (c) Experimental and (d) simulated momentum-frequency hyperspectra of space-time diffraction at vpump = 1 , 1.3, 0.46 , 0.73 vprobe , plotted on a logarithmic intensity scale. The extent of the unmodulated probe is marked by the red rectangle. (e) Spectral width ∆ ω, (f) angular width ∆ θ, defined by the full width at 1/1000th of the maximum, and (g) gradient of the diffraction pattern, extracted from experimental and simulated hyperspectra as a function of the pump-probe velocity ratio, in agreement with the analytical solution taken from our Fourier model (FM, dashed line). The gradient changes sign when velocities are equal, providing a direct signature of the transition between subluminal and superluminal regimes. 
+
+throughout. Under intense optical excitation our sample undergoes a near-unity modulation of its refractive index, driven by intraband photocarrier excitation that results in a de-crease in the plasma frequency of the sample due to a rapid increase in the effective mass of conduction band electrons before a slower return to equilibrium [5, 6, 47]. The probe experiences a subsequent ultrafast modula-tion of the sample’s complex reflectivity coefficient r =
+
+ρ e iϕ (t), with R = |r|2 changing from a few percent to 
+
+∼70% [13]. The amplitude modulation ( ρ) broadens the diffracted probe spectrum, while the asymmetric tempo-ral profile of ϕ(t), fast rise and slow decay, imparts first a larger red-shift and then a smaller blue shift as a func-tion of delay. By using our 640 fs probe pulse, we capture both dynamics to observe maximal spectral extension. By using tilted pulses that exhibit synthetic motion across the surface of our sample, the pump-induced mod-ulation creates a transient reflectivity aperture r(x, t )that moves across the sample surface with programmable synthetic velocity vpump (Fig. 3b). The spatiotemporally larger probe pulse encapsulates the induced modulation and is space-time diffracted, acquiring new frequencies at new angles, which we record by measuring the spec-trum of the scattered light as a function of angle away from the reflected probe. Fig. 3c shows a selection of the experimental momentum-frequency hyperspectra of the diffracted probe, acquired for vpump /v probe = 1 , 1.3, 0.46 and 0 .73, respectively. In each case, the diffraction pat-tern takes the form of an elongated distribution in the (f, θ ) plane, with a momentum and frequency bandwidth that extends far beyond the bandwidths of the unmodu-lated probe pulse, illustrated by the red rectangle. With 
+
+vpump varied as characterised in Fig. 2, the gradient and the bandwidth of the diffraction patterns change contin-uously. Experimental results are compared with numerical simulations of space-time diffraction, treating ITO as a Drude material whose plasma frequency ωp(t) under-goes a sharp 10 fs drop and a slower 210 fs relaxation, 5with a maximum change of -10% [13]. We then simulate space-time diffraction from this system using an oper-ator theory [43] (see Methods for details) and extract three key observables: the spectral width ∆ ω (Fig. 3e), the angular width ∆ θ (Fig. 3f), and the gradient of both the simulated and experimental diffraction patterns (Fig. 3g). The spectral and angular widths reflect the spatio-temporal extent of the pump aperture and vary smoothly with ξSLM , consistent with the pulse profiles characterised in Fig. 2. Despite the trends in ∆ ω and ∆θ being broadly consistent with theoretical predictions the match is complicated by uncertainty in the space-time profile of the modulation, see discussion for more details. The gradient of the diffraction pattern (Fig. 3g) is less sensitive to these experimental uncertainties, and as a re-sult the gradients extracted from the experimental data are in excellent agreement with the simulations based on operator theory (green) and the Fourier-based ana-lytical theory (black) (see SI) across the full range of 
+
+ξSLM . Notably, the gradient undergoes a sign change at vpump = vprobe , serving as a direct experimental sig-nature of the transition between subluminal and super-luminal regimes and confirming programmable, contin-uous control over space-time diffraction at an ENZ in-terface. The range of accessible gradients that can be programmed continously is restricted to approximately 
+
+±40 THz/ ◦. The elliptical nature of the shaped pump, with widths that vary with ξSLM , limits the effective ve-locity of the space-time trajectory on the oblique film compared to a narrow beam. 
+
+> DISCRETE SYNTHETIC MOTION
+
+To increase the complexity of the momentum-frequency synthesis of scattered light, we extend our ex-perimental platform to modulation patterns that exhibit discrete synthetic motion. We generate a programmable space-time double slit by replacing the rotated Fresnel lens SLM phase pattern with a rotated periodic phase pattern (see Supplemental section “Double slit”). This splits the pump into a pair of spatially and temporally separated pulses (Fig. 4a), each with an approximate flu-ence of 36 mJ/cm 2. When used to illuminate the sam-ple, two localised reflectivity modulations are generated with spatial and temporal separation ∆ x and ∆ t, defin-ing a discrete synthetic velocity v = ∆ x/ ∆t. The pro-grammable pulse shaper enables accurate and indepen-dent control of the modulation velocity while keeping their spatial separation constant (Fig. 4b), or of their space-time separation ds while keeping their velocity con-stant (Fig. 4c). Momentum-frequency hyperspectra are acquired for a range of angles away from the directly reflected probe signal to isolate the lower intensity diffraction from the undiffracted light, improving the signal-to-noise ratio. First, we study the dependence of the diffraction pattern upon the discrete synthetic velocity of the two modu-lated spots, with three examples plotted in Fig. 4d for velocities vpump = 0 .53 vprobe , 1 .00 vprobe and 1 .85 vprobe .The double slit diffraction pattern is signified by clear, diagonal interference fringes, which extend well beyond the input probe bandwidth of ∼2 THz. As with the gra-dient of the diffraction patterns from continuous motion explored in Fig. 3, the gradient of the fringes depends on the ratio vpump /v probe . Approximating the two apertures as points, a simplified gradient relation can be derived from the Fourier-based theory [35]: 
+
+δf δθ ∝
+
+
+
+1 − vpump 
+
+vprobe 
+
+−1
+
+. (1) Here, unlike in Fig. 3, the gradient diverges to infinity at the luminal crossing where vpump = vprobe , enabling a larger range of gradients to be programmed. The gra-dients of experimental diffraction patterns (Fig. 4e) ex-tend far beyond the ±40 THz/ ◦ range demonstrated with continuous motion, as Eq. (1) diverges to infinity at the luminal crossing. To further explore the programmability, we study the dependence of the fringe separation on the space-time separation of the two modulations by keeping the veloc-ity fixed at vpump = 6 .31 vprobe (Fig. 4c, orange). The hyperspectra demonstrate visibly constant gradients as the space-time separation increases (Fig. 4f), with de-creasing frequency-momentum fringe separation, extend-ing the space- and time-only [12] double slit diffraction experiments where only fringe separation in momentum or frequency can be controlled. Fig. 4f plots the depen-dence of the fringe separation in THz and degrees as a function of the space-time separation, showing excellent agreement with the inverse relationship expected from theory (see Supplemental section “Fringes of space-time double slit”). 
+
+> DISCUSSION
+
+We show operation over a bandwidth of ≈10 THz which is not fully captured by our theoretical model be-cause of the complex space-time structure of the mod-ulation, which is complicated by saturation at high flu-ences [8, 48], the precise pump pulse profile, and two-beam coupling [49], which we model phenomenologically. However, the saturable modulation, which increases the probe bandwidth, simultaneously serves as a fluence-dependent control parameter for the induced reflectivity modulation, whose spatial profile is jointly determined by the SLM-encoded pump structure and the local flu-ence distribution. This translates directly into control over the diffracted probe bandwidth, with higher local 6Probe Pump 
+
+# a bd e
+
+δθ 
+
+# f g  
+
+> (x 1, t 1)(x 2, t 2)
+
+# c     
+
+> FIG. 4. Programmable space-time double slit. (a) The pump pulse is split into two pulses that generate modulated apertures with programmable space-time separation and discrete velocity. Space-time diffraction patterns are detected by scanning away from the reflected signal to improve visibility. While keeping one pulse fixed (black at origin), we program (b) the discrete synthetic velocity for a constant spatial separation as well as (c) the space-time separation dsfor a constant velocity. The acquired diffraction patterns exhibit interference fringes in momentum-frequency space. (d) Examples of diffraction patterns for different discrete velocities. (e) The fringe gradient is controlled via the discrete synthetic velocity. (f) The fringe separation is controlled via the space-time separation, in agreement with analytical theory (dashed lines).
+
+fluence producing sharper transients and correspondingly broader momentum-frequency distributions. The space-time double slit results demonstrate inde-pendent, programmable control of two properties of the diffracted light: the gradient of the frequency-momentum diffraction pattern, set by the synthetic velocity, and the fringe spacing, set by the space-time slit separation. This advance over single-aperture space-time diffraction en-ables structured frequency-momentum distributions with independently tunable features. However, the current platform is limited by the asymmetric ITO reflectivity modulation which preferentially red-shifts the diffracted spectrum, restricting the total structured bandwidth and breaking the symmetry of the probe’s frequency shift. Control of the diffraction gradient is further constrained near the luminal crossing, where vpump ≈ vprobe : as the relative velocity approaches zero, the gradient diverges, so small pump-geometry uncertainties cause large varia-tions in the diffraction pattern, reducing the reproducibil-ity of near-luminal configurations. In further works the discrete modulation scheme could be extended to larger ensembles of pump pulses to enable photonic space-time crystals [21], disordered space-time media [50, 51], and higher-dimensional modulation [52], with implications for analogue optical computing [53, 54] and the generation of spectrally and spatially structured quantum light [29, 30]. However, the number of address-able modulations is ultimately bounded by the ITO dam-age threshold, which limits the total accumulated fluence and therefore constrains the complexity of space-time trajectories achievable within a single shot [55]. 7
+
+> CONCLUSION
+
+We have demonstrated continuous tuning from sublu-minal to superluminal synthetic velocities without me-chanical realignment for both single and double slit space-time modulations. Independent programming of synthetic velocity and aperture separation in the double-slit geometry yields orthogonal control over the gradient and fringe separation of the diffraction pattern. The de-pendence of the diffraction gradient on velocity ratio is the optical analogue of super-relativistic Doppler scat-tering from a transluminal object [35], and experimental results across both modulation schemes agree well with analytical Fourier theory and an operator-based numer-ical theory. Shaping the probe in momentum-frequency space can be accompanied by coherent amplification or attenuation [14], enabling programmable pulse synthe-sis [23] in which amplitude, phase, and energy are simul-taneously under active control. Programmable superlu-minal space-time trajectories have applications ranging from tabletop analogues of relativistic phenomena such as black holes [27] and gravitational waves [56], to the generation of ˇCerenkov radiation [16] and Unruh radia-tion [57]. 
+
+> METHODS Sample
+
+The time-varying medium used in this work is a thin film of indium tin oxide (ITO) with low optical loss from Prazisions Glas & Optik GmbH. The 40 nm ITO film is deposited on a glass cover slip and covered by a 100 nm layer of gold. The gold layer enhances the reflectivity modulation and shifts the epsilon-near-zero frequency from 227 THz to 232 THz (1300 nm) due to the change in the refractive index of the surrounding medium. The same sample has been used in [13]. 
+
+> Pulse shaper
+
+We integrated a 4f pulse shaper with the SLM into the pump-probe setup (see SI). Ultrafast near-infrared pulses at 231 THz with a duration of ∼180 fs are gener-ated by an ORPHEUS (Light Conversion) optical para-metric amplifier from a solid-state PHAROS (Light Con-version) laser. The laser output is p-polarised and aligned with the nematic axis of the SLM using a half-wave plate after the OPA. Eighty percent of the power is directed to a reflective diffraction grating (600 lines/mm, 1.25 μmblaze), and then Fourier transformed in the y-direction at the SLM display by a cylindrical lens ( f = 13 mm). The SLM pixels imprint a phase on the spectral com-ponents of the pulse. The SLM reflects the beam back through the cylindrical lens and grating, where the fre-quency components are recombined. The pump is then focused onto the sample, which is located at the Fourier plane of the SLM display. 
+
+> SLM patterns
+> Uniform motion
+
+The SLM axes were mapped into angular and spatial frequencies. Tilting the pulse front is equivalent to a linear gradient in the added phase variation between ad-jacent frequency components, inducing a uniform delay along the direction of the gradient. In practice, this equates to a quadratic phase profile in one direction, which stretches the pulse along that direction and rotates the pulse front by an angle dependent on the rotation. A cylindrical lens profile, 
+
+ϕ(kx, ω ) = 8πW 2SLM 
+
+(kx cos ξSLM − ω sin ξSLM )2 , (2) was used to induce the appropriate phase variation, sym-metrically about the direction of the wavevector, where 
+
+kx are the momentum components along the x-axis of the SLM and ω is the frequency of the pump mapped to the y-axis of the SLM. The incoming pump beam was aligned to the centre of the rotated cylindrical lens, with a curvature defined by the central width WSLM (in pix-els) and a rotation angle ξSLM (see Supplemental section “SLM patterns”). 
+
+> Programmable double slit
+
+We use the Gerchberg-Saxton (G-S) algorithm [58] to generate the programmable space-time double slit. The algorithm computes the 1-D phase function ϕ(kx) that, when applied to the gaussian momentum spectrum of the unshaped pump f (kx), has a fourier transform with intensity equal to the target function D∆(x) consisting of two gaussians with separation ∆. The target gaussians have the same width as the unshaped pump pulse. We start with a cylindrical Fresnel lens pattern for ϕ. The G-S algorithm does the two steps repeatedly: 1. Compute the transform F (x) of f (kx) exp[ iϕ (kx)]. Let ψ(x) be the argument of F
+
+2. Compute the inverse transform f ′(kx) of pD∆(x) exp[ iψ (x)]. Update ϕ(kx) with the argument of f ′
+
+When |F |2 converges to D∆, ϕ(kx) gives the required phase pattern to create the double-slit. As ϕ is one-dimensional, it is applied on the SLM by rotating to achieve the required space-time rotation of the double 8slit, and with a uniform phase in the orthogonal direc-tion. We speed up the algorithm by weighting the peaks of D∆ in step 2 to compensate for the peaks of F being too small or big. Large ( > π 
+
+> 2
+
+) variations between adja-cent pixels of ϕ are smoothened. G-S algorithm is run for 30 rounds to compute phase patterns. 
+
+> SFG experiment and retrieval of shaped pump
+
+The spatially-resolved cross-correlator was built using a χ(2) nonlinear medium in which sum-frequency gen-eration occurs when the pump and probe are spatio-temporally overlapped. A 400 μm gallium phosphide wafer was used at the sample plane, with the pump in-cident at 73 ◦ and the probe at 65 ◦, in order to charac-terise the pulse shape under conditions consistent with the diffraction experiments. A GaP wafer replaced the ITO sample without altering its orientation relative to the beams, maintaining optical consistency. The sample plane was imaged onto a camera sensor using a 75 mm lens in a 2f–2f system. Images were collected for a se-quence of time delays between pump and probe pulses, and the SFG signal was filtered and collected as shown in Supplemental Figure S5a. The average power of both beams was kept constant across the entire dataset. Each SFG camera image was fit to an axis-parallel gaussian of the form 
+
+I(x, y ) = A exp 
+
+(
+
+− 12
+
+" x − x0
+
+σx
+
+2
+
++
+
+ y − y0
+
+σy
+
+2#) 
+
++ B
+
+where A is the amplitude, x/y 0 is the centre, σx/y is the width, and B is the background. 1-D gaussians of (A, x 0, σ x) for a given ( WSLM , ξ SLM ) pair were stacked for different values of pump-probe delay τ to obtain 
+
+ISFG (x, τ ) images as shown in Supplemental Figure 5b, and to calculate the spread GSFG (x, τ ) (see Supplemental section “Theory”). ISFG images for all ( WSLM , ξ SLM )pairs were fit simultaneously using only the spatiotem-poral widths of the probe and unshaped pump as fitting parameters. ISFG and the probe parameters were then used to retrieve the trajectory of the shaped pump on the sample and compute its velocity as in Fig. 2b. 
+
+> ITO experiment
+
+The pump and probe pulses were spatio-temporally overlapped at the sample, each incident at 73 ◦, 65 ◦ re-spectively. The reflection of the diffracted probe was spatially filtered in horizontal direction by a slit aper-ture at the Fourier plane of a lens ( f = 100 mm), and then collected by a fibre-coupled Princeton Instruments NIRvana spectrometer (see Supplemental section “Opti-cal set-up”). Hyperspectral scans were acquired by mea-suring a spectrum for a range of slit and delay stage po-sitions. Analysis was performed for the hyperspectral maps where the modulation of the probe has the highest extent in frequency and momentum. 
+
+> Numerical simulation
+
+We model the permittivity of the ITO layer as a time-varying Drude material, 
+
+ϵ(ω, t ) = ϵ∞ − ωp(t)2
+
+ω(ω + iγ ) .
+
+with constant background permittivity ϵ∞ and damping constant γ, and time-varying plasma frequency ωp(t) = 
+
+ωp0 − ∆f (t), where ωp0 is the unmodulated plasma fre-quency and ∆ is the maximum change. f is the convolu-tion of the pump intensity at the location with a temporal response kernel τ having a fast rise time trise and slow decay time tdecay ,
+
+τ (t − t′) = 12
+
+
+
+1 + tanh 
+
+ t − t′ − trise 
+
+trise 
+
+ 
+
+e− 
+
+> t−t′−trise tdecay
+> 
+
+,
+
+normalised to max( f ) = 1. Due to the non-perturbative nonlinearity of ITO [59], we opt for a simplified model in which the maximum modulation ∆ is set to 10% [13] for all ξSLM , despite the varying pump fluences. We also neglect the less prominent modulation of γ at low fluences [48]. The parameters used in the simulations are ϵ∞=3.9, ωp0=450.5 THz, γ=130 THz. trise =10 fs, 
+
+tdecay =210 fs. We simulate space-time diffraction from the film us-ing an operator-based approach for wave propagation in spatiotemporally modulated media [35, 43]. The permit-tivity is converted to an operator representation that acts on the frequency and in-plane momentum of electromag-netic fields. Maxwell’s equations are solved in the oper-ator framework to find the electromagnetic fields in the system. A transfer matrix method is used to compute the generalised reflection and transmission coefficients from the ITO/Au bilayer that include frequency-momentum mixing. Projecting the incident probe spectrum on these coefficients and transforming the in-plane momenta to angles using kx = ω/c 0 sin( θ) yields the hyperspectra in Fig. 3c.            
+
+> ∗These authors contributed equally to this work; a.harwood22@imperial.ac.uk
+> †These authors contributed equally to this work.
+> ‡r.sapienza@imperial.ac.uk [1] Chen, H.-T., Taylor, A. J. & Yu, N. A review of meta-surfaces: physics and applications. Reports on Progress in Physics 79 , 076401 (2016).
+
+9
+
+[2] Galiffi, E. et al. Photonics of time-varying media. Ad-vanced Photonics 4, 014002 (2022). [3] Shaltout, A., Kildishev, A. & Shalaev, V. Time-varying metasurfaces and Lorentz non-reciprocity. Optical Mate-rials Express 5, 2459 (2015). [4] Lyubarov, M. et al. Amplified emission and lasing in photonic time crystals. Science 377 , 425–428 (2022). [5] Kinsey, N. et al. Epsilon-near-zero Al-doped ZnO for ultrafast switching at telecom wavelengths. Optica 2,616–622 (2015). [6] Alam, M. Z., De Leon, I. & Boyd, R. W. Large optical nonlinearity of indium tin oxide in its epsilon-near-zero region. Science 352 , 795–797 (2016). [7] Caspani, L. et al. Enhanced Nonlinear Refractive Index in ϵ-Near-Zero Materials. Physical Review Letters 116 ,233901 (2016). [8] Li, Y. et al. Ultrafast Switching of Optical Proper-ties in a Doped Semiconductor by Intense Femtosec-ond Laser Pulses. in production, Light: Science &Applications (2026). URL https://doi.org/10.1038/ s41377-026-02346-x .[9] Karl, N. et al. Frequency conversion in a time-variant di-electric metasurface. Nano Letters 20 , 7052–7058 (2020). [10] Zhou, Y. et al. Broadband frequency translation through time refraction in an epsilon-near-zero material. Nature Communications 11 , 2180 (2020). [11] Bruno, V. et al. Broad Frequency Shift of Paramet-ric Processes in Epsilon-Near-Zero Time-Varying Media. 
+
+Applied Sciences 10 , 1318 (2020). [12] Tirole, R. et al. Double-slit time diffraction at optical frequencies. Nature Physics 1–4 (2023). [13] Tirole, R. et al. Saturable time-varying mirror based on an ENZ material (2022). 2202.05937. [14] Galiffi, E. et al. Optical coherent perfect absorption and amplification in a time-varying medium. Nature Photon-ics 1–7 (2026). [15] Jaffray, W. et al. All-optical polarization control in time-varying low-index films via plasma symmetry breaking. 
+
+Nature Photonics 1–9 (2026). [16] Bolotovski˘ ı, B. M. & Ginzburg, V. L. The Vavilov-Cerenkov Effect and the Doppler Effect in the Motion of Sourceswith Superluminal Velocity in Vacuum. Soviet Physics Uspekhi 15 , 184 (1972). [17] Shaltout, A. M., Shalaev, V. M. & Brongersma, M. L. Spatiotemporal light control with active metasurfaces. 
+
+Science 364 , eaat3100 (2019). [18] Liberal, I., Ganfornina-Andrades, A. & V´ azquez-Lozano, J. E. Spatiotemporal symmetries and energy-momentum conservation in uniform spacetime metamaterials (2024). 2407.15592. [19] Pendry, J. B., Galiffi, E. & Huidobro, P. A. Gain in time-dependent media—a new mechanism. Journal of the Optical Society of America B 38 , 3360 (2021). [20] Cromb, M. et al. Amplification of waves from a rotating body. Nature Physics 16 , 1069–1073 (2020). [21] Sharabi, Y., Dikopoltsev, A., Lustig, E., Lumer, Y. & Segev, M. Spatiotemporal photonic crystals. Optica 9,585–592 (2022). [22] Ostrovskii, L. A. A boundary with accelerating motion as a “space-time lens”. Radiophysics and Quantum Elec-tronics 18 , 456–457 (1975). [23] Kinder, K. D., Bahrami, A. & Caloz, C. Scattering and Chirping at Accelerated Interfaces (2025). 2506.19575. [24] Sounas, D. L. & Al` u, A. Non-reciprocal photonics based on time modulation. Nature Photonics 11 , 774–783 (2017). [25] Raziman, T. V., Touboul, M., Sapienza, R., Craster, R. V. & Rodr´ ıguez-Fortu˜ no, F. J. Surface Plasmon Polariton Excitation in Time-modulated Media. arXiv 
+
+2507.05126 (2025). [26] Koufidis, S. F. & McCall, M. W. Coupling light waves to gravitational waves. Physical Review D 112 , 104033 (2025). [27] Bahrami, A., Deck-L´ eger, Z.-L. & Caloz, C. Electrody-namics of Accelerated-Modulation Space-Time Metama-terials. Physical Review Applied 19 , 054044 (2023). [28] Horsley, S. A. R. & Pendry, J. B. Quantum electrody-namics of time-varying gratings. Proceedings of the Na-tional Academy of Sciences 120 , e2302652120 (2023). [29] Sloan, J., Rivera, N., Joannopoulos, J. D. & Soljaˇ ci´ c, M. Controlling two-photon emission from superluminal and accelerating index perturbations. Nature Physics 18 , 67– 74 (2022). [30] Kort-Kamp, W. J. M., Azad, A. K. & Dalvit, D. A. R. Space-Time Quantum Metasurfaces. Physical Review Letters 127 , 043603 (2021). [31] Guo, X., Ding, Y., Duan, Y. & Ni, X. Nonreciprocal metasurface with space–time phase modulation. Light: Science & Applications 8, 123 (2019). [32] Jaffray, W. et al. Spatio-spectral optical fission in time-varying subwavelength layers. Nature Photonics 1–9 (2025). [33] Ball, A. et al. A Space-Time Knife-Edge in Epsilon-Near-Zero Films for Ultrafast Pulse Characterization. Laser & Photonics Reviews 19 (2024). [34] Fan, Q., Shaltout, A. M., van de Groep, J., Brongersma, M. L. & Lindenberg, A. M. Ultrafast Wavefront Shaping via Space-Time Refraction. ACS Photonics 10 , 2467– 2473 (2023). [35] Harwood, A. C. et al. Space-time optical diffraction from synthetic motion. Nature Communications 16 , 5147 (2025). [36] Piccardo, M. et al. Trends in relativistic laser–matter interaction: the promises of structured light. Optica 12 ,732–752 (2025). [37] Liberman, A. et al. Direct observation of a wakefield generated with structured light. Nature Communications 
+
+16 , 10957 (2025). [38] Froula, D. H. et al. Spatiotemporal control of laser in-tensity. Nature Photonics 12 , 262–265 (2018). [39] Caizergues, C., Smartsev, S., Malka, V. & Thaury, C. Phase-locked laser-wakefield electron acceleration. Na-ture Photonics 14 , 475–479 (2020). [40] Belgiorno, F. et al. Hawking Radiation from Ultrashort Laser Pulse Filaments. Physical Review Letters 105 ,203901 (2010). [41] Henstridge, M. et al. Synchrotron radiation from an ac-celerating light pulse. Science 362 , 439–442 (2018). [42] Vaz, G. et al. Space-time beams with tunable or-bital group velocity for plasma superradiance. arXiv 
+
+2602.18838 (2026). URL http://arxiv.org/abs/2602. 18838 .[43] Horsley, S., Galiffi, E. & Wang, Y.-T. Eigenpulses of Dispersive Time-Varying Media. Physical Review Letters 
+
+130 , 203803 (2023). [44] Akturk, S., Gu, X., Zeek, E. & Trebino, R. Pulse-front tilt caused by spatial and temporal chirp. Optics Express 
+
+12 , 4399–4410 (2004). 10 
+
+[45] Kondakci, H. E. & Abouraddy, A. F. Optical space-time wave packets having arbitrary group velocities in free space. Nature Communications 10 , 929 (2019). [46] Potenza, M. A. C. et al. Three dimensional imaging of short pulses. Optics Communications 229 , 381–390 (2004). [47] Gurung, S. et al. Control of ultrafast hot electron dy-namics in epsilon-near-zero conductive oxide thin films. 
+
+Science Advances 11 , eadu8850 (2025). [48] Harwood, A. C. et al. Intraband and Interband Competi-tion Drives Ultrafast Modulations of Indium Tin Oxide. 
+
+arXiv 2605.21432 (2026). URL http://arxiv.org/abs/ 2605.21432 .[49] Vaddi, Y. et al. Parametric Amplification of Opti-cal Pulses through Synthetic Motion in a Time-Varying Medium. Nano Letters (2026). [50] Sharabi, Y., Lustig, E. & Segev, M. Disordered Photonic Time Crystals. Physical Review Letters 126 , 163902 (2021). [51] Coppolaro, M., Moccia, M., Castaldi, G. & Galdi, V. Ex-ploring aperiodic order in photonic time crystals. Physi-cal Review Applied 24 , L011001 (2025). [52] Engheta, N. Four-dimensional optics using time-varying metamaterials. Science 379 , 1190–1191 (2023). [53] Cordaro, A. et al. Solving integral equations in free space with inverse-designed ultrathin optical metagratings. Na-ture Nanotechnology 1–8 (2023). [54] Chamoli, S. K. et al. Nonlocal flat optics for size-selective image processing and denoising. Nature Communications 
+
+16 , 4473 (2025). [55] Hayran, Z., Khurgin, J. B. & Monticone, F. ℏω versus 
+
+ℏk: dispersion and energy constraints on time-varying photonic materials and time crystals [Invited]. Optical Materials Express 12 , 3904 (2022). [56] Koufidis, S. F. & McCall, M. W. Gravitational waves on the optical bench. Optics Letters 50 , 5901–5904 (2025). [57] Yablonovitch, E. Accelerating reference frame for elec-tromagnetic waves in a rapidly growing plasma: Unruh-Davies-Fulling-DeWitt radiation and the nonadiabatic Casimir effect. Physical Review Letters 62 , 1742–1745 (1989). [58] Gerchberg, R. W. & Saxton, W. O. A Practical Algo-rithm for the Determination of Phase from Image and Diffraction Plane Pictures. Optik 35 , 237–246 (1972). [59] Reshef, O. et al. Beyond the perturbative description of the nonlinear optical response of low-index materials. 
+
+Optics Letters 42 , 3225–3228 (2017). 
+
+Acknowledgements 
+
+The authors would like to thank Simon Horsley for useful discussions. This work was supported by The Val O’Donoghue Scholarship in Natural Sciences (ACH), the Engineering and Physical Sciences Research Coun-cil (EPSRC), grant number EP/Y015673 (TVR, SV, RS) and the Lee-Lucas Chair in Physics (SAM). We acknowledge computational resources and support pro-vided by the Imperial College Research Computing Ser-vice (http://doi.org/10.14469/hpc/2232). 
+
+Author Contributions 
+
+Conceptualisation: SV, RS Methodology: ACH, DC, SV, TVR, RS Software: TVR, ACH, DC Investigation: ACH, DC, TVR Visualisation: ACH, DC, RS Writing - Original draft: ACH Writing - Reviewing and Editing: All authors Supervision: RS, SV

@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-14",
+  "date": "2026-06-14",
+  "generated_at": "2026-06-14T21:31:34",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/14/2606.13557v1-programmable-synthetic-motion-at-a-time-varying-interface",
+      "section": "deep",
+      "title_en": "Programmable Synthetic Motion at a Time-Varying Interface",
+      "authors": "A. C Harwood, D. Cielecki, T. V. Raziman, S. A. Maier, S. Vezzoli, R. Sapienza",
+      "date": "2026-06-11",
+      "pdf": "https://arxiv.org/pdf/2606.13557v1",
+      "score": "8.0",
+      "evidence": "使用铟锡氧化物薄膜实现超快反射率调制",
+      "tldr": "时空超材料中的合成运动为实现对散射光动量、频率和能量的任意控制提供了可能，但实现所需的可编程时空调制依然困难。本文利用空间光调制器在4f系统中为高强泵浦脉冲引入连续可调的脉冲前倾，在亚波长ITO薄膜上激发合成运动，合成速度可在亚光速和超光速之间调节。探测光的角分辨光谱展示了时空衍射图样，其梯度和带宽随合成速度连续变化，并与理论计算高度一致。进一步将整形泵浦分成两个独立脉冲，获得了时空双缝衍射，条纹间距和频-动梯度均可调节。该可编程平台为桌面模拟相对论现象以及时空超表面研究奠定了基础。",
+      "tags": "query:tco",
+      "abstract_en": "Space-time metamaterials that exhibit synthetic motion promise arbitrary control over the momentum, frequency and energy of scattered light, but realising the required space-time modulation in a programmable way remains a challenge. Here we program synthetic motion using a single spatial light modulator in a 4f geometry which imprints a continuously tunable pulse-front tilt onto a high-intensity pump pulse, inducing reflectivity modulations at a sub-wavelength indium tin oxide thin film with synthetic velocities spanning the sub- and superluminal regimes. The angle-resolved spectrum of a scattered probe pulse reveals space-time diffraction patterns whose gradient and bandwidth vary continuously with synthetic velocity, in excellent agreement with theory. Splitting the shaped pump into two independently controlled pulses yields space-time double-slit diffraction with tunable fringe separation and frequency-momentum gradient. This programmable platform opens a path towards non-linear and periodic space-time trajectories for tabletop analogue studies of relativistic phenomena and space-time metasurfaces.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
