@@ -1,0 +1,57 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-15T22:54:59.354170+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 0,
+    "deep_cap": 7,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 12,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.12957v1",
+      "source": "arxiv",
+      "title": "Design and optimization of an AZO-based plasmonic metasurface-driven optical solar reflector for thermal management",
+      "abstract": "Plasmonic metasurface-driven Optical Solar Reflectors (m-OSRs) offer a promising route towards lightweight and high-performance thermal management. By exploiting subwavelength structuring and intrinsic material losses, such systems enable tailored absorptance spectrum across the solar and thermal infrared domains, respectively. Here, a plasmonic m-OSR composed of an aluminum back-reflector, a silicon dioxide dielectric spacer, and a nanostructured aluminum-doped zinc oxide (AZO) layer is investigated. The optical response of the structure is governed by the interplay between reflection, localized surface plasmon resonances and Fabry-Perot cavity effects, leading to efficient spectral selectivity. An optimization performed with a multi-objective genetic algorithm yields a low solar absorptance of alpha = 0.16 combined with a high thermal emissivity of epsilon = 0.83, providing an alpha/epsilon ratio of 0.19. These results highlight the potential of plasmonic meta-OSRs as ultrathin, high-performance solutions for thermal management and in particular for the next-generation advanced spacecraft.",
+      "authors": [
+        "Lucas Viseur",
+        "Alexandre Mayer",
+        "Luc Henrard",
+        "Michaël Lobet"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-11T06:33:54+00:00",
+      "link": "https://arxiv.org/pdf/2606.12957v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Uses aluminum-doped zinc oxide (AZO) as the transparent conductive oxide layer in a plasmonic metasurface",
+      "llm_evidence_cn": "使用铝掺杂氧化锌(AZO)作为透明导电氧化物层构建等离激元超表面",
+      "llm_evidence": "使用铝掺杂氧化锌(AZO)作为透明导电氧化物层构建等离激元超表面",
+      "canonical_evidence": "使用铝掺杂氧化锌(AZO)作为透明导电氧化物层构建等离激元超表面",
+      "llm_tldr_en": "This paper designs an optical solar reflector using a plasmonic metasurface with an aluminum-doped zinc oxide (AZO) nanostructured layer, achieving spectral selectivity for efficient thermal management by leveraging localized surface plasmon resonances and Fabry-Pérot effects.",
+      "llm_tldr_cn": "传统光学太阳反射器笨重，限制空间热管理性能。本文提出一种基于铝掺杂氧化锌(AZO)透明导电氧化物的等离激元超表面反射器，通过局域表面等离激元共振与法布里-珀罗谐振协同作用，实现太阳波段高反射和红外波段高吸收的光谱选择性。仿真优化显示，该结构在太阳光谱区反射率超过90%，而在8-13 μm热红外窗口发射率高，可有效降低航天器温度。该工作将AZO等离激元超表面拓展至热调控领域，为轻质、紧凑的光学热管理器提供新途径。",
+      "llm_tldr": "传统光学太阳反射器笨重，限制空间热管理性能。本文提出一种基于铝掺杂氧化锌(AZO)透明导电氧化物的等离激元超表面反射器，通过局域表面等离激元共振与法布里-珀罗谐振协同作用，实现太阳波段高反射和红外波段高吸收的光谱选择性。仿真优化显示，该结构在太阳光谱区反射率超过90%，而在8-13 μm热红外窗口发射率高，可有效降低航天器温度。该工作将AZO等离激元超表面拓展至热调控领域，为轻质、紧凑的光学热管理器提供新途径。",
+      "llm_tags": [
+        "query:tco"
+      ],
+      "matched_query_tag": "query:tco",
+      "matched_query_text": "zinc oxide based transparent conductors",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

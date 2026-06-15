@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-15 <!--dpr-date:20260615-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/15/2606.12957v1-design-and-optimization-of-an-azo-based-plasmonic-metasurface-driven-optical-solar-reflector-for-thermal-management" data-sidebar-item="{&quot;title&quot;: &quot;Design and optimization of an AZO-based plasmonic metasurface-driven optical solar reflector for thermal management&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.12957v1-design-and-optimization-of-an-azo-based-plasmonic-metasurface-driven-optical-solar-reflector-for-thermal-management&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;tco&quot;}], &quot;evidence&quot;: &quot;使用铝掺杂氧化锌(AZO)作为透明导电氧化物层构建等离激元超表面&quot;}">Design and optimization of an AZO-based plasmonic metasurface-driven optical solar reflector for thermal management</a>
   * 2026-06-14 <!--dpr-date:20260614-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/14/2606.13557v1-programmable-synthetic-motion-at-a-time-varying-interface" data-sidebar-item="{&quot;title&quot;: &quot;Programmable Synthetic Motion at a Time-Varying Interface&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.13557v1-programmable-synthetic-motion-at-a-time-varying-interface&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;tco&quot;}], &quot;evidence&quot;: &quot;使用铟锡氧化物薄膜实现超快反射率调制&quot;}">Programmable Synthetic Motion at a Time-Varying Interface</a>

@@ -1,0 +1,773 @@
+Title: Design and optimization of an AZO-based plasmonic metasurface-driven optical solar reflector for thermal management
+
+URL Source: https://arxiv.org/pdf/2606.12957v1
+
+Published Time: Fri, 12 Jun 2026 00:33:26 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+# Design and optimization of an AZO-based plasmonic metasurface-driven optical solar reflector for thermal management 
+
+L. Viseur, 1 A. Mayer, 1 L. Henrard, 1 and M. Lobet 1
+
+University of Namur, Department of Physics and Namur Institute of Structured Material 
+
+(*Electronic mail: lucas.viseur@unamur.be, michael.lobet@unamur.be) (Dated: 12 June 2026) 
+
+ABSTRACT 
+
+Plasmonic metasurface-driven Optical Solar Reflectors (m-OSRs) offer a promising route towards lightweight and high-performance thermal management. By exploiting subwavelength structuring and intrinsic material losses, such systems enable tailored absorptance spectrum across the solar and thermal infrared domains, respectively. Here, a plasmonic m-OSR composed of an aluminum back-reflector, a silicon dioxide dielectric spacer, and a nanostructured aluminum-doped zinc oxide (AZO) layer is investigated. The optical response of the structure is governed by the interplay between reflection, localized surface plasmon resonances and Fabry–Pérot cavity effects, leading to efficient spectral selectivity. An optimization performed with a multi-objective genetic algorithm yields a low solar absorptance of α = 0.16 combined with a high thermal emissivity of ε = 0.83, providing an α/ε ratio of 0.19. These results highlight the potential of plasmonic meta-OSRs as ultrathin, high-performance solutions for thermal management and in particular for the next-generation advanced spacecraft. 
+
+I. INTRODUCTION 
+
+Optical solar reflectors (OSRs) are designed to minimize solar absorptance α while maximizing thermal infrared emis-sivity ε, enabling passive radiative thermal management. 1,2 
+
+Achieving low α together with high ε requires strong spec-tral selectivity across two widely separated wavelength bands (FIG. 1a). Such spectral control is particularly relevant for space-based thermal regulation, 3–5 where radiative exchange dominates heat transfer, or all-day radiative coolers. 6–8 
+
+Conventional OSRs are based on secondary surface mirrors composed of a metallic layer deposited on glass. 2,7,9,10 While such systems provide excellent thermo-optical performance (α = 0.08–0.15 ; ε = 0.8–0.9), they remain relatively thick, fragile, and limited in geometric flexibility. 7,9,10 More recent approaches have explored lightweight and flexible alternatives (PMMA, fluorinated ethylene polymer), 7,11–13 yet often at the expense of long-term stability due to UV degradation, or spec-tral performance. 7,11–13 
+
+In this context, metasurfaces, engineered interfaces com-posed of arrays of subwavelength elements that enable uncon-ventional light–matter interactions and spectral tailoring, 14–16 
+
+offer a fundamentally different route to OSR. 7,8,17 By structuring materials at subwavelength scales, it is pos-sible to tailor light–matter interactions within ultrathin architectures. 14,15 Metasurfaces applications include flat op-tics and metalenses, 18,19 holography, 20 optical cloaking and stealth 17,21 and many more. 22 Several strategies have emerged for metasurface-driven OSRs, such as interference-based di-electric multilayers exploiting Fabry–Pérot effects to shape emissivity spectra, 7,23 , high-index dielectric resonators rely-ing on Mie or phonon-polariton resonances, 24–26 and finally plasmonic metasurfaces, 8 exploiting material losses and local-ized surface plasmon resonances (LSPR). 27–29 Interference-based OSR offers excellent solar reflectance and low fabrica-tion cost. However, the required number of layers increases the complexity and mass, and emissivity remains moderate compared to loss-driven approaches. 7,23 Dielectric resonators OSR enables angularly robust and low-loss designs but of-ten yields narrowband emission peaks, making it better suited to Earth-based radiative cooling where the atmospheric win-dow plays a role. 24–26 In space, where the full infrared range is relevant, broadband solutions are preferred. 3,30 Plasmonic architectures combining a metallic back-reflector, a dielec-tric spacer, and a structured conductive layer provide multi-ple degrees of freedom through geometry, thickness, and car-rier concentration control. 8 However, the interplay between reflection, cavity resonances, plasmonic modes, and intrinsic material dispersion remains not sufficiently clarified. In par-ticular, systematic multi-parameter optimization grounded in physical insight is still scarce. Its main drawbacks are higher fabrication cost and increased solar absorption due to losses. In this work, we investigate a plasmonic m-OSR based on a trilayer architecture of aluminum (Al), silicium dioxide (SiO 2) and aluminum-doped zinc oxide (AZO). We first ana-lyze the role of each layer and identify the dominant physical mechanisms governing spectral selectivity. Building on this understanding to limit the search domain, a multi-objective genetic algorithm 31–33 is employed to optimize the design with respect to solar absorptance α and thermal emissivity 
+
+ε. We demonstrate that by combining subwavelength struc-turation with lossy conductive materials, plasmonic m-OSRs enable the simultaneous excitation of multiple resonant mech-anisms within an ultrathin architecture. Localized surface plasmon resonances, Fabry-Pérot modes, and back-reflection can be exploited to tailor the design spectral response, re-sulting in high emissivity together with low solar absorptance within a reduced number of layers. The resulting compact and lightweight structure achieves high emissivity with low solar absorption while preserving angular robustness, highlighting its performance as an efficient optical solar reflector. 
+
+> arXiv:2606.12957v1 [physics.optics] 11 Jun 2026
+
+2 
+
+> II. MATERIALS AND METHODS
+
+Performance is quantified through the following figures of merit according to the European Cooperation for Space Stan-dardization conventions: 30 the spectrally integrated solar ab-sorptance 
+
+α =  
+
+> Rλ2
+> λ1
+
+A (λ ) Bs (λ ) dλ  
+
+> Rλ2
+> λ1
+
+Bs (λ ) dλ , (1) integrated between λ1 = 0.3 μm and λ2 = 2.5 μm with the ASTM E-490 30 solar irradiance Bs (λ ) and the spectral ab-sorptance A (λ ), and the thermal emissivity 
+
+ε =  
+
+> Rλ2
+> λ1
+
+A (λ ) B (λ , T ) dλ  
+
+> Rλ2
+> λ1
+
+B (λ , T ) dλ , (2) integrated between λ1 = 3 μm and λ2 = 20 μm with the black-body emission B (λ , T ) taken at T = 300 K. An ideal OSR’s performance is depicted by the orange dashed curve in FIG. 1a. This fictitious OSR totally reflects the solar spectrum (0.25 to 2.5 microns), hence absorptance 
+
+A = 0, and behaves like a perfect blackbody in the thermal in-frared (3 to 20 microns), hence A = 1. On the other hand, a realistic OSR exhibit an absorptance spectrum similar to the violet continuous curve, as illustrated in FIG. 1a, resulting in a small absorption in the solar spectrum and a deviation from the blackbody behavior in the thermal infrared. The overall performance of this realistic OSR is depicted by the dashed pink line in FIG. 1a, where the averaged value of α (ε) is rep-resented throughout the solar spectrum (thermal infrared) by an horizontal line according to Eq. 1 (Eq. 2). The subsequent optimization process consists in converging this realistic re-sponse towards the ideal one by tuning the different parame-ters of the design. Our plasmonic m-OSR consists of a periodic trilayer Al/SiO 2/AZO architecture disposed in a square array, for which the unit cell is illustrated in FIG. 1b. The plasmonic AZO layer is nanostructured, while the dielectric spacer and the aluminum back-reflector form a resonant cavity analogous to a Salisbury screen. 34 Six parameters are left as tunable vari-ables for the optimization, including the layer thicknesses t1,
+
+t2, and t3 of Al, SiO 2 and AZO, the unit cell period P, and the lateral dimension L of the AZO square. The AZO free carrier concentration Ne is also considered as a tunable parameter. All other parameters, as described below, are fixed. The per-mittivity of AZO is described using a Drude–Lorentz model with parameters derived from Sun et al. :8
+
+ε(ω) = ε∞ − ω2
+
+> p
+
+ω2 + iωΓ + f1ω21
+
+ω21 − ω2 + i2ωΓ1
+
+, (3) with the plasma frequency ωp, the background permittivity ε∞
+
+and the damping constant Γ of the Drude model. Parameters 
+
+f1, ω1 and Γ1, are respectively the amplitude, spectral posi-tion and damping constant of the Lorentz oscillator account-ing for the AZO ultraviolet absorptive peak around 0.3 μm. The plasma frequency further depends on the carrier concen-tration Ne, the elementary charge e, the effective electron mass 
+
+m∗ and the vacuum permittivity ε0 through 
+
+ω2 
+
+> p
+
+= Nee2
+
+m∗ε0
+
+. (4) The permittivity of SiO 2 is retrieved from Franta et al. 35 while Al is described by a Drude model provided in Rakic et al. 36 .The fixed parameters of the associated models and the per-mittivities of all materials used in this study are provided in Appendix A. Finally, the filling fraction is defined by L/P,whereas the aspect ratio is expressed by t3/L.Each layer is first investigated separately, and the occur-ring phenomena are studied at normal incidence unless stated otherwise. The influence of the different parameters of the layer on the overall performance is then assessed. Finally, as interplay between different phenomena or parameters is inevitable, their interactions are looked upon. Physical un-derstanding of the influence of the parameters allows us to refine the optimization range of each parameter to subse-quently exploit a genetic algorithm and perform a multiob-jective optimization. 31–33 The optical response is computed using a rigorous coupled-wave analysis (RCWA) solver de-veloped in-house. 37 Angular robustness of the optimized de-sign is ensured and assessed a posteriori , triggering a potential feedback loop. A genetic algorithm is a meta-heuristic used to determine solutions to an optimization problem. Genetic algorithms in particular take inspiration from the process of natural selec-tion, employing mechanisms such as selection, crossover or mutation inherent to biology. 32,38,39 For our plasmonic m-OSR, we want to minimize α while maximizing ε. Objective functions f1 = 1 − α and f2 = ε are therefore implemented to work instead on two functions to be maximized. The particu-larity of the multi-objective genetic algorithm is in emphasiz-ing non-dominated solutions, solutions that cannot improve one of the figures of merit ( α or ε) without deteriorating the other. The resulting set of non-dominated solutions is called the Pareto front. 33 3Wavelength [ μm] 
+
+> Absorptance
+
+0.25 
+
+0
+
+0.5 
+
+1
+
+3 20 
+
+# α ε
+
+# a
+
+# t1
+
+# t3
+
+# t2
+
+# P
+
+# L
+
+# Ne
+
+# P
+
+## 𝜃 
+
+## x
+
+## y
+
+## z
+
+## 𝑛 AZO 
+
+## 𝑛 SiO 2
+
+## 𝑛 Al 
+
+# b
+
+5 10 15                
+
+> FIG. 1. (a) OSR ideal response (orange dashed line) in contrast with typical averaged OSR response (pink dashed line) and spectrum (violet curve) in both solar (yellow shadowed area, 0.25 to 2.5 microns) and thermal infrared (blue shadowed area, 3 to 20 microns) ranges. (b) Investigated design and associated parameters of a plasmonic metasurface-driven optical solar reflector made of a trilayer Al/SiO 2/AZO: layer thicknesses t1,t2, and t3, the unit cell period P, the lateral dimension Lof the AZO square and AZO carrier concentration Ne.nAZO ,nSiO 2and
+> nAl are the refractive indices of AZO, SiO 2and Al respectively and θis the angle of incidence.
+> III. RESULTS AND DISCUSSION A. Impact of the parameters
+
+Back-reflector layer 
+
+The bottom layer consists of an aluminum back-reflector, ensuring high reflectivity in the solar spectrum and suppress-ing transmission over the full spectral range of interest. The thickness must therefore exceed the characteristic skin depth 
+
+δ of aluminum, while remaining compatible with mass con-straints. Following its definition at a specific wavelength of light in vacuum λ0,28 
+
+δ = λ0
+
+4πk , (5) it can be computed using the imaginary part of the refrac-tive index of aluminum k.36 Resulting values span from 6 to 11 nm throughout the spectrum; a thickness of 5 δ ≈ 55 nm thus decreases the transmission to less than 1% of its initial value. FIG. 2a shows the spectral transmittance for Al thick-nesses ranging from 0 to 50 nm to confirm this trend. In-creasing the thickness rapidly suppresses transmission across the 0.25–20 μm range. For thicknesses approaching 50 nm, transmission becomes negligible, consistent with the com-puted skin depth of aluminum in both spectral domains. 28 To further elucidate the field distribution, a quantity proportional to local absorption and defined by Im (ε)|E|240 spanning each layer is evaluated at representative wavelengths through the solar and thermal infrared ranges ( λ = 1.5μm, λ = 7μm and 
+
+λ = 15 μm), as shown in FIG. 2b. The SiO 2 spacer remains nearly transparent throughout the range, in agreement with the low imaginary part of its permittivity Im (ε)35 (see Ap-pendix A). In contrast, the AZO layer exhibits significant ab-sorption, increasing toward longer wavelengths, as described by its Drude–Lorentz dispersion 8 (see Appendix A). Minor deviations from the expected exponential decay characteristic of metallic skin-depth-limited penetration 28 at the dielectric interface arise from numerical discretization. A thickness of 60 nm is therefore selected to ensure com-plete transmission suppression with a safety margin. This choice effectively fixes the back-reflector response and re-duces the dimensionality of the optimization problem to five tunable parameters. A "simple" mirror suppressing transmission humbly con-stitutes the first physical mechanism enabling thermal control in the plasmonic m-OSR. 4Local Absorption [ a.u .] 
+
+> z [nm]
+
+0
+
+# b
+
+𝑛 AZO 
+
+𝑛 SiO 2
+
+𝑛 Al 
+
+# Wavelength [ μm] 
+
+> Transmittance
+
+0.25 
+
+0
+
+0.5 
+
+1
+
+3 20 
+
+# α ε
+
+0.25  2
+
+0
+
+0.2 
+
+# a
+
+5 10  15 
+
+## 𝑡     
+
+> FIG. 2. (a) Transmittance spectra of the plasmonic m-OSR design for increasing values of Al thickness t1from 0 to 50 nm in both solar and thermal infrared ranges. (b) Qualitative local absorption in the three constitutive layers of total thickness tat different wavelengths: 1.5, 7 and 15 microns.
+
+Dielectric spacer 
+
+To decouple the effect of the spacer thickness from other geometrical parameters, the SiO 2 thickness t2 is first analyzed for unstructured "bulk" AZO ( L = P). FIG. 3a presents the corresponding spectra, with solar and thermal infrared do-mains shown separately for clarity. In the absence of a dielectric spacer, t2 = 0 nm, the re-sponse in the solar range is dominated by the aluminum back-reflector, resulting in high reflectance and low absorptance. The absorption peak around 0.3 μm originates from the AZO UV absorptive peak described by the Lorentz oscillator, 8 as illustrated in Appendix A. As soon as a finite spacer thickness is introduced, Fabry-Pérot modes emerge and progressively transition to longer wavelengths while increasing t2, from the solar spectrum to-ward the thermal infrared (FIG. 3a). To describe this transi-tion, the shift is shown in the solar spectrum for t2 values of 500 and 1000 nm and in the thermal infrared for greater values of 1500, 2000, and 2500 nm. This behavior arises from the cavity formed by the SiO 2 layer between the metallic back-reflector (Al) and the partially reflecting AZO layer. To confirm this interpretation, cross-sectional field maps are evaluated at wavelengths corresponding to absorptance maxima in FIG. 3c-d for the unstructured design. The field distributions reveal standing-wave patterns inherent to Fabry-Pérot modes confined within the SiO 2 spacer, with modal or-ders decreasing from m = 5 at λ1 = 0.97 μm to m = 2 at 
+
+λ4 = 1.98 μm (FIG. 3d). The Fabry-Pérot modes are also influenced by the AZO layer structuration. This effect is now investigated by first considering an effective medium approach based on the filling fraction. In the solar domain, the absorptance α exhibits a lin-ear dependence on the AZO filling fraction squared (FIG. 3b), independently of the remaining degrees of freedom. This lin-ear scaling indicates that structuration primarily modulates the resonance amplitude through the effective filling fraction, without significantly altering their spectral positions. This ob-servation is confirmed in FIG. 3c. Since AZO is an absorptive material in the solar spectrum (see Appendix A), reduction in AZO coverage leading to a proportional decrease in α is ex-pected. In FIG. 3d, field maps at λ3 = 1.47 μm further support this interpretation, showing similar modal distributions for struc-tured (S) and unstructured (U) configurations, with reduced field intensity in the former case. However, for longer wave-lengths such as λ4 = 1.98 μm, a slight spectral shift becomes apparent (FIG. 3c) between the unstructured and structured cases, indicating that structuration progressively modifies the effective cavity response as the wavelength increases. This regime will be addressed in the following section. Fabry–Pérot resonances within the dielectric spacer thus constitute the second key physical mechanism governing thermal control in the plasmonic m-OSR. 
+
+Plasmonic layer 
+
+The role of AZO structuration is first examined in the thermal infrared for an isolated periodic AZO layer de-sign ( t1 = t2 = 0 nm, neither the dielectric nor the back-reflector is present). While structuration was shown to pri-marily modulate resonance amplitude in the solar range with-out introducing new mechanisms (FIG. 3c-d), a different behavior emerges in the thermal infrared. Patterning en-5Wavelength [ μm] 
+
+> Absorptance
+
+0.25 
+
+0
+
+1
+
+3 20 
+
+# α
+
+# ε 2.5 
+
+0
+
+1
+
+# a
+
+0
+
+0.12 
+
+0.21 
+
+0.7 
+
+> α
+
+# b
+
+# Filling fraction squared  𝐿 /𝑃 2
+
+> Solar absorptance
+
+15 10 5
+
+1 2
+
+0.4 0.2 
+
+0.5  μm
+
+1 μm
+
+0 μm
+
+1.5  μm
+
+2 μm
+
+2.5  μm𝜆 1 𝜆 3𝜆 2 𝜆 4
+
+# U
+
+# S
+
+0.25 
+
+0
+
+1
+
+# α
+
+2.5 
+
+# Wavelength [ μm] 
+
+> Absorptance
+
+# z 𝑛 AZO 
+
+𝑛 SiO 2
+
+𝑛 Al 
+
+# 𝜆 1 𝜆 3
+
+# 𝜆 2 𝜆 4
+
+# U S
+
+0
+
+1
+
+𝑚 = 2
+
+𝑚 = 3
+
+𝑚 = 4𝑚 = 5
+
+𝐸 
+
+𝐸 𝑚𝑎𝑥 
+
+> 2
+
+# dc
+
+21
+
+FIG. 3. (a) Influence of the thickness t2 of SiO 2 on the absorptance spectrum for the unstructured design in both solar and thermal infrared ranges. (b) Relation between the computed solar absorption figure of merit α and the square of the filling fraction of the design. (c) Comparison of the absorptance spectrum of the unstructured and structured (filling fraction of 0.56) design in the solar spectrum range. (d) Cross-sectional field maps of the design at specific wavelengths marked in (c). 
+
+ables the excitation of localized surface plasmon resonances (LSPR), 27,28 leading to strong near-field confinement and en-hanced absorption. 29,41–43 Capitalizing on this mechanism is particularly relevant in the thermal infrared, where high ab-sorptance is desired. 32,44 
+
+FIG. 4a shows the LSPR response of the periodic AZO square at the resonance wavelength ( λ = 9.1 μm) for dif-ferent polarizations. Edge modes are observed at the AZO surfaces. 45 At normal incidence, polarization modifies the field distribution but does not affect the spectral response (not shown); subsequent calculations are performed for a 45° po-larization angle without loss of generality. This serves a dual purpose by optimizing near-field visualization by displaying both orthogonal modes of the metasurface and acting as an efficient computational proxy for unpolarized ambient light, such as sunlight, which exhibits no preferred polarization axis. LSPR at the patterned interface constitute the third key physi-cal mechanism contributing to thermal control in the m-OSR. The impact of integrating the spacer and the back-reflector is shown in FIG. 4b. Adding the SiO 2 layer preserves com-6𝐸 𝑧 2
+
+## x
+
+## y
+
+# s-pol  p-pol  sp -pol (45 °)
+
+0
+
+1
+
+# a
+
+## P = 4.5 μm
+
+## L = 2.5 μm𝐸 𝑧 2 𝐸 𝑧 2
+
+## x
+
+## y
+
+# Field amplification 
+
+# − −
+
+0 1.1  0 4.5 
+
+## z
+
+## 𝑛 AZO 
+
+## 𝑛 SiO 2
+
+## 𝑛 Al 
+
+## 𝑛 AZO 
+
+## 𝑛 SiO 2
+
+# b
+
+# ++3 20 
+
+# ε
+
+0
+
+1
+
+0.5 
+
+# Wavelength [ μm] 
+
+> Absorptance
+
+# Δλ 
+
+# U S
+
+## 𝐸 2
+
+0
+
+1
+
+# c d
+
+# U S
+
+# Δλ 
+
+15 10 5
+
+## 𝜆 U = 5.87μm  𝜆 S = 7.11μm 
+
+## 𝜆 U 𝜆 S
+
+𝑚 = 1 𝑚 = 1
+
+FIG. 4. (a) LSPR field maps of the periodical structured AZO layer only for different polarizations. (b) Field amplification of a bilayer AZO/SiO 2 design by addition of a third Al layer. (c) Comparison of the absorptance spectrum of the unstructured and structured (filling fraction of 0.56) design in the thermal infrared range. (d) Comparison for U ( λ = 5.87 μm) and S ( λ = 7.11 μm) of the associated cross-sectional field maps across ∆λ specified in (c). 7parable field amplitude (from 1 to 1.1, normalized), while the introduction of the metallic back-reflector produces a pro-nounced field enhancement, yielding a significant increase in absorptance in the thermal infrared (from 1.1 to 4.5, normal-ized), also described by the structuration gain in FIG. 4c. The presence of the mirror indeed suppresses transmission, lead-ing to the possibility to harvest energy that was lost without the reflector. This illustrates a clear coupling between reflec-tion and LSPR. FIG. 4c presents the fully integrated m-OSR response. By contrast to the solar range (FIG. 3c), structuration impacts both the amplitude and the spectral position of the absorp-tion peaks. In the absence of structuration, the response re-mains governed by Fabry–Pérot resonances. A filling frac-tion argument would suggest that reducing the AZO coverage would decrease the overall emittance ε, analogously to the be-havior observed for the solar absorptance α in the dielectric spacer section (FIG. 3b). However, FIG. 4c reveals the oppo-site trend: structuration induces a substantial increase in emit-tance. This enhancement results from the interplay between LSPR and Fabry–Pérot cavity modes. Cross-sectional field maps (FIG. 4d) computed at the absorption peaks identified for the unstructured (U) and structured (S) configurations, as-sociated with a wavelength shift ∆λ , confirm the coexistence of both mechanisms. This shift can be understood by the change in interference conditions given by the structuration. A standing-wave pattern (modal order m = 1) persists within the SiO 2 cavity, while pronounced localized field enhance-ment appears at the AZO edges. Structuration therefore intro-duces LSPR without suppressing the underlying Fabry–Pérot resonance, albeit reshaping the coupled modal response. Finally, a fourth effect is identified in the 8–11 μmrange (FIG. 4c), corresponding to the Reststrahlen band of SiO 2.25,46 In this spectral region, the real part of the per-mittivity of SiO 2 becomes negative (Appendix A), leading to metal-like behavior and inducing strong reflectivity. This phonon–polariton resonance limits absorption and degrades the m-OSR performance. This intrinsic material response must therefore be accounted for during optimization. Four mechanisms are thus intertwined in the complete m-OSR: reflection from the metallic back-reflector, Fabry–Pérot resonances within the dielectric spacer, localized surface plasmon resonances in the patterned AZO layer, and Rest-strahlen band of SiO 2. Building on the understanding of these four coupled phenomena, multi-objective optimization is per-formed in the next section.  
+
+> B. Optimization
+
+The design to optimize initially involved six parameters. By fixing the aluminum thickness to t1 = 60 nm to suppress trans-mission, we reduce the search space to five variables: L, P, t2,
+
+t3, and Ne (FIG. 1b). The lateral feature size L is explored between 250 and 3000 nm (1 nm step), while the period P is varied such that the lon-gitudinal gap defined by ( (P − L)/2) ranges from 50 to 1000 nm (1 nm step). A finite gap is required to sustain LSPR,                                             
+
+> TABLE I. Performance and associated parameters values for solu-tions S1and S2of the plasmonic metasurface-driven Optical Solar Reflector.
+> S1α=0.13 ε=0.72 Parameter Optimized value Units
+> P6159 nm
+> L2301 nm
+> t22147 nm
+> t313 nm
+> Ne8·10 20 cm −3
+> S2α=0.16 ε=0.83 Parameter Optimized value Units
+> P4522 nm
+> L2526 nm
+> t21713 nm
+> t373 nm
+> Ne6.5·10 20 cm −3
+
+whereas excessively large separations reduce the effective fill-ing fraction and limit emissivity enhancement. The SiO 2 spacer thickness t2 is varied between 1200 and 3000 nm (1 nm step), ensuring Fabry–Pérot resonances within the spectral region of interest. For AZO, the thickness t3 is optimized in the range 5 to 250 nm (1 nm step) and the carrier concentration Ne between 0 and 8 · 10 20 cm −3 (step of 0 .5 · 10 20 cm −3), in agreement with experimentally achievable values. 47 These parameters intro-duce intrinsic trade-offs: increasing either t3 or Ne enhances thermal emissivity but simultaneously increases solar absorp-tance. Moreover, higher values of the AZO thickness and/or carrier concentration render the plasmonic layer progressively opaque, leading to saturation of emissivity gains due to re-duced field penetration into the cavity. The resulting multi-objective optimization yields the Pareto front shown in FIG. 5, which delineates the set of non-dominated solutions in the ( α, ε) space. The design proposed by Sun et al. 8 lies strictly inside the Pareto front, indicat-ing that simultaneous improvement of both figures of merit is achievable within the present parameter space. Two representative solutions are selected. S1 minimizes the ratio α/ε, whereas S2 improves both α and ε relative to Sun et al. 8 While S1 exhibits a lower solar absorptance (α = 0.13, ε = 0.72), S2 provides a substantially higher emis-sivity ( α = 0.16, ε = 0.83) with only a moderate increase in 
+
+α (+0.03). Owing to this balanced performance, S2 is retained for subsequent analysis. The corresponding optimized param-eters are summarized in Table I, the main difference being in a larger and thicker AZO layer in a smaller unit cell to reach higher permittivity values for S2.The optimized absorptance spectrum and layer-resolved contributions are presented in FIG. 6a. For the periodic AZO square design, only the LSPR contribution is observed in the thermal range with a resonant peak at λ = 9.1 μm, while solar absorption remains significant. Introducing the SiO 2 spacer activates Fabry–Pérot resonances, yielding multiple absorp-tion peaks. The complete stack, including the aluminum back-80.3 
+
+0.10 
+
+0.24 
+
+0.9 
+
+# ε
+
+> α
+
+0.18 
+
+0.32 
+
+> α/ε ratio
+> Solar absorption
+
+0.6 
+
+# Thermal emission 
+
+0.17  0.25 
+
+# 1 2 3
+
+# Sun et al. 
+
+# Pareto 
+
+FIG. 5. Pareto front obtained through the optimization process and associated solution from Sun et al. 8 and optimized solutions S1 (α = 0.13; 
+
+ε = 0.72) and S2 (α = 0.16; ε = 0.83) in the figure of merits space. Wavelength [ μm] 
+
+> Absorptance
+
+0.25 
+
+0
+
+0.5 
+
+1
+
+3 20 
+
+# α ε
+
+# a b
+
+# α ε
+
+0°
+
+90 °90 °
+
+00.1 0.2  0.4  0.8 0.3 
+
+# + p-pol 
+
+# s-pol 
+
+# Absorptance 
+
+# °
+
+5 10  15 
+
+60°60°
+
+30°30°
+
+FIG. 6. (a) Optimized absorptance spectrum of the m-OSR design (solution S2) and layer by layer contribution to the overall performance. (b) Angular dependence of the design for both s and p polarizations. 
+
+reflector, suppresses transmission and enhances field confine-ment, resulting in increased absorptance within the active lay-ers. The Reststrahlen band of SiO 2 remains visible around 10 
+
+μm, limiting performance in this spectral window. Although optimized for normal incidence, angular robust-ness is evaluated in FIG. 6b for both s and p polarizations. Performance remains stable up to approximately 45°, beyond which both solar reflection and thermal emissivity degrade. Since the incident radiative flux decreases with increasing an-gle according to Lambert’s cosine law, 48 this range is compat-ible with practical operating conditions. 9 
+
+> IV. CONCLUSIONS
+
+This work demonstrated and optimized a plasmonic metasurface-driven optical solar reflector based on a three-layer Al/SiO 2/AZO architecture. By identifying and taking advantage of four coupled physical mechanisms—metallic reflection, Fabry–Pérot cavity resonances, localized surface plasmon resonances, and the Reststrahlen band of the di-electric spacer—a multi-objective genetic algorithm was em-ployed to tailor the spectral response. The optimized design achieves a solar absorptance of α =
+
+0.16 and a thermal emissivity of ε = 0.83, while maintaining angular robustness up to 45°. The resulting structure remains compact and lightweight, with a total thickness below 2 μmand a lateral periodicity below 4.5 μm, providing enhanced flexibility with respect to the incumbent classical OSR, at the slight expense to performance 7. Thermo-optical properties are nonetheless greater than those of other m-OSR found in the literature so far. 7,8 
+
+Although the Reststrahlen band of SiO 2 limits performance in the 8–11 μm range, the present optimization mitigates this constraint. Experimental validation of the proposed design constitutes a natural continuation of this work. These results highlight the potential of metasurface-based optical solar reflectors for advanced thermal management in space and terrestrial radiative cooling applications. 
+
+> ACKNOWLEDGMENTS
+
+The authors acknowledge K. Fleury-Frenette and L. Jacques from Centre Spatial de Liège (CSL) for stimulating discussions, as well as L. Weber from University of Namur for interesting brainstorming and insights validation with COM-SOL. M. Lobet, and A. Mayer are research associates of the Fonds de la Recherche Scientifique – FNRS. This research used resources of the "Plateforme Technologique de Calcul Intensif (PTCI)" located at the University of Namur, Belgium, which is supported by the FNRS-FRFC, the Walloon Region, and the University of Namur (Conventions No.2.5020.11, GEQ U.G006.15, 1610468, RW/GEQ2016 et U.G011.22).      
+
+> DATA AVAILABILITY STATEMENT
+> AVAILABILITY STATEMENT OF DATA OF DATA AVAILABILITY
+> Data available on The data that support the findings of request from the this study are available from the authors corresponding author upon reasonable request.
+> Appendix A: Materials permittivity
+
+The permittivity of the materials used in the architecture of the m-OSR design is provided in FIG. 7 between 0.25 and 20 μm. Al and AZO present a classical Drude model behavior, 8,36 with the exception of the latter UV absorption peak around 300 nm. 8 SiO 2 exhibits an emission peak at 9 microns and oscillations of the real part of its permittivity, leading to the formation of a Reststrahlen band around 10 microns. 35 
+
+> Appendix B: Models parameters
+
+Table II gives the fixed parameters used in the Drude-Lorentz model representing the permittivity of AZO (derived from Sun et al. 8). The Drude model used for Al is given in Rakic et al. 36 .              
+
+> TABLE II. Parameters of the Drude-Lorentz model representing AZO permittivity. Parameter Value Units
+> ε∞4.0 -
+> Γ3.49 ·10 14 rad/s
+> m∗/m00.4 -
+> f10.1649 -
+> Γ15.06 ·10 14 rad/s
+> ω15.96 ·10 15 rad/s
+
+10 Wavelength [ μm] 
+
+0.25  20 10 2
+
+> Re (ε)
+> Im (ε)
+
+10 
+
+0
+
+-20000 
+
+-10 
+
+0
+
+# Wavelength [ μm] 
+
+0.25  20 10 2
+
+0
+
+20000 
+
+0
+
+50 
+
+FIG. 7. Real and imaginary parts of the permittivity of the three materials used in the m-OSR design, AZO, SiO 2 and Al, between 0.25 and 20 microns. 8,35,36 
+
+> 1
+
+J. R. Wertz and W. J. Larson, Space Mission Analysis and Design , second print edition ed. (Kluwer Academic, 1991) pp. 380–381. 
+
+> 2
+
+K. N. Marshall and R. A. Breuch, “Optical solar reflector-a highly stable, low αs/ε spacecraft thermal control surface.” Journal of Spacecraft and Rockets 5(9) , 1051–1056 (1968). 
+
+> 3
+
+I. Levchenko, K. Bazaka, T. Belmonte, M. Keidar, and S. Xu, “Ad-vanced materials for next-generation spacecraft.” Advanced Materials 
+
+30(50) (2018). 
+
+> 4
+
+A. R. Davoyan, J. N. Munday, N. Tabiryan, G. A. Swartzlander Jr, and L. Johnson, “Photonic materials for interstellar solar sailing,” Optica 8(5) ,722–734 (2021). 
+
+> 5
+
+O. Ilic, C. M. Went, and H. A. Atwater, “Nanophotonic heterostructures for efficient propulsion and radiative cooling of relativistic light sails,” Nano letters 18(9) , 5583–5589 (2018). 
+
+> 6
+
+Z. Chen, L. Zhu, W. Li, and S. Fan, “Simultaneously and synergistically harvest energy from the sun and outer space,” Joule 3(1) , 101–110 (2019). 
+
+> 7
+
+W. Xiao, P. Dai, H. J. Singh, I. A. Ajia, X. Yan, P. R. Wiecha, and K. Sun, “Flexible thin film optical solar reflectors with ta2o5-based multimaterial coatings for space radiative cooling.” Apl Photonics 8(9) (2023). 
+
+> 8
+
+K. Sun, C. A. Riedel, Y. Wang, A. Urbani, M. Simeoni, S. Mengali, and O. L. Muskens, “Metasurface optical solar reflectors using azo transparent conducting oxides for radiative cooling of spacecraft.” Acs Photonics 5(2) ,495–501 (2018). 
+
+> 9
+
+M. Moser, C. Ranzenberger, and S. Duzellier, “Alternative grounding method for mli blankets,” in 46th International Conference on Environmen-tal Systems (ICES) , ICES-2016-104 (Vienna, Austria, 2016) presented at the 46th ICES, July 10–14, 2016. 
+
+> 10
+
+S. Tachikawa, H. Nagano, A. Ohnishi, and Y. Nagasaka, “Advanced passive thermal control materials and devices for spacecraft: A review,” Interna-tional Journal of Thermophysics 43 (2022), 10.1007/s10765-022-03010-3. 
+
+> 11
+
+J. A. Townsend, P. A. Hansen, J. A. Dever, K. K. de Groh, B. A. Banks, L. Wang, and C. He, “Hubble space telescope metallized teflon (r) fep thermal control materials: on-orbit degradation and post-retrieval analysis.” High Performance Polymers 11(1) , 81–99 (1999). 
+
+> 12
+
+B. Putz, S. Wurster, T. E. J. Edwards, B. Völker, G. Milassin, D. M. Többens, and M. J. Cordill, “Mechanical and optical degradation of flexible optical solar reflectors during simulated low earth orbit thermal cycling.” Acta Astronautica 175 , 277–289 (2020). 
+
+> 13
+
+T. Wang, Y. Wu, L. Shi, X. Hu, M. Chen, and L. Wu, “A structural polymer for highly efficient all-day passive radiative cooling.” Nature communica-tions 12(1) , 365 (2021). 
+
+> 14
+
+Y. Nanfang and F. Capasso, “Flat optics with designer metasurfaces,” Na-ture materials 13.2 , 139–150 (2014). 
+
+> 15
+
+L. Huang, X. Chen, H. Muhlenbernd, G. Li, B. Bai, Q. Tan, and S. Zhang, “Dispersionless phase discontinuities for controlling light propagation,” Nano letters 12(11) , 5750–5755 (2012). 
+
+> 16
+
+N. Yu, P. Genevet, M. A. Kats, F. Aieta, J. P. Tetienne, and Z. Capasso, F. andGaburro, “Light propagation with phase discontinuities: generalized laws of reflection and refraction.” Science 334 , 333–367 (2011). 
+
+> 17
+
+X. Chen, L. Qin, J. Huang, Y. Liu, S. Zheng, and M. Qian, “Controlling thermal radiation by metasurface for infrared and laser compatible stealth with radiative cooling.” Optics & Laser Technology , 189 (2025). 
+
+> 18
+
+W. Chen, A. Zhu, and F. Capasso, “Flat optics with dispersion-engineered metasurfaces.” Nature Reviews Materials 5, 604–620 (2020). 
+
+> 19
+
+P. Geneve, F. Capasso, F. Aieta, M. Khorasaninejad, and R. Devlin, “Re-cent advances in planar optics: from plasmonic to dielectric metasurfaces.” Optica 4, 139–152 (2017). 
+
+> 20
+
+H. Lingling, S. Zhang, and T. Zentgraf, “Metasurface holography: from fundamentals to applications.” Nanophotonics 7, 1169–1190 (2018). 
+
+> 21
+
+H. Chu, Q. Li, B. Liu, J. Luo, S. Sun, Z. H. Hang, and Y. Lai, “A hybrid invisibility cloak based on integration of transparent metasurfaces and zero-index materials.” Light: Science & Applications 7(1) , 50 (2018). 
+
+> 22
+
+M. L. Brongersma, R. A. Pala, H. Altug, F. Capasso, W. T. Chen, A. Ma-jumdar, and H. A. Atwater, “The second optical metasurface revolution: moving from science to technology.” Nature Reviews Electrical Engineer-ing 2, 125–143 (2025). 
+
+> 23
+
+E. Rephaeli, A. Raman, and S. Fan, “Ultrabroadband photonic structures to achieve high-performance daytime radiative cooling.” Nano letters 13(4) ,1457–1461 (2013). 
+
+> 24
+
+F. Shen, Q. Kang, J. Wang, K. Guo, Q. Zhou, and Z. Guo, “Dielectric metasurface-based high-efficiency mid-infrared optical filter.” Nanomateri-als 8(11) , 938 (2018). 
+
+> 25
+
+Z. Ding, H. Li, X. Li, X. Fan, J. Jaramillo-Fernandez, L. Pattelli, and H. Xu, “Designer sio2 metasurfaces for efficient passive radiative cooling.” Advanced Materials Interfaces 11(3) (2024). 
+
+> 26
+
+S. Murai, G. W. Castellanos, T. V. Raziman, A. G. Curto, and J. G. Rivas, “Enhanced light emission by magnetic and electric resonances in dielectric metasurfaces.” Advanced Optical Materials 8(16) (2020). 
+
+> 27
+
+K. Kosuda, J. Bingham, K. Wustholz, R. Van Duyne, and R. Groarke, “4.06 - nanostructures and surface-enhanced raman spectroscopy,” in Com-prehensive Nanoscience and Nanotechnology (Second Edition) , edited by D. L. Andrews, R. H. Lipson, and T. Nann (Academic Press, Oxford, 2016) second edition ed., pp. 117–152. 
+
+> 28
+
+S. A. Maier, Plasmonics Fundamentals and Applications (Springer, 2007). 
+
+> 29
+
+D. Jyotirban, H. Bidhan, and C. Manabendra, “Modulation of LSPR spec-tra and enhanced RI-sensitivity through symmetry breaking in hollow gold 11 
+
+nanoprism.” The Journal of Chemical Physics 151(11) (2019). 
+
+> 30
+
+ESA, “Space product assurance – measurements of thermo-optical proper-ties of thermal control materials,” European Cooperation for Space Stan-dardization. (ECSS-Q-ST-70-09C) (ESA, 2018). 
+
+> 31
+
+A. Mayer and M. Lobet, “UV to near-infrared broadband pyramidal ab-sorbers via a genetic algorithm optimization approach,” Proc. SPIE 10671 ,1067127 (2018). 
+
+> 32
+
+A. Mayer, H. Bi, S. Griesse-Nascimento, B. Hackens, J. Loicq, E. Mazur, and M. Lobet, “Genetic-algorithm-aided ultra-broadband perfect absorbers using plasmonic metamaterials.” Optics Express 30(2) , 1167–1181 (2022). 
+
+> 33
+
+A. Mayer, L. Gaouyat, D. Nicolay, T. Carletti, and O. Deparis, “Multi-objective genetic algorithm for the optimization of a flat-plate solar thermal collector.” Optics Express 22(S6) (2014). 
+
+> 34
+
+R. Fante and M. McCormack, “Reflection properties of the salisbury screen,” IEEE Transactions on Antennas and Propagation 36 , 1443–1454 (1988). 
+
+> 35
+
+D. Franta, D. Neˇ cas, I. Ohlídal, and A. Giglia, “Optical characterization of sio2 thin films using universal dispersion model over wide spectral range.” SPIE (2016). 
+
+> 36
+
+A. D. Raki´ c, A. B. Djurišic, J. M. Elazar, and M. L. Majewski, “Opti-cal properties of metallic films for vertical-cavity optoelectronic devices.” Applied Optics 37 (1998). 
+
+> 37
+
+O. Deparis, N. Khuzayim, A. Parker, and J. P. Vigneron, “Assessment of the antireflection property of moth wings by three-dimensional transfer-matrix optical simulations.” Physical Review E—Statistical, Nonlinear, and Soft Matter Physics 79(4) (2009). 
+
+> 38
+
+A. Eiben and J. Smith, Introduction to Evolutionary Computing , 2nd ed. (Springer-Verlag, Berlin, 2007). 
+
+> 39
+
+R. Haupt and D. Werner, Genetic algorithms in electromagnetics (J. Wiley & Sons, Hoboken, NJ, 2007). 
+
+> 40
+
+K.-H. Brenner, “Aspects for calculating local absorption with the rigorous coupled-wave method,” Opt. Express 18 , 10369–10376 (2010). 
+
+> 41
+
+K. L. Kelly, E. Coronado, L. L. Zhao, and G. C. Schatz, “The optical properties of metal nanoparticles: the influence of size, shape, and dielec-tric environment,” The Journal of Physical Chemistry B 107(3) , 668–677 (2003). 
+
+> 42
+
+O. Nicoletti, F. de La Peña, R. K. Leary, D. J. Holland, C. Ducati, and P. A. Midgley, “Three-dimensional imaging of localized surface plasmon resonances of metal nanoparticles,” Nature 502(7469) , 80–84 (2013). 
+
+> 43
+
+S. Mazzucco, N. Geuquet, J. Ye, O. Ste´ phan, W. Van Roy, P. Van Dorpe, L. Henrard, and M. Kociak, “Ultralocal modification of surface plasmons properties in silver nanocubes,” Nano letters 12(3) , 1288–1294 (2012). 
+
+> 44
+
+M. Lobet, M. Lard, M. Sarrazin, O. Deparis, and L. Henrard, “Plasmon hybridization in pyramidal metamaterials: a route towards ultra-broadband absorption.” Optics express 22(10) (2014). 
+
+> 45
+
+S. Zhang, K. Bao, N. J. Halas, H. Xu, and P. Nordlander, “Substrate-induced fano resonances of a plasmonic nanocube: a route to increased-sensitivity localized surface plasmon resonance sensors revealed,” Nano letters 11(4) , 1657–1663 (2011). 
+
+> 46
+
+M. Born and M. Blackman, “Über die feinstruktur der reststrahlen.” Zeitschrift für Physik 82.9 , 551–558 (1933). 
+
+> 47
+
+A. Chelouche, T. Touam, K. Necib, L. Ouarez, F. Challali, and D. Djouadi, “Investigation of the effects of drying process on microstructural and lumi-nescence properties of al-doped zno thin films.” Journal of Luminescence 
+
+219 (2020). 
+
+> 48
+
+J. H. Lambert, Photometria sive de mensura et gradibus luminis, colorum et umbrae. (sumptibus vidvae E. Klett, typis CP Detleffsen, 1760). 
+
+> 49
+
+B. Zhao, M. Hu, X. Ao, N. Chen, and G. Pei, “Radiative cooling: A review of fundamentals, materials, applications, and prospects.” Applied energy 
+
+236 , 489–513 (2019). 
+
+> 50
+
+A. Didari-Bader, N. M. Estakhri, and N. Mohammadi Estakhri, “Adap-tive plasmonic metasurfaces for radiative cooling and passive thermoregu-lation.” Frontiers in Photonics 4 (2023).
