@@ -1,0 +1,59 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-16T23:15:13.660433+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 0,
+    "deep_cap": 7,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 12,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.13143v1",
+      "source": "arxiv",
+      "title": "A first-principles approach for predicting infrared optical properties of solids",
+      "abstract": "We present a simplified formalism for predicting infrared optical constants from first-principles calculations. Addressing limitations of the widely used four-parameter semi-quantum Lorentz model, the proposed approach bridges the gap between the harmonic three-parameter model and full self-energy-based methods. By incorporating essential anharmonic effects including four-phonon scattering and phonon renormalisation, the model provides an efficient and accurate alternative while maintaining low computational cost. The frequency-dependent refractive indices of MgO and rutile TiO$_2$ are computed and compared with experimental data, demonstrating good quantitative agreement. The framework offers a practical approach for predicting optical properties of materials across a wide range of materials.",
+      "authors": [
+        "Sreerag Sundaram",
+        "Ziqi Guo",
+        "Dudong Feng",
+        "Karthik Sasihithlu",
+        "Xiulin Ruan"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.atm-clus"
+      ],
+      "published": "2026-06-11T10:05:59+00:00",
+      "link": "https://arxiv.org/pdf/2606.13143v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "First-principles method to predict infrared optical constants, enabling screening for epsilon-near-zero behavior.",
+      "llm_evidence_cn": "第一性原理方法预测红外光学常数，可用于筛选近零介电常数行为。",
+      "llm_evidence": "第一性原理方法预测红外光学常数，可用于筛选近零介电常数行为。",
+      "canonical_evidence": "第一性原理方法预测红外光学常数，可用于筛选近零介电常数行为。",
+      "llm_tldr_en": "Proposes a first-principles approach to compute infrared optical constants, bridging simple models and full self-energy methods; applied to MgO and TiO2, it enables efficient prediction of refractive index for optoelectronic materials.",
+      "llm_tldr_cn": "针对现有红外光学常数预测模型要么过于简化要么计算量大的问题，提出了一种基于第一性原理的简化方法。该方法在谐波三参数模型与完整自能方法之间架起桥梁，通过纳入四声子散射和声子重整化等关键非简谐效应，高效准确地预测了MgO和金红石TiO2的折射率。计算结果与实验数据吻合良好，为光学材料（包括近零介电常数材料）的高通量筛选提供了实用工具。",
+      "llm_tldr": "针对现有红外光学常数预测模型要么过于简化要么计算量大的问题，提出了一种基于第一性原理的简化方法。该方法在谐波三参数模型与完整自能方法之间架起桥梁，通过纳入四声子散射和声子重整化等关键非简谐效应，高效准确地预测了MgO和金红石TiO2的折射率。计算结果与实验数据吻合良好，为光学材料（包括近零介电常数材料）的高通量筛选提供了实用工具。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "study of materials with epsilon near zero permittivity",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

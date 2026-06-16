@@ -1,0 +1,891 @@
+Title: A first-principles approach for predicting infrared optical properties of solids
+
+URL Source: https://arxiv.org/pdf/2606.13143v1
+
+Published Time: Fri, 12 Jun 2026 00:45:58 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# A first-principles approach for predicting infrared optical properties of solids 
+
+Sreerag Sundaram, 1, 2 Ziqi Guo, 2 Dudong Feng, 2 Karthik Sasihithlu, 1 and Xiulin Ruan 2
+
+> 1)
+
+Department of Energy Science and Engineering, Indian Institute of Technology Bombay, Powai, Mumbai - 400076. India 
+
+> 2)
+
+School of Mechanical Engineering, Purdue University, West Lafayette, Indiana, USA. 
+
+(*Electronic mail: ruan@purdue.edu) (*Electronic mail: ksasihithlu@ese.iitb.ac.in) (Dated: 12 June 2026) 
+
+We present a simplified formalism for predicting infrared optical constants from first-principles calculations. Address-ing limitations of the widely used four-parameter semi-quantum Lorentz model, the proposed approach bridges the gap between the harmonic three-parameter model and full self-energy–based methods. By incorporating essential an-harmonic effects including four-phonon scattering and phonon renormalisation, the model provides an efficient and accurate alternative while maintaining low computational cost. The frequency-dependent refractive indices of MgO and rutile TiO 2 are computed and compared with experimental data, demonstrating good quantitative agreement. The framework offers a practical approach for predicting optical properties of materials across a wide range of materials. 
+
+I. INTRODUCTION 
+
+The knowledge of wavelength-dependent optical constants is fundamental to the choice of material and subsequent de-sign as films or coatings in a wide range of fields such as ra-diative cooling 1–3 , photovoltaics 4,5 , heat transfer 6, etc. The lack of information on complete optical properties, of a par-ticular material or in a spectral band of interest, has been a long-standing key limitation. Computational predictions of-fer cost and temporal advantages over experimental measure-ments that facilitate efficient design and development of opti-cal systems within practical constraints. In this regard, first-principles methods provide a direct link between atomic-scale interactions and macroscopic optical properties. Using den-sity functional theory (DFT), first-principles calculations have yielded reasonably accurate predictions of electronic band structures 7,8 . By analysing the electronic transitions, it is pos-sible to estimate a material’s wavelength-dependent optical constants 9–11 . Accuracy can be further improved by incor-porating corrections such as DFT+U 12 for localized orbitals, GW 13 for quasi-particle excitations, and BSE 14 for optical ex-citations, albeit at greater computational cost. The energies associated with these electronic excitations and subsequent electronic band transitions translate to optical behaviour in the ultraviolet, the visible, and the near-infrared (NIR) regimes of the electromagnetic spectrum. The mid- and far-infrared (IR) spectral ranges, which are the focus of this investigation, re-main critical for characterizing a material’s thermo-radiative properties, where the optical response is predominantly gov-erned by phonon-mediated interactions 15,16 .The lattice dielectric function at a particular photon fre-quency is generally described by the Lorentz classical har-monic oscillator model (Eq. 1), derived from Newton’s equa-tions of motion. 
+
+ε(ω) = ε∞ + ∑
+
+> j
+
+S jω20, j
+
+ω20, j − ω2 − iωγ j
+
+(1) Possessing only three parameters for each phonon mode, namely, the oscillator strength ( S j), resonant frequency ( ω0, j), and the damping factor ( γ j), this is also often referred to as the three-parameter model. However, this model often fails to replicate certain features in the Reststrahlen bands of het-eropolar materials 17,18 . To address these limitations, an alter-native formulation based on Maxwell’s laws introduces dis-tinct transverse optical (TO) and longitudinal optical (LO) modes frequencies, Ω j,T O and Ω j,LO , together with corre-sponding damping factors, γ j,T O and γ j,LO :
+
+ε(ω) = ε∞ ∏
+
+> j
+
+Ω2 
+
+> j,LO
+
+− ω2 + iγ j,LO ω
+
+Ω2 
+
+> j,TO
+
+− ω2 + iγ j,TO ω (2) The description of each phonon mode by four parameters results in the name, four-parameter semi-quantum (FPSQ) model. Multiple studies have used the FPSQ model to demon-strate excellent fits to experimentally obtained infrared re-flectance data 2,17,19–22 . However, we noticed that the model fails when anisotropy becomes significant or underlying sym-metry is low. In this context, several noteworthy points merit attention: (i) The inherent use of the Lyddane–Sachs–Teller (LST) relation 23 in its derivation directly implies an involvement of the LO modes. Considering the manner in which trans-verse electromagnetic radiation interacts with atoms in a crystal 24,25 , it can be inferred that LO modes do not di-rectly couple with the transverse radiation. As evident from the polariton dispersion 25 , the upper polariton branch asymp-totically approaches ωLO as ⃗ k → 0, representing the mate-rial’s longitudinal response embedded in the dielectric func-tion rather than any direct coupling to light. (ii) The FPSQ model was originally developed as an empir-ical framework to fit experimentally obtained IR reflectance data – based on features in the Reststrahlen band(s), to macro-scopic dielectric parameters 17,26–28 . Extending this approach to predict the optical spectra entirely from first-principles the-oretical calculations is non-trivial, particularly in anisotropic materials where LO–TO splitting may be absent along cer-tain directions. This absence leads to ambiguity in assigning 
+
+> arXiv:2606.13143v1 [cond-mat.mtrl-sci] 11 Jun 2026
+
+2LO–TO mode pairs, which is a prerequisite for the FPSQ for-malism. (iii) Lastly, the LST relation was originally derived for a two-atom system, in which only a single longitudi-nal–transverse optical (LO–TO) phonon pair exists. This for-mulation was later extended to multi-atom systems, where multiple LO–TO mode pairs arise. However, this general-ized derivation assumes certain symmetry constraints - specif-ically, crystals with tetragonal symmetry about each ion 29 . As a result, for lower-symmetry crystals, the standard LST rela-tion may not strictly hold. Further information on the region of its validity can be obtained from Refs. 30–32. To address these limitations, we adopt a more fundamen-tal model that systematically treats the many-body problem using thermodynamic Green’s functions. First derived by Cowley 33 , the mathematical treatment allows for the sum of an infinite number of terms in the perturbation series, thereby incorporating the phonon self-energy. As a result, the method naturally accounts for mode-resolved phonon contributions and successfully captures anharmonic effects, as well as the frequency and temperature dependence of the phonon self-energy. Notably, the LO phonon frequencies do not explicitly appear as input parameters in this model but instead emerge implicitly from the zeros of the dielectric function. Build-ing on this framework, we adopt it as a baseline model and introduce controlled simplifications that retain the essential physics while enabling reliable predictions of the optical con-stants.  
+
+> II. METHODOLOGY
+
+Next, we discuss modelling the interactions between EM radiation and the crystal, and more specifically, the infrared absorption of materials. Unlike Raman scattering, IR absorp-tion involves resonant phonon creation and therefore obeys strict energy and momentum conservation conditions between the absorbed photon and the resultant phonon. The spectral lineshape of the absorption peak is governed by the phonon self-energy, which encapsulates all inelastic scattering pro-cesses. Characterising optical behaviour via calculations of phonon self-energy terms has been explored in detail in sev-eral studies 18,34–37 . The complexity of the self-energy expres-sions, as illustrated by the work of Della Valle and Procacci 38 ,makes it computationally prohibitive to account for all possi-ble interactions, even while restricting the analysis to third- or fourth-order processes. Some studies consider only a limited subset of the possible interaction pathways and demonstrate good agreement with experimental results 18,37 , although at a non-negligible computational cost. While such approaches are valuable for capturing inelastic and many-body effects, we instead focus on modelling the resonant infrared response of the crystal lattice and extracting the corresponding optical constants. We model infrared absorption as a three-step process: absorption of a photon, resonant excitation of an optical phonon, and subsequent anharmonic decay of that phonon via phonon–phonon scattering, as illustrated in Fig. 1. The reso-nant absorption process enforces both energy and momentum conservation between the absorbed photon and the generated phonon. Owing to the negligible momentum of infrared pho-tons relative to Brillouin-zone dimensions, the incident pho-ton couples predominantly to IR-active TO modes near the 
+
+Γ–point ( ⃗q → 0). Absorption occurs when the photon energy matches the phonon energy, yielding a sharply resonant inter-action. The generated phonon (denoted q 1 in Fig. 1) therefore carries the same energy as the incident photon, while momen-tum conservation confines the excitation to wavevectors close to the zone centre. To model the scattering rates, we follow the methodology outlined in Ref. 39. The equations used to compute the an-harmonic scattering rates for the phonon-phonon scattering, described briefly in Appendix A, have only been slightly al-tered to account for the momentum and energy conservation laws governing the interaction detailed above and depicted in Fig. 1. The conservation conditions imposed significantly re-duces the number of processes for which the scattering rates are to be calculated. An immediate effect is a substantial reduction in computational time. Statistical sampling of the complete phonon phase space 40 can additionally be included for further acceleration. This also allows for quick compu-tations of fourth order processes whose effects become pro-nounced for materials that are highly anharmonic. The dielectric response is constructed through the follow-ing two-step procedure. In the first step, we construct an initial self-energy corrected dielectric response as follows. The phonon scattering rate provides the damping factor Γ(ω)
+
+evaluated on a sparse frequency grid corresponding to the infrared-active phonon modes near the Brillouin-zone cen-tre. A Kramers–Kronig transformation of this sparse function yields the real part of the self-energy ∆(ω), which represents the anharmonic shift of the phonon frequency. Using the re-sulting complex self-energy Σ(ω) = ∆(ω) − iΓ(ω), an initial form of the dielectric function is obtained as: 
+
+εinit ,μν (ω, T ) = 4π
+
+¯hv ∑ 
+
+> 0j
+
+Mμ jMν j
+
+2ω0
+
+ω20 − ω2 + 2ω0Σ(ω) . (3) Here v is the volume of the unit cell and ω0 denotes the harmonic frequency of the infrared-active TO phonon modes close to the Brillouin-zone centre. The self-energy compo-nents ∆(ω) and Γ(ω) describe the anharmonic frequency shift and damping of the phonon modes respectively. M μ j is the dipole moment along μ direction for the jth phonon mode. The numerator in the summation S j 
+
+> μν
+
+= Mμ jMν j2ω0, com-monly referred to as the oscillator strength, is obtained from: 
+
+S j 
+
+> μν
+
+= ∑
+
+> κ μ ′
+
+Z∗
+
+> κ,μ μ ′
+
+eκ μ ′ (0 j)
+
+√mκ
+
+!
+
+# ∑
+
+> κν ′
+
+Z∗
+
+> κ,νν ′
+
+eκν ′ (0 j)
+
+√mκ
+
+!
+
+. (4) Here κ denotes the atomic index, Z∗ is the Born effec-tive charge tensor, mκ is the mass of the κth atom, and 
+
+eκ μ (q j) is the phonon eigenvector normalized such that 
+
+∑κ μ [eκ μ (q j)] ∗eκ μ (q j′) = δ j j ′ . Optical phonon modes ex-hibiting a non-zero dipole moment are infrared-active and contribute to the dielectric response, and these modes must be 3
+
+> (a)
+> (b)
+
+FIG. 1: Schematic of IR absorption and subsequent anharmonic phonon scattering near the Brillouin-zone centre. A photon of frequency ω excites a zone-centre optical phonon ( q1 → 0), which undergoes (a) three-phonon and (b) four-phonon scattering processes. Energy and momentum are conserved in all processes. transversely oscillating in nature in order to couple with the electromagnetic radiation. The poles of εinit (ω) correspond to the renormalized TO phonon frequencies ω j, obtained after incorporating the anharmonic frequency shift ∆(ω).The expression for the dielectric function in Eq. 3 cor-responds to an idealized resonant interaction in which pho-ton absorption occurs only when the photon energy exactly matches the phonon energy. In reality, phonon–phonon inter-actions introduce a finite lifetime to the phonon modes, re-sulting in broadened absorption lines that are commonly de-scribed by a Lorentzian line shape. To account for this effect, in the second step, we reconstruct the imaginary part of the di-electric function ε′′ (ω) as a sum of Lorentzian contributions centered at the renormalized TO phonon frequencies obtained in Step 1, i.e. 
+
+ε′′  
+
+> μν
+
+(ω) = ∑
+
+> j
+
+A j,μν 
+
+Γ2
+
+> j
+
+(ω − ω j)2 + Γ2
+
+> j
+
+, (5) where ω j denotes the renormalized TO phonon frequency and Γ j represents the phonon damping factor. The quantity 
+
+A j,μν denotes the peak value of the imaginary part of the intermediate dielectric function ε′′  
+
+> init ,μν
+
+(ω) evaluated at the corresponding renormalized TO phonon frequency. The real part of the dielectric function, ε′ 
+
+> μν
+
+(ω), is then obtained by enforcing causality through a Kramers–Kronig transforma-tion of the reconstructed imaginary spectrum i.e., ε′ 
+
+> μν
+
+(ω) = 
+
+KKT ε′′  
+
+> μν
+
+(ω) . This reconstruction of ε′ 
+
+> μν
+
+(ω) requires a sec-ond Kramers–Kronig transformation to ensure that the result-ing dielectric function remains causal and physically consis-tent. The resulting dielectric response εμν (ω) is obtained by combining the reconstructed dispersive component with the high-frequency contribution ε∞ which can be obtained from first-principles DFT calculations. The total dielectric function is therefore εμν (ω) = ε∞ + ε′ 
+
+> μν
+
+(ω) + iε′′  
+
+> μν
+
+(ω), from which other relevant quantities such as the refractive index and the extinction coefficient, can be obtained. To assess the utility of our method, we investigate the in-frared optical properties of two materials, MgO and rutile TiO 2, using first-principles calculations at 300 K, with the aim of predicting their frequency-dependent complex dielec-tric function. The computed spectra show good agreement with available experimental data. In essence, given only the unit-cell information of a material, the proposed approach en-ables the extraction of frequency-dependent optical constants directly from first-principles calculations. To the best of our knowledge, a workflow that combines first-principles phonon scattering calculations with a self-energy–based reconstruc-tion of the infrared dielectric response, as presented here, has not previously been reported for predicting the optical prop-erties of materials. Importantly, the present formulation nat-urally incorporates higher-order phonon scattering processes, including four-phonon interactions, in determining the dielec-tric function.  
+
+> III. COMPUTATIONAL DETAILS
+
+DFT calculations were performed using Vienna Ab ini-tio Simulation Package (VASP) 41–43 . The Perdew-Burke-Ernzerhof (PBE) implementation of the generalized gradi-ent approximation (GGA) 44 was employed as the exchange-correlation function with the projector augmented wave (PAW) method 43 . Structural optimization was performed with electronic energy and force convergence thresholds of 10 −8 eV and 10 −7 eV/Å, respectively, for both MgO and rutile 4TiO 2. Post relaxation, MgO assumes a rhombohedral struc-ture with lattice parameters, a = b = c = 2.975 Å and α =
+
+β = γ = 60 ◦. Rutile TiO 2 adopts a tetragonal structure with 
+
+a = b = 4.662 Å and c = 2.969 Å. Accordingly, anisotropic behaviour is expected in rutile TiO 2.Interatomic force constants (IFCs) were computed us-ing temperature-dependent effective potentials (TDEP) 45–48 ,specifically the stochastic-TDEP 49,50 , to capture anharmonic effects at 300 K with moderate computational cost. Details of the method are provided in Refs. 51 and 52 and are not repeated here. DFT calculations employed plane-wave cutoff energies of 600 eV for MgO and 500 eV for TiO 2, with su-percells of size: 5 × 5 × 5 (MgO), and 3 × 3 × 5 (TiO 2). Brillouin-zone integrations were performed using k-meshes of 3 × 3 × 3 (MgO) and 2 × 2 × 2 (TiO 2). BTE calcula-tions used q-meshes of 10 × 10 × 10 (MgO) and 6 × 6 × 10 (TiO 2). Harmonic IFCs were calculated including all atoms in the respective supercells. Anharmonic IFCs were truncated using cutoff radii of 6.1 Å (third order) and 5.0 Å (fourth or-der), and 4.5 Å and 4.0 Å for rutile TiO 2.Non-analytical term corrections were included to account for long-range dipole–dipole interactions via the Born ef-fective charge and high-frequency dielectric tensors. Iso-topic scattering was incorporated following Eq. 12 of Ref. 53. A modified version of the FourPhonon 39 module, built on the ShengBTE 54 framework, was used to calculate scattering rates and other parameters for the optical constants.  
+
+> IV. RESULTS AND DISCUSSION
+
+Figure 2 shows the calculated optical constants (complex refractive index) for MgO and rutile TiO 2, compared with ex-perimental data. For MgO, the agreement with experiment 55 
+
+is good, whereas for rutile TiO 256,57 , a slight shift in peak positions is observed. This discrepancy is attributed to deviations in the computed phonon dispersion, which de-pends sensitively on the choice of exchange–correlation func-tional 37,58,59 . Figure 3 compares the phonon dispersions of MgO and rutile TiO 2 at 300 K with reported data from Refs. 37 and 60, respectively. For MgO, excellent agree-ment is observed with inelastic neutron scattering measure-ments 60 . For rutile TiO 2, the comparison is made with cal-culations based on the local density approximation (LDA) exchange–correlation functional 37 , in contrast to the present GGA-based results. The close agreement between the LDA dispersion and experimental data reported in Ref. 37 suggests that the deviations in the present results arise primarily from the choice of functional, although the overall features remain consistent with experimental observations. The shift in the optical peaks (Figs. 2c and 2d) can be traced to correspond-ing deviations in the phonon mode frequencies. In particu-lar, the mode associated with the dominant peak is reported at 5.15 THz 56 and 5.36 THz 37 , whereas the present calcula-tion yields a higher value of 5.99 THz at the Γ-point. This overestimation of the zone-centre phonon frequency leads di-rectly to the observed shift in the optical spectra. The sen-sitivity of first-principles predictions to the choice of the ex-change–correlation functional, as well as to parameters such as the high-frequency dielectric constant ε∞, has been high-lighted in Ref. 37. Recent studies by Fugallo et al. 18 and Amano et al. 37 have computed the dielectric response for MgO and rutile TiO 2, re-spectively, using the self-energy and Green’s function-based approach. These formulations are based on the framework developed by Cowley 33 , in which the interaction implicitly involves emission of a scattered photon 35 , thereby incorporat-ing processes beyond those required for describing resonant IR absorption. In addition, fourth-order anharmonic effects, which are non-negligible for rutile TiO 2 (Fig. 2), are either partially treated or entirely neglected in these studies. The ob-served reduction in peak heights and spectral broadening for rutile TiO 2 indicate the model’s ability to capture fourth-order anharmonic effects, which are expected to become increas-ingly significant at elevated temperatures and in strongly an-harmonic materials, as noted in Refs. 20 and 61. The absence of comparable changes in MgO suggests that four-phonon in-teractions are negligible in this material at room temperature. From a computational standpoint, the approximations em-ployed here lead to a substantial reduction in computational cost. We provide a qualitative estimate of the expected scal-ing with system size. The present approach evaluates phonon-phonon scattering only for IR-active modes and restricts the calculation to wave-vectors in the vicinity of of Γ-point. Com-bined with the sampling strategy of Ref. 40, this reduces the computational complexity to approximately O(N2), where N
+
+is the number of atoms in the unit cell. In contrast, the full self-energy formalism introduces an additional degree of free-dom through the non-resonant frequency-dependence of the self-energy, leading to a substantially higher computational cost. We expect the scaling in such approaches to be steeper, by at least one order in N.Although Eq. 3 resembles the three-parameter Lorentz model (Eq. 1), the two are not equivalent. In particular, the present formulation directly incorporates the anharmonic fre-quency shift ∆. Figure 4 depicts the imaginary part of the re-fractive index (the extinction coefficient) for MgO, and rutile TiO 2 along the c-axis, comparing it with predictions obtained using the three-parameter Lorentz model. The improved agreement between the model proposed in this study with ex-perimental data, is evidence that it better captures the effects of anharmonicities. Furthermore, a comparison of the opti-cal constants of rutile TiO 2 extracted using the presented ap-proach and the exact self-energy formalism (Fig. C.1), shows close agreement indicating that the proposed model retains a high level of predictive accuracy despite its simplifications. The scope of the present work is restricted to one-phonon processes i.e., absorption of a single photon resulting in the creation of a single phonon. Contributions from higher-order multi-phonon processes, which arise from higher-order dipole moments, are expected to be small (less than 5 % of the to-tal dielectric constant) 33 . Nevertheless, these contributions are expected to increase with temperature, particularly from second- and third-order dipole terms, although still small compared to the leading contribution. A more explicit treat-ment of such effects may therefore become relevant at ele-50 10 20 30 40 50 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+30 
+
+> Refractive index (n)
+
+MgO 
+
+3ph 
+
+4ph 
+
+Hofmeister et al. (2003) 
+
+(a) 0 10 20 30 40 50 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+30 
+
+> Extinction Coefficient ( )
+
+MgO 
+
+3ph 
+
+4ph 
+
+Hofmeister et al. (2003) (b) 0 10 20 30 40 50 60 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+> Refractive index (n)
+
+rutile TiO 2, c-axis 
+
+> 3Ph-300K
+> 3+4Ph-300K
+> no (Palik)
+> Schoche et al. (2013)
+
+(c) 0 10 20 30 40 50 60 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+> Extinction Coefficient ( )
+
+rutile TiO 2, c-axis 
+
+3Ph-300K 
+
+3+4Ph-300K 
+
+ko (Palik) (d) 0 20 40 60 80 100 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+30 
+
+> Refractive index (n)
+
+rutile TiO 2, a-axis 
+
+> 3ph - 300K
+> 3+4ph - 300K
+> ne (Palik)
+> Schoche et al. (2013)
+
+(e) 0 20 40 60 80 100 
+
+Frequency (THz) 
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+25 
+
+> Extinction Coefficient ( )
+
+rutile TiO 2, a-axis 
+
+3ph - 300K 
+
+3+4ph - 300K 
+
+ke (Palik) (f) 
+
+FIG. 2: Refractive index n and extinction coefficient κ at 300 K for MgO (a,b), and rutile TiO 2: light propagation along the 
+
+c-axis (ordinary response, no, κo) (c,d), and along the a-axis (extraordinary response, ne, κe) (e,f). Solid lines denote our calculations including three-phonon (3ph) and combined three- and four-phonon (3ph+4ph) scattering, while symbols correspond to experimental data from Refs. 55–57. 6X L
+
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> Frequency (THz)
+> Calculated
+> M J L Sangster et al. (1970)
+
+(a) X M 
+
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> 30
+> Frequency (THz)
+> Calculated
+> Tomohito Amano et al. (2023)
+
+(b) 
+
+FIG. 3: Comparing the calculated phonon dispersions at 300 K using TDEP of (a) MgO with experimental data as reported in Ref. 60 and (b) rutile TiO 2 with calculations reported in Ref. 37, which themselves agree with experimental observations. 0 10 20 30 40 50 
+
+> Frequency (THz)
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> 30
+> Extinction Coefficient ( )
+> MgO
+> Our Model
+> 3 Param Lorentz Model
+> Hofmeister et al. (2003)
+
+(a) 0 10 20 30 40 50 60  
+
+> Frequency (THz)
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> 30
+> Extinction Coefficient ( )
+> rutile TiO 2, c-axis
+> Our Model
+> 3 Param Lorentz Model
+> ko (Palik)
+
+(b) 
+
+FIG. 4: Comparison of the extinction coefficient κ calculated at 300 K using our model (red solid line) and using the three-parameter Lorentz model (blue dashed line) for (a) MgO and (b) rutile TiO 2. Both third- and fourth-order scattering has been included in both calculations. Experimental data reported in Refs. 55 and 57 are plotted as symbols for reference. For rutile TiO 2, light is incident parallel to the crystallographic c-axis, corresponding to the ordinary response (ko) in the crystal. vated temperatures and represents a natural extension of the present framework. A further extension would involve incor-porating a temperature-dependent Drude contribution to the dielectric response, enabling a phenomenological description of carrier scattering in materials with metallic character, for instance arising from electron–phonon interactions. A fully microscopic treatment of these processes is expected to fur-ther improve quantitative accuracy. 
+
+V. CONCLUSIONS 
+
+In summary, we present a first-principles framework to compute the infrared optical properties of materials. The pro-posed model provides a simplified yet physically consistent description of the interaction between infrared radiation and the crystal lattice, enabling efficient calculations while sys-tematically incorporating quartic anharmonic effects. We dis-cuss the limitations of the widely used four-parameter semi-quantum Lorentz (FPSQ) model and note its inadequacy for certain materials. The present formulation serves as an al-ternative that bridges the gap between the harmonic three-parameter Lorentz model and the full self-energy–based ap-proach, capturing essential anharmonic effects while avoiding the high computational cost associated with the latter. The model is validated for MgO and rutile TiO 2 at 300 K with the extracted optical properties showing reasonable agreement with experimental data. The proposed approach provides a 7computationally efficient route for predicting the optical re-sponse of materials and is expected to be applicable across a range of systems and temperatures, with potential relevance to applications in photonics, optical coatings, and thermal man-agement. 
+
+Appendix A: Anharmonic scattering rate equations 
+
+The three- and four-phonon scattering rates are computed using Eqs. A1 and A2 respectively. Each term retains its orig-inal physical meaning as described in Ref. 39. Additional mo-mentum and energy conservation constraints are applied to the phonon created from the absorbed photon (q 1 in Fig. 1). Mo-mentum is conserved by imposing that q 1 be always the point closest to the Γ–point ( q → 0), whereas energy conservation requires that it have the same energy as the absorbed photon, i.e. of the IR-active TO mode, also reinforced through the condition ωλ1 = ω in Eqs. A1 and A2. 
+
+Γ(+)  
+
+> λ1λ2λ3
+
+(ω) = ¯hπ
+
+4
+
+n0 
+
+> λ2
+
+− n0
+
+> λ3
+
+ωλ1 ωλ2 ωλ3
+
+|V (+)  
+
+> λ1λ2λ3
+
+|2δ (ω + ωλ2 − ωλ3 )
+
+Γ(−) 
+
+> λ1λ2λ3
+
+(ω) = ¯hπ
+
+4
+
+n0 
+
+> λ2
+
++ n0 
+
+> λ3
+
++ 1
+
+ωλ1 ωλ2 ωλ3
+
+|V (−) 
+
+> λ1λ2λ3
+
+|2δ (ω − ωλ2 − ωλ3 ) such that ωλ1 = ω
+
+(A1) 
+
+Γ(++)  
+
+> λ1λ2λ3λ4
+
+(ω) = ¯h2π
+
+8N
+
+(1 + n0 
+
+> λ2
+
+)( 1 + n0 
+
+> λ3
+
+)n0
+
+> λ4
+
+n0
+
+> λ1
+
+|V (++)  
+
+> λ1λ2λ3λ4
+
+|2 δ (ω + ωλ2 + ωλ3 − ωλ4 )
+
+ωλ1 ωλ2 ωλ3 ωλ4
+
+Γ(+ −) 
+
+> λ1λ2λ3λ4
+
+(ω) = ¯h2π
+
+8N
+
+(1 + n0 
+
+> λ2
+
+)n0 
+
+> λ3
+
+n0
+
+> λ4
+
+n0
+
+> λ1
+
+|V (+ −) 
+
+> λ1λ2λ3λ4
+
+|2 δ (ω + ωλ2 − ωλ3 − ωλ4 )
+
+ωλ1 ωλ2 ωλ3 ωλ4
+
+Γ(−− ) 
+
+> λ1λ2λ3λ4
+
+(ω) = ¯h2π
+
+8Nn0 
+
+> λ2
+
+n0 
+
+> λ3
+
+n0
+
+> λ4
+
+n0
+
+> λ1
+
+|V (−− ) 
+
+> λ1λ2λ3λ4
+
+|2 δ (ω − ωλ2 − ωλ3 − ωλ4 )
+
+ωλ1 ωλ2 ωλ3 ωλ4
+
+such that ωλ1 = ω
+
+(A2) 
+
+Appendix B: Extracting refractive index and extinction coefficient 
+
+Dielectric response ε(ω) calculated using the procedure ex-plained in Sec. II is substituted in Eq. B1 to obtain the refrac-tive index n(ω) and the extinction coefficient κ(ω).
+
+n(ω)2 = 12
+
+q 
+
+Re [ε(ω)] 2 + Im [ε(ω)] 2 + Re [ε(ω)] 
+
+
+
+κ(ω)2 = 12
+
+q 
+
+Re [ε(ω)] 2 + Im [ε(ω)] 2 − Re [ε(ω)] 
+
+ (B1) 
+
+Appendix C: Comparison with the exact self-energy method 
+
+The exact model to calculate the self-energies of phonon modes, as detailed in Refs. 18, 34–37, is implemented in TDEP 36,62 , albeit considering three-phonon interactions only. Figure C.1 compares the refractive index and the extinction coefficient of rutile TiO 2 extracted using the exact formula-tion and the method proposed in this study. As discussed in the main script, the formalism of the exact model allows for more scattering processes which increases the computational cost significantly. Furthermore, the scatter-ing rates are calculated for all phonon modes at the Γ-point, as opposed to our selective calculation involving only the IR-active TO phonon modes. The combined effect is a notewor-thy reduction of computational time and resource requirement for the proposed model, without considerable loss in accuracy of predictions as demonstrated by Fig. C.1. 
+
+ACKNOWLEDGMENTS 
+
+S.S. acknowledges financial support from SERB for his award [SB/S9/Z-03/2017-XXIII (2022)] under the Overseas Visiting Doctoral Fellowship (OVDF) program at Purdue Uni-versity, West Lafayette, USA. S.S. also acknowledges the gra-cious hospitality of the Sustainable Energy and Nanoscale Transport Laboratory in the School of Mechanical Engineer-ing at Purdue University, where this work was carried out. All simulations were performed at the Rosen Center for Advanced Computing (RCAC) of Purdue University. D.F., Z.G., and X.R. acknowledge partial support from the US National Science Foundation with Award #2102645. Z.G is partly supported by the System Fellows 2024 Doc-toral Fellowship provided by the Purdue Systems Collabora-tory at Purdue University. S.S. also thanks Abdulaziz Alkandari at Purdue University, Dr. Zhen Tong at Sun Yat-Sen University and Dr. Florian 80 10 20 30 40 50 60 
+
+> Frequency (THz)
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> Refractive index (n)
+> rutile TiO 2, c-axis
+> Our work
+> Exact method
+> no (Palik)
+> Schoche et al. (2013)
+
+(a) 0 10 20 30 40 50 60  
+
+> Frequency (THz)
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> Extinction Coefficient ( )
+> rutile TiO 2, c-axis
+> Our work
+> Exact method
+> ko (Palik)
+
+(b) 
+
+FIG. C.1: Comparison of refractive index n (a) and extinction coefficient κ (b) of rutile TiO 2 at 300 K, as predicted by our model (blue) and by the exact self-energy model implemented in TDEP (red). Experimental data from Refs. 56 and 57 are shown as symbols, demonstrating close agreement of both predictions. The probe light is incident along the crystal’s c-axis. Knoop at Linköping University for valuable discussions. 
+
+DATA AVAILABILITY STATEMENT 
+
+The data that support the findings of this study are available from the corresponding author upon reasonable request. 
+
+REFERENCES 
+
+> 1
+
+X. Song, Y. Gao, and P. Zhang, “Optical properties of the polymeric radia-tive cooler with embedded nano/micro-particles,” Renewable and Sustain-able Energy Reviews 200 , 114556 (2024). 
+
+> 2
+
+Z. Guo, I. Katsamba, D. Carne, D. Feng, K. Moss, E. Barber, Z. Fang, A. Felicelli, and X. Ruan, “Electronic and phononic characteristics of high-performance radiative cooling pigments h-BN: A comparative study to BaSO 4,” Materials Today Physics 54 , 101721 (2025). 
+
+> 3
+
+B. R. Mishra, S. Sundaram, N. J. Varghese, and K. Sasihithlu, “Disordered metamaterial coating for daytime passive radiative cooling,” AIP Advances 
+
+11 , 105218 (2021). 
+
+> 4
+
+M. L. Brongersma, Y. Cui, and S. Fan, “Light management for photo-voltaics using high-index nanostructures,” Nature Materials 13 , 451—-460 (2014). 
+
+> 5
+
+N. Shanmugam, R. Pugazhendhi, R. Madurai Elavarasan, P. Ka-siviswanathan, and N. Das, “Anti-reflective coating materials: A holistic review from PV perspective,” Energies 13 (2020), 10.3390/en13102631. 
+
+> 6
+
+H. Xu, Z. Xing, F. Wang, and Z. Cheng, “Review on heat conduction, heat convection, thermal radiation and phase change heat transfer of nanofluids in porous media: Fundamentals and applications,” Chemical Engineering Science 195 , 462–483 (2019). 
+
+> 7
+
+K. Hummer, A. Grüneis, and G. Kresse, “Structural and electronic prop-erties of lead chalcogenides from first principles,” Physical Review B 75 ,195211 (2007). 
+
+> 8
+
+L. Li, W. Wang, H. Liu, X. Liu, Q. Song, and S. Ren, “First principles calculations of electronic band structure and optical properties of Cr-doped ZnO,” The Journal of Physical Chemistry C 113 , 8460–8464 (2009). 
+
+> 9
+
+Y. Al-Douri, M. Ameri, A. Bouhemadou, and K. M. Batoo, “First-principles calculations to investigate the refractive index and optical dielec-tric constant of Na 3SbX 4 (X=S, Se) ternary chalcogenides,” physica status solidi (b) 256 , 1900131 (2019). 
+
+> 10
+
+R. Asahi, Y. Taga, W. Mannstadt, and A. J. Freeman, “Electronic and opti-cal properties of anatase TiO 2,” Phys. Rev. B 61 , 7459–7465 (2000). 
+
+> 11
+
+V. Wang, N. Xu, J.-C. Liu, G. Tang, and W.-T. Geng, “Vaspkit: A user-friendly interface facilitating high-throughput computing and analysis using VASP code,” Computer Physics Communications 267 , 108033 (2021). 
+
+> 12
+
+K. Harun, N. A. Salleh, B. Deghfel, M. K. Yaakob, and A. A. Mohamad, “DFT+U calculations for electronic, structural, and optical properties of zno wurtzite structure: A review,” Results in Physics 16 , 102829 (2020). 
+
+> 13
+
+B. Arnaud and M. Alouani, “Local-field and excitonic effects in the calcu-lated optical properties of semiconductors from first-principles,” Physical Review B 63 , 085208 (2001). 
+
+> 14
+
+S. Lin, W. Wang, B. Zhang, T.-Y. Lü, H. Chen, H. Pan, C. Lin, X. Li, Y. Tang, and J.-C. Zheng, “A systematic study on the optical properties and photovoltaic performance of SnS solar cells using Bethe-Salpeter equation and device simulation,” Renewable Energy 252 , 123522 (2025). 
+
+> 15
+
+X. Yang, T. Feng, J. S. Kang, Y. Hu, J. Li, and X. Ruan, “Observation of strong higher-order lattice anharmonicity in raman and infrared spectra,” Physical Review B 101 , 161202 (2020). 
+
+> 16
+
+Z. Guo, P. Sokalski, Z. Han, Y. Cheng, L. Shi, T. Taniguchi, K. Watanabe, and X. Ruan, “First-principles prediction of zone-center optical phonon linewidths and IR spectra of hexagonal boron nitride,” Applied Physics Let-ters 125 , 231106 (2024). 
+
+> 17
+
+F. Gervais and B. Piriou, “Anharmonicity in several-polar-mode crystals: adjusting phonon self-energy of LO and TO modes in Al 2O3 and TiO 2 to fit infrared reflectivity,” Journal of Physics C: Solid State Physics 7, 2374 (1974). 
+
+> 18
+
+G. Fugallo, B. Rousseau, and M. Lazzeri, “Infrared reflectance, transmit-tance, and emittance spectra of MgO from first principles,” Physical Review B 98 , 184307 (2018). 
+
+> 19
+
+A. S. Barker, “Transverse and longitudinal optic mode study in MgF 2 and ZnF 2,” Physical Review 136 , A1290–A1295 (1964). 
+
+> 20
+
+Z. Tong, X. Yang, T. Feng, H. Bao, and X. Ruan, “First-principles pre-dictions of temperature-dependent infrared dielectric function of polar ma-terials by including four-phonon scattering and phonon frequency shift,” Physical Review B 101 , 125416 (2020). 
+
+> 21
+
+M. Stokey, R. Korlacki, M. Hilfiker, S. Knight, S. Richter, V. Darakchieva, R. Jinno, Y. Cho, H. G. Xing, D. Jena, Y. Oshima, K. Khan, E. Ahmadi, and M. Schubert, “Infrared dielectric functions and brillouin zone center phonons of α–Ga 2O3 compared to α–Al 2O3,” Physical Review Materials 
+
+6, 014601 (2022). 9
+
+> 22
+
+Z. Han, C. Lee, J. Song, H. Wang, P. Bermel, and X. Ruan, “Temperature-dependent full spectrum dielectric function of semiconductors from first principles,” Phys. Rev. B 107 , L201202 (2023). 
+
+> 23
+
+R. H. Lyddane, R. G. Sachs, and E. Teller, “On the polar vibrations of alkali halides,” Physical Review 59 , 673–676 (1941). 
+
+> 24
+
+M. Born and K. Huang, Dynamical Theory of Crystal Lattices (Clarendon Press, Oxford, UK, 1956). 
+
+> 25
+
+K. Huang, “On the interaction between the radiation field and ionic crys-tals,” Proceedings of the Royal Society of London: Series A 208 , 352–365 (1951). 
+
+> 26
+
+D. W. Berreman and F. C. Unterwald, “Adjusting poles and zeros of dielec-tric dispersion to fit reststrahlen of PrCl 3 and LaCl 3,” Physical Review 174 ,791–799 (1968). 
+
+> 27
+
+D. D. S. Meneses, J.-F. Brun, P. Echegut, and P. Simon, “Contribution of semi-quantum dielectric function models to the analysis of infrared spec-tra,” Applied Spectroscopy 58 , 969–974 (2004). 
+
+> 28
+
+T. Sun, P. B. Allen, D. G. Stahnke, S. D. Jacobsen, and C. C. Homes, “Infrared properties of ferropericlase Mg 1−xFe xO: Experiment and theory,” Physical Review B 77 , 134303 (2008). 
+
+> 29
+
+W. Cochran, “Dielectric constants and lattice vibrations of cubic ionic crys-tals,” Zeitschrift für Kristallographie - Crystalline Materials 112 , 465–471 (1959). 
+
+> 30
+
+H. B. Rosenstock, “Nature of vibrational modes in ionic crystals,” Physical Review 121 , 416–424 (1961). 
+
+> 31
+
+T. H. K. Barron, “Long-wave optical vibrations in simple ionic crystals,” Phys. Rev. 123 , 1995–1998 (1961). 
+
+> 32
+
+S. S. Mitra, “Infrared and raman spectra due to lattice vibrations,” (Springer, Boston, MA, 1969) Chapter 14, pp. 333–451, Optical Properties of Solids. 
+
+> 33
+
+R. A. Cowley, “The lattice dynamics of an anharmonic crystal,” Advances in Physics 12 , 421–480 (1963). 
+
+> 34
+
+R. A. Cowley, “Anharmonic crystals,” Reports on Progress in Physics 31 ,123 (1968). 
+
+> 35
+
+M. Balkanski, R. F. Wallis, and E. Haro, “Anharmonic effects in light scattering due to optical phonons in silicon,” Physical Review B 28 , 1928– 1934 (1983). 
+
+> 36
+
+N. Benshalom, G. Reuveni, R. Korobko, O. Yaffe, and O. Hellman, “Di-electric response of rock-salt crystals at finite temperatures from first prin-ciples,” Physical Review Materials 6, 033607 (2022). 
+
+> 37
+
+T. Amano, T. Yamazaki, R. Akashi, T. Tadano, and S. Tsuneyuki, “Lat-tice dielectric properties of rutile TiO 2: First-principles anharmonic self-consistent phonon study,” Physical Review B 107 , 094305 (2023). 
+
+> 38
+
+R. G. Della Valle and P. Procacci, “Equation of motion for the green’s func-tion in anharmonic solids,” Physical Review B 46 , 6141–6149 (1992). 
+
+> 39
+
+Z. Han, X. Yang, W. Li, T. Feng, and X. Ruan, “FourPhonon: An extension module to ShengBTE for computing four-phonon scattering rates and ther-mal conductivity,” Computer Physics Communications 270 , 108179 (2022). 
+
+> 40
+
+Z. Guo, Z. Han, D. Feng, G. Lin, and X. Ruan, “Sampling-accelerated prediction of phonon scattering rates for converged thermal conductivity and radiative properties,” npj Computational Materials 10 (2024). 
+
+> 41
+
+G. Kresse and J. Hafner, “Ab initio molecular dynamics for liquid metals,” Physical Review B 47 , 558–561 (1993). 
+
+> 42
+
+G. Kresse and J. Furthmüller, “Efficiency of ab-initio total energy calcula-tions for metals and semiconductors using a plane-wave basis set,” Compu-tational Materials Science 6, 15–50 (1996). 
+
+> 43
+
+G. Kresse and J. Furthmüller, “Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set,” Physical Review B 54 ,11169–11186 (1996). 
+
+> 44
+
+J. P. Perdew, K. Burke, and M. Ernzerhof, “Generalized gradient approxi-mation made simple,” Physical Review Letters 77 , 3865–3868 (1996). 
+
+> 45
+
+F. Knoop, N. Shulumba, A. Castellano, J. P. A. Batista, R. Farris, M. J. Verstraete, M. Heine, D. Broido, D. S. Kim, J. Klarbring, I. A. Abrikosov, S. I. Simak, and O. Hellman, “TDEP: Temperature Dependent Effective Potentials,” Journal of Open Source Software 9, 6150 (2024). 
+
+> 46
+
+O. Hellman, P. Steneteg, I. A. Abrikosov, and S. I. Simak, “Temperature dependent effective potential method for accurate free energy calculations of solids,” Physical Review B 87 , 104111 (2013). 
+
+> 47
+
+O. Hellman and I. A. Abrikosov, “Temperature-dependent effective third-order interatomic force constants from first principles,” Physical Review B 
+
+88 , 144301 (2013). 
+
+> 48
+
+A. H. Romero, E. K. U. Gross, M. J. Verstraete, and O. Hellman, “Thermal conductivity in PbTe from first principles,” Physical Review B 91 , 214310 (2015). 
+
+> 49
+
+D. West and S. K. Estreicher, “First-principles calculations of vibrational lifetimes and decay channels: Hydrogen-related modes in Si,” Physical Re-view Letters 96 , 115504 (2006). 
+
+> 50
+
+N. Shulumba, O. Hellman, and A. J. Minnich, “Lattice thermal conduc-tivity of polyethylene molecular crystals from first-principles including nu-clear quantum effects,” Physical Review Letters 119 , 185901 (2017). 
+
+> 51
+
+Z. Guo, Z. Han, A. Alkandari, K. Khot, and X. Ruan, “First-principles pre-diction of thermal conductivity of bulk hexagonal boron nitride,” Applied Physics Letters 124 , 163906 (2024). 
+
+> 52
+
+A. Alkandari, Z. Han, Z. Guo, T. E. Beechem, and X. Ruan, “Anisotropic anharmonicity dictates the thermal conductivity of β -Ga 2O3,” Physical Re-view B 111 , 094308 (2025). 
+
+> 53
+
+S.-i. Tamura, “Isotope scattering of dispersive phonons in Ge,” Physical Review B 27 , 858–866 (1983). 
+
+> 54
+
+W. Li, J. Carrete, N. A. Katcho, and N. Mingo, “ShengBTE: a solver of the boltzmann transport equation for phonons,” Computer Physics Communi-cations 185 , 1747–1758 (2014). 
+
+> 55
+
+A. M. Hofmeister, E. Keppel, and A. K. Speck, “Absorption and reflection infrared spectra of MgO and other diatomic compounds,” Monthly Notices of the Royal Astronomical Society 345 , 16–38 (2003). 
+
+> 56
+
+S. Schöche, T. Hofmann, R. Korlacki, T. E. Tiwald, and M. Schubert, “In-frared dielectric anisotropy and phonon modes of rutile TiO 2,” Journal of Applied Physics 113 , 164102 (2013). 
+
+> 57
+
+M. W. Ribarsky, “Titanium dioxide (TiO 2) (rutile),” (Academic Press, San Diego, CA, 1985) pp. 795–804., Handbook of Optical Constants of Solids. 
+
+> 58
+
+B. Montanari and N. Harrison, “Lattice dynamics of TiO 2 rutile: influ-ence of gradient corrections in density functional calculations,” Chemical Physics Letters 364 , 528–534 (2002). 
+
+> 59
+
+E. Shojaee and M. R. Mohammadizadeh, “First-principles elastic and ther-mal properties of TiO 2: a phonon approach,” Journal of Physics: Con-densed Matter 22 , 015401 (2009). 
+
+> 60
+
+M. J. L. Sangster, G. Peckham, and D. H. Saunderson, “Lattice dynamics of magnesium oxide,” Journal of Physics C: Solid State Physics 3, 1026 (1970). 
+
+> 61
+
+X. Yang, T. Feng, J. S. Kang, Y. Hu, J. Li, and X. Ruan, “Observation of strong higher-order lattice anharmonicity in raman and infrared spectra,” Physical Review B 101 , 161202 (2020). 
+
+> 62
+
+A. H. Romero, E. K. U. Gross, M. J. Verstraete, and O. Hellman, “Thermal conductivity in pbte from first principles,” Physical Review B 91 , 214310 (2015).

@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-16",
+  "date": "2026-06-16",
+  "generated_at": "2026-06-16T23:15:58",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/16/2606.13143v1-a-first-principles-approach-for-predicting-infrared-optical-properties-of-solids",
+      "section": "quick",
+      "title_en": "A first-principles approach for predicting infrared optical properties of solids",
+      "authors": "Sreerag Sundaram, Ziqi Guo, Dudong Feng, Karthik Sasihithlu, Xiulin Ruan",
+      "date": "2026-06-11",
+      "pdf": "https://arxiv.org/pdf/2606.13143v1",
+      "score": "7.0",
+      "evidence": "第一性原理方法预测红外光学常数，可用于筛选近零介电常数行为。",
+      "tldr": "现有红外光学性质预测模型面临精度与计算成本难以兼顾的挑战。本文提出一种简化的第一性原理方法，通过纳入四声子散射和声子重整化等非谐效应，弥合了谐波三参数模型与完整自能方法之间的差距。计算MgO和金红石TiO2的频率相关折射率，结果与实验数据定量吻合，验证了模型的高效性和准确性。该框架为广泛材料的光学性质预测提供了实用的解决方案。",
+      "tags": "query:enz",
+      "abstract_en": "We present a simplified formalism for predicting infrared optical constants from first-principles calculations. Addressing limitations of the widely used four-parameter semi-quantum Lorentz model, the proposed approach bridges the gap between the harmonic three-parameter model and full self-energy-based methods. By incorporating essential anharmonic effects including four-phonon scattering and phonon renormalisation, the model provides an efficient and accurate alternative while maintaining low computational cost. The frequency-dependent refractive indices of MgO and rutile TiO$_2$ are computed and compared with experimental data, demonstrating good quantitative agreement. The framework offers a practical approach for predicting optical properties of materials across a wide range of materials.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
