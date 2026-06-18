@@ -1,0 +1,487 @@
+Title: Bayesian inversion for single-shot spectral-encoded waveform reconstruction
+
+URL Source: https://arxiv.org/pdf/2606.14936v1
+
+Published Time: Tue, 16 Jun 2026 00:13:25 GMT
+
+Number of Pages: 14
+
+Markdown Content:
+# Bayesian inversion for single-shot spectral-encoded waveform reconstruction 
+
+Minsoo Kang 1 and Thomas C. Underwood 1,2* 
+
+> 1
+
+Department of Aerospace Engineering and Engineering Mechanics, University of Texas at Austin, Austin, Texas, 78712, United States. 
+
+> 2
+
+Texas Materials Institute, University of Texas at Austin, Austin, Texas, 78712, United States. *Corresponding author(s). E-mail(s): thomas.underwood@utexas.edu; 
+
+Abstract 
+
+Spectral encoding enables single-shot measurements of ultrafast transients by mapping temporal infor-mation onto the spectrum of a chirped probe. This encoding allows dynamics to be recorded that are beyond the response limits of conventional electronic detectors. However, because the measurements record only spectral intensity, the phase of encoded signals is lost, and dispersion in the detection pro-cess introduces waveform distortions that complicate reconstruction and quantitative interpretation of spectra. In single-shot terahertz time-domain spectroscopy (THz-TDS), these distortions manifest as a tradeoff between temporal resolution and the measurement window of signals and can produce spectral null frequencies that limit the recoverable THz bandwidth. To address this challenge, a Bayesian inversion framework is developed to recover the underlying waveform from the squared spec-tral observable by inferring the THz field, the modulation coefficient, and a low-dimensional empirical parameterization of the probe spectrum jointly, while a Gaussian process (GP) prior regularizes the waveform. The framework is validated using single-shot THz-TDS experiments spanning two probe spectral profiles and three chirp conditions with α ranging from 14.5 to 40 ps −2. Across all cases, the inversion reconstructs both the time-domain waveform and spectral null frequency structure within the credible interval of a delay-line reference measurement. These results establish a pathway to elim-inate penalties that are associated with the detection process in spectral encoding methods without adding additional optics or alignment complexity. 
+
+Keywords: Spectral encoding, Phase loss distortion, Ultrafast optics, Bayesian inversion, THz Spectroscopy 
+
+# 1 Introduction 
+
+Many transport, reaction, and relaxation phe-nomena are governed by ultrafast nonequilib-rium processes that redistribute energy, charge, and momentum prior to equilibration. Ultrafast laser systems employing femtosecond pulses at high repetition rates have enabled pump-probe diagnostics that resolve these transient phenom-ena, including carrier transport in semiconduc-tors, chemical reactions, and plasma dynamics [1– 7]. However, a fundamental challenge in such measurements is that electronic detectors can-not record sub-picosecond transients (i.e., electric 1
+
+> arXiv:2606.14936v1 [physics.optics] 12 Jun 2026
+
+fields) directly. Instead, the temporal informa-tion must be encoded into a measurable quan-tity that can be registered by a slower detec-tor [8, 9]. Spectral encoding addresses this chal-lenge by mapping temporal information onto each spectral component of a chirped probe pulse. Each temporal instant is associated with a corre-sponding wavelength, allowing the full transient response to be captured in a single-shot [10]. This capability is particularly valuable for low-duty-cycle, irreversible, or shot-to-shot varying phenomena and has led to widespread use of chirped-probe spectral encoding in spatiotemporal imaging, frequency-domain transient absorption spectroscopy, electro-optic spectral decoding of electron bunches, photonic time-stretch systems, and chirped-pulse spectral interferometry [11–18]. However, the mapping between time and wave-length is not exact. Each spectral coordinate samples a finite temporal neighborhood around its stationary point, which introduces distortions into the encoded waveform based on the level of disper-sion that is added in the detection process. These distortions impose penalties on the temporal res-olution and spectral bandwidth of waveforms, complicate quantitative parameter extraction, and ultimately limit the broader applicability of spec-tral encoding diagnostics. Single-shot THz-TDS is an application of chirped-probe spectral encoding because it enables acquisition of THz waveforms in fast, irreversible, or nonrepetitive processes where conventional delay-line scanned measurements are impractical. This capability has made single-shot THz-TDS a valuable diagnostic for plasma dynamics, irreversible processes, and electron diffraction [11, 19–21]. However, the spectral encoding process introduces distortions and a time resolution penalty that complicate quantitative waveform reconstruction and limit measurement fidelity [10, 22, 23]. To address this challenge, sev-eral studies have formulated waveform recovery as an inverse problem and applied determin-istic regularization techniques. One approach employed Tikhonov regularization, in which the waveform is reconstructed by regularizing the forward operator with a parameter selected from singular value decomposition (SVD) analysis [24]. Another approach used truncated singular value decomposition (TSVD), where weak singular modes of the forward operator are removed to construct a stable pseudo-inverse solution [25]. These methods demonstrate that waveform recovery is possible, while their practical use remains limited to conditions where the undis-torted THz waveform is known [19]. Since single-shot measurements are limited by noise [11], modes with small singular values become difficult to distinguish from noise. These modes correspond to spectral nulls of the measurement and make the reconstruction sensitive to the chosen regulariza-tion parameter or truncation rank [26, 27]. Fur-thermore, since these methods act on an abstract singular mode space, the regularization cannot be guided by the physical features of the measure-ment. When the true waveform is unavailable as a reference, this absence of a physical criterion prevents the interpretation of the reconstruction from the measurement alone and requires extra calibration settings. Therefore, most spectral encoding inver-sion research has focused on hardware based methods [19]. Supercontinuum-enhanced spec-tral encoding (SETS) decreased the distortion by adjusting the chirp characteristic of the probe, broadening the probe bandwidth, and increasing the chirp parameter ( α) [28]. Phase-diversity electro-optic sampling (DEOS) modified the electro-optic detection geometry to generate two complementary spectral-encoded observables whose spectral nulls occur at different frequen-cies. These complementary observables provide additional information that mitigates the loss of spectral information near the null frequencies [19]. Dual-echelon single-shot detection geometrically encoded the THz waveform by mapping the THz time delay axis onto a spatial coordinate of the probe, allowing multiple time points of the wave-form to be sampled in a single laser shot [29]. The tomographic method has also been applied to extract probe phase modulation information directly from the probe spectral interferogram measured by a spectrometer [30]. However, these approaches require additional optical hardware beyond the standard spectral encoding setup, such as a nonlinear crystal stage, extra laser lines, and an optical delay setup. These components increase the complexity of the optical system adding addi-tional uncertainties. Also, spatial information is lost in the case using echelon mirrors. 2These challenges can be addressed without additional hardware by formulating an inversion problem numerically within a Bayesian frame-work. Within this work, a posterior distribution over the unknown waveform can be constructed from the measurement likelihood and an explicit prior [31, 32]. Unlike regularization methods, the prior can be assigned directly to physical quan-tities (e.g., probe electric field, THz waveform) so that constraints from the characterized mea-surement process, such as spectral nulls, can guide the inversion when the target waveform is not known a priori. The resulting posterior can provide intrinsic uncertainty estimates for input parameters, including the recovered waveform. The Bayesian formulation is also compatible with data-driven extensions, including parameter esti-mation or machine-learning-based priors that are increasingly used in ultrafast diagnostics [33, 34]. In this work, we demonstrate the first algo-rithmic inversion of single-shot spectral-encoded waveforms that restores temporal resolution and recovers spectral content which is lost during the measurement process. A Bayesian framework is introduced to account for systematic uncertain-ties, reduce noise susceptibility, and decrease the need for a reference measurement by using physi-cally informed priors across a wide range of probe conditions. The THz waveform ETHz is treated as the target parameter, together with nuisance parameters including the modulation factor k
+
+and low-dimensional chirped-probe parameters. A Gaussian process (GP) prior is assigned to ETHz ,with its variance set directly by the spectral nulls of the single-shot spectral measurement. There-fore, the prior relies only on the knowledge of the probe beam and does not require a separate reference THz waveform measurement. The poste-rior is explored by maximum a posteriori (MAP) estimation and the Metropolis-adjusted Langevin algorithm (MALA), and the framework is vali-dated against delay-line reference measurements across six configurations spanning two probe spec-tral profiles and three chirp conditions, with α
+
+from 14.5 to 40 ps −2.
+
+# 2 Results 
+
+Source of Distortion 
+
+Waveform distortion in spectral encoding occurs because the encoded signal is not a one-to-one mapping of the target waveform signal. Spec-tral encoding is based on the dispersive read-out process of a probe pulse, followed by the measurement of its intensity [35]. In a pump-probe measurement, the pump-induced target waveform is first imprinted onto a probe as a time-dependent modulation, and the modulated probe Im is then mapped to a detector coor-dinate by the readout optics. Several spectral encoding processes, including frequency-domain single-shot transient absorption spectroscopy [12], single-shot supercontinuum spectral interferome-try [17], and chirped-probe coherent anti-Stokes Raman scattering (CARS) [36] can be described as, 
+
+Im(x) = 
+
+Z ∞−∞ 
+
+K(x, t )Ec(t)Sm(t) dt 
+
+> 2
+
+, (1) where Ec(t) = Ac(t) exp[ −iαt 2] is the chirped probe field, x is the readout coordinate, and 
+
+K(x, t ) = AK (x, t ) exp[ iψ K (x, t )] is the readout kernel that maps the modulated probe field from time to the measurement coordinate. The sample-dependent modulation Sm(t) can be decomposed into Sm(t) = S0(t) + ∆ S(t), where S0(t) is the ref-erence or background response, and ∆ S(t) is the target-induced modulation to be recovered. Thus, the measured spectrum is not a direct measure-ment of ∆ S(t), but the square magnitude of the chirped-probe field after propagation through the effective encoding kernel K(x, t )Ec(t). The inte-gral in Eq. (1) becomes nonzero only near tsp ,where the total phase is stationary, Φ( x, t ) = ψK (x, t ) − αt 2, ∂Φ( x, t )
+
+∂t t=tsp 
+
+= 0 ,
+
+(2) generating the mapping relation τ ≡ x(tsp ). The measurement is then defined from the normal-ized subtraction between modulated Im(τ ) and reference Ic(τ ) intensities, [ Im(τ ) − Ic(τ )] /I c(τ ). Expanding the integral in Eq. (1) near tsp and retaining the leading target-induced modulation 3∆S(t), 
+
+Im − I0
+
+I0
+
+(τ ) ≈2 Re[ H(τ )∆ S(τ )] + H(τ )
+
+
+
+∆S(τ ) + i
+
+2κ D∆S (τ )
+
+ 2
+
+,
+
+(3) where H(τ ) = C(τ )AK (τ, t sp )Ac(τ )/ ˜E0(τ ), κ =
+
+∂2
+
+t Φ( ω, t )|t=tsp , and D∆S (τ ) collects derivative terms of AK (τ, t ), Ac(t), and ∆S(t) (SI Sec. 1.1). The distortion arises from the second term on the right-hand side of Eq. (3), which adds a κ-dependent error to the linear response of the target ∆ S(τ ). This contaminates ∆ S(τ ) and biases both time domain transient analysis and parameter estimations. Furthermore, because of the squared magnitude of the complex term, the phase of this additional quadrature contri-bution is lost, making the recovery of ∆ S(τ ) in Eq. (3) ill posed. Therefore, the distortion can-not be removed by a simple algebraic correction or recovery, and it produces resolution limits in the extracted signal [12, 14, 15, 35, 37]. As illustrated in Fig. 1(a), the spectral encod-ing implementation of single-shot THz-TDS pro-ceeds by spatially and temporally overlapping a chirped probe pulse with the generated THz pulse in an electro-optic crystal. Through the Pockels effect, the THz field induces a transient electro-optic modulation of the probe, encoding the THz waveform onto different spectral components of the probe [10]. The modulated probe is then read out as a single-shot intensity observable, either directly in the frequency domain with a spectrom-eter or after dispersive mapping into the time domain. In the weak modulation limit, the modu-lated probe field after the electro-optic crystal can be written as, 
+
+Em(t) = Ec(t) [1 + kE THz (t)] , (4) where ETHz (t) is the THz electric field and mod-ulation factor k ∼ O (10 −1) [10, 11, 20, 22, 28]. If Em(t) were measured directly, the THz wave-form could be recovered algebraically by ETHz =(Em/E c − 1) /k (A in Fig 1(b)). However, since THz transients typically evolve on picosecond timescales, single-shot measurements require the transient field to be encoded onto a measurable E (t) 
+
+b)   
+
+> -2 02-1 01Time [ps] THz [a.u.]
+
+c)   
+
+> THz E=(E /E - 1) M
+
+d)       
+
+> E(I - I )/I CCTHz, dist MTime [ps] -2 02THz [a.u.]  1-1 0TTHz
+
+true true 2.00 THz 1.42 THz Frequency [THz] 0 2 4Amplitude [a.u.] 00.5 1Frequency [THz] 0 2 4Phase [rad] - 100 -50 01.42 THz 2.00 THz C1kTHz             
+
+> E = E (1 + k E )CTHz M2I = |fft(E )|, I = |fft(E )| MM
+> Reconstruction ABE (t) = A (t)exp(i t ) CC2BTime [ps] -2 02E [a.u.] -1 01C= 25.0 ps = 12.5 ps α-2 -2 Time [ps] -2 02E [a.u.] -1 01M= 25.0 ps = 12.5 ps -2 -2 Wavelength [nm] 760 780 800 I [a.u.] 00.5 1M= 25.0 ps = 12.5 ps -2 -2
+
+E.O. Dispersion Probe Spectrometer Spectral Encoding Pump THz THz Generation TC
+
+a) 
+
+> CM
+
+E (t) E (t) I ( ω)CI ( ω), M 
+
+> A
+> BDirect measurement Spectral measurement ~2CC
+> II
+> MC
+> ααααα
+
+α
+
+> = 25.0 ps = 12.5 ps -2 -2
+> αα
+
+Fig. 1 The distortion problem in spectral encoding. (a) Physical layout of single-shot THz spectroscopy. (b) The-oretical process: path A is the direct inversion ETHz =(Em/E c − 1) /k , and path B is the spectral measurement mapping ET Hz (t) on Im(ω), obtaining ETHz ,dist ∼ (Im −
+
+Ic)/I c. Two chirp values ( α = 12 .5 and 25 ps −2) are com-pared on ideal bipolar signal with TT Hz . Distortion and spectral nulls in spectral (c) amplitude and (d) phase. 
+
+intensity observable such as an intensity spectrum. For THz-TDS, each term in Eq. (3) corresponds to 
+
+S0(t) = 1 , ∆S(t) = kE THz (t), x = ω, K (ω, t ) = 
+
+eiωt , κ = 2 α. Therefore, the generic distortion turns into (see SI Sec. 1.2), 
+
+Im − Ic
+
+Ic
+
+(τ ) ≈ 2kE T Hz (τ )+
+
+ k
+
+4α
+
+2 
+
+E′′ 
+
+THz (τ ) + 2A′
+
+c(τ ) E′
+
+THz (τ )
+
+Ac(τ )
+
+2
+
+.
+
+(5) When the chirp rate α becomes small (α ∼
+
+10 ps −2), the second term of Eq. (5) rises, intro-ducing distortion to ET Hz (τ ) that scales with α
+
+and its derivatives. This is shown in Fig. 1(b), the two chirp values α = 25 ps −2 and α = 12 .5 ps −2
+
+illustrate how the measured waveform ETHz ,dist 
+
+deviates with a ringing feature from the true THz 
+
+ETHz as α varies. The effect of waveform distor-tion in the spectral domain is shown in Fig. 1(c) and (d). Assuming that Ac(t) ≈ 1 and expanding 4higher order terms in Eq. (5), the transfer func-tion can be written as H(ω) = 2 kcos( ω2
+
+4α ). The zeros of this transfer function introduce null fre-quencies at fnull = p(2 n−1) α/ 2π, n = 1 , 2, . . . .These null frequencies give rise to the distortion by suppressing the corresponding spectral compo-nents and introducing phase jumps through sign changes across the nulls. As a result, quantitative spectroscopy and broadband THz imaging are lim-ited to the usable bandwidth below the first null 
+
+fnull = p α
+
+2π , which is 2.00 THz at α = 25 ps −2
+
+and 1.41 THz at α = 12 .5 ps −2. [19, 23, 28, 35]. 
+
+Bayesian Inversion Framework 
+
+The Bayesian inversion framework devel-oped in this work infers the THz waveform 
+
+ETHz (ti) together with nuisance parameters 
+
+θ = {k, wA, wP } from the measured single-shot distorted field ETHz ,dist (Fig. 2(a)). The work-flow begins by characterizing the chirped probe field Ec(t) = Ac(t) exp[ iϕ c(t)] using experimental shot-to-shot measurements of the unmodulated probe spectrum Ic(ω) and its corresponding group-delay profile dϕ c(ω)
+
+dω . The group delay is calibrated by scanning the probe with THz, adjusting the arrival time at the electro-optic crystal, and tracking the THz peak shift. The square root of Ic(ω) gives the amplitude Ac(ω), and the calibration curve gives the spectral phase 
+
+ϕc(ω). Combining these two components yields the complex field in the frequency domain ˜Ec(ω). Then, the inverse Fourier transformation on each ˜Ec(ω) yields an empirical ensemble of complex temporal probe fields, which anchors the prior on 
+
+Ec(t) (see SI Sec. 2). The probe ensemble is then compressed through principal component analysis (PCA). Shot-to-shot deviations of Ac(t) and ϕc(t) from their ensemble means are projected onto orthonor-mal bases, with latent weights wA and wP
+
+modeled by empirical zero-mean Gaussian pri-ors (Fig. 2(a)). Only the leading components are retained, up to a cumulative explained vari-ance of 90 %, keeping two or three weights per variable. The retained components capture the dominant variations, while the discarded compo-nents make only minor contributions to the probe field. This truncation reduces the dimension of the variables while preserving the probe fluctuation characteristics (see SI Sec. 3.1). Frequency [THz] -20 0 20 I c()  [a.u.] 00.5 1                     
+
+> Frequency [THz] -5 05Time [ps] -2 02
+> Time [ps] -5 05Ec(t) [a.u.] -1 01
+> Time t [ps] -5 05Time t' [ps] -5 050Time [ps] -2 02THz [a.u.] -0.2 00.2
+> Ec(t) = ifft[A ( )exp(i Φ)] Ic() dΦ c()/d ccw (A (t)) ccAP
+> wA-50 050 Probability 00.05
+> wP-1000 01000 00.01 0.02
+> w ( Ф (t) )
+
+Measurements               
+
+> k0.14 0.16 01kProbability  1
+> ETHz (t ) ETHz,dist (t) i
+> P(E |E ,) Like THz,dist THz P(E ,) Prior THz
+> P(E ,|E )THz,dist THz Post
+
+c) b) a)     
+
+> MAP MALA 95 % CI 95 % CI Post. mode Post. mean =12.5 ps -2
+
+Posterior Likelihood Prior 
+
+PCA Coefiicients 
+
+PCA Analysis 
+
+Time [ps] 
+
+-2 0 2THz [a.u.] -1 01
+
+Time [ps] -2 0 2THz [a.u.] -1 01      
+
+> E
+> wA1 wA2 wP1 wP2
+> THz THz,dist ETHz EETHz,dist Mean Deviation
+> =12.5 ps -2 =12.5 ps -2 =12.5 ps -2
+
+Fig. 2 (a) Schematic of the Bayesian inversion algo-rithm using a Gaussian process (GP) prior. The work-flow spans from measured data to principal com-ponent analysis (PCA), definitions of the parame-ters (ETHz (ti) and θ = {k, w A, w P }), likelihood 
+
+PLike (ETHz ,dist |ETHz , θ ), prior PPrior (ETHz , θ ), and tar-get posterior PPost (ETHz , θ |ETHz ,dist ). Inversion results obtained by (b) maximum a posteriori (MAP) and (c) Metropolis-adjusted Langevin algorithm (MALA), applied to an ideal bipolar signal ( TTHz = 0 .2 ps) overlaid with 
+
+ETHz ,dist for α = 12 .5 ps −2.
+
+A GP prior is assigned to the target waveform 
+
+ETHz (t). The covariance between adjacent tempo-ral samples of the electric field is modeled with a kernel, G(t, t ′) = Ac(t) Ac(t′) exp 
+
+
+
+− (t−t′)2
+
+2ℓ2
+
+
+
+,where Ac(t) sets the observation window and ℓ is the temporal correlation scale between adjacent time pixels t and t′. Unlike SVD-based meth-ods [24, 25], the explicit connection between ET Hz 
+
+and prior allows prior parameters to be directly chosen from measurements. Therefore, the corre-lation scale ℓ is determined from the null structure observed in the spectrum of ETHz ,dist . In the fre-quency domain, the GP corresponds to a Gaussian spectrum centered at zero frequency and recov-ers the information loss due to the nulls in the spectrum. To ensure that the prior spans the nulls present in the measured spectrum, the 1 % level of the GP prior wing is placed at the next theo-retically predicted null beyond the last observed null. For instance, if the last observed null is fn =q (2 n−1) α
+
+2π , then the next null is fn+1 =
+
+q (2 n+1) α
+
+2π ,5and ℓ is selected accordingly. This provides a prior-selection rule that does not require a separately measured delay-line reference (see SI Sec. 3.3). The GP prior also controls how the inver-sion behaves near noise-sensitive spectral regions. SVD-based regularization keeps or removes modes according to their singular values, but this cri-terion cannot distinguish between weak physical modes caused by spectral nulls and modes dom-inated by noise. Consequently, noise can disturb the regularization and degrade the reconstruc-tion [26, 27]. In contrast, the explicit GP prior is assigned directly to the THz waveform spec-trum. With the explicit prior, weak modes near the nulls are not discarded solely by their scale, but are retained when the prior-supported signal is stronger than the measured noise contribution (see SI Sec. 3.4). This makes the framework more robust to systematic noise than SVD-based cutoff methods. As quantified in SI Sec. 3.4 and Fig. S5, the GP reconstruction lowers the time-domain waveform RMSE relative to Tikhonov regulariza-tion from 0.160 to 0.0504 at 20 % noise level. Also, the amplitude ratio between the reconstructed and true spectra is only 0.044 for Tikhonov regular-ization, while the GP reconstruction maintains a ratio of 1.07 at the first null frequency. Overcom-ing this reconstruction deficiency in SVD-based methods requires tuning the regularization pro-cess, which in turn requires external knowledge of the correct waveform. The posterior is then assembled in this latent space. The likelihood PLike (ETHz ,dist | ETHz , θ )compares the observed signal ET Hz,dist (τ ) with the forward model result (Im − Ic)/I c, using a Gaussian noise variance measured from shot-to-shot fluctuations (Eq. (6) in Materials and Methods and SI Sec. 3.2). The prior combines a GP prior on ETHz (t), a super-Gaussian prior on the modulation coefficient k that extends from 0.1 − 0.2, and empirical priors on wA and wP .Bayes’ theorem gives PPost (ETHz , θ | ETHz ,dist ) ∝
+
+PLike PPrior , the target distribution for inversion. Two algorithms are used to characterize the posterior. MAP estimation finds the posterior mode by minimizing the negative log-posterior with a quasi-Newton BFGS optimizer (See Eq. (7) in Materials and Methods). A Laplace approx-imation then represents the posterior locally as a Gaussian centered at the MAP solution, with the covariance estimated from the inverse Hes-sian of the negative log-posterior. This provides an efficient local estimate of the waveform uncer-tainty, but it assumes that the posterior is well described by the curvature around a single peak (SI Sec. 3.5). MALA is used as a full-sampling benchmark: it draws samples from the posterior using a drift-diffusion proposal preconditioned by the MAP Hessian, with adaptive step-size control targeting an acceptance rate of ∼ 57 .4% (SI Sec. 3.6). As a calibration case, the two algorithms are compared on an ideal bipolar waveform ( TT Hz =0.2 ps) with a distorted observable ET Hz,dist (τ )that is calculated through a forward model at 
+
+α = 12 .5 ps −2 (Fig. 2(b), (c)). Both MAP and MALA recover the true waveform within the 95% credible interval and show close agreement on the waveform scale, whereas the ET Hz,dist (t) deviates from the truth with a maximum residual of ∼ 1around t = ±0.5 ps. This agreement indicates that the MAP-approximated posterior is sufficient to recover the ET Hz (t) sets for ideal THz waveforms. 
+
+Waveform reconstruction results 
+
+Reconstruction comparison between MAP and MALA 
+
+To validate the Bayesian workflow experimentally, single-shot THz-TDS measurements were per-formed under six probe conditions. The single-shot THz-TDS system was built around an amplified femtosecond ytterbium laser (1030 nm, 100 kHz) feeding an optical parametric amplifier, whose synchronized outputs provided the 1532 nm pump for THz generation and the 780 nm probe for electro-optic sampling (Fig. 3(a)). THz transients were generated by optical rectification in a 500-μmPNPA crystal. Because spectral encoding distor-tion depends sensitively on the probe condition, two probe spectra were prepared by omitting (NSP) or inserting (SP) a sapphire stage, and three SF11 glass rods (50, 100, and 150 mm) imposed three chirp rates, yielding six probe con-figurations ( α = 14 .5–40 ps −2) for evaluating the inversion algorithm. The chirped probe and THz pulse were overlapped on a 2-mm ⟨110 ⟩
+
+ZnTe crystal, where the THz-induced Pockels birefringence modulated the probe polarization. This modulation was converted to intensity by 62Ultrafast Laser Amplifier Optical Parametric Amplifier Spectrometer CCD THZ M M MMMMLFM FM FM PPOAP OAP ZnTe PNPA SF11 BD fs pulse Motor Stage Chirped Probe                
+
+> QWP WP SAP LLMND 1μJ /pulse 0.5 μJ /pulse Delay-line Spectral encoding Spectral encoding
+> Oscilloscope MM
+> Delay-line
+> fs pulse PD -1 -0.5 00.5 1Time [ps ] -4 -2 024THz [a.u.] -1 01THz [a.u.] Delay-line Single-shot Time [ps ] -4 -2 024Post. mode 95 % CI Delay Line
+> b) c) a)
+> α= 14.7ps -2 -1 01Post. mean 95 % CI Delay Line
+> THz [a.u.] MAP MALA
+
+Fig. 3 (a) Experimental setup of single-shot and delay-line THz-TDS. Beam dump (BD), flip-mirror (FM), lens (L), mirror (M), neutral density filter (ND), off-axis parabolic mirror (OAP), photodetector (PD), polarizer (P), quarter-wave plate (QWP), sapphire (SAP), and Wol-laston prism (WP) are included. (b) Raw single-shot (cyan) and delay-line (black) THz waveforms. (c) Inversion result of the single-shot data using the MAP (red) and MALA (blue) algorithms, compared with the delay-line reference (black). The 95% credible intervals are shown as shaded bands (red for MAP, blue for MALA). 
+
+crossed polarizers and recorded with a 0.5 m imag-ing spectrometer and EMCCD camera (Materials and Methods). A delay-line branch with balanced electro-optic detection was implemented in paral-lel to provide reference waveforms to validate the reconstructions. By scanning the THz pulse by adjusting the probe delay and measuring the mod-ulation with balanced photodetection, this branch records the conventional time-domain EO wave-form. The THz beam path was purged with dry nitrogen to keep the relative humidity below 4% (Materials and Methods). To examine whether the MAP–MALA agree-ment also holds for experimental data, the two inversion algorithms were applied to the NSP probe with the 150 mm SF11 rod case, which has the lowest α = 14 .52 ps −2 and strongest dis-tortion among the six configurations. The raw single-shot waveform deviated from the delay-line reference, particularly around the leading peak from −2 ps to 0 ps, demonstrating oscillatory arti-facts (Fig. 3(b)). Both MAP and MALA recovered the delay-line waveform within the 95% credible interval and yielded similar posterior distributions for the waveform variables (Fig. 3(c)), suggest-ing that MAP-based inference is sufficient for experimental waveform reconstruction. Therefore, inversions on the remaining five probe configura-tions were performed using the MAP estimate (see SI Sec. 4.1). 
+
+Time-domain results across different chirp parameters 
+
+A practical reconstruction method must be vali-dated under the probe conditions that are actu-ally required in experiments. In practice, the pulse duration, chirp rate, and spectral profile are adjusted according to the target measurement. For instance, low-frequency THz responses require a long observation window. In this case, strong dis-persion with broadened probe bandwidth can be applied to increase both the probe pulse duration time and chirp rate. Therefore, the robustness of the reconstruction framework is validated across different chirp parameters. Time-domain THz waveform inversion results across the six probe configurations are summa-rized in Fig. 4. For the NSP probe, the chirp parameter decreases from α = 40 .33 ps −2 at the 50 mm SF11 rod (Fig. 4(a)) to 22 .60 ps −2
+
+at 100 mm (Fig. 4) and 14 .52 ps −2 at 150 mm (Fig. 4(e)). For the SP probe, α similarly decreases from 30 .86 ps −2 at 50 mm (Fig. 4(b)) to 18 .19 ps −2 at 100 mm (Fig. 4(d)) and 15 .44 ps −2
+
+at 150 mm (Fig. 4(f)). In each panel, the MAP estimate is shown in red with its 95% credi-ble interval, the delay-line reference is shown as a black dashed curve, and the raw single-shot waveform is shown in blue. The lower subplot reports the corresponding residuals relative to the delay-line reference. As the SF11 rod length increases, the disper-sion temporally stretches the probe field Ec(t)from 2.8 ps to 7.2 ps and reduces the chirp rate α. Therefore, the raw single-shot measure-ments exhibit the distortion described in Eq. (5), which scales with 1 /α 2. Consequently, the resid-uals become larger for the longer SF11 rods, particularly in the 150 mm cases for both NSP and SP probes (Fig. 4(e),(f)). Furthermore, the 7Time [ps] -5 0 5THz [a.u.] -1 -0.5 00.5 1Time [ps] -5 0 5Time [ps] -5 0 5THz [a.u.] -1 -0.5 00.5 1Time [ps] -5 0 5Time [ps] -5 0 5THz [a.u.] -1 -0.5 00.5 1Time [ps] -5 0 5THz [a.u.] -1 -0.5 00.5 1THz [a.u.] -1 -0.5 00.5 1THz [a.u.] -1 -0.5 00.5 1a) c) e) f) d) b) α = 30.86 ps Delay-line Delay-line Delay-line Delay-line Delay-line Delay-line Single-shot Single-shot Single-shot Single-shot Single-shot Single-shot -2        
+
+> α= 18.19 ps -2
+> α= 15.44 ps -2
+> α= 14.52 ps -2
+> α= 22.60 ps -2
+> α= 40.33 ps -2
+
+Without Sapphire (NSP) With Sapphire (SP)  
+
+> MAP estimate MAP estimate MAP estimate MAP estimate MAP estimate MAP estimate 95% CI 95% CI 95% CI 95% CI 95% CI 95% CI
+> Res. [a.u.] -1 01Res. [a.u.] -1 01-1 01-1 01Res. [a.u.] Res. [a.u.] -1 01-1 01Res. [a.u.] Res. [a.u.]
+
+Fig. 4 Time-domain THz waveform inversion results for the probe without sapphire (NSP, (a), (c), and (e)) and with sapphire (SP, (b), (d), and (f)) for three SF11 rod lengths, 50 mm ((a) and (b)), 100 mm ((c) and (d)), and 150 mm ((e) and (f)). In each panel, the upper subplot shows the MAP estimate (red) overlaid on the delay-line reference (black dashed) and the raw single-shot signal (blue), together with the 95% credible interval (shaded band). The lower subplot shows the residuals of the MAP estimate (red dashed) and the raw single-shot signal (blue) with respect to the delay-line reference (black). The chirp parameter α is annotated in each panel. 
+
+residuals are concentrated around the THz peak from −2 ps to 0 ps, where the rapid field variation makes E′
+
+THz and E′′ 
+
+THz large in the distortion term of Eq. (5). In contrast, the MAP estimate recovers the THz waveform within the 95% credible inter-val for all six cases, and its residuals remain below 
+
+∼ 0.5, smaller than the raw single-shot residu-als, especially over the main pulse window. This consistency across two spectral profiles and three chirp conditions demonstrates that the algorithm recovers the underlying THz waveform despite changes in probe dispersion and spectral shape. 
+
+Frequency-domain results across different chirp parameters 
+
+Additionally, the frequency-domain inversion results and the null frequency analysis are pre-sented in Fig. 5. For 150 mm SF11 rod cases (Fig. 5(a), (b)), the raw single-shot spectra exhibit amplitude nulls and accompanying phase jumps at 1.50 THz (NSP, α = 14 .51 ps −2) and 1.60 THz (SP, α = 15 .44 ps −2). On the other hand, the MAP estimates fill in these nulls and recover the amplitude envelope of the delay-line refer-ence within the 95% credible interval, and the corresponding phase profiles follow the reference without phase jumps. The null-frequency trend across all six cases is summarized in Fig. 5(c). The theoretical null frequencies are calculated from fnull = pα/ (2 π)using the mean α of each configuration [19]. Except for the NSP 50 mm case, whose pre-dicted null lies outside the measured THz spectral range ∼ 2.6 THz, the experimental null posi-tions agree with the theoretical values over α =14 .52–30 .86 ps −2, corresponding to null frequen-cies from 1.5 to 2.2 THz. The degree of recovery is quantified in Fig. 5(d) by the amplitude ratio 
+
+ADL (fnull )/A SS (fnull ). The raw single-shot ratios range from 2 to 7, reflecting the depth of the nulls in the distorted spectra. In contrast, the MAP ratios remain near unity across all cases at the same frequencies, indicating that the reconstruc-tion at the null frequency is consistent with the 1 2Frequency [THz] 10 -2 10 -1 10 0Amplitude [a.u.] 1.50 THz 1.60 THz NSP MAP NSP Exp. SP MAP SP Exp.  
+
+> Delay-line
+> 12
+
+Frequency [THz] -4 -2 024Phase [rad] 1.50 THz 1.60 THz 10 20 30 40 1.0 1.5 2.0 2.5 Null Frequency [THz] 
+
+α [ps -2 ]NSP 100 NSP 150 SP 50 SP 100 SP 150 Theory Exp. NSP 100 NSP 150 SP 50 SP 100 SP 150 0246A (f  )/A  (f  ) Exp. MAP 
+
+a) b) 
+
+c) d) DL  SS  
+
+> Delay-line
+> NSP Exp. SP Exp. NSP MAP SP MAP null null 1
+
+Fig. 5 Frequency-domain reconstruction results and null frequency analysis across the six cases shown in Fig. 4. (a) Amplitude and (b) phase spectra for NSP (blue) and SP (red) with the 150 mm SF11 rod. In each case, the single-shot experimental spectrum (dashed line) exhibits a null frequency that is recovered in the MAP estimate (solid line); the shaded band denotes the 95% credible inter-val, and the delay-line reference (black line) is overlaid for comparison. (c) Theoretical (squares) and experimen-tal (circles) null frequencies as a function of α for all six cases. (d) Amplitude ratio ADL (fnull )/A SS (fnull ) evalu-ated at the null frequency fnull =
+
+q α 
+
+> 2π
+
+for the single-shot experiment (cyan) and the MAP estimate (red). 
+
+8delay-line reference. The corresponding spectra and recovery results for the NSP and SP probes with 50 and 100 mm SF11 rods are provided in SI Sec. 4.3. 
+
+# 3 Discussion 
+
+The remaining discrepancy between MAP esti-mates and delay-line references in Figs. 4 and 5 can be interpreted as a combination of system-atic mismatch between measurements of the THz waveform and the model. The Bayesian forward model uses a finite empirical parameterization of the chirped probe field, so probe fluctua-tions outside the retained PCA basis or errors in the calibrated group-delay curve can propa-gate into the reconstructed waveform. In addi-tion, the single-shot waveform and the delay-line reference are not direct samples of an identi-cal field, but outputs of different measurement systems, Esingle -shot (t) = HSS [ETHz ,dist (t)] and 
+
+Edelay -line (t) = HDL [ETHz (t)], where HSS repre-sents the effective system response of the single-shot branch, including the spectrometer response and alignment-dependent factors. Similarly, HDL 
+
+represents the delay-line branch response, includ-ing balanced electro-optic detection and lock-in filtering. The mismatch may also arise from the background birefringence and differences in the effective detection bandwidths of the two branches. Therefore, proper characterization of the probe Ec(t) and spectral encoding system forward model is essential to ensure robust recon-struction reliability in further applications. This work demonstrates that spectral encoding distortion can be corrected across various probe conditions without adding optical hardware. This robustness is essential because the chirped probe needs to be adjusted based on the frequency res-olution that is needed in a THz measurement. Such adjustments change the chirp rate and probe spectrum. As a result, null frequencies are shifted, and the encoding response is modified. By validat-ing the reconstruction across six probe conditions spanning two spectral profiles and multiple chirp rates, we show that the Bayesian framework can be applied to a broad class of probe settings. Furthermore, the framework reduces the need for a reference in quantitative measurements because the priors can be constructed from infor-mation available within the single-shot measure-ment and probe characterization, including probe electric field and modulation factor. In addition, the null structure identifies the spectral regions where the encoding response is deficient. This measured information loss can become a criteria of the THz waveform prior. The same prior-based structure also improves robustness to noise. By introducing an explicit prior form that can be designed to directly access the weak modes near spectral nulls, those modes are recovered through the balance between the prior-supported wave-form content and the measured noise level. This allows weak components near the nulls to con-tribute to the reconstruction while suppressing the noise amplification that can occur in SVD-based methods. More broadly, because the prior and for-ward model are explicit modeling components, the method is not limited to the GP prior or to THz-TDS. The same formulation can be adapted to other spectral encoding modalities that share the phase loss problem due to the structure of Eq. (1), including chirped-pulse pump-probe spectroscopy, electro-optic spectral decoding, photonic time-stretch measurements, and Raman/CARS-based spectral encoding. For each modality, the probe field, readout kernel, and prior can be param-eterized using the corresponding experimental characterization. This enables existing spectrally encoded data to be reinterpreted at the software level and provides a general path toward quantita-tive single-shot spectroscopy without redesigning the optical system. 
+
+# 4 Materials and Methods 
+
+THz-TDS 
+
+Time-resolved THz electric fields were captured with a pump–probe setup. The driving source was an amplified femtosecond ytterbium laser (Spectra-Physics Spirit 70) operating at a central wavelength of 1030 nm, which fed an optical para-metric amplifier (OPA, Light Conversion). Two synchronized outputs from the OPA were assigned to THz emission and electro-optic sampling. The THz generation was driven by the pump branch tuned to 1532 nm and delivering approximately 0.5 μJ per pulse, whereas detection was performed 9on the probe branch at 780 nm with roughly 1 μJ per pulse. Vertical polarization was main-tained on both arms, with a repetition rate of 100 kHz. Two acquisition methods, the delay-line method and the single-shot spectral encoding method, were implemented within the same opti-cal layout (Fig. 3). Shot-to-shot statistics for the single-shot method were evaluated across 100 laser pulses. Delay-line waveforms were averaged over five consecutive scans. Both methods were applied to identical test sections, enabling comparison of their fidelity. 
+
+THz generation 
+
+Optical rectification in a PNPA crystal ((E)-4-[(4-nitrobenzylidene)amino]N-phenylaniline) sup-plied the THz transients. Efficient rectification in this crystal extends across 1 .25–2 .1 μm, and phase matching becomes optimal near 1550 nm [38]. Here, an 80 fs pulse at 1532 nm carrying 0 .5 μJwas focused through a 1-inch focal length plano-convex lens onto a 500-μm-thick PNPA sample. To maximize the nonlinear yield, the pump polariza-tion was aligned along the crystal c-axis, which lies orthogonal to the propagation direction. Under this geometry, a broadband THz waveform was emitted whose useful spectral content spanned roughly 0.5 to 2.5 THz, while the conversion effi-ciency exceeded 4% at a pump energy of 0 .5 μJper pulse. Collimation of the emitted beam into the test section was performed with an off-axis parabolic mirror ( f = 4 in.). Continuous operation at 100 kHz proceeded without crystal damage, and short bursts at 2 MHz (durations under 10 s) revealed no measurable change in either crystal integrity or THz output. 
+
+Spectral encoding 
+
+Imprinting of the THz temporal profile onto a chirped optical probe was accomplished through spectral encoding. Once the transmitted THz pulse exited the test section, it was focused onto a 2-mm-thick ⟨110 ⟩ ZnTe crystal for electro-optic sampling using off-axis parabolic mirrors of 6-inch focal length. ZnTe served as the nonlinear medium in which the THz field acted on the probe pulse. To this end, a temporally stretched chirped probe was overlapped with the THz field both spatially and temporally on the crystal. The instantaneous THz amplitude generated a transient birefringence through the Pockels effect, which translated into a frequency-dependent phase retardation between the two orthogonal polarization components of the probe. This phase modulation was then converted into a probe intensity modulation by a pair of crossed polarizers (Thorlabs LPNIRB100, extinc-tion ratio above 1000:1 across 695–1100 nm). A frequency-domain measurement was adopted to enable the sub-picosecond measure-ment acquisition. Spectral analysis of the encoded probe was carried out with a 0.5 m imaging spectrometer (Horiba iHR550) equipped with a 600 groove/mm grating, a 1 mm entrance slit, and an EMCCD camera (Horiba Synapse). Mapping between wavelength and time was calibrated by sweeping the temporal offset between the probe pulse and the leading edge of the THz pulse using a motorized stage, thereby tying each spectral coordinate to a specific instant within the THz waveform. Two acquisitions were combined to reconstruct the field. A reference probe spectrum without modulation was obtained first, followed by a second spectrum carrying the THz-induced modulation. The former was subtracted from the latter to extract the modulation. The calibrated mapping then converted the wavelength axis into a temporal record of the THz waveform. 
+
+Probe characterization 
+
+To evaluate the inversion algorithm across a range of probe conditions, two spectral profiles and three pulse durations were examined. The spectral pro-file was varied by inserting a sapphire element into the probe arm, yielding two probe conditions SP and NSP. Three SF11 glass rod lengths (50 mm, 100 mm, and 150 mm) were examined to modify the probe pulse width and its chirp param-eter. The chirp parameter α was retrieved from a time-to-frequency calibration curve constructed by varying the temporal offset between the THz pulse and the probe systematically in increments of 0.17 ps and recording the corresponding shift of the peak position of the THz signal on the spec-trum. At each delay step, 100 laser shots were acquired. These shots were used to obtain statis-tics of the peak position. The resulting ensemble of calibration curves yielded a statistical distri-bution of the mapping between time delay and spectral position, from which the mean value and uncertainty of α were extracted. 10 For the NSP probe, mean spectra centered close to 772 nm were recovered for all three rod lengths, and the 95% credible intervals indi-cated weak shot-to-shot spectral variability (SI Fig. S1(a), (c), (e)). The retrieved chirp param-eters evolved from α ≈ 40 ps −2 at 50 mm to 
+
+α ≈ 22 ps −2 at 100 mm and α ≈ 14 .5 ps −2
+
+at 150 mm, according to the expected scaling of the linear chirp with propagation length through bulk dispersive media. On the other hand, the SP probe produced asymmetric spectra centered near 768 nm for all three rod lengths, accompa-nied by chirp parameters of α ≈ 32 ps −2, 18 ps −2,and 15 ps −2 at 50 mm, 100 mm, and 150 mm, respectively (SI Fig. S1(b), (d), (f)). The streak-camera measurements were acquired as an independent reference to validate the spectrometer-based probe characterization used in the Bayesian setup. Temporal profiles of both probe variants were recorded with a streak camera assembly (Hamamatsu C10910 paired with the M10912-01 fast-sweep unit, temporal resolution of 0.9 ps) and averaged over 100 laser pulses to suppress noise. An ND8.5 filter brought the probe intensity within the dynamic range of the streak camera while preserving its sub-picosecond resolution. Shot-to-shot timing jitter was removed in post-processing by aligning each pulse centroid prior to fitting. Gaussian fits to the resulting intensity traces yielded FWHM widths of 1 .08 ± 0.33 ps (50 mm rod), 1 .86 ± 0.43 ps (100 mm rod) and 2 .59 ±1.90 ps (150 mm rod) (SI Fig. S2(a), (c), (e)) for the NSP probe. The SP probe produced FWHM values of 1 .50 ± 0.43 ps (50 mm rod), 2 .22 ± 0.33 ps (100 mm rod) and 2.79 ± 0.63 ps (150 mm rod) (SI Fig. S2(b), (d), (f)). 
+
+Delay-line method 
+
+A delay-line arrangement was deployed both to characterize THz transmission and to provide a reference against the single-shot spectral encoding measurements. Downstream of the test section, the transmitted THz pulse was spread and refo-cused with off-axis parabolic mirrors of 4-inch and 6-inch focal length respectively and deliv-ered onto a 2-mm-thick ⟨110 ⟩ ZnTe crystal for electro-optic sampling. The probe carrying the THz-induced birefringence was then reflected by a flip mirror through a zero-order quarter-wave plate (780 nm, Newport 05RP34-780) and a cal-cite Wollaston prism (Newport 10WLP08AR.16), separating the orthogonal polarization compo-nents for balanced detection (Thorlabs PDB210A, 1 MHz bandwidth, 500 kV/A gain). The differen-tial output was demodulated with a lock-in ampli-fier (Moku:Go, Liquid Instruments; 12 dB/octave filter, 30 ms time constant, 3 dB gain) and dig-itized with an oscilloscope (Tektronix MSO44). The optical delay was advanced by 133 fs per step using a motorized translation stage (Velmex VXM-1), and stepwise scanning over 5 laser shots reconstructed the entire THz temporal waveform. A scan of 800 steps spanning approximately 100 ps was chosen to encompass the full waveform fea-tures and to maintain high resolution in the fre-quency domain. A total of 5 scans were averaged to obtain the delay-line waveform. 
+
+Purge box setup 
+
+A purge enclosure was assembled around the entire THz beam path so that the water vapor content could be regulated. A hygrometer inte-grated into the enclosure monitored the relative humidity inside. Dry nitrogen (N 2) was used to flush the residual humid air. The relative humid-ity was thereby lowered below 4%. This excluded humidity-related absorptions from the THz mea-surement. 
+
+Bayesian inversion framework 
+
+The Bayesian inversion was implemented using the normalized spectral observable Y = ( Im −
+
+Ic)/(Ic + ϵ), where Im and Ic are the modu-lated and unmodulated probe spectra and ϵ is a small denominator regularization term for numer-ical stability, where ϵ ∼ max( Ic) × 10 −3. For each probe condition, the measured unmodulated spectra were used to construct an empirical rep-resentation of the chirped probe field Ec(t). The target THz waveform ETHz (t), modulation coef-ficient k, and low-dimensional probe parameters were inferred jointly. The modulation coefficient k
+
+was constrained with a super-Gaussian prior cen-tered on k = 0 .15 with a power of 4 in the range of k = 0 .1–0 .2 estimated by measurement. The probe amplitude wA and phase coefficients wP
+
+were obtained by PCA on the ensemble dataset consist of 100 shots for each condition, obtain-ing empirical Gaussian priors. A GP prior was 11 assigned to ETHz (t), with the temporal correlation scale ℓ = 0.15 ps selected to set the ampli-tude of the prior in the frequency domain to be 0.01 at the theoretical subsequent null following the last observed null. For the convergence of the algorithm, parameters were whitened by their deviations. Therefore, the full-forward model of the measurement is expressed as, 
+
+Ec(t) = Aref (t) + BAwA
+
+
+
+× exp iΦref (t) + BP wP
+
+ ,Im(z) = F{ Ec(t)[1 + kE THz (t)] } 2,Ic(z) = F{ Ec(t)} 2,Ysim (z) = Im(z) − Ic(z)
+
+Ic(z) + ϵ ,
+
+z = z⊤ 
+
+> THz
+
+k z⊤ 
+
+> A
+
+z⊤
+
+> P
+
+⊤ ,
+
+zTHz = L−1THz ETHz ,
+
+zA = wA ⊙ σ−1 
+
+> A
+
+, zP = wP ⊙ σ−1 
+
+> P
+
+,
+
+(6) where z denotes the whitened parameter vector and Ysim (z) is the forward-model prediction eval-uated at z. The vectors zT Hz , zA, and zP are the whitened coefficients for the THz waveform, probe-amplitude variation, and probe-phase vari-ation, respectively. Combining the log-likelihood and prior, the target posterior function is obtained in the whitened parameter space (See SI Eq. (49))), 
+
+J (z) = Jlike (z) + Jprior (z),
+
+Jlike (z) = ∥Ysim (z) − Yobs ∥2
+
+2σ2noise 
+
+,
+
+Jprior (z) = 12
+
+
+
+∥zTHz ∥2 + ∥zA∥2 + ∥zP ∥2
+
++
+
+ k − kc
+
+wk
+
+2pk
+
+,
+
+(7) where Yobs is the measured normalized spectral observable. The first term is the Gaussian mea-surement likelihood with noise standard deviation 
+
+σnoise . The prior is composed of quadratic penal-ties of zT Hz , zA, and zP , and a super-Gaussian prior on the modulation coefficient k, centered at kc with width wk and order parameter pk.The full target function is then minimized by the quasi-Newton BFGS optimizer to obtain the MAP estimate. The Hessian evaluated at the MAP point was used to construct the Laplace approxima-tion. The posterior chain was initialized at the MAP estimate and sampled using preconditioned MALA. The initial step size was set to τ = 0 .5, and during burn-in, the step size was adapted toward the optimal MALA acceptance rate of 0.574. After burn-in, the step size was fixed and randomly jittered within the range [0 .85 , 1.15] · τ
+
+at each iteration. A total of Ntotal = 75000 iter-ations were performed. The first Nburn = 7500 iterations were discarded as burn-in, and the chain was thinned by a factor of Nthin = 5, finally yield-ing Nsaved = 13500 posterior samples. Conver-gence was assessed using the effective sample size (ESS), computed from the integrated autocorre-lation time with the autocorrelation truncated at the first negative crossing. Convergence was con-sidered satisfied when the ESS of each parameter exceeded 100. Detailed algorithms are represented in SI Sec. 3.5 and 3.6. 
+
+Supplementary Information. See Supple-mentary Information for supporting content. 
+
+Acknowledgements. This research is sup-ported by the Office of Naval Research grant N00014-23-1-2306, with Ryan Hoffman as Pro-gram Manager. 
+
+# Declarations 
+
+Disclosures. The authors declare no conflicts of interest. 
+
+Data Availability Statement. The data that support the findings of this study are available from the corresponding author upon reasonable request. 
+
+# References 
+
+[1] Stanton, C. J., Kuznetsov, A. V. & Kim, C. S. 
+
+Optical Generation and Detection of Carri-ers in Ultrafast Pump-Probe Spectroscopy of Semiconductors (1994). In Coherent Optical Interactions in Semiconductors, pp. 307–311, Springer. [2] Adak, A., Singh, P. K., Lad, A. D., Chat-terjee, G. & Kumar, G. R. Observation of ultrafast laser-plasma evolution by pump-probe reflectometry and doppler spectrome-try. arXiv preprint arXiv:1909.05814 (2019). 12 [3] Wang, P., Liang, J. & Wang, L. V. Single-shot ultrafast imaging attaining 70 trillion frames per second. Nature communications 11 , 2091 (2020). [4] Weakly, R. B. et al. Revealing core-valence interactions in solution with femtosecond x-ray pump x-ray probe spectroscopy. Nature Communications 14 , 3384 (2023). [5] Zewail, A. H. Femtochemistry: Atomic-scale dynamics of the chemical bond. The Jour-nal of Physical Chemistry A 104 , 5660–5694 (2000). [6] Tancin, R. J. & Goldenstein, C. S. Ultrafast-laser-absorption spectroscopy in the mid-infrared for single-shot, calibration-free tem-perature and species measurements in low-and high-pressure combustion gases. Optics Express 29 , 30140–30154 (2021). [7] Yang, Y. et al. Terahertz multiheterodyne spectroscopy using laser frequency combs. 
+
+Optica 3, 499–502 (2016). [8] Zhang, Y. et al. Ultra-fast optical time-domain transformation techniques. Nature Reviews Methods Primers 5, 11 (2025). [9] Mahjoubfar, A. et al. Time stretch and its applications. Nature Photonics 11 , 341–351 (2017). [10] Sun, F., Jiang, Z. & Zhang, X.-C. Anal-ysis of terahertz pulse measurement with a chirped probe beam. Applied Physics Letters 
+
+73 , 2233–2235 (1998). [11] Nallapareddy, C. R., Saha, A., Hood-McFadden, D. & Underwood, T. C. Probing hysteresis and bifurcation dynamics in reac-tive radio frequency plasmas. Applied Physics Letters 128 (2026). [12] Shkrob, I. A., Oulianov, D. A., Crowell, R. A. & Pommeret, S. Frequency-domain single-shot ultrafast transient absorption spec-troscopy using chirped laser pulses. Journal of Applied Physics 96 , 25–33 (2004). [13] Wilke, I. et al. Single-shot electron-beam bunch length measurements. Physical Review Letters 88 , 124801 (2002). [14] Berden, G. et al. High temporal resolution, single-shot electron bunch-length measure-ments II–49 (2004). [15] Couture, N. et al. Single-pulse terahertz spec-troscopy monitoring sub-millisecond time dynamics at a rate of 50 khz. Nature Com-munications 14 , 2595 (2023). [16] Chien, C. Y. et al. Single-shot chirped-pulse spectral interferometry used to measure the femtosecond ionization dynamics of air. 
+
+Optics Letters 25 , 578–580 (2000). [17] Kim, K. Y., Alexeev, I. & Milchberg, H. M. Single-shot supercontinuum spectral interfer-ometry. Applied Physics Letters 81 , 4124– 4126 (2002). [18] Patel, D., Jang, D., Hancock, S. W., Milch-berg, H. M. & Kim, K.-Y. Simplified single-shot supercontinuum spectral interferometry. 
+
+Optics Express 28 , 11023–11032 (2020). [19] Roussel, E. et al. Phase diversity electro-optic sampling: A new approach to single-shot ter-ahertz waveform recording. Light: Science & Applications 11 , 14 (2022). [20] Saha, A., Kang, M., Nallapareddy, C. R. & Underwood, T. C. Traceable bayesian uncertainty quantification in single-shot tera-hertz spectroscopy of plasmas (2026). AIAA SCITECH 2026 Forum, Paper 1229. [21] Ofori-Okai, B. K. et al. Unveiling struc-tural effects on the dc conductivity of warm dense matter via terahertz spectroscopy and ultrafast electron diffraction. Nature Com-munications 16 , 10541 (2025). [22] Jiang, Z. & Zhang, X.-C. Measurement of spatio-temporal terahertz field distribution by using chirped pulse technology. IEEE journal of quantum electronics 36 , 1214–1222 (2000). 13 [23] Kang, M., Saha, A., Nallapareddy, C. R. & Underwood, T. C. Robust bayesian param-eter estimation for spectral encoded single-shot thz spectroscopy. Optics Express 34 ,21587–21616 (2026). [24] Yellampalle, B., Kim, K., Rodriguez, G., Glownia, J. & Taylor, A. J. Algorithm for high-resolution single-shot thz measure-ment using in-line spectral interferometry with chirped pulses. Applied Physics Letters 
+
+87 (2005). [25] Wu, B., Zhang, Z., Cao, L., Fu, Q. & Xiong, Y. Electro-optic sampling of optical pulses and electron bunches for a compact thz-fel source. Infrared Physics & Technology 92 ,287–294 (2018). [26] Hansen, P. C. Truncated singular value decomposition solutions to discrete ill-posed problems with ill-determined numerical rank. 
+
+SIAM Journal on Scientific and Statistical Computing 11 , 503–518 (1990). [27] Hansen, P. C. Rank-deficient and discrete ill-posed problems: numerical aspects of linear inversion (SIAM, 1998). [28] Nallapareddy, C. & Underwood, T. Quanti-tative single-shot Supercontinuum-Enhanced Terahertz Spectroscopy (SETS). Nature Communications 16 , 5188 (2025). [29] Teo, S. M., Ofori-Okai, B. K., Werley, C. A. & Nelson, K. A. Invited article: Single-shot thz detection techniques optimized for mul-tidimensional thz spectroscopy. Review of scientific instruments 86 (2015). [30] Matlis, N., Plateau, G., van Tilborg, J. & Lee-mans, W. Single-shot spatiotemporal mea-surements of ultrashort thz waveforms using temporal electric-field cross correlation. Jour-nal of the Optical Society of America B 28 ,23–27 (2010). [31] Kaipio, J. & Somersalo, E. Statistical and Computational Inverse Problems (Springer, Dordrecht, 2005). [32] Stuart, A. M. Inverse problems: A bayesian perspective. Acta Numerica 19 , 451–559 (2010). [33] Brown, N. P., Grauer, S. J., Deibel, J. A., Walker, M. L. & Steinberg, A. M. Bayesian framework for thz-tds plasma diagnostics. 
+
+Optics Express 29 , 4887–4901 (2021). [34] Genty, G. et al. Machine learning and applications in ultrafast photonics. Nature Photonics 15 , 91–101 (2021). [35] Nallapareddy, C. R. & Underwood, T. C. Characterization and control of signal dis-tortion in chirped pulse single-shot terahertz detection. APL Photonics 10 , 116105 (2025). [36] Knutsen, K. P., Messer, B. M., Onorato, R. M. & Saykally, R. J. Chirped coherent anti-stokes raman scattering for high spec-tral resolution spectroscopy and chemically selective imaging. The Journal of Physical Chemistry B 110 , 5854–5864 (2006). [37] Polli, D., Brida, D., Mukamel, S., Lanzani, G. & Cerullo, G. Effective temporal resolution in pump-probe spectroscopy with strongly chirped pulses. Physical Review A 82 , 053809 (2010). [38] Terahertz Innovations, Inc. Terahertz Innovations PNPA Spec Sheet . Terahertz Innovations, Inc. (2018). URL https: //www.terahertzinnovations.com/ files/ugd/ d80f8c e4bcc34099b946dda2444e619b610362. pdf. 14

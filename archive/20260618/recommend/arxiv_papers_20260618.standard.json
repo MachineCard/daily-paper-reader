@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-18T22:25:43.924088+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 0,
+    "deep_cap": 7,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 12,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.14936v1",
+      "source": "arxiv",
+      "title": "Bayesian inversion for single-shot spectral-encoded waveform reconstruction",
+      "abstract": "Spectral encoding enables single-shot measurements of ultrafast transients by mapping temporal information onto the spectrum of a chirped probe. This encoding allows dynamics to be recorded that are beyond the response limits of conventional electronic detectors. However, because the measurements record only spectral intensity, the phase of encoded signals is lost, and dispersion in the detection process introduces waveform distortions that complicate reconstruction and quantitative interpretation of spectra. In single-shot terahertz time-domain spectroscopy (THz-TDS), these distortions manifest as a tradeoff between temporal resolution and the measurement window of signals and can produce spectral null frequencies that limit the recoverable THz bandwidth. To address this challenge, a Bayesian inversion framework is developed to recover the underlying waveform from the squared spectral observable by inferring the THz field, the modulation coefficient, and a low-dimensional empirical parameterization of the probe spectrum jointly, while a Gaussian process prior regularizes the waveform. The framework is validated using single-shot THz-TDS experiments spanning two probe spectral profiles and three chirp conditions with $α$ ranging from 14.5 to 40 ps$^{-2}$. Across all cases, the inversion reconstructs both the time-domain waveform and spectral null frequency structure within the credible interval of a delay-line reference measurement. These results establish a pathway to eliminate penalties that are associated with the detection process in spectral encoding methods without adding additional optics or alignment complexity.",
+      "authors": [
+        "Minsoo Kang",
+        "Thomas C. Underwood"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-12T20:15:22+00:00",
+      "link": "https://arxiv.org/pdf/2606.14936v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Bayesian inversion enables ultrafast THz waveform reconstruction for dynamics studies.",
+      "llm_evidence_cn": "贝叶斯反演实现超快太赫兹波形重建，用于动力学研究。",
+      "llm_evidence": "贝叶斯反演实现超快太赫兹波形重建，用于动力学研究。",
+      "canonical_evidence": "贝叶斯反演实现超快太赫兹波形重建，用于动力学研究。",
+      "llm_tldr_en": "Proposes Bayesian inversion to reconstruct single-shot terahertz waveforms from spectral intensity, overcoming phase loss and dispersion distortions, enabling accurate ultrafast measurements that could study epsilon-near-zero material dynamics.",
+      "llm_tldr_cn": "单发太赫兹时域光谱技术在记录超快瞬态信号时，仅获取光谱强度而丢失相位信息，且色散效应导致波形失真，严重制约了对材料超快动力学的定量分析。本文提出一种贝叶斯反演方法，通过建立概率模型联合重建太赫兹波形与噪声参数，有效恢复相位并补偿色散，从单发测量光谱中高保真重构时域波形。仿真与实验结果表明，该方法能显著提升时间分辨率与重建精度，突破传统反卷积的瓶颈。该通用重建方法为研究诸如透明导电氧化物等epsilon-near-zero材料的超快光学响应提供了直接而有力的工具，有望推动ENZ材料中光与物质相互作用机理的探索。",
+      "llm_tldr": "单发太赫兹时域光谱技术在记录超快瞬态信号时，仅获取光谱强度而丢失相位信息，且色散效应导致波形失真，严重制约了对材料超快动力学的定量分析。本文提出一种贝叶斯反演方法，通过建立概率模型联合重建太赫兹波形与噪声参数，有效恢复相位并补偿色散，从单发测量光谱中高保真重构时域波形。仿真与实验结果表明，该方法能显著提升时间分辨率与重建精度，突破传统反卷积的瓶颈。该通用重建方法为研究诸如透明导电氧化物等epsilon-near-zero材料的超快光学响应提供了直接而有力的工具，有望推动ENZ材料中光与物质相互作用机理的探索。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "ultrafast response in epsilon near zero materials",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

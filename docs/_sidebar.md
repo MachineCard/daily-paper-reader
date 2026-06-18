@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-18 <!--dpr-date:20260618-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/18/2606.14936v1-bayesian-inversion-for-single-shot-spectral-encoded-waveform-reconstruction" data-sidebar-item="{&quot;title&quot;: &quot;Bayesian inversion for single-shot spectral-encoded waveform reconstruction&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.14936v1-bayesian-inversion-for-single-shot-spectral-encoded-waveform-reconstruction&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;贝叶斯反演实现超快太赫兹波形重建，用于动力学研究。&quot;}">Bayesian inversion for single-shot spectral-encoded waveform reconstruction</a>
   * 2026-06-16 <!--dpr-date:20260616-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/16/2606.13143v1-a-first-principles-approach-for-predicting-infrared-optical-properties-of-solids" data-sidebar-item="{&quot;title&quot;: &quot;A first-principles approach for predicting infrared optical properties of solids&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.13143v1-a-first-principles-approach-for-predicting-infrared-optical-properties-of-solids&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;第一性原理方法预测红外光学常数，可用于筛选近零介电常数行为。&quot;}">A first-principles approach for predicting infrared optical properties of solids</a>

@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-18",
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T22:27:02",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/18/2606.14936v1-bayesian-inversion-for-single-shot-spectral-encoded-waveform-reconstruction",
+      "section": "quick",
+      "title_en": "Bayesian inversion for single-shot spectral-encoded waveform reconstruction",
+      "authors": "Minsoo Kang, Thomas C. Underwood",
+      "date": "2026-06-12",
+      "pdf": "https://arxiv.org/pdf/2606.14936v1",
+      "score": "6.0",
+      "evidence": "贝叶斯反演实现超快太赫兹波形重建，用于动力学研究。",
+      "tldr": "光谱编码单次测量超快瞬态时，相位丢失与色散导致波形失真和频谱零点，限制太赫兹带宽。本文提出贝叶斯反演框架，联合推断太赫兹场、调制系数及探针谱参数，并用高斯过程先验正则化波形。实验在多种条件下成功重建时域波形与频谱空洞，结果位于参考测量的可信区间内。该工作在不增加光学硬件的条件下消除了检测过程带来的重建惩罚，提升了光谱编码方法的定量能力。",
+      "tags": "query:enz",
+      "abstract_en": "Spectral encoding enables single-shot measurements of ultrafast transients by mapping temporal information onto the spectrum of a chirped probe. This encoding allows dynamics to be recorded that are beyond the response limits of conventional electronic detectors. However, because the measurements record only spectral intensity, the phase of encoded signals is lost, and dispersion in the detection process introduces waveform distortions that complicate reconstruction and quantitative interpretation of spectra. In single-shot terahertz time-domain spectroscopy (THz-TDS), these distortions manifest as a tradeoff between temporal resolution and the measurement window of signals and can produce spectral null frequencies that limit the recoverable THz bandwidth. To address this challenge, a Bayesian inversion framework is developed to recover the underlying waveform from the squared spectral observable by inferring the THz field, the modulation coefficient, and a low-dimensional empirical parameterization of the probe spectrum jointly, while a Gaussian process prior regularizes the waveform. The framework is validated using single-shot THz-TDS experiments spanning two probe spectral profiles and three chirp conditions with $α$ ranging from 14.5 to 40 ps$^{-2}$. Across all cases, the inversion reconstructs both the time-domain waveform and spectral null frequency structure within the credible interval of a delay-line reference measurement. These results establish a pathway to eliminate penalties that are associated with the detection process in spectral encoding methods without adding additional optics or alignment complexity.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
