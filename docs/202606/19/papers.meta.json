@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-19",
+  "date": "2026-06-19",
+  "generated_at": "2026-06-19T21:59:43",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/19/2606.20349v1-effective-masses-burstein-moss-shift-and-bandgap-renormalization-in-degenerate-al-doped-zno-from-broadband-ellipsometry-and-hall-measurements",
+      "section": "deep",
+      "title_en": "Effective masses, Burstein-Moss shift, and bandgap renormalization in degenerate Al-doped ZnO from broadband ellipsometry and Hall measurements",
+      "authors": "S. Mishra, L. A. Enrique, D. Cespedes, E. Perez, E. Serquen, F. Bravo, P. Llontop, F. Ruske, L. Korte, J. A. Guerra",
+      "date": "2026-06-18",
+      "pdf": "https://arxiv.org/pdf/2606.20349v1",
+      "score": "10.0",
+      "evidence": "研究Al掺杂ZnO（一种锌氧化物基透明导体）",
+      "tldr": "简并半导体中带隙位移的定量分离需精确有效质量与能带非抛物线性处理。本研究结合宽带光谱椭偏仪与霍尔测量，通过同时全局拟合载流子浓度依赖的带隙和等离子体能量，纳入非抛物线性修正。成功解耦Burstein-Moss位移与带隙重整化，揭示Al掺杂ZnO中电子有效质量随载流子浓度的演化，证实Nilsson模型可准确捕捉非抛物线性。该框架为透明导电氧化物能带工程提供可靠、可推广的表征方法。",
+      "tags": "query:tco",
+      "abstract_en": "A comprehensive methodology is developed to extract electron and hole effective masses in degenerate semiconductors through a simultaneous global fit of carrier concentration dependence of bandgap and plasma energy, explicitly incorporating band nonparabolicity. Broadband spectroscopic ellipsometry combined with Hall effect analyses enables accurate determination of the bandgap, plasma energy and carrier concentrations. The dielectric function of sputtered Al-doped ZnO thin films are modeled in the fundamental absorption region using an Elliott based model with overlapping excitonic transitions and Urbach tails, while free carrier absorption is described by a modified sernelius formula. Wide carrier concentrations are achieved via controlled deposition and post-annealing, revealing changes in electron effective masses and deviations from parabolic dispersion. Two nonparabolic models are compared, Pisarkiewicz, assuming spherically symmetric band with a step-function approximation of the Fermi-Dirac distribution and Nilsson, incorporating thermal and impurity effects. The latter is shown to capture accurately band nonparabolicity, yielding effective masses and nonparabolicity parameter consistent with bandgap evolution. This approach quantitatively separates Burstein-Moss shift and bandgap renormalization, reproducing carrier dependent bandgap shifts across a wide concentration range. Neglecting valence band contributions introduces systematic bias. Bandgap renormalization is further evaluated using plasmon pole and random phase approximations, underscoring the importance of many-body screening. This framework also enables determination of the Mott critical concentration and the fundamental absorption edge onset. Collectively, these results establish a reliable methodology for extracting band-structure parameters and bandgap shifts, extendable to other transparent conducting oxides.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

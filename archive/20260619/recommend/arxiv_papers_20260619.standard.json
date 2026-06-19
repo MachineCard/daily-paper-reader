@@ -1,0 +1,62 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-19T21:58:05.648395+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.20349v1",
+      "source": "arxiv",
+      "title": "Effective masses, Burstein-Moss shift, and bandgap renormalization in degenerate Al-doped ZnO from broadband ellipsometry and Hall measurements",
+      "abstract": "A comprehensive methodology is developed to extract electron and hole effective masses in degenerate semiconductors through a simultaneous global fit of carrier concentration dependence of bandgap and plasma energy, explicitly incorporating band nonparabolicity. Broadband spectroscopic ellipsometry combined with Hall effect analyses enables accurate determination of the bandgap, plasma energy and carrier concentrations. The dielectric function of sputtered Al-doped ZnO thin films are modeled in the fundamental absorption region using an Elliott based model with overlapping excitonic transitions and Urbach tails, while free carrier absorption is described by a modified sernelius formula. Wide carrier concentrations are achieved via controlled deposition and post-annealing, revealing changes in electron effective masses and deviations from parabolic dispersion. Two nonparabolic models are compared, Pisarkiewicz, assuming spherically symmetric band with a step-function approximation of the Fermi-Dirac distribution and Nilsson, incorporating thermal and impurity effects. The latter is shown to capture accurately band nonparabolicity, yielding effective masses and nonparabolicity parameter consistent with bandgap evolution. This approach quantitatively separates Burstein-Moss shift and bandgap renormalization, reproducing carrier dependent bandgap shifts across a wide concentration range. Neglecting valence band contributions introduces systematic bias. Bandgap renormalization is further evaluated using plasmon pole and random phase approximations, underscoring the importance of many-body screening. This framework also enables determination of the Mott critical concentration and the fundamental absorption edge onset. Collectively, these results establish a reliable methodology for extracting band-structure parameters and bandgap shifts, extendable to other transparent conducting oxides.",
+      "authors": [
+        "S. Mishra",
+        "L. A. Enrique",
+        "D. Cespedes",
+        "E. Perez",
+        "E. Serquen",
+        "F. Bravo",
+        "P. Llontop",
+        "F. Ruske",
+        "L. Korte",
+        "J. A. Guerra"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-06-18T15:17:18+00:00",
+      "link": "https://arxiv.org/pdf/2606.20349v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Studies Al-doped ZnO, a zinc oxide based transparent conductor",
+      "llm_evidence_cn": "研究Al掺杂ZnO（一种锌氧化物基透明导体）",
+      "llm_evidence": "研究Al掺杂ZnO（一种锌氧化物基透明导体）",
+      "canonical_evidence": "研究Al掺杂ZnO（一种锌氧化物基透明导体）",
+      "llm_tldr_en": "Develops a methodology to extract electron/hole effective masses in degenerate Al-doped ZnO by fitting carrier concentration dependence of bandgap and plasma energy, incorporating nonparabolicity; uses ellipsometry and Hall measurements; provides insights into band structure of AZO thin films.",
+      "llm_tldr_cn": "该研究开发了一种综合方法，通过同时拟合载流子浓度对带隙和等离子体能量的依赖关系，并显式考虑能带非抛物线性，从简并Al掺杂ZnO薄膜中提取电子和空穴有效质量。利用宽带椭偏光谱和霍尔测量精确测定带隙、等离子体能量和载流子浓度。通过Elliott模型和修正的Sernelius公式对介电函数进行建模，揭示了AZO薄膜的能带结构和自由载流子效应，为锌氧化物透明导体的光电特性提供了深入理解。",
+      "llm_tldr": "该研究开发了一种综合方法，通过同时拟合载流子浓度对带隙和等离子体能量的依赖关系，并显式考虑能带非抛物线性，从简并Al掺杂ZnO薄膜中提取电子和空穴有效质量。利用宽带椭偏光谱和霍尔测量精确测定带隙、等离子体能量和载流子浓度。通过Elliott模型和修正的Sernelius公式对介电函数进行建模，揭示了AZO薄膜的能带结构和自由载流子效应，为锌氧化物透明导体的光电特性提供了深入理解。",
+      "llm_tags": [
+        "query:tco"
+      ],
+      "matched_query_tag": "query:tco",
+      "matched_query_text": "zinc oxide based transparent conductors",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
