@@ -1,0 +1,143 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-25T21:58:54.098439+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 3,
+    "deep_cap": 7,
+    "deep_selected": 3,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.25930v1",
+      "source": "arxiv",
+      "title": "Impact of sintering conditions on the dielectric properties of TiO2 ceramics for metamaterialsapplications at terahertz frequencies",
+      "abstract": "Titanium dioxyde (TiO2) is a promising dielectric material for the realization of metamaterials operating in the terahertz (THz) range. Indeed, these necessitate a high permittivity and low loss material. In this paper, we compare the processes of fabrication and the results of characterisation of bulk TiO2 pellets. From the results of this characterization, we have numerically designed 2D all dielectric metamaterials (ADM) showing that they may exhibit negative or near-zero effective index. Our previous simulations show that the relative permittivity epsilon has to be around 100, while the loss tangent has to be lower than 0.02. We have thus compared conventional sintering (CS) vs spark plasma sintering (SPS), and investigated the effect of post-sintering annealing on the loss to satisfy these two criteria. The samples were characterized by THz Time Domain Spectroscopy (THz-TDS). One of the samples exhibits a loss tangent as low as 0.006, with a permittivity epsilon = 103. These results highlight the importance of the fabrication process on the EM properties of bulk TiO2, and demonstrate that it is a promising material for the development of metamaterial in the THz band.",
+      "authors": [
+        "Djihad Amina Djemmah",
+        "Delphine Gourdonnaud",
+        "Faycal Bouamrane",
+        "Jean-Francois Roux",
+        "Pierre-Marie Geffroy",
+        "Eric Akmansoy"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.app-ph"
+      ],
+      "published": "2026-06-24T15:07:26+00:00",
+      "link": "https://arxiv.org/pdf/2606.25930v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "TiO2 ceramics enable near-zero effective index metamaterials at terahertz",
+      "llm_evidence_cn": "TiO2陶瓷实现太赫兹近零有效折射率超材料",
+      "llm_evidence": "TiO2陶瓷实现太赫兹近零有效折射率超材料",
+      "canonical_evidence": "TiO2陶瓷实现太赫兹近零有效折射率超材料",
+      "llm_tldr_en": "This paper investigates TiO2 ceramics for all-dielectric metamaterials with near-zero effective index at terahertz frequencies, comparing conventional and spark plasma sintering to achieve high permittivity and low loss, enabling negative or near-zero effective index designs.",
+      "llm_tldr_cn": "太赫兹频段的全介质超材料依赖于高介电常数、低损耗的介质材料。本文针对TiO2陶瓷，比较了常规烧结和放电等离子烧结工艺对其介电性能的影响，测试了相对介电常数和损耗角正切。基于实验数据，数值设计了二维全介质超材料，仿真结果表明可通过结构设计获得负折射率或近零有效折射率，为太赫兹近零折射率超材料的实现提供了材料基础与设计指导。",
+      "llm_tldr": "太赫兹频段的全介质超材料依赖于高介电常数、低损耗的介质材料。本文针对TiO2陶瓷，比较了常规烧结和放电等离子烧结工艺对其介电性能的影响，测试了相对介电常数和损耗角正切。基于实验数据，数值设计了二维全介质超材料，仿真结果表明可通过结构设计获得负折射率或近零有效折射率，为太赫兹近零折射率超材料的实现提供了材料基础与设计指导。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "metamaterials with epsilon near zero properties",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.20821v1",
+      "source": "arxiv",
+      "title": "Perturbative Approach to Nonlinear Capacitance Matrix Formulations",
+      "abstract": "We study a nonlinear Helmholtz system with cubic nonlinearity on high-contrast inclusions in three dimensions, and the solitons that emerge as the contrast $δ$ tends to zero. Using the Dirichlet-to-Neumann operator and a capacitance formalism, we develop a perturbative cascade that expands the resonant frequency and field in powers of $\\sqrtδ$. Our main result is a rigorous two-way correspondence with a finite discrete nonlinear capacitance system: every discrete solution lifts to a continuous soliton (a convergent expansion, analytic in $\\sqrtδ$), and every continuous family with the natural subwavelength scaling reduces to a discrete one. The construction is algorithmic, giving higher-order corrections in both the subwavelength and non-subwavelength regimes, the latter via a frequency-dependent capacitance matrix. We illustrate the theory numerically and characterise a symmetry-breaking bifurcation in a symmetric dimer.",
+      "authors": [
+        "Habib Ammari",
+        "Clemens Thalhammer"
+      ],
+      "primary_category": "math.AP",
+      "categories": [
+        "math.AP",
+        "math-ph"
+      ],
+      "published": "2026-06-18T18:07:44+00:00",
+      "link": "https://arxiv.org/pdf/2606.20821v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Studies nonlinear Helmholtz system with cubic nonlinearity on high-contrast inclusions, approximating epsilon-near-zero metamaterials, revealing subwavelength solitons.",
+      "llm_evidence_cn": "研究具有立方非线性的亥姆霍兹系统，高对比度夹杂物逼近零介电常数超材料，揭示亚波长孤子。",
+      "llm_evidence": "研究具有立方非线性的亥姆霍兹系统，高对比度夹杂物逼近零介电常数超材料，揭示亚波长孤子。",
+      "canonical_evidence": "研究具有立方非线性的亥姆霍兹系统，高对比度夹杂物逼近零介电常数超材料，揭示亚波长孤子。",
+      "llm_tldr_en": "This paper presents a perturbative approach to a nonlinear Helmholtz system with cubic nonlinearity on high-contrast inclusions, yielding a rigorous correspondence between continuous solitons and a discrete nonlinear capacitance system, relevant to nonlinear epsilon-near-zero metamaterials.",
+      "llm_tldr_cn": "本文针对高对比度亚波长夹杂物中的非线性亥姆霍兹方程（含三次非线性），发展了基于Dirichlet-to-Neumann算子和电容矩阵的微扰级数方法，严格建立了连续孤子与离散非线性电容系统之间的双向对应。该理论框架揭示了当介电常数趋于零时亚波长谐振的非线性增强效应，为设计基于近零介电常数超材料的非线性光子器件提供了数学基础和设计算法。",
+      "llm_tldr": "本文针对高对比度亚波长夹杂物中的非线性亥姆霍兹方程（含三次非线性），发展了基于Dirichlet-to-Neumann算子和电容矩阵的微扰级数方法，严格建立了连续孤子与离散非线性电容系统之间的双向对应。该理论框架揭示了当介电常数趋于零时亚波长谐振的非线性增强效应，为设计基于近零介电常数超材料的非线性光子器件提供了数学基础和设计算法。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "nonlinear optical behavior in epsilon near zero media",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2606.21299v1",
+      "source": "arxiv",
+      "title": "Characterization of GaN:Si and ZnO:Ga for position-resolved fast timing applications",
+      "abstract": "We present the characterization of two fast, crystalline inorganic scintillators, silicon-doped gallium nitride (GaN:Si) and gallium-doped zinc oxide (ZnO:Ga), and compare their performance with cerium-doped yttrium aluminium perovskite (YAP:Ce) for in-vacuum alpha-detection applications that require high-performance timing, position, and energy resolution, such as 3D elemental mapping, medical imaging, and homeland security applications. In this paper, we propose ZnO:Ga and GaN:Si as high-performance drop-in replacements for the alpha detector in Associated Particle Imaging (API) systems. However, the results reported here also have wide applicability. Prior work has reported on polycrystalline forms of ZnO:Ga, which suffer from self-absorption. To our knowledge, GaN:Si has not been proposed to be used in API systems. We present room-temperature scintillation time constants obtained via X-ray-induced time-correlated single-photon counting for both proposed materials. They both exhibit exceedingly fast rise times of <15ps, and high brightness >1000ph/MeV with resolved alpha-peaks. Single-crystal ZnO:Ga and single-crystal GaN:Si yield single-component decays of 805ps and 32ps, respectively. Using a plastic scintillator reference setup, coincidence timing resolution (CTR) and detector timing resolution (DTR) measurements demonstrate a >3x improvement in timing resolution compared to traditional YAP:Ce. GaN:Si and ZnO:Ga exhibit (35(9))ps and (49(5))ps DTR, respectively, compared to(144(2))ps for conventional, single-crystal YAP:Ce. Finally, we evaluate their position resolution in an experimental setup designed for API and measure better than 0.2mm for YAP:Ce and approximately 1mm for GaN:Si. We obtain a position resolution of 0.3mm for ZnO:Ga from simulations. We also present alpha-induced ionoluminescence emission spectra that reveal direct, red-shifted near-bandgap emission.",
+      "authors": [
+        "Julius Meyer",
+        "Joshua W. Cates",
+        "Woon-Seng Choong",
+        "Juan Cristhian Luque Gutierrez",
+        "Federico Moretti",
+        "Ryan Pavlovsky",
+        "Mauricio Ayllon Unzueta",
+        "Weronika W. Wolszczak",
+        "Markus Roth",
+        "Arun Persaud"
+      ],
+      "primary_category": "physics.ins-det",
+      "categories": [
+        "physics.ins-det",
+        "nucl-ex"
+      ],
+      "published": "2026-06-19T10:22:44+00:00",
+      "link": "https://arxiv.org/pdf/2606.21299v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Characterization of ZnO:Ga, a zinc oxide based transparent conductive oxide, for fast timing.",
+      "llm_evidence_cn": "表征氧化锌基透明导电氧化物ZnO:Ga的快速定时特性。",
+      "llm_evidence": "表征氧化锌基透明导电氧化物ZnO:Ga的快速定时特性。",
+      "canonical_evidence": "表征氧化锌基透明导电氧化物ZnO:Ga的快速定时特性。",
+      "llm_tldr_en": "The paper characterizes GaN:Si and ZnO:Ga as fast crystalline scintillators for position-resolved alpha detection, comparing them with YAP:Ce, and finds ZnO:Ga suitable as a drop-in replacement for API systems.",
+      "llm_tldr_cn": "本文针对位置分辨快速定时应用，表征了两种快速晶体闪烁体GaN:Si和ZnO:Ga的性能，并与YAP:Ce进行了比较。研究发现，ZnO:Ga作为氧化锌基透明导电氧化物，克服了多晶自吸收问题，展现出超快衰减和良好光输出，时间分辨率优于YAP:Ce，有望成为关联粒子成像系统中α探测器的理想替代材料。这一工作拓展了透明导电氧化物在快定时辐射探测领域的应用。",
+      "llm_tldr": "本文针对位置分辨快速定时应用，表征了两种快速晶体闪烁体GaN:Si和ZnO:Ga的性能，并与YAP:Ce进行了比较。研究发现，ZnO:Ga作为氧化锌基透明导电氧化物，克服了多晶自吸收问题，展现出超快衰减和良好光输出，时间分辨率优于YAP:Ce，有望成为关联粒子成像系统中α探测器的理想替代材料。这一工作拓展了透明导电氧化物在快定时辐射探测领域的应用。",
+      "llm_tags": [
+        "query:tco"
+      ],
+      "matched_query_tag": "query:tco",
+      "matched_query_text": "zinc oxide based transparent conductors",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

@@ -1,0 +1,484 @@
+Title: Impact of sintering conditions on the dielectric properties of TiO2 ceramics for metamaterialsapplications at terahertz frequencies
+
+URL Source: https://arxiv.org/pdf/2606.25930v1
+
+Published Time: Thu, 25 Jun 2026 01:08:49 GMT
+
+Number of Pages: 26
+
+Markdown Content:
+# Impact of sintering conditions on the dielectric properties of TiO 2 ceramics for metamaterials applications at terahertz frequencies. 
+
+Djihad Amina Djemmah a, Delphine Gourdonnaud b, Fayçal Bouamrane c,Jean-François Roux a, Pierre-Marie Ge ff roy b, Éric Akmansoy a, ∗
+
+> a
+
+Centre de Nanosciences et Nanotechnologies - CNRS (UMR 9001) - Université Paris-Saclay, 10 bd Thomas Gobert, Palaiseau, 91120, France 
+
+> b
+
+Centre Européen de la Céramique - CNRS (UMR 7315) - Université de Limoges, 12 Rue Atlantis, Limoges, 87068 LIMOGES Cedex Atlantis, France 
+
+> c
+
+Laboratoire Albert Fert - CNRS, (UMR137) - Thales, Université Paris-Saclay, 1 Avenue Augustin Fresnel, Palaiseau, 91120, France 
+
+> d
+
+Centre de Radiofrequences, Optique et Micro-nanoélectronique des Alpes - CNRS (UMR 5130 ) -Université Savoie Mont Blanc, rue Lac de la Thuile, Bat. 21, Le Bourget du Lac, 73370, France 
+
+Abstract 
+
+Titanium dioxyde ( TiO 2) is a promising dielectric material for the realization of metamaterials operating in the terahertz (THz) range. Indeed, these necessitate a high permittivity and low loss material. In this paper, we compare the processes of fabrication and the results of characterisation of bulk TiO 2 pellets. From the results of this characterization, we have numerically designed 2D all dielectric metamaterials (ADM) showing that they may exhibit negative or near-zero e ff ec-tive index. Our previous simulations show that the relative permittivity ε′ has to be around 100, while the loss tangent tan δ has to be lower than 0 .02. We have thus compared conventional sintering (CS) vs spark plasma sintering (SPS), and investigated the e ff ect of post-sintering annealing on the loss to satisfy these two criteria. The samples were characterized by THz Time Domain Spectroscopy (THz-TDS). One of the samples exhibits a loss tangent as low as tan δ = 6 · 10 −3,with a permittivity ε′ = 103. These results highlight the importance of the fab-rication process on the EM properties of bulk TiO 2, and demonstrate that it is a promising material for the development of metamaterial in the THz band. 
+
+Keywords: Ceramics processes, TiO 2, THz-Time Domain Spectroscopy, 1
+
+> arXiv:2606.25930v1 [cond-mat.mtrl-sci] 24 Jun 2026
+
+All-Dielectric Metamaterials. 
+
+1. Introduction 
+
+Ceramics are of great interest as the realization of metamaterials (MM) oper-ating in the THz range is aimed. All-Dielectric Metamaterial (ADM) are perfectly suited to this frequency range [ 1, 2 ], unlike traditional MMs whose unit cell is metallic and su ff er from increasing ohmic loss with the frequency. Moreover, the unit cell of ADMs, which consists of two High Permittivity Resonators (HPR), is of simple geometry. As the incident EM field illuminates the ADM, the first two Mie resonances are excited, which may lead to negative or near-zero e ff ective index [ 3 , 4]. To sustain these resonances, the material of the HPR must have a high permittivity and low loss, their dimensions being sub-wavelength. TiO 2
+
+and SrTiO 3 are good candidates to satisfy these two conditions. TiO 2 provides a good compromise between high permittivity and low loss, notably because if its permittivity is lower than that of SrTiO 3, its first optical phonon ωTO1 is at 5.7 THz, whereas that of SrTiO 3 is at 2.7 THz [ 5, 6 , 7 ]. This means that the loss of TiO 2 are lower in the considered frequency range. About TiO 2, our previous simulations show that to get the first two Mie resonances, two criteria — high permittivity ( εr ≃ 100) and low loss (tan δ ≤ 0.02) — have to be satisfied [8, 9]. We therefore fabricated bulk TiO 2 pellets by two di ff erent processes: con-ventional sintering (CS) and spark plasma sintering (SPS), and compared their dielectric properties. We also investigated the e ff ect of post-sintering annealing, showing its influence on the EM properties of the material. We characterized the pellets by the means of THz Time Domain Spectroscopy (THz-TDS), and then numerically designed 2D ADMs from these experimental results: negative or near-zero e ff ective index is achievable. 
+
+> ∗eric.akmansoy@universite-paris-saclay.fr
+
+2. Methods 
+
+2.1. Fabrication of the ceramics 2.1.1. Starting TiO 2 powders 
+
+Fifty five di ff erent samples have been fabricated to address the dependance of the EM properties (permittivity and loss) on several parameters: density, type of sintering, sintering and annealing temperatures. These sintering studies of TiO 2 were conducted using commercial powders, whose particle size DBET 
+
+was determined from the specific surface S BET with the relative density ρ =
+
+4.23 g·cm −3 of TiO 2 via the Brunauer-Emmett-Teller’ method (BET) [ 10 ]. Before sintering, the commercial powders need to be compacted into green parts by uniaxial pressing. 
+
+2.1.2. Elaboration and sintering of the TiO 2 samples 
+
+Bulk TiO 2 ceramic was shaped by two di ff erent sintering processes from the green parts: conventional sintering (CS) and Spark Plasma Sintering (SPS). Eigh-teen samples were conventionally sintered, while thirty seven were sintered by SPS. During the former process, the TiO 2 powder is first compacted in a 10 mm diameter die under a 50 MPa uniaxial pressure to produce green compacts. These have been then sintered at various high temperatures: T CS =1300 °C, 1350 °C, 1400 °C, 1450 °C, 1500 °C and 1550 °C for about two hours, under argon atmo-sphere corresponding to the oxygen partial pressure p(O 2) = 2.1 · 10 −4 Pa. During the latter process, the sintering of the TiO 2 powder, placed in 8 mm graphite die, is rapidly performed by a high intensity pulsed electric current (about 10 kA). A 10 MPa pressure is applied along the vertical axis of the sample by two pistons during 5 min in a vacuum chamber. The atmosphere is neutral, namely argon at a pression of a few Pascal. The temperature is controlled via an IR pyrom-eter. SPS allows to sinter the powder at lower temperatures than conventional sintering and is a shorter process. It has been carried out at various temperatures: TS PS =1100 °C, 1150 °C, 1200 °C and 1300 °C. A Dr. Sinter 825 SPS machine (by Fuji Electronics Industrial Co. Ltd) was used. After the sintering, some of the samples have been annealed, at various temperatures (T ann =950 °C, 1000 °C, 1100 °C, 1200 °C, 1300 °C and 1550 °C), 3under air atmosphere also corresponding to the oxygen partial pressure p(O 2) =
+
+2.1 · 10 −4 Pa. Next, the TiO 2 pellets were thinned by polishing up to thicknesses from 300 to 500 μm. Photographs of the pellets are reported in the supplementary material (see Fig. ?? in the supplementary material) 
+
+2.2. Characterization 
+
+The structural properties of the fabricated samples were investigated by Scan-ning Electron Microscope (SEM) and X-ray di ff raction (XRD). Next, the samples were characterized at THz frequencies by the means of Time Domain Spec-troscopy (THz-TDS). 
+
+2.2.1. XRD 
+
+Titanium dioxide ( TiO 2) crystallizes in three main forms, two of which may have EM applications: rutile and anatase. These have di ff erent crystalline struc-tures, which results in di ff erent electronic and optical properties. Because of its higher permittivity and lower loss, the rutile structure is better suited for metamate-rials applications. To determine which structure has resulted from our fabrication processes, we have characterized the samples by X-ray di ff raction (XRD). The 2Theta /Theta (2 Θ/Θ ) scans were collected in a Bragg-Brentano geometry using a Rigaku Smartlab di ff ractometer. 
+
+2.2.2. Density 
+
+The density of the sintered samples was measured using Archimede’s method [ 11 ]. 
+
+2.2.3. THz characterisations 
+
+Once the pellets fabricated and polished, they were characterized in the [0.2, 1.8] THz range by the means of THz Time Domain Spectroscopy (THz-TDS). Actually, this broadband technique allows to determine the dielectric permittivity (including both real and imaginary parts) of the material if this latter is su ffi ciently transparent. Moreover, in the case of inhomogeneous media or compounds one can also have an insight about structural parameters such as porosity using an eff ective medium analysis (see ref. [ 12 ]) In our case we performed transmission experiment using a commercial Terapulse Lx spectrometer (from Teraview ™). In 4this system, the sample is placed at the focal point of two parabolic mirrors where the frequency dependent waist of the THz beam decreases from 2 mm at 0.2 THz to 0.2 mm at 2 THz. The spectrometer delivers THz pulses whose spectrum covers the [0.2, 5] THz band (see Fig. ?? & ?? in the supplementary material). The dynamic range of measurement tops around 0.6 THz and is gradually attenuated at high frequencies; the signal reaches the noise level around 5 THz. Towards the lower end of the spectrum, the amplitude of the detected signal is mainly limited by di ff raction e ff ects as the low-frequency components of the THz beam are poorly focused towards the detector and may even be blocked by the sample holder if the size of sample is too small. Considering these system parameters, we have fabricated pellets with diameter ranging from 8 to 13 mm. As mentioned above, before being characterized, each sample is thinned into a parallel-sided plate with a thickness between 300 and 500 μm. Given the expected absorption losses of the samples, which generally range between tan δ = 0.1 and tan δ= 0.2 to at 1.8 THz, such thicknesses would induce propagation losses of approximately 40 to 65 dB. As a consequence, the upper limit of the frequency range of characterization of the ceramic pellets varies from 1 to 1.8 THz depending on the exact parameters of the sample. Generally, the lower limit of reliable characterization is in between 0.2 and 0.25 THz. In order to reduce the impact of THz water absorption onto the experiment, the samples are placed in a chamber purged by nitrogen gas with a residual humidity rate below 10% at ambient temperature. Each measurement consists of recording time traces with a time equivalent length of 30 ps. For further numerical analysis of the signal in the frequency domain, this window width will lead to a frequency resolution of 33 GHz which is good enough to characterize material, such as TiO 2 pellets, that does not present sharp resonances in this frequency range. We note that the characterization of resonant devices such as metamaterial with narrow resonances would require longer acquisition window or the use of a frequency resolved THz apparatus. In practical terms, to characterize the pellets, we follow a classical method based on the comparison of signals recorded with or without the sample [ 13 ]. Firstly, a reference temporal signal without the sample is recorded; secondly, the signal transmitted by the sample is recorded. The two measured temporal 5signals are then processed by a Fast Fourrier Transform (FFT), which yields the transmission spectrum. The time domain signals and the spectra are reported in the supplementary material (see Fig. ?? & ?? in the supplementary material). The calculation leads to the knowledge of the complex transmission coe ffi cient of the sample. From this and the sample thickness, the complex refractive index 
+
+n + ıκ is extracted assuming that the signal does not su ff er from any scattering or di ff raction e ff ects. From the refractive index n and the extinction coe ffi cient κ, the absorption coe ffi cient α is deduced, from which, in turn, the complex dielectric function ε∗ = ε′ + ıε ′′ is found. All this analysis is done using a dedicated numerical tool developed using Matlab ™ and based on the method originally described by Duvillaret et al. [14]. 
+
+2.3. Design of the All Dielectric Metamaterials and numerical simulations a                        
+
+> aa
+> b
+> pppp
+> k(x)
+> E(y)
+> H(z)
+> unit cell
+> TE 12 mode TE 11 mode
+> Figure 1: Sketch of a 2D All Dielectric Metamaterial (ADM). It is a periodical structure, whose unit cell consists of two High Permittivity Resonators sustaining the first two modes of Mie resonances, as the incident field is Transverse Electric (the field ⃗Eis perpendicular to the axis of the resonators). Their cross-sections are a×aand a×b, while the half-period pis the distance between the axes of two resonators. Both the resonators are infinite along the zdirection. The two modes are shown. The T E 11 mode exhibits one antinode while the T E 12 has two [15].
+
+Given that we intend to develop ADMs operating in the THz from the ceramics we fabricated, we used the results of the THz caracterization of our pellets to design and numerically simulate ADMs. These are periodic structures whose unit cell consists of two High Permittivity Resonators, sustaining the first two 6modes of the Mie resonances. The small resonator sustains the first mode of the Mie resonances, while the other sustains the second mode. The former is called the “magnetic resonator” and the latter the “electric resonator”. The first one gives rise to resonant e ff ective permeability μe f f , while the second one gives rise to resonant e ff ective permittivity εe f f , both of which may take negative values. Their superposition may then result in a negative e ff ective index or near zero-index [15, 16]. Fig. 1 reports the sketch of a 2D ADM. We designed 2D ADMs operating at 0.3 THz and 0.6 THz, because this corresponds to transmission windows of the atmosphere. The dimensions of the sides of the two rectangular resonators set their frequency of resonance, according to the Cohn’s model [15, 16], which provides the frequency of the modes by the relation [17]: 
+
+fmn = c
+
+2 √ε′
+
+rma
+
+2
+
++
+
+nb
+
+2
+
+, (1) where m and n are integers, and a and b are the dimensions of the sides of the 2D rectangular resonators. It consequently depends on the relative permittivity ε′
+
+of the bulk material. Since we consider the first two modes of Mie resonances, 
+
+m = n = 1 and m = 1, n = 2 in the elementary cell, the first mode (denoted 
+
+T E 11 ) being the magnetic one and the second (denoted T E 12 ), the electric one. Notice that the Cohn’s model provides the frequencies of resonances of an isolated resonator. The dimensions of the resonators are therefore adjusted so that the two modes overlap, resulting in the superposition of e ff ective permeability μe f f and e ff ective permittivity εe f f . Operating at 0.3 THz, the magnetic resonator has a rectangular cross section (a =110 μm × b=58 μm), while the electric one has a square cross section (a =110 μm × a=110 μm). To excite the two modes, the polarization of the incident EM field is Transverse Electric (TE), that is, the electric field 
+
+E is perpendicular to the axis of the dielectric resonators, while the magnetic one H is parallel to the axis. From Cohn’s model, the respective resonance frequencies are 0.287 THz ( T E 11 mode) and 0.300 THz ( T E 12 mode). The two modes undergo coupling, which notably moves the frequencies of resonances that are given by the Cohn’s model, and can lead to the degenerescence of the 7modes, that is, their frequencies become equal as p decreases [ 18 ]. The period of the lattice 2 p plays thus an important role in the EM characteristics; it is set as 
+
+p = 200 μm. Operating at 0.6 THz, the sides of the resonators are respectively b=28 μm × a=55 μm and a =55 μm × a=55 μm, while the lattice period is set as 
+
+p = 120 μm. Their respective resonance frequencies are 0.586 THz ( T E 11 mode) and 0.594 THz ( T E 12 mode). Therefore, the cross-sections of the resonators forming an ADM are sub-wavelength. Varying the lattice period 2 p changes the eff ective index ne f f , so that near-zero index (0 ≤ ne f f ≤ 1) is achievable [ 9, 18 ]. Our previous simulations show that the relative permittivity has to be around 
+
+ε′ ≃ 100, while the loss tangent tan δ = ϵ′/ϵ ′′ has to be lower than 0.02, so as to obtain the two resonances [ 9 , 8]. The simulations have been carried out by the means of the Lumerical ™ commercial software, which involves the Finite-di ff erence time-domain (FDTD) method and yields the S-parameters (reflexion and transmission coe ffi cients) (see Fig. ?? in the supplementary material), from which we extracted the e ff ective parameters: permeability μe f f , permittivity εe f f 
+
+and index ne f f [15, 16], using Szabo et al. method [19]. 
+
+3. Results and discussion 
+
+3.1. Chemical properties of the TiO 2 ceramics. 3.1.1. SEM images 
+
+Scanning Electron Microscope (SEM) images of the polycristaline pellets were taken, from which the grain size and the morphology of the sintered ceramic can be observed (see Fig. 2): the SPS TiO 2 samples have a smaller grain size (4-6 μm) with very low residual porosity (close to 1.2%), than that of the CS samples that have a larger grain size (10-30 μm), with intragranular and intergranular porosity, that is close to 3.8%. That said, the grain size has no significant e ff ect on the permittivity and the dielectric loss, specially when the ceramic powders are very pure [ 20 ]. The determination of the porosity ratio and the mean grain size have been performed from the SEM images by ImageJ software. 83.1.2. XRD results 
+
+Two results of XRD characterizaiton are reported in Fig. 3: that of a CS sample and the other of a SPS one. The former has been sintered at T CS =1350 °C, while the latter has been at T S PS =1100 °C. These spectra are compared with that of rutile TiO 2, which confirms that the samples are of the rutile form [21]. 
+
+3.2. Dielectric Properties of the TiO 2 Ceramics 
+
+We addressed the EM properties of the pellets in function of the density, the type of sintering, the sintering and annealing temperatures, and then the dielectric function of the TiO 2 ceramics. 
+
+3.2.1. Permittivity vs density 
+
+The permittivity of all the samples vs their relative density is reported in Fig. 4, and it can be seen that both the processes allow to fabricate dense samples (density 
+
+> 0.9) with high permittivity ( ε′ ≃ 100). And it can be noticed that most of high density samples have a high permittivity, as might be expected [ 7]. Nonetheless, most of the SPS samples have a density greater than 0.9 and a permittivity around 
+
+εr ≃100 . 
+
+3.2.2. Loss vs permittivity 
+
+The loss tangent vs the permittivity from the THz-TDS measurements at 0.3 THz is reported in Fig. 5, and it can be also noticed that both the processes allow to fabricate samples with low loss ( tan δ < 0.02) and high permittivity (ε′ ≃ 100). Nonetheless, most of SPS samples satisfy the two criteria: ε′ ≃ 100 and tan δ ≤ 0.02, and, notably, the SPS samples exhibit the lowest loss associated to the highest permittivity. Two CS samples exhibit a lower loss tangent ( tan δ =
+
+3 · 10 −3 and tan δ = 4 · 10 −3, however, their respective permittivity are ε′ = 91 and ε′ = 87. The similar figures at 0.6 THz and at 1 THz are reported in the supplementary material (see Fig. ?? & ?? in the supplementary material) and it shows that the criteria of the loss tangent threshold is more di ffi cult to satisfy at 0.6 THz because the loss tangent induced by the first optical phonon ωTO1 is higher. And that it is not achieved at 1 THz. 93.2.3. Dielectric Function 
+
+The THz spectrum measurements were then compared with a theoretical model, namely the pseudo-harmonic (PH) model, which is convenient since our measurements were carried out in the lower end of the THz band ( <1.5 THz). Actually, considering that we have characterised our samples in the lower THz band, the influence of higher frequencies resonances due to the LO 1 phonon or higher order phonon modes have a very low impact on the dielectric response of TiO 2 below 1.5 THz. So we only consider the e ff ect of the first transverse optical phonon TO 1 mode. We built this model based on our measurements taken from two single crystals rutile TiO 2 samples (Surfacenet GmbH), oriented in the 
+
+< 001 > and < 100 > directions. The theoretical dielectric function in each direction is given by 
+
+ε∗∥,⊥(ω) = ε′(ω) + ıε ′′ (ω) = ε∞ +
+
+ω2
+
+> ωTO1
+
+· (ε0 − ε∞)
+
+ω2
+
+> ωTO1
+
+− ω2 − ıγ TO1 ω. (2) It involves four parameters. Along the rapid axis, we used the values of ε0 and 
+
+ε∞ from Matsumoto et al. [22 ] and Traylor et al. , [ 23 ], while for the slow axis, we adapted those from Kanehara et al. [ 24 ], to determine ε⊥ and ε∥, respectively. These are reported in the supplementary material (see table. ?? in the supple-mentary material). The figure of the two corresponding dielectric functions is also reported in the supplementary material (see Fig. ?? in the supplementary material), and it shows good agreement between the model and the measurements along both directions ( ∥, ⊥) of the single crystal. Next, the dielectric function ε∗ = ε′ + ıε ” of our polycrystalline pellets is found under the assumption that the samples consist of randomly oriented rutile grains, which leads to the mean permittivity given by [22] 
+
+εmean = 23ε∗⊥ + 13ε∗∥ . (3) This is reported in Fig. 6 and compared with the measurements, and it shows good agreement. At 0.3 THz, the measured real part ε′ is 95% of that from the PH model, which is consistent with the relative density (0.99) of the considered sample. The imaginary part ε′′ of the measured dielectric function increases about 10 twice faster as the PH model, which we ascribe to the presence of ionized defects, specifically to the concentration of oxygen vacancies ( VO) and Ti interstitials (Ti i) [ 25 , 26 ]. These are responsible for possible additional backscattering losses that add to the losses due to the excitation of the first transverse optical phonon TO 1. Because of their di ff erent structures, the dielectric properties of single crystals di ff er from those of polycrystalline specimens due to the presence of grain boundaries[27]. Moreover, the latter are porous. 
+
+3.2.4. Eff ect of the sintering and annealing temperatures on the loss of SPS samples 
+
+From the qualitative results of Fig. 5, we further investigated the e ff ect of the SPS sintering temperature and that of the annealing on the loss tangent of the samples, the permittivity being a less critical parameter[ 26 ]. We considered twenty-seven samples realized from three di ff erent commercial powders, whose characteristics are reported in Table 1. The samples were considered in three sets from the SPS sintering temperature: T S PS =1100 °C, 1150 °C and 1200 °C. Each set comprises three subsets of samples made of the same powders, i.e., nine samples in each set. In each subset, two samples were annealed: one at Tann =1000 °C and the other at 1100 °C. This annealing was carried out during 60 hours under air, because the re-oxidation kinetics of TiO 2 remain very low in this range of temperatures. All these SPS samples were next characterized at 0.3 THz and the results are reported in Table 2. Several points can be noticed: (i) Without annealing, the powder whose specific surface area S BET is the lowest exhibits the lowest loss tangent tan δ. Indeed, it is less a ff ected by the reduction phenomena during the sintering process. Its defect concentration Ti 3+ is lower. (ii) The annealing of the samples leads to a significant reduction in losses, by a factor 2 up 16, which demonstrates the importance of this post-sintering process, because it reduces the defect concentration (Ti 3+) and the oxygen vacancies concentration (V O) by the re-oxidation of TiO 2.(iii) The lowest SPS temperature (T S PS = 1100 °C) followed by an annealing 11 leads to the loss tangent below the threshold tan δ ≤ 0.02 (black and blue bold fonts in Table 2). (iv) The process T S PS = 1100 °C & T ann = 1000 °C leads to the lowest loss tangent ( tan δ ≤ 0.016) (blue bold font in Table 2). Notice that one sample exhibits a loss tangent as low as tan δ = 6.10 −3 at 0.3 THz and tan δ =
+
+18 .10 −3 at 0.6 THz [ 26 ]. Its particule size DBET is the lowest. These SPS conditions, at lower temperature, limit the creation of Ti 3+ defects or low reduction of TiO 2.The Brouwer diagram, which represents the conductivity σ in fonction of the oxygen partial pressure p(O 2) at various temperatures, gives an insight of the role of the sintering and annealing temperatures [ 28 , 29 , 30 ]. It shows that, at a given partial oxygen pressure p(O 2), sintering and annealing at lower temperatures lead to lower conductivity (lower defect concentration Ti 3+). Consequently, sintering at 1100 °C followed by annealing at 1000 °C is the optimal process considering our three sets of samples. The Brouwer diagram with corresponding partial oxygen pressures of SPS sintering and annealing is shown in the supplementary material (see Fig. ?? in the supplementary material). Producer (reference) Purity (%) S BET (m 2/g) DBET (μm) Sigma Aldrich (10897) 99.995 0.16 19 Sigma Aldrich (42681) 99.8 4 4.4 HP2 99 6.3 1      
+
+> Table 1: Characteristics of the TiO 2powders used to fabricate the SPS samples. The values of the specific surface area ( SBET ) are those given by the producer. Using the Brunauer-Emmett-Teller’ method (BET), the particle size DBET was determined [10].
+
+3.3. E ff ective parameters and negative index 
+
+To design the device, we used the experimental EM characteristics of the sample of subset 1.3, that was sintered by SPS at 1100 °C and then annealed at 1000 °C under air during 60 hours (blue column in Table 2). These are 12 set 1: SPS at 1100 °C set 2: SPS at 1150 °C set 3: SPS at 1200 °C annealing annealing annealing subset none 1000 °C 1100 °C subset none 1000 °C 1100 °C subset none 1000 °C 1100 °C 1.1 (10897) 0.022 0.009 0.019 2.1 (10897) 0.016 0.009 0.015 3.1 (10897) 0.024 0.034 0.016 1.2 (42681) 0.082 0.016 0.019 2.2 (42681) 0.072 0.026 0.050 3.2 (42681) 0.055 0.013 0.016 1.3 (HP2) 0.096 0.006 0.013 2.3 (HP2) 0.050 0.013 0.014 3.3 (HP2) 0.064 0.020 0.027 
+
+Table 2: Loss tangent ( tan δ = ϵ′′ /ϵ ′) at 0.3 THz in fonction of the annealing temperature of twenty seven samples, which were considered in three sets from the three di ff erent SPS temperatures: TS PS =1100 °C, 1150 °C and 1200 °C. Each set comprises three subsets of samples fabricated from the same powder (see Table 1). In each subset, two samples were annealed: one at T ann =1000 °C and the other at 1100 °C. The bold font indicates that the loss tangent is below the threshold tan δ = 0.02 at a given annealing temperature for the three samples fabricated by the same process (sintering then annealing). The process T S PS =1100 °C & T ann = 1000 °C leads to loss tangent below 0.016 (blue column). 
+
+ε′ = 103 , tan δ = 0.006 at 0.3 THz and ε′ = 105 , tan δ = 0.018 at 0.6 THz, respectively (see Fig. 6). The calculated e ff ective parameters: permeability μe f f ,permittivity εe f f and index ne f f in function of the frequency are reported in Fig. 7. The maximum of the imaginary part of the e ff ective permeability μe f f indicates the frequency of resonance of the magnetic resonator (magnetic mode T E 11 ), while the maximum of the imaginary part of the e ff ective permittivity εe f f indicates that of the electric resonator (electric mode T E 12 ). These are f11 s = 0.283 THz and f12 s = 0.294 THz, respectively. The gap ( ∆ fs = 11 GHz vs ∆ fCohn = 13 GHz) with that calculated from Cohn’s model (argon) is the evidence of the mode coupling [ 18 ]. At 0.6 THz, these frequencies are f11 s = 0.586 THz and f12 s =
+
+0.594 THz, respectively. The gap ( ∆ fs = 8 GHz vs ∆ fCohn = 12 GHz) is greater, since the periodicity p = 120 μm is lower in that case, reinforcing the coupling between the two modes [ 18 ]. Besides, metamaterials exhibit negative e ff ective index of refraction as Depine and Lakhtakia’s Condition (DLC) is satisfied [ 31 ], that is, when 
+
+ε′ 
+
+> e f f
+
+μ′′  
+
+> e f f
+
++ ε′′  
+
+> e f f
+
+μ′ 
+
+> e f f
+
+< 0, (4) 13 where the prime and the double prime denote the real and imaginary parts, re-spectively. It takes loss into account. The corresponding frequency ranges are shown by the shaded areas of Fig. 7. Its minimum values are ne f f min = −1.23 at 0.295 THz and ne f f min = −0.16 at 0.587 THz. The corresponding bandwidths are 6.8 GHz at 0.3 THz and 4.5 GHz at 0.6 THz, respectively. These simulations thus demonstrate that negative index is achievable at THz from the TiO 2 pellets we realized by SPS followed by an annealing at both frequencies. They next require to be micro-structured at the tens of micrometers scale with a microm-eter resolution [ 9]. We are currently implementing micro-molding of ceramic, using polymer molds, which is a microscale manufacturing process [ 9 ]. This process has the advantage of facilitating the precise realization of components by accurately reproducing the specific characteristics of a polymer mold. In the supplementary material (see figures ?? and ?? in the supplementary material), we also report the same simulations of the two other samples (samples 1.1 and 1.2) fabricated by the same processes (blue column in Table 2): these show that if negative index can be achieved at 0.3 THz, it is not at 0.6 THz, since the loss tangent tan δ is larger than the loss tangent threshold 0.02 at this latter frequency, because of the first optical phonon ωTO1 . Nevertheless, it can be noticed that sample 1.1 exhibits a near-zero index at 0.6 THz, whereas sample 1.3, whose loss tan δ is higher, does not (see Fig. ?? in the supplementary material). 
+
+4. Conclusion 
+
+To develop All-Dielectric Metamaterials operating at THz frequencies, we have studied the EM properties of TiO 2 pellets we fabricated from commercial powders. From our previous results, these devices require a high permittivity (ϵ′ ≃ 100) and low loss ( tan δ ≤ 0.02). We first compared two sintering processes: Conventional Sintering (CS) and Spark Plasma Sintering (SPS), in function of the temperature. Then, we investigated the e ff ect of a post-sintering annealing on the loss in function of the temperature. The pellets were characterized in the THz frequency range by THz Time Domain Spectroscopy (THz-TDS). We show that the two criteria are achievable by SPS and annealing. The process T S PS =
+
+1100 °C and T ann = 1000 °C yields the best results. Notably, a sample exhibiting 14 a loss tangent tan δ = 6.10 −3 at 0.3 THz and tan δ = 18 .10 −3 at 0.6 THz, with respective permittivities ε′ = 103 and ε′ = 105 has been realized. By adjusting the coupling between the modes, near-zero index should be allowed. From these measurements, we designed All-Dielectric Metamaterials and show that they exhibit negative index in the THz range. Realizing All-Dielectric Metamaterials next necessitates to micro-structure the bulk material at the tens of micrometers scale with a micrometer resolution. 
+
+5. Acknowledgements 
+
+D.A.D. thanks the Mission pour les Initiatives Transverses et Interdisci-plinaires (MITI) of the CNRS for the scholarship. The XRD characterizations have been carried out thanks to the french RENATECH network. 
+
+6. Funding 
+
+This work has been financed by the french Agence Innovation Défense (via the ANR Dispont project) and the MITI (CNRS). 
+
+7. Author contributions statement 
+
+D.A.D. designed and simulated the devices, D.G. and P.-M. G. fabricated the samples, F.-B. prepared the samples, D.A.D. and J.-F.R. characterized the samples, E.A. supervised the study. All authors have analysed the results, contributed to the manuscript and reviewed it. 
+
+8. Additional information Competing interests : The authors declare none. The corresponding author is responsible for submitting a competing interests statement on behalf of all authors of the paper. This statement must be included in the submitted article file. 15 9. Data availability 
+
+Data underlying the results presented in this paper are not publicly available at this time but may be obtained from the authors upon reasonable request. 
+
+10. Supplemental document 
+
+See Supplemental document for supporting content. 
+
+References 
+
+[1] W. Luo, S. Yan, J. Zhou, Ceramic-based dielectric metamaterials, Interdisci-plinary Materials 1 (1) (2022) 11–27. [2] K. Takano, Y. Yakiyama, K. Shibuya, K. Izumi, H. Miyazaki, Y. Jimba, F. Miyamaru, H. Kitahara, M. Hangyo, Fabrication and performance of TiO 2-ceramic-based metamaterials for terahertz frequency range, IEEE Transactions on Terahertz Science and Technology 3 (6) (2013) 812–819. 
+
+doi:10.1109/TTHZ.2013.2285521 .[3] V. G. Veselago, Electrodynamics of materials with negative index of refraction, Phys. Usp. 46 (7) (2003) 764–768. doi:10.1070/ PU2003v046n07ABEH001614 .URL https://ufn.ru/en/articles/2003/7/k/ 
+
+[4] I. Liberal, N. Engheta, Zero-index platforms: Where light defies geometry, Opt. Photonics News 27 (7) (2016) 26–33. [5] W. Spitzer, R. C. Miller, D. Kleinman, L. Howarth, Far infrared dielectric dispersion in BaTiO 3, SrTiO 3, and TiO 2, Physical Review 126 (5) (1962) 1710. [6] A. Barker Jr, Temperature dependence of the transverse and longitudinal optic mode frequencies and charges in SrTiO 3 and BaTiO 3, Physical Review 145 (2) (1966) 391. 16 [7] C. Dupas, S. Guillemet-Fritsch, P.-M. Ge ff roy, T. Chartier, M. Baillergeau, J. Mangeney, J.-F. Roux, J.-P. Ganne, S. Marcellin, A. Degiron, et al., High permittivity processed SrTiO 3 for metamaterials applications at terahertz frequencies, Scientific reports 8 (1) (2018) 15275. [8] D. A. Djemmah, P.-M. Ge ff roy, T. Chartier, J.-F. Roux, F. Bouamrane, É. Ak-mansoy, Processing high permittivity TiO 2 for all-dielectric metamaterials applications at terahertz frequencies, in: Proceedings of the Sixth Interna-tional Symposium on Dielectric Materials and Applications (ISyDMA’6), Springer, 2022, pp. 177–183. [9] D. A. Djemmah, D. Gourdonnaud, F. Laourine, D. Bouville, F. Bouamrane, J.-F. Roux, P.-M. Ge ff roy, E. Akmansoy, From bulk toward micro-structured TiO 2 ceramics for all-dielectric metamaterials at terahertz frequencies: what process?, International Journal of Microwave and Wireless Technologies (2025) 1–11 doi:10.1017/S1759078725101931 .[10] F. Michel, L. Courard, Particle size distribution of limestone fillers: gran-ulometry and specific surface area investigations, Particulate Science and Technology 32 (4) (2014) 334–340. [11] H. Sasaki, E. Tokizaki, K. T. K. Terashima, S. K. S. Kimura, Density variation of molten silicon measured by an improved archimedian method, Japanese journal of applied physics 33 (7R) (1994) 3803. [12] D. Hakobyan, M. Hamdi, O. Redon, A. Ballestero, A. Mayaudon, L. Boyer, O. Durand, E. Abraham, Non-destructive evaluation of ceramic porosity using terahertz time-domain spectroscopy, Journal of the European Ceramic Society 42 (2) (2022) 525–533. 
+
+doi:https://doi.org/10.1016/j.jeurceramsoc.2021.10.026 .URL https://www.sciencedirect.com/science/article/pii/ S0955221921007561 
+
+[13] J.-F. Roux, F. Garet, J.-L. Coutaz, Principles and applications of THz time 17 domain spectroscopy, Physics and applications of terahertz radiation (2014) 203–231. [14] L. Duvillaret, F. Garet, J.-L. Coutaz, A reliable method for extraction of material parameters in terahertz time-domain spectroscopy, IEEE Journal of selected topics in quantum electronics 2 (3) (1996) 739–746. [15] T. Lepetit, É. Akmansoy, J.-P. Ganne, Experimental evidence of resonant eff ective permittivity in a dielectric metamaterial, Journal of Applied Physics 109 (2) (2011) 023115. [16] T. Lepetit, É. Akmansoy, J.-P. Ganne, Experimental measurement of negative index in an all-dielectric metamaterial, Applied Physics Letters 95 (12) (2009) 121101. [17] S. B. Cohn, Microwave bandpass filters containing high-Q dielectric res-onators, IEEE Transactions on Microwave Theory and Techniques 16 (4) (1968) 218–227. [18] Akmansoy, Eric, Marcellin, Simon, Negative index and mode coupling in all-dielectric metamaterials at terahertz frequencies, EPJ Appl. Metamat. 5 (2018) 10. doi:10.1051/epjam/2018006 .URL https://doi.org/10.1051/epjam/2018006 
+
+[19] Z. Szabo, G.-H. Park, R. Hedge, E.-P. Li, A unique extraction of meta-material parameters based on kramers–kronig relationship, IEEE Transac-tions on Microwave Theory and Techniques 58 (10) (2010) 2646–2653. 
+
+doi:10.1109/TMTT.2010.2065310 .[20] D. D. Marco, K. Drissi, N. Delhote, O. Tantot, P.-M. Ge ff roy, S. Verdeyme, T. Chartier, Dielectric properties of pure alumina from 8 GHz to 73 GHz, Journal of the European Ceramic Society 36 (14) (2016) 3355–3361. 
+
+doi:https://doi.org/10.1016/j.jeurceramsoc.2016.05.047 .URL https://www.sciencedirect.com/science/article/pii/ S0955221916302953 
+
+18 [21] I. C. for Di ff raction Data, Icdd file 01-089-4202 & icdd file 03-065-5714 (2022). URL https://www.icdd.com/ 
+
+[22] N. Matsumoto, T. Hosokura, K. Kageyama, H. Takagi, Y. Sakabe, M. Hangyo, Analysis of dielectric response of TiO 2 in terahertz frequency region by general harmonic oscillator model, Japanese Journal of Applied Physics 47 (9S) (2008) 7725. doi:10.1143/JJAP.47.7725 .URL https://dx.doi.org/10.1143/JJAP.47.7725 
+
+[23] J. G. Traylor, H. G. Smith, R. M. Nicklow, M. K. Wilkinson, Lattice dynam-ics of rutile, Phys. Rev. B 3 (1971) 3457–3472. [24] K. Kanehara, T. Hoshina, H. Takeda, T. Tsurumi, Terahertz permittivity of rutile TiO 2 single crystal measured by anisotropic far-infrared ellipsometry, Journal of the Ceramic Society of Japan 123 (1437) (2015) 303–306. doi: 10.2109/jcersj2.123.303 .[25] M. Setvín, M. Wagner, M. Schmid, G. S. Parkinson, U. Diebold, Sur-face point defects on bulk oxides: atomically-resolved scanning probe microscopy, Chem. Soc. Rev. 46 (2017) 1772–1784. doi:10.1039/ C7CS00076F .URL http://dx.doi.org/10.1039/C7CS00076F 
+
+[26] C. Yu, Y. Zeng, B. Yang, R. Donnan, J. Huang, Z. Xiong, A. Mahajan, B. Shi, H. Ye, R. Binions, N. V. Tarakina, M. J. Reece, H. Yan, Titanium dioxide engineered for near-dispersionless high terahertz permittivity and ultra-low-loss, Scientific Reports 7 (1) (2017) 6639. [27] K. Singh, J. Nowotny, V. Thangadurai, Amphoteric oxide semiconductors for energy conversion devices: a tutorial review, Chemical Society Reviews 42 (5) (2013) 1961–1972. [28] J. Nowotny, T. Bak, T. Burg, Electrical properties of polycrystalline TiO 2
+
+at elevated temperatures. electrical conductivity, physica status solidi (b) 244 (6) (2007) 2037–2054. 19 [29] M. Nowotny, T. Bak, J. Nowotny, Electrical properties and defect chemistry of TiO 2 single crystal. i. electrical conductivity, The Journal of Physical Chemistry B 110 (33) (2006) 16270–16282. [30] U. Balachandran, N. Eror, Electrical conductivity in non-stoichiometric titanium dioxide at elevated temperatures, Journal of materials science 23 (8) (1988) 2676–2682. [31] R. A. Depine, A. Lakhtakia, A new condition to identify isotropic dielectric-magnetic materials displaying negative phase velocity, Microwave and Opti-cal Technology Letters 41 (4) (2004) 315–316. 20 (a) 
+
+> (b)
+
+Figure 2: SEM microphotographies of TiO 2 samples sintered (a) by spark plasma sintering (SPS) at 1100 °C and (b) by conventional sintering at 1550 °C. 
+
+21 0 20 40 60 80 100 120 140 160 
+
+> intensity (U.A.)
+
+2Θ(°)CS sample 
+
+rutile 
+
+> (110)
+> (101)
+> (200)  (111)
+> (210)
+> (211)
+> (220)
+> (002) (310)
+> (301)
+> (202)
+> (321)
+> (400)
+> (222)
+> (411)
+> (103)
+> (113)
+> (402)
+> (213)
+> (431)
+> (422)
+> (303)
+> (521)
+
+(a) 0 20 40 60 80 100 120 140 160 
+
+> intensity (U.A.)
+
+2Θ(°)SPS sample 
+
+rutile 
+
+> (110)
+> (101)
+> (200)  (111)
+> (210)
+> (211)
+> (220)
+> (002) (310)
+> (301)
+> (202)
+> (321)
+> (400)
+> (222)
+> (411)
+> (103)
+> (113)
+> (402)
+> (213)
+> (431)
+> (422)
+> (303)
+> (521)
+
+(b) 
+
+Figure 3: XRD spectra of two TiO 2 ceramics samples: (a) Conventionally sintered at T CS =1350 °C (CS sample), (b) Sintered by SPS at T S PS =1100 °C (SPS sample) compared to the rutile spectrum: the Miller indexes of the TiO 2 rutile form are the blue marks [21]. 
+
+22 20 
+
+40 
+
+60 
+
+80 
+
+100 
+
+120 
+
+140 
+
+0.5 0.6 0.7 0.8 0.9 1
+
+> all samples
+> permittivity
+
+density SPS 
+
+CS Figure 4: Permittivity ε′ of all the samples in function of their density: SPS samples in violet and CS samples in green. The vertical dotted line indicates the density of 0.9. 
+
+23 0
+
+0.05 
+
+0.1 
+
+0.15 
+
+0.2 
+
+0.25 
+
+20 40 60 80 100 120 140 
+
+> all samples 0.3 THz
+> tan  δ
+
+permittivity SPS 
+
+CS Figure 5: Loss tangent ( tan δ = ϵ′′ /ϵ ′) in function of the permittivity ε′ of all the samples at 0.3 THz: SPS samples in violet and CS samples in green. The horizontal dotted line indicates the threshold of loss tangent tan δ = 0.02. 
+
+24 −400      
+
+> −200
+> 0
+> 200
+> 400
+> 600
+> 0246810
+> −400
+> −200
+> 0
+> 200
+> 400
+> 600
+> real part  ε’
+> imaginary part  ε’’
+> THz
+> PH
+> PH
+> measurements
+> measurements
+
+(a) 0     
+
+> 20
+> 40
+> 60
+> 80
+> 100
+> 120
+> 0.4 0.6 0.8 11.2 1.4
+> 0
+> 2
+> 4
+> 6
+> 8
+> 10
+> 12
+> 14
+> real part  ε’
+> imaginary part  ε"
+> THz
+> PH
+> PH
+> measurements
+> measurements
+
+(b) 
+
+Figure 6: Dielectric function ε∗ = ε′ + ıε ′′ of TiO 2 sample 1.3 (see Table 2) sintered by SPS. Experimental spectrum (dots) in the THz range compared with the dielectric permittivity ϵmean 
+
+of a randomly oriented TiO 2 rutile polycrystal simulated using a Pseudo-Harmonic model (PH lines) (see eq. (2) & (3) ) (a) [0 , 10] THz range. The maximum of the imaginary part indicates the frequency of the first optical phonon ωTO1 at 5.7 THz. (b) Zoomed view in the [0 .2, 1.5] THz range. 
+
+25 −4          
+
+> −2
+> 0
+> 2
+> 4
+> 6
+> 8
+> 10
+> sample 1.3
+> μeff
+> Re
+> Im
+> −2
+> 0
+> 2
+> 4
+> 6
+> εeff
+> 0
+> −1
+> 1
+> 3
+> 0.25 0.275 0.3 0.325 0.35
+> neff
+> THz (a) −2
+> −1
+> 0
+> 1
+> 2
+> 3
+> 4
+> sample 1.3
+> μeff
+> Re
+> Im
+> −1
+> 0
+> 1
+> 2
+> 3
+> 4
+> εeff
+> 0
+> 1
+> 2
+> 3
+> 0.525 0.55 0.575 0.6 0.625
+> neff
+> THz (b)
+
+Figure 7: E ff ective parameters (real and imaginary parts): permeability μe f f , permittivity εe f f and index ne f f from sample 1.3 (see Table 2), extracted from numerical simulations: (a) The two modes of Mie resonances are around 0.3 THz, the minimum of the e ff ective index is ne f f min = −1.23 at 0.295 THz; (b) The two modes of Mie resonances are around at 0.6 THz, the minimum of the eff ective index is ne f f min = −0.16 at 0.587 THz. The shaded areas mark the frequency range in which the e ff ective index ne f f is negative. 
+
+26

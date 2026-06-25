@@ -1,0 +1,2594 @@
+Title: Perturbative Approach to Nonlinear Capacitance Matrix Formulations
+
+URL Source: https://arxiv.org/pdf/2606.20821v1
+
+Published Time: Tue, 23 Jun 2026 00:14:46 GMT
+
+Number of Pages: 28
+
+Markdown Content:
+# Perturbative Approach to Nonlinear Capacitance Matrix Formulations 
+
+Habib Ammari and Clemens Thalhammer 
+
+Abstract. We study a nonlinear Helmholtz system with cubic nonlinearity on high-contrast inclusions in three dimensions, and the solitons that emerge as the contrast δ
+
+tends to zero. Using the Dirichlet-to-Neumann operator and a capacitance formalism, we develop a perturbative cascade that expands the resonant frequency and field in powers of √δ. Our main result is a rigorous two-way correspondence with a finite discrete nonlinear capacitance system: every discrete solution lifts to a continuous soliton (a convergent expansion, analytic in √δ), and every continuous family with the natural subwavelength scaling reduces to a discrete one. The construction is algorithmic, giving higher-order corrections in both the subwavelength and non-subwavelength regimes, the latter via a frequency-dependent capacitance matrix. We illustrate the theory numerically and characterise a symmetry-breaking bifurcation in a symmetric dimer. 
+
+Keywords. Nonlinear subwavelength resonance, nonlinear discrete approximation, Helmholtz equation, perturbation theory. 
+
+AMS Subject classifications. 35P25, 35B25, 35B34 35C20. 
+
+Contents 
+
+1. Introduction 12. Problem Setting and Preliminaries 22.1. Problem Formulation 22.2. Dirichlet-to-Neumann Operator and Capacitance Formalism 32.3. A Cascade of Equations 63. Main Results 74. Proof of Theorem 3.1 85. Proof of Theorem 3.2 12 6. Beyond the Subwavelength Regime 15 6.1. The Frequency Dependent Capacitance Matrix 15 6.2. Asymptotics for the Linear Problem 15 6.3. Existence of Small Amplitude Solutions for the Nonlinear Problem 17 7. Numerical Illustrations 19 7.1. Symmetry Breaking Bifurcations in Symmetric Dimers 20 8. Conclusion 24 Acknowledgements 25 Data Availability 25 References 26 
+
+1. Introduction 
+
+High-contrast inclusions embedded in a homogeneous medium support subwavelength resonances: localized resonant modes whose wavelength greatly exceeds the size of the inclusions. The canonical example is the Minnaert resonance of an air bubble in water [5, 
+
+> 1
+> arXiv:2606.20821v1 [math.AP] 18 Jun 2026
+
+27], and the phenomenon underlies much of the recent activity in metamaterials [14] and subwavelength physics [4]. A central insight of this theory is that, in the high-contrast limit 
+
+δ → 0, the resonant behaviour of the full continuous scattering problem is governed at leading order by a finite-dimensional object, the capacitance matrix, whose eigenvalues determine the resonant frequencies [3]. Much less is understood once nonlinearity enters. A well-studied example[11, 17, 23] is the class of Kerr nonlinearities, where the refractive index depends on the local field intensity [22], and the time-harmonic problem becomes a nonlinear Helmholtz system whose resonant modes are continuous solitons. A nonlinear analogue of the capacitance reduction was proposed in [10], where existence was established only at first order in δ. This leaves two natural questions open: does the discrete model determine the continuous soliton to all orders, with a quantitative range of validity; and is the reduction faithful, in the sense that every continuous soliton with the natural subwavelength scaling actually arises from the discrete system? In this paper, we answer both questions affirmatively. Recasting the transmission problem as a weak equation on the interior domain via the exterior Dirichlet-to-Neumann operator, following the variational approach of [11, 18, 20], we expand the frequency and field as fractional power series in √δ and solve the resulting cascade recursively. Our first main result,Theorem 3.1, shows that any solution of the discrete nonlinear capacitance system lifts, under a non-degeneracy assumption, to a continuous soliton given by a convergent expansion with explicit recursive coefficients; in particular, it is analytic in √δ. The principal difficulty is controlling the convolution sums produced by the coupling of frequency to field and by the cubic term, which we handle through a combinatorial concentration estimate. Our second main result Theorem 3.2 is the converse: every continuous family obeying the natural bounds reduces, after passing to a subsequence, to a solution of the discrete system. Together, these establish a two-way correspondence, showing that the discrete model captures the nonlinear resonances faithfully. We then extend the perturbative method beyond the subwavelength regime, where the frequency is O(1) at leading order, the nonlinearity no longer acts as a perturbation, and the relevant object is a frequency-dependent capacitance matrix [8]. For isolated eigenvalues, we obtain asymptotic expansions to arbitrary order, together with an existence result for small-amplitude solitons. Finally, the reduction to a finite discrete system makes techniques from the discrete self-trapping and discrete nonlinear Schrödinger literature [16, 29, 30] applicable to subwavelength problems: as an illustration, we exhibit a symmetry-breaking bifurcation in a symmetric dimer, with a criterion expressed through the eigenvalues of the generalised capacitance matrix. This paper is structured as follows. In Section 2, we introduce the problem formulation and some basic results about the Dirichlet-to-Neumann operator and capacitance matrices in the subwavelength regime. In Section 3, we then state our main results. Sections 4 and 5 are then devoted to the proofs of these. In Section 6, we extend the approach to the non-subwavelength regime. Section 7 serves to numerically illustrate these findings. Additionally, we show that the emergence of symmetry breaking bifurcations as an application. In Section 8, we conclude the paper with a brief summary of the findings and a further outlook. 
+
+2. Problem Setting and Preliminaries 
+
+2.1. Problem Formulation 
+
+Let I be a finite or infinite index set and let D = {Di}i∈I be a collection of pairwise disjoint bounded inclusions in R3, each with C1 boundary. When I is infinite, we additionally require the arrangement to be periodic, that is, there exists a lattice Λ ⊂ R3 such that the collection D is invariant under translations by elements of Λ. To each inclusion Di, we assign a wave speed vi > 0 and a contrast parameter δi > 0, and denote by v the wave speed in the 
+
+> 2
+
+exterior domain R3 \ D. We set 
+
+vmin := min  
+
+> i∈I
+
+vi, vmax := max  
+
+> i∈I
+
+vi, δ := max  
+
+> i∈I
+
+|δi|, (2.1) and assume throughout that 0 < v min ≤ vmax < ∞ and δ < ∞.We seek nontrivial pairs (ω, u ) = ( ω(δ), u (δ)) ∈ C × H1loc (R3) that satisfy the nonlinear Helmholtz system 
+
+
+
+∆u + ω2
+
+v2 u = 0 in R3 \ D, 
+
+∆u + ω2
+
+v2
+
+> i
+
+u + σ ω2
+
+v2
+
+> i
+
+|u|2u = 0 in Di, i ∈ I ,u∣∣+ = u∣∣− on ∂D i, i ∈ I ,δi
+
+∂u ∂ν 
+
+∣∣∣∣+
+
+= ∂u ∂ν 
+
+∣∣∣∣−
+
+on ∂D i, i ∈ I ,u is outgoing, (2.2) where σ ∈ R \ { 0} is the nonlinearity parameter, with σ < 0 corresponding to the focusing and σ > 0 to the defocusing case, and the subscripts ± denote the limits taken from outside and inside Di, respectively. We refer to such solutions as continuous solitons with frequency ω2. The system (2.2) arises as the time-harmonic reduction of the nonlinear wave equation [10], with cubic nonlinearity modelling a Kerr-type effect that depends on the local field intensity [22]. The high-contrast limit δ → 0 describes inclusions whose material parameters differ strongly from the surrounding medium, a regime in which subwavelength resonances are known to emerge [10]. Particular attention will be paid to the subwavelength regime , in which δ → 0 and ω = O(δ1/2).
+
+2.2. Dirichlet-to-Neumann Operator and Capacitance Formalism 
+
+We begin by introducing the Dirichlet-to-Neumann (DtN) operator, which reduces the exterior problem to a boundary operator. Using it, we reformulate (2.2) as a weak equation on the interior domain and introduce the capacitance matrix that governs the leading-order subwavelength behaviour. 
+
+Definition 2.1 (Exterior Dirichlet-to-Neumann Operator) . Suppose |I| < ∞ and ω2 is not a Dirichlet scattering resonance of D. The exterior Dirichlet-to-Neumann operator 
+
+T ω : H1/2(∂D ) → H−1/2(∂D ) is defined by 
+
+T ω f = ∂u ∂ν 
+
+∣∣∣∣∂D 
+
+, (2.3) where u is the unique solution to 
+
+
+
+∆u + ω2u = 0 in R3 \ D, u∣∣+ = f on ∂D, u is outgoing. (2.4) The following are well known properties of the DtN map [2, 15, 18] in the finite case. 
+
+Proposition 2.2 . Assume that |I| < ∞. Then, the Dirichlet-to-Neumann operator T ω :
+
+H1/2(∂D ) → H−1/2(∂D ) is a meromorphic operator valued function in ω with poles at the scattering resonances of −∆ in R3 \ D with Dirichlet boundary conditions on ∂D .
+
+In the setting of a crystal of resonators in two dimensions, the following weaker result is known [10, Proposition 2.2](in this reference only the two-dimensional setting was considered, however using Friedrichs’ inequality, see, e.g., [28], the result can easily be generalised). 
+
+> 3
+
+Proposition 2.3 . Assume that |I| = ∞, the resonators form a crystal and that ω20 is not in the spectrum of the exterior Dirichlet Laplacian. Then, the Dirichlet-to-Neumann operator 
+
+T ω : H1/2(∂D ) → H−1/2(∂D ) is analytic in a small neighbourhood of ω20 .
+
+In particular, the above results imply that the DtN operator admits a convergent power series expansion at points ω ∈ R, away from the exterior Dirichlet spectrum. It is known that for certain arrangements, the exterior Dirichlet Laplacian does exhibit spectral gaps [13, 21]. To obtain a formulation on the interior domain alone, we multiply each equation in (2.2) by a test function w ∈ C ∞ 
+
+> c
+
+(R3), integrate by parts over each Di, and use the transmission conditions to replace the exterior normal derivative by δ T ω/v u on ∂D . This yields the weak formulation: Find u ∈ H1(D) such that 
+
+∑
+
+> i∈I
+
+∫
+
+> Di
+
+∇u · ∇ w − ω2
+
+v2
+
+> i
+
+(uw + σ|u|2uw ) dx − δ⟨T ω/v u, w ⟩∂D = 0 (2.5) for all w ∈ H1(D). This formulation was first used in the one-dimensional [20] and then extended to three dimensions in [18]. In these works, the key observation is that (2.5) can be treated as a perturbation of the coercive sesquilinear form 
+
+a(u, w ) := 
+
+∫
+
+> D
+
+∇u · ∇ w dx +
+
+∫
+
+> D
+
+u dx 
+
+∫
+
+> D
+
+w dx, (2.6) whose coercivity follows from the Poincaré–Wirtinger inequality. In particular, the linear theory of the capacitance matrix formalism (see, e.g., [3, 4]) was successfully recovered in the limit δ → 0 using this approach in [6, 18]. We now introduce the capacitance matrix, which captures the leading-order coupling between the inclusions. 
+
+Definition 2.4 (Capacitance Matrix) . For each i ∈ I , let 1Di denote the characteristic function of ∂D i:
+
+1Di (x) = 
+
+{
+
+1, x ∈ ∂D i,
+
+0, otherwise . (2.7) The capacitance matrix C = ( Cij ) is defined by 
+
+Cij = −⟨T 01Di , 1Dj ⟩, (2.8) where T0 = T ′ is the Dirichlet-to-Neumann operator for ω = 0 .There are several equivalent definitions of the capacitance matrix; it was originally derived via Gohberg–Sigal theory [3, 5]. The formulation above, in terms of the static DtN operator 
+
+T0, is the most natural for our purposes. When |I| < ∞, the capacitance matrix has the following properties [3] in three dimensions. 
+
+Lemma 2.5 . The capacitance matrix C is symmetric and positive definite. 
+
+To state the central result of the linear theory, we introduce the mass matrix M =diag (|Di|/v 2
+
+> i
+
+) and the generalised capacitance matrix 
+
+Cgen := M−1C, (2.9) whose eigenvalues λ1 ≤ λ2 ≤ · · · govern the leading-order subwavelength resonances. 
+
+Theorem 2.6 (Fundamental Theorem of Subwavelength Physics) . The linear subwavelength resonance problem ( σ = 0 ) admits |I| resonant frequencies that satisfy 
+
+ωn = √δλ n + O(δ), (2.10) 
+
+where λn is the n-th eigenvalue of Cgen .
+
+> 4
+
+If instead |I| = ∞ and the arrangement is periodic, it is easy to see that the capacitance matrix takes the form of a Laurent operator. Classically, this regime has been studied by first applying the Floquet-Bloch transform to the following linear Helmholtz problem: 
+
+
+
+∆u + ω2
+
+v2 u = 0 in R3 \ D, 
+
+∆u + ω2
+
+v2
+
+> i
+
+u = 0 in Di, i ∈ I ,u∣∣+ = u∣∣− on ∂D i, i ∈ I ,δi
+
+∂u ∂ν 
+
+∣∣∣∣+
+
+= ∂u ∂ν 
+
+∣∣∣∣−
+
+on ∂D i, i ∈ I ,u satisfies an outgoing radiation condition. (2.11) Then, layer potential techniques have been used to derive a quasiperiodic capacitance matrix. Concretely, by taking the Floquet-Bloch transform of the linear problem (see 2.11), one obtains 
+
+∆u + ω2
+
+v2 u = 0 in Y \ D, 
+
+∆u + ω2
+
+v2
+
+> i
+
+u = 0 in Di, i ∈ I ,u∣∣+ = u∣∣− on ∂D i, i ∈ I ,δi
+
+∂u ∂ν 
+
+∣∣∣∣+
+
+= ∂u ∂ν 
+
+∣∣∣∣−
+
+on ∂D i, i ∈ I ,u is α-quasiperiodic. (2.12) For α > 0, one can define the α-quasiperiodic single layer potential using the Floquet-Bloch Transform of the Green function. The remaining analysis leads to the following formulation of the quasiperiodic capacitance matrix: 
+
+Cαij = −
+
+∫
+
+> ∂D j
+
+(SαD )−1[1Di ]dx. (2.13) Proposition 2.3 complements this picture by guaranteeing that the following picture commutes for resonator crystals:    
+
+> Helmholtz system on R3
+> Quasiperiodic Helmholtz system on Y
+> Capacitance matrix on Zd
+> Quasiperiodic capacitance matrix
+> Floquet–Bloch
+> δ → 0
+> δ → 0
+> Laurent symbol
+
+The following result holds [3]. 
+
+Theorem 2.7. Suppose that the fundamental cell Y contains N resonators, and let α > c > 0.The linear α-quasiperiodic subwavelength resonance problem admits N resonant frequencies that satisfy the asymptotic formula 
+
+ωαi = √δλ αi + O(δ3/2), (2.14) 
+
+where λαi is the ith eigenvalue of the α-quasiperiodic capacitance matrix. 
+
+> 5
+
+2.3. A Cascade of Equations 
+
+We seek a formal solution of (2.2) in terms of fractional power series in δ:
+
+u =
+
+> ∞
+
+∑
+
+> n=0
+
+δn/ 2un and ω =
+
+> ∞
+
+∑
+
+> n=1
+
+δn/ 2ωn. (2.15) The frequency-dependent DtN operator may be expanded as 
+
+T ω/v =
+
+> ∞
+
+∑
+
+> n=0
+
+δn/ 2An, where An =
+
+> n
+
+∑
+
+> k=1
+
+1
+
+vk Tk
+
+∑ 
+
+> i1+··· +ik=nk
+
+∏
+
+> j=1
+
+ωij , (2.16) and A0 = T0. Substituting the ansatz (2.15) into the weak formulation (2.5) and collecting terms of order δn/ 2, we obtain the following cascade of equations: 
+
+∫
+
+> D
+
+∇un · ∇ w dx − ∑
+
+> k+l+m=n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx 
+
+− σ ∑
+
+> k+l+m+r+s=n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx 
+
+−
+
+> n−2
+
+∑
+
+> k=0
+
+⟨A kun−k−2, w ⟩∂D = 0 .
+
+(2.17) To solve (2.17) iteratively, we decompose H1(D) = Vd ⊕ V 0, where Vd is the space of functions that are constant on each Di, and V0 is the space of mean-zero fluctuations. For n = 0 and n = 1 , the sums involving ω and the DtN map in (2.17) are empty. We simply obtain: ∫
+
+> D
+
+∇un · ∇ w dx = 0 for all w ∈ H1(D), (2.18) which implies that u0, u 1 ∈ V d. Let u0|Di = ai.Crucially, evaluating the cascade at n = 2 and restricting the test function w to the subspace Vd annihilates the gradient term ( ∇w = 0 ). The equation evaluates precisely to 
+
+−
+
+∫
+
+> D
+
+ω21
+
+v2
+
+> i
+
+(1 + σ|u0|2) u0w dx − ⟨T 0u0, w ⟩∂D = 0 . (2.19) Recognizing that ⟨T 0u0, w ⟩∂D = −w∗Ca and integrating the volume terms exactly recovers the discrete nonlinear capacitance system: 
+
+(C − ω21 M)a − σω 21 N(a) = 0 , (2.20) where M = diag (|Di|/v 2 
+
+> i
+
+) and N(a) contains the localised cubic interactions. For n ≥ 2, the hierarchy is solved recursively. Assume that u0, . . . , u n−1 and ω1, . . . , ω n
+
+are known. To compute un and ωn+1 , we proceed in three steps. Before undertaking this endeavour, we first require some more notation. We define Fn ∈ (H1(D)) ∗ by 
+
+⟨Fn, w ⟩ = ∑
+
+> k+l+m=n
+> 1≤m≤n−31≤k,l ≤n−2
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx + σ ∑
+
+> k+l+m+r+s=n
+> 1≤m,r,s ≤n−31≤k,l ≤n−2
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx 
+
++
+
+> n−2
+
+∑
+
+> k=1
+
+⟨A kun−k−2, w ⟩∂D .
+
+(2.21) Note that Fn depends only on u0, . . . , u n−3 and ω1, . . . , ω n−2. Next, we define the R-linear operator Lu0 : H1(D) → (H1(D)) ∗ by 
+
+⟨L u0 (ϕ), w ⟩ := ∑
+
+> i∈I
+
+∫
+
+> Di
+
+ω21
+
+v2
+
+> i
+
+ϕw + 2 σ ω21
+
+v2
+
+> i
+
+|u0,d |2ϕw + σ ω21
+
+v2
+
+> i
+
+u20,d ϕw dx + ⟨T 0ϕ, w ⟩∂D . (2.22) 
+
+> 6
+
+For u ∈ H1(D), we denote by ud the projection of u into Vd and by u0 = u − ud ∈ V 0. Finally, let B : C → (L2(D)) ∗ be defined by 
+
+⟨B(α), w ⟩ = ∑
+
+> i∈I
+
+∫
+
+> Di
+
+2αω 1
+
+v2
+
+> i
+
+(1 + σ|u0|2)u0w dx. (2.23) We thus rewrite (2.17) in the following much more succinct form: 
+
+⟨∇ un, ∇w⟩ − ⟨L u0 un−2, w ⟩ − ⟨ B(α), w ⟩ = ⟨Fn, w ⟩. (2.24) 
+
+Step 1: un, 0: In a first step, we determine un, 0 ∈ V 0 by testing (2.24) at level n against 
+
+w ∈ V 0. The strict coercivity of the Laplacian on V0 ensures unique invertibility. 
+
+Step 2: ωn+1 To compute ωn+1 , we test equation (2.24) at level n + 2 with iu 0. Because 
+
+iu 0 lies in the kernel of Lu0 , (2.24) reduces to 
+
+⟨B(α), u 0⟩ = ⟨Fn+2 , u 0⟩, (2.25) for which a unique solution exists, provided that ∥u0∥2 + σ∥u0∥44̸ = 0 .
+
+Step 3: un,d In a final step, we compute the resonator-wise constant contribution un,d .Testing at level n + 2 with a test function in Vd, we are tasked with solving 
+
+⟨L u0 un,d , w ⟩ = ⟨Fn+2 − B(ωn+1 ), w ⟩. (2.26) Due to our choice of ωn+1 , we may require that un,d ⊥ u0. Thus, we need to invert the operator Lu0 on the orthogonal complement of u0 in Vd, which we denote by Wu0 . Herein lies our key assumption: 
+
+Assumption 1. The operator Lu0 : Wu0 → W u0 is invertible. 
+
+Remark 2.8 . It is a classical result of the Lyapunov-Schmidt theory [1, 24] that this assumption is satisfied for ω1 in a small neighbourhood of an isolated eigenvalue of the generalised capacitance matrix. It is known that the lowest eigenvalue of the generalised capacitance matrix is always simple [19], so the results of Section 3 are not vacuous. 
+
+3. Main Results 
+
+In this section, we state our main results and contrast them with existing work. Our central contribution is a rigorous two-way correspondence between the discrete nonlinear capacitance system (2.20) and the continuous nonlinear Helmholtz problem (2.2) : every discrete solution lifts to a continuous one (assuming a non-degeneracy condition; see Theorem 3.1), and every continuous solution with the natural scaling reduces to a discrete one (Theorem 3.2). Together, these establish that the discrete model is faithful in the sense that no solution branch is added or missed by the capacitance formulation reduction. The lifting direction extends [10], where the existence of continuous solutions associated with the discrete system was established only at first order in δ. We construct the continuous solution as a convergent fractional power series in √δ to arbitrary order, with explicit recursive coefficients and a quantitative threshold δ0; analyticity in √δ follows immediately. The reduction direction has no counterpart in existing work: previous results assume a priori 
+
+that solutions admit a convergent expansion, whereas we prove that every continuous family with the bounds of (3.2) is asymptotically discrete. A complementary approach in the related high-refractive-index regime is developed in [7], where existence is obtained via Lyapunov-Schmidt reduction. While this approach can also be shown to work in the present setting, the benefit of the more involved series approach is that it also yields an algorithm to compute higher order corrections. 
+
+Theorem 3.1 (Discrete-to-continuous lifting) . Let (a, ω 1) ∈ RN × R, with ω1̸ = 0 , be a solution of the discrete nonlinear capacitance system (2.20) , and suppose that Assumption 1 
+
+> 7
+
+holds. Then, there exists δ0 > 0 such that, for every δ < δ 0, problem (2.2) admits a nontrivial solution (u, ω ) ∈ H1(D) × C given by the convergent expansions 
+
+u =
+
+> ∞
+
+∑
+
+> n=0
+
+δn/ 2un, ω =
+
+> ∞
+
+∑
+
+> n=1
+
+δn/ 2ωn, (3.1) 
+
+where u0 |Di = ai. In particular, the pair (u, ω ) is analytic in √δ.
+
+Theorem 3.2 (Continuous-to-discrete reduction) . Let {(ωδ , u δ )}δ> 0 ⊂ C × H1(D) be a family of nontrivial solutions to (2.2) satisfying the uniform bounds 
+
+ωδ ∼ δ1/2, ∥uδ ∥L2(D) + ∥uδ ∥L4(D) = O(1) , (3.2) 
+
+as δ → 0. Write ωδ = δ1/2ωδ 
+
+> 1
+
++ o(δ1/2) and let uδ 
+
+> 0
+
+:= Π d uδ ∈ V d denote the projection onto the space of resonator-wise constant functions. Then, after passing to a subsequence, if necessary, there exist ω1 ∈ C\ and a =(a1, . . . , a N )⊤ ∈ CN \ such that 
+
+ωδ 
+
+> 1
+
+→ ω1, uδ
+
+> 0
+
+|Di → ai, (3.3) 
+
+as δ → 0, and the limit (a, ω 1) solves the discrete nonlinear capacitance system (2.20) .Moreover, if ω21 /∈ σ(M−1C), the limit a is nonzero. 
+
+4. Proof of Theorem 3.1 
+
+In this section, we show that the iteratively defined sequence of Subsection 2.3 converges for δ sufficiently small, which finalises the proof of Theorem 3.1. The main obstacle is controlling the convolution sums that arise at each step of the iteration due to the coupling of frequency to the solutions and the nonlinearity. Our proof strategy is inspired by [31]; however, a key difference lies in the treatment of certain combinatorial sums. As the decay exponent p in the bound of Theorem 4.1 increases, the weight of such sums concentrates at the corners of the simplex {(i1, . . . , i l) : ij ≥
+
+1, ∑ ij = k}, where a single index carries most of the total. Exploiting this concentration yields constants that are bounded independently of k, allowing us to close the induction with an explicit threshold on δ.
+
+Lemma 4.1 . Assume that there exist μ, ν, α > 0 such that for some positive integer p the following estimates hold for k = 0 , . . . , n :
+
+|ωk| ≤ μ exp( α(k − 1)) 
+
+kp , ∥uk∥L2 ≤ ν exp( αk )(k + 1) p , ∥∇ uk∥L2 ≤ ν exp( αk )(k + 1) p . (4.1) 
+
+Then, there exists Cp > 0, independent of n, such that 
+
+∥∥∥∑ 
+
+> k+l+m=n+2 ,m̸=n, k,l ̸=n+1
+
+ωkωl
+
+v2
+
+> i
+
+um
+
+∥∥∥H1 ≤ Cp v−2min μ2ν exp( αn )(n + 1) p . (4.2) 
+
+Moreover, Cp → 0 as p → ∞ .Proof. Applying our assumptions, we find that 
+
+∥∥∥ ∑ 
+
+> k+l+m=n+2 ,m̸=n, k,l ̸=n+1
+
+ωkωl
+
+v2
+
+> i
+
+um
+
+∥∥∥H1
+
+≤ v−2min μ2ν exp( αn ) ∑
+
+> k+l+m=n+2 ,
+> 0≤m≤n−1,
+> 1≤k,l ≤n
+
+k−pl−p(m + 1) −p
+
+= v−2min μ2ν exp( αn ) ∑
+
+> k+l+m=n+3 ,
+> 1≤m≤n,
+> 1≤k,l ≤n
+
+k−pl−pm−p.
+
+(4.3) 
+
+> 8
+
+We are therefore interested in bounding 
+
+S(1)  
+
+> n
+
+:= ∑
+
+> k+l+m=n+3 ,
+> 1≤m≤n,
+> 1≤k,l ≤n
+
+k−pl−pm−p.
+
+(4.4) Due to symmetry of the indices, we may assume that k ≤ l ≤ m and multiply the sum by three to obtain 
+
+S(1)  
+
+> n
+
+≤ 3 ∑
+
+> k+l+m=n+3 ,
+> 1≤m≤l≤k≤n
+
+k−pl−pm−p
+
+≤ 3 
+
+> 2n
+> 3+2
+
+∑
+
+> m=3
+
+(n + 3 − m)−pm−1∑
+
+> k=1
+
+k−p(m − k)−p.
+
+(4.5) We begin by bounding the inner sum. To this end, we note that k−p(m − k)−p is maximised at (m − 1) −p. This yields 
+
+S(1)  
+
+> n
+
+≤ 3 
+
+> 2n
+> 3+2
+
+∑
+
+> m=3
+
+(m − 1) −p+1 (n + 3 − m)−p
+
+≤ 3( n + 1) −p 
+
+> 2n
+> 3+2
+
+∑
+
+> m=3
+
+(m − 1) 
+
+( n + 1 (m − 1)( n + 3 − m)
+
+)p
+
+.
+
+(4.6) The fraction admits two different upper bounds. On the one hand, similar to the previous argument, 
+
+n + 1 (m − 1)( n + 3 − m) ≤ n + 1 2n , (4.7) and on the other hand, using that m ≤ 2n 
+
+> 3
+
++ 2 ,
+
+n + 1 (m − 1)( n + 3 − m) ≤ 3(m − 1) . (4.8) Hence, for any 1 < q < p ,
+
+S(1)  
+
+> n
+
+≤ 3( n + 1) −p 
+
+> 2n
+> 3+1
+
+∑
+
+> m=3
+
+(m − 1) 
+
+( n + 1 2n
+
+)p−q ( 3
+
+m − 1
+
+)q
+
+≤ 3( n + 1) −p
+
+( n + 1 2n
+
+)p−q ∞∑
+
+> m=2
+
+m
+
+( 3
+
+m
+
+)q
+
+.
+
+(4.9) For q > 2, the sum converges and hence 
+
+S(1)  
+
+> n
+
+≤
+
+( n + 1 2n
+
+)p−q 9 · 3q (ζ(q − 1) − 1) (n + 1) p , (4.10) where ζ(·) denotes the Riemann zeta function. The claim follows. ■
+
+Lemma 4.2 . Under the same assumptions as in Lemma 4.1, there exists some C′ 
+
+> p
+
+> 0, again independent of n, such that 
+
+∥∥∥ ∑ 
+
+> k+l+m+r+s=n+2 ,m,r,s ̸=n, k,l ̸=n+1
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx 
+
+∥∥∥L2
+
+≤ C′ 
+
+> p
+
+v−2min μ2ν3 exp( α(n − 2)) (n + 1) p . (4.11) 
+
+Moreover, C′ 
+
+> p
+
+→ 0, as p tends to infinity. 
+
+> 9
+
+Proof. Applying our assumptions together with the Sobolev-Embedding Theorem, we find that ∥∥∥∑
+
+> k+l+m+r+s=n+2 ,
+> 0≤m,r,s ≤n−1,
+> 1≤k,l ≤n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx 
+
+∥∥∥L2
+
+≤ C3 
+
+> S
+
+v−2min μ2ν3 ∑
+
+> k+l+m+r+s=n+2 ,
+> 0≤m,r,s ≤n−1,
+> 1≤k,l ≤n
+
+k−pl−p(m + 1) −p(r + 1) −p(s + 1) −p
+
+= C3 
+
+> S
+
+v−2min μ2ν3 ∑
+
+> k+l+m+r+s=n+5 ,
+> 1≤m,r,s ≤n,
+> 1≤k,l ≤n
+
+k−pl−pm−pr−ps−p.
+
+(4.12) As before, we seek an upper bound for 
+
+S(2)  
+
+> n
+
+:= ∑
+
+> k+l+m+r+s=n+5 ,
+> 1≤m,r,s ≤n,
+> 1≤k,l ≤n
+
+k−pl−pm−pr−ps−p. (4.13) We may again assume that the indices are ordered according to size, with the largest index having at least size n 
+
+> 5
+
++ 1 ,
+
+S(2)  
+
+> n
+
+≤ 5 
+
+> 45n+5
+
+∑
+
+> k=5
+
+∑
+
+> l+m+r+s=k,
+> 1≤l,m,r,s ≤k
+
+(n + 5 − k)−pl−pm−pr−ps−p
+
+≤ 5( n + 1) −p 
+
+> 45n+4
+
+∑
+
+> k=5
+
+(k − 13
+
+) ( n + 1 (n + 5 − k)( k − 3) 
+
+)p
+
+.
+
+(4.14) Proceeding as in the proof of Lemma 4.1, we have two distinct upper bounds for the fraction 
+
+n + 1 (n + 5 − k)( k − 3) ≤ n + 1 2n (4.15) and using the fact that n + 5 − k ≥ 15 n + 1 for k ≤ 45 n + 4 , we have 
+
+n + 1 (n + 5 − k)( k − 3) ≤ 5
+
+k − 3 . (4.16) Thus, 
+
+S(2)  
+
+> n
+
+≤ 5( n + 1) −p 
+
+> 45n+4
+
+∑
+
+> k=5
+
+(k − 13
+
+) ( n + 1 2n
+
+)p−q ( 5
+
+k − 3
+
+)q
+
+≤ 5( n + 1) −p
+
+> ∞
+
+∑
+
+> k=5
+
+(k − 13
+
+) ( n + 1 2n
+
+)p−q ( 5
+
+k − 3
+
+)q
+
+.
+
+(4.17) Choosing q > 4, the sum converges, and the claim follows. ■
+
+Before we can proceed with bounding the term related to the DtN operator, we first require two technical Lemmas. 
+
+Lemma 4.3 . It holds that 
+
+∥Tl∥ ≤ CR l. (4.18) 
+
+Lemma 4.4 . Let k, l ∈ N be such that k ≥ l and p > 0. Define 
+
+I(p, k, l ) = ∑
+
+> i1+··· +il=k
+> 1≤ij
+
+∏ i−pj . (4.19) 
+
+10 Then, there exists Cp such that 
+
+I(p, k, l ) ≤ Cl−1
+
+> p
+
+kp . (4.20) 
+
+In particular, one can choose 
+
+Cp = 2 p+2 . (4.21) 
+
+For l = 2 , the claim also holds with 
+
+Cp(k) = 2 
+
+( kk − 1
+
+)p
+
++ 2 p+1 (ζ(p) − 1) + 
+
+( 4
+
+k
+
+)p
+
+. (4.22) 
+
+Lemma 4.5 . Under the same assumptions as in Lemmas 4.1 and 4.2, there exists some 
+
+Cα,p > 0, again independent of n, such that for α large enough, 
+
+∣∣∣∑
+
+> k+l=n−2
+
+⟨A kul, v ⟩
+
+∣∣∣ ≤ Cα,p ν exp( α(n − 2)) (n − 1) p ∥v∥H1 . (4.23) 
+
+Moreover, Cα,p → 0 as α tends to infinity for any fixed p.Proof. Using Lemmas 4.3 and 4.4, we have 
+
+∥A k∥ ≤ 
+
+> k
+
+∑
+
+> l=1
+
+v−l∥Tl∥ ∑
+
+> i1+··· +il=k
+
+∏
+
+> j
+
+|ωij |≤ CT exp( αk ) k−pk∑
+
+> l=1
+
+v−lRlμl exp( −αl ) 2 (l−1)( p+2) .
+
+(4.24) For α large enough, the above geometric sum converges, and upon making α even larger, tends to 0. Hence, we have 
+
+∥A k∥ ≤ Cα,p exp( αk ) k−p. (4.25) We therefore obtain 
+
+∣∣∣∑
+
+> k+l=n−2
+
+⟨A kul, v ⟩
+
+∣∣∣ ≤ ∑
+
+> k+l=n−2
+
+∥A k∥ ∥ ul∥H1 ∥v∥H1
+
+≤ Cα,p ν exp( α(n − 2)) ∥v∥H1
+
+∑
+
+> k+l=n−2
+
+k−p(l + 1) −p
+
+≤ Cα,p ν exp( α(n − 2)) ∥v∥H1 2p+2 (n − 1) −p.
+
+(4.26) 
+
+■
+
+Lemma 4.6 . Assume that the estimates of Lemmas 4.1, 4.2 and 4.5 are satisfied up to some 
+
+n. Then it holds that 
+
+∥∇ un, 0∥L2 ≤ ˜Cα,p 
+
+ν exp( αn )(n + 1) p , (4.27) 
+
+where 
+
+lim  
+
+> α→∞
+
+lim 
+
+> p→∞
+
+˜Cα,p = 0 . (4.28) 
+
+Proof. Recall that un, 0 is uniquely determined by equation (2.24) . In particular, because 
+
+V0 ⊆ ker B, we are tasked with solving 
+
+⟨∇ un, 0, ∇w⟩ = ⟨L u0 un−2, w ⟩ + ⟨Fn, w ⟩, (4.29) for all w ∈ V 0. Since the Laplacian is invertible on V0, a unique solution exists. Using Lemmas 4.1, 4.2 and 4.5, we obtain 
+
+∥∇ un, 0∥L2 ≤ C∆
+
+(∥Fn∥(H1(D)) ∗ + CLu0 ∥un−2∥H1
+
+)
+
+≤ ν exp( αn )(n + 1) p C∆
+
+(
+
+Cp v−2min μ2 + σC p v−2min μ2ν2 + Cα,p 
+
++ CLu0
+
+( n + 1 
+
+n − 1
+
+)p
+
+exp( −2α)
+
+)
+
+,
+
+(4.30) 
+
+> 11
+
+where Cp → 0 as p → ∞ and Cα,p → 0 as α → ∞ . Upon taking p and α large enough, the claim follows. ■
+
+Lemma 4.7 . Assume that the estimates of Lemmas 4.1, 4.2 and 4.5 are satisfied up to some 
+
+n. Then, it holds that 
+
+|ωn+1 | ≤ ˜Cα,p 
+
+μ exp( αn )(n + 1) p , (4.31) 
+
+where 
+
+lim  
+
+> α→∞
+
+lim 
+
+> p→∞
+
+˜Cα,p = 0 . (4.32) 
+
+Proof. Recall that ωn+1 is determined by the equation 
+
+⟨B(α), iu 0⟩ = ⟨Fn+2 iu 0⟩ , (4.33) where Fn+2 is given by equation (2.21). From Lemmas 4.1, 4.2, and 4.5, we infer that 
+
+|⟨ Fn+2 , u 0⟩| ≤ exp( αn )(n + 1) p
+
+(Cp v−2min μ2ν + σC p v−2min μ2ν3 + Cα,p ν)∥u0∥H1 , (4.34) where Cp → 0 as p → ∞ and Cα,p → 0 as α → ∞ . That is, 
+
+|ωn+1 | ≤ μ exp( αn )(n + 1) p ·
+
+(Cp v−2min μν + σC p v−2min μν 3 + Cα,p μ−1ν)∥u0∥H1
+
+2ω1v−2max 
+
+(∥u0∥2 + σ∥u0∥44
+
+) . (4.35) Choosing α and p large enough yields the claim. ■
+
+Lemma 4.8 . Assume that the estimates of Lemmas 4.1, 4.2, 4.5, 4.6 and 4.7 are satisfied up to some n. Then, it holds that 
+
+∥un,d ∥H1 ≤ ˜Cα,p 
+
+ν exp( αn )(n + 1) p , (4.36) 
+
+where 
+
+lim  
+
+> α→∞
+
+lim 
+
+> p→∞
+
+˜Cα,p = 0 . (4.37) 
+
+Proof. Recall that by Assumption 1, the operator Lu0 is invertible on Wu0 . Hence, there exists a unique solution un,d ∈ W u0 to 
+
+−⟨L u0 un,d , w ⟩ = ⟨Fn+2 , w ⟩ + ⟨B(ωn+1 ), w ⟩ + ⟨L u0 un, 0, w ⟩. (4.38) The upper bound now follows from an argument analogous to that in Lemma 4.7. ■
+
+5. Proof of Theorem 3.2 
+
+Let {(ωδ , u δ )}δ> 0 ⊂ C×H1(D) be a family of solutions as in the statement of Theorem 3.2. By hypothesis, there exist Cω , M > 0 such that |ωδ | ≤ Cω δ1/2 and 
+
+∥uδ ∥L2(D) + ∥uδ ∥L4(D) ≤ M. (5.1) 
+
+Lemma 5.1 . Under the above assumptions, for all δ sufficiently small, 
+
+∥∇ uδ ∥2 
+
+> L2(D)
+
+≤ C2
+
+> ω
+
+v2min 
+
+(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)δ. (5.2) 
+
+Proof. Testing the weak formulation (2.5) with w = uδ yields 
+
+∥∇ uδ ∥2 
+
+> L2
+
+= ∑
+
+> i∈I
+
+|ωδ |2
+
+v2
+
+> i
+
+∫
+
+> Di
+
+(|uδ |2 + σ|uδ |4)dx + δ Re ⟨T ωδ /v uδ , u δ ⟩∂D . (5.3) Since T0 is negative semi-definite and T ωδ /v → T 0 in operator norm as δ → 0, the quadratic form Re ⟨T ωδ /v ·, ·⟩ ∂D remains negative semi-definite for δ sufficiently small. Dropping this nonpositive term and applying |ωδ |2 ≤ C2 
+
+> ω
+
+δ and vi ≥ vmin ,
+
+∥∇ uδ ∥2 
+
+> L2
+
+≤ C2 
+
+> ω
+
+δv2min 
+
+(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+). (5.4) 
+
+■
+
+> 12
+
+Lemma 5.2 . Let uδ 
+
+> 0
+
+:= Π duδ ∈ V d and ωδ 
+
+> 1
+
+:= δ−1/2ωδ be as in Theorem 3.2. Then, 
+
+aδ := ( uδ
+
+> 0
+
+|Di )i∈I satisfies 
+
+∥∥(C − (ωδ 
+
+> 1
+
+)2M)aδ − σ(ωδ 
+
+> 1
+
+)2N(aδ )∥∥ℓ2 ≤ C(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ1/2, (5.5) 
+
+for some C > 0 independent of δ.Proof. It suffices to show that 
+
+∣∣〈(C − (ωδ 
+
+> 1
+
+)2M)aδ + σ(ωδ 
+
+> 1
+
+)2N(aδ ), w〉∣ ∣ ≤ C(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ1/2 (5.6) for all w ∈ ℓ2(I) with ∥w∥ℓ2 = 1 . We identify w with the element w ∈ V d defined by 
+
+w|Di = wi, and write ˜uδ := uδ − uδ
+
+> 0
+
+. By the Poincaré–Wirtinger inequality on each Di and Lemma 5.1, 
+
+∥˜uδ ∥L2(D) ≤ CP ∥∇ uδ ∥L2(D) ≤ CP Cω
+
+vmin 
+
+(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ1/2. (5.7) Testing the weak formulation (2.5) against w and using ∇w = 0 gives 
+
+∑
+
+> i∈I
+
+|ωδ |2
+
+v2
+
+> i
+
+∫
+
+> Di
+
+(uδ + σ|uδ |2uδ )wi dx + δ⟨T ωδ /v uδ , w ⟩∂D = 0 . (5.8) We analyse each term, replacing uδ by uδ 
+
+> 0
+
+and T ωδ /v by T0. Throughout, C denotes a constant independent of δ that may change from line to line. For the linear volume term, since ˜uδ has zero mean on each Di and wi is constant on Di,
+
+∑
+
+> i∈I
+
+|ωδ |2
+
+v2
+
+> i
+
+∫
+
+> Di
+
+uδ wi dx = δ(ωδ 
+
+> 1
+
+)2⟨Ma δ , w⟩. (5.9) For the cubic volume term, the estimate ∣∣|a|2a − | b|2b∣∣ ≤ 3( |a|2 + |b|2)|a − b| and Hölder’s inequality give ∣∣∣∣∑
+
+> i∈I
+
+|ωδ |2
+
+v2
+
+> i
+
+∫
+
+> Di
+
+(|uδ |2uδ − | uδ
+
+> 0
+
+|2uδ
+
+> 0
+
+)wi dx 
+
+∣∣∣∣
+
+≤ C2 
+
+> ω
+
+δv2min 
+
+(∥uδ ∥2 
+
+> L4
+
++ ∥uδ
+
+> 0
+
+∥2
+
+> L4
+
+)∥˜uδ ∥L4 ∥w∥L4
+
+≤ C∥uδ ∥2
+
+> L4
+
+(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ3/2,
+
+(5.10) where we used ∥uδ
+
+> 0
+
+∥L4 ≤ ∥ uδ ∥L4 , ∥˜uδ ∥L4 ≤ κS ∥˜uδ ∥H1 , and (5.7) . The leading-order contri-bution is δσ (ωδ 
+
+> 1
+
+)2⟨N(aδ ), w⟩.For the boundary term, we write 
+
+δ⟨T ωδ /v uδ , w ⟩∂D = δ⟨T 0uδ
+
+> 0
+
+, w ⟩∂D + δ⟨T 0 ˜uδ , w ⟩∂D + δ⟨(T ωδ /v − T 0)uδ , w ⟩∂D . (5.11) The first term equals −δ⟨C aδ , w⟩. The second is bounded by 
+
+δ∥T 0∥∥ ˜uδ ∥H1 ∥w∥H1 ≤ C(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ3/2, (5.12) and the third by 
+
+δ∥T ωδ /v − T 0∥∥ uδ ∥H1 ∥w∥H1 ≤ C(∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4
+
+> L4
+
+)1/2δ2. (5.13) Substituting into (5.8) and collecting the leading-order terms, 
+
+δ〈−C aδ + ( ωδ 
+
+> 1
+
+)2Ma δ + σ(ωδ 
+
+> 1
+
+)2N(aδ ), w〉 = O((∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4 
+
+> L4
+
+)1/2δ3/2). (5.14) Dividing by δ yields (5.6). ■
+
+The final step is to pass to a nontrivial limit (ω1, a). The argument is inspired by [30]. Suppose ω21 /∈ σ(M−1C). Since M−1C is self-adjoint with respect to the M-weighted inner product, the spectral theorem gives 
+
+∥(C − (ωδ 
+
+> 1
+
+)2M)v∥ℓ2 ≥ c dist ((ωδ 
+
+> 1
+
+)2, σ (M−1C))∥v∥ℓ2 , (5.15) 
+
+> 13
+
+where c > 0 depends only on M. Combining this with Lemma 5.2 and the triangle inequality, we obtain 
+
+c dist ((ωδ 
+
+> 1
+
+)2, σ (M−1C))∥aδ ∥ℓ2 ≤ ∥ (C− (ωδ 
+
+> 1
+
+)2M)aδ ∥ℓ2 ≤ C(∥uδ ∥2 
+
+> L2
+
++∥uδ ∥4
+
+> L4
+
+)1/2δ1/2+|ωδ 
+
+> 1
+
+|2∥N(aδ )∥ℓ2 .
+
+(5.16) Since N(a)i = |Di|v−2 
+
+> i
+
+|ai|2ai, we have ∥N(aδ )∥ℓ2 ≤ C∥aδ ∥2 
+
+> ℓ∞
+
+∥aδ ∥ℓ2 . To control the first term on the right-hand side of (5.16) in terms of the discrete unknowns, we require the following norm equivalence. 
+
+Lemma 5.3 . Let aδ be defined as in Lemma 5.2 and assume the hypotheses of Theorem 3.2 hold. Then there exists C > 0, independent of δ, such that for δ sufficiently small, 
+
+∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4 
+
+> L4
+
+≤ C(∥aδ ∥2 
+
+> ℓ2
+
++ ∥aδ ∥8
+
+> ℓ2
+
+). (5.17) 
+
+Proof. Write uδ = uδ 
+
+> 0
+
++ ˜uδ . Since ˜uδ has zero mean on each Di, the Poincaré–Wirtinger inequality gives 
+
+∥uδ ∥2 
+
+> L2
+
+= ∥uδ
+
+> 0
+
+∥2 
+
+> L2
+
++ ∥˜uδ ∥2 
+
+> L2
+
+≤ ∥ uδ
+
+> 0
+
+∥2 
+
+> L2
+
++ C2 
+
+> P
+
+∥∇ uδ ∥2 
+
+> L2
+
+. (5.18) For the L4 term, the inequality (a+b)4 ≤ 8( a4 +b4) and the Sobolev and Poincaré inequalities yield 
+
+∥uδ ∥4 
+
+> L4
+
+≤ 8(∥uδ
+
+> 0
+
+∥4 
+
+> L4
+
++ ∥˜uδ ∥4
+
+> L4
+
+) ≤ 8(∥uδ
+
+> 0
+
+∥4 
+
+> L4
+
++ κ4 
+
+> S
+
+C4 
+
+> P
+
+∥∇ uδ ∥4
+
+> L2
+
+). (5.19) Substituting (5.18) and (5.19) into Lemma 5.1, 
+
+∥∇ uδ ∥2 
+
+> L2
+
+≤ Cδ (∥uδ
+
+> 0
+
+∥2 
+
+> L2
+
++ ∥∇ uδ ∥2 
+
+> L2
+
++ ∥uδ
+
+> 0
+
+∥4 
+
+> L4
+
++ ∥∇ uδ ∥4
+
+> L2
+
+). (5.20) By Lemma 5.1 and the hypotheses of Theorem 3.2, ∥∇ uδ ∥L2 is uniformly bounded in δ.Hence, for δ sufficiently small, 
+
+Cδ (∥∇ uδ ∥2 
+
+> L2
+
++ ∥∇ uδ ∥4
+
+> L2
+
+) ≤ 12 ∥∇ uδ ∥2 
+
+> L2
+
+, (5.21) and absorbing into the left-hand side gives 
+
+∥∇ uδ ∥2 
+
+> L2
+
+≤ Cδ (∥uδ
+
+> 0
+
+∥2 
+
+> L2
+
++ ∥uδ
+
+> 0
+
+∥4
+
+> L4
+
+). (5.22) Substituting (5.22) back into (5.18) and (5.19) , and using ∥uδ
+
+> 0
+
+∥L2 ≤ C∥aδ ∥ℓ2 and ∥uδ
+
+> 0
+
+∥L4 ≤
+
+C∥aδ ∥ℓ4 ≤ C∥aδ ∥ℓ2 , we obtain 
+
+∥uδ ∥2 
+
+> L2
+
++ ∥uδ ∥4 
+
+> L4
+
+≤ C(∥aδ ∥2 
+
+> ℓ2
+
++ ∥aδ ∥8
+
+> ℓ2
+
+). (5.23) 
+
+■
+
+Substituting the upper bound of Lemma 5.3 into Lemma 5.2 and applying the spectral lower bound for C − (ωδ 
+
+> 1
+
+)2M, we obtain 
+
+dist ((ωδ 
+
+> 1
+
+)2, σ (M−1C))∥aδ ∥ℓ2 ≤ C(∥aδ ∥2 
+
+> ℓ2
+
++ ∥aδ ∥8
+
+> ℓ2
+
+)1/2δ1/2 + C∥aδ ∥2 
+
+> ℓ∞
+
+∥aδ ∥ℓ2 , (5.24) where ωδ 
+
+> 1
+
+:= δ−1/2ωδ .Suppose ∥aδ ∥ℓ2 → 0 as δ → 0. We may divide by ∥aδ ∥ℓ2 on both sides to find that 
+
+dist(( ωδ 
+
+> 1
+
+)2, σ (M−1C)) → 0. Thus, ω21 := lim( ωδ 
+
+> 1
+
+)2 ∈ σ(M−1C).On the other hand, if ω21 /∈ σ(M−1C), there exists c > 0 such that ∥aδ ∥ℓ2 ≥ c for all δ
+
+sufficiently small. In particular, ∥aδ ∥ℓ∞ is also bounded from below. Theorem 3.2 now follows by distinguishing two cases. If |I| < ∞, then aδ is a bounded sequence in C|I| and ωδ 
+
+> 1
+
+is a bounded sequence in C.Upon passing to a subsequence, both converge: ωδ 
+
+> 1
+
+→ ω1 and aδi → ai for each i ∈ I . By continuity of the discrete nonlinear map, the limit (a, ω 1) solves (2.20) , and it is nontrivial since ∥a∥ℓ2 ≥ c > 0.If |I| = ∞, we assume that the system is periodic. By translation invariance, we may shift each aδ so that ∥aδ ∥ℓ∞ is attained within the first unit cell. The shifted sequence is once again bounded, and we may pass to a pointwise limit. Because ∥aδ ∥ℓ∞ is attained in the first unit cell and is lower bounded, the resulting limit must be nonzero. 
+
+> 14
+
+6. Beyond the Subwavelength Regime 
+
+In this section, we study the applicability of the perturbative approach beyond the subwavelength regime. As we shall soon see, the nonlinearity in the non-subwavelength regime is qualitatively different from the subwavelength regime, which is why in this case we will have to contend ourselves with a weaker result. An upshot, however, of the analysis in this section is that the perturbative approach remains applicable for isolated eigenvalues of the capacitance matrix in the subwavelength and non-subwavelength regimes, hence giving asymptotic expansions to arbitrary order. 
+
+6.1. The Frequency Dependent Capacitance Matrix 
+
+This section serves to briefly summarise the result of [9]. In what follows, we will restrict ourselves to the setting where |I| < ∞.We now denote by σ(−∆N , D i) the spectrum of the Neumann Laplacian on Di and further define 
+
+σ(−∆N , D ) := ⋃
+
+> i∈I
+
+v2 
+
+> i
+
+σ(−∆N , D i). (6.1) Since each Di is compact, we find that σN (−∆N , D ) is a countable sequence tending to infinity. Suppose now that ω20 ∈ σ(−∆N , D ). Define 
+
+J (ω0) = {i ∈ I : w20 ∈ v2 
+
+> i
+
+σ(−∆N , D i)}. (6.2) Let mj (ω0) denote the multiplicity of ω20
+
+v2
+
+> j
+
+in σ(−∆N , D j ). We now choose an orthonormal basis {uj,l }mj 
+
+> l=1
+
+∈ H1(Di). Furthermore, note that these eigenfunctions embed naturally in 
+
+H1(D) by extension by zero on the other inclusions. We are now able to define the frequency dependent capacitance matrix. 
+
+Definition 6.1 (Frequency Dependent Capacitance Matrix) . Let m(ω0) = ∑ 
+
+> i∈I
+
+mi(ω0).Then, the capacitance matrix C(ω0) is the m × m matrix defined by 
+
+C(ω0)(i,k )( j,l ) = −
+
+∫
+
+> Di
+
+T ω0/v [uj,l ]ui,k dx. (6.3) The generalised frequency dependent capacitance matrix is further defined by 
+
+Cgen (ω0) = M−1C(ω0), (6.4) where M is the diagonal matrix with M(i,k )( i,k ) = 2ω0
+
+v2
+
+> i
+
+.To give just one example that the frequency dependent capacitance matrix behaves very differently from the standard capacitance matrix, compare the following Lemma [9, Proposition 3.16] with Lemma 2.5. 
+
+Lemma 6.2 . C(ω0) is complex symmetric. 
+
+Theorem 6.3. The resonant frequencies of 2.11 satisfy 
+
+ω(δ) = ω0 + δω 1 + O(δ2), (6.5) 
+
+where ω20 ∈ σ(−∆N , D ) and ω1 is an eigenvalue of the generalised frequency dependent capacitance matrix. 
+
+6.2. Asymptotics for the Linear Problem 
+
+We now use the perturbative approach to compute the asymptotic expansion of a resonant pair (ω(δ), u (ω)) related to a simple eigenvalue of the generalised frequency dependent capacitance matrix. Note that the analysis in this subsection applies mutatis mutandis to the subwavelength regime, for which such an analysis has already been carried out in [19]. While in the subwavelength regime, both approaches yield essentially the same results, the perturbative one carries the advantage that it gives a systematic way of computing higher 
+
+> 15
+
+order corrections. The benefit of this becomes apparent in Section 7, where we examine the predicted convergence rates numerically. We begin by recalling the linear Helmholtz problem (2.11) . As in Subsection 2.3, (2.11) can also be formulated variationally 
+
+∑
+
+> i∈I
+
+∫
+
+> Di
+
+∇u · ∇ w − ω2
+
+v2
+
+> i
+
+uw dx − δ⟨T ω/v u, w ⟩∂D = 0 . (6.6) Theorem 6.3 now suggests the ansatz 
+
+u =
+
+> ∞
+
+∑
+
+> n=0
+
+δnun and ω =
+
+> ∞
+
+∑
+
+> n=0
+
+δnωn. (6.7) 
+
+Remark 6.4 . The key difference from the subwavelength regime is that the expansion is now in δ as opposed to δ1/2. Moreover, ω0 is no longer assumed to be zero. Plugging this ansatz into equation (6.6) and expanding around some ω0 ∈ C yields 
+
+∫
+
+> D
+
+∇un · ∇ w dx − ∑
+
+> k+l+m=n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx −
+
+> n−1
+
+∑
+
+> k=0
+
+⟨A ω0 
+
+> k
+
+un−k−1, w ⟩∂D = 0 , (6.8) where the operators Aω0 
+
+> n
+
+result from expanding the DtN operator: 
+
+T ω/v =
+
+> ∞
+
+∑
+
+> n=0
+
+δnAω0 
+
+> n
+
+, where Aω0 
+
+> n
+
+=
+
+> n
+
+∑
+
+> k=1
+
+1
+
+vk T ω0
+
+> k
+
+∑ 
+
+> i1+··· +ik=nk
+
+∏
+
+> j=1
+
+ωij . (6.9) The equations at the first two orders are 
+
+∫
+
+> D
+
+∇u0 · ∇ w − ω20
+
+v2
+
+> i
+
+u0w dx = 0 , (6.10) 
+
+∫
+
+> D
+
+∇u1 · ∇ w − ω20
+
+v2
+
+> i
+
+u1w − 2ω0ω1
+
+v2
+
+> i
+
+u0w dx − ⟨T ω0/v u0, v ⟩ = 0 . (6.11) Consequently, ω0 must be associated with a Neumann eigenvalue and u0 must be a Neumann eigenfunction of the Laplacian in D. Testing the equation at first order with another Neumann eigenfunction yields 
+
+−
+
+∫
+
+> D
+
+2ω0ω1
+
+v2
+
+> i
+
+u0w dx − ⟨T ω0/v u0, w ⟩ = 0 . (6.12) We thus find that (ω1, u 0) must be an eigenvalue-eigenvector pair for the generalised frequency dependent capacitance matrix. Now, let 
+
+⟨Fn, w ⟩ = − ∑
+
+> k+l+m=nk,l<n m<n −1
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx −
+
+> n−1
+
+∑
+
+> k=1
+
+⟨A kun−k−1, w ⟩∂D . (6.13) Observe that Fn depends only on u0, . . . , u n−2 and ω0, . . . , ω n−1. This allows us to rewrite (6.8) 
+
+∫
+
+> D
+
+∇un · ∇ w dx − ω20
+
+v2
+
+> i
+
+unw − 2ω0ω1
+
+v2
+
+> i
+
+un−1w − 2ω0ωn
+
+v2
+
+> i
+
+u0w dx − ⟨T ω0/v un−1, w ⟩∂D = ⟨Fn, w ⟩.
+
+(6.14) Next, we proceed as in Subsection 2.3 and decompose H1(D) = Vd ⊕ V 0, where we now let Vd be the space spanned by the Neumann eigenfunctions associated with ω0 and V0 its orthogonal complement. Assume that u0, . . . , u n−1 and ω0, . . . , ω n are known and that the following holds. 
+
+Assumption 2. ω1 is a simple eigenvalue of C(ω0)gen .
+
+> 16
+
+We then proceed as follows: 
+
+Step 1: un, 0: In a first step, we determine un, 0 ∈ V 0 by testing (6.14) against w ∈ V 0 at level n. The strict coercivity of the Laplacian on V0 ensures unique invertibility. 
+
+Step 2: ωn+1 To compute ωn+1 , we test equation (6.14) with u0 at level n + 1 . Because 
+
+ω1 is simple, we have 
+
+⟨T ω0/v w, u 0⟩∂D = 0 , (6.15) for all w ∈ V d. Thus, we find that 
+
+∫
+
+> D
+
+− 2ω0ωn+1 
+
+v2
+
+> i
+
+|u0|2 dx = ⟨T ω0/v un, 0, u 0⟩ + ⟨Fn, u 0⟩, (6.16) which uniquely determines ωn+1 .
+
+Step 3: un,d Once again we test at level n + 1 with w ∈ V 0 to obtain that 
+
+∫
+
+> D
+
+− 2ω0ω1
+
+v2
+
+> i
+
+unw dx − ⟨T ω0/v u0
+
+> n
+
+, w ⟩∂D = ⟨Fn+1 , w ⟩ + 2ω0ωn
+
+v2
+
+> i
+
+u0w + ⟨T ω0/v udn, w ⟩∂D . (6.17) Because the right hand side is orthogonal to u0, complex symmetry of the frequency dependent capacitance matrix ensures that a unique solution u0 
+
+> n
+
+exists in V0 ∩ (u0)⊥.It remains to prove that this power series expansion converges for δ small enough. Because this time ω0̸ = 0 , a bit more care is needed in bounding ∥Fn∥H−1 . We choose the ansatz 
+
+|ωk| ≤ μ exp( α(k − 1)) 
+
+kp , ∥uk∥L2 ≤ ν exp( αk )(k + 1) p , ∥∇ uk∥L2 ≤ ν exp( αk )(k + 1) p . (6.18) Unlike the main section, the estimate on the second term of equation (6.13) follows readily from a slight modification of Lemma 4.5. In bounding the first term, Lemma 4.1 cannot be applied immediately due to the presence of terms including ω0. However, we can handle these separately to obtain the following estimate: 
+
+∑
+
+> l+m=n
+> 1≤l≤n−11≤m≤n−2
+
+∫
+
+> D
+
+ω0ωl
+
+v2
+
+> i
+
+umw dx ≤ mu 2ν Cp exp( α(n − 1)) (n + 1) p ∥w∥L2 , (6.19) where Cp is obtained upon a minor modification of Lemma 4.4. In particular, Cp again tends to zero as p increases. Thus, the following result holds. 
+
+Theorem 6.5. Let ω0 ∈ σ(−∆N , D ) and (a, ω 1) ∈ CN × C be an eigenvector-eigenvalue pair for the generalised frequency dependent capacitance matrix at ω0 and suppose that Assumption 2 holds. Then, there exists δ0 > 0 such that, for every δ < δ 0, problem (2.11) admits a nontrivial solution (u, ω ) ∈ H1(D) × C given by the convergent expansions 
+
+u =
+
+> ∞
+
+∑
+
+> n=0
+
+δnun, ω =
+
+> ∞
+
+∑
+
+> n=0
+
+δnωn, (6.20) 
+
+where a determines the projection of u into the space of Neumann eigenfunctions. In particular, the pair (u, ω ) is analytic in δ.
+
+6.3. Existence of Small Amplitude Solutions for the Nonlinear Problem 
+
+In this subsection we again study (2.2) , however, in the non-subwavelength regime. This problem is qualitatively very different from the subwavelength regime: Because ω is O(1) at the leading order, the nonlinearity no longer acts as a perturbation of the linear equation. That is, substituting the ansatz (6.7) into the nonlinear problem, we obtain at the leading order that ∫
+
+> D
+
+∇u0 · ∇ w − ω20
+
+v2
+
+> i
+
+(1 + σ|u0|2)u0w = 0 . (6.21) From this, it becomes apparent that there is no reason why the leading order term should be governed by the discrete problem. We therefore pursue the more modest goal of finding solitons whose magnitude is of order δ, that is, taking u0 = 0 . This ensures that the nonlinear 
+
+> 17
+
+term is of the same order as the DtN operator. Substituting this ansatz into equation (2.5) yields ∫
+
+> D
+
+∇un · ∇ w dx − ∑
+
+> k+l+m=n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx 
+
+− σ ∑
+
+> k+l+m+r+s=n
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx 
+
+−
+
+> n−2
+
+∑
+
+> k=0
+
+⟨A kun−k−1, w ⟩∂D = 0 .
+
+(6.22) We now consider the first few levels of the cascade 
+
+∫
+
+> D
+
+∇u1 · ∇ w − ω20
+
+v2
+
+> i
+
+u1w dx = 0 
+
+∫
+
+> D
+
+∇u2 · ∇ w − ω20
+
+v2
+
+> i
+
+u2w − 2ω0ω1
+
+v2
+
+> i
+
+u1w dx − ⟨T ω0/v u1, v ⟩ = 0 
+
+∫
+
+> D
+
+∇u3 · ∇ w − ω20
+
+v2
+
+> i
+
+u3w − 2ω0ω1
+
+v2
+
+> i
+
+u2w − ω21
+
+v2
+
+> i
+
+u1w − 2ω0ω2
+
+v2
+
+> i
+
+u1w − σ ω20
+
+v2
+
+> i
+
+|u1|2u1w dx 
+
+− ⟨T ω0/v u2, v ⟩ − ⟨A ω0/v  
+
+> 1
+
+u1, v ⟩ = 0 .
+
+(6.23) This ansatz has the curious feature that the nonlinearity only enters at level 3, yet the cascade remains solvable. Once again, we define an error term 
+
+⟨Fn, w ⟩ = − ∑
+
+> k+l+m=nk,l<n −1
+> m<n −1
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umw dx −σ ∑
+
+> k+l+m+r+s=nm,r,s ≥1
+
+∫
+
+> D
+
+ωkωl
+
+v2
+
+> i
+
+umur usw dx −
+
+> n−2
+
+∑
+
+> k=1
+
+⟨A kun−k−1, w ⟩∂D .
+
+(6.24) Note that Fn−1 depends only on u1, . . . , u n−2 and ω0, . . . , ω n−2. Using this, we can rewrite equation (6.22) as 
+
+∫
+
+> D
+
+∇un · ∇ w − ω20
+
+v2
+
+> i
+
+unw − 2ω0ω1
+
+v2
+
+> i
+
+un−1w − 2ω0ωn−1
+
+v2
+
+> i
+
+u1w dx − ⟨T ω0/v un−1, w ⟩∂D = ⟨Fn−1, w ⟩.
+
+(6.25) We first examine the solvability of the system. Assume that u1, . . . , u n−1; ω1, . . . , ω n−2 are known and that Assumptions 2 hold. 
+
+Step 1: un, 0: In a first step, we determine un, 0 ∈ V 0 by testing (6.25) at level n against 
+
+w ∈ V 0. The strict coercivity of the Laplacian in V0 ensures unique invertibility. 
+
+Step 2: ωn−1 To compute ωn−1, we test equation (6.25) at level n with u0, yielding 
+
+−
+
+∫
+
+> D
+
+2ω0ωn−1
+
+v2
+
+> i
+
+|u1|2 dx = ⟨T ω/v u1, u 1⟩∂D + ⟨Fn−1, u 1⟩, (6.26) for which a unique solution exists. 
+
+Step 3: un,d In a final step, we test equation (6.25) with w ∈ V d at level n + 1 to compute 
+
+un,d . This yields 
+
+∫
+
+> D
+
+− 2ω0ω1
+
+v2
+
+> i
+
+unw − 2ω0ωn
+
+v2
+
+> i
+
+u1w dx − ⟨T ω0/v un, w ⟩∂D = ⟨Fn, w ⟩. (6.27) By construction, the above holds for u1 independent of un since ω1 is simple, it follows that the above has a unique solution un,d that is perpendicular to u1.Next, we have to consider the growth of the coefficients. To this end, one chooses the ansatz 
+
+|ωk| ≤ μ exp( α(k − 1)) 
+
+kp , ∥uk∥L2 ≤ ν exp( α(k − 1)) 
+
+kp , ∥∇ uk∥L2 ≤ ν exp( α(k − 1)) 
+
+kp .
+
+(6.28) 
+
+> 18
+
+The strategy of the preceding sections revolving around avoiding the corner of the simplexes in the sums no longer works. However, the index shift in the above ansatz grants a factor of 
+
+exp (−α) compared to Lemmas 4.1 and 4.2, which can be used to control the error terms; for reference, see the technique employed in [31]. Thus, we obtain our final theorem. 
+
+Theorem 6.6. Let ω0 ∈ σ(−∆N , D ) and (a, ω 1) ∈ CN × C be an eigenvector-eigenvalue pair for the generalised frequency dependent capacitance matrix at ω0 and suppose that Assumption 2 holds. Then, there exists δ0 > 0 such that, for every δ < δ 0, problem (2.2) 
+
+admits a nontrivial solution (u, ω ) ∈ H1(D) × C given by the convergent expansions 
+
+u =
+
+> ∞
+
+∑
+
+> n=1
+
+δnun, ω =
+
+> ∞
+
+∑
+
+> n=0
+
+δnωn, (6.29) 
+
+where a determines the projection of u into the space of Neumann eigenfunctions. In particular, the pair (u, ω ) is analytic in δ.
+
+7. Numerical Illustrations 
+
+This section presents some numerical illustrations, underlining the theoretical findings. We begin with a description of the numerical implementation of Section 2.3. Each cascade order requires a Neumann–Poisson solver on every resonator together with the exterior coupling. The Poisson problems are discretised spectrally: spherical harmonics 
+
+Y mℓ up to degree ℓmax for the angular variables, and Chebyshev–Gauss–Lobatto collocation with kmax nodes in the radius. As the angular Laplacian is diagonal in Y mℓ , each mode reduces to a one-dimensional radial operator that is LU-factorised once (with the Neumann condition and the regularity/zero-mean constraint imposed on the boundary rows) and reused across orders; the Chebyshev basis converges exponentially in kmax , so the spatial error lies below the cascade-truncation error even for modest kmax .The exterior is eliminated through the Dirichlet-to-Neumann operator T (ω), built from the outgoing multipole expansion and the Helmholtz addition theorem; its static limit gives the capacitance matrix, and T (ω) is Taylor-expanded in ω so each order applies precomputed coefficients. The leading-order nonlinear capacitance eigenproblem is solved by Newton’s method, after which each higher order reduces to one back-substitution per resonator and a small dense solve. All results use ℓmax = 8 and kmax = 16 , for which both truncations converge below the reported errors; the accuracy is verified against exact references when available and otherwise through the L2 residuals of the interior equation and the transmission conditions. We now begin with a simple sanity check: In Figure 1 we consider a single sphere. Here, an exact formula for the subwavelength resonance is known [5]. In Subfigures 1a and 1b, we see excellent agreement with the predicted convergence rates of Theorem 6.5. Next, we consider a two resonator system. Here, no exact formulas for the two subwave-length resonances are available. Therefore, we compute a reference solution using a truncated multipole method. The resulting plots can be seen in Figure 2. We now move on to the nonlinear problem (2.2) for a single resonator. In Figure 3c, we see the bifurcation diagram for the discrete approximation. The error plots in Figure 1a show excellent agreement with Theorem 3.1, while in Figure 3b we observe an error plateau around δ = 0 .001 . Further numerical experiments suggest that this is a truncation error. Finally, we turn to the non-subwavelength regime of Section 6. In Figure 4, we study the second resonant frequency of the monomer. The convergence rates of Theorem 6.5 are clearly visible in plots 4a and 4b. The error plateau of 4c is a truncation error. As before, further numerical experiments have shown that the plateau decreases when increasing kmax 
+
+and lmax . Another example for the linear, non-subwavelength regime is shown in Figure 5, where the second resonance of a dimer system is studied. The last Figure of this Section, 6 showcases the error convergence with respect to δ, that is, the residuals are divided by δ.          
+
+> 19 (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence
+> (c) Operator residuals at δ= 0 .01
+
+Figure 1. Comparison of perturbative approach versus exact solution for a single resonator with radius r = 0 .1, interior wave speed 
+
+v1 = 1 /3.48 and exterior wave speed v = 1 .       
+
+> (a) K-convergence of ωat δ= 0 .002 (b) δ-convergence
+
+Figure 2. Comparison of perturbative approach versus multipole solution for a two sphere system with radii r = 0 .1, distance 0.3, interior wave speed v1 = v2 = 1 /3.48 and exterior wave speed v = 1 .
+
+7.1. Symmetry Breaking Bifurcations in Symmetric Dimers 
+
+In this subsection, we study the nonlinear problem (2.2) for a symmetric dimer setup of two identical spherical resonators of radius r = 0 .1, separated by a distance of d = 0 .2, with interior wave speed v1 = v2 = 1 . By the reflection symmetry of the dimer, the capacitance           
+
+> 20 (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence at K= 9
+> (c) Bifurcation diagram at leading order
+
+Figure 3. Bifurcation diagram and error convergence for a single resonator with radius r = 0 .1, interior wave speed v1 = 1 /3.48 and exterior wave speed v = 1 .matrix has the form 
+
+C =
+
+(a bb a
+
+)
+
+, (7.1) with eigenvalues λ± = v20 (a ± b)/|D0| corresponding to the symmetric and antisymmetric eigenmodes. Moreover, the entries a and b admit closed-form series expressions in bispherical coordinates [26], valid for all separations including nearly touching configurations. This explicit form enables an analytical study of the nonlinear branches. Substituting a = ( x, y )
+
+into the discrete nonlinear capacitance system (2.20) and writing λ = ω2 for brevity, we obtain 
+
+ax + by = λ(x + σx 3), bx + ay = λ(y + σy 3), (7.2) where, by S1 invariance, we may take x, y ∈ R. Adding and subtracting (7.2) yields the factored system 
+
+(x + y)[(a + b) − λ − λσ (x2 − xy + y2)] = 0 , (7.3) 
+
+(x − y)[(a − b) − λ − λσ (x2 + xy + y2)] = 0 , (7.4) from which three nontrivial branches emerge: 
+
+Symmetric branch (x = y). The first factor vanishes, yielding 
+
+σx 2 = a + b − λλ .
+
+This branch bifurcates from the trivial solution at λ = a+b along the symmetric eigendirection.           
+
+> 21 (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence
+> (c) Operator residuals at δ= 0 .01
+
+Figure 4. Comparison of perturbative approach versus exact solution of the second resonance frequency for a single resonator with radius 
+
+r = 0 .1, interior wave speed v1 = 1 /3.48 and exterior wave speed 
+
+v = 1 .       
+
+> (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence
+
+Figure 5. Comparison of perturbative approach versus multipole solution of the second resonance for a two sphere system with radii 
+
+r = 0 .1, distance 0.3, interior wave speed v1 = v2 = 1 /3.48 and exterior wave speed v = 1 .     
+
+> 22 (a) K-convergence of ωat δ= 0 .01
+
+x  
+
+> (b) δ-convergence
+> (c) Bifurcation diagram of the discrete sys-tem
+
+Figure 6. Small amplitude soliton bifurcating from the second resonance frequency for a single resonator with radius r = 0 .1, interior wave speed v1 = 1 /3.48 and exterior wave speed v = 1 .
+
+Antisymmetric branch (x = −y). The second factor vanishes, yielding 
+
+σx 2 = a − b − λλ .
+
+This branch bifurcates from the trivial solution at λ = a − b along the antisymmetric eigendirection. 
+
+Asymmetric branch (x̸ = ±y). Both factors vanish simultaneously, yielding 
+
+xy = − bσλ , x2 + y2 = a − λσλ .
+
+This branch is real and distinct from the previous two if and only if (a − λ)2 > 4b2 and the resulting quadratic for x2, y 2 admits two positive roots. It corresponds to states localised predominantly on one resonator and emerges as a secondary bifurcation from one of the primary branches at a critical amplitude. The emergence of symmetry breaking bifurcations is well studied [12, 16, 25]. Indeed, the above characterisation has been done in [16] for a similar setup, moreover, therein the authors also explicitly treat trimer and quadrimer like systems. Symmetry breaking bifurcations were also proven to emerge in a high-refractive framework [7]. In Figure 7, we can see the resulting bifurcation diagram, with the symmetry breaking mode bifurcating from the symmetric mode. Figures 8, 9 and 10 show error convergence as well as field plots for the three points marked in Figure 7. 
+
+> 23
+
+Figure 7. Bifurcation diagram for discrete dimer model, the markers de-note the snapshots for the subsequent plots.               
+
+> (a) K-convergence of ωat δ= 0 .005 (b) δ-convergence at K= 9
+> (c) Plot of ℜ(u)at δ= 0 .005
+
+Figure 8. Error and field plots for the antisymmetric mode. Note the that in figure 8a the rate of convergence does not match the reference slope. Numerical evidence suggests that this is due to the exponential growth of the coefficient ωn, u n.
+
+8. Conclusion 
+
+In this paper, we have studied the nonlinear Helmholtz problem with outgoing radiation condition and cubic nonlinearity in the high-contrast regime. Using perturbative techniques, we have established a two-way correspondence between the emerging solitons and a discrete               
+
+> 24 (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence at K= 9
+> (c) Plot of ℜ(u)at δ= 0 .01
+
+Figure 9. Error and field plots for the symmetric mode. As in Figure 3b, the error plateau in 9b is most likely due to truncation error. model: under a non-degeneracy assumption on the discrete data, every solution of the nonlinear capacitance system lifts to a continuous soliton, and every continuous soliton with the natural subwavelength scaling reduces to a discrete one. The capacitance matrix therefore faithfully captures the nonlinear resonant behaviour of the full system in this regime. The result is constructive: the cascade equations yield an iterative algorithm for computing correction terms to arbitrary order, in both the linear and nonlinear, subwavelength and non-subwavelength regimes. Moreover, analyticity is shown in √δ, respectively in δ. To our knowledge, this is the first existence result for both subwavelength and non-subwavelength solitons in the high-contrast regime. Beyond establishing the correspondence itself, the reduction to a finite discrete system makes techniques from the discrete self-trapping and discrete nonlinear Schrödinger literature applicable to subwavelength resonance problems. As a first illustration, we have shown that the symmetric dimer admits a symmetry-breaking bifurcation with a criterion expressed cleanly in terms of the eigenvalues of the generalised capacitance matrix. 
+
+Acknowledgements 
+
+C. Thalhammer was supported in part by the Swiss National Science Foundation grant number 200021-236472. 
+
+Data Availability 
+
+The code used to generate the Figures is openly available at https://github.com/ cthalhammer/perturbative-nonlinear-helmholtz .              
+
+> 25 (a) K-convergence of ωat δ= 0 .01 (b) δ-convergence at K= 9
+> (c) Plot of ℜ(u)at δ= 0 .01
+
+Figure 10. Error and field plots for the asymmetric mode. One again observes the familiar error plateau in Figure 10b. 
+
+References 
+
+[1] Ambrosetti Antonio and Malchiodi Andrea, Nonlinear analysis and semilinear elliptic problems , vol. 104, Cambridge university press, 2007. [2] Ammari H. and Nédélec J.-C., “Full low-frequency asymptotics for the reduced wave equation”, in: Applied Mathematics Letters 12.1 (1999), pp. 127–131. [3] Ammari Habib, Davies Bryn, and Hiltunen Erik Orvehed, “Functional Analytic Methods for Discrete Approximations of Subwavelength Resonator Systems”, in: Pure and Applied Analysis 6.3 (2024). [4] Ammari Habib, Davies Bryn, and Hiltunen Erik Orvehed, Mathematical Theories for Metamaterials: From Condensed Matter Theory to Subwavelength Physics , vol. 136, CBMS Regional Conference Series in Mathematics, American Mathematical Society, Providence, RI, 2026. [5] Ammari Habib, Fitzpatrick Brian, Gontier David, Lee Hyundae, and Zhang Hai, “Minnaert resonances for acoustic waves in bubbly media”, in: Annales de l’Institut Henri Poincaré C, Analyse non linéaire 35.7 (2018), pp. 1975–1998. [6] Ammari Habib and Kosche Thea, “Nonlinear Subwavelength Resonances in Three Dimensions”, in: Studies in Applied Mathematics 154.3 (2025). [7] Ammari Habib and Li Bowen, “Dielectric scattering resonances for high-refractive resonators with cubic nonlinearity”, in: Journal of Differential Equations 475 (2026), p. 114459. 
+
+> 26
+
+[8] Ammari Habib, Li Bowen, Liu Ping, and Shao Yingjie, “Frequency-dependent capac-itance matrix formulation for Fabry-P \’erot resonances. Part I: One-dimensional finite systems”, in: arXiv preprint arXiv:2604.01159 (2026). [9] Ammari Habib, Li Bowen, Liu Ping, Shao Yingjie, and Uhlmann Alexander, 
+
+Frequency-dependent capacitance matrix formulation for Fabry-Perot resonances in two and three dimensional systems , 2026, arXiv: 2605.27572 [math.AP] .[10] Ammari Habib and Qiu Jiayu, “Analysis of nonlinear resonances in resonator crystals: Tight-binding approximation and existence of subwavelength soliton-like solutions”, in: 
+
+arXiv preprint arXiv:2509.04184 (2025). [11] Angermann Lutz, “A radiation and propagation problem for a Helmholtz equation with a compactly supported nonlinearity”, in: Communications in Nonlinear Science and Numerical Simulation 126 (2023), p. 107422. [12] Aschbacher WH, Fröhlich J, Graf GM, Schnee K, and Troyer M, “Symmetry breaking regime in the nonlinear Hartree equation”, in: Journal of Mathematical Physics 
+
+43.8 (2002), pp. 3879–3891. [13] D’Elia L and Nazarov SA, “Gaps in the spectrum of two-dimensional square packing of stiff disks”, in: Applicable Analysis 102.9 (2023), pp. 2611–2627. [14] Davies Bryn, Szyniszewski Stefan, Dias Marcelo A, Waal Leo de, Kisil Anastasia, 
+
+P Smyshlyaev Valery, Cooper Shane, Kamotski Ilia V, Touboul Marie, Craster 
+
+Richard V, et al., “Roadmap on metamaterial theory, modelling and design”, in: Journal of Physics D: Applied Physics 58.20 (2025), p. 203002. [15] Dyatlov Semyon and Zworski Maciej, Mathematical theory of scattering resonances ,vol. 200, Graduate Studies in Mathematics, American Mathematical Society, Providence, RI, 2019. [16] Eilbeck J Ch, Lomdahl PS, and Scott Alwyn C, “The discrete self-trapping equation”, in: Physica D: Nonlinear Phenomena 16.3 (1985), pp. 318–338. [17] Evequoz Gilles and Weth Tobias, “Dual variational methods and nonvanishing for the nonlinear Helmholtz equation”, in: Advances in Mathematics 280 (2015), pp. 690–728. [18] Feppon F. and Ammari H., “Subwavelength resonant acoustic scattering in fast time-modulated media”, in: Journal de Mathématiques Pures et Appliquées 187 (2024), pp. 233–293. [19] Feppon Florian and Ammari Habib, “Modal decompositions and point scatterer approximations near the Minnaert resonance frequencies”, in: Studies in Applied Mathematics 149.1 (2022), pp. 164–229. [20] Feppon Florian, Cheng Zijian, and Ammari Habib, “Subwavelength Resonances in One-Dimensional High-Contrast Acoustic Media”, in: SIAM J. Appl. Math. 83.2 (2023), pp. 625–665. [21] Ferraresso Francesco and Taskinen Jari, “Singular perturbation Dirichlet problem in a double-periodic perforated plane”, in: ANNALI DELL’UNIVERSITA’DI FERRARA 
+
+61.2 (2015), pp. 277–290. [22] Gorbach Andriy V and Skryabin Dmitry V, “Spatial solitons in periodic nanostruc-tures”, in: Physical Review A—Atomic, Molecular, and Optical Physics 79.5 (2009), p. 053812. [23] Griesmaier Roland, Knöller Marvin, and Mandel Rainer, “Inverse medium scat-tering for a nonlinear Helmholtz equation”, in: Journal of Mathematical Analysis and Applications 515.1 (2022), p. 126356. [24] Kielhofer Hansjorg, Bifurcation Theory , en, 2nd ed., Applied Mathematical Sciences (Springer), Springer Science+Business Media, Jan. 2012. [25] Kirr EW, Kevrekidis PG, Shlizerman Eli, and Weinstein Michael I, “Symmetry-breaking bifurcation in nonlinear Schrödinger/Gross–Pitaevskii equations”, in: SIAM journal on mathematical analysis 40.2 (2008), pp. 566–604. 
+
+> 27
+
+[26] Lekner John, “Electrostatics of two charged conducting spheres”, in: Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences 468.2145 (2012), pp. 2829–2848. [27] Minnaert M., “XVI. On Musical Air-Bubbles and the Sounds of Running Water”, in: 
+
+The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 
+
+16.104 (1933), pp. 235–248, doi : 10.1080/14786443309462277 .[28] Nečas Jindřich, Direct Methods in the Theory of Elliptic Equations , Springer Berlin Heidelberg, 2012, doi : 10.1007/978-3-642-10455-8 .[29] Pankov A, “Gap solitons in periodic discrete nonlinear Schrödinger equations”, in: 
+
+Nonlinearity 19.1 (2005), p. 27. [30] Pankov Alexander, “Gap solitons in periodic discrete nonlinear Schrödinger equations with saturable nonlinearities”, in: Journal of mathematical analysis and applications 
+
+371.1 (2010), pp. 254–265. [31] Sacchetti Andrea, “Perturbation theory for nonlinear Schrödinger equations”, in: 
+
+Nonlinearity 36.11 (2023), pp. 6048–6070.

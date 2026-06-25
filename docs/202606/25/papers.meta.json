@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-25",
+  "date": "2026-06-25",
+  "generated_at": "2026-06-25T22:06:39",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/25/2606.25930v1-impact-of-sintering-conditions-on-the-dielectric-properties-of-tio2-ceramics-for-metamaterialsapplications-at-terahertz-frequencies",
+      "section": "deep",
+      "title_en": "Impact of sintering conditions on the dielectric properties of TiO2 ceramics for metamaterialsapplications at terahertz frequencies",
+      "authors": "Djihad Amina Djemmah, Delphine Gourdonnaud, Faycal Bouamrane, Jean-Francois Roux, Pierre-Marie Geffroy, Eric Akmansoy",
+      "date": "2026-06-24",
+      "pdf": "https://arxiv.org/pdf/2606.25930v1",
+      "score": "9.0",
+      "evidence": "TiO2陶瓷实现太赫兹近零有效折射率超材料",
+      "tldr": "针对太赫兹超材料对高介电常数、低损耗介质的需求，本文优化TiO2陶瓷烧结工艺。通过对比常规烧结与放电等离子烧结及后退火处理，结合太赫兹时域光谱表征，获得介电常数103、损耗正切0.006的样品，满足ε~100且tanδ<0.02的设计要求。数值设计的全介质超材料可实现负或近零折射率，验证了TiO2在太赫兹应用的可行性。",
+      "tags": "query:enz",
+      "abstract_en": "Titanium dioxyde (TiO2) is a promising dielectric material for the realization of metamaterials operating in the terahertz (THz) range. Indeed, these necessitate a high permittivity and low loss material. In this paper, we compare the processes of fabrication and the results of characterisation of bulk TiO2 pellets. From the results of this characterization, we have numerically designed 2D all dielectric metamaterials (ADM) showing that they may exhibit negative or near-zero effective index. Our previous simulations show that the relative permittivity epsilon has to be around 100, while the loss tangent has to be lower than 0.02. We have thus compared conventional sintering (CS) vs spark plasma sintering (SPS), and investigated the effect of post-sintering annealing on the loss to satisfy these two criteria. The samples were characterized by THz Time Domain Spectroscopy (THz-TDS). One of the samples exhibits a loss tangent as low as 0.006, with a permittivity epsilon = 103. These results highlight the importance of the fabrication process on the EM properties of bulk TiO2, and demonstrate that it is a promising material for the development of metamaterial in the THz band.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/25/2606.20821v1-perturbative-approach-to-nonlinear-capacitance-matrix-formulations",
+      "section": "deep",
+      "title_en": "Perturbative Approach to Nonlinear Capacitance Matrix Formulations",
+      "authors": "Habib Ammari, Clemens Thalhammer",
+      "date": "2026-06-18",
+      "pdf": "https://arxiv.org/pdf/2606.20821v1",
+      "score": "8.0",
+      "evidence": "研究具有立方非线性的亥姆霍兹系统，高对比度夹杂物逼近零介电常数超材料，揭示亚波长孤子。",
+      "tldr": "三维高对比度包裹体中三次非线性亥姆霍兹方程产生孤子，运用Dirichlet-to-Neumann算子与电容形式建立微扰级联展开。严格证明连续孤子与离散非线性电容系统双向对应，给出亚波长与非亚波长高阶修正算法。通过对称二聚体数值验证对称破缺分岔，为非线性亚波长结构分析提供系统框架。",
+      "tags": "query:enz",
+      "abstract_en": "We study a nonlinear Helmholtz system with cubic nonlinearity on high-contrast inclusions in three dimensions, and the solitons that emerge as the contrast $δ$ tends to zero. Using the Dirichlet-to-Neumann operator and a capacitance formalism, we develop a perturbative cascade that expands the resonant frequency and field in powers of $\\sqrtδ$. Our main result is a rigorous two-way correspondence with a finite discrete nonlinear capacitance system: every discrete solution lifts to a continuous soliton (a convergent expansion, analytic in $\\sqrtδ$), and every continuous family with the natural subwavelength scaling reduces to a discrete one. The construction is algorithmic, giving higher-order corrections in both the subwavelength and non-subwavelength regimes, the latter via a frequency-dependent capacitance matrix. We illustrate the theory numerically and characterise a symmetry-breaking bifurcation in a symmetric dimer.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/25/2606.21299v1-characterization-of-gansi-and-znoga-for-position-resolved-fast-timing-applications",
+      "section": "deep",
+      "title_en": "Characterization of GaN:Si and ZnO:Ga for position-resolved fast timing applications",
+      "authors": "Julius Meyer, Joshua W. Cates, Woon-Seng Choong, Juan Cristhian Luque Gutierrez, Federico Moretti, Ryan Pavlovsky, Mauricio Ayllon Unzueta, Weronika W. Wolszczak, Markus Roth, Arun Persaud",
+      "date": "2026-06-19",
+      "pdf": "https://arxiv.org/pdf/2606.21299v1",
+      "score": "8.0",
+      "evidence": "表征氧化锌基透明导电氧化物ZnO:Ga的快速定时特性。",
+      "tldr": "Si和ZnO:Ga闪烁体。与YAP:Ce相比，GaN:Si衰减32ps、ZnO:Ga衰减805ps，上升均<15ps，亮度>1000ph/MeV，探测器定时分辨率提升3倍以上。位置分辨率可达毫米级，验证了其作为API系统高性能替代方案的潜力。",
+      "tags": "query:tco",
+      "abstract_en": "We present the characterization of two fast, crystalline inorganic scintillators, silicon-doped gallium nitride (GaN:Si) and gallium-doped zinc oxide (ZnO:Ga), and compare their performance with cerium-doped yttrium aluminium perovskite (YAP:Ce) for in-vacuum alpha-detection applications that require high-performance timing, position, and energy resolution, such as 3D elemental mapping, medical imaging, and homeland security applications. In this paper, we propose ZnO:Ga and GaN:Si as high-performance drop-in replacements for the alpha detector in Associated Particle Imaging (API) systems. However, the results reported here also have wide applicability. Prior work has reported on polycrystalline forms of ZnO:Ga, which suffer from self-absorption. To our knowledge, GaN:Si has not been proposed to be used in API systems. We present room-temperature scintillation time constants obtained via X-ray-induced time-correlated single-photon counting for both proposed materials. They both exhibit exceedingly fast rise times of <15ps, and high brightness >1000ph/MeV with resolved alpha-peaks. Single-crystal ZnO:Ga and single-crystal GaN:Si yield single-component decays of 805ps and 32ps, respectively. Using a plastic scintillator reference setup, coincidence timing resolution (CTR) and detector timing resolution (DTR) measurements demonstrate a >3x improvement in timing resolution compared to traditional YAP:Ce. GaN:Si and ZnO:Ga exhibit (35(9))ps and (49(5))ps DTR, respectively, compared to(144(2))ps for conventional, single-crystal YAP:Ce. Finally, we evaluate their position resolution in an experimental setup designed for API and measure better than 0.2mm for YAP:Ce and approximately 1mm for GaN:Si. We obtain a position resolution of 0.3mm for ZnO:Ga from simulations. We also present alpha-induced ionoluminescence emission spectra that reveal direct, red-shifted near-bandgap emission.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
