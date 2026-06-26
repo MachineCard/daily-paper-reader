@@ -6,32 +6,32 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-25
-- 运行时间：2026-06-25 22:06:30 UTC
+- 最新运行日期：2026-06-26
+- 运行时间：2026-06-26 22:09:20 UTC
 - 运行状态：成功
 - 本次总论文数：3
-- 精读区：3
-- 速读区：0
+- 精读区：0
+- 速读区：3
 
 ### 今日简报（AI）
-今天精读了 2 篇前沿论文，聚焦太赫兹超材料和电路建模。  
-《TiO2陶瓷烧结对太赫兹超材料介电性能的影响》发现烧结温度可显著调控 TiO2 的介电常数与损耗，为低损耗太赫兹器件设计提供关键工艺窗口；而《非线性电容矩阵的微扰方法》则提出了一种高效计算非线性电容矩阵的新框架。  
-对太赫兹感兴趣的读者可以立刻关注烧结优化与低损耗材料，后续可延伸阅读这两篇工作的引用文献，跟踪非线性建模在超材料设计中的应用。
-- 详情：[/202606/25/README](/202606/25/README)
+今日速览三篇尖端研究，揭开超表面智能设计、光子神经网络提速与反铁磁材料导电反转的冰山一角。  
+重点关注“界面耦合超表面的通用极化率框架”与“Cr₂O₃本征n型迁移率”可能改写纳米光学器件和自旋电子学的设计范式。  
+不妨从速读摘要中挑选你最感兴趣的领域，点开原文细看突破背后的细节。
+- 详情：[/202606/26/README](/202606/26/README)
 
 ### 精读区论文标签
-1. [Impact of sintering conditions on the dielectric properties of TiO2 ceramics for metamaterialsapplications at terahertz frequencies](/202606/25/2606.25930v1-impact-of-sintering-conditions-on-the-dielectric-properties-of-tio2-ceramics-for-metamaterialsapplications-at-terahertz-frequencies)  
-   标签：评分：9.0/10、query:enz
-   evidence：TiO2陶瓷实现太赫兹近零有效折射率超材料
-2. [Perturbative Approach to Nonlinear Capacitance Matrix Formulations](/202606/25/2606.20821v1-perturbative-approach-to-nonlinear-capacitance-matrix-formulations)  
-   标签：评分：8.0/10、query:enz
-   evidence：研究具有立方非线性的亥姆霍兹系统，高对比度夹杂物逼近零介电常数超材料，揭示亚波长孤子。
-3. [Characterization of GaN:Si and ZnO:Ga for position-resolved fast timing applications](/202606/25/2606.21299v1-characterization-of-gansi-and-znoga-for-position-resolved-fast-timing-applications)  
-   标签：评分：8.0/10、query:tco
-   evidence：表征氧化锌基透明导电氧化物ZnO:Ga的快速定时特性。
+- 本次无精读推荐。
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [A dressed polarizability framework for interface-coupled meta-atoms and large-scale metasurfaces](/202606/26/2606.21302v1-a-dressed-polarizability-framework-for-interface-coupled-meta-atoms-and-large-scale-metasurfaces)  
+   标签：评分：6.0/10、query:enz
+   evidence：适用于近零介电常数超材料设计的元原子和超表面建模框架
+2. [Dimension expansion for simulation-efficient nanophotonic neural networks](/202606/26/2606.25226v1-dimension-expansion-for-simulation-efficient-nanophotonic-neural-networks)  
+   标签：评分：6.0/10、query:enz
+   evidence：用于纳米光子结构逆设计的方法，可应用于ENZ超材料
+3. [Challenging the $p$-type Paradigm: Intrinsic $n$-type Mobility in Antiferromagnetic Cr$_2$O$_3$](/202606/26/2606.26269v1-challenging-the-p-type-paradigm-intrinsic-n-type-mobility-in-antiferromagnetic-cr2o3)  
+   标签：评分：6.0/10、query:tco
+   evidence：使用从头算方法研究透明导电氧化物Cr2O3的本征载流子迁移率
 
 
 <div class="dpr-home-promo-card">

@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-26",
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T22:09:28",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/26/2606.21302v1-a-dressed-polarizability-framework-for-interface-coupled-meta-atoms-and-large-scale-metasurfaces",
+      "section": "quick",
+      "title_en": "A dressed polarizability framework for interface-coupled meta-atoms and large-scale metasurfaces",
+      "authors": "Peng Fu, Jean-Paul Hugonin, Maxime Bertrand, Kevin Vynck, P. Lalanne",
+      "date": "2026-06-19",
+      "pdf": "https://arxiv.org/pdf/2606.21302v1",
+      "score": "6.0",
+      "evidence": "适用于近零介电常数超材料设计的元原子和超表面建模框架",
+      "tldr": "光子学中大量相互作用超构原子的建模需同时处理复杂几何、多次散射和异质环境，传统T矩阵法受限。引入着装全局极化率矩阵（dGPM）框架，以紧凑散射算子显式包含界面效应。能准确重建界面耦合结构的近场和远场响应，处理超出T矩阵适用范围的几何，并统一模拟自由空间与界面耦合散射体。dGPM扩展了基于算子的电磁建模至异质光子环境，为大规模光子系统的仿真与设计提供高效框架。",
+      "tags": "query:enz",
+      "abstract_en": "The modeling of large collections of interacting meta-atoms remains a central challenge in photonics because it requires the simultaneous treatment of complex scatterer geometries, multiple scattering, and heterogeneous environments. Here, we introduce the dressed Global Polarizability Matrix (dGPM), a reduced-order electromagnetic framework in which complex meta-atoms are represented by compact scattering operators that explicitly incorporate the influence of nearby interfaces. The dGPM accurately reconstructs near- and far-field electromagnetic responses for interface-coupled structures, including geometries beyond the practical applicability of conventional T-matrix approaches. The framework naturally combines interface-coupled and free-space scatterers within a unified multiple-scattering formalism and enables simulations of large ordered and disordered metasurfaces. More broadly, the dGPM extends operator-based electromagnetic modeling to heterogeneous photonic environments while preserving a compact scatterer-based representation, providing an efficient framework for the simulation and design of large-scale photonic systems.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/26/2606.25226v1-dimension-expansion-for-simulation-efficient-nanophotonic-neural-networks",
+      "section": "quick",
+      "title_en": "Dimension expansion for simulation-efficient nanophotonic neural networks",
+      "authors": "Shuo Huang, Mahsa Torfeh, Lujia Zhong, Michelle L. Povinelli, Owen D. Miller, Chia Wei Hsu",
+      "date": "2026-06-23",
+      "pdf": "https://arxiv.org/pdf/2606.25226v1",
+      "score": "6.0",
+      "evidence": "用于纳米光子结构逆设计的方法，可应用于ENZ超材料",
+      "tldr": "纳米光子结构逆设计面临设计空间巨大、非线性强、迭代电磁仿真算力高昂的瓶颈。现有深度学习方法多依赖预计算大规模数据集或结构库，难以扩展到连续复杂目标。本文提出了维度扩展网络（DEN），创新地将低维目标参数扩展至高维条件表示，增强条件信号表达力，并利用可微仿真实现端到端无监督训练，无需预生成数据。在自由形超构透镜和非对称Y分支器设计中，DEN实现了与伴随优化媲美的聚焦强度，仿真开销降低约50%，且能在单一焦区内泛化至数千个不同聚焦目标；Y分支器仅用21个目标即可学习精确的任意功率分配，展现宽频鲁棒性。分析表明维度扩展提升了模型对目标变化的敏感性、结构多样性，抑制了模式坍塌。该方法为低维目标逆设计提供了高效可扩展的条件化策略，有望推动复杂光子器件的快速开发。",
+      "tags": "query:enz",
+      "abstract_en": "Inverse design of nanophotonic structures is challenging due to the large design space, nonlinear structure-response relationships, and the high computational cost of iterative electromagnetic simulations. Existing deep-learning approaches typically rely on large precomputed datasets or libraries of optimized structures, which limits scalability to continuous and complex inverse-design tasks. We introduce a Dimension Expansion Network (DEN), a fully unsupervised, simulation-efficient framework for nanophotonic inverse design. DEN addresses the mismatch between low-dimensional design objectives and high-dimensional nanophotonic structures by transforming compact target parameters into structured, high-dimensional conditioning representations before inverse design. This improves target expressivity and conditioning quality for structure generation. The model is trained end-to-end using differentiable electromagnetic simulations, removing the need for any pre-generated dataset. We validate DEN on free-form metalens and asymmetric Y-splitter design problems. For metalens design, DEN achieves focal intensities comparable to adjoint-based optimization while reducing simulation cost by approximately 50% and generalizing across tens to thousands of focal targets within a shared focal region. For Y-splitter design, DEN accurately produces arbitrary power-splitting ratios using only 21 training targets and demonstrates robust broadband performance. Ablation studies and representation analyses show that dimension expansion enhances sensitivity to target variations, increases structural diversity, and reduces mode-collapse-like behavior. Overall, DEN provides a scalable conditioning strategy for inverse design with low-dimensional objectives, enabling efficient photonic design across large continuous target spaces.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/26/2606.26269v1-challenging-the-p-type-paradigm-intrinsic-n-type-mobility-in-antiferromagnetic-cr2o3",
+      "section": "quick",
+      "title_en": "Challenging the $p$-type Paradigm: Intrinsic $n$-type Mobility in Antiferromagnetic Cr$_2$O$_3$",
+      "authors": "Á. A. Carrasco Álvarez, S. Poncé",
+      "date": "2026-06-24",
+      "pdf": "https://arxiv.org/pdf/2606.26269v1",
+      "score": "6.0",
+      "evidence": "使用从头算方法研究透明导电氧化物Cr2O3的本征载流子迁移率",
+      "tldr": "氧化铬本征载流子类型长期存在争议，传统上被视为p型透明导电氧化物。本研究采用第一性原理玻尔兹曼输运方程，计算声子限制下的电子与空穴迁移率。电子迁移率系统高于空穴，揭示其本征n型特征；不对称源于价带大有效质量和多谷结构。这修正了p型范式，确认本征n型与双极传输潜力，并指出p型行为由外在缺陷引起，为透明电子应用提供了新化学-传输范式。",
+      "tags": "query:tco",
+      "abstract_en": "Chromium oxide (Cr$_2$O$_3$) is widely considered a $p$-type transparent conducting oxide despite ongoing debate regarding its intrinsic transport character. Here, we resolve this question by computing phonon-limited electron and hole mobilities using the ab initio Boltzmann transport equation. We find that electron mobility systematically exceeds hole mobility over a wide temperature range, demonstrating that Cr$_2$O$_3$ is intrinsically $n$-type. Analysis of scattering mechanisms reveals that scattering with phonons affects electrons and holes similarly, and that the mobility asymmetry originates from the electronic structure, namely the larger effective mass and multi-valley character of the valence band. The intrinsic $n$-type character, combined with moderate hole mobility, enables bipolar transport and revises the role of Cr$_2$O$_3$ in transparent electronics. Additionally, our results on mobility complement previous studies on defect formation indicating that the commonly observed $p$-type behavior is extrinsic. These insights provide a complete chemical-transport paradigm for Cr$_2$O$_3$, re-evaluating its role in functional transparent electronic and magneto-optoelectronic applications",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

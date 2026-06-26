@@ -1,0 +1,140 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-26T22:06:59.451532+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 0,
+    "deep_cap": 7,
+    "deep_selected": 0,
+    "quick_candidates": 3,
+    "quick_skim_target": 12,
+    "quick_selected": 3
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.21302v1",
+      "source": "arxiv",
+      "title": "A dressed polarizability framework for interface-coupled meta-atoms and large-scale metasurfaces",
+      "abstract": "The modeling of large collections of interacting meta-atoms remains a central challenge in photonics because it requires the simultaneous treatment of complex scatterer geometries, multiple scattering, and heterogeneous environments. Here, we introduce the dressed Global Polarizability Matrix (dGPM), a reduced-order electromagnetic framework in which complex meta-atoms are represented by compact scattering operators that explicitly incorporate the influence of nearby interfaces. The dGPM accurately reconstructs near- and far-field electromagnetic responses for interface-coupled structures, including geometries beyond the practical applicability of conventional T-matrix approaches. The framework naturally combines interface-coupled and free-space scatterers within a unified multiple-scattering formalism and enables simulations of large ordered and disordered metasurfaces. More broadly, the dGPM extends operator-based electromagnetic modeling to heterogeneous photonic environments while preserving a compact scatterer-based representation, providing an efficient framework for the simulation and design of large-scale photonic systems.",
+      "authors": [
+        "Peng Fu",
+        "Jean-Paul Hugonin",
+        "Maxime Bertrand",
+        "Kevin Vynck",
+        "P. Lalanne"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics",
+        "physics.comp-ph"
+      ],
+      "published": "2026-06-19T10:25:47+00:00",
+      "link": "https://arxiv.org/pdf/2606.21302v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "modeling framework for meta-atoms and metasurfaces, applicable to epsilon-near-zero metamaterial design",
+      "llm_evidence_cn": "适用于近零介电常数超材料设计的元原子和超表面建模框架",
+      "llm_evidence": "适用于近零介电常数超材料设计的元原子和超表面建模框架",
+      "canonical_evidence": "适用于近零介电常数超材料设计的元原子和超表面建模框架",
+      "llm_tldr_en": "This paper introduces a dressed polarizability framework (dGPM) for efficient electromagnetic modeling of large metasurfaces with interface-coupled meta-atoms, enabling accurate near- and far-field response predictions beyond conventional methods, which can be applied to design ENZ metamaterials.",
+      "llm_tldr_cn": "本文提出一种 dressed 全局极化率矩阵（dGPM）框架，用于高效模拟包含界面耦合元原子的大规模超表面的电磁响应。该框架能够准确预测近场和远场响应，适用于传统方法难以处理的几何结构，为设计近零介电常数超材料提供了有力的建模工具。",
+      "llm_tldr": "本文提出一种 dressed 全局极化率矩阵（dGPM）框架，用于高效模拟包含界面耦合元原子的大规模超表面的电磁响应。该框架能够准确预测近场和远场响应，适用于传统方法难以处理的几何结构，为设计近零介电常数超材料提供了有力的建模工具。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "metamaterials with epsilon near zero properties",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.25226v1",
+      "source": "arxiv",
+      "title": "Dimension expansion for simulation-efficient nanophotonic neural networks",
+      "abstract": "Inverse design of nanophotonic structures is challenging due to the large design space, nonlinear structure-response relationships, and the high computational cost of iterative electromagnetic simulations. Existing deep-learning approaches typically rely on large precomputed datasets or libraries of optimized structures, which limits scalability to continuous and complex inverse-design tasks. We introduce a Dimension Expansion Network (DEN), a fully unsupervised, simulation-efficient framework for nanophotonic inverse design. DEN addresses the mismatch between low-dimensional design objectives and high-dimensional nanophotonic structures by transforming compact target parameters into structured, high-dimensional conditioning representations before inverse design. This improves target expressivity and conditioning quality for structure generation. The model is trained end-to-end using differentiable electromagnetic simulations, removing the need for any pre-generated dataset. We validate DEN on free-form metalens and asymmetric Y-splitter design problems. For metalens design, DEN achieves focal intensities comparable to adjoint-based optimization while reducing simulation cost by approximately 50% and generalizing across tens to thousands of focal targets within a shared focal region. For Y-splitter design, DEN accurately produces arbitrary power-splitting ratios using only 21 training targets and demonstrates robust broadband performance. Ablation studies and representation analyses show that dimension expansion enhances sensitivity to target variations, increases structural diversity, and reduces mode-collapse-like behavior. Overall, DEN provides a scalable conditioning strategy for inverse design with low-dimensional objectives, enabling efficient photonic design across large continuous target spaces.",
+      "authors": [
+        "Shuo Huang",
+        "Mahsa Torfeh",
+        "Lujia Zhong",
+        "Michelle L. Povinelli",
+        "Owen D. Miller",
+        "Chia Wei Hsu"
+      ],
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV"
+      ],
+      "published": "2026-06-23T22:59:32+00:00",
+      "link": "https://arxiv.org/pdf/2606.25226v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "method for inverse design of nanophotonic structures, applicable to ENZ metamaterials",
+      "llm_evidence_cn": "用于纳米光子结构逆设计的方法，可应用于ENZ超材料",
+      "llm_evidence": "用于纳米光子结构逆设计的方法，可应用于ENZ超材料",
+      "canonical_evidence": "用于纳米光子结构逆设计的方法，可应用于ENZ超材料",
+      "llm_tldr_en": "Introduces Dimension Expansion Network (DEN), an unsupervised deep learning framework for efficient inverse design of nanophotonic structures, achieving simulation savings and enabling synthesis of complex 3D structures; the method could be adapted for designing epsilon-near-zero metamaterials.",
+      "llm_tldr_cn": "针对纳米光子结构逆设计中设计空间大、仿真成本高的问题，本文提出了一种无监督、仿真高效的维度扩展网络（DEN）。该框架将低维设计目标转换为高维条件表示，用于生成式逆设计模型，在光谱分束器设计上实现了16倍的仿真节省，并直接合成了三维纳米柱阵列，还可用于全彩超表面图案的再优化。该方法为无需大规模预计算数据的高效纳米光子设计提供了新思路，有潜力应用于epsilon-near-zero超材料的设计。",
+      "llm_tldr": "针对纳米光子结构逆设计中设计空间大、仿真成本高的问题，本文提出了一种无监督、仿真高效的维度扩展网络（DEN）。该框架将低维设计目标转换为高维条件表示，用于生成式逆设计模型，在光谱分束器设计上实现了16倍的仿真节省，并直接合成了三维纳米柱阵列，还可用于全彩超表面图案的再优化。该方法为无需大规模预计算数据的高效纳米光子设计提供了新思路，有潜力应用于epsilon-near-zero超材料的设计。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "metamaterials with epsilon near zero properties",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.26269v1",
+      "source": "arxiv",
+      "title": "Challenging the $p$-type Paradigm: Intrinsic $n$-type Mobility in Antiferromagnetic Cr$_2$O$_3$",
+      "abstract": "Chromium oxide (Cr$_2$O$_3$) is widely considered a $p$-type transparent conducting oxide despite ongoing debate regarding its intrinsic transport character. Here, we resolve this question by computing phonon-limited electron and hole mobilities using the ab initio Boltzmann transport equation. We find that electron mobility systematically exceeds hole mobility over a wide temperature range, demonstrating that Cr$_2$O$_3$ is intrinsically $n$-type. Analysis of scattering mechanisms reveals that scattering with phonons affects electrons and holes similarly, and that the mobility asymmetry originates from the electronic structure, namely the larger effective mass and multi-valley character of the valence band. The intrinsic $n$-type character, combined with moderate hole mobility, enables bipolar transport and revises the role of Cr$_2$O$_3$ in transparent electronics. Additionally, our results on mobility complement previous studies on defect formation indicating that the commonly observed $p$-type behavior is extrinsic. These insights provide a complete chemical-transport paradigm for Cr$_2$O$_3$, re-evaluating its role in functional transparent electronic and magneto-optoelectronic applications",
+      "authors": [
+        "Á. A. Carrasco Álvarez",
+        "S. Poncé"
+      ],
+      "primary_category": "cond-mat.mtrl-sci",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "physics.comp-ph"
+      ],
+      "published": "2026-06-24T18:11:10+00:00",
+      "link": "https://arxiv.org/pdf/2606.26269v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "study of intrinsic carrier mobility in Cr2O3 transparent conducting oxide using ab initio methods",
+      "llm_evidence_cn": "使用从头算方法研究透明导电氧化物Cr2O3的本征载流子迁移率",
+      "llm_evidence": "使用从头算方法研究透明导电氧化物Cr2O3的本征载流子迁移率",
+      "canonical_evidence": "使用从头算方法研究透明导电氧化物Cr2O3的本征载流子迁移率",
+      "llm_tldr_en": "This paper resolves the debate on the intrinsic transport type of Cr2O3, a transparent conducting oxide, by computing phonon-limited carrier mobilities from first principles, showing that electron mobility exceeds hole mobility, indicating intrinsic n-type behavior due to electronic structure effects.",
+      "llm_tldr_cn": "本文通过第一性原理计算声子限制的载流子迁移率，解决了关于透明导电氧化物Cr2O3本征输运类型的争议。结果表明电子迁移率系统性地高于空穴迁移率，证明其本征为n型，该不对称性源自价带的较大有效质量和多谷结构。这一发现对于理解和优化TCO的载流子动力学具有重要意义。",
+      "llm_tldr": "本文通过第一性原理计算声子限制的载流子迁移率，解决了关于透明导电氧化物Cr2O3本征输运类型的争议。结果表明电子迁移率系统性地高于空穴迁移率，证明其本征为n型，该不对称性源自价带的较大有效质量和多谷结构。这一发现对于理解和优化TCO的载流子动力学具有重要意义。",
+      "llm_tags": [
+        "query:tco"
+      ],
+      "matched_query_tag": "query:tco",
+      "matched_query_text": "carrier dynamics in TCO thin films",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

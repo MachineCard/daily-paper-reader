@@ -1,0 +1,511 @@
+Title: Challenging the p-type Paradigm: Intrinsic n-type Mobility in Antiferromagnetic Cr_2O_3
+
+URL Source: https://arxiv.org/pdf/2606.26269v1
+
+Published Time: Fri, 26 Jun 2026 00:06:13 GMT
+
+Number of Pages: 13
+
+Markdown Content:
+# Challenging the p-type Paradigm: Intrinsic n-type Mobility in Antiferromagnetic Cr 2O3
+
+´Alvaro Adri´ an Carrasco ´Alvarez 1, ∗ and Samuel Ponc´ e1, 2, †
+
+> 1
+
+European Theoretical Spectroscopy Facility, Institute of Condensed Matter and Nanosciences, Universit´ e catholique de Louvain, Chemin des ´Etoiles 8, B-1348 Louvain-la-Neuve, Belgium 
+
+> 2
+
+WEL Research Institute, avenue Pasteur 6, 1300 Wavre, Belgium. 
+
+(Dated: June 26, 2026) Chromium oxide (Cr 2O3) is widely considered a p-type transparent conducting oxide despite on-going debate regarding its intrinsic transport character. Here, we resolve this question by computing phonon-limited electron and hole mobilities using the ab initio Boltzmann transport equation. We find that electron mobility systematically exceeds hole mobility over a wide temperature range, demonstrating that Cr 2O3 is intrinsically n-type. Analysis of scattering mechanisms reveals that scattering with phonons affects electrons and holes similarly, and that the mobility asymmetry orig-inates from the electronic structure, namely the larger effective mass and multi-valley character of the valence band. The intrinsic n-type character, combined with moderate hole mobility, enables bipolar transport and revises the role of Cr 2O3 in transparent electronics. Additionally, our results on mobility complement previous studies on defect formation indicating that the commonly ob-served p-type behavior is extrinsic. These insights provide a complete chemical-transport paradigm for Cr 2O3, re-evaluating its role in functional transparent electronic and magneto-optoelectronic applications 
+
+I. INTRODUCTION 
+
+Transparent conducting oxides (TCO) have attracted interest in the last decade due to their potential in op-toelectronic applications [1–4]. These types of materi-als offer good electrical conductivity and are transpar-ent in the visible range, making them interesting can-didates for use on screens in mobile phones, tablets, or touchscreens [5, 6]. The most commonly used materials are n-type semiconductors offering high conductivity and transparency, and a more stable doping [7–10]. As a con-sequence, this means that in most practical applications of TCOs, n-type semiconductors are preferred. Nonethe-less, having a p-type TCO is crucial for making p−n junc-tions for transparent light emitting diodes [11, 12], trans-parent photovoltaics [13–16] or to obtain transparent photo-detectors, logic devices and complementary metal oxide semiconductors (CMOS) [17–19]. Compounds such as Cr 2O3 have been proposed to be good candidates for 
+
+p-type doping [20, 21], even suggesting Cr 2O3 to be an intrinsic p-type semiconductor [22, 23]. In that regard, several experimental groups have been successful in this pursuit, synthesizing p-type Cr 2O3 sam-ples [23–30]. Nonetheless, it has been reported that p-type doping of Cr 2O3 is challenging [26–28] and that 
+
+n-type doping is also possible [30, 31], as well as some conflicting results with respect to oxygen deficiency and fabrication process [31–34]. Surprisingly, there are few theoretical studies [21, 22] that address the conducting properties of Cr 2O3. Thus, the question of the intrinsic nature of Cr 2O3 remains open.   
+
+> ∗alvaro.carrasco@uclouvain.be
+> †samuel.ponce@uclouvain.be
+
+In this study, we use spin polarized Density Functional Theory (DFT) calculations and the Boltzmann transport equation (BTE) [57–59], a methodology previously unex-plored for this system, to compute the electron and hole mobilities of bulk antiferromagnetic Cr 2O3. We verify its applicability in Supplementary Material S1 [60]. We find that (i) the electron mobility of Cr 2O3 is consistently higher than the hole mobility in the 100-500 K temper-ature range, implying that Cr 2O3 is an intrinsic n-type semiconductor; (ii) the hole mobility ( μh) of Cr 2O3 is be-tween 1 − 4 cm 2/(V · s) at room temperature, which in the context of p-type TCOs makes it competitive with al-ready established materials; and (iii) the conducting easy axis aligns with the magnetic one. These findings provide an unexpected perspective on Cr 2O3, shifting its description from a strictly p-type com-pound to an intrinsic n-type wide band gap semiconduc-tor. Crucially, as we show in Table I, Cr 2O3 exhibits 
+
+Material μe (cm 2/(V ·s)) μh (cm 2/(V ·s)) μf /μ s Eg (eV) In 2O3 50-100 [35] 0.1 < [36] 500 > 2.7 [37, 38] SnO 2 20-200 [39] 1-4 [39] 5-50 3.7 [40] ITO 50-100 [41] 0.1 < [42] 500 > 4.0 [40] ZnO 10-200 [43] 0.1 < [44, 45] 100 > 3.4 [46] Ga 2O3 100-200 [47] 1-5 [48] 40-100 4.6-4.8 [49] IGZO 20-50 [50] - - 3.0-3.2 [51] CuAlO 2 - 0.1-1 [52, 53] - 3.5 [54] SnO 0.2 [42] 1-7 [55] 5-15 2.7 [56] This work Cr 2O3 5-10 1-4 2-3 3.1 [16] TABLE I. Electrical and optical properties, Band gap E g ,electron (hole) mobilities μe(μh) and ratio μf /μ s between the fastest μf and slowest μs carrier type mobility, of common TCO materials compared with Cr 2O3, where ITO is In 2O3
+
+and SnO 2, and IGZO is In 2O3, Ga 2O3 and ZnO. 
+
+> arXiv:2606.26269v1 [cond-mat.mtrl-sci] 24 Jun 2026
+
+2a near unity electron-hole mobility ratio μe/μ h = 2 − 3absent in all high-performance n-type TCOs. This in-trinsic transport parity provides a unique opportunity for balanced charge extraction in all-oxide bipolar archi-tectures. By establishing a solid link between electronic transport properties and the underlying thermodynamic defect landscape, this work outlines targeted synthesis routes to exploit the true, intrinsic mobile carrier chan-nels of this stable oxide. Furthermore, the alignment of the magnetic and conducting easy axes, provides a unique platform for magneto-optoelectronic tuning, bridging the gap between transparent circuitry and antiferromagnetic spintronics.  
+
+> II. METHODS
+
+We use DFT with the Quantum ESPRESSO v7.6 software [61, 62]. Scalar-relativistic norm-conserving pseudopotentials [63] from the standard accuracy table of the PseudoDojo project [64] are used with the Pardew Burke Ernzerhof (PBE) functional [65]. The plane-wave cutoff is set to 90 Ry, a total energy convergence thresh-old of 10 −12 Ry, a 4 3 k-point grid, and a 6 3 q-point grid for phonons. We relax the crystal structure in its R3c
+
+ground state geometry with the N´ eel antiferromagnetic order (AFM) as shown in Fig. 1(a), obtaining a = 4 .948 ˚ Aand c = 13 .781 ˚ A lattice parameters, close to the experi-mental values of aexp = 4 .953 ˚ A and cexp = 13 .578 ˚ A [66]. The phonons are computed with density functional per-turbation theory (DFPT) [67–70]. The maximally lo-calized Wannier functions are computed using the wan-nier90 package version 3.1 [71] with Cr d and O p initial projections. The phonon limited transport is computed with the EPW package [59, 72, 73] which will be released in the v6.1. Mobilities are converged within 1% using 6 3
+
+coarse and 32 3 fine k/q grids. We provide all data to re-produce the results on the Materials Cloud Archive [60]. The intrinsic electron and hole mobility of Cr 2O3 are calculated by means of the iterative ab initio BTE [58, 74] in the range of 100-500 K. Although Cr 2O3 presents a N´ eel temperature of TN´ eel = 307 K [75, 76], there are no significant changes in the experimental conductivity that may signal a different trend [23–30]. Consequently, the given trends in mobility on the AFM phase would still hold in the paramagnetic phase. We consider that each spin channel σ contributes with a spin resolved mobility tensor μσαβ defined as [59] 
+
+μσαβ = −eVuc nσc
+
+X
+
+> n
+
+Z d3k
+
+ΩBZ 
+
+vσnkα∂Eβ f σnk, (1) where Vuc is the volume of the unit cell, Ω BZ is the volume of the Brillouin Zone, ∂Eβ f σnk is the perturbed occupa-tion for an applied electric field Eβ in the direction β,
+
+vσnkα is the α component of the spin-resolved electronic band velocity and nσc is the carrier density of a specific spin channel such that the relation with the conductivity tensor σαβ is 
+
+σαβ = n↑ 
+
+> c
+
+μ↑ 
+
+> αβ
+
++ n↓ 
+
+> c
+
+μ↓ 
+
+> αβ
+
+. (2) We note that the directly measurable quantities are the total conductivity σαβ and its related mobility defined as 
+
+μeff  
+
+> αβ
+
+≡ σαβ 
+
+nc
+
+= X
+
+> σ
+
+nσc
+
+nc
+
+μσαβ , (3) where nc ≡ n↑ 
+
+> c
+
++n↓ 
+
+> c
+
+. In an antiferromagnet such as Cr 2O3
+
+where the bands are spin degenerate, the carrier density on each spin channel is the same n↑ 
+
+> c
+
+= n↓ 
+
+> c
+
+. In practice, this means that the effective mobility is μeff  
+
+> αβ
+
+= ( μ↑ 
+
+> αβ
+
++
+
+μ↓ 
+
+> αβ
+
+)/2. In addition, due to the magnetic sub-lattice site symmetry of Cr 2O3, one has that μeff  
+
+> αβ
+
+= μ↑ 
+
+> αβ
+
+= μ↓ 
+
+> αβ
+
+, see Supplementary material S2 [60].   
+
+> III. RESULTS AND DISCUSSION A. Intrinsic mobility
+
+The crystal structure and the electron and hole mobil-ity of Cr 2O3 as a function of temperature are presented in Fig. 1. Our results reveal a fundamental transport characteristic: the electron mobility is greater than the hole mobility at all temperatures, indicating that Cr 2O3
+
+would be an intrinsic n-type semiconductor, a finding that provides a new perspective on the materials carrier transport properties. To assess the reliability of the calculations, we com-pare the calculated hole mobilities with the experimental values of the hole drift mobility at room temperature re-ported in Refs. [77, 78] as solid stars in Fig. 1(b). Com-paring the calculated hole mobility (1-4 cm 2/(V ·s)) with the experimental values of the hole drift mobility rang-ing from 1.5 cm 2/(V ·s) to 11 cm 2/(V ·s), we find that the calculations agree rather well with experiments. The ob-served experimental spread is largely attributed to the device architecture employed, organic field effect tran-sistors (OFETs) and thin film transistors (TFT), where the gate and the electrode contact resistance can induce a much higher nominal mobility μnom than the intrinsic one μint [79, 80]. For that reason, we also provide the sat-uration mobility μsat of Ref. [77] (red star in Fig. 1(b)), which following Ref. [79] should be smaller than the one obtained in the linear region (green and yellow stars in Fig. 1(b)). This agreement is further supported by com-paring the temperature dependence of the hole drift mo-bility with the experimental effective Hall mobility that can be extracted from Ref. [81], see Supplementary Ma-terial S3 [60], confirming the robustness of the BTE ap-proach. This intrinsic n-type behavior stands in contrast with the common trend of p-type doping Cr 2O3 of many stud-ies, where it is assumed to be a p-type semiconduc-tor [23–30]. The origin of this discrepancy comes from 3x y
+
+> z
+> Cr
+> O
+
+## (a)  (b)  𝛍 h||  𝛍 e|| 𝛍 h⟂ 𝛍 e⟂
+
+> Mobility (cm 2/(V ·s))
+
+100 200 300 400 500 
+
+10 0
+
+10 1
+
+10 2
+
+## T (K) μ(T) (cm 2/(V⋅ s)) 
+
+## CCr r22OO33       
+
+> FIG. 1. (a) Crystal structure of antiferromagnetic Cr 2O3with the arrows depicting the collinear magnetic order. (b) Intrinsic electron (in-plane μe
+> ∥, dash mauve, and out-of-plane μe
+> ⊥, mauve line) and hole (in-plane μh
+> ∥, dash green, and out-of-plane
+> μh
+> ⊥, green line) mobility for bulk polycrystalline Cr 2O3as a function of temperature obtained with the Boltzmann transport equation. Solid star symbols correspond to the experimental drift mobility from Refs. [77, 78] at room temperature.
+
+the fact that Cr 2O3 is a wide band gap semiconductor where experimental reports show an optical band gap of 3 .1 − 3.3 eV [16, 66, 82]. As a result, the intrin-sic number of carriers will be relatively small, making it sensitive to defects, impurities, and oxidation [31]. Re-cent calculations by Wang and Mu [83] show that un-der oxygen-rich growth conditions, chromium vacancies (V Cr ) exhibit exceptionally low formation energies, act-ing as acceptors and yielding the observed p-type char-acter. Completing this picture, Medasani et al. [84, 85] made a similar analysis further showing that Cr-rich en-vironments oxygen vacancies (V O) are dominant acting as donors ( n-type doping). This aligns perfectly with our transport predictions. While the pristine lattice funda-mentally favors electron mobility ( μe/μ h = 2 − 3) due to its electronic structure, optimizing chemical synthe-sis towards oxygen reduced and Cr-rich environments fa-vor donor defects to unlock this intrinsic n-type chan-nel. This unified thermodynamic and carrier transport picture directly explains the experimental success in pro-ducing n-type Cr 2O3 films via metallic Cr interfaces [30] or Ti-doping under reduced oxygen environments [31]. Thus, the systematically found p-type character of Cr 2O3
+
+is extrinsic. We verify that these trends are confirmed when using DFT+U, see Supplementary Material S4 [60]. Beyond its intrinsic mobility, Cr 2O3 exhibits a con-ducting easy axis anisotropy along the z-axis yielding 
+
+μxx = μyy ̸ = μzz in line with experimental reports of the conductivity [23]. Comparing the in plane μ|| =
+
+μxx = μyy and out of plane μ⊥ = μzz mobilities of both electrons and holes, we find that μ⊥ ∼ 1.06 μ|| , see Fig. 1(b). This anisotropy is particularly interesting be-cause it would be aligned with its magnetic and magneto-electric (ME) easy axis. Moreover, we note that although the easy axis anisotropy is qualitatively well captured by DFT calculations, using a DFT+U approach does not lead to better results, see Supplementary Material S4 [60].   
+
+> B. Advantages of Cr 2O3as a TCO and beyond
+
+In the context of TCO applications, Cr 2O3 presents an electron mobility ranging between μe ∼ 5 − 10 cm 2/(Vs) which is rather mediocre compared with other com-monly used n-type TCOs such as ITO (In 2O3 and SnO 2)or ZnO , see Table I. In contrast, the hole mobility 
+
+μh ∼ 1 − 4 cm 2/(Vs) is suitable for TCO applications since commercially available p-type TCOs such as SnO, or CuAlO 2 show similar mobilities [86–88], see Table I. Crucially, Cr 2O3 exhibits a near parity electron and hole mobility ratio ratio μe/μ h = 2 − 3, a feature that is strik-ingly absent in conventional high-performance TCOs, see Table I. While materials like In 2O3 or ZnO offer higher absolute electron mobilities, their extreme carrier asym-metry (often exceeding 100:1) represents a fundamental bottleneck for complementary logic. Compared to SnO – a rare example of p-type oxide with a relatively bal-anced mobility ratio μh/μ e = 5 − 15– Cr 2O3 offers wider optical window with a bandgap of 3.1-3.3 eV which en-sures high transparency in the visible range, whereas SnO (2.7-3.0 eV) often suffers from a yellowish tint or ab-sorption at the blue end of the spectrum. This makes Cr 2O3 the more viable candidate for high-fidelity trans-parent displays and UV-photo-detectors. Furthermore, Cr 2O3 offers a distinct chemical processing advantage over low-dimensional or narrow gap alternatives. While 
+
+p-type favored options like SnO are prone to phase struc-ture instability and unintended oxidation into SnO 2 dur-ing high temperature processing, Cr 2O3 is a thermody-namically stable oxide. This structural robustness and stability ensures that its balanced transport properties 4Γ T H2S2 F Γ L H0S0 Γ
+
+020 40 60 80 
+
+> ωqν  (meV)
+
+## 0 20  40  60  80  100  0 20  40  60  80  100 
+
+## 𝜕𝜏 -1 /𝜕ω 
+
+## (a)  (b)  (c) 
+
+## 0 0.2  0.4  0.6  0.8  10 0.2  0.4  0.6  0.8  1
+
+## 𝜏 -1 (ω)/ 𝜏 -1  𝜏 -1 (ω)/ 𝜏 -1 
+
+> ωq𝜈  (meV)
+
+## 𝜕𝜏 -1 /𝜕ω            
+
+> FIG. 2. (a) Phonon dispersion of Cr 2O3, and spectral decomposition of the contribution of each phonon with energy ωqνto the total scattering rate at the band edges τ−1for (b) hole mobility and (c) electron mobility. The total scattering rates are
+> τ−1CB = 851 meV and τ−1VB = 1020 meV for electrons and holes, respectively.
+
+can be preserved during standard high-temperature ox-ide processing. While the absolute mobilities are not particularly high, Cr 2O3 could be a good candidate for specialized targeted applications like monolithic, fully transparent optoelectronic circuits or ultraviolet (UV) photo-detectors requiring symmetric carrier extraction. Thus, using materials like Cr 2O3 with sub-10 mobility ratios would challenge the current fast-electron/slow-hole paradigm of the TCO industry. In addition, the conducting and magnetic easy axis alignment in Cr 2O3 provides a direct link between charge transport and magnetic order, suggesting that the carrier transport might be sensitive to the AFM state. Combin-ing this alignment of AFM Cr 2O3 with its large optical bandgap, reasonable p-type mobility and uniquely bal-anced electron and hole mobilities, places Cr 2O3 as a multifunctional material allowing to build transparent, bipolar ME-driven AFM switching devices.   
+
+> C. Origin of the n-type nature of Cr 2O3
+
+In order to rationalize the difference between electron and hole mobilities, we compute the phonon dispersion and the frequency resolved scattering rate ∂τ −1/∂ω for both electrons and holes. As seen in Fig. 2, most of the scattering for both electron and hole conduction come from optical phonons. We quantify the relative impor-tance of each modes by computing the integrated scat-tering rate τ −1(ω). We find that for both electrons and holes, 90% of the total scattering rate is given by optical phonons. Focusing on holes, we find that 50% of the to-tal scattering comes from the highest energy phonons at energies 75 −82 meV. The remaining 40% is mainly given by slightly lower energy optical phonons of 67 − 70 meV Γ T H2S2 F Γ L H0S0 Γ
+
+1.5 1.6 1.7 1.8 1.9 2
+
+> E - E VBM  (eV)
+
+Γ T H2S2 F Γ L H0S0 Γ
+
+-0.3 -0.2 -0.1 00.1 0.2  
+
+> E - E VBM  (eV) E - E VBM  (eV)
+> 1
+> 23
+> FIG. 3. Electronic dispersion of antiferromagnetic Cr 2O3.Conduction and valence band manifolds in the interesting re-gion for mobility.
+
+(25% of the total scattering rate) and 47 − 51 meV (10% of the total scattering rate), see Fig. 2(a) and 2(b). A similar analysis can be made in the case of the elec-trons where mainly optical phonons at similar energy scales produce the higher scattering rates with slightly less pronounced contributions from the phonons at ener-gies 47 − 51 meV than in the hole case, see Figs. 2(a) and 2(c). In addition, the scattering rate distributions shown in Figs. 2(b) and 2(c) are not only qualitatively but quan-titatively similar. This implies that phonon scattering af-5fects in a similar way both electrons and holes with only a 15% difference. As a consequence, the specific phonon modes that produce scattering cannot explain the dispar-ity between the electron and hole mobility. Therefore, we turn our attention to the electronic prop-erties of Cr 2O3. We compute the band structure and show in Fig. 3 the conduction and valence band edges relevant to the mobility in the given temperature range. We observe that the conduction band has 3 main val-leys along the Γ − T, Γ − S0 and Γ − F, with the latter hosting the conduction band minimum (CBM), see point 1 in Fig. 3. In contrast, the valence band has 4 valleys along the Γ − T, Γ − L, Γ − S0 and Γ − F paths, with the latter 2 being quasi-degenerate and hosting the VBM, see points 2 and 3 in Fig. 3. This multi-valley structure of the valence band edge implies that for the holes the intra-valley scattering would be more pronounced than for the electrons. Additionally, we note that the bands in the conduction band manifold are more dispersive than in the valence band. This indicates that in the conduction band we have higher band velocities and lower effective masses than in the valence. We compute the effective masses of the band edge of the valleys 1 and 2 in Fig. 3 that host the CBM and the VBM, respectively. We find that in the case of the electrons the effective mass is lighter than in the hole case. For the CBM m∗ ∼ 4me while for the VBM m∗ ∼ 6me. Thus, the main origin of the disparity is electronic with a minor role for the phonons. This can be further verified from the DFT+U calculations since the main difference are changes in band curvature and relative valley energy, see Supplementary Material S4 [60] for further discussion.  
+
+> IV. CONCLUSIONS
+
+In summary, our ab initio BTE calculations reveal that the phonon limited mobility of pristine Cr 2O3 in-herently favors n-type over p-type behavior, featuring a well balanced carrier mobility ratio ( μe/μ h = 2 − 3). By contextualizing the intrinsic electron and hole mobility, its wide band gap, and the established thermodynamic and defect models, we solve a long-standing debate in the literature: the p-type character of Cr 2O3 is an extrinsic feature dictated by oxygen rich defect thermodynamics, whereas the pristine crystal is an intrinsic n-type semi-conductor. Hence, the current trend of p-type doping Cr 2O3 is only partially justified, since the hole mobility is around μh ∼ 1 − 4 cm 2/(Vs), Cr 2O3 and it could still be appealing in the context of p-type TCOs since they show lower mobility. Thus, the combination of a wide band gap, chemical and thermodynamic phase stability and the near-parity electron-hole mobilities positions Cr 2O3
+
+as a unique platform for transparent bipolar electronics and functional oxide heterostuctures, shifting the design focus on oxygen reduction of Cr-rich processing regimes. In addition, we uncover the importance of the electronic degrees of freedom over the scattering with the phonons in Cr 2O3 when determining charge carrier mobility. As a consequence, small changes in Cr 2O3 electronic structure are expected to impact the mobility which hints at an exploitable response to external stimuli such as strain. Importantly, the alignment of the conducting easy axis of Cr 2O3 with its known ME easy axis for both electron and hole mobility, suggests that Cr 2O3 could be an interesting platform for transparent ME-FET and antiferromagnetic spintronic optoelectronic devices. Hence reshaping the role of Cr 2O3 as a TCO and presenting itself as well as an interesting platform for bipolar transparent AFM spintronics, and overall as a multifunctional material. 
+
+> ACKNOWLEDGMENTS
+
+Aknowledgments– S. P. is a Research Associate of the Fonds de la Recherche Scientifique - FNRS. This work was supported by the Fonds de la Recherche Scientifique - FNRS under Grants number T.0183.23 (PDR) and T.W011.23 (PDR-WEAVE). Computational resources have been provided by the supercomputing facilities of the Universit´ e catholique de Louvain (CISM/UCL) and the Consortium des ´Equipements de Calcul Intensif en F´ ed´ eration Wallonie Bruxelles (C ´ECI) funded by the Fond de la Recherche Scientifique de Belgique (F.R.S.-FNRS) under convention 2.5020.11 and by the Walloon Region. The present research benefited from additional computational resources made available on Lucia, the Tier-1 supercomputer of the Walloon Region, infrastruc-ture funded by the Walloon Region under the grant agreement n °1910247. In addition, we acknowledge Eu-roCC Belgium for awarding this project access to the LUMI supercomputer, owned by the EuroHPC Joint Un-dertaking, hosted by CSC (Finland) and the LUMI con-sortium through EuroCC Belgium (UCLouvain-MODL-EPIMS-Bench-T0447)            
+
+> [1] K. H. Zhang, K. Xi, M. G. Blamire, and R. G. Egdell, p-type transparent conducting oxides, Journal of Physics: Condensed Matter 28 , 383002 (2016). [2] M. Morales-Masis, S. De Wolf, R. Woods-Robinson, J. W. Ager, and C. Ballif, Transparent electrodes for ef-ficient optoelectronics, Advanced Electronic Materials 3,1600529 (2017). [3] S. C. Dixon, D. O. Scanlon, C. J. Carmalt, and I. P. Parkin, n-type doped transparent conducting binary ox-ides: an overview, Journal of Materials Chemistry C 4,
+
+6
+
+6946 (2016). [4] L. Rebecchi, N. Petrini, I. M. Albo, N. Curreli, and A. Rubino, Transparent conducting metal oxides nanoparticles for solution-processed thin films optoelec-tronics, Optical Materials: X 19 , 100247 (2023). [5] A. Stadler, Transparent conducting oxides—an up-to-date overview, Materials 5, 661 (2012). [6] T. Minami, New n-type transparent conducting oxides, MRS bulletin 25 , 38 (2000). [7] N. Zhang, J. Sun, and H. Gong, Transparent p-type semi-conductors: copper-based oxides and oxychalcogenides, Coatings 9, 137 (2019). [8] W. Cui, F. Chen, Y. Li, X. Su, and B. Sun, Status and perspectives of transparent conductive oxide films for sil-icon heterojunction solar cells, Materials Today Nano 22 ,100329 (2023). [9] M. Johnson-Groh, Comprehensive review of p-and n-type transparent conducting materials, Scilight 2021 , 341105 (2021). [10] L. Hu, M. Zhao, S. Liang, D. Song, R. Wei, X. Tang, W. Song, J. Dai, G. He, C. Zhang, X. Zhu, and Y. Sun, Exploring high-performance p-type transparent conduct-ing oxides based on electron correlation in V 2O3 thin films, Phys. Rev. Appl. 12 , 044035 (2019). [11] H. Kawazoe, H. Yanagi, K. Ueda, and H. Hosono, Trans-parent p-type conducting oxides: design and fabrication of pn heterojunctions, Mrs Bulletin 25 , 28 (2000). [12] R. Nagarajan, N. Duan, M. Jayaraj, J. Li, K. Vanaja, A. Yokochi, A. Draeseke, J. Tate, and A. Sleight, p-type conductivity in the delafossite structure, International Journal of Inorganic Materials 3, 265 (2001). [13] J. Jang, Y. Kang, D. Cha, J. Bae, and S. Lee, Thin-film optical devices based on transparent conducting oxides: Physical mechanisms and applications, Crystals 9, 192 (2019). [14] M. Moreira, J. Afonso, J. Crepelliere, D. Lenoble, and P. Lunca-Popa, A review on the p-type transparent Cu– Cr–O delafossite materials, Journal of Materials Science 
+
+57 , 3114 (2022). [15] A. N. Fioretti and M. Morales-Masis, Bridging the p-type transparent conductive materials gap: synthesis ap-proaches for disperse valence band materials, Journal of Photonics for Energy 10 , 042002 (2020). [16] M. Patel, S. Ghosh, J. E. Park, J. Song, D.-W. Kim, and J. Kim, A study of the optical properties of wide bandgap oxides for a transparent photovoltaics platform, Journal of Materials Chemistry C 11 , 14559 (2023). [17] H. Ohta and H. Hosono, Transparent oxide optoelectron-ics, Materials Today 7, 42 (2004). [18] K. Ozel and A. Yildiz, High-performance transparent AZO UV photodetectors, Optical and Quantum Elec-tronics 56 , 1258 (2024). [19] A. K. Rana, J. T. Park, J. Kim, and C.-P. Wong, See-through metal oxide frameworks for transparent photo-voltaics and broadband photodetectors, Nano Energy 64 ,103952 (2019). [20] A. B. Kehoe, E. Arca, D. O. Scanlon, I. V. Shvets, and G. W. Watson, Assessing the potential of Mg-doped Cr 2O3 as a novel p-type transparent conducting oxide, Journal of Physics: Condensed Matter 28 , 125501 (2016). [21] S. Dabaghmanesh, R. Saniz, E. Neyts, and B. Partoens, Sulfur-alloyed Cr 2O3: a new p-type transparent conduct-ing oxide host, RSC advances 7, 4453 (2017). [22] N. Iordanova, M. Dupuis, and K. M. Rosso, Theoreti-cal characterization of charge transport in chromia ( α-Cr 2O3), The Journal of chemical physics 123 (2005). [23] J. A. Crawford and R. W. Vest, Electrical conductivity of single-crystal Cr 2O3, Journal of Applied Physics 35 ,2413 (1964). [24] K. Mohanapandian, S. S. P. Kamala, P. Periasamy, N. S. Priya, B. Selvakumar, and K. Senthilkannan, Cu 2+ sub-stituted Cr 2O3 nanostructures prepared by microwave-assisted method: an investigation of its structural, mor-phological, optical, and dielectric properties, Journal of Sol-Gel Science and Technology 99 , 546 (2021). [25] E. Arca, A. B. Kehoe, T. D. Veal, A. Shmeliov, D. O. Scanlon, C. Downing, D. Daly, D. Mullarkey, I. V. Shvets, V. Nicolosi, et al. , Valence band modification of Cr 2O3 by Ni-doping: creating a high figure of merit p-type TCO, Journal of Materials Chemistry C 5, 12610 (2017). [26] N. Uekawa and K. Kaneko, Dopant reduction in p-type oxide films upon oxygen absorption, The Journal of Phys-ical Chemistry 100 , 4193 (1996). [27] E. Arca, K. Fleischer, and I. Shvets, Magnesium, nitrogen codoped Cr 2O3: A p-type transparent conducting oxide, Applied Physics Letters 99 (2011). [28] K. Jagadish and D. Kekuda, Performance evaluation of 
+
+p-type Cr 2O3 thin films grown by reactive DC magnetron sputtering for schottky diode applications, Materials Re-search Express 11 , 105901 (2024). [29] J.-H. Park and K. Natesan, Electronic transport in ther-mally grown Cr 2O3, Oxidation of Metals 33 , 31 (1990). [30] V. Jella, S.-H. Kang, S. Pammi, J.-H. Eom, J.-R. Jeong, and S.-G. Yoon, Thermoelectric properties of nanocom-posite n-type Cr 2O3/Cr thin films deposited by a reactive sputtering, Vacuum 140 , 71 (2017). [31] A. Holt and P. Kofstad, Electrical conductivity of Cr 2O3
+
+doped with TiO 2, Solid state ionics 117 , 21 (1999). [32] M.-Y. Su and G. Simkovich, Point defect structure of chromium (iii) oxide, in Non-Stoichiometric Com-pounds: Surfaces, Grain Boundaries and Structural De-fects (Springer, 1989) pp. 93–113. [33] Y. Parsa, L. Latu-Romain, Y. Wouters, S. Mathieu, T. P´ erez, and M. Vilasi, Effect of oxygen partial pres-sure on the semiconducting properties of thermally grown chromia on pure chromium, Corrosion Science 141 , 46 (2018). [34] P. Kofstad and K. Lillerud, On high temperature oxi-dation of chromium: Ii. properties of and the oxidation mechanism of chromium, Journal of the electrochemical society 127 , 2410 (1980). [35] P. F. Newhouse, C.-H. Park, D. A. Keszler, J. Tate, and P. Nyholm, High electron mobility W-doped In 2O3 thin films by pulsed laser deposition, Applied Physics Letters 
+
+87 (2005). [36] C.-W. Ou, C.-Y. Yang, M.-C. Wu, C.-W. Chu, et al. ,Ambipolar transport behavior in In 2O3/pentacene hy-brid heterostructure and their complementary circuits, Applied Physics Letters 93 (2008). [37] T. de Boer, M. F. Bekheet, A. Gurlo, R. Riedel, and A. Moewes, Band gap and electronic structure of cu-bic, rhombohedral, and orthorhombic In 2O3 polymorphs: Experiment and theory, Phys. Rev. B 93 , 155205 (2016). [38] T. Nagata, O. Bierwagen, Z. Galazka, M. Imura, S. Ueda, H. Yoshikawa, Y. Yamashita, and T. Chikyow, Photoelec-tron spectroscopic study of electronic state and surface structure of In 2O3 single crystals, Applied Physics Ex-7
+
+press 10 , 011102 (2017). [39] Z. Li, P. Graziosi, and N. Neophytou, Electron and hole mobility of SnO 2 from full-band electron–phonon and ionized impurity scattering computations, Crystals 12 ,1591 (2022). [40] M. Musztyfaga-Staszuk, Z. Starowicz, P. Panek, R. Socha, and K. Gawli´ nska-Necek, The influence of material parameters on optical and electrical properties of indium-tin oxide (ITO) layer, in Journal of Physics: Conference Series , Vol. 1534 (IOP Publishing, 2020) p. 012001. [41] S. Zlotnik, A. Pianelli, J. Boguski, M. A. Kojdecki, P. Moszczy´ nski, J. Parka, and J. Wr´ obel, Experimental verification of single-type electron population in indium tin oxide layers, physica status solidi (RRL)–Rapid Re-search Letters 16 , 2200170 (2022). [42] S. A. Mun, S. Park, M.-H. Lee, Y. Lee, S. Kang, J. Choi, J. Ham, J. Choi, and C. S. Hwang, Analysis of the am-bipolar conduction of tin monoxide thin-film transistors with indium tin oxide electrodes, ACS Applied Materials & Interfaces 17 , 23357 (2025). [43] A. Hutson, Electronic properties of ZnO, Journal of Physics and Chemistry of Solids 8, 467 (1959). [44] D. Mora-Fonz and A. L. Shluger, Modeling of intrinsic electron and hole trapping in crystalline and amorphous ZnO, Advanced Electronic Materials 6, 1900760 (2020). [45] M. S. Hammer, C. Deibel, J. Pflaum, and V. Dyakonov, Effect of doping of zinc oxide on the hole mobility of poly (3-hexylthiophene) in hybrid transistors, Organic Elec-tronics 11 , 1569 (2010). [46] M. R. Ahmad, A. A. Ansari, M. Dhayal, and R. Lv, Bandgap engineering of ZnO nanomaterials for enhanced electrochemical and photocatalytic efficiency, Renewable and Sustainable Energy Reviews 219 , 115767 (2025). [47] L. Zhang, J. Huang, Y. Shen, F. Liu, P. Zhang, D. Wang, K. Wu, and Y. Wei, First principles investigation of elec-tron mobility enhancement of β-Ga 2O3 doped with in-dium, Physical Chemistry Chemical Physics 27 , 3988 (2025). [48] C. Ma, Z. Wu, Z. Jiang, Y. Chen, W. Ruan, H. Zhang, H. Zhu, G. Zhang, J. Kang, T.-Y. Zhang, et al. , Explor-ing the feasibility and conduction mechanisms of p-type nitrogen-doped β-Ga 2O3 with high hole mobility, Journal of Materials Chemistry C 10 , 6673 (2022). [49] H. Peelaers and C. G. Van de Walle, Sub-band-gap ab-sorption in Ga 2O3, Applied Physics Letters 111 (2017). [50] Y. Shin, S. T. Kim, K. Kim, M. Y. Kim, S. Oh, and J. K. Jeong, The mobility enhancement of indium gallium zinc oxide transistors via low-temperature crystallization us-ing a tantalum catalytic layer, Scientific reports 7, 10885 (2017). [51] D. C. Hays, B. Gila, S. Pearton, and F. Ren, Energy band offsets of dielectrics on InGaZnO 4, Applied Physics Reviews 4 (2017). [52] S. Li, X. Zhang, P. Zhang, X. Sun, H. Zheng, and W. Zhang, Preparation and characterization of solution-processed nanocrystalline p-type CuAlO 2 thin-film tran-sistors, Nanoscale research letters 13 , 259 (2018). [53] Z. Yao, B. He, L. Zhang, C. Zhuang, T. Ng, S. Liu, M. Vogel, A. Kumar, W. Zhang, C. Lee, et al. , Energy band engineering and controlled p-type conductivity of CuAlO 2 thin films by nonisovalent Cu − O alloying, Ap-plied Physics Letters 100 (2012). [54] J. Pellicer-Porres, A. Segura, A. Gilliland, A. Munoz, P. Rodr´ ıguez-Hern´ andez, D. Kim, M. Lee, and T. Kim, On the band gap of CuAlO 2 delafossite, Applied physics letters 88 (2006). [55] M. G. Chae, J. Kim, H. W. Jang, B. K. Park, T.-M. Chung, S. K. Kim, and J. H. Han, High field-effect mo-bility and on/off current ratio of p-type ALD SnO thin-film transistor, ACS Applied Electronic Materials 5, 1992 (2023). [56] Y. Ogo, H. Hiramatsu, K. Nomura, H. Yanagi, T. Kamiya, M. Hirano, and H. Hosono, p-channel thin-film transistor using p-type oxide semiconductor, SnO, Applied Physics Letters 93 (2008). [57] S. Ponc´ e, W. Li, S. Reichardt, and F. Giustino, First-principles calculations of charge carrier mobility and con-ductivity in bulk semiconductors and two-dimensional materials, Reports on Progress in Physics 83 , 036501 (2020). [58] R. Claes, S. Ponc´ e, G.-M. Rignanese, and G. Hautier, Phonon-limited electronic transport through first princi-ples, Nature Reviews Physics 7, 73–90 (2025). [59] ´A. A. Carrasco ´Alvarez, M. Giantomassi, J. Lihm, G. E. Allemand, M. Mignolet, M. Verstraete, and S. Ponc´ e, Electron-phonon coupling in magnetic mate-rials using the local spin density approximation (2025), arXiv:2510.11350 [cond-mat.mtrl-sci]. [60] ´A. A. Carrasco ´Alvarez and S. Ponc´ e, Challenging the 
+
+p-type paradigm: Intrinsic n-type mobility in antiferro-magnetic Cr 2O3 (2026). [61] P. Giannozzi, S. Baroni, N. Bonini, M. Calandra, R. Car, C. Cavazzoni, D. Ceresoli, G. L. Chiarotti, M. Cococ-cioni, I. Dabo, A. Dal Corso, S. de Gironcoli, S. Fabris, G. Fratesi, R. Gebauer, U. Gerstmann, C. Gougoussis, A. Kokalj, M. Lazzeri, L. Martin-Samos, N. Marzari, F. Mauri, R. Mazzarello, S. Paolini, A. Pasquarello, L. Paulatto, C. Sbraccia, S. Scandolo, G. Sclauzero, A. P. Seitsonen, A. Smogunov, P. Umari, and R. M. Wentzcov-itch, Quantum espresso: a modular and open-source soft-ware project for quantum simulations of materials, Jour-nal of Physics: Condensed Matter 21 , 395502 (2009). [62] P. Giannozzi, O. Andreussi, T. Brumme, O. Bunau, M. Buongiorno Nardelli, M. Calandra, R. Car, C. Cavaz-zoni, D. Ceresoli, M. Cococcioni, N. Colonna, I. Carn-imeo, A. Dal Corso, S. de Gironcoli, P. Delugas, R. A. DiStasio, A. Ferretti, A. Floris, G. Fratesi, G. Fugallo, R. Gebauer, U. Gerstmann, F. Giustino, T. Gorni, J. Jia, M. Kawamura, H.-Y. Ko, A. Kokalj, E. K¨ u¸ c¨ ukbenli, M. Lazzeri, M. Marsili, N. Marzari, F. Mauri, N. L. Nguyen, H.-V. Nguyen, A. Otero-de-la Roza, L. Paulatto, S. Ponc´ e, D. Rocca, R. Sabatini, B. Santra, M. Schlipf, A. P. Seitsonen, A. Smogunov, I. Timrov, T. Thonhauser, P. Umari, N. Vast, X. Wu, and S. Baroni, Advanced ca-pabilities for materials modelling with quantum espresso, Journal of Physics: Condensed Matter 29 , 465901 (2017). [63] D. R. Hamann, Optimized norm-conserving vanderbilt pseudopotentials, Physical Review B 88 , 085117 (2013). [64] M. van Setten, M. Giantomassi, E. Bousquet, M. Ver-straete, D. Hamann, X. Gonze, and G.-M. Rignanese, The pseudodojo: Training and grading a 85 element opti-mized norm-conserving pseudopotential table, Computer Physics Communications 226 , 39–54 (2018). [65] J. P. Perdew, K. Burke, and M. Ernzerhof, Generalized gradient approximation made simple, Physical Review 8
+
+Letters 77 , 3865–3868 (1996). [66] M. Abdullah, F. M. Rajab, and S. M. Al-Abbas, Struc-tural and optical characterization of Cr 2O3 nanostruc-tures: Evaluation of its dielectric properties, Aip Ad-vances 4 (2014). [67] S. Baroni, P. Giannozzi, and A. Testa, Green’s-function approach to linear response in solids, Physical Review Letters 58 , 1861–1864 (1987). [68] S. Y. Savrasov, Linear response calculations of lattice dy-namics using muffin-tin basis sets, Physical Review Let-ters 69 , 2819–2822 (1992). [69] X. Gonze and C. Lee, Dynamical matrices, born effective charges, dielectric permittivity tensors, and interatomic force constants from density-functional perturbation the-ory, Physical Review B 55 , 10355–10368 (1997). [70] S. Baroni, S. de Gironcoli, A. Dal Corso, and P. Gi-annozzi, Phonons and related crystal properties from density-functional perturbation theory, Reviews of Mod-ern Physics 73 , 515–562 (2001). [71] G. Pizzi, V. Vitale, R. Arita, S. Bl¨ ugel, F. Freimuth, G. G´ eranton, M. Gibertini, D. Gresch, C. Johnson, T. Koretsune, J. Iba˜ nez-Azpiroz, H. Lee, J.-M. Lihm, D. Marchand, A. Marrazzo, Y. Mokrousov, J. I. Mustafa, Y. Nohara, Y. Nomura, L. Paulatto, S. Ponc´ e, T. Pon-weiser, J. Qiao, F. Th¨ ole, S. S. Tsirkin, M. Wierzbowska, N. Marzari, D. Vanderbilt, I. Souza, A. A. Mostofi, and J. R. Yates, Wannier90 as a community code: new fea-tures and applications, Journal of Physics: Condensed Matter 32 , 165902 (2020). [72] H. Lee, S. Ponc´ e, K. Bushick, S. Hajinazar, J. Lafuente-Bartolome, J. Leveillee, C. Lian, J.-M. Lihm, F. Macheda, H. Mori, H. Paudyal, W. H. Sio, S. Tiwari, M. Zacharias, X. Zhang, N. Bonini, E. Kioupakis, E. R. Margine, and F. Giustino, Electron–phonon physics from first principles using the epw code, npj Computational Materials 9, 156 (2023). [73] W. Yang, S. Tiwari, F. Giustino, and Y.-W. Son, First-principles electron-phonon interactions with self-consistent hubbard interaction: Application to transpar-ent conducting oxides, Phys. Rev. B 112 , 075203 (2025). [74] S. Ponc´ e, E. R. Margine, and F. Giustino, Towards pre-dictive many-body calculations of phonon-limited car-rier mobilities in semiconductors, Physical Review B 97 ,121201 (2018). [75] V. Gurevich, O. Kuskov, N. Smirnova, K. Gavrichev, and A. Markin, Thermodynamic functions of eskolaite Cr 2O3
+
+(c) at 0–1800 K, Geochemistry International 47 , 1170 (2009). [76] C. T. Anderson, The heat capacities of chromium, chromic oxide, chromous chloride and chromic chloride at low temperatures1, Journal of the American Chemical Society 59 , 488 (1937). [77] A. P. Singh Rathod, A. Mishra, W. Ahmad, and S. Ku-mar, Green synthesis of Cr 2O3 nanoparticles for en-hanced otft performance compared to pentacene-based organic thin film transistor devices, Nanochemistry Re-search 10 , 137 (2025). [78] Y.-H. Qiu, X.-S. Qiu, and C.-W. Huang, Eco-friendly and recyclable liquid metal synthesis of two-dimensional Cr 2O3 and CrN nanosheets for photoresponse and field effect transistors, ACS Applied Electronic Materials 6,7003 (2024). [79] E. G. Bittle, J. I. Basham, T. N. Jackson, O. D. Jurch-escu, and D. J. Gundlach, Mobility overestimation due to gated contacts in organic field-effect transistors, Nature communications 7, 10908 (2016). [80] Y. Hu, G. Li, and Z. Chen, The importance of contact resistance in high-mobility organic field-effect transistors studied by scanning kelvin probe microscopy, IEEE Elec-tron Device Letters 39 , 276 (2017). [81] M. Julkarnain, J. Hossain, K. Sharif, K. Khan, et al. ,Temperature effect on the electrical properties of chromium oxide (Cr 2O3) thin films, Journal of Optoelec-tronics and advanced materials 13 , 485 (2011). [82] J. Singh, V. Verma, R. Kumar, and R. Kumar, Struc-tural, optical and electrical characterization of epitaxial Cr 2O3 thin film deposited by pld, Materials Research Ex-press 6, 106406 (2019). [83] X. Wang and S. Mu, Intrinsic defects and 4d/5d tran-sition metal defects in Cr 2O3: pathways to enhance the neel temperature (2025), arXiv:2506.10883 [cond-mat.mtrl-sci]. [84] B. Medasani, M. L. Sushko, K. M. Rosso, D. K. Schreiber, and S. M. Bruemmer, First-principles investi-gation of native interstitial diffusion in Cr 2O3, The Jour-nal of Physical Chemistry C 122 , 12984 (2018). [85] B. K. Medasani, M. L. Sushko, K. M. Rosso, D. K. Schreiber, and S. M. Bruemmer, Temperature depen-dence of self-diffusion in Cr 2O3 from first principles, The Journal of Physical Chemistry C 123 , 22139 (2019). [86] G. Hautier, A. Miglio, G. Ceder, G.-M. Rignanese, and X. Gonze, Identification and design principles of low hole effective mass p-type transparent conducting oxides, Na-ture communications 4, 2292 (2013). [87] J. Singh, P. Bhardwaj, R. Kumar, and V. Verma, Progress in developing highly efficient p-type TCOs for transparent electronics: a comprehensive review, Journal of Electronic Materials 53 , 7179 (2024). [88] J. Willis and D. O. Scanlon, Latest directions in p-type transparent conductor design, Journal of Materials Chemistry C 9, 11995 (2021). Supplementary Material: Challenging the p-type Paradigm: Intrinsic n-type Mobility in Antiferromagnetic Cr 2O3
+
+´Alvaro Adri´ an Carrasco ´Alvarez 1, ∗ and Samuel Ponc´ e1, 2, †
+
+> 1
+
+European Theoretical Spectroscopy Facility, Institute of Condensed Matter and Nanosciences, Universit´ e catholique de Louvain, Chemin des ´Etoiles 8, B-1348 Louvain-la-Neuve, Belgium 
+
+> 2
+
+WEL Research Institute, avenue Pasteur 6, 1300 Wavre, Belgium. 
+
+> (Dated: June 26, 2026)
+> S1. POLARON RADIUS
+
+In this section, we estimate if Cr 2O3 is in the large or small polaron regime, following Ref. [1]. To that end, we compute the static dielectric constant and the Born effective charges as well as the effective mass of both electrons and holes and use it to make an estimate of the coupling strength of the Feynman polaron model α defined as: 
+
+α ≡ e2
+
+4πε 0ℏ
+
+r m∗
+
+2ℏωeff 
+
+ 1
+
+ε(∞) − 1
+
+ε(0) 
+
+
+
+(1) where m∗ is the effective mass, ωeff is the characteristic optical phonon frequency, ε0 is the vacuum permittivity, 
+
+ε(∞) is the high frequency dielectric constant (this is the dielectric constant ε(ω) when ω → ∞ ) and ε(0) is the static dielectric constant,(this is the dielectric constant ε(ω) when ω = 0) which we estimate as 
+
+ε(0) = ε(∞) + 1
+
+Vuc ε0
+
+X
+
+> ν
+
+Iν
+
+ω2
+
+> ν
+
+(2) with Vuc being the volume of the unit cell, Iν the infra red activities of the phonon mode with frequency ων . Regarding the effective phonon frequency ωeff , we take an average phonon frequency based on their infrared activity 
+
+ωeff =
+
+P 
+
+> ν
+
+ων Iν
+
+P 
+
+> ν
+
+Iν
+
+(3) obtaining a value of ωeff = 63 meV. Although the dielectric constant is a tensor and in Cr 2O3 has 2 independent directions, we take an isotropic average for both static ε and ε∞ to give an estimate of the coupling constant. For the effective mass, we consider the effective masses at the conduction band minimum (CBM) and valence band maximum (VBM). We obtain m∗ ∼ 4me for electrons and m∗ ∼ 6me for holes which yields a coupling constant of 
+
+α = 1 .15 for electrons and α = 1 .41 for holes, which falls in the weak to intermediate coupling regime. In addition, we can estimate the polaron radius as rp = p3.4ℏ/m ∗αω eff obtaining values of 9.5 ˚ A and 7 ˚ A for electron and holes respectively, corresponding to 1.8 and 1.3 lattice parameters encompassing 23 and 9 unit cells respectively. This falls in the large polaron regime following Ref. [2]. Thus, we conclude that in Cr 2O3, the transport properties can be well described within the Boltzmann transport equation since the polaron radius is in the large-intermediate regime, where band transport dominates over polaron hopping. 
+
+> S2. SPIN RESOLVED MOBILITY
+
+In this section, we calculate the relative contributions of each spin channel in Cr 2O3 showing that due to the lattice site symmetry the spin resolved mobilities are the same μ↑ 
+
+> αβ
+
+= μ↓ 
+
+> αβ
+
+as well as the carrier density n↑ 
+
+> c
+
+= n↓ 
+
+> c
+
+. We first compute the band structure for the two spin channels in Fig. S1(a) which is a hallmark of the lattice site symmetry. Additionally, we compute the spin resolved mobility and the relative carrier density as a function of temperature in Fig. S1(b). We see that the eigenvalues are spin degenerate ε↑ 
+
+> nk
+
+= ε↓
+
+> nk
+
+. This yields an equivalent relative carrier density between the two spin channels n↑ 
+
+> c
+
+= n↓ 
+
+> c
+
+. This is not the case in general even if the system is antiferromagnetic. The combination of these two factors yields mobilities that are equivalent as well μ↑ 
+
+> αβ
+
+= μ↓ 
+
+> αβ
+
+, see Figs. S2(a) and S2(b) for the in plane and out of plane electron and hole mobilities, respectively. 1100 200 300 400 500 
+
+## 10 09 
+
+## 5x10 09 
+
+## 10 10 
+
+# T (K) nc(T) (carriers/cm 3)Γ T H2S2 F Γ L H0S0 Γ
+
+-4 -2 024
+
+> E - E VBM  (eV) nc/10 9 (carr./cm 3)
+
+# 10 
+
+# 1
+
+# 5FIG. S1. Electronic band dispersion for bulk Cr 2O3 (a), and carrier density nc for different temperatures (b). Red solid lines correspond to the spin up while dashed blue lines correspond to the spin down. The total carrier density is set to 10 10 cm −3
+
+at all temperatures. 100 200 300 400 500 
+
+10 -1 
+
+10 0
+
+10 1
+
+10 2
+
+T (K) μ(T) (cm 2/(V⋅ s)) 100 200 300 400 500 
+
+10 -1 
+
+10 0
+
+10 1
+
+10 2
+
+T (K) μ(T) (cm 2/(V⋅ s)) In plane  Out of plane 
+
+hole electron 
+
+## (a)  (b) 
+
+> Mobility (cm 2/(V ·s))
+
+FIG. S2. Electron and hole mobility for bulk Cr 2O3. (a) In plane μ|| = μxx = μyy and (b) out of plane μ⊥ = μzz . Solid lines correspond to the spin up (red and orange for electron and hole, respectively) while dashed lines correspond to the spin down (dark and light blue for electron and hole mobility, respectively). The total carrier density is set to 10 10 cm −3 at all temperatures. 
+
+2S3. TEMPERATURE DEPENDENCE OF THE HALL MOBILITY 
+
+We compare the hole Hall mobility from the experimental data of Ref. [3], with the drift mobility obtained with the Boltzmann Transport Equation, see Fig. S3. 100 200 300 400 500 
+
+10 -1 
+
+10 0
+
+10 1
+
+10 2
+
+## T (K) μh (cm 2/V⋅ s) Hole Mobility (cm 2/(V ·s)) 
+
+FIG. S3. Hole mobility of antiferromagnetic Cr 2O3. Blue squares correspond to the Hall mobility computed as μH = σR H and scaled by a factor 14 . Green solid line correspond to the calculated hole drift mobility. 
+
+The experimental Hall mobility μH = σR H is obtained as the product of the Hall resistance RH and the conductivity 
+
+σ. Additionally, it is common for the Hall mobility to be higher than the drift mobility since the Hall factor μH/μ = rH
+
+is often greater than one. Although strictly speaking, the Hall factor is temperature dependent, its variation is not extremely pronounced [4] and taking it to be constant is reasonable approximation. In that regard, we scale the experimental Hall values computed as μH = σR H Ref. [3] by a constant factor of 14 , see blue squares in Fig. S3, to better compare the temperature dependence. In doing so, we find that the temperature dependence is well described by our calculations. 
+
+S4. MOBILITY CALCULATIONS WITH DFT+U 
+
+In this section we show the mobility calculations using a DFT+U [5] for both electron and hole mobility considering the three cases U = 0 , 3, 5 eV. The results are given in Fig. S4 for relaxed lattice parameters for each U value while keeping the same k/q meshes as with DFT. The general trends with respect to the n-type behavior of Cr 2O3 are not 100 200 300 400 500 
+
+10 0
+
+10 1
+
+10 2
+
+## T (K) μ(T) (cm 2/V⋅ s) 
+
+## CCr r22OO33𝛍 e|| 
+
+𝛍 h|| 
+
+𝛍 e⟂
+
+𝛍 h⟂  
+
+> 35U= 0
+> Mobility (cm 2/(V ·s))
+
+FIG. S4. Intrinsic electron (red, magenta and purple lines) and hole (green, khaki and orange lines) mobility for bulk Cr 2O3
+
+as a function of temperature obtained with the Boltzmann transport equation (BTE). Dashed lines correspond to out of plane mobility while solid lines are in plane mobility values. A DFT+U approach is taken with U = 0 , 3, 5 eV corresponding to the curves with circles, triangles and squares respectively. 
+
+3Γ T H2S2 F Γ L H0S0 Γ
+
+-0.2 -0.1 00.1 0.2 0.3 
+
+> E - E CBM  (eV)
+
+Γ T H2S2 F Γ L H0S0 Γ
+
+-0.3 -0.2 -0.1 00.1 0.2 
+
+> E - E VBM  (eV)
+
+U = 5 
+
+U = 3 
+
+U = 0 
+
+## (b) (a)  Conduction Valence FIG. S5. Valence band (a) and conduction band (b) manifolds of Cr 2O3. A DFT+U approach is used with U = 0 , 3, 5 eV corresponding to blue, magenta and red bands. 
+
+affected by the specific U , giving the same qualitative picture. Nonetheless, we notice that at the quantitative level, the inclusion of the onsite U repulsion produces different behaviors for the electron and hole mobilities. While for the hole mobility on site U can both enhance or reduce the hole mobility, for the electron mobility there is a consistent enhancement regardless of the U value. This is mainly due to the change in band topology of valence and conduction band manifolds, see Fig. S5. By comparing the different bands in the Fig. S5(a), it becomes clear that with DFT+U the inter-valley scattering is strongly affected by the specific U values. The inclusion of non zero U produces the disappearance of the Γ − Tand Γ − F valleys when increasing the U , and at the same time the appearance of two valleys along the H 2 − Fdirection and more importantly Γ − L directions which for larger U reaches almost the Fermi level. For the electron mobility, the inter-valley scattering is reduced for non-zero U values because the valleys along the Γ − T and Γ − S0
+
+directions are pushed upwards in energy, see Fig. S5(b). In addition, we can find that in Fig. S4 the conducting easy axis anisotropy disappears with a finite U for the electron mobility while for the hole mobility the specific U may change from easy to hard axis with larger U values leading to a more prominent easy axis similar to experiments [6]. For the case of the electrons, we can understand the change from easy axis to hard axis anisotropy by increasing U as a consequence of the tendency of DFT+U approaches to produce a much smaller band width, flatter bands and larger effective masses [7]. We can verify this in Figs. S5(a) and S5(b) where it is clear that along the out of plane Γ − T and Γ − F directions the bands are flatter and less dispersive with non zero U when compared with the in plane Γ − L and Γ − S0 directions. A possible approach to fix the issue of the U values is to compute the self consistent U
+
+following Refs. [8]. We proceed with that approach and obtain a self consistent value of Usc = 2 .83 ± 0.02 eV which is quite similar to the U = 3 eV used here. Thus, although DFT+U approaches are successful when providing an effective tool to open band gaps, the band curvature is not always accurately predicted and in some cases can produce the wrong anisotropic behavior [7].           
+
+> ∗alvaro.carrasco@uclouvain.be
+> †samuel.ponce@uclouvain.be [1] M. Schlipf, S. Ponc´ e, and F. Giustino, Carrier lifetimes and polaronic mass enhancement in the hybrid halide perovskite CH 3NH 3PbI 3from multiphonon fr¨ ohlich coupling, Phys. Rev. Lett. 121 , 086402 (2018). [2] P. M. M. de Melo, J. C. de Abreu, B. Guster, M. Giantomassi, Z. Zanolli, X. Gonze, and M. J. Verstraete, High-throughput analysis of fr¨ ohlich-type polaron models, npj Computational Materials 9, 147 (2023). [3] M. Julkarnain, J. Hossain, K. Sharif, K. Khan, et al. , Temperature effect on the electrical properties of chromium oxide (Cr 2O3) thin films, Journal of Optoelectronics and advanced materials 13 , 485 (2011). [4] S. Ponc´ e, F. Macheda, E. R. Margine, N. Marzari, N. Bonini, and F. Giustino, First-principles predictions of hall and drift mobilities in semiconductors, Physical Review Research 3, 043022 (2021). [5] W. Yang, S. Tiwari, F. Giustino, and Y.-W. Son, First-principles electron-phonon interactions with self-consistent hubbard interaction: Application to transparent conducting oxides, Phys. Rev. B 112 , 075203 (2025). [6] J. A. Crawford and R. W. Vest, Electrical conductivity of single-crystal Cr 2O3, Journal of Applied Physics 35 , 2413 (1964).
+
+4[7] S. Falletta and A. Pasquarello, Hubbard u through polaronic defect states, npj Computational Materials 8, 263 (2022). [8] I. Timrov, N. Marzari, and M. Cococcioni, Self-consistent hubbard parameters from density-functional perturbation theory in the ultrasoft and projector-augmented wave formulations, Phys. Rev. B 103 , 045141 (2021). 
+
+5

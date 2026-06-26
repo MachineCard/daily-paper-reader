@@ -1,0 +1,1299 @@
+Title: Dimension expansion for simulation-efficient nanophotonic neural networks
+
+URL Source: https://arxiv.org/pdf/2606.25226v1
+
+Published Time: Thu, 25 Jun 2026 00:22:26 GMT
+
+Number of Pages: 31
+
+Markdown Content:
+# DIMENSION EXPANSION FOR SIMULATION -EFFICIENT NANOPHO -
+
+# TONIC NEURAL NETWORKS 
+
+Shuo Huang 1,2,∗, Mahsa Torfeh 3,∗, Lujia Zhong 1,3,∗, Michelle L. Povinelli 3,†, Owen D. Miller 4,†, Chia Wei Hsu 3,‡
+
+> 1
+
+Stevens Neuroimaging and Informatics Institute, University of Southern California, Los Angeles, CA 90033, USA 
+
+> 2
+
+Department of Biomedical Engineering, University of Southern California, Los Angeles, CA 90089, USA 
+
+> 3
+
+Department of Electrical and Computer Engineering, University of Southern California, Los Angeles, CA 90089, USA 
+
+> 4
+
+Department of Applied Physics, Yale University, West Haven, CT 06516, USA 
+
+> ∗
+
+These authors contributed equally to this work. 
+
+> †
+
+Corresponding authors: owen.miller@yale.edu , povinell@usc.edu 
+
+> ‡
+
+Posthumous contribution 
+
+## ABSTRACT 
+
+Inverse design of nanophotonic structures remains challenging due to the large design space, the non-linear relationship between structure and optical response, and the computational cost of repeated optimization. Existing deep-learning-based approaches often rely on large pre-generated datasets or collections of optimized structures, limiting their scalability to complex inverse-design problems. Here, we introduce a dimension expansion network (DEN), a fully unsupervised framework for simulation-efficient nanophotonic inverse design. The central idea is to transform low-dimensional design objectives into structured high-dimensional conditioning representations before inverse de-sign is performed, thereby reducing the dimensional mismatch between compact target parameters and high-dimensional nanophotonic structures. The framework is trained directly through differen-tiable electromagnetic simulations without requiring pre-generated training data. We demonstrate the approach on free-form metalens and asymmetric Y-splitter design tasks. For metalens design, DEN achieves focal intensities comparable to those obtained by adjoint optimization while reducing the number of required simulations by approximately 50%, and scales from tens to thousands of tar-get focal positions within the same focal region. For Y-splitter design, DEN accurately reproduces arbitrary power-splitting ratios using only 21 training targets and exhibits robust broadband perfor-mance. Ablation studies, representation analyses, and theoretical investigations show that dimension expansion improves target sensitivity, increases structural diversity, and reduces mode-collapse-like behavior. These results demonstrate that dimension expansion provides an effective strategy for conditioning inverse-design networks with low-dimensional design objectives and offers a promis-ing approach for photonic inverse design over large continuous target spaces. 
+
+Key words: Nanophotonic inverse design, Dimension expansion, Metalens, Y-splitter, Deep learning 
+
+## 1 INTRODUCTION 
+
+Nanophotonics uses the interaction of light with subwavelength structures to precisely control electromagnetic waves at the nanoscale [1; 2; 3; 4; 5; 6; 7; 8], enabling a wide range of applications, including sensing [9; 10], imaging and displays [11; 12], and photonic integrated circuits [13]. Designing nanophotonic structures with high efficiency and tolerant to fabrication imperfections remains a challenging task, due to the large number of design parameters and the highly nonlinear relationship between structure and optical response. Inverse design methods have been developed to address this challenge, enabling the discovery of high-performance and non-intuitive structures that surpass traditional design approaches [5; 3; 4; 6]. A variety of optimization-based techniques have been tried, including heuristic methods such as genetic algorithms and particle swarm optimization [14; 15; 16; 17; 18; 19], as well as gradient-based approaches leveraging the adjoint method (including “topology optimization”) [20; 21; 22; 23; 24; 25]. These methods require new iterative optimizations for every variation of a design problem, leading to substantial computational cost, particularly for structures with many degrees of freedom that are not amenable to parameter search methods. Moreover, they are sensitive to initialization and can be trapped in local optima, requiring multiple optimization runs per individual design to identify satisfactory solutions. Requiring binary materials (as opposed to 1
+
+> arXiv:2606.25226v1 [eess.IV] 23 Jun 2026
+
+common “grayscale” relaxations) and foundry compatibility can further compound these problems [6; 20; 26; 27; 28; 29]. Recently, deep neural networks (DNNs) have been explored for nanophotonic inverse design [30; 31; 32; 33; 34; 35]. Some approaches employ neural networks as surrogate models for “forward” electromagnetic simulations; ultrafast simulations then enable iterative optimization at low computational cost [36; 37; 8; 38; 39; 40; 41; 42; 43; 44; 45]. While effective for inverse design, training these models requires large, optimized datasets, often consisting of tens of thousands or even millions of full-wave simulations. Moreover, they do not address challenges such as local optima or repeated optimization for different design targets. Physics-informed neural networks (PINNs) [46; 47] and neural operators [48; 49; 50] have shown effectiveness in incorporating physical constraints into deep learning. However, their application to large-scale inverse design remains challenging. PINNs require repeated evaluation of differential operators over densely sampled domains, which leads to heavy differentiation calculation. Neural operators require extensive training over high-dimensional function spaces, which can be computationally expensive and difficult to be extended to complex tasks. An alternative is to use DNNs to directly perform inverse design, training networks to predict optimal structures directly from a desired target or objective, bypassing iterative optimization altogether. This approach can be challenged by the non-uniqueness of inverse problems, where multiple structures can produce similar optical responses, affecting the convergence of the training process [34; 51]. Several strategies have been proposed to avoid this issue, including filtering training datasets [52], dimensionality reduction [53], and restricting the design space [54; 55; 56; 57; 58; 59; 60]. These approaches are typically restricted to low-dimensional problems, where they can be quite effective, but do not scale well to complex structures with many degrees of freedom. Tandem neural networks [61; 62; 63; 64] partially address the non-uniqueness issue by coupling inverse and forward models, but they still require costly training of forward surrogates and have difficulty capturing the complex relationships in high-dimensional design spaces. Generative models, such as generative adversarial networks (GANs) [65] and variational autoencoders (VAEs) [66], can generate diverse structures from random noise and can explore designs with larger parameter spaces [34; 67; 68; 69; 70; 71; 72; 73; 74; 75; 76; 77; 78]. Many such approaches rely heavily on pre-generated training datasets. In practice, constructing such datasets often requires numerous, computationally costly full-wave simulations [74; 75; 76; 77; 78]. Consequently, the overall computational cost can exceed that of traditional optimization methods. Furthermore, the generated designs tend to have a high degree of similarity to patterns in the training data and may fail to discover new structures with better performances than the structures in the training data. Simulator-based generative optimization methods, such as GLOnets [79], avoid the need for pre-generated datasets by training directly through electromagnetic simulations. However, these methods are typically driven by random latent inputs and are designed to optimize a single target or a small number of discrete conditions at a time. The stochastic nature of these approaches produces a distribution of candidate structures with a wide range of per-formance metrics, often dominated by poor- to mediocre-performance designs that require simulation time but do not necessarily help identify the outlier structures desired for a design problem. Typically, post-selection among hun-dreds of generated structures for the same target is required to identify high-performance designs [79]. Although simulator-based generative optimization can reduce the need for large datasets, it remains fundamentally a stochastic search process over a distribution of candidate structures. In contrast, our objective is not to generate a distribution of candidate structures for a fixed target, but to learn a deterministic conditional mapping from continuously varying target specifications to high-performance designs. Rather than sampling many candidate structures and performing post-selection, the proposed framework directly predicts a design conditioned on the desired target response. To sum-marize, existing DNN-based inverse-design methods either have limited ability to efficiently explore high-dimensional design spaces, rely on computationally costly datasets, or operate as stochastic generators that require repeated sam-pling and post-selection for each target specification. In this work, we introduce a fully unsupervised neural network approach with the computational parsimony of adjoint-based iterative optimization approaches, but which can simultaneously learn how to produce optimal structures across an entire class of desired designable devices. The key to our network is a technique we refer to as “dimension expansion (DEN),” depicted in Fig 1(a), in which scalar target objectives are lifted to a higher-dimensional space, using specific sinusoidal Fourier “basis functions” [80; 81], before being fed to attention-based convolutional neural networks. The networks produce many designs, one for each scalar target, and back-propagation through the network can improve these designs in parallel, essentially as rapidly as iterative optimization improves individual designs. In a prototypical metalens design application, even with only 1500 simulations , this approach can find 25 binarized high-performance designs with variable, independent (sufficiently well-separated) focal points over a 1.6λ × 1.6λ
+
+target region. With full-space sampling when all possible focal points are included during training, the network further enables efficient generation of high-performing designs across the entire target space of focal points (6561 designs in 
+
+5.33 λ×5.33 λ region using only 8300 simulations). Through systematic tests, we show the importance of incorporating dimension expansion, without which the performance of the trained networks collapses, and the field intensity at the 2Figure of Proposed Method     
+
+> 1
+> DEN
+> Neural network
+> Loss
+> DEN
+> External projector
+> ℒ
+> 𝐼
+> 𝑔 (𝒯 ,𝐼 )
+> 𝐹 𝑎
+> Efficiency/
+> Focal points
+> (0D)
+> Outer product
+> 𝑔 =𝐟 1𝐟 2𝑇
+
+a c                  
+
+> 𝐼 𝑐𝑜𝑠 (𝑥 )𝐼 𝑠𝑖𝑛 (𝑥 )
+> 𝜔 =𝑁 𝑥 −Τ2𝑖 𝑁 𝑖
+> 0
+> 1
+> 𝜔
+> 0𝑁 𝑖 𝑖 0𝑁 𝑥 𝑥
+> -1
+> 0
+> 1
+> 0
+> 2𝑁 𝑖
+> -1
+> 0
+> 𝐼
+> 𝐼 (𝑥 1)
+> 𝐼 (𝑥 2)
+> 𝑁 𝑖
+> 𝑀𝐿𝑃 1
+> 𝑀𝐿𝑃 2
+> Target output 𝐹 𝒯
+> 𝑖
+> Dimension
+> expanded image
+> for 𝑥 1,𝑥 2
+> Pixel
+> value
+> Flowchart of dimension expansion: An example for 𝒯 =𝒙 𝟏 ,𝒙 𝟐
+> External projector 𝐼
+> Design
+> Scalar targets
+> 𝒯 1
+> 𝒯 2
+> 𝒯 3
+> 𝑔 (𝒯 ,𝐼 )
+> Image1
+> Image2
+> Image3
+> Trained neural
+> network
+> One training iteration
+
+b 
+
+> Photonic design by dimension expansion (DEN)
+> Inference (Forward only)
+> Training only (Forward + back -prop.)
+> 𝒯 Image
+> (2D)
+> Designs
+> Full -wave
+> simulation
+> 𝐟 1
+> 𝐟 2
+> •
+
+Figure 1: The proposed dimension expansion network (DEN). (a) Structure generation using the trained network under multiple design targets. (b) Training process of the network. The scalar target, such as efficiency or focal-point coordinates, is first embedded into a high-dimensional image and then fed into the neural network. The loss is calculated by directly comparing the actual output of the designed structure, Fa, with the target output FT . (c) 
+
+Flowchart of dimension expansion, illustrated using the example T = ( x1, x 2).target focal point is reduced by about 60%. We demonstrate the effectiveness of the proposed approach on challenging design tasks, including free-form metalenses and asymmetric Y-splitters, achieving high performance and substantial computational savings, while demonstrating generalization to unseen target conditions in the Y-splitter design task. This work addresses an important challenge in nanophotonic inverse design by improving the conditioning of inverse-design networks with low-dimensional design objectives. The proposed DEN framework demonstrates that dimension expansion can enable efficient learning of high-performance designs across large continuous target spaces. Our code is publicly available at: https://github.com/huangshuo343/dimension_expansion_network .
+
+## 2 APPROACH 
+
+In this work, we propose a fully unsupervised deep-learning network for photonic inverse design. As shown in Fig. 1, the proposed DEN contains two parts: 1) Dimension expansion and 2) Inverse design with fully unsupervised neural network. We describe each part in the following sections. 2.1 DIMENSION EXPANSION 
+
+The goal of our network is to take 0D scalar targets (e.g., focal point coordinates of a metalens or power splitting ratios of Y-splitters) as input and generate the corresponding nanophotonic designs, where the refractive index profile of the design space is the output. However, the there is a significant mismatch between the low-dimensional scalar inputs (a few real numbers) and the high-dimensional design-variable output ( 10 3 or more design parameters). From a func-tional perspective, this corresponds to learning a mapping from a very low-dimensional space to a high-dimensional space using a neural network with millions of parameters (often exceeding 10 7), which is known to be challenging and can lead to poor generalization or training instability [82]. Increasing the dimensionality of feature representations is a common strategy in neural networks to make complex mappings easier to learn [83]. For example, convolutional neural networks expand inputs using multiple filters [84; 85], while multilayer perceptrons and transformer-based models map low-dimensional inputs into higher-dimensional embeddings [80; 81]. However, these approaches usually assume that the input already has some form of structure, such as spatial grids in images or sequences in tokens. But scalar input targets do not contain such structure. As a result, these standard strategies cannot be directly applied at the input stage. Therefore, we need a different way to expand the input dimension, one that can construct structured, high-dimensional representations directly from scalar inputs. A natural approach is to enrich the input by introducing structured representations that provide more informative features for learning. In a preliminary version of this work, we used the electric field obtained by using the target response as the source and propagating it through a predefined initial structure as the input representation [86]. This approach is based on the observation that the electric field provides a spatially structured representation that is informative about the desired structure, which facilitates learning the mapping from targets to designs. This method becomes less practical 3as the number of targets increases, since obtaining the electric field requires performing a full-wave simulation for each target. In addition, the resulting electric field depends on the choice of the propagation setup, which may reduce its generality as an input representation. Instead, we transform the scalar targets into a spatially structured representation that can serve as the network input. We expand the scalar targets in two steps: (1) mapping each value to a 1D representation using an external projector, and (2) building a 2D representation via an outer product. For the external projector, we use sinusoidal positional encoding [80]; for a scalar target x, the encoding is 
+
+I(x) =  sin( ωix), cos( ωix)Ni 
+
+> i=1
+
+∈ R2Ni , (1) where Ni is the number of “frequencies” (not related to the electromagnetic frequencies in the design problem), which themselves are chosen as 
+
+ωi = N −2i/N i 
+
+> x
+
+, i = 1 , . . . , N i, (2) with Nx being the number of discrete samples of the scalar targets (e.g., the number of target focal points for the metalens along one dimension). For targets sampled from a two-dimensional space, such as focal points in the example below, we use T = ( x1, x 2) to denote its coordinates, with each component encoded independently. This mapping can be viewed as embedding the scalar inputs into a Fourier feature space, where the target infor-mation is distributed across multiple frequency bands using sine and cosine functions. Fourier-based encodings have been widely used in neural networks to improve the learning of complex functions from low-dimensional inputs [81]. In this way, the scalar inputs are expanded into a set of multi-frequency basis functions, allowing the network to represent variations at different scales. This is particularly suitable for our problem, where the mapping from target parameters to optimal structures is often continuous and locally smooth, meaning that small changes in the targets lead to gradual changes in the structure, while still allowing sharper structural variations when needed. While Fourier feature encodings have been widely used in coordinate-based representations and implicit neural models to improve the learning of high-frequency functions from low-dimensional inputs [81; 87], and sinusoidal encodings are also commonly used as conditioning mechanisms in generative models, we are not aware of any research using Fourier feature encodings for nanophotonic neural networks taking design specifications as inputs.. In this work, we adopt this technique to construct structured input representations for inverse photonic design without relying on training base of electromagnetic simulations. The encoded representations then pass through two multilayer perceptrons (MLPs), 
+
+f1 = MLP 1[I(x1)] , f2 = MLP 2[I(x2)] , (3) where each MLP consists of two fully connected layers with Sigmoid Linear Unit (SiLU) [88] activations. These MLPs further process the encoded features and adapt them to the inverse design task by learning task-dependent combinations of the multi-frequency components. In this way, the network can emphasize the most relevant frequency components for mapping targets to structures, leading to a representation that better captures the underlying target-structure relationship. To further expand the dimensionality, we construct a 2D feature map from the 1D feature vectors via the outer product 
+
+g = f1f ⊤ 
+
+> 2
+
+∈ R2Ni×2Ni . (4) Each matrix element of g is the unique product of one element from f1 with one element from f2, capturing interactions between all pairs of encoded features and lifting the two 1D representations into a structured 2D feature map. The 2D image g then feeds as the input into the NN (Fig. 1(c)). 
+
+Theoretical motivation. The proposed dimension expansion serves two complementary purposes. First, the Fourier encoding maps low-dimensional target coordinates into a multi-scale feature space, where nearby targets become more distinguishable through a frequency-dependent similarity structure. Second, the outer-product construction lifts the coordinate embeddings into a higher-dimensional bilinear representation. As discussed in Appendix H, this lifting expands the linear span of the conditioning representations and reduces pairwise correlations between different tar-get conditions. Together, these effects improve target separability and help preserve target-dependent information throughout training, thereby reducing mode-collapse-like behavior. 2.2 FULLY UNSUPERVISED NEURAL NETWORK 
+
+To map the dimension-expanded input representations to physical designs, we employ an attention-based convolutional neural network that generates the refractive index profile n(x, y ). The network follows an encoder-decoder architec-ture [89], where convolutional residual blocks [90] extract multi-scale spatial features, and attention modules [80] 4capture long-range dependencies. In the encoder, the input is progressively processed through down-sampling con-volutional blocks to learn hierarchical representations, followed by a bottleneck stage that combines convolution and attention operations. The decoder restores spatial resolution through up-sampling, while skip connections fuse en-coder features to preserve fine structural details. The final output head maps the decoded features to the refractive index profile n(x, y ).To accurately model light-matter interactions during training, we perform full-wave simulations by solving Maxwell’s equations for TM polarization (scalar electric field) using a finite-difference frequency-domain (FDFD) solver. The design region is discretized using finite differences, while the surrounding homogeneous region is mod-eled using a Fourier-based propagation method to efficiently capture wave propagation in open space: 
+
+
+
+− ∂2
+
+∂x 2 − ∂2
+
+∂y 2 − ω2
+
+c2 n2(x, y )
+
+
+
+Ez (x, y ) = iωμ 0Jz (x, y ). (5) Here, ω is the angular frequency, c is the speed of light in vacuum, μ0 is the vacuum permeability, n(x, y ) is the refractive index distribution, Ez (x, y ) is the electric field, and Jz (x, y ) is an effective source term. Further details of the numerical formulation are provided in Sec. 5. We consider two representative examples: asymmetrical Y-splitters and metalenses. For the Y-splitter, the device divides incoming light into two output waveguides with target transmission coefficients T1 and T2, while for the metalens, the device focuses light to a target focal point (fx, f y ). The corresponding loss functions are defined as follows. For the Y-splitter design, directly minimizing |T1 − T1 a| and |T2 − T2 a| leads to a highly nonconvex optimization landscape; to improve convergence, we additionally encourage high total transmission: 
+
+L = |T1 − T1 a| + |T2 − T2 a| + 1 − (T1 a + T2 a) . (6) For the metalens design, letting E(x, y ) denote the simulated electric field, we define 
+
+L = − | E(fx, f y )|2, (7) so that minimizing the loss corresponds to maximizing the focal intensity. The treatment of targets differs between the two tasks. For the Y-splitter, the mapping from target parameters to structures is relatively smooth, allowing the model to be trained on a subset of targets and to generalize to unseen ones within the continuous target space. For the metalens design, although the target space is also continuous, the cor-responding mapping is significantly more complex and exhibits higher-frequency variations in the target-to-structure mapping. As a result, reliable interpolation becomes more challenging, and we include a dense set of target points during training to ensure adequate coverage of the design space. Once trained, the network generates designs directly from input targets without requiring iterative optimization, learning a shared mapping instead of solving each design problem independently. For continuous target spaces such as the Y-splitter, this enables interpolation between trained samples and generalization to unseen inputs, while for the metalens, the learned mapping efficiently covers a densely sampled set of targets. This results in an amortized optimization framework [66; 91], where a single trained model replaces repeated per-target optimization processes. Rather than independently optimizing a separate structure for every target condi-tion, DEN learns a shared target-conditioned mapping across the entire design space during training. Consequently, information about multiple design–target pairs can be learned simultaneously, within a single training process. For example, the proposed framework learns metalens designs covering an entire 5.33 λ × 5.33 λ focal region using only 8300 training simulations. For comparison with adjoint-based inverse design, we first only consider 121 independent focal points in this region (corresponding to approximately half-wavelength spacing between focal points in both di-mensions), and show high-efficiency designs across all 121 with only 8300 training simulations. Moreover, as shown in Appendix Sec. F, our framework is nearly as efficient with dense target-space distributions, performing nearly as well for 6561 focal positions in the same region with the same 8300 training simulations. Once training is completed, new designs can be generated directly from their target conditions without requiring additional per-target optimiza-tion. These results demonstrate that the proposed approach can efficiently learn and represent large collections of target-dependent designs within a single optimization process. 
+
+## 3 RESULTS 
+
+In this section, we evaluate the proposed dimension expansion network (DEN) on free-form metalens and asymmet-ric Y-splitter inverse-design tasks. We first demonstrate that DEN can efficiently generate many high-performance metalens designs with different target focal points while significantly reducing the number of required simulations 5Compare with Existing Methods 
+
+•  
+
+> [5] [4]
+> [34]
+> [11]
+> [20]
+> [30]
+> [3]
+> [25]
+> [35]
+> [2
+> 7]
+> [16] [26]
+> [36]
+> [2]
+
+# Comparison  on Size  for Output Structures 
+
+[53] 
+
+[55] 
+
+[54] 
+
+[60]  [69] 
+
+[68]  [56] [36]  [35] 
+
+[16]  [38] 
+
+[8] 
+
+[66] 
+
+This work 
+
+> Size , volume /  ( Τ𝜆  2)^𝑑
+
+# mber of Optimized Structures or Simulations for Training 
+
+Forward simulation 
+
+Inverse design 
+
+Optimized structures 
+
+Simulations 
+
+Regression 
+
+95% confidence interval 
+
+0
+
+10 
+
+20 
+
+30 
+
+40 
+
+10 3 10 4 10 5 10 6 10 7 10 8
+
+> Designable volume  𝑉 /(𝜆 /2)𝑑
+
+# # of simulations or optimized structures 
+
+[40]  [37] 
+
+[53] 
+
+[55] 
+
+[60] 
+
+[68] 
+
+[69] 
+
+[54] 
+
+[56] 
+
+[61] 
+
+[69] 
+
+[70] 
+
+[55] 
+
+[57] 
+
+[67] 
+
+[54] 
+
+[56] 
+
+[66] Figure 2: Comparison with existing neural-network-based metalens design methods. We compare existing work and our metalens design outcomes on two axes: (1) the design region’s size, V , measured in half-wavelength boxes/cubes ( d is the simulation dimension): V / (λ/ 2) d; (2) the number of optimized structures or simulations used to generate training data and train the network. “Forward simulation” are methods that only use deep learning to predict the forward simulation results of given structures, and “Inverse design” are methods that directly output the designed structures. “Optimized structures” refer to datasets in which each training structure is produced through optimization, typically requiring many more simulations than the number of training samples, whereas “simulations” denote datasets generated by random sampling with only one simulation per data point. The regression line (for correlation of the form 
+
+y = ax b) and the 95% confidence interval are included. compared with adjoint optimization. We then investigate the robustness of the proposed dimension expansion using different network backbones. Finally, we evaluate DEN on Y-splitter design tasks with arbitrary power splitting ratios and broadband optical performance. 3.1 TRAINING DETAILS 
+
+We now proceed to train the proposed DEN. All experiments are performed on a single NVIDIA A6000 GPU, with a peak memory consumption of approximately 20 GB during training. The model is optimized end-to-end using differ-entiable full-wave electromagnetic simulations and does not require any pre-generated training dataset or collection of optimized structures. Instead, the network directly learns from electromagnetic gradients during optimization. For the metalens design task, we employ a coarse-to-fine target-sampling strategy to improve optimization stabil-ity and accelerate convergence. At each training iteration, a target focal position is randomly selected from the target region. During the early stages of training, the focal positions are sampled using a relatively coarse spatial interval. Specifically, for a target focal point region with side length D (shown in Fig. 3(a)), the initial sampling interval is set to 0.5D, corresponding to a 3 × 3 focal-point grid within the target region. The interval is subsequently reduced to 
+
+0.25 D, corresponding to a 5×5 grid, and is further refined during training until the spacing reaches approximately half a wavelength. This curriculum-like strategy enables the network to first learn coarse target-to-structure relationships before progressively refining the mapping over a denser target distribution. Starting from sparse target sampling also reduces the optimization difficulty during the early stages of training, allowing the network to establish a stable global mapping before resolving finer target-dependent variations. Additional experiments investigating dense target-space coverage are provided in Appendix Sec. F. During training, the target coordinates are first processed by the dimension-expansion module and subsequently passed through the neural-network backbone to generate a refractive-index distribution. The generated structure is then transformed into a differentiable binary-like representation using the binarization procedures described in Appendix Sec. C. The resulting refractive-index profile is embedded into the simulation domain and evaluated using the full-wave 6No           
+
+> Comparison between deep learning and adjoint method
+> 𝑦  (𝜇𝑚 )
+> 0
+> -5
+> 5
+> 𝑥 (𝜇𝑚 )
+> 06𝑥 (𝜇𝑚 )
+> 06𝑥 (𝜇𝑚 )
+> 061.0
+> 2.4
+> 0.0
+> 1.0
+> Metalens design process via dimension expansion
+
+a                          
+
+> 𝑓 𝑥 =3.58 𝜇𝑚
+> 𝑓 𝑦 =1.33 𝜇𝑚
+> 𝑓 𝑥 =4.92 𝜇𝑚
+> 𝑓 𝑦 =0.00 𝜇𝑚
+> 𝑓 𝑥 =6.25 𝜇𝑚
+> 𝑓 𝑦 =1.33𝜇𝑚
+> Examples at 𝑫 =𝟐 .𝟔𝟕 𝝁𝒎 ,𝝀 =𝟓𝟎𝟎 𝒏𝒎
+
+b                                                                           
+
+> Target
+> Target: Many designs with
+> different focal points
+> 𝑓 𝑥1 ,𝑓 𝑦1
+> 𝑓 𝑥2 ,𝑓 𝑦2
+> 𝑓 𝑥3 ,𝑓 𝑦3
+> Trained neural
+> network
+> 𝐷
+> Dimension
+> expansion
+> (DEN)
+> Focal points
+> Designs
+> 𝐷 (𝜇𝑚 )Method # designs Fwd sims Focal intensity ( a.u .) Degree of binarization
+> 0.80 L-BFGS 25 3260 0.89 ±0.04 0.97 ±0.02
+> DEN -Net 25 1500 0.91 ±0.05 0.97 ±0.01
+> 1.33 L-BFGS 36 5224 0.90 ±0.05 0.97 ±0.02
+> DEN -Net 36 2000 0.90 ±0.04 0.97 ±0.01
+> 2.67 L-BFGS 121 16428 0.86 ±0.14 0.97 ±0.03
+> DEN -Net 121 8300 0.86 ±0.06 0.97 ±0.01
+> 𝐷 =0.80 𝐷 =1.33 𝐷 =2.67 𝜇𝑚
+> L-BFGS DEN L-BFGS DEN L-BFGS DEN
+> Intensity ( a.u .)
+> 0.0
+> 1.0
+> Fwd  sims / design
+> 0
+> 200
+
+c             
+
+> Target
+> 𝐷
+> 𝑛 𝐸 2(a.u .)
+> ⋮
+> ⋯
+> L-BFGS DEN L-BFGS DEN L-BFGS DEN
+> ↓54% ↓62% ↓49%
+
+Figure 3: Comparison between DEN and adjoint optimization (via L-BFGS) for metalens design. (a) Schematic illustration of the metalens design task. (b) Three design examples with different target focal-point coordinates and their corresponding output fields. (c) Comparison between DEN and L-BFGS in terms of focal intensity at the full width at half maximum (FWHM) and the number of simulations required to generate the designs. Results are shown for small ( D = 0 .80 μm), medium ( D = 1 .33 μm), and large ( D = 2 .67 μm) focal-point regions. solver described in Sec. 5. The objective is to maximize the focal intensity at the target position while simultaneously encouraging fabrication-compatible binary structures. The network parameters are optimized using AdamW with an initial learning rate of 5 × 10 −5. Gradients are obtained by back-propagating the electromagnetic loss through the entire simulation and network pipeline. Throughout training, the strength of the binarization constraint is gradually increased, allowing the network to first explore a continuous design space and subsequently converge toward discrete fabrication-compatible structures. The final DEN checkpoint is selected such that the generated structures achieve binarization degrees comparable to those obtained by direct inverse design using L-BFGS [92]. The binarization degree quantifies the extent to which the refractive-index distribution approaches an ideal binary structure, with a value of 1 corresponding to a perfectly binary design and a value of 0 corresponding to a completely intermediate-valued distribution. The formal definition is provided in Appendix Sec. C. Because the metalens configuration is mirror symmetric with respect to the optical axis, each off-axis focal position has a symmetry-equivalent counterpart. Throughout this work, the two symmetry-related focal positions are evaluated for each method (DEN and inverse design), and the higher focal intensity is reported. This symmetry-aware evaluation protocol is applied consistently to all numerical metalens experiments, including Sec. 3.2 and Appendix Secs. E and F. 3.2 DEN PERFORMANCE FOR METALENS FOCUSING 
+
+We first evaluate the proposed DEN on the inverse design of free-form metalenses. The objective is to generate compact nanophotonic structures that focus incident light to arbitrary target positions within a predefined focal region. As illustrated in Fig. 3(a), the target focal coordinates (fx, f y ) are transformed through the proposed dimension-expansion module and subsequently mapped to a binary refractive-index distribution by the neural network. The problem is formulated in two dimensions under TM polarization at a wavelength of λ = 500 nm . The refractive-index distribution is binary with n ∈ { 1.0, 2.4} and is discretized using a spatial resolution of ∆x = λ/ 15 ≈
+
+33 .3 nm , which also defines the minimum feature size of the design. The metalens design region consists of 12 × 301 
+
+pixels, corresponding to a physical size of approximately 0.40 μm × 10 .0 μm in the propagation ( x) and transverse (y) directions, respectively (Fig. 3(b)). The refractive-index distribution is uniform along the propagation direction, leaving 301 independent design variables along the transverse direction. For the largest target region considered in this work, the focal-point coordinates span a square region with side length D = 2 .67 μm, where the nearest and 7farthest target positions are located at fx = 3 .58 μm and fx = 6 .25 μm from the metalens, respectively. These focal distances correspond to effective numerical apertures ranging from approximately 0.81 to 0.63 . The corresponding off-axis focusing angles span approximately 12 .0◦ to 20 .4◦ (or ±20 .4◦ when both positive and negative transverse displacements are considered). Smaller focal regions with side lengths of D = 0 .80 μm and D = 1 .33 μm are also considered. All focal regions share the same center, located at (fx, f y ) = (4 .92 μm, 0.00 μm) . Unlike conventional adjoint optimization, which independently solves a separate optimization problem for every focal point, DEN learns a shared mapping between focal coordinates and optimized structures, enabling many designs to be generated from a single trained model. A key advantage of DEN is that the optimization cost is amortized across the entire target space. Instead of repeatedly optimizing each focal point independently, the network progressively learns a global target-conditioned mapping between focal coordinates and high-performance structures. Once training is completed, new designs can be generated through a single forward pass without requiring any additional optimization. As a result, the computational cost grows much more slowly than the number of target designs. To place this efficiency in a broader context, we compare DEN with existing deep-learning-based metalens design approaches in Fig. 2. The horizontal axis represents the number of simulations or optimized structures required for training, while the vertical axis denotes the normal-ized designable volume. Existing approaches exhibit a clear empirical scaling trend in which larger design spaces generally require substantially larger simulation datasets or collections of optimized structures. Forward-simulation surrogate models often require tens of thousands to millions of simulations, whereas inverse-design methods typically depend on large datasets of pre-optimized structures. In contrast, DEN directly performs physics-based inverse design without requiring any pre-generated datasets. As shown in Fig. 2, the proposed method occupies a distinct region well above the regression trend established by previous approaches. The metalens benchmark considered in this work achieves a normalized designable volume of approximately 40 using only about 8 × 10 3 simulations, whereas the full-wave volumes designed to date with neural networks methods are smaller than 10 , despite requiring comparable or substantially larger datasets. Additional analyses are provided in the Appendix. Appendix Sec. A further compares DEN with representative deep-learning-based nanophotonic design methods. Compared with previous approaches, the proposed metalens benchmark achieves one of the largest reported normalized designable volumes ( ≈ 40 ) while maintaining a comparatively large minimum fabrication feature size ( ≈ λ/ 15 ) and requiring only about 8 × 10 3 sim-ulations (Fig. 2, Appendix Sec. A). The resulting performance lies well above the empirical scaling trend established by existing methods. Representative examples are shown in Fig. 3(b) for the largest focal region considered in this work ( D =2.67 μm). Despite the substantial variation in target focal positions, the generated structures successfully concentrate optical power at the desired locations and produce well-localized focal spots with low background scattering. The fo-cal spots closely coincide with the target coordinates, demonstrating that DEN can reliably generate target-dependent designs across a broad focal region. We next compare DEN with conventional adjoint optimization using the L-BFGS algorithm. Three focal-region sizes are considered: D = 0 .80 μm, 1.33 μm, and 2.67 μm. For each target focal point, L-BFGS independently opti-mizes a separate structure, whereas DEN jointly learns all target-dependent designs through a single training process. The quantitative comparison is summarized in Fig. 3(c). Across all focal-region sizes, DEN achieves focal intensities essentially equivalent to those obtained by L-BFGS while requiring substantially fewer full-wave simulations. For the smallest focal region ( D = 0 .80 μm), DEN generates 25 designs using only 1500 simulations, corresponding to a 54% 
+
+reduction relative to the 3260 simulations required by L-BFGS. For D = 1 .33 μm, the simulation count is reduced from 5224 to 2000 ( 62% reduction). For the largest focal region ( D = 2 .67 μm), DEN generates 121 designs using 8300 simulations, compared with 16428 simulations for L-BFGS, corresponding to a 49% reduction in computational cost. Importantly, the reduction in simulation cost does not significantly compromise optical performance. DEN achieves average focal intensities of 0.91 ± 0.05 , 0.90 ± 0.04 , and 0.86 ± 0.06 a.u. for D = 0 .80 μm, 1.33 μm, and 
+
+2.67 μm, respectively, which are comparable to those obtained by L-BFGS. The generated structures also exhibit high binarization levels of approximately 0.97 , indicating that the differentiable binarization strategy successfully produces fabrication-compatible designs. Appendix Sec. E presents a larger collection of metalens designs generated by a single trained network across the focal region, illustrating that DEN can produce diverse target-dependent structures while maintaining consistent focusing performance. Furthermore, Appendix Sec. F investigates dense target-space sampling, where the same focal region is sampled at substantially higher spatial density. Even when the number of target focal positions increases from 121 to 6561 , corresponding to dense per-pixel coverage of the same continuous target space, the average focal intensity decreases by only approximately 6% . Overall, these results demonstrate that DEN can efficiently learn a target-conditioned mapping between focal coordinates and nanophotonic structures, enabling scalable inverse design across large target spaces while substantially reducing the computational cost relative to conventional optimization-based approaches. 8Fugire of Y -splitter Results 
+
+## •         
+
+> 𝑦  (𝜇𝑚 )
+> Poynting Flux (a.u.)
+> 𝑦  (𝜇𝑚 )
+> poynting Flux (a.u.)
+> n
+> Design
+> space
+> Input Output
+> 1.0 3.5
+> -1.0 0.0 1.0 2.0
+> 0.0
+> 0.5
+> 1.0
+> 1.5
+> 𝑥 (𝜇𝑚 )
+> 𝑦  (𝜇𝑚 )
+> 𝑇 1_𝑎
+> 𝑇 2_𝑎
+> 𝑇 1
+> 0.0 0.50
+> Power splitting ratios
+> 0.0
+> 1.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> Target
+> 𝑇 1_𝑎
+> 𝑇 1_𝑎 +𝑇 2_𝑎
+> 𝑇 2_𝑎
+
+a
+
+c                                        
+
+> 𝜆 (𝜇𝑚 )𝜆 (𝜇𝑚 )
+> 1.35 1.4 1.5 1.6 1.7 1.8 1.9 1.35 1.4 1.5 1.6 1.7 1.8 1.9
+> 𝑇 1_𝑎  + 𝑇 2_𝑎
+> 0.00
+> 0.20
+> Splitting error
+> 0.80
+> 1.00
+> nPoynting flux (a.u.)
+> 0.0
+> 1.5
+> 0.0
+> 0.8
+> 1.0 3.5 10 -210 -11
+> Structure Intensity Cross section
+> 1% : 99%
+> 2.9% 0.0
+> 1.5
+> 0.0
+> 0.8
+> Structure Intensity Cross section
+> 10% : 90%
+> 9.4%
+> 𝑦  (𝜇𝑚 )
+> 0.0
+> 1.5
+> Poynting flux ( a.u .)
+> 0.0
+> 0.8 20% : 80%
+> 19.6%
+> 𝑦  (𝜇𝑚 )
+> 0.0
+> 1.5
+> 0.0
+> 0.8
+> Poynting flux ( a.u .)
+> 30% : 70%
+> 30.3%
+> 0.0
+> 1.5
+> 𝑥 (𝜇𝑚 )
+> -1.0 2.0 𝑥 (𝜇𝑚 )
+> 0.0 2.0 0.0
+> 0.8
+> 𝑦 (𝜇𝑚 )
+> 0.0 2.0
+> 40% : 60%
+> 40.4%
+> 0.0
+> 1.5
+> 𝑥 (𝜇𝑚 )
+> -1.0 2.0 𝑥 (𝜇𝑚 )
+> 0.0 2.0 𝑦 (𝜇𝑚 )
+> 0.0 2.0 0.0
+> 0.8
+
+b
+
+> 50% : 50%
+
+d   
+
+> 96.3%
+> 79.0%
+> 89.2%
+> 68.9%
+> 58.7% 50.7% 48.0%
+> Target Actual
+> Training
+> Mean
+> Mean
+
+Figure 4: Inverse design of Y-splitters using DEN. The model is trained at λ = 1550 nm . (a) Design configuration. The design region consists of a 30 × 30 = 900 pixel square. Light is injected at the yellow line and measured at the blue line. (b) Six representative test examples with different target splitting ratios not used during training. The corresponding Poynting flux distributions and output cross-sectional Poynting flux profiles are also shown. (c) Target and actual splitting ratios, together with total transmission ratios, for test structures with target power-splitting ratios ranging from 1% : 99% to 50% : 50% at λ = 1 .55 μm. Training targets are marked by red crosses. (d) Broadband performance of structures designed at λ = 1 .55 μm over the wavelength range from λ = 1 .35 μm to λ = 1 .9 μm. The splitting error is defined as (|T1 a − T1| + |T2 a − T2|)/2.3.3 PERFORMANCES ON Y-SPLITTERS 
+
+We further evaluate the proposed DEN for inverse design of asymmetric Y-splitters. The objective is to generate compact photonic structures that split input optical power into two output waveguides with arbitrary target transmis-sion ratios. As illustrated in Fig. 4(a), the design region consists of a 30 × 30 binary refractive-index distribution, corresponding to 900 design parameters. Light is injected from the input waveguide on the left side, and the trans-mitted power is measured at the two output ports on the right side. The network is trained at the target wavelength of λ = 1550 nm using only 21 carefully selected training splitting ratios. The target-selection strategy is described in Appendix Sec. D, where the training samples are intentionally concentrated near the extreme splitting conditions to provide improved coverage of the most rapidly varying regions of the design space. During training, the model is optimized end-to-end using full-wave electromagnetic simulations without requiring any pre-generated optimized structures. Representative examples generated by DEN are shown in Fig. 4(b). The pictured structures correspond to target splitting ratios ranging from strongly asymmetric ( 1% : 99% ) to symmetric ( 50% : 50% ) conditions. Despite the large variation in target power distributions, the generated devices efficiently guide optical power into the desired output ports while maintaining smooth propagation through the splitter region. The corresponding Poynting-flux distributions exhibit limited back reflection and scattering, while the measured output power profiles closely match the prescribed target ratios. These examples demonstrate that the network successfully adapts the device geometry to a wide range of splitting requirements. A quantitative comparison between the target and actual splitting ratios is presented in Fig. 4(c). Despite being trained on only 21 target conditions, DEN accurately reproduces splitting ratios across the entire continuous design space. The actual splitting ratios closely overlap the target curve throughout the range from 1% : 99% to 50% : 50% ,including many ratios that are not explicitly included in the training set. At the same time, the total transmission remains close to unity for nearly all generated devices, indicating that the network not only learns the desired power distribution but also preserves high transmission efficiency. These results demonstrate strong interpolation capability 9𝑓 𝑥                                                    
+
+> 𝑓 𝑦
+> Design
+> MLP
+> 𝑓 𝑥
+> 𝑓 𝑦
+> Design
+> MLP
+> [Sin, Cos]
+> encoding
+> [Sin, Cos]
+> encoding
+> 𝑛
+> 1.0
+> 2.4
+> 0.0
+> 1.0
+> 𝑦  (𝜇𝑚 )
+> 0
+> -5
+> 5
+> 𝑦  (𝜇𝑚 )
+> 0
+> -5
+> 5
+> Focal intensity (a.u.)
+> 0.0
+> 1.0
+> 𝑥 (𝜇𝑚 )06𝑥 (𝜇𝑚 )06𝑥 (𝜇𝑚 )06𝑥 (𝜇𝑚 )06
+> 01.0×10 6
+> Model size
+> 01.0×10 601.0×10 6
+> Focal intensity (a.u.)
+> 0.0
+> 1.0
+> 01.0×10 6
+> Model size
+> 01.0×10 601.0×10 6
+> Model size: Small Model size: Large
+> Model size: Medium Model size: Large
+> 𝐷 =2.67
+> MLP without dimension expansion
+> MLP with dimension expansion
+> Dimension
+> expansion
+> 𝐷 =0.80 𝐷 =1.33 𝐷 =2.67
+> 𝐷 =0.80 𝐷 =1.33 𝐷 =2.67
+
+a
+
+b       
+
+> Small
+> Medium
+> Large
+> Medium
+> Large
+> 𝐷 =2.67
+> Target
+> 𝐷 =2.67
+> 𝐷 =2.67 𝐸 2
+> •
+
+Figure 5: Dimension expansion enables effective inverse design even with a simple multilayer perceptron (MLP) backbone. (a) Performance of MLP-based models without dimension expansion. Performance degrades as the number of model parameters increases or as the focal region becomes larger. (b) Performance of MLP-based models with dimension expansion. The generated structures exhibit improved focusing performance, and the performance further improves as the model size increases. between sparsely sampled training targets and suggest that DEN learns a continuous target-conditioned mapping rather than memorizing a discrete set of training examples. We further evaluate the broadband performance of the generated structures in Fig. 4(d). Although the network is trained only at λ = 1550 nm , the designed Y-splitters maintain high transmission efficiency over a broad wave-length range from λ = 1350 nm to λ = 1900 nm . The average total transmission remains above approximately 95% 
+
+throughout most of the wavelength range and reaches nearly unity around the design wavelength. Meanwhile, the splitting error remains low ( < 5% ) and relatively stable across the spectrum. This behavior indicates that the gen-erated structures are not narrowly optimized for a single operating wavelength but instead exhibit robust broadband performance. Overall, these results demonstrate that DEN can efficiently generate high-performance Y-splitter designs across a continuous range of splitting ratios using only a small number of training targets and simulations. The network achieves accurate ratio control, high transmission efficiency, strong interpolation capability, and robust broadband per-formance while avoiding the per-target optimization procedures required by conventional inverse-design approaches. 3.4 THE ROLE OF DIMENSION EXPANSION 
+
+Dimension expansion is the key ingredient enabling the performance gains observed throughout this work. To iso-late its contribution, we perform ablation studies using both a simplified multilayer perceptron (MLP) backbone and the full inverse-design network. Figure 5(a) shows a baseline MLP that directly receives the target focal coordinates 
+
+(fx, f y ) as input and predicts the corresponding refractive-index distribution. Without dimension expansion, the gen-erated structures produce weak focusing performance, especially as the target focal region becomes larger. For the largest focal region considered here, the resulting electric-field distributions are diffuse and poorly localized, indi-cating that the MLP struggles to learn an effective mapping from low-dimensional scalar inputs to high-dimensional nanophotonic structures. Increasing the model size does not improve performance and can even lead to further degra-dation, suggesting that the primary limitation is not network capacity but the low-dimensional target representation itself. In contrast, introducing dimension expansion dramatically improves the performance of the same MLP back-bone, as shown in Fig. 5(b). With the expanded input representation, the MLP generates substantially more localized focal spots and cleaner field distributions across all tested target regions. The improvement is observed consistently for small, medium, and large focal regions. Together, these results show that once dimension expansion is introduced, even a simple MLP becomes capable of generating effective target-dependent structures. The same conclusion is observed in the full inverse-design framework. Figure 6(a) illustrates the baseline model in which the target focal coordinates are fed directly to the network without the Fourier encoding and outer-product expansion introduced in Sec. 2.1. All other components of the training procedure are kept unchanged. As shown in Fig. 6(b), removing dimension expansion causes the focal intensity to decrease substantially as the target focal 10 •                                      
+
+> 𝑓 𝑥
+> 𝑓 𝑦
+> MLP
+> MLP
+> Image ×Design
+> 𝑛 𝐸 2(a.u.)
+> 1.0
+> 2.4
+> 0.0
+> 1.0
+> Target
+> 𝑦  (𝜇𝑚 )
+> 0
+> -5
+> 5
+> 0.0
+> 1.0
+> 𝑥 (𝜇𝑚 )06𝑥 (𝜇𝑚 )06
+> 𝐷 (𝜇𝑚 )
+> 0.80 1.33 2.67
+> Network without d imension expansion (DE) Examples for 𝑫 =𝟐 .𝟔𝟕 𝝁𝒎 without DE Focal intensity without DE
+> With DE Without DE
+> Expanded 𝑓 𝑥 Expanded 𝑓 𝑦
+> 𝑖
+> 0
+> 2𝑁 𝑖
+> 𝑓 𝑥 𝑓 𝑦
+> MLP (𝑓 𝑥 )MLP (𝑓 𝑦 )
+> Pixel value 𝑓 𝑥 𝑓 𝑦
+> -1.0
+> 1.0
+> 0.0
+> Amplification
+> With DE Without DE
+> After
+> expanding Designs After
+> MLP Designs
+> Value
+> 10 −2
+> 10 3
+> Effective rank
+> With DE Without DE
+> After
+> expanding Designs After
+> MLP Designs
+> Value
+> 0
+> 10
+> Focal intensity (a.u.)
+> abc
+> def
+> Structs for rank cal
+
+Figure 6: Mechanism of dimension expansion (DEN). (a) Network architecture without dimension expansion. (b) 
+
+Focal intensity as a function of the target-region size D, showing performance degradation and eventual collapse without dimension expansion. (c) Representative failure cases for D = 2 .67 μm without dimension expansion. (d) 
+
+Comparison of learned conditioning representations. DEN produces more diverse and spatially varying representations than direct MLP mappings. (e) Amplification of target-coordinate variations by DEN, where small differences in target coordinates lead to distinguishable representations and structures. (f) Effective-rank analysis of the generated structures. DEN increases the effective rank, indicating improved structural diversity and reduced mode-collapse behavior. region becomes larger and eventually collapse for D = 2 .67 μm. Representative examples are shown in Fig. 6(c). The generated structures fail to produce well-confined focal spots and instead exhibit diffuse field distributions that are only weakly dependent on the target coordinates. These observations indicate that the network struggles to learn a meaningful target-conditioned mapping when the conditioning variables remain in their original low-dimensional form. The origin of this behavior can be understood from the learned conditioning representations. As shown in Fig. 6(d), dimension expansion produces richer and more distinctive representations, whereas the baseline model maps many target conditions to substantially more uniform latent representations. Consequently, nearby focal posi-tions become easier to distinguish after dimension expansion. This effect is reflected in the amplification factor shown in Fig. 6(e), where small changes in (fx, f y ) produce significantly larger variations in the conditioning representa-tions and generated structures. As a result, the generated designs occupy a substantially higher-dimensional subspace, leading to the larger effective ranks observed in Fig. 6(f). Together, these effects increase structural diversity and help prevent the mode-collapse behavior visible in Fig. 6(c). Additional empirical and theoretical analyses are provided in Appendix Secs. G and H. These analyses further support the interpretation that dimension expansion improves target separability and representation diversity, helping explain the substantial performance gains observed throughout this work. 
+
+## 4 DISCUSSION AND FUTURE DIRECTIONS 
+
+DEN enables efficient inverse design over large continuous target spaces by transforming low-dimensional design objectives into structured high-dimensional conditioning representations. Across both metalens and Y-splitter bench-marks, the proposed framework achieves high-performance designs while substantially reducing the number of simu-lations required relative to conventional optimization-based approaches. Although DEN eliminates the need for pre-generated datasets and substantially reduces the number of simulations required relative to conventional optimization-based approaches, the training process still relies on repeated full-wave electromagnetic simulations. Consequently, the overall computational cost remains coupled to the complexity of the underlying physical solver. This seems like a fundamental physical limit, rather than a limitation of the method, but it 11 is important to acknowledge. As a result, the proposed framework remains constrained by the scale of problems that can be simulated using current electromagnetic solvers [6; 22]. Another sensible but important point apparent in our two examples is that the complexity of the target-conditioned mapping appears to depend strongly on the underlying inverse-design problem. The Y-splitter task can be learned from only 21 training targets, whereas the metalens problem requires substantially denser target-space coverage to achieve reliable performance across large focal regions. Different inverse-design problems likely possess fundamentally differ-ent target-space complexities, even if the corresponding structures contain comparable numbers of design parameters. Understanding the relationship between target-space complexity, sampling density, and model capacity remains an open question. Third, the current framework learns a deterministic target-to-structure mapping and therefore converges toward a single family of high-performance solutions. While this behavior alleviates the non-uniqueness issue that often complicates inverse-design training, it does not explicitly characterize the full set of feasible structures associated with a given target response. Integrating dimension expansion with probabilistic or generative formulations may provide a means to explore multiple solution branches while retaining the target sensitivity demonstrated in this work [65; 66]. More broadly, the present results suggest several opportunities for future investigation. One direction is to ex-amine whether the proposed conditioning strategy remains effective for larger-scale three-dimensional devices. In particular, the current framework could be generalized to three-dimensional nanophotonic structures by encoding three-dimensional focal coordinates (fx, f y , f z ) and constructing higher-order tensor representations through multi-way outer products. The resulting conditioning representation would naturally become a three-dimensional tensor rather than a two-dimensional image, which could then be processed using three-dimensional neural-network archi-tectures. Voxelized refractive-index distributions provide a natural extension of the pixelized structures considered in this work. Practical application to such settings will likely require more efficient electromagnetic solvers. Future im-plementations may benefit from differentiable GPU-accelerated simulation frameworks, hybrid simulation-surrogate approaches, neural operators, or RCWA-based approaches such as TORCWA, [48; 49; 50; 93] which may help improve the scalability of inverse design for large-scale three-dimensional photonic structures. A second direction is to extend DEN to substantially larger target spaces involving many simultaneously spec-ified design objectives. For example, focal position, wavelength, polarization response, efficiency, or other optical-performance metrics could be incorporated directly into the conditioning representation. However, a straightforward extension of the current outer-product construction to many target variables would lead to rapidly growing representa-tion dimensionality due to the multiplicative expansion of tensor-product spaces. One possible approach is therefore to generalize the current Fourier-encoding and outer-product framework hierarchically. Rather than constructing a single high-order tensor over all target variables, related objectives could first be grouped according to their physical roles and expanded independently before being fused through learned projection layers. Such hierarchical conditioning representations may provide a scalable way to extend dimension expansion to complex multi-objective inverse-design problems while controlling the growth of representation dimensionality. Because such extensions would likely require substantially denser target-space sampling than considered here, many-input many-output Maxwell solvers such as MESTI [94] may offer an efficient way to evaluate large numbers of target conditions during training, potentially making large-scale multi-objective conditioning practical for target-conditioned inverse design. 
+
+## 5 METHODS 
+
+The proposed DEN is trained through direct electromagnetic feedback and therefore requires repeated evaluations of the optical response throughout the optimization process. Consequently, the computational efficiency of the underlying electromagnetic solver plays a critical role in determining the overall training cost. To balance physical accuracy and computational efficiency, we employ a hybrid numerical scheme that combines finite-difference frequency-domain (FDFD) simulations with Fourier-transform-based propagation. Within the device region, where the refractive index varies spatially and strongly influences the electromagnetic response, Maxwell’s equations are solved using an FDFD formulation introduced in Eq. 5 in Sec. 2.2; the solver accurately captures multiple scattering, interference, and mode-conversion effects inside the nanophotonic structure and provides fully differentiable gradients for back-propagation. Outside the design region, the medium is homoge-neous and the electromagnetic field propagates through free space. In these regions, solving the full-wave problem is unnecessary and computationally inefficient. Instead, we employ a Fourier-transform-based propagation method. The electromagnetic field is first transformed into the spatial-frequency domain, where each spatial-frequency component propagates independently according to the free-space transfer function. The propagated field is then transformed back 12 to the spatial domain using an inverse Fourier transform. This approach efficiently models long-distance propagation while avoiding the computational cost associated with large full-wave simulation domains. The resulting hybrid formulation combines the strengths of both approaches. The FDFD solver is restricted to the region where complex light–matter interactions occur, while Fourier propagation is used in homogeneous re-gions where analytical propagation operators are available. This significantly reduces the computational burden of the training process while preserving the physical accuracy required for inverse design. The approach is particularly advantageous for metalens problems, where the focal plane can be located several wavelengths away from the device and would otherwise require a substantially larger simulation domain. All simulations are implemented within a dif-ferentiable framework, allowing gradients to propagate through both the FDFD and Fourier-propagation stages. As a result, the network parameters can be optimized directly using gradient-based methods without requiring surrogate models or numerical approximations of the adjoint sensitivities. To ensure fabrication feasibility, the refractive-index distribution is progressively driven toward binary material states during training. Direct thresholding would introduce discontinuities into the optimization process and prevent gradient-based learning. Therefore, we employ differentiable binarization strategies that preserve end-to-end differen-tiability while gradually enforcing fabrication-compatible structures. The specific binarization formulation depends on the design task. For the metalens problem, we adopt an imaginary-penalty-based approach that suppresses intermediate refractive-index values during optimization. For the Y-splitter problem, we employ a sigmoid-based formulation whose transition becomes progressively sharper throughout training. In both cases, the binarization constraint is introduced gradually, allowing the network to first explore a con-tinuous design space before converging toward discrete material distributions. These continuation strategies improve optimization stability and enable efficient training of the inverse-design network while maintaining compatibility with binary fabrication processes. The detailed formulations, together with the definition of the binarization degree used throughout this work, are provided in Appendix Sec. C. The architecture of the attention-based U-Net backbone is de-scribed in Appendix Sec. B, including the encoder–decoder structure, residual blocks, skip connections, and attention module employed in the inverse-design network. ACKNOWLEDGMENTS 
+
+We thank Dr. Xinyu Nie, Dr. Shiyu Li and Mr. Jianwei Zhang from University of Southern California for valuable discussions. We appreciate Professor Yonggang Shi from University of Southern California for providing the GPU workstations for the experiments. We are deeply grateful to the late Professor Chia Wei (Wade) Hsu from University of Southern California for his mentorship, guidance, and support, which laid an important foundation for this work. Though he is no longer with us, his wisdom, encouragement, and enduring legacy continue to guide and inspire us. FUNDING 
+
+This work was supported by C.W. Hsu’s National Science Foundation CAREER award ECCS-2146021. O.D. Miller’s contributions were supported by a 2024 Sony Research Award and by the Simons Collaboration on Extreme Wave Phenomena Based on Symmetries (award no. SFI-MPS-EWP-00008530-09). 
+
+## REFERENCES 
+
+[1] A Femius Koenderink, Andrea Al` u, and Albert Polman. Nanophotonics: Shrinking light-based technology. 
+
+Science , 348(6234):516–521, 2015. [2] Francesco Monticone and Andrea Alu. Metamaterial, plasmonic and nanophotonic devices. Reports on Progress in Physics , 80(3):036401, 2017. [3] Mohammadreza Khorasaninejad and Federico Capasso. Broadband multifunctional efficient meta-gratings based on dielectric waveguide phase shifters. Nano letters , 15(10):6709–6715, 2015. [4] Mahmoud MR Elsawy, St´ ephane Lanteri, R´ egis Duvigneau, Jonathan A Fan, and Patrice Genevet. Numerical optimization methods for metasurfaces. Laser & Photonics Reviews , 14(10):1900445, 2020. [5] Philippe Lalanne. Waveguiding in blazed-binary diffractive elements. JOSA A , 16(10):2517–2520, 1999. [6] Sean Molesky, Zin Lin, Alexander Y Piggott, Weiliang Jin, Jelena Vuckovi´ c, and Alejandro W Rodriguez. In-verse design in nanophotonics. Nature Photonics , 12(11):659–670, 2018. 13 [7] Amir Arbabi and Andrei Faraon. Advances in optical metalenses. Nature Photonics , 17(1):16–25, 2023. [8] Maksym V Zhelyeznyakov, Steve Brunton, and Arka Majumdar. Deep learning to accelerate scatterer-to-field mapping for inverse design of dielectric metasurfaces. ACS Photonics , 8(2):481–488, 2021. [9] Yiming Ma, Bowei Dong, and Chengkuo Lee. Progress of infrared guided-wave nanophotonic sensors and devices. Nano Convergence , 7(1):12, 2020. [10] Hatice Altug, Sang-Hyun Oh, Stefan A Maier, and Jiˇ r´ ı Homola. Advances and applications of nanophotonic biosensors. Nature nanotechnology , 17(1):5–16, 2022. [11] Won-Jae Joo, Jisoo Kyoung, Majid Esfandyarpour, Sung-Hoon Lee, Hyun Koo, Sunjin Song, Young-Nam Kwon, Seok Ho Song, Jun Cheol Bae, Ara Jo, et al. Metasurface-driven oled displays beyond 10,000 pixels per inch. 
+
+Science , 370(6515):459–463, 2020. [12] Gun-Yeal Lee, Jong-Young Hong, SoonHyoung Hwang, Seokil Moon, Hyeokjung Kang, Sohee Jeon, Hwi Kim, Jun-Ho Jeong, and Byoungho Lee. Metasurface eyepiece for augmented reality. Nature communications , 9(1): 1–10, 2018. [13] Yuan Meng, Yizhen Chen, Longhui Lu, Yimin Ding, Andrea Cusano, Jonathan A Fan, Qiaomu Hu, Kaiyuan Wang, Zhenwei Xie, Zhoutian Liu, et al. Optical meta-waveguides for integrated photonics and beyond. Light: Science & Applications , 10(1):1–44, 2021. [14] Seyed Mohammad Mirjalili, Kambiz Abedi, and Seyedali Mirjalili. Optical buffer performance enhancement using particle swarm optimization in ring-shape-hole photonic crystal waveguide. Optik , 124(23):5989–5993, 2013. [15] Won-Kyu Lee, Shuangcheng Yu, Clifford J Engel, Thaddeus Reese, Dongjoon Rhee, Wei Chen, and Teri W Odom. Concurrent design of quasi-random photonic nanostructures. Proceedings of the National Academy of Sciences , 114(33):8734–8739, 2017. [16] Samad Jafar-Zanjani, Sandeep Inampudi, and Hossein Mosallaei. Adaptive genetic algorithm for optical meta-surfaces design. Scientific reports , 8(1):11040, 2018. [17] Qichao Lu, Wei Wei, Xin Yan, Bing Shen, Yanbin Luo, Xia Zhang, and Xiaomin Ren. Particle swarm optimized ultra-compact polarization beam splitter on silicon-on-insulator. Photonics and Nanostructures-Fundamentals and Applications , 32:19–23, 2018. [18] Guillermo Angeris, Jelena Vuˇ ckovi´ c, and Stephen Boyd. Heuristic methods and performance bounds for photonic design. Optics Express , 29(2):2827–2854, 2021. [19] Kiyanoush Goudarzi, Han-eol Lee, Doyoung Kim, Ikmo Park, and Haewook Han. Inverse design of terahertz optical power splitters using the particle swarm optimization method. Journal of Electromagnetic Engineering and Science , 23(2):139–144, 2023. [20] Jakob Søndergaard Jensen and Ole Sigmund. Topology optimization for nano-photonics. Laser & Photonics Reviews , 5(2):308–321, 2011. [21] Christopher M Lalau-Keraly, Samarth Bhargava, Owen D Miller, and Eli Yablonovitch. Adjoint shape optimiza-tion applied to electromagnetic design. Optics express , 21(18):21693–21701, 2013. [22] Tyler W Hughes, Momchil Minkov, Ian AD Williamson, and Shanhui Fan. Adjoint method and inverse design for nonlinear nanophotonic devices. ACS Photonics , 5(12):4781–4787, 2018. [23] Haejun Chung and Owen D Miller. High-NA achromatic metalenses by inverse design. Optics Express , 28(5): 6945–6965, 2020. [24] Mahdad Mansouree, Andrew McClung, Sarath Samudrala, and Amir Arbabi. Large-scale parametrized metasur-face design using adjoint optimization. Acs Photonics , 8(2):455–463, 2021. [25] Alec M Hammond, Ardavan Oskooi, Mo Chen, Zin Lin, Steven G Johnson, and Stephen E Ralph. High-performance hybrid time/frequency-domain topology optimization for large-scale photonics inverse design. Op-tics Express , 30(3):4467–4491, 2022. 14 [26] Alexander Y Piggott, Jesse Lu, Konstantinos G Lagoudakis, Jan Petykiewicz, Thomas M Babinec, and Jelena Vuˇ ckovi´ c. Inverse design and demonstration of a compact and broadband on-chip wavelength demultiplexer. 
+
+Nature photonics , 9(6):374–377, 2015. [27] Ole Sigmund and Kurt Maute. Topology optimization approaches: A comparative review. Structural and multi-disciplinary optimization , 48(6):1031–1055, 2013. [28] Rasmus E Christiansen and Ole Sigmund. Inverse design in photonics by topology optimization: tutorial. Journal of the Optical Society of America B , 38(2):496–509, 2021. [29] Hao Li, Nazar Pyvovar, Zhaowei Dai, and Owen D Miller. Multimode grating couplers via foundry-compliant inverse design. arXiv preprint arXiv:2604.28058 , 2026. [30] Peter R Wiecha, Arnaud Arbouet, Christian Girard, and Otto L Muskens. Deep learning in nano-photonics: inverse design and beyond. Photonics Research , 9(5):B182–B200, 2021. [31] Omar Khatib, Simiao Ren, Jordan Malof, and Willie J Padilla. Deep learning the electromagnetic properties of metamaterials—a comprehensive review. Advanced Functional Materials , 31(31):2101748, 2021. [32] Wei Ma, Zhaocheng Liu, Zhaxylyk A Kudyshev, Alexandra Boltasseva, Wenshan Cai, and Yongmin Liu. Deep learning for the design of photonic structures. Nature Photonics , 15(2):77–90, 2021. [33] Jiaqi Jiang, Mingkun Chen, and Jonathan A Fan. Deep neural networks for the evaluation and design of photonic devices. Nature Reviews Materials , 6(8):679–700, 2021. [34] Juho Park, Sanmun Kim, Daniel Wontae Nam, Haejun Chung, Chan Y Park, and Min Seok Jang. Free-form optimization of nanophotonic devices: from classical methods to deep learning. Nanophotonics , 11(9):1809– 1845, 2022. [35] Mu Ku Chen, Xiaoyuan Liu, Yanni Sun, and Din Ping Tsai. Artificial intelligence in meta-optics. Chemical Reviews , 122(19):15356–15413, 2022. [36] Yuqing Zhang, Yiyi Zhang, Jin Deng, Zihan Shen, Zhicheng Wang, Yilu Wu, Yuqi Hu, Chengzhi Huang, Jiagui Wu, and Junbo Yang. Non-volatile double-tunable vortex metalens design based on sb2s3 using deep neural network and particle swarm optimization algorithm. Optics Communications , 560:130453, 2024. [37] Feilou Wang, Shiqiang Zhao, Yongzheng Wen, Jingbo Sun, and Ji Zhou. High efficiency visible achromatic metalens design via deep learning. Advanced Optical Materials , 11(18):2300394, 2023. [38] Sensong An, Bowen Zheng, Mikhail Y Shalaginov, Hong Tang, Hang Li, Li Zhou, Yunxi Dong, Mohammad Haerinia, Anuradha Murthy Agarwal, Clara Rivero-Baleine, et al. Deep convolutional neural networks to predict mutual coupling effects in metasurfaces. Advanced Optical Materials , 10(3):2102113, 2022. [39] Yu Wang, Yue Wang, Guohui Yang, Kuang Zhang, Xing Yang, Chunhui Wang, and Yu Zhang. Design of multifunctional tunable dual-layer metalens based on deep learning. Optics Express , 33(10):21979–21998, 2025. [40] Hua Mu, Yu Zhang, Zhenyu Liang, Haoqi Gao, Haoli Xu, Bingwen Wang, Yangyang Wang, and Xing Yang. Design of a deep learning-based metalens color router for rgb-nir sensing. Nanomaterials , 14(23):1973, 2024. [41] Yue Wang, Yu Wang, Zeyang Zhang, Chunhui Wang, Kuang Zhang, Xing Yang, Guohui Yang, and Yu Zhang. Multi-angle focusing metalens designed via kan deep learning for expanding the reception field of mems lidar. 
+
+ACS Photonics , 2025. [42] Soumyashree S Panda, Sushil Kumar, Devdutt Tripathi, and Ravi S Hegde. Deep learning aids simultaneous structure–material design discovery: a case study on designing phase change material metasurfaces. Journal of Nanophotonics , 17(3):036006–036006, 2023. [43] Ehsan Adibnia, Majid Ghadrdan, and Mohammad Ali Mansouri-Birjandi. Nanophotonic structure inverse design for switching application using deep learning. Scientific Reports , 14(1):21094, 2024. [44] John Peurifoy, Yichen Shen, Li Jing, Yi Yang, Fidel Cano-Renteria, Brendan G DeLacy, John D Joannopoulos, Max Tegmark, and Marin Soljaˇ ci´ c. Nanophotonic particle simulation and inverse design using artificial neural networks. Science Advances , 4(6):eaar4206, 2018. 15 [45] Mohammad H Tahersima, Keisuke Kojima, Toshiaki Koike-Akino, Devesh Jha, Bingnan Wang, Chungwei Lin, and Kieran Parsons. Deep neural network inverse design of integrated photonic power splitters. Scientific Reports ,9(1):1368, 2019. [46] Maziar Raissi, Paris Perdikaris, and George E Karniadakis. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. Journal of Computational physics , 378:686–707, 2019. [47] George Em Karniadakis, Ioannis G Kevrekidis, Lu Lu, Paris Perdikaris, Sifan Wang, and Liu Yang. Physics-informed machine learning. Nature Reviews Physics , 3(6):422–440, 2021. [48] Lu Lu, Pengzhan Jin, and George Em Karniadakis. Deeponet: Learning nonlinear operators for identifying dif-ferential equations based on the universal approximation theorem of operators. arXiv preprint arXiv:1910.03193 ,2019. [49] Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. Fourier neural operator for parametric partial differential equations. arXiv preprint arXiv:2010.08895 , 2020. [50] Nikola Kovachki, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. Neural operator: Learning maps between function spaces with applications to pdes. 
+
+Journal of Machine Learning Research , 24(89):1–97, 2023. [51] Mahsa Torfeh and Chia Wei Hsu. Probabilistic inverse design of metasurfaces using mixture density neural networks. Journal of Physics: Photonics , 7(1):015007, 2024. [52] Humayun Kabir, Ying Wang, Ming Yu, and Qi-Jun Zhang. Neural network inverse modeling and applications to microwave filter design. IEEE Transactions on Microwave Theory and Techniques , 56(4):867–879, 2008. [53] Yashar Kiarashinejad, Sajjad Abdollahramezani, and Ali Adibi. Deep learning approach based on dimensionality reduction for designing electromagnetic nanostructures. npj Computational Materials , 6(1):12, 2020. [54] Yijie Gu, Ran Hao, and Er-Ping Li. Independent bifocal metalens design based on deep learning algebra. IEEE Photonics Technology Letters , 33(8):403–406, 2021. [55] Qiankun Zhang, Bingxuan Mao, Jialu Li, Xiaohua Xing, Die Zou, Yin Liu, Jianquan Yao, Jianqiang Gu, Pengfei Zhu, and Liang Wu. Designing broadband terahertz achromatic metalens based on deep learning. Optics & Laser Technology , 184:112550, 2025. [56] Wen-Qiang Deng, H Zhu, Yu-Xuan Xie, Zhengji Xu, and Shu-Yan Zhu. Design and optimization of an ultra-wideband millimeter-wave circularly polarized metalens antenna with deep learning method. IEEE Open Journal of Antennas and Propagation , 5(4):823–832, 2024. [57] Jiahao Yan, Jilong Yi, Churong Ma, Yanjun Bao, Qin Chen, and Baojun Li. Metasurfacevit: A generic ai model for metasurface inverse design. arXiv preprint arXiv:2504.14895 , 2025. [58] Shengmei Ou, Jiakang Xu, Jiming Wang, Yulian Zhu, Xiaorong Gu, Tong Wu, and Youwen Liu. Deep learning-assisted focus engineering for metalens design with high numerical aperture cylindrical vector beams. Photonics and Nanostructures: Fundamentals and Applications , page 101396, 2025. [59] Ronghui Lin, Yanfen Zhai, Chenxin Xiong, and Xiaohang Li. Inverse design of plasmonic metasurfaces by convolutional neural network. Optics Letters , 45(6):1362–1365, 2020. [60] Itzik Malkiel, Michael Mrejen, Achiya Nagler, Uri Arieli, Lior Wolf, and Haim Suchowski. Plasmonic nanos-tructure design and characterization via deep learning. Light: Science & Applications , 7(1):60, 2018. [61] Rui Qiu, Guanmao Zhang, Shaokai Du, Jie Liu, Hongyu Ji, Kaiyun Bi, Bochuan Xing, and Guangchao Diao. Neural network-assisted design of gsst-based achromatic metalens with continuously variable focal heights. Op-tics Communications , 554:130141, 2024. [62] Wei Ma, Feng Cheng, and Yongmin Liu. Deep-learning-enabled on-demand design of chiral metamaterials. ACS Nano , 12(6):6326–6334, 2018. [63] Dianjing Liu, Yixuan Tan, Erfan Khoram, and Zongfu Yu. Training deep neural networks for the inverse design of nanophotonic structures. Acs Photonics , 5(4):1365–1369, 2018. 16 [64] Xiaopeng Xu, Chonglei Sun, Yu Li, Jia Zhao, Junlei Han, and Weiping Huang. An improved tandem neural network for the inverse design of nanophotonics devices. Optics Communications , 481:126513, 2021. [65] Ian J Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. Generative adversarial nets. Advances in neural information processing sys-tems , 27, 2014. [66] Diederik P Kingma and Max Welling. Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114 , 2013. [67] Bo Xiong, Yihao Xu, Wenwen Li, Wei Ma, Tao Chu, and Yongmin Liu. Deep learning design for multiwave-length infrared image sensors based on dielectric freeform metasurface. Advanced Optical Materials , 12(10): 2302200, 2024. [68] Wei Ma, Feng Cheng, Yihao Xu, Qinlong Wen, and Yongmin Liu. Probabilistic representation and inverse design of metamaterials based on a deep generative model with semi-supervised learning strategy. Advanced Materials ,31(35):1901111, 2019. [69] Yanhe Lyu, Theng Huat Gan, and Zhi Ning Chen. Te-tm balanced wide-angle metacells for low scan-loss metalens antenna using prior knowledge-guided generative deep learning-enabled method. IEEE Transactions on Antennas and Propagation , 2025. [70] Sensong An, Bowen Zheng, Hong Tang, Mikhail Y Shalaginov, Li Zhou, Hang Li, Myungkoo Kang, Kathleen A Richardson, Tian Gu, Juejun Hu, et al. Multifunctional metasurface design with a generative adversarial network. 
+
+Advanced Optical Materials , 9(5):2001433, 2021. [71] Abhishek Mall, Abhijeet Patil, Amit Sethi, and Anshuman Kumar. A cyclical deep learning based framework for simultaneous inverse and forward design of nanophotonic metasurfaces. Scientific Reports , 10(1):19427, 2020. [72] Huakun Xia, Shu-Lin Chen, Yuxin Wang, Yijia Zhao, Heping Jia, Rongcao Yang, and Y. Jay Guo. Deep-learning-assisted intelligent design of terahertz hybrid-functional metasurfaces with freeform patterns. Optics & Laser Technology , 181:112041, 2025. [73] Sunae So and Junsuk Rho. Designing nanophotonic structures using conditional deep convolutional generative adversarial networks. Nanophotonics , 8(7):1255–1261, 2019. [74] Jiaqi Jiang, David Sell, Stephan Hoyer, Jason Hickey, Jianji Yang, and Jonathan A Fan. Free-form diffractive metagrating design based on generative adversarial networks. ACS Nano , 13(8):8872–8878, 2019. [75] Fufang Wen, Jiaqi Jiang, and Jonathan A Fan. Robust freeform metasurface design based on progressively growing generative networks. ACS Photonics , 7(8):2098–2104, 2020. [76] Wonsuk Kim, Soojeong Kim, Minhyeok Lee, and Junhee Seok. Inverse design of nanophotonic devices using generative adversarial networks. Engineering Applications of Artificial Intelligence , 115:105259, 2022. [77] Yingheng Tang, Keisuke Kojima, Toshiaki Koike-Akino, Ye Wang, Pengxiang Wu, Youye Xie, Mohammad H Tahersima, Devesh K Jha, Kieran Parsons, and Minghao Qi. Generative deep learning model for inverse design of integrated nanophotonic devices. Laser & Photonics Reviews , 14(12):2000287, 2020. [78] Xiaopeng Xu, Yu Li, Liuge Du, and Weiping Huang. Inverse design of nanophotonic devices using generative adversarial networks with the sim-nn model and self-attention mechanism. Micromachines , 14(3):634, 2023. [79] Jiaqi Jiang and Jonathan A Fan. Simulator-based training of generative neural networks for the inverse design of metasurfaces. Nanophotonics , 9(5):1059–1069, 2020. [80] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. Advances in neural information processing systems , 30, 2017. [81] Matthew Tancik, Pratul Srinivasan, Ben Mildenhall, Sara Fridovich-Keil, Nithin Raghavan, Utkarsh Singhal, Ravi Ramamoorthi, Jonathan Barron, and Ren Ng. Fourier features let networks learn high frequency functions in low dimensional domains. Advances in neural information processing systems , 33:7537–7547, 2020. [82] Nasim Rahaman, Aristide Baratin, Devansh Arpit, Felix Draxler, Min Lin, Fred Hamprecht, Yoshua Bengio, and Aaron Courville. On the spectral bias of neural networks. In International conference on machine learning ,pages 5301–5310. PMLR, 2019. 17 [83] Yoshua Bengio, Aaron Courville, and Pascal Vincent. Representation learning: A review and new perspectives. 
+
+IEEE transactions on pattern analysis and machine intelligence , 35(8):1798–1828, 2013. [84] Yann LeCun, L´ eon Bottou, Yoshua Bengio, and Patrick Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE , 86(11):2278–2324, 2002. [85] Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. Advances in neural information processing systems , 25, 2012. [86] Shuo Huang, Mahsa Torfeh, Yonggang Shi, and Chia Wei Hsu. Fully unsupervised deep-learning with dimension expansion for nanophotonic design. In Frontiers in Optics , pages FW6D–2. Optica Publishing Group, 2024. [87] Ben Mildenhall, Pratul P Srinivasan, Matthew Tancik, Jonathan T Barron, Ravi Ramamoorthi, and Ren Ng. Nerf: Representing scenes as neural radiance fields for view synthesis. Communications of the ACM , 65(1):99–106, 2021. [88] Stefan Elfwing, Eiji Uchibe, and Kenji Doya. Sigmoid-weighted linear units for neural network function approx-imation in reinforcement learning. Neural networks , 107:3–11, 2018. [89] Olaf Ronneberger, Philipp Fischer, and Thomas Brox. U-net: Convolutional networks for biomedical image seg-mentation. In Medical Image Computing and Computer-Assisted Intervention–MICCAI 2015: 18th International Conference, Munich, Germany, October 5-9, 2015, Proceedings, Part III 18 , pages 234–241. Springer, 2015. [90] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In 
+
+Proceedings of the IEEE conference on computer vision and pattern recognition , pages 770–778, 2016. [91] Samuel Gershman and Noah Goodman. Amortized inference in probabilistic reasoning. In Proceedings of the annual meeting of the cognitive science society , volume 36, 2014. [92] Daniele Melati, Dan-Xia Xu, Yuri Grinberg, and Muhammad Al-Digeil. Inverse design of photonic integrated devices: Optimization and machine learning. APL Photonics , 10(10), 2025. [93] Changhyun Kim and Byoungho Lee. Torcwa: Gpu-accelerated fourier modal method and gradient-based opti-mization for metasurface design. Computer Physics Communications , 282:108552, 2023. [94] Ho-Chun Lin, Zeyu Wang, and Chia Wei Hsu. Fast multi-source nanophotonic simulations using augmented partial factorization. Nature Computational Science , 2(12):815–822, 2022. [95] Arthur Jacot, Franck Gabriel, and Cl´ ement Hongler. Neural tangent kernel: Convergence and generalization in neural networks. Advances in neural information processing systems , 31, 2018. [96] Roger A Horn and Charles R Johnson. Topics in matrix analysis . Cambridge University Press Cambridge, UK, 1994. 18 A COMPARISON WITH EXISTING DEEP -LEARNING -BASED METHODS 
+
+To further evaluate the scalability and practical utility of the proposed dimension expansion network (DEN), we compare it with representative deep-learning-based nanophotonic design methods in terms of accessible design space, fabrication tolerance, structural complexity, and computational cost. The comparison includes both forward-simulation surrogate models, which predict optical responses from given structures, and inverse-design methods, which directly generate structures from target optical responses. While these approaches have demonstrated promising performance on a variety of nanophotonic devices, they often rely on large collections of simulated or optimized structures, resulting in substantial data-generation costs. Figure 7 compares the minimum normalized fabrication feature size, ∆Vmin /λ d, against the number of simula-tions or optimized structures used during training. Here, ∆Vmin denotes the minimum fabrication feature size within the accessible design space, normalized by the operating wavelength λ and the number of independent design dimen-sions d. Larger values indicate that the generated structures remain manufacturable with relatively coarse fabrication resolution, whereas smaller values correspond to designs requiring finer fabrication precision. A clear empirical trend can be observed across previously reported methods. In general, methods capable of accessing larger or more flexible design spaces tend to require increasingly fine fabrication features or substantially larger training datasets. This trend is captured by the regression curve and the associated 95% confidence interval shown in Fig. 7. Consequently, improving design flexibility is often accompanied by reduced fabrication tolerance or increased computational cost. In contrast, DEN occupies a distinct region of this performance–cost landscape. The proposed method lies sub-stantially above the regression trend and outside the 95% confidence interval, indicating a more favorable balance between fabrication tolerance and computational cost than existing approaches. For the metalens benchmark consid-ered in this work, DEN achieves a minimum fabrication feature size of approximately λ/ 15 while requiring only about 
+
+8 × 10 3 physics-driven training simulations. This feature size is considerably larger than those reported by many ex-isting deep-learning-based inverse-design methods, suggesting improved manufacturability without sacrificing design capability. A broader comparison is summarized in Table 1, which includes representative approaches based on multilayer perceptrons (MLPs), convolutional neural networks (CNNs), transformers, tandem networks, generative adversarial networks (GANs), variational autoencoders (VAEs), and hybrid architectures. For each method, we compare the number of simulations or optimized structures used during training, the number of structural parameters, the physical device size, the minimum operating wavelength, the normalized designable volume, and the minimum fabrication feature size. Several trends emerge from this comparison. First, forward-simulation approaches generally require large datasets to accurately approximate electromagnetic responses. Many methods rely on tens of thousands to millions of simulations, particularly when the parameter space becomes large or when broadband optical responses must be predicted. Although these methods provide efficient surrogates once trained, the initial data-generation cost can be substantial. Second, many inverse-design approaches reduce the need for online optimization but often rely on collections of pre-generated optimized structures. Tandem networks require supervised pairs of structures and responses, while GAN- and VAE-based methods frequently require thousands to millions of training examples. In addition, generative approaches commonly produce distributions of candidate structures, requiring post-selection or further optimization to identify high-performance designs. As a result, the overall computational cost may significantly exceed the nominal size of the training dataset. Third, existing methods often face a trade-off between design-space coverage, fabrication tolerance, and compu-tational cost. Approaches capable of exploring large design spaces frequently require either extremely fine fabrication features, large training datasets, or both. For example, several GAN-based and VAE-based methods operate in high-dimensional parameter spaces but rely on extensive collections of pre-generated structures and often achieve minimum feature sizes substantially smaller than those reported here. In contrast, DEN directly performs physics-based inverse design without requiring either pre-generated simula-tion datasets or optimized structures. The network is trained solely through electromagnetic feedback and therefore learns a target-conditioned design manifold rather than a supervised mapping from previously generated examples. Consequently, the computational effort is invested in learning the design process itself instead of constructing training data. 19 This advantage is reflected in both benchmarks considered in this work. The proposed metalens benchmark achieves a normalized designable volume of approximately 40 , one of the largest values reported among the methods surveyed here, while maintaining a comparatively large minimum fabrication feature size of approximately λ/ 15 . Sim-ilarly, the proposed Y-splitter benchmark addresses a 900-parameter inverse-design problem using only 3750 training simulations and achieves a minimum fabrication feature size of approximately λ/ 28 . Notably, the number of structural parameters in the Y-splitter benchmark exceeds that of many previously reported photonic inverse-design studies, yet the required computational cost remains relatively modest. Taken together, these results indicate that DEN scales favorably with both structural dimensionality and accessible design space while preserving fabrication-friendly geometries. Rather than relying on large collections of optimized examples, the proposed method amortizes optimization across the target space through direct electromagnetic training. As a result, DEN simultaneously achieves large designable volumes, relatively coarse fabrication requirements, and low simulation costs. Overall, the proposed method occupies a distinct region of the performance–cost landscape compared with ex-isting deep-learning-based nanophotonic design approaches. By combining fully unsupervised training with direct electromagnetic optimization, DEN substantially reduces the data-generation burden while enabling large accessible design spaces and fabrication-tolerant structures. These results suggest that DEN overcomes a key limitation of many existing deep-learning-based inverse-design frameworks and provides a favorable balance between computational cost, design flexibility, and manufacturability. Compare with Existing Methods 
+
+•  
+
+> [5] [4]
+> [34]
+> [11]
+> [20]
+> [30]
+> [3]
+> [25]
+> [35]
+> [2
+> 7]
+> [16] [26]
+> [36]
+> [2]
+
+# # of simulations or optimized structures 
+
+[53] 
+
+[55] 
+
+[54] 
+
+[68] 
+
+[60] 
+
+[66] 
+
+[69] 
+
+[56] 
+
+[36] 
+
+[35] 
+
+[38] 
+
+[40]  [26] 
+
+[8] 
+
+[37] 
+
+This work 
+
+> Minimum step size  𝛥 𝑉 𝑚𝑖𝑛 /𝜆 𝑑
+
+0.00 
+
+0.01 
+
+0.02 
+
+0.03 
+
+0.04 
+
+0.05 
+
+0.06 
+
+0.07 
+
+10 3 10 4 10 5 10 6 10 7 10 8
+
+Forward simulation 
+
+Inverse design 
+
+Optimized structures 
+
+Simulations 
+
+Regression 
+
+95% confidence interval 
+
+[53] 
+
+[55] 
+
+[60] 
+
+[68] 
+
+[69] 
+
+[54] 
+
+[56] 
+
+[61] 
+
+[69] 
+
+[70] 
+
+[55] 
+
+[57] 
+
+[67] 
+
+[54] 
+
+[56] 
+
+[66] 
+
+Figure 7: Comparison with existing metalens design methods. We compared the minimum design step size (in 
+
+∆Vmin /(λ)d, where ∆Vmin is the minimum step size measured in units consistent with the design dimensionality and 
+
+d is the number of independent design axes) and the number of optimized structures or simulations used to generate training data and train the network. “Forward simulation” are methods that only use deep learning to predict the forward simulation results of given structures, and “Inverse design” are methods that directly output the designed structures. “Optimized structures” refer to datasets in which each training structure is produced through optimization, typically requiring many more simulations than the number of training samples, whereas “simulations” denote datasets generated by random sampling with only one simulation per data point. The regression line and the 95% confidence interval are also shown. The regression follows a correlation of the form y = ax b.20 Table 1: Representative deep learning models for nanophotonics devices forward simulation and inverse design. 
+
+> Structure  Network  Ref.  Sims (structs) in training  Struct. params  Struct. size (nm)  λmin  (nm)  Designable volume  Min. step size (nm) Forward simulation
+> Meta atom  MLP  [36]  9,800  4 (26) * 500 ×500  1,000  1 5 ( λ/ 200 )Meta atom  MLP  [37]  5,630  4 (25) * 320 ×320  428  2.24  10 ( λ/ 43 )Meta atom  MLP  [8]  (123,210)  1 443 ×443  633  1.96  4.43 ( λ/ 143 )***
+> Meta atom  CNN  [38]  100,000  2 800 ×800  1,550  1.1  6.25 ( λ/ 248 )Meta atom  Transformer  [39]  80,000  196  300 ×300  520  1.33  20 ( λ/ 78 )Meta atom  Transformer  [40]  (20,000)  400  420 ×420  400  4.4  20 ( λ/ 20 )Meta atom  Mixed  [41]  (60,000)  256 (201) * 700 ×640  1,500  0.80  20 ( λ/ 75 )Metasurface spectral filters  MLP  [42]  40,000  17  1,000 ×1,000  1,000  4 50 ( λ/ 20 )Square plasmonic switch  MLP  [43]  (18,432)  6 (2) * 1,000 ×1,000  1,000  4 3 ( λ/ 333 )Nanoparticles  MLP  [44]  50,000  8 (7) * 1,120  400  5.6  1 ( λ/ 400 )***
+> Y-splitter  MLP  [45]  (20,000)  400  2,600 ×2,600  1,450  12.86  90 ( λ/ 16 )
+> Inverse design
+> Meta atom  MLP  [54]  441  2 460 ×460  532  2.99  1 ( λ/ 532 )***
+> Meta atom  MLP  [55]  4,000  5 100,000 ×100,000  300,000  0.44  1 ( λ/ 300 , 000 )***
+> Meta atom  Tandem MLP  [61]  4,758  2 360  8,000  0.09  20 ( λ/ 400 )***
+> Meta atom  MLP  [56]  4,000  2 2,200,000 ×7,000,000  2,855,166  7.56  25,000 ( λ/ 114 )Meta atom  Transformer  [57]  60,000,000  6 300 ×300  400  2.25  5 ( λ/ 80 )***
+> Meta atom  CDCGAN  [69]  (5,000)  144  7,200,000 ×7,200,000  30,000,000  0.23  300,000 ( λ/ 100 )Meta atom  VAE  [67]  24,000  4,096  640 ×640  1,000  1.64  32 ( λ/ 31 )Meta atom  GAN  [70]  69,000  1,024 **  2,800 ×2,800  6,000  0.87  43.75 ( λ/ 137 )Complex amplitude filter  MLP  [58]  10,000  20  250  532  0.94  2 ( λ/ 266 )Chiral metamirror  VAE  [68]  20,000  100  2,000 ×2,000  3,000  1.78  31.25 ( λ/ 96 )Periodic atoms  cGAN  [71]  (1,500)  4,096 **  230 ×230  400  1.32  3.59 ( λ/ 111 )Periodic atoms  GAN  [72]  (15,640)  256  70,000 ×70,000  100,000  1.96  4,000 ( λ/ 25 )Plasmonic metasurface  CNN  [59]  25,000  6 700 ×700  600  5.44  1 ( λ/ 600 )Plasmonic metasurface  MLP  [60]  15,000  8 ∼400 ×400 ***  600  1.78  Not given Silver antennae  GAN  [73]  10,150  4,096 **  500 ×500  600  2.78  7.81 ( λ/ 216 )Chiral metamaterial  Tandem MLP  [62]  25,000  5 ∼2,500 ×2,500 ×1,000 ***  3,747  0.95  1 ( λ/ 3747 )Metagrating  MLP  [51]  50,000  9 4,500  1,000  9 30 ( λ/ 33 )Metagrating  MLP  [53]  4,000  10  200 ×2,000  1,500  0.71  10 ( λ/ 150 )***
+> Metagrating  GAN  [74]  (5,000) +  5, 000  × ntest  32,768  500 ×1,220  1,000  2.44  3.90 ( λ/ 256 )Metagrating  GAN  [75]  7,008,000  8,192  650 ×2,269  1,300  3.49  17.73 ( λ/ 73 )Patterned 2D slit array  GAN  [76]  (24,350)  800  40  400  0.2  2 ( λ/ 200 )Thin film  Tandem MLP  [63]  550,000  20  2,400  400  12  1 ( λ/ 400 )Grating coupler  Tandem MLP  [64]  84,480  120  27,600 ×220  1,300  14.37  10 ( λ/ 130 )Y-splitter  GAN  [77]  (16,000) + training  400  2,250 ×2,250  1,250  12.96  42 ( λ/ 30 )Y-splitter  GAN  [78]  (10,000)  400  2,000 ×2,000  1,200  11.11  100 ( λ/ 12 )Y-splitter  DEN  This work  0 + 3750 in training  900  1,660 ×1,660  1,550  4.59  55 ( λ/ 28 )Metalens  DEN  This work  0 +  100  × Sf ocal region
+> (λ/ 2) 2 in training  301  10,000  500  40  33.33 ( λ/ 15 )
+> * Numbers in parentheses denote output field parameters (e.g., phase response in [36]).
+> **  GAN models can handle large parameter spaces but often reproduce training data patterns.
+> ***  These numbers are not reported. They are calculated from the results section.
+
+21 B NETWORK STRUCTURES Figure of U -Net Structure 
+
+•                         
+
+> 𝐸 1𝐸 2𝐸 3𝐸 4𝐸 5
+> Middle block 𝑀
+> 𝐷 5𝐷 4𝐷 3𝐷 2𝐷 1𝑀 𝐻
+> ResNet block RN Output head 𝐻
+> Skip connection using concatenation
+> +
+> Conv Conv RN Attention RN Conv Conv Flatten Linear Linear
+> Input image
+> Design
+> 𝐸 𝑖 : Encoder blocks ( ResNet block + down sampling)
+> 𝐷 𝑖 : Decoder blocks (concatenate + ResNet block + up sampling)
+
+Figure 8: Network structure for design generation from the input image. The proposed framework employs an attention-based U-Net architecture to generate nanophotonic structures from the dimension-expanded inputs. The net-work consists of encoder blocks ( Ei), decoder blocks ( Di), skip connections, a bottleneck attention module ( M ), and an output head ( H). Residual connections are incorporated within each block to facilitate optimization and improve feature propagation. We employ an attention-based U-Net architecture to map the dimension-expanded target representation to the cor-responding refractive-index distribution. This architecture is particularly suitable for the proposed framework because both the input and output possess explicit spatial structure. The dimension-expansion module transforms the target parameters into a two-dimensional feature map, while the desired output is a spatial refractive-index profile. Conse-quently, the inverse-design problem can be formulated as an image-to-image mapping task, for which encoder–decoder architectures have proven highly effective [89]. As shown in Fig. 8, the network consists of three main components: an encoder, a decoder, and skip connections between corresponding stages. The encoder progressively extracts hierarchical features through successive down-sampling operations, allowing local information to be aggregated into increasingly global representations. The decoder then reconstructs the spatial refractive-index distribution from these latent features through up-sampling operations. Skip connections directly transfer high-resolution information from the encoder to the decoder, enabling the network to preserve fine structural details while maintaining global consistency. Each encoder and decoder stage contains residual convolutional blocks [90], which improve optimization stability and facilitate information propagation through the network. The residual formulation is particularly beneficial in the present application because the generated structures often contain both fine-scale fabrication features and larger-scale geometric patterns that must be represented simultaneously. The down-sampling operations progressively enlarge the effective receptive field of the network. For example, in the Y-splitter design task, where the pixel size is 55 × 55 nm 2, a 3 × 3 convolution kernel initially covers a physical region of 165 × 165 nm 2. After four down-sampling stages, the same kernel effectively captures information over a region of approximately 2640 × 2640 nm 2, comparable to the size of the entire design domain. This enables the network to capture long-range interactions between different regions of the structure. To further model global dependencies, we introduce an attention module in the bottleneck layer of the U-Net [80]. Unlike standard convolutions, which primarily aggregate information locally, the attention mechanism allows distant spatial locations to interact directly. This capability is particularly important for nanophotonic inverse design, where modifications in one region of the structure can significantly influence the optical response generated by distant re-gions. The attention block therefore complements the convolutional layers by capturing long-range correlations that are difficult to represent using local operations alone. 22 The final output head converts the decoded feature representation into the refractive-index distribution of the device. Two convolutional layers are first used to refine the reconstructed spatial features, followed by fully con-nected layers that generate the final structure representation. The resulting output is subsequently binarized using the differentiable procedures described in Sec. 5, ensuring compatibility with practical fabrication constraints. It is important to note that the primary contribution of this work is not the specific network architecture itself, but rather the proposed dimension-expansion framework that enables effective conditioning of high-dimensional inverse-design problems. The attention-based U-Net serves as a representative backbone architecture, while the experiments in Sec. 3.4 demonstrate that the benefits of DEN generalize to substantially different architectures, including multilayer perceptrons. 
+
+## C BINARIZATION METHOD 
+
+To ensure fabrication compatibility, the refractive-index distribution generated by the network is gradually driven to-ward binary values during training. A direct thresholding operation would introduce discontinuities and make the optimization problem non-differentiable, preventing the use of gradient-based learning. Instead, we employ differ-entiable binarization strategies that allow the network to explore continuous design spaces during the early stages of optimization while progressively converging toward binary structures as training proceeds. For the metalens design task, we adopt an imaginary-penalty approach. The refractive index is expressed as 
+
+n = nr + i α (nr ) γ(t), (8) where nr is the real-valued refractive index predicted by the network, 
+
+nr = clip( x + 1 .7, 1.0, 2.4) , (9) and 
+
+α(nr ) = || nr − 1.7| − 0.7| . (10) The penalty function α(nr ) vanishes at the desired binary refractive-index values ( nr = 1 .0 and nr = 2 .4) and reaches its maximum near the midpoint between them. Consequently, intermediate refractive-index values experience stronger attenuation than values close to the binary states. The weighting factor γ(t) is gradually increased during training, progressively strengthening the penalty and driving the refractive-index distribution toward binary solutions. Because the formulation remains continuous and differentiable, gradients can still be propagated through the electromagnetic simulation during optimization. For the Y-splitter design task, we employ a sigmoid-based binarization scheme. The refractive index is parame-terized as 
+
+y = 1 .0 + 11 + e−wx × 2.5, (11) where x is the network output and w controls the sharpness of the transition between air ( n = 1 .0) and silicon (n = 3 .5). During training, the parameter w is gradually increased. As a result, the sigmoid function evolves from a smooth continuous mapping to an increasingly sharp approximation of a binary threshold. This allows the network to initially explore a larger design space before progressively enforcing binary structures. Although the two formulations are different, they share the same underlying principle. Both methods preserve dif-ferentiability during the early stages of optimization and gradually increase the strength of the binarization constraint as training proceeds. This continuation strategy improves optimization stability, avoids abrupt changes in the loss land-scape, and enables the network to discover high-performance structures before converging to fabrication-compatible binary solutions. Importantly, the proposed framework is not tied to a specific binarization strategy. The imaginary-penalty and sigmoid-based formulations used here serve as two representative examples for the metalens and Y-splitter design tasks, respectively. More generally, DEN can be combined with a broad class of differentiable fabrication-aware con-straints while preserving end-to-end differentiability throughout the optimization process. This flexibility allows the framework to adapt to different device geometries, material systems, and fabrication requirements without modifying the underlying dimension-expansion network. To quantify the degree of binarization of the generated structures, we define the binarization degree as 
+
+B = 1
+
+N
+
+> N
+
+X
+
+> i=1
+
+2( ni − nc)
+
+nmax − nmin 
+
+, (12) 23 where N is the total number of pixels in the design region, ni denotes the refractive index of the i-th pixel, and 
+
+nc = nmax + nmin 
+
+2 (13) is the midpoint between the two target refractive-index values. The metric is normalized such that B = 1 corresponds to a perfectly binary structure and B = 0 corresponds to a completely intermediate-valued structure. Throughout this work, the generated designs typically achieve binarization degrees above 0.95 , indicating that the resulting structures are highly compatible with binary fabrication processes. 
+
+## D TRAINING DATA SELECTION FOR Y-SPLITTER Power 
+
+Figure 9: Training data selection for the Y-splitter design task. We firstly randomly selected 9 amplitude splitting ratios between 1% : 99% and 49% : 51%. Then the two boundary cases, 0% : 100% and 50% : 50%, are added. We then calculate the corresponding power splitting ratios and use these ratios as the training data. The symmetric data of the selected power splitting ratios are also used in the training. The Y-splitter design task aims to generate structures with arbitrary power splitting ratios between the two output ports. In practice, the corresponding structural variations are not uniformly distributed across the target space. Designs associated with extreme splitting ratios (e.g., T1 → 0% or T1 → 100% ) typically differ more significantly from one another than those associated with intermediate ratios. Consequently, a uniform sampling strategy in power space may provide insufficient coverage near the boundaries of the target range. To address this issue, we construct the training targets in amplitude space rather than directly in power space. Specifically, we first randomly select nine amplitude ratios in the range from 1% to 49% . The corresponding power splitting ratios are then obtained through the quadratic relationship 
+
+T1 = A2, (14) where A denotes the selected amplitude ratio. Because of this nonlinear transformation, the resulting power-ratio samples become naturally concentrated near the extreme values of the target range. This produces a denser sampling of the regions where the structural response changes most rapidly. The selected amplitude ratios and their corresponding power ratios are illustrated in Fig. 9. While the amplitude samples are distributed approximately uniformly, the transformed power-ratio samples become increasingly dense near 
+
+0% and 100% , providing improved coverage of the extreme splitting conditions. To ensure symmetry between the two output ports, we further augment the training set by including the comple-mentary power ratios 100% − T1. In addition, three anchor points corresponding to the two extreme cases and the balanced splitter are explicitly included: 
+
+T1 = 0% , T1 = 50% , T1 = 100% . (15) These targets guarantee that the network directly observes the most important boundary and symmetry conditions during training. As a result, the entire continuous target space is represented using only 21 carefully selected training samples. Despite this small training set, the resulting model is able to accurately interpolate between the sampled targets and generate high-performance designs across the full range of splitting ratios, as demonstrated in Sec. 3.3. 24 Table 2: Performance comparison between sparse target sampling and dense per-pixel target sampling under different target-region sizes D.
+
+D (μm) # designs Focal intensity (a.u.) Degree of binarization 0.80 625 ( 25 × 25 ) 0.86 ± 0.07 0.96 ± 0.01 
+
+25 ( 5 × 5) 0.91 ± 0.05 0.97 ± 0.01 
+
+1.33 1681 ( 41 × 41 ) 0.86 ± 0.08 0.95 ± 0.01 
+
+36 ( 6 × 6) 0.90 ± 0.04 0.97 ± 0.01 
+
+2.67 6561 ( 81 × 81 ) 0.81 ± 0.07 0.95 ± 0.01 
+
+121 ( 11 × 11 ) 0.86 ± 0.06 0.97 ± 0.01 
+
+## E EXAMPLES OF DEN METALENS 
+
+To further illustrate the design capability of the proposed DEN, Fig. 10 presents representative metalens structures generated for different target focal positions. The examples correspond to the largest focal-region size considered in this work, D = 2 .67 μm, at the operating wavelength λ = 500 nm . The target focal points span a two-dimensional region with varying horizontal ( fx) and vertical ( fy ) coordinates, resulting in a diverse set of design objectives within the same design space. For each target location, DEN directly predicts a corresponding binary-like refractive-index distribution without requiring any iterative optimization during inference. Owing to the mirror symmetry of the design problem, focal points located symmetrically with respect to the optical axis correspond to two symmetry-related candidate structures. For every target focal position shown in Fig. 10, both symmetry-related candidates are evaluated, and the structure with the higher focal intensity is selected for visualization. This comparison ensures that the reported examples represent the best-performing design among the symmetry-equivalent solutions. The resulting structures exhibit clear target-dependent variations and produce distinct optical responses. The corresponding electric-field intensity distributions demonstrate that the optical energy is consistently concentrated near the desired target locations marked by the red crosses. Across all examples, the focal spots closely follow the prescribed target coordinates, indicating that the learned mapping remains effective throughout the entire focal region. As the target focal coordinates vary across the focal space, the focal spots move accordingly in both the hor-izontal and vertical directions while remaining well localized. Neighboring target positions produce related optical responses, whereas larger changes in focal position lead to increasingly different field distributions and structural pat-terns. These observations indicate that the network has learned a meaningful relationship between target coordinates and nanophotonic structures rather than converging to a single generic solution. The field distributions further demonstrate robust focusing performance over a broad range of focal locations. Even when the target positions are located near the boundaries of the target focal region, the generated structures maintain strong field confinement and relatively low background scattering. This behavior is particularly notable because the focal region considered here spans multiple wavelengths in both directions, requiring the network to generate a wide variety of structures capable of redirecting light over a broad angular range. Importantly, all of these designs are generated using the same trained network. Unlike conventional adjoint optimization, which requires an independent optimization process for each focal position, DEN learns a shared target-conditioned mapping that can efficiently produce many high-performance designs across the entire focal space. These examples therefore provide qualitative evidence that the proposed framework successfully captures the relationship between focal coordinates and nanophotonic structures over a large continuous target space. Together with the quantitative results presented in Fig. 3(c) of the main text, the examples in Fig. 10 demonstrate that DEN can efficiently generate diverse, fabrication-compatible, and high-performance free-form metalens designs while substantially reducing the computational cost associated with repeated per-target optimization. 
+
+## F SCALABILITY TO DENSE PER -PIXEL TARGET SAMPLING 
+
+To evaluate the scalability of DEN under increasingly dense target-space coverage, we compare sparse target sampling and dense per-pixel target sampling using the same training budget. For each target-region size D, the sparse and dense configurations are trained using the same number of optimization iterations as those reported in Fig. 3(c) of the main text. Consequently, any performance differences arise solely from the increased density of target sampling rather than additional computational resources. 25 Figure of Designed Structures 
+
+# •
+
+𝑥 (𝜇𝑚 )
+
+-5
+
+0
+
+5
+
+> 𝑦  (𝜇𝑚 )
+
+0 6 0 6 0 6 0 6 0 6 0 6
+
+-5
+
+5
+
+0
+
+5
+
+0
+
+-5
+
+-5
+
+0
+
+5
+
+𝑛 
+
+1.0 
+
+2.4 
+
+0.0 
+
+1.0 
+
+𝐸 2 (a.u.) 
+
+> 𝑓 𝑦  = −1.33  𝜇𝑚  𝑓 𝑦  = −1.06  𝜇𝑚  𝑓 𝑦  = −0.53  𝜇𝑚  𝑓 𝑦  = 0.00  𝜇𝑚
+
+𝑓 𝑥 = 3.58 𝜇𝑚  𝑓 𝑥 = 4.11 𝜇𝑚  𝑓 𝑥 = 4.65 𝜇𝑚  𝑓 𝑥 = 5.18 𝜇𝑚  𝑓 𝑥 = 5.72 𝜇𝑚  𝑓 𝑥 = 6.25 𝜇𝑚 
+
+Target Figure 10: Examples of metalens structures generated by DEN for D = 2 .67 μm and λ = 500 nm . The target focal points span different horizontal ( fx) and vertical ( fy ) coordinates within the focal region. For each target loca-tion, DEN directly predicts a corresponding binary-like refractive-index distribution and focuses light to the desired position. The red crosses indicate the target focal points. The generated structures produce well-confined focal spots with high intensity and low background scattering across the full target region. 26 •
+
+Sparse  Dense  Sparse  Dense  Sparse  Dense Figure 11: Scalability to dense per-pixel target sampling. Distribution comparisons of the focal intensity for sparse and dense target-space sampling under different target-region sizes D. The light violins show the distributions of the generated structures, while the markers and error bars indicate the mean and standard deviation, respectively. Even when the number of target focal points increases from sparse grids ( 5 × 5, 6 × 6, and 11 × 11 ) to dense per-pixel sampling ( 25 × 25 , 41 × 41 , and 81 × 81 ), the performance degradation remains moderate, demonstrating the strong scalability of DEN under a fixed training budget. The quantitative results are summarized in Table 2. As the target discretization becomes progressively denser, the number of target focal points increases dramatically while the accessible focal region remains unchanged. For example, for the largest target region ( D = 2 .67 μm), the number of focal positions increases from 121 (11 × 11 )to 6561 (81 × 81 ), corresponding to more than a fifty-fold increase in target-space coverage. Despite this substantial increase in the number of target focal positions, the average focal intensity decreases only from 0.86 ± 0.06 to 0.81 ±
+
+0.07 , corresponding to a reduction of approximately 6% .A similar trend is observed for the smaller focal regions. For D = 0 .80 μm, increasing the number of target focal points from 25 to 625 reduces the average focal intensity from 0.91 ± 0.05 to 0.86 ± 0.07 . For D = 1 .33 μm,increasing the target count from 36 to 1681 decreases the average focal intensity from 0.90 ± 0.04 to 0.86 ± 0.08 .In all cases, the performance degradation remains modest relative to the large increase in the number of target focal positions represented by the model. Importantly, the degree of binarization remains consistently high across all experiments. Even under dense per-pixel target sampling, the generated structures maintain binarization levels of approximately 0.95 -0.97 , indicating that the increased target-space coverage does not compromise fabrication compatibility. These results suggest that DEN can simultaneously maintain optical performance and manufacturability even when required to represent a much denser set of target conditions. To further visualize this behavior, Fig. 11 shows the distributions of focal intensities for both sparse and dense target sampling. The violin plots illustrate the performance distributions across all generated structures, while the markers and error bars denote the corresponding means and standard deviations. For all three target-region sizes, the sparse and dense distributions exhibit substantial overlap and only a modest shift in their mean values. The overall distribution shapes remain similar despite the large increase in the number of target focal positions. These observations indicate that DEN scales favorably with target-space coverage. For the largest focal region, the number of target focal positions increases by more than fifty times, while the average focal intensity decreases by only approximately 6% . Similar behavior is observed for the other focal-region sizes. This behavior highlights a key advantage of the proposed framework: a single network can efficiently represent and generate a very large number of target-dependent designs while maintaining high performance under a fixed training budget. The results further suggest that the learned target-conditioned mapping generalizes effectively across densely sampled target spaces rather than relying on a sparse set of isolated design solutions. 
+
+## G ADDITIONAL ANALYSIS OF DIMENSION EXPANSION 
+
+To further investigate the role of dimension expansion, we analyze the parameter distributions of the projection MLPs used to process the target coordinates. Figure 12 compares the learned weights and biases of the projection MLPs with and without dimension expansion (DE). These analyses provide additional insight into how DE influences the learned representations and why it improves the performance of the inverse-design network. Figure 12(a) shows the parameter distributions when DE is employed. For both projection MLPs, the weight and bias distributions remain relatively balanced and broadly distributed around zero. The learned parameters make 27 •                                  
+
+> With dimension expansion Without dimension expansion
+> MLP for expanding 𝑓 𝑥
+> Density
+> 0
+> 15
+> MLP for expanding 𝑓 𝑥
+> <-0.5 >0.5
+> Value <-0.5
+> Value
+> Density
+> 0
+> 5
+> Density
+> 0
+> 5
+> >0.5
+> ab
+> Weight 𝑘 Bias 𝑏
+> MLP for expanding 𝑓 𝑦
+> Weight 𝑘 Bias 𝑏
+> MLP for expanding 𝑓 𝑦
+> Τ𝒌 𝒃
+> With DE Without DE
+> MLP layer MLP layer
+> 01012
+> Value
+> 0
+> 30
+> c
+> MLP for 𝑓 𝑥
+> MLP for 𝑓 𝑦
+> 0.05 -0.05 0.05
+> Value
+> Density
+> 15
+> -0.05
+> Value
+> 0
+> Weight 𝑘 Bias 𝑏
+> 0.05 -0.05 0.05
+> Value
+> -0.05
+> Value
+> Weight 𝑘 Bias 𝑏
+> <-0.5 >0.5
+> Value <-0.5
+> Value
+> >0.5
+
+Figure 12: Additional analysis of the projection MLPs with and without dimension expansion (DE). (a) Dis-tributions of MLP weights k and biases b with DE. The weights and biases remain well balanced across different layers. (b) Distributions of MLP weights and biases without DE. The bias distributions exhibit long tails (red arrows), indicating increased reliance on large biases rather than informative target-dependent features. (c) Comparison of the weight-to-bias ratio || k|| /|| b|| across different MLP layers. Networks with DE maintain substantially larger weight-to-bias ratios, suggesting stronger feature-dependent representations and reduced mode-collapse behavior. effective use of both weights and biases, indicating that the output representations are primarily determined by the input-dependent transformations learned by the network. As a result, different target coordinates are mapped to distinct high-dimensional representations, providing rich conditioning information for the subsequent inverse-design network. In contrast, Fig. 12(b) shows the parameter distributions obtained without DE. While the weight distributions re-main relatively concentrated, the bias distributions develop pronounced long tails, as indicated by the red arrows. This behavior suggests that the network increasingly relies on large bias terms rather than input-dependent feature trans-formations. Consequently, the generated representations become less sensitive to changes in the target coordinates, making it more difficult for the network to distinguish between nearby targets. To quantify this effect, Fig. 12(c) compares the ratio 
+
+|k||b| , (16) where ( |k|) and ( |b|) denote the norms of the weights and biases, respectively. With DE, the ratio remains consistently large across different layers, indicating that the learned representations are dominated by feature-dependent transfor-mations. Without DE, however, the ratio decreases substantially, reflecting the increasing influence of bias terms. This trend is consistent for both projection MLPs corresponding to ( fx) and ( fy ). These observations provide additional evidence that dimension expansion improves the conditioning of the in-verse design problem. By transforming low-dimensional target coordinates into richer high-dimensional representa-tions, DE encourages the network to rely on informative target-dependent features rather than bias-dominated map-pings. This behavior improves representation diversity, enhances sensitivity to target variations, and helps prevent the mode-collapse phenomenon observed in the main text. 
+
+## H MATHEMATICAL ANALYSIS OF DIMENSION EXPANSION 
+
+In this section, we analyze the Fourier encoding and outer-product lifting used in the proposed dimension expansion framework, and investigate how they influence the geometry of the conditioning representations. The resulting analysis provides a theoretical perspective on the improved target separability, increased effective rank, and reduced mode-collapse behavior observed in Sec. 3.4. Let the target parameters be denoted by 
+
+T = ( x1, x 2), (17) where, following Sec. 2.1, each coordinate is measured in units of the target-grid index, so that x ∈ [0 , N x] with 
+
+Nx the number of discrete target samples along one dimension. Each coordinate is mapped into the Fourier feature representation 
+
+I(x) = [sin( ω1x), cos( ω1x), . . . , sin( ωNi x), cos( ωNi x)] ⊤ ∈ R2Ni , ωi = N −2i/N i 
+
+> x
+
+, (18) so that the frequencies form a geometric ladder decreasing from ωmax = N −2/N i 
+
+> x
+
+to ωmin = N −2 
+
+> x
+
+. The encoded features are processed by two projection networks, f1 = MLP 1(I(x1)) and f2 = MLP 2(I(x2)) , both with output dimension 2Ni, and combined through the outer product g = f1f ⊤ 
+
+> 2
+
+∈ R2Ni×2Ni , which serves as the conditioning representation supplied to the inverse-design network. 28 H.1 METRIC AND KERNEL STRUCTURE INDUCED BY THE FOURIER ENCODING 
+
+We first characterize the geometry of the encoding exactly, rather than only to first order. A direct computation using 
+
+(sin a − sin b)2 + (cos a − cos b)2 = 2 − 2 cos( a − b) gives, for any two targets x and x′ with ∆ = x − x′,
+
+∥I(x) − I(x′)∥22 =
+
+> Ni
+
+X
+
+> i=1
+
+2 1 − cos( ωi∆)  = 4 
+
+> Ni
+
+X
+
+> i=1
+
+sin 2 ωi∆2
+
+
+
+=: ρ2(∆) , (19) and, equivalently, the inner product 
+
+kI (∆) := I(x)⊤I(x′) = 
+
+> Ni
+
+X
+
+> i=1
+
+cos( ωi∆) . (20) The kernel is bounded as |kI (∆) | ≤ Ni, with kI (0) = Ni. Two structural properties follow immediately. (i) Sta-tionarity. Both the distance ρ(∆) and the kernel kI (∆) depend only on the coordinate difference ∆, inducing a translation-invariant geometry in the encoded space. In particular, the local sensitivity 
+
+∂I (x)
+
+∂x 
+
+> 22
+
+=
+
+> Ni
+
+X
+
+> i=1
+
+ω2 
+
+> i
+
+=: A2, (21) is independent of x: the encoding amplifies all targets uniformly by the constant factor A, and for small perturbations 
+
+ρ(∆) ≈ A|∆|. (ii) Saturation. A constant linear amplification alone would not explain the benefit of the encoding, since a fixed rescaling of the input can be absorbed into the first linear layer of any MLP. The essential property of Eq. 19 is its nonlinear shape: ρ2(∆) grows quadratically for |∆| ≲ ω−1max , then saturates toward the ambient scale ρ2 ≤
+
+4Ni, while the kernel kI (∆) correspondingly decorrelates. The encoding therefore converts coordinate differences into a similarity structure with a tunable correlation length set by the frequency ladder {ωi}, a transformation that cannot, in general, be reproduced by a single linear reparameterization of the raw coordinates. H.2 RELATION TO SPECTRAL BIAS 
+
+The Fourier-induced kernel structure in Eq. 20 provides a kernel-based interpretation of the empirical observations in Sec. 3.4. In the wide-network limit, gradient-descent training of a sufficiently wide MLP can be approximated by its neural tangent kernel (NTK) [95]. The components of the target function aligned with the leading kernel eigenfunc-tions are learned fastest, and MLPs operating on raw low-dimensional coordinates are known to exhibit spectral bias, learning low-frequency dependencies significantly faster than high-frequency ones [82]. Tancik et al. [81] showed that composing an MLP with Fourier feature mappings induces an approximately stationary kernel whose bandwidth is controlled by the Fourier spectrum. Consequently, the frequency ladder in Eq. 18 provides a multi-scale representa-tion of the target coordinates, allowing the network to capture both smooth global trends and sharper target-dependent variations in the design manifold. Although this interpretation does not constitute a formal NTK analysis of the pro-posed architecture, it provides additional intuition for why Fourier-based conditioning can improve the learnability of target-dependent mappings. H.3 INJECTIVITY AND RESOLUTION OF THE ENCODING 
+
+Because the components of I are periodic, it must be verified that the encoding does not alias distinct targets onto the same representation. 
+
+Proposition 1 (Injectivity) . If ωmin L < 2π, where L is the length of the target domain, then I is injective on that domain. In particular, for the frequency ladder in Eq. 18 defined on the domain [0 , N x], injectivity holds since 
+
+ωmin Nx = 1 
+
+> Nx
+
+< 2π for all Nx ≥ 1.Proof. The pair  sin( ωmin x), cos( ωmin x) traces the unit circle with period 2πωmin > L, and is therefore injective on the domain. Since this pair already uniquely determines x over the domain, injectivity of one sub-block implies injectivity of the full encoding I.At the opposite end of the frequency ladder, the highest frequency determines the resolution of the encoding. For two adjacent targets separated by the minimal grid spacing δ (δ = 1 in index units, corresponding to the half-wavelength spacing of the densest sampling stage in Sec. 3.1), 
+
+ρ2(δ) ≥ 4 sin 2 ωmax δ
+
+2
+
+
+
+> 0. (22) 29 Since 0 < ω max δ < 2π, the lower bound in Eq. 22 is strictly positive. Additional contributions from the remaining frequency components further increase the separation between neighboring targets. The frequency ladder therefore si-multaneously provides global injectivity and local target discrimination. The lowest frequency component ensures that distinct targets remain identifiable over the entire target domain, while the highest frequencies increase the separation between neighboring targets. Combined with the local amplification property in Eq. 21, this guarantees that neighbor-ing targets remain separated by a nonzero distance in the encoded space. Consequently, the encoding preserves both large-scale target structure and fine-scale target variations, making it well suited for dense target-space conditioning. H.4 BILINEAR LIFTING THROUGH THE OUTER PRODUCT 
+
+We now analyze the outer-product construction g = f1f ⊤ 
+
+> 2
+
+, whose vectorization satisfies vec( g) = f2 ⊗ f1. One clarification is in order. Since g is a deterministic smooth function of two scalars, the intrinsic dimension of the conditioning manifold {g(T)} cannot exceed two, regardless of the lifting. What the outer product increases is the 
+
+linear dimensionality (effective rank) of the family of representations, which is precisely the quantity measured in Fig. 6(f) and the quantity that determines how the downstream network can linearly separate target conditions in its early layers. 
+
+Proposition 2 (Multiplicative growth of the representation span) . Let the targets be sampled on a product grid X1×X 2,and let r1 = dim span {f1(x1) : x1 ∈ X 1} and r2 = dim span {f2(x2) : x2 ∈ X 2}. Then 
+
+dim span 
+
+n
+
+vec g(x1, x 2) : ( x1, x 2) ∈ X 1 × X 2
+
+o
+
+= r1r2. (23) 
+
+By contrast, the concatenated representation [f1; f2] spans a subspace of dimension at most r1 + r2.Proof. The span of the elementary tensors {f2(x2) ⊗ f1(x1)} over a product set equals the tensor product of the individual spans, span {f2} ⊗ span {f1}, whose dimension is r1r2. The concatenation statement follows from [f1; f2] ∈
+
+span {f1} ⊕ span {f2}.
+
+The equality requires product-grid sampling and therefore applies to the metalens task. For tasks with function-ally dependent target coordinates, such as the Y-splitter benchmark, only the upper bound r1r2 applies, since the target coordinates do not span a full Cartesian product grid. The lifting therefore expands the linear span of the representation family multiplicatively, whereas concatenation increases the span only additively. This provides a concrete represen-tational advantage of the outer product beyond the Fourier encoding itself. Although the intrinsic dimension of the conditioning manifold remains two, the larger linear span can allow downstream layers to separate target conditions more effectively, which is consistent with the increased effective rank observed experimentally in Fig. 6(f). The outer product also couples the two coordinates in the induced metric. Using ∥ab ⊤∥F = ∥a∥2∥b∥2 and the trace identity 
+
+tr 
+
+
+
+(f ′
+
+> 1
+
+f ′⊤  
+
+> 2
+
+)⊤f1f ⊤
+
+> 2
+
+
+
+= ( f ⊤ 
+
+> 1
+
+f ′
+
+> 1
+
+)( f ⊤ 
+
+> 2
+
+f ′
+
+> 2
+
+), we obtain 
+
+g − g′ 2 
+
+> F
+
+= ∥f1∥22∥f2∥22 + ∥f ′
+
+> 1
+
+∥22∥f ′
+
+> 2
+
+∥22 − 2( f ⊤ 
+
+> 1
+
+f ′
+
+> 1
+
+)( f ⊤ 
+
+> 2
+
+f ′
+
+> 2
+
+). (24) For unit-normalized features, Eq. 24 reduces to 
+
+g − g′ 2 
+
+> F
+
+= 2  1 − c1c2
+
+, cj := f ⊤ 
+
+> j
+
+f ′ 
+
+> j
+
+∈ [−1, 1] . (25) For intuition, Eq. 25 shows that, after normalization, coincidence of the lifted representations requires simultaneous agreement in both coordinate embeddings. More generally, Eq. 24 demonstrates that the geometry of the lifted repre-sentation depends multiplicatively on the similarities of the two coordinate embeddings. Moreover, the derivatives 
+
+∂g
+
+∂x 1
+
+=
+
+ ∂f1
+
+∂x 1
+
+
+
+f ⊤ 
+
+> 2
+
+, ∂g
+
+∂x 2
+
+= f1
+
+ ∂f2
+
+∂x 2
+
+⊤
+
+, (26) show that a perturbation of either coordinate is distributed across every entry of the conditioning matrix. Consequently, target variations are not confined to a small subset of input channels of the downstream network, but instead influence the conditioning representation globally. H.5 GRAM -MATRIX STRUCTURE AND MODE COLLAPSE 
+
+The preceding results combine into a quantitative account of the mode-collapse behavior observed in Fig. 6. 30 Gram-matrix structure and spectral properties. Consider the Gram matrix of the conditioning representations over the training targets {T1, . . . , TM },
+
+ Kg
+
+ 
+
+> mn
+
+=
+
+D
+
+vec g(Tm), vec g(Tn)
+
+E
+
+=  K1
+
+
+
+> mn
+
+ K2
+
+
+
+> mn
+
+, (27) where K1 and K2 denote the Gram matrices induced by the x- and y-coordinate embeddings, respectively, so that the outer-product conditioning construction induces a Hadamard-factorized Gram matrix. Equivalently, 
+
+Kg = K1 ◦ K2, (28) where ◦ denotes the Hadamard (elementwise) product. By the Schur product theorem, Kg remains positive semidefinite whenever K1 and K2 are positive semidefinite. Moreover, since K1 ⪰ λmin (K1)I, the mono-tonicity of the Hadamard product with respect to the Loewner order implies K1 ◦ K2 ⪰ λmin (K1) ( I ◦ K2) = 
+
+λmin (K1) diag  (K2)11 , . . . , (K2)M M 
+
+. Therefore, 
+
+λmin (Kg) ≥ λmin (K1) min  
+
+> n
+
+(K2)nn . (29) By symmetry, 
+
+λmin (Kg) ≥ λmin (K2) min  
+
+> n
+
+(K1)nn . (30) Hence, 
+
+λmin (Kg) ≥ max 
+
+
+
+λmin (K1) min  
+
+> n
+
+(K2)nn , λ min (K2) min  
+
+> n
+
+(K1)nn 
+
+
+
+. (31) Since (K1)nn = ∥f1(Tn)∥2, (K2)nn = ∥f2(Tn)∥2, the lower bound remains positive provided that the feature norms do not collapse to zero. Thus, provided that the feature norms remain bounded away from zero, the lifted representation preserves a positive lower bound on its smallest eigenvalue while remaining positive semidefinite [96]. 
+
+Remark 1. On a full product grid, K1 and K2 are necessarily singular because coordinate values repeat across targets, so the lower bound in Eq. 31 may become vacuous. The bound is more informative when applied to sub-sets of targets with pairwise-distinct coordinates, for which it guarantees that the outer-product lifting preserves the nondegeneracy of the per-coordinate Gram matrices. In particular, Eq. 31 provides only a one-sided guarantee. It certifies nondegeneracy of Kg when sufficient nondegeneracy is already present in the per-coordinate Gram matrices, but does not fully characterize the rank of Kg. Indeed, the outer-product lifting can substantially increase the span of the representation family, with 
+
+rank( Kg) ≤ rank( K1) rank( K2),
+
+and Proposition 2 shows that this upper bound can be attained on a product grid. 
+
+Correlation suppression and mode-collapse mitigation. The off-diagonal entries of the lifted Gram matrix factor multiplicatively. For two distinct targets m̸ = n,
+
+(Kg)mn = ( K1)mn (K2)mn . (32) The similarity between two target conditions is therefore gated jointly by the two coordinate embeddings: it depends jointly on the similarities in both coordinates, and it vanishes whenever either embedding renders the pair orthogonal. This contrasts with additive constructions such as concatenation, where similarity contributions from different coor-dinates are accumulated rather than coupled multiplicatively. Equation 32 thus shows that the outer-product lifting makes the conditioning representation more selective in distinguishing target pairs, complementing the rank growth of Proposition 2. This selectivity is most relevant in the regime where mode collapse arises. When the network is conditioned directly on the raw coordinates, nearby targets produce nearly identical representations; the corresponding rows of the Gram matrix become similar, so the per-target gradient contributions align and training is effectively driven by a shared objective across neighboring targets, encouraging a common structure and reducing output diversity. Dimension expansion counteracts this in two complementary ways: the Fourier encoding separates nearby targets through the stationary multi-scale kernel of Sec. H.1, and the outer-product lifting requires agreement in both coordinates for two conditioning matrices to coincide, as reflected in Eq. 24. We emphasize that these arguments identify mechanisms rather than guarantees; together they offer a plausible account of the larger amplification factors, higher effective ranks, and reduced mode-collapse behavior observed in Fig. 6(e,f). 31

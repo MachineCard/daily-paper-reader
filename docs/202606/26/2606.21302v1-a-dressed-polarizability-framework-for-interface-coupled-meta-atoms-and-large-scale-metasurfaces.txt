@@ -1,0 +1,1469 @@
+Title: 2606.21302v1.pdf
+
+URL Source: https://arxiv.org/pdf/2606.21302v1
+
+Published Time: Tue, 23 Jun 2026 00:47:07 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+A dressed polarizability  framework  for interface -
+
+# coupled meta -atoms and large -scale metasurfaces 
+
+Peng Fu 1* , Jean -Paul Hugonin 2, Maxime  Bertrand 3, Kevin  Vynck 4, and P. Lalanne 1*  
+
+> 1
+
+Laboratoire Photonique, Num érique et Nanosciences (LP2N), IOGS - Université de Bordeaux -
+
+CNRS, 33400 Talence cedex, France  
+
+> 2
+
+Laboratoire Charles Fabry (LCF, UMR 8501), CNRS−IOGS−Universit é Paris -Sud, 2 Avenue 
+
+Augustin Fresnel, 91127 Palaiseau, France  
+
+> 3
+
+SharpEye SAS, 25 Avenue Pasteur, 94250 Gentilly, France  
+
+> 4
+
+Institut Lumière Matière (iLM), Université Claude Bernard Lyon 1, CNRS, Villeurbanne, 
+
+France 
+
+* philippe.lalanne@institutoptique.fr 
+
+Abstract . The modeling of large collections of interacting meta -atoms remains a central 
+
+challenge in photonics because it requires the simultaneous  treatment of complex scatterer 
+
+geometries, multiple scattering, and heterogeneous environments. Here, we introduce the 
+
+dressed Global Polarizability Matrix (dGPM), a reduced -order electromagnetic framework in 
+
+which complex meta -atoms are represented by com pact scattering operators that explicitly 
+
+incorporate the influence of nearby interfaces. The dGPM accurately reconstructs near - and far -
+
+field electromagnetic responses for interface -coupled structures, including geometries beyond 
+
+the practical applicabili ty of conventional T -matrix approaches. The framework naturally 
+
+combines interface -coupled and free -space scatterers within a unified multiple -scattering 
+
+formalism and enables simulations of large ordered and disordered metasurfaces. More broadly, 
+
+the dGPM  extends operator -based electromagnetic modeling to heterogeneous photonic 
+
+environments while preserving a compact scatterer -based representation, providing an efficient 
+
+framework for the simulation and design of large -scale photonic systems .
+
+Keywords : Global polarizability matrix , meta -atom  modeling,  metasurfaces , disordered  media ,
+
+multiple scattering , T-matrix method , discrete dipole approximation .
+
+1.  Introduction 
+
+Optical m etasurfaces  transform how we generate, shape, sense, and even perceive light  [1] .
+
+They emerged in parallel with metamaterials in the 1990s  [2,3]  and, like their volumetric 
+
+counterparts, rely on subwavelength resonant building blocks —commonly referred to as  meta -
+
+atom s—whose individual and collective electromagnetic responses determine the macroscopic 
+
+optical functionality of the device .
+
+Two major classes of metasurfaces have emerged: ordered metasurfaces  [4,5] , in which  meta -
+
+atom s are arranged on regular lattices, and disordered metasurfaces  [6] , where  meta -atom s are 
+
+distributed stochastically, generally subject to prescribed spatial correlations. In both cases, 
+
+fabrication capabilities are advancing rapidly through complementary top -down lithographic 
+
+and bottom -up self -assembly approaches  [7,8] . As a result, the primary bottleneck is 
+
+progressively shifting from fabrication itself toward the accurate simulation, inverse design, 
+
+and optimization of increasingly complex metasurface architectures  [9 –12] .
+
+Despite sharing a common physical foundation as ensembles of spatially separated scatterers 
+
+interacting through electromagnetic fields, ordered and disordered metasurfaces are typically 
+
+modeled using markedly different numerical frameworks. Ordered metasur faces are most often investigated with full -wave discretization techniques such as finite -difference time -domain 
+
+(FDTD) methods  [13]  and rigorous coupled -wave analysis (RCWA)  [14] , whereas disordered 
+
+metasurfaces are commonly analyzed using multiple -scattering formalisms, including the T -
+
+matrix method  [15,16]  and the discrete dipole approximation (DDA)  [17 –19] .
+
+Multiple -scattering approaches exploit the particulate nature of metasurfaces by discretizing 
+
+only the scatterers while treating the surrounding medium analytically. Depending on the 
+
+formulation, electromagnetic interactions are mediated through  electromagnetic  Green's 
+
+functions, as in dipole -based methods, or through spherical vector wave expansions, as in T -
+
+matrix techniques. By avoiding volumetric discretization of free space, these methods often 
+
+provide favorable computational scaling together with dire ct physical insight into collective 
+
+multiple -scattering phenomena. Full -wave discretization techniques, in contrast, offer greater 
+
+geometric and material generality at the cost of a substantially larger computational burden. 
+
+Yet the distinction between ordered and disordered metasurfaces is structural rather than 
+
+physical. Both systems consist of interacting scatterers governed by the same electromagnetic 
+
+principles, differing only in the spatial organization of their constitu ents. There is therefore no 
+
+fundamental reason to maintain separate modeling paradigms. A unified multiple -scattering 
+
+framework capable of treating both ordered and disordered metasurfaces would be not only 
+
+physically natural but also computationally advan tageous. 
+
+Existing multiple -scattering methods were primarily developed for  disordered  media . They 
+
+face important limitations when applied to ordered metasurfaces. The T -matrix method  [20] ,
+
+currently the reference approach for large -scale multiple -scattering calculations, represents 
+
+electromagnetic fields using vector spherical wave functions defined outside the smallest 
+
+circumscribing sphere of each  meta -atom . For the high -aspect -ratio dielectric pillars commonly 
+
+employed in metasurfaces  [6,21] , this sphere can be significantly larger than the physical 
+
+scatterer, leading to inefficient field representations and degraded computational performance. 
+
+The limitation persists in recent extensions of the method  [22,23] .
+
+The DDA circumvents this geometric constraint by discretizing the scatterers into interacting 
+
+dipoles. However, accurately representing high -index dielectric resonators typically requires a 
+
+large number of dipoles per  meta -atom  [19] , substantially increasing the size of the resulting 
+
+multiple -scattering problem. As a consequence, much of the computational advantage gained 
+
+by avoiding volumetric discretization of the surrounding medium is lost when large  and dense 
+
+metasurface ensembles are considered. 
+
+The Global Polarizability Matrix (GPM) method  [24]  was introduced to overcome the 
+
+traditional trade -off between geometric flexibility and computational efficiency. In the GPM 
+
+framework, each  meta -atom  is represented by a compact non -local  polarizability  matrix that is 
+
+retrieved  for every distinct geometry from a reference database of full -wave simulations of the 
+
+scattered near field under a set of independent illuminations .
+
+A key strength of the GPM formalism is that the resulting operator can be freely translated 
+
+and rotated in three -dimensional space, enabling the efficient modeling of ensembles of  meta -
+
+atom s with arbitrary positions and orientations, similarly to the T-matrix approach. 
+
+Furthermore, the method has recently been implemented within the GPU -enabled automatic -
+
+differentiation framework PyTorch  [25] , opening promising perspectives for large -scale 
+
+simulations and inverse -design strategies .
+
+However, the original GPM formulation is restricted to  meta -atom s surrounded by a 
+
+homogeneous medi um  (Fig.  1a)  and therefore cannot accurately  describe  what is arguably the 
+
+most important configuration in nanophotonics:  meta -atom s touching  or  straddling  one or 
+
+several  interface s. Here after , we overcome this  important  limitation by introducing the dressed 
+
+Global Polarizability Matrix (dGPM),  see  Fig. 1 b.
+
+The remainder of this paper is organized as follows.  In Section 2, we establish the theoretical 
+
+framework of the dGPM and clarify its relationship with the original GPM formalism. In Section 3, we validate the method on high -aspect -ratio meta -atoms straddling a dielectric 
+
+interface, a class of geometries that remains challenging for current T -matrix implementations .
+
+In Section 4.1, we investigate strongly coupled meta -atom dimers and demonstrate that the 
+
+dGPM can be naturally incorporated into the standard multiple -scattering formalism through 
+
+Green tensors while maintaining high accuracy. Section 4.2 shows that conve ntional GPM and 
+
+dressed dGPM operators can be seamlessly combined within a single simulation framework. 
+
+This capability enables the treatment of heterogeneous systems containing meta -atoms 
+
+embedded in homogeneous media, deposited on substrates, or intersec ting dielectric interfaces. 
+
+In Section 4.3, we apply the framework to ensembles comprising several hundred  of  meta -
+
+atoms arranged in either ordered or disordered configurations .
+
+Finally, Section 5 discusses the scope, limitations, and perspectives of the GPM –dGPM 
+
+framework. Particular attention is given to its applicability to large collections of interacting 
+
+meta -atoms and to its relationship with existing multiple -scattering app roaches for the 
+
+modeling of metasurfaces and disordered photonic media.                        
+
+> FIG. 1. General framework for the GPM and dGPM for complex particulate systems .a,
+> The GPM is applicable only when the learning surface surrounding each meta -atom remains
+> entirely within a homogeneous medium. Consequently, meta -atom s 1 and 2 can be described by
+> the GPM. b, Meta -atom s deposited on, crossing, or embedded within an interface ( meta -atom s
+> 3–5) violate this condition and therefore require the dGPM formalism. c, Example of a
+> heterogeneous configuration containing both standard and dressed operators. Meta -atom s 4 –6
+> must be treated with the dGPM because their learning surfaces intersect the interface, whereas
+> meta -atom 7 may be described using either the GPM or the dGPM. The multiple -scattering
+> formalism remains valid only when the learning surfaces associated with different meta -atom s
+> do not overlap. For example, the surfaces of meta -atom s 4 and 7 are non -intersecting, whereas
+> those of meta -atom s 6 and 7 (or 5 and 6) overlap, thereby violating the assumptions of formalism .
+
+2.  Dressed  Global Polarizability  Matrix : Theory and Formulation 
+
+dGMP and GPM methods are conceptually very similar. So let us rapidly recap the main 
+
+features of the GPM method, as they have been established in  [24] . 
+
+> 2.1.
+
+Global Polarizability Matrix 
+
+The GPM represents a meta -atom by a small set of  6𝑁 𝑝  electric and magnetic numerical dipole 
+
+components, which at first sight resembles the Discrete Dipole Approximation (DDA). The 
+
+fundamental difference, however, lies in the interpretation of these dipoles and their associated 
+
+polarizability matrix. 
+
+In the DDA, the dipoles represent physical polarization currents distributed throughout the 
+
+scatterer. Each dipole is characterized by a local polarizability that relates its induced moment 
+
+to the exciting field at the same location. As a consequence, the  polarizability matrix is block -
+
+diagonal, and electromagnetic interactions between dipoles are introduced separately through 
+
+the Green tensor appearing in the coupled -dipole equations. 
+
+The GPM follows a different philosophy. The numerical dipoles do not represent physical 
+
+polarization currents and are not constrained to obey a local constitutive relation. Instead, the 
+
+complete polarizability matrix is learned from reference scattering da ta. Both diagonal and off -
+
+diagonal blocks are therefore determined by numerical inversion and collectively encode the electromagnetic response of the entire meta -atom. In this representation, a given dipole 
+
+component may depend on all  6𝑁 𝑝  exciting field components acting on the numerical dipoles. 
+
+The off -diagonal terms therefore capture internal electromagnetic couplings implicitly, without 
+
+imposing any specific propagation law between the numerical dipoles. 
+
+This additional freedom allows complex meta -atoms to be represented with far fewer dipoles 
+
+than required by the DDA while preserving an accurate description of their external 
+
+electromagnetic response. In this respect, the GPM is conceptually closer to the  T-matrix 
+
+formalism than to conventional dipole discretization methods: a larger upfront computational 
+
+effort is invested in constructing the operator, which can then be reused to efficiently solve 
+
+multiple -scattering problems involving large collections of  interacting meta -atoms. 
+
+The GPM operator is learned from reference data generated by independent full -wave 
+
+simulations performed with a Maxwell solver (COMSOL is used throughout this work). 
+
+Specifically, the near field s scattered by the  meta -atom  for  a set of dipole sources positioned in 
+
+its near field  are  computed  on a learning surface, represented by the red dashed contour in 
+
+Fig.  1a, which conformally surrounds the object. The GPM is then obtained through a least -
+
+squares inversion procedure  from this large dataset . We refer to  this stage as the  learning phase .
+
+To assess  the  predictive capability of the learned operator, we subsequently consider a 
+
+different set of dipole sources from those used during learning and compare the fields predicted 
+
+by the GPM with the corresponding full -wave simulations. We refer to this validation  stage as 
+
+the  generalization  phase . Successful generalization indicates that the scattering response of the 
+
+meta -atom  has been faithfully captured during learning, allowing the GPM to serve as a 
+
+compact and accurate electromagnetic representation of the  sc atterer .
+
+It is important to emphasize that the learned GPM is not an intrinsic material tensor 
+
+associated with the  meta -atom . Rather, it is a representation -dependent  effective scattering 
+
+operator . As such, it is not unique and depends on several modeling choices, including the 
+
+positions of the numerical dipoles, the geometry of the learning surface, the excitation set used 
+
+during learning, and the regularization strategy adopted during inversion. 
+
+A GPM  is  precomputed  for a  meta -atom  embedded in a homogeneous  medium  and  can thus 
+
+be subsequently reused to model large ensembles of identical  meta -atom s placed in stratified 
+
+environments, provided that each  meta -atom  remains within the same background layer used 
+
+during learning. Similar to a T -matrix, the GPM can be rigidly translated and rotated to account 
+
+for translations and rotations of the corresponding  meta -atom  [24] . This portability is 
+
+nevertheless conditional: the learning surface must remain entirely contained within a single 
+
+homogeneous layer and must not intersect any interface, maintaining a finite  gap  from it, as 
+
+illustrated in Fig. 1a. 
+
+One of the key advances introduced by the dGPM framework is the removal of this 
+
+restriction. The dGPM remains applicable even when the learning surface intersects an 
+
+interface, thereby enabling the treatment of  meta -atom s deposited on, embedded within, or 
+
+crossing material boundaries, as illustrated by  meta -atom s 3 –5 in Fig. 1b. 
+
+2.2  Dressed Global Polarizability Matrix 
+
+The dGPM method closely follows the GPM framework. The main difference is that the field 
+
+scattered by the  meta -atom  is learned directly in the presence of the stratified medium. As a 
+
+result, the dGPM is no longer an intrinsic property of the  meta -atom  but becomes dependent on 
+
+the  meta -atom  environment. Any modification of the stratified medium therefore requires 
+
+recomputing the dGPM. By contrast, the GPM can be reused for different stratified 
+
+environments provided that the surrounding medium of the  meta -ato m remains unchanged. 
+
+The ability to handle learning surfaces that intersect material interfaces is gained at the 
+
+expense of symmetry. Whereas the GPM supports arbitrary translations and rotations, the 
+
+dGPM is restricted to translations parallel to the interface and rotations a bout the axis normal 
+
+to the interface. We now provide details of the implementation. 
+
+Learning phase . We star t by generating reference data with COMSOL. A source surface (blue 
+
+dashed line in Fig.  2) is defined at a distance  𝑑 𝑠  from the  meta -atom  boundary, on which  𝑁 𝑠 
+
+randomly distributed points are selected. At each point, six elementary electric and magnetic 
+
+point  sources are considered, and the field scattered by the  meta -atom  in its stratified 
+
+environment is computed with COMSOL. This results in  6𝑁 𝑠  independent excitation problems. 
+
+Next, a conformal learning surface (red dotted curve in Fig.  2) is introduced. On this surface, 
+
+𝑁 𝑙  randomly distributed observation points are selected, where the six components of the 
+
+scattered electromagnetic field are recorded. The scattered fields associated with all  (6𝑁 𝑠 )
+
+excitations are assembled into a reference vector  𝚿 𝑠  
+
+> ref
+
+of size  36 𝑁 𝑠 𝑁 𝑙  × 1.
+
+We then compute  the  6𝑁 𝑠 𝑁 𝑑  stratified Green -function  matrices  𝐺 𝑠𝑑  , which link  the  6𝑁 𝑠 
+
+source  𝐒  to the  𝑁 𝑑  numerical dipoles , u sing the formalism introduced in  [24] . 𝐺 𝑠𝑑  is then used 
+
+to evaluate the incident fields acting on the numerical dipoles, denoted symbolically by  𝐺 𝑠𝑑 𝐒 ,
+
+and the corresponding induced electric –magnetic moments  𝒜 ̃ 𝐺 𝑠𝑑 𝐒 .
+
+Similarly, we compute the  6𝑁 𝑙 𝑁 𝑑  stratified Green -function matri ces  𝐺 𝑑𝑙  , which link the 
+
+numerical dipoles to the  𝑁 𝑙  observation points on the learning surface. The scattered field 
+
+predicted by the dGPM is then given by 
+
+𝚿 𝑠  
+
+> dGPM
+
+= 𝐺 𝑑𝑙 𝒜 ̃ 𝐺 𝑠𝑑 𝐒 , (1) 
+
+from which the dressed polarizability matrix  𝒜 ̃ is obtained by solving the regularized least -
+
+squares problem 
+
+min  
+
+> 𝒜 ̃
+
+∥ 𝚿 𝑠  
+
+> dGPM
+
+− 𝚿 𝑠  
+
+> ref
+
+∥2. (2) 
+
+The  dGPM  matrix retains the same block structure as the GPM, 
+
+𝐀 ̃ =
+
+[
+
+𝒜 ̃1→1 𝒜 ̃ 2→1 ⋯ 𝒜 ̃ 𝑁 𝑑 →1
+
+𝒜 ̃1→2 𝒜 ̃ 2→2 ⋯ 𝒜 ̃ 𝑁 𝑑 →2
+
+⋮ ⋮ ⋱ ⋮
+
+𝒜 ̃1→𝑁 𝑑  𝒜 ̃ 2→𝑁 𝑑  ⋯ 𝒜 ̃ 𝑁 𝑑 →𝑁 𝑑 ]
+
+, (3) 
+
+where each block  𝒜 ̃ 𝑚 →𝑛  is a  6 × 6 tensor  mapping the six incident field components driving 
+
+numerical dipole  𝑚  to the 6 effective electric –magnetic moments induced at numerical dipole 
+
+𝑛 . The off -diagonal blocks therefore capture the nonlocal response of the dressed numerical -
+
+dipole basis. 
+
+Unlike the GPM, for which the Green functions are evaluated in a homogeneous background 
+
+medium, all Green functions appearing in Eq.  (1) are computed in the stratified environment. 
+
+They therefore include  direct , reflected, transmitted, and evanescent contributions associated 
+
+with the planar interfaces .
+
+Generalization  phase . To assess the predictive capabilities of the dGPM, a new set of 
+
+randomly positioned sources is generated on the source surface together with a new set of 
+
+randomly positioned observation points on the learning surface. The electromagnetic field 
+
+scattered by  the  meta -atom  is computed with COMSOL and assembled into a reference vector 
+
+𝚿 𝑠 
+
+> gen
+
+. The corresponding dGPM prediction  𝚿 𝑠  
+
+> dGPM
+
+is obtained directly from Eq.  (1). 
+
+The comparison is performed using the electromagnetic energy density  𝑢 𝑘  = 
+
+> 1
+> 2
+
+[𝜀 (𝐫 𝑘 )|𝐄 (𝐫 𝑘 )|2 + 𝜇 (𝐫 𝑘 )|𝐇 (𝐫 𝑘 )|2] evaluated at each observation point  𝐫 𝑘  on the learning 
+
+surfaces.  This yields two vectors,  𝐮 dGPM  and  𝐮 ref , from which we compute the mean relative 
+
+error and its standard deviation. 
+
+For two vectors  𝐱  and  𝐱 ′ of length  𝑁 , the  mean  relative error as 𝐸 ̅ (𝐱 , 𝐱 ’) == 1 
+
+> 𝑁
+
+∑ 𝐸 𝑘  = 1 
+
+> 𝑁
+
+∑ |𝑥 𝑘 −𝑥 𝑘    
+
+> ′|
+> |𝑥 𝑘 |+|𝑥 𝑘
+> ′|
+> 𝑁
+> 𝑘 =1
+> 𝑁
+> 𝑘 =1
+
+, (4)
+
+and the  standar d deviation  𝜎  by  𝜎 2(𝐱 , 𝐱 ’) = 1 
+
+> 𝑁 −1
+
+∑ (𝐸 𝑘  − 𝐸 ̅ )2𝑁  
+
+> 𝑘 =1
+
+.                           
+
+> FIG. 2.dGPM framework. An arbitrary meta -atom in a stratified medium (left) is modeled by
+> a small set of 𝑁 𝑝 numerical dipoles (right) capable of accurately predicting the field scattered by
+> the meta -atom . The figure shows the case 𝑁 𝑝 =3. Each numerical polarizability is composed of
+> 3 electric and 3 magnetic dipoles, and the dGPM denoted by 𝒜 ̃is composed of 3×3subblocks .
+> A concrete example of dGPM is given in Fig. 4b.
+
+Although the dGPM framework provides a systematic route to constructing reduced -order 
+
+models of  meta -atom s in stratified environments, several practical aspects remain empirical. In 
+
+particular, no universal threshold on  𝐸 ̅ and  𝜎  can be established to determine whether a given 
+
+dGPM constitutes a sufficiently accurate electromagnetic representation of a  meta -atom .
+
+Likewise, there is currently no general rule for selecting the number  𝑁 𝑑  and locations of the 
+
+numerical dipoles, nor for choosing the numbers of source and learning points,  𝑁 𝑠  and  𝑁 𝑙 .
+
+Nevertheless,  our experience  indicate s that robust solutions  for a broad range of  meta -
+
+atom s [24]  are obtained  with typically the same parameters . The optimal numerical dipoles 
+
+tend to be distributed along the principal symmetry axes of the  meta -atom . For the pillar 
+
+considered below, we use  𝑁 𝑑  = 15 , 𝑁 𝑠  = 30  and  𝑁 𝑙  = 1500 , leading to a mean relative error 
+
+of  𝐸 ̅ = 2.5%  and a standard deviation of  𝜎  = 0.2% .
+
+In practice,  the learning procedure is repeated for  𝑁 𝑑  ∈ {1,2, … , 𝑁 𝑑 
+
+> max
+
+}, yielding a family of 
+
+operators  𝒜 ̃ (𝑁 𝑑 ) together with their associated errors  𝐸 ̅ (𝑁 𝑑 ). The computational cost required 
+
+to generate this family is approximately  40  minutes  for  𝑁 𝑑  
+
+> max
+
+= 25 .
+
+2.3  Conceptual  interpretation of the  dressing 
+
+The term  dressed  is borrowed from condensed -matter physics, where the properties of a bare 
+
+particle are renormalized by its interaction with the surrounding environment. In 
+
+electromagnetism, a  dressed polarizability  similarly refers to the effective polarizability 
+
+acquired by a scatterer through its interaction with neighboring scatterers or nearby interfaces 
+
+(see Section 12.4.3  in  [26] ). This terminology naturally motivates the name  dressed Global 
+
+Polarizability Matrix  (dGPM). 
+
+For  meta -atom s whose learning surface does not intersect an interface, as in Figs. 1a and  3,
+
+both the GPM and dGPM frameworks can be applied. Although the two approaches may yield 
+
+comparable accuracies, they differ fundamentally in the ir incorporation in the  multiple 
+
+scattering  formalism .
+
+To illustrate this distinction, consider the field driving a particular numerical dipole, for 
+
+example the upper dipole of the rightmost  meta -atom  in Fig.  3. Several contributions enter this 
+
+driving field. First, there is the incident field generated by the external source (orange arrows), 
+
+which is identical in both formulations. Second, there is the field scattered by neighboring  meta -
+
+atom s (blue arrows), which is also treated identically in both approaches. 1                                            
+
+> 2
+> 3
+> =(,1),(,2),(,3)
+> 112131
+> 122232
+> 132333
+> (1)
+> (2)
+> (3)FIG. 3.Multiple scattering in dGPM vs GPM framework s.In the bare GPM (left), the
+> exciting field 𝚿 𝑒𝑥𝑐 involves three contributions :the incident field generated by the external
+> source (orange arrows), the field scattered by neighboring meta -atom s (blue arrows), and the
+> inter -scatterer substrate -mediated scattered field, including self -feedback (green arrows) .In the
+> dGPM formulation (right), these substrate -mediated interactions are incorporated into the
+> dressed scattering operator. As a result, the exciting field contains only the incident field and the
+> fields scattered by neighboring meta -atoms.
+
+The key difference concerns the interaction between numerical dipoles belonging to the 
+
+same  meta -atom . In a layered environment, the Green function can be decomposed as  𝐺  =
+
+𝐺 𝑏  + 𝐺 𝑟  , where  𝐺 𝑏  denotes the direct contribution that would exist in a homogeneous 
+
+background medium and  𝐺 𝑟  denotes the indirect contribution mediated by reflections and 
+
+transmissions at the interfaces. Within the dGPM framework, both contributions are already 
+
+embedded in the reference data  𝚿 𝑠 
+
+> ref
+
+. Consequently, they are incorporated into the learned 
+
+operator  𝒜 ̃ through the optimization procedure of Eq. (2). The effect of the layered 
+
+environment is therefore absorbed into the dressed polarizability matrix itself. 
+
+In contrast,  GPM  is learned in a homogeneous environment. Its off -diagonal blocks only 
+
+capture the direct interaction described by  𝐺 𝑏 . The indirect contribution  𝐺 𝑟 , arising from the 
+
+substrate -mediated interaction between numerical dipoles, is not contained in the learned 
+
+operator and must instead be accounted for explicitly during the multiple -scattering calculation. 
+
+This additional interaction is represented by the  green arrow in the GPM schematic of Fig. 2c. 
+
+From this perspective, the dressing procedure can be interpreted as transferring part of the 
+
+multiple -scattering physics from the Green function into the learned polarizability matrix. The 
+
+dGPM thus incorporates substrate -mediated self -interactions directl y into the  meta -atom 
+
+description, whereas the GPM treats them as external interactions that must be evaluated during 
+
+the multiple -scattering calculation. 
+
+3.  Validation of the  dGPM for complex  interface -straddling  meta -atom s
+
+In this section, we validate the dGPM framework using a test case deliberately chosen to lie 
+
+beyond the range of applicability of conventional T -matrix approaches. Although the system 
+
+consists of a single  meta -atom , its geometry is nontrivial: it is composed of multiple materials 
+
+and intersects a layered substrate, thereby preventing the definition of a closed learning surface 
+
+entirely contained within a homogeneous medium. 
+
+The considered  meta -atom  is  inspire d by  earlier work on  metasurfaces for  thermal infrared 
+
+imaging at  𝜆  = 10 .6 μm  [27] . The composite structure is a ZnS -capped GaAs micropillar of 
+
+total height  ℎ = ℎ1 + ℎ2 = 6.8 μm, standing on a ZnS -coated bulk substrate (Fig.  4a).  It  is 
+
+obtained by etching  a high -aspect -ratio  GaAs  pillar  of  diameter  𝐷  = 1 μm  and  height  ℎ1 = 5.6
+
+μm  into a bulk GaAs substrate  (ε3 = 11 .73 ) and then depositing a  low -index ZnS anti -
+
+reflection  layer  of thickness  ℎ2 = 1.2 μm  (ε2 = 4.84 ) by electron -beam evaporation .
+
+T-matrix methods —including extended formulations coupled with S-matrix 
+
+approaches  [23] —are not applicable to this configuration for two main reasons. First, the  meta -
+
+atom  straddles an interface, a situation that cannot be properly handled within the S -matrix 
+
+framework. Second, when such high -aspect -ratio pillars are arranged in close proximity within = + + + = = +a metasurface  [27] , the circumscribing spheres associated with neighboring  meta -atom s
+
+overlap (blue dashed circles in Fig.  5a), causing breakdown of vector spherical harmonic 
+
+expansions. In contrast, the dGPM circumvents these limitations entirely. Its learning surface 
+
+conforms to the  meta -atom  geometry, allowing small separations between neighboring 
+
+structures, and it imposes no homogeneity constraint, enabling the  meta -atom  to intersect 
+
+multiple dielectric interfaces without restriction. 
+
+The dGPM is obtained through the numerical learning procedure introduced in Section 2, 
+
+here adapted to the stratified geometry. 
+
+Reference  dataset . A set of  𝑁 𝑠  = 30  dipol ar  sources  is randomly distributed over a virtual 
+
+source surface (dashed blue box in Fig.  2), located at a distance  𝑑 𝑠  = 2 μm from the  meta -atom 
+
+boundary.  Each source is defined by six polarization states (three electric and three magnetic 
+
+dipoles oriented along  𝑥 , 𝑦 , 𝑧 ),  resulting in a total of  6𝑁 𝑠  = 180  full -wave training simulations ,
+
+all performed using COMSOL Multiphysics with a  very fine  mesh to ensure negligible 
+
+numerical discretization error in the reference data . For each simulation, the scattered field is 
+
+sampled at  𝑁 𝑙  ≈ 1500  points  uniformly distributed over  the  conformal learning surface  shown 
+
+with  dashed red box in Fig s. 4a and  4c.
+
+The total wall -clock time for the complete training pipeline is 64 minutes on a workstation 
+
+equipped with an Intel Core i9 processor and 256 GB of RAM.  or a rotationally symmetric 
+
+meta -atom , the COMSOL simulations could be significantly accelerated by exploiting 
+
+axisymmetry. This option was deliberately not used here; consequently, the reported runtime is 
+
+representative of the computational cost associated with an arbitrary wavelength -scale  meta -
+
+atom .
+
+dGPM computation . The  capped pillar  is discretized into  𝑁 𝑑  = 15  numerical dipoles 
+
+uniformly distributed  along its longitudinal axis, yielding a  6𝑁 𝑑  × 6𝑁 𝑑  dGPM  𝒜 ̃ , shown  as  a
+
+heatmap  in  Fig.  4b. The prominent off -diagonal blocks reveal strong spatial nonlocality, 
+
+indicating significant coupling between all numerical dipoles. The learned dGPM achieves a 
+
+relative energy -density error  (Eq.  4) of  𝐸 ̅𝑡𝑟𝑎 = 2. 47 % (𝜎 𝑡𝑟𝑎  = 0.27% ) on the  reference dataset .                                                                       
+
+> FIG. 4.Validation of the dGPM for a complex interface -coupled meta -atom beyond the
+> practical applicability of conventional T-matrix approaches. a,ZnS -capped GaAs
+> micropillar, with parameters ℎ1=5.6μm, ℎ2=1.2μm, 𝜀 3=11 .73 (GaAs ),𝜀 2=4.84 (ZnS) .
+> The l earning sources are distributed on a virtual surface (blue dashed box) at distance 𝑑 𝑠 =2
+> μm from the high -aspect -ratio pillar .All tests are performed at 𝜆 =10 .6μm .b,Heatmap of the
+> dGPM 𝒜 ̃(illustrated here for 𝑁 𝑑 =8for simplicity ). Each 6×6block (see magnified insets )describes the cross -coupling between electric ( 𝑝 ) and magnetic ( 𝑚 ) dipole moments. c,𝑅𝑒 (𝐻 𝑦 )
+> for an unlearned dipolar excitation shown with black arrows :COMSOL reference data (left)
+> versus dGPM reconstruction (right). The dGPM accurately reproduces 𝑅𝑒 (𝐻 𝑦 )outside the
+> learning surface (red dashed box), demonstrating generalization .d, Angular radiation pattern
+> 𝑑𝑃 /𝑑𝛺 : comparison between COMSOL (black dashed) and dGPM (red). Excellent agreement
+> is observed. Sharp features at the critical angle (𝜃 𝑐 =asin (𝜀 1𝜀 3⁄)1/2≈16 .96 ∘)capture the
+> substrate light -cone effect .
+
+Generalization capability of the learned dGPM.  When evaluated on a generalization set of 
+
+excitations not included  in the  training  process , the  relative  error  increases only marginally ,
+
+from  𝐸 ̅𝑡𝑟𝑎  = 2. 47 % on the training set  to  𝐸 ̅𝑔𝑒𝑛  = 2.72%  (standard deviation  𝜎 𝑔𝑒𝑛  = 0.29% ). 
+
+This demonstrates that  𝒜 ̃ does not merely constitute an overfitted  encoding  of the training data 
+
+and  effectively capture s the  scattering properties  of the  meta -atom , as well as its absorption 
+
+since an accurate reconstruction of the scattered field also implies that the  absorption is 
+
+accurately predicted  (Poynting theorem ).
+
+Fig ure  4c benchmark s the  ability  of the  learned  dGPM to reconstruct  the near and far field 
+
+for a specific source not included in  the  reference  set , a 𝑥  -polarized  dipolar  source  at 
+
+[−2.36,  0.81,  5.22]  μm ( black  arrow s in  Fig.  4c).  It  compares  |𝐻 𝒚 | reconstructed with the 
+
+dGPM with reference data computed with COMSOL. Inside the learning surface,  as expected, 
+
+the reconstruction is not accurate. In particular, field  singularities appear  near  the  numerical 
+
+dipole s. This is  an inherent feature of the point -dipole representation , which  do es  not affect 
+
+field reconstruction beyond the learning surface  [24] .
+
+The mean relative error, Eq.  (4),  is only  3.96 % for  𝐻 𝑦  and  1.47 % across all six 
+
+electromagnetic components , ensur ing  that the vectorial nature of the scattering —including the 
+
+phase and orientation of each field  components —is accurately captured.  This verification is 
+
+essential, as it demonstrates that the reconstruction  remains  consistently accurate, even  with  the 
+
+strong anisotropy induced by the dielectric interface. 
+
+The spatial diversity of the  𝑁 𝑑  = 15  numerical dipoles, distributed across three distinct 
+
+material environments (ZnS in air, GaAs in air, and GaAs in ZnS), appears to play a key role 
+
+in this performance. With dipoles within each of these environments, the dGPM captures the 
+
+local polarization  response of the different parts of the structure, while the non -local interaction 
+
+matrix A self -consistently couples them through the stratified Green tensor. This combination 
+
+of local sampling and non -local coupling enables the model to account for b oth the 
+
+heterogeneous composition of the  meta -atom  and the abrupt change in background environment 
+
+at the interface. As a result, the dGPM accurately resolves the complex scattering contributions 
+
+arising from the different regions of the structure .
+
+Figure  4d compares the far field radiation diagram  obtained from the near fields computed with 
+
+COMSOL or the dGPM , using  the  near -to -far -field -transform freeware  RETOP  [28] . The 
+
+radiation pattern shows an intense  forward -scattering profile consistent with high -efficiency 
+
+anti -reflection  [27]  and directional antenna -like  [29]  behavior s. The transmitted energy forms 
+
+a hollow -cone distribution, with sharp intensity maxima at the boundaries of the light cone 
+
+imposed by the high -index GaAs substrate.  Indeed,  the near -field accuracy translates into the 
+
+far field . To quantify the agreement between the two angular radiation maps, we compute the 
+
+integrated absolute difference between the dGPM and COMSOL far -field intensities over all 
+
+emission directions, normalized by the total radiated power obtained from COMSOL. Thi s
+
+yields an error  of 0.68%, confirming that the near -field accuracy of the dGPM is preserved after 
+
+the near -to -far -field transformation. 
+
+Th e radiation  pattern arises from two concurrent effects . First, the ( 𝑧 )-oriented incident electric 
+
+dipole source, denoted ( 𝑃 𝑧 ), imposes radiation nulls along its dipole axis . Second, the substrate 
+
+restricts propagating transmission to the critical -angle cone,  𝜃 𝑐  = asin (𝜀 1 𝜀 3⁄ )1/2 ≈ 16 .96 ∘,
+
+represented with the  grey dashed lines  in  Fig.  4d. Outside this cone, radiation arises from 
+
+evanescent -to -propagating wave conversion at the  substrate  interface  [29] . The dGPM accurately reproduces both the sharp angular cutoff and the characteristic null structure of the 
+
+radiation pattern, demonstrating that  𝒜 ̃ captures the complete evanescent -to -propagating 
+
+coupling physics of the multilayer geometry .
+
+4.  Application  to  multi -meta -atom  systems 
+
+We now consider a system of two interacting particles to validate the implementation of 
+
+multiple scattering within the dGPM and GPM frameworks. Section 4.1 benchmarks the 
+
+accuracy of inter -particle coupling in a two -pillar system and quantifies the benefit s of the 
+
+approach relative to T -matrix methods. Section 4.2 demonstrates the hybridization of GPM and 
+
+dGPM operators within a single simulation. Section 4.3 presents a global validation of the 
+
+approach for metasurfaces composed of  several  hundreds of  meta -atom s, discusses the current 
+
+limitations of the framework and outlines directions for future developments .
+
+4.1  Pillar dimer 
+
+Using the dGPM trained in Section 3, we assemble two identical ZnS -capped GaAs pillars in a 
+
+collinear configuration (Fig.  5a) and vary the  side -to -side  separation  𝑑  from 0.4 μm to 6.0 μm. 
+
+The system is illuminated by a TE -polarized plane wave at wavelength  𝜆  = 10 .6 μm  with  an 
+
+in -plane incidence angle  𝜃 .
+
+The geometric advantage of the GPM framework over T -matrix methods is immediately 
+
+apparent. The circumscribing sphere associated with each pillar has a radius  𝑟 0 ≈ 3.4 μm. 
+
+Consequently, for a two -pillar system, the spheres overlap for  𝑑  < 5.87  μm, causing the T -
+
+matrix expansion to lose convergence throughout nearly the entire practically relevant 
+
+separation range. In contrast, the conformal learning surfaces used by the dGPM overlap only 
+
+for  𝑑  < 0.8 μm, extending the accessible operating range by almost an order of magnitude. 
+
+This advantage becomes even more pronounced for high -aspect -ratio structures, since as the 
+
+pillar height increases, the T -matrix exclusion zone expands, whereas the dGPM validit y limit 
+
+remains primarily determined by the lateral footprint of the learning surface. 
+
+Figure 5b presents the reflection and transmission cross sections,  (𝜎 𝑅 ) and  (𝜎 𝑇 ), as functions 
+
+of the incidence angle for separation distances ranging from  0.4 μm to 6.0 μm. The dGPM 
+
+predictions (solid lines) are compared against COMSOL reference simulations (blue dots). To 
+
+quantify the agreement, Table  1 reports the mean relative errors of the scattered powers 
+
+averaged over all sampled incidence angles. 
+
+Three regimes can be identified. At large separations ( 𝑑  = 6 μm), the scattered power is 
+
+approximately twice the scattered power of an isolated pillar, despite a residual electromagnetic 
+
+interaction expected at  𝑑  ≈ 𝜆 /2 [30] . For intermediate separations,  𝑑  > 0.8 μm, 
+
+corresponding  to  the nominal validity range of the dGPM, the relative error  averaged over  all 
+
+angular configurations  remains below 1.8% . At  𝑑  = 0.6 μm , the learning surfaces slightly 
+
+overlap,  but  the  relative  errors remain moderate (0.9% in reflection and 2.2% in transmission), 
+
+indicating a degree of robustness beyond the nominal validity limit. Only at the smallest 
+
+separation considered,  𝑑  = 0.4 μm, do the errors increase significantly (7.4% in reflection and 
+
+3.6% in transmission), marking the practical operating limit of the present framework for the 
+
+chosen learning surface.                                
+
+> 𝑑 (μm) 𝑑 /𝜆 Within nominal
+> validity domain
+> Reflection
+> error (%)
+> Transmission
+> error (%)
+> Status
+> 6.0 0.56 yes 1.1 0.67 accurate
+> 2.0 0.2 yes 1.6 0.52 accurate
+> 0.8 0.08 yes 0.4 1.8 accurate
+> 0.6 0.06 no 0.9 2.2 still accurate
+> 0.4 0.04 no 7.4 3.6 inaccurate
+
+TABLE  1. Mean  relative errors  of the reflection and transmission intensities radiated  for the 
+
+two -pillar system at selected separation distances  𝑑 . The dGPM remains accurate well within its 
+
+nominal validity domain ( 𝑑  > 0.8 μm) and retains acceptable accuracy slightly beyond it 
+
+(𝑑  = 0.6 μm). Significant deviations arise only at extreme proximity ( 𝑑  = 0.4 μm). 
+
+We now examine in detail the  configuration  𝜃  = 30 ∘ and  𝑑  = 2 μm (orange stars in 
+
+Fig.  5b), which lies well within the nominal validity domain while exhibiting significant inter -
+
+pillar coupling. Figures  5c and  5d compare the near and far fields reconstructed by the dGPM 
+
+with the corresponding COMSOL reference solutions. Outside the learning surfaces, the 
+
+dominant electric -field component  𝐸 𝑥  is virtually indistinguishable from the exact numerical 
+
+solution. Notably, the dGPM accurately resolves the field enhancement within the narrow inter -
+
+pillar gap, a spatial regime that is fundamentally inaccessible to T -matrix methods. 
+
+The reconstructed electric -field amplitude  𝐸 𝑥  exhibits a mean relative error (Eq.  (4)) of 
+
+1.82% for the dominant component and 2.43% when averaged over all six electromagnetic field 
+
+components. This near -field accuracy translates directly to the far field (Fig.  5d), where the 
+
+reconstructed three -dimensional radiation pattern exhibits a global energy -distribution relative 
+
+error of only (2.3%) relative to COMSOL. The dominant forward -scattering lobes and the 
+
+strongly suppressed back -reflection are both accurately pr edicted with the dGPM. The two -
+
+dimensi onal polar cut further confirms the quantitative agreement in the angular interference 
+
+pattern, demonstrating that the dGPM preserves the inter -particle phase relationships required 
+
+for coherent multiple scattering. 
+
+FIG.  5. Validation of the dGPM for strongly coupled interface -coupled meta -atoms.  at  𝜆  =
+
+10 .6 μm . a, Two  identical pillars separated by a  side -to -side  distance  𝑑  and  illuminated by a TE -
+
+polarized plane wave incident at  an  angle  𝜃 . Blue dashed circles denote the circumscribing 
+
+spheres  required  in a  conventional  T-matrix , which becomes invalid when the spheres overlap 
+
+for  (𝑑  < 5.9 μm). In contrast, the dGPM remains applicable until the learning surfaces (red 
+
+dashed lines) overlap, corresponding to much smaller separations ( 𝑑  < 0.8 μm). b, Reflection 
+
+and transmission cross sections,  𝜎 𝑅  and  𝜎 𝑇 , obtained by normalizing the radiated powers by the 
+
+incident power flux, as functions of the incidence angle  𝜃  for several separation distances  𝑑 . The 
+
+dGPM accurately captures the evolution of the optical response from the strongly coupled regime 
+
+to the uncoupled limit. For  𝑑  = 6 μm, the latter (bold dashed line), corresponding to twice  the 
+
+scattering power  of an isolated pillar, is recovered.  Orange stars indicate the configuration ( 𝜃  =
+
+30 ∘, 𝑑  = 2.0 μm)  examined  in  c and  d. c, Near -field reconstruction  of  |𝐸 𝑥 | for  𝜃  = 30 ∘, 𝑑  =
+
+2.0 μm . COMSOL  reference solution  (left) and dGPM  reconstruction  (right).  Outside the learning surfaces, the dGPM accurately reproduces the reference field and captures the strong 
+
+near -field interaction in the gap region,  despite the high aspect ratio of the pillars and their close 
+
+proximity . d, Corresponding far -field scattering patterns.  For clarity, the amplitude of the 
+
+reflected lobe is multiplied by a factor of 30. 
+
+For the same high precision , each COMSOL reference point  for the pillar  dimer  in Fig.  5b
+
+requires  nearly  12 minutes and 125 MB of RAM, whereas the dGPM evaluates each incident 
+
+angle in  approximately 1 s econd  following a one -time initialization of 9 s econd  and  with a 
+
+memory footprint of only 0.5 MB. This represents a  700 -fold acceleration in speed and a 250 -
+
+fold reduction in memory usage, enabling near -real -time parameter sweeps and statistical 
+
+analysis .
+
+4. 2 Combined  GPM -dGPM  framework s for complex systems 
+
+The GPM  models  meta -atom s embedded in a homogeneous medium and can be freely 
+
+translated and rotated in  3D  space, enabling  the  efficient modeling of ensembles with 
+
+unrestricted  positions and orientations  [24] . In contrast, the dGPM has reduced symmetry due 
+
+to the presence of interfaces:  meta -atom s can only be translated within planes parallel to the 
+
+substrate and rotated about axes perpendicular to the interface.  Combining both approaches is 
+
+therefore advantageous for systems containing both freely suspended  meta -atom s in 
+
+homogeneous regions and  meta -atom s intersecting layered interfaces .
+
+We demonstrate this capability on a three -body system consisting of a lossy cubic  meta -
+
+atom  (side length  𝐿  = 1 𝜇 m,  refractive index  𝑛  = 2.1 − 0.6𝑖 ) buried beneath a pillar  dimer 
+
+(𝑑  = 1 μm) that straddles the air –substrate interface (Fig.  6a).  We  define  𝑔  as the vertical 
+
+separation between the learning surface surrounding the cube and those associated with the 
+
+surface pillars. For a cube learning -surface offset of  𝑑 𝑙 ,𝑐𝑢𝑏𝑒  = 0.1 μm  and  a pillar  learning -
+
+surface  offset  of  𝑑 𝑙 ,𝑝𝑖𝑙𝑙𝑎𝑟  = 0.4 μm  extending  below the interface,  𝑔  = 0 corresponds to the 
+
+two sampling manifolds being in direct contact. 
+
+FIG.  6. Unified  operator -based modeling of heterogeneous photonic environments . a,
+
+Schematic of a lossy GPM -cube  (side length  𝐿  = 1 𝜇 m,  refractive index  𝑛  = 2.1 − 0.6𝑖 ) buried 
+
+beneath a dGPM -pillar  dimer . The conformal learning surfaces are offset by  0.1 μm  from  the 
+
+cube and  0.4 μm from  the pillars.  The parameter  𝑔  denotes the vertical separation between the 
+
+respective learning surfaces : 𝑔  = 0 implies contact . b, Absorption cross section, obtained by 
+
+normalizing the absorbed power by the incident power flux, as a function of the incidence angle 
+
+𝜃  for various separation distances  𝑔 . The  hybrid  GPM –dGPM framework (solid lines) exhibits 
+
+quantitative agreement with COMSOL reference calculations (dots) for  𝑔  ≥ 0.3 μm  and remains 
+
+remarkably robust even when the learning surfaces overlap  𝑔  = −0.2 μm . Inset: Near -
+
+field  comparison  of  |𝐸 𝑥 | obtained with  COMSOL and the  combined framework  for  𝜃  =
+
+30 ∘ and  𝑔  = 0.8 μm  (orange star).  Note that the buried cube could also be described using a 
+
+dGPM operator. However, because the interface -mediated interactions vary with  𝑔 , a separate 
+
+dGPM would need to be constructed for each separation distance. This example therefore 
+
+highlights the advantage of combining reusable GPM operators with environment -specific 
+
+dGPM operators within a single simulation. Figure 6b displays the absorption cross section  𝜎 𝑎𝑏𝑠  of the buried cube as a function of the 
+
+incidence angle  𝜃  for various separation distances  𝑔 . The combined GPM –dGPM framework 
+
+(solid lines) exhibits excellent agreement with  COMSOL reference calculations (dots) for  𝑔  ≥
+
+0.3 μm,  faithfully  predicting  the complex interplay between depth -dependent reflections and 
+
+multi -body coupling.  Notably, the framework remains remarkably robust even  for  𝑔  =
+
+−0.2 μm,  where the sampling manifolds overlap. Despite this violation of the nominal 
+
+separation condition, the model continues to capture the correct absorption trends, with only 
+
+minor quantitative deviations. This behavior highlights the intrinsic robustness of ou r operator -
+
+based formulation to moderate perturbations of the local near -field environment .
+
+Importantly, the absorption  associated with the buried meta -atom is not evaluated from an 
+
+internal volumetric mesh. Instead, it is obtained from an energy -balance procedure based on 
+
+the learned operator: the extinction is computed from the response of the GPM object, while 
+
+the scatte ring contribution is evaluated from the radiated far field, so that the absorption cross 
+
+section follows from : 𝜎 𝑎𝑏𝑠  = 𝜎 𝑒𝑥𝑡  − 𝜎 𝑠𝑐𝑎 . This provides an efficient way to evaluate dissipated 
+
+power in complex environments , e.g. bidisperse mixture [31] , although the numerical dipoles 
+
+should not be interpreted as physical dipoles carrying a local material absorption .
+
+4.3  Large ensembles 
+
+In this section, we assess  the scalability of the dGPM for large meta -atom ensembles. Two 
+
+representative configurations are considered: ordered arrays, in which many inter -particle 
+
+separations are repeated, and disordered arrays, in which most separations are unique .
+
+The computation consists of two stages. The first is a one -time initialization, during which 
+
+the dense Green -interaction matrix is assembled for all numerical dipoles in the ensemble. The 
+
+second is an illumination -dependent self -consistent solve. For a lar ge number  𝑁  of meta -atoms, 
+
+the initialization time scales approximately as  𝑂 (𝑁 2), consistent with the pairwise construction 
+
+of the interaction matrix. The solution time exhibits a steeper scaling, close to  𝑂 (𝑁 3), as 
+
+expected for  the solution of  a dense linear system. 
+
+Ordered and disordered ensembles display similar overall scaling behavior, indicating that 
+
+the framework is not restricted to highly symmetric arrangements. The main difference arises 
+
+during initialization. In ordered arrays, repeated pair separations allo w identical Green -tensor 
+
+evaluations to be reused, reducing the assembly cost. Consequently, the dense linear solve 
+
+becomes the dominant computational expense for systems containing as few as ( 𝑁  ≈ 15 0)
+
+meta -atoms. In disordered arrays, by contrast, most pai r separations are distinct, limiting such 
+
+reuse and shifting the crossover to larger systems, around ( 𝑁  ≈ 10 3). 
+
+This behavior is consistent with the implementation, for which the most computationally 
+
+intensive part of the initialization is the evaluation and assembly of the layered -medium Green 
+
+tensor. As shown in the inset of Fig. 7, the memory footprint follows th e expected dense -matrix 
+
+scaling, approximately  𝑂 (𝑁 2), for both ordered and disordered systems. 
+
+The reported timings should be regarded as indicative rather than optimized benchmarks. 
+
+The current MATLAB implementation has not been optimized for high -performance 
+
+computing and does not include explicit problem -specific parallelization; any multithreadi ng 
+
+arises from MATLAB and its underlying linear -algebra libraries. Profiler analysis shows that 
+
+the runtime is mainly distributed between two operations: construction of the dense Green -
+
+interaction matrix and the dense self -consistent linear solve. For mod erately sized disordered 
+
+systems, the former remains dominant because most Green -tensor evaluations are unique. For 
+
+sufficiently large arrays, however, the dense linear solve becomes the main bottleneck due to 
+
+its faster scaling, especially in ordered conf igurations where Green -tensor reuse substantially 
+
+reduces the initialization cost. 
+
+All timings were measured in MATLAB R2023b on a Dell Precision 7920 Tower 
+
+workstation running Windows 10 Pro for Workstations, equipped with dual Intel Xeon Silver 
+
+4210R CPUs, 20 physical cores, 40 logical  processors, and 256 GB RAM. MATLAB was 
+
+allowed to use up to 20 computational threads. No GPU acceleration was used. FIG. 7.  Computational scaling of the GPM –dGPM framework for large meta -atom               
+
+> ensembles. Wall -clock initialization and solve times as functions of the number of interacting
+> meta -atoms 𝑁 for a, ordered and b, disordered ensembles containing between 10 and 1000
+> scatterers. The initialization stage corresponds to the construction of the dense Green -interaction
+> matrix, whereas the solve stage corresponds to the computation of the self -consistent multiple -
+> scatteri ng solution for a given illumination. Dashed lines indicate the expected 𝑁 2and 𝑁 3
+> scalings associated with matrix construction and dense linear -algebra operations, respectively.
+> The inset in bshows the memory footprint, which follows the expected 𝑁 2scaling of a dense
+> interaction matrix. These results demonstrate the applicability of the framework to large
+> collections of interacting meta -atoms while identifying the dominant computational costs.
+> Reported timings are indicative only, as the present MAT LAB implementation is not optimized
+> and does not exploit hardware acceleration or problem -specific parallelization.
+
+Indeed, we cannot benchmark the results of Fig . 7 against finite -element simulations 
+
+performed with  our COMSOL  software, as the corresponding computational requirements 
+
+would exceed the memory available on our desktop workstations. Nevertheless, we expect the 
+
+dGPM predictions to remain highly accurate even for large -scale metasurfaces. The only 
+
+approximation introd uced by the method lies in the dipolar representation of the meta -atoms, 
+
+whose accuracy has been extensively validated and shown to introduce onl y small errors. 
+
+This behavior contrasts with conventional finite -element or finite -difference approaches, 
+
+where the propagation medium must be discretized. In such methods, maintaining accuracy 
+
+over increasingly large structures generally requires progressively finer mesh es because phase -
+
+velocity errors accumulate over long propagation distances. By contrast, the dGPM represents 
+
+wave propagation through Green functions, thereby preserving the exact continuous -space 
+
+phase evolution between scatterers and avoiding discretiza tion -induced numerical dispersion. 
+
+As a result, the accuracy of the propagation model does not degrade as the  system  size increases. 
+
+5.  Conclusion 
+
+We have introduced the dressed Global Polarizability Matrix (dGPM), a reduced -order 
+
+electromagnetic framework for the modeling of complex meta -atoms interacting with dielectric 
+
+interfaces. By incorporating Fresnel reflections and evanescent near -field feed back directly into 
+
+the scattering operator, the dGPM extends operator -based electromagnetic modeling from 
+
+homogeneous media to heterogeneous photonic environments. The resulting formalism enables 
+
+the accurate reconstruction of near - and far -field responses  for interface -coupled structures 
+
+while preserving the compact representation that underpins the efficiency of the original GPM 
+
+approach. 
+
+The framework was validated on representative infrared meta -atoms, including high -aspect -
+
+ratio pillars straddling dielectric interfaces and strongly coupled pillar dimers. In all investigated cases, the dGPM reproduced the reference electromagnetic response with relative 
+
+errors of only a few percent. The method accurately captured both local field distributions and 
+
+far -field observables, including scattering, extinction, and absorp tion, demonstrating that 
+
+compact operator representations remain effective even in the presence of strong substrate -
+
+mediated interactions and near -field coupling. Importantly, the dGPM remained robust in 
+
+challenging configurations involving moderate overla p of the learning surfaces, suggesting that 
+
+its practical domain of validity extends beyond the formal assumptions used during its 
+
+construction. 
+
+The method was validated on representative infrared metasurface building blocks, including 
+
+high -aspect -ratio pillars intersecting a substrate and strongly coupled pillar dimers. In all 
+
+investigated cases, the dGPM reproduced the reference electromagnetic r esponse with relative 
+
+errors below a few percent while maintaining a substantially reduced computational cost 
+
+compared with full -wave simulations. For the pillar -dimer benchmark, the dGPM provided 
+
+more than two orders of magnitude reduction in memory usage  together with speedups 
+
+approaching three orders of magnitude once the  meta -atom  operators had been constructed, 
+
+compared to COMSOL. 
+
+A key feature of the framework is its compatibility with the original GPM formalism. By 
+
+combining environment -independent GPM operators with interface -specific dGPM operators 
+
+within a unified multiple -scattering formulation, heterogeneous photonic systems  containing 
+
+buried, suspended, and interface -coupled meta -atoms can be modeled self -consistently. This 
+
+capability opens the door to the efficient simulation of complex ordered and disordered 
+
+metasurfaces, as well as more general heterogeneous photonic envir onments. 
+
+Several challenges nevertheless remain. The optimal placement of numerical dipoles for 
+
+arbitrarily shaped meta -atoms remains largely unexplored, and the construction of accurate 
+
+operators still requires the generation of reference datasets. As recently dem onstrated for T -
+
+matrix methods, shared libraries of precomputed operators for common geometries and 
+
+environments could substantially reduce this effort and facilitate broader adoption of the 
+
+approach  [20] .
+
+The present implementation already enables simulations involving up to thousands of 
+
+interacting meta -atoms. While the current MATLAB code exhibits the expected  𝑂 (𝑁 2)
+
+memory scaling and  𝑂 (𝑁 3) computational scaling associated with dense interaction matrices, 
+
+these limitations are not intrinsic to the formalism. Significant improvements remain possible 
+
+through optimized implementations, iterative solvers, GPU acceleration, and hierarchical 
+
+matri x techniques. 
+
+More broadly, the dGPM demonstrates that compact operator -based descriptions can be 
+
+extended to interface -coupled and heterogeneous photonic systems without sacrificing 
+
+accuracy. We anticipate that this framework will provide a valuable complement to exist ing 
+
+full -wave and multiple -scattering methods for the analysis, optimization, and large -scale 
+
+simulation of metasurfaces and disordered photonic media. 
+
+Acknowledgements . The authors acknowledge  Miao  Chen, Minggang Luo , Denis Rideau from 
+
+STMicroelectronics Grenoble  and several other colleagues for  helpful  feedback  during the 
+
+preparation of the manuscript.  PL acknowledges financial support from the European Research 
+
+Council Advanced grant (Project UNSEEN No. 101097856)  and from Bpifrance,  IPCEI 
+
+Electronique  (Project COS  No.  DOS0218539/00) 
+
+Disclosures.  The authors declare no conflicts of interest. References 
+
+1.  "Apple’s iPhone 17 Face ID: First metasurface integration marks a technology shift," Yole 
+
+Group , April  15,  2026.  https://www.yolegroup.com/strategy -insights/apples -iphone -17 -face -
+
+id -first -metasurface -integration -marks -a-technology -shift/ 
+
+2.  P. Lalanne and P. Chavel, "Metalenses at visible wavelengths: past, present, perspectives," 
+
+Laser & Photonics Reviews  11 , 1600295 (2017). 
+
+3.  N. A. Rubin and Y. Fainman, "Polarization‐sensitive diffractive optics and metasurfaces: 
+
+“Past is Prologue,”" Nanophotonics  14 , 3825 –3834 (2025). 
+
+4.  S. A. Schulz, R. F. Oulton,  et al. , "Roadmap on photonic metasurfaces," Appl . Phy s.  Lett .
+
+124 , 260701 (2024). 
+
+5.  A. I. Kuznetsov, M. L. Brongersma, J. Yao,  et al. , "Roadmap for Optical Metasurfaces," ACS 
+
+Photonics  11 , 816 –865 (2024). 
+
+6.  P. Lalanne, M. Chen, C. Rockstuhl, A. Sprafke, A. Dmitriev, and K. Vynck, "Disordered 
+
+optical metasurfaces: basics, properties, and applications," Adv. Opt. Photon.  17 , 45 (2025). 
+
+7.  T. Hoang, Y. Park, J. Kim, H. Truong, S. Parajuli, B. J. Rajasekaran, K. Kim, D. Kang, G. 
+
+Jeon, K. Lee, D. H. Yoon, I. Kim, J. Rho, and G. Cho, "300 -unit -per -second roll -to -roll 
+
+manufacturing of visible metalenses," Nature  652 , 1188 –1194 (2026). 
+
+8.  S. Seçkin, S. Sarkar, and T. A. F. König, "Advancement in Colloidal Metasurfaces: 
+
+Approaches for Scalable Photonic Devices," Adv. Mater. Interfaces  12 , 2400934 (2025). 
+
+9.  A. Ueno, J. Hu, and S. An, "AI for optical metasurface," npj Nanophoton.  1, 36 (2024). 
+
+10.  C. Kang, C. Park, M. Lee, J. Kang, M. S. Jang, and H. Chung, "Large‐scale photonic inverse 
+
+design: computational challenges and breakthroughs," Nanophotonics  13 , 3765 –3792 
+
+(2024). 
+
+11.  M. Choi, J. Park, J. Shin, H. Keawmuang, H. Kim, J. Yun, J. Seong, and J. Rho, "Realization 
+
+of high -performance optical metasurfaces over a large area: a review from a design 
+
+perspective," npj Nanophoton.  1, 31 (2024). 
+
+12.  C. Mao and J. A. Fan, "Accurate and scalable deep Maxwell solvers," Proc. Natl. Acad. Sci. 
+
+U.S.A.  123 , e2530330123 (2026). 
+
+13.  A. Taflove, A. Oskooi, and S. G. Johnson,  Advances in FDTD Computational 
+
+Electrodynamics: Photonics and Nanotechnology  (Artech House, 2013). 
+
+14.  M. G. Moharam, T. K. Gaylord, D. A. Pommet, and E. B. Grann, "Stable implementation of 
+
+the rigorous coupled -wave analysis for surface -relief gratings: enhanced transmittance 
+
+matrix approach," J. Opt. Soc. Am. A  12 , 1077 (1995). 
+
+15.  M. I. Mishchenko, L. D. Travis, and A. A. Lacis,  Scattering, Absorption, and Emission of 
+
+Light by Small Particles  (Cambridge University Press, 2002). 
+
+16. "T -Matrix Codes," https://scattport.org/index.php/light -scattering -software/t -matrix -codes. 
+
+17.  B. T. Draine and P. J. Flatau, "Discrete -Dipole Approximation For Scattering Calculations," 
+
+J. Opt. Soc. Am. A  11 , 1491 (1994). 
+
+18.  M. A. Yurkin and A. G. Hoekstra, "The discrete dipole approximation: An overview and 
+
+recent developments," Journal of Quantitative Spectroscopy and Radiative Transfer  106 ,
+
+558 –589 (2007). 
+
+19.  Y. Zhu, C. Liu, and M. A. Yurkin, "Reducing shape errors in the discrete dipole 
+
+approximation using effective media," Opt. Express  31 , 43401 (2023). 
+
+20.  N. Asadova, K. Achouri, K. Arjas,  et al. , "T -matrix representation of optical scattering 
+
+response: Suggestion for a data format," Journal of Quantitative Spectroscopy and Radiative 
+
+Transfer  333 , 109310 (2025). 
+
+21.  D. Schebarchov, E. C. Le Ru, J. Grand, and B. Auguié, "Mind the gap: testing the Rayleigh 
+
+hypothesis in T -matrix calculations with adjacent spheroids," Opt. Express  27 , 35750 (2019). 
+
+22.  D. Theobald, A. Egel, G. Gomard, and U. Lemmer, "Plane -wave coupling formalism for T  -
+
+matrix simulations of light scattering by nonspherical particles," Phys. Rev. A  96 , 033822 
+
+(2017). 
+
+23.  A. Egel, K. M. Czajkowski, D. Theobald, K. Ladutenko, A. S. Kuznetsov, and L. Pattelli, 
+
+"SMUTHI: A python package for the simulation of light scattering by multiple particles near or between planar interfaces," Journal of Quantitative Spectroscopy and Radiative Transfer 
+
+273 , 107846 (2021). 
+
+24.  M. Bertrand, A. Devilez, J. -P. Hugonin, P. Lalanne, and K. Vynck, "Global polarizability 
+
+matrix method for efficient modeling of light scattering by dense ensembles of non -spherical 
+
+particles in stratified media," J. Opt. Soc. Am. A  37 , 70 (2020). 
+
+25.  S. Ponomareva, A. Patoux, C. Majorel, A. Azéma, A. Cuche, C. Girard, A. Arbouet, and P. 
+
+R. Wiecha, "TorchGDM: A GPU -Accelerated Python Toolkit for Multi -Scale 
+
+Electromagnetic Scattering with Automatic Differentiation," SciPost Phys. Codebases 60 
+
+(2025 ). 
+
+26.  H. Benisty, J. -J. Greffet, and P. Lalanne,  Introduction to Nanophotonics  (Oxford University 
+
+Press, 2022). 
+
+27.  M. -S. L. Lee, P. Legagneux, P. Lalanne, J. -C. Rodier, P. Gallais, C. Germain, and J. Rollin, 
+
+"Blazed binary diffractive gratings with antireflection coating for improved operation at 10.6 
+
+μm," Opt. Eng.  43 , 2583 –2588 (2004). 
+
+28.  J. Yang, J. -P. Hugonin, and P. Lalanne, "Near -to -Far Field Transformations for Radiative 
+
+and Guided Waves," ACS Photonics  3, 395 –402 (2016). 
+
+29.  K. G. Lee, X. W. Chen, H. Eghlidi, P. Kukura, R. Lettow, A. Renn, V. Sandoghdar, and S. 
+
+Götzinger, "A planar dielectric antenna for directional single -photon emission and near -unity 
+
+collection efficiency," Nat. Photonics  5, 166 –169 (2011). 
+
+30.  T. Wu, J. L. Jaramillo, and P. Lalanne, "Reflections on the Spatial Exponential Growth of 
+
+Electromagnetic Quasinormal Modes," Laser & Photonics Reviews  19 , 2402133 (2025). 
+
+31.  T. Guerra, O. Rozembaum, J. -P. Hugonin and C. Bl anchard,  "Generating near -perfect 
+
+absorption in subwavelength slabs of nanoparticles: Towards spectral selectivity in random 
+
+media ", Phys. Rev. B  107 , L220202 (2023).
