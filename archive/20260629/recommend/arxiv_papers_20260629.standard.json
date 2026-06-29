@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-29T21:43:09.735878+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.27470v1",
+      "source": "arxiv",
+      "title": "Universal framework for the design of near-zero refractive index photonic crystals",
+      "abstract": "Near-zero-index (NZI) media are of great interest for controlling light-matter interactions, but homogeneous NZI materials in the telecom band remain limited and often suffer from significant losses. Photonic crystals provide an attractive alternative due to their tunability and use of low-loss constituent materials. This work presents a predictive framework for designing epsilon-near-zero (ENZ), mu-near-zero (MNZ), and epsilon-and-mu-near-zero (EMNZ) photonic crystals. We demonstrate an equivalence between Dirac cones and EMNZ behavior, showing that a Dirac cone at the Gamma point is both necessary and sufficient to obtain an effective EMNZ response under normal incidence. This result implies that the presence of a Dirac cone fully determines the NZI response of a photonic crystal, independent of the material composition. The prediction is based on mode symmetry universality and effective medium theory. The approach enables switching between ENZ-MNZ and EMNZ regimes through geometric tuning of the unit cell. It is validated on triangular and rectangular lattices. Overall, this work provides a predictive design strategy for NZI photonic crystals, replacing trial-and-error optimization. It may also impact metamaterials in the telecom regime and applications in quantum communication.",
+      "authors": [
+        "Adrien Debacq",
+        "Michaël Lobet"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics"
+      ],
+      "published": "2026-06-25T18:48:03+00:00",
+      "link": "https://arxiv.org/pdf/2606.27470v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Presents a predictive framework for designing epsilon-near-zero photonic crystals, demonstrating Dirac cone equivalence to EMNZ behavior.",
+      "llm_evidence_cn": "提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。",
+      "llm_evidence": "提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。",
+      "canonical_evidence": "提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。",
+      "llm_tldr_en": "This paper provides a predictive framework for designing ENZ, MNZ, and EMNZ photonic crystals, addressing homogeneous NZI limitations. It shows Dirac cones at Gamma enable deterministic design of low-loss near-zero-index media.",
+      "llm_tldr_cn": "针对均匀近零折射率材料在通信波段损耗大、带宽受限的问题，本文提出了一种通用设计框架，用于设计epsilon近零、mu近零以及epsilon-mu双近零光子晶体，并揭示了Gamma点处的狄拉克锥与有效双近零行为之间的等价关系，证明狄拉克锥是垂直入射下实现双近零响应的充要条件，从而为利用低损耗材料构建近零折射率介质提供了确定性设计路径。",
+      "llm_tldr": "针对均匀近零折射率材料在通信波段损耗大、带宽受限的问题，本文提出了一种通用设计框架，用于设计epsilon近零、mu近零以及epsilon-mu双近零光子晶体，并揭示了Gamma点处的狄拉克锥与有效双近零行为之间的等价关系，证明狄拉克锥是垂直入射下实现双近零响应的充要条件，从而为利用低损耗材料构建近零折射率介质提供了确定性设计路径。",
+      "llm_tags": [
+        "query:enz"
+      ],
+      "matched_query_tag": "query:enz",
+      "matched_query_text": "metamaterials with epsilon near zero properties",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

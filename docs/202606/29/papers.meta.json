@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-29",
+  "date": "2026-06-29",
+  "generated_at": "2026-06-29T21:45:12",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/29/2606.27470v1-universal-framework-for-the-design-of-near-zero-refractive-index-photonic-crystals",
+      "section": "deep",
+      "title_en": "Universal framework for the design of near-zero refractive index photonic crystals",
+      "authors": "Adrien Debacq, Michaël Lobet",
+      "date": "2026-06-25",
+      "pdf": "https://arxiv.org/pdf/2606.27470v1",
+      "score": "10.0",
+      "evidence": "提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。",
+      "tldr": "传统均匀近零折射率材料在电信波段损耗高且设计盲目，而光子晶体提供低损耗替代但缺乏通用设计方法。本文提出基于狄拉克锥的通用预测框架，证明伽马点狄拉克锥是实现有效EMNZ响应的充要条件，与材料组成无关。通过调节单元几何参数可在ENZ、MNZ与EMNZ模式间切换，并在三角和矩形晶格上验证了该策略。这取代了试错优化，为电信超材料和量子通信提供了普适性精确设计原理。",
+      "tags": "query:enz",
+      "abstract_en": "Near-zero-index (NZI) media are of great interest for controlling light-matter interactions, but homogeneous NZI materials in the telecom band remain limited and often suffer from significant losses. Photonic crystals provide an attractive alternative due to their tunability and use of low-loss constituent materials. This work presents a predictive framework for designing epsilon-near-zero (ENZ), mu-near-zero (MNZ), and epsilon-and-mu-near-zero (EMNZ) photonic crystals. We demonstrate an equivalence between Dirac cones and EMNZ behavior, showing that a Dirac cone at the Gamma point is both necessary and sufficient to obtain an effective EMNZ response under normal incidence. This result implies that the presence of a Dirac cone fully determines the NZI response of a photonic crystal, independent of the material composition. The prediction is based on mode symmetry universality and effective medium theory. The approach enables switching between ENZ-MNZ and EMNZ regimes through geometric tuning of the unit cell. It is validated on triangular and rectangular lattices. Overall, this work provides a predictive design strategy for NZI photonic crystals, replacing trial-and-error optimization. It may also impact metamaterials in the telecom regime and applications in quantum communication.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

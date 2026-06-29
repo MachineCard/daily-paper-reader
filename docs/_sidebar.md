@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-29 <!--dpr-date:20260629-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/29/2606.27470v1-universal-framework-for-the-design-of-near-zero-refractive-index-photonic-crystals" data-sidebar-item="{&quot;title&quot;: &quot;Universal framework for the design of near-zero refractive index photonic crystals&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.27470v1-universal-framework-for-the-design-of-near-zero-refractive-index-photonic-crystals&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。&quot;}">Universal framework for the design of near-zero refractive index photonic crystals</a>
   * 2026-06-26 <!--dpr-date:20260626-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/26/2606.21302v1-a-dressed-polarizability-framework-for-interface-coupled-meta-atoms-and-large-scale-metasurfaces" data-sidebar-item="{&quot;title&quot;: &quot;A dressed polarizability framework for interface-coupled meta-atoms and large-scale metasurfaces&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.21302v1-a-dressed-polarizability-framework-for-interface-coupled-meta-atoms-and-large-scale-metasurfaces&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;适用于近零介电常数超材料设计的元原子和超表面建模框架&quot;}">A dressed polarizability framework for interface-coupled meta-atoms and large-scale metasurfaces</a>
