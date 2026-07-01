@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-01",
+  "date": "2026-07-01",
+  "generated_at": "2026-07-01T21:11:27",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/01/2606.31605v1-accelerated-development-of-amorphous-inzno-thin-films-as-transparent-conductive-cu-diffusion-barriers",
+      "section": "quick",
+      "title_en": "Accelerated development of amorphous InZnO thin films as transparent conductive Cu diffusion barriers",
+      "authors": "Stefanie Frick, Reyu Sakakibara, Manuel Kober-Czerny, Arnold Müller, Miloš Baljozović, Franz-Josef Haug, Sebastian Siol",
+      "date": "2026-06-30",
+      "pdf": "https://arxiv.org/pdf/2606.31605v1",
+      "score": "7.0",
+      "evidence": "研究非晶InZnO薄膜作为透明导电氧化物（TCO）用于太阳能电池",
+      "tldr": "银触点供应链问题促使以铜替代，但铜易扩散需屏障。本研究采用组合材料库方法加速开发非晶InZnO透明导电薄膜作为铜扩散屏障。实验发现，优化Zn/(In+Zn)约0.12且具有中等氧缺陷的非晶膜在450°C以下及20小时200°C退火后仍有效阻挡铜扩散。该成果为无银太阳能电池前电极提供了一种多功能解决方案。",
+      "tags": "query:tco",
+      "abstract_en": "In light of the increasing supply chain concerns regarding silver for solar cell metallization, the replacement of the silver contacts by copper is desirable. As copper diffuses readily in silicon, deposition of an additional diffusion barrier to protect the respective absorber material stacks is required. We investigate multifunctional layers of transparent conductive oxides (TCOs) from the In-Zn-O system to serve as front electrode and Cu diffusion barrier coating, focusing on purely amorphous layers without grain boundaries to impede copper diffusion. We employ a 2D combinatorial approach to simultaneously screen the Zn/(In+Zn) ratio and the oxygen content in a single materials library deposited by magnetron sputtering without intentional substrate heating. Cu diffusion barrier performance was evaluated by depositing Cu on top of intentionally ultrathin In-Zn-O libraries of 7 nm on silicon wafers and annealing them at temperatures of 200-450°C. Both the formation of copper silicides, as well as the silicon photoluminescence signal were monitored. The first was detected only after the crystallization of the In-Zn-O films and required annealing temperatures of 450°C and above. Even for extended dwell times of 20 h at a relevant process temperature of 200°C, we find no evidence of Cu ingress for most of our fabricated In-Zn-O compositions, whereas Si/Cu stacks without In-Zn-O barriers showed a reduction of their photo-luminescence intensity already after less than 1 h. These results suggest thin amorphous In-Zn-O films with an optimal Zn/(In+Zn) ratio of ~0.12 and intermediate oxygen deficiency as effective transparent conductive Cu diffusion barriers for solar cell applications.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

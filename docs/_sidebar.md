@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-01 <!--dpr-date:20260701-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/01/2606.31605v1-accelerated-development-of-amorphous-inzno-thin-films-as-transparent-conductive-cu-diffusion-barriers" data-sidebar-item="{&quot;title&quot;: &quot;Accelerated development of amorphous InZnO thin films as transparent conductive Cu diffusion barriers&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.31605v1-accelerated-development-of-amorphous-inzno-thin-films-as-transparent-conductive-cu-diffusion-barriers&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;tco&quot;}], &quot;evidence&quot;: &quot;研究非晶InZnO薄膜作为透明导电氧化物（TCO）用于太阳能电池&quot;}">Accelerated development of amorphous InZnO thin films as transparent conductive Cu diffusion barriers</a>
   * 2026-06-29 <!--dpr-date:20260629-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/29/2606.27470v1-universal-framework-for-the-design-of-near-zero-refractive-index-photonic-crystals" data-sidebar-item="{&quot;title&quot;: &quot;Universal framework for the design of near-zero refractive index photonic crystals&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.27470v1-universal-framework-for-the-design-of-near-zero-refractive-index-photonic-crystals&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;enz&quot;}], &quot;evidence&quot;: &quot;提出了设计epsilon近零光子晶体的预测框架，证明了狄拉克锥与EMNZ行为的等价性。&quot;}">Universal framework for the design of near-zero refractive index photonic crystals</a>
