@@ -6,26 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-01
-- 运行时间：2026-07-01 21:11:16 UTC
+- 最新运行日期：2026-07-02
+- 运行时间：2026-07-02 22:00:41 UTC
 - 运行状态：成功
 - 本次总论文数：1
-- 精读区：0
-- 速读区：1
+- 精读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日速读了一篇关于非晶InZnO薄膜用作透明铜扩散阻挡层的研究，探索加速开发新材料的路径。  
-值得关注的是，该薄膜兼具高透明与铜扩散阻挡性，或为透明电子器件电极集成提供新解。  
-建议关注此类透明导电阻挡层在柔性显示与光伏领域的实际应用验证进展。
-- 详情：[/202607/01/README](/202607/01/README)
+今日精读了一篇评分9.0的中红外调制器研究，聚焦半透明、非线性重掺杂半导体反射镜的等离激元腔设计。  
+最值得关注的设计是，利用重掺杂半导体的非线性与半透特性，直接在等离激元腔内实现了高效中红外光调制。  
+面向普通读者，建议留意这项技术如何在紧凑结构中实现中红外光束的动态控制，这对未来的自由空间光通信和传感很有启发。
+- 详情：[/202607/02/README](/202607/02/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Plasmonic-cavity Modulator for the Mid-IR with a Semi-transparent and Nonlinear Heavily-doped Semiconductor Mirror](/202607/02/2606.31438v1-plasmonic-cavity-modulator-for-the-mid-ir-with-a-semi-transparent-and-nonlinear-heavily-doped-semiconductor-mirror)  
+   标签：评分：9.0/10、query:enz
+   evidence：重掺杂半导体在等离子频率附近实现近零介电常数非线性调制
 
 ### 速读区论文标签
-1. [Accelerated development of amorphous InZnO thin films as transparent conductive Cu diffusion barriers](/202607/01/2606.31605v1-accelerated-development-of-amorphous-inzno-thin-films-as-transparent-conductive-cu-diffusion-barriers)  
-   标签：评分：7.0/10、query:tco
-   evidence：研究非晶InZnO薄膜作为透明导电氧化物（TCO）用于太阳能电池
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

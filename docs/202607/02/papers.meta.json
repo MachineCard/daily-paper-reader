@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-02",
+  "date": "2026-07-02",
+  "generated_at": "2026-07-02T22:00:49",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/02/2606.31438v1-plasmonic-cavity-modulator-for-the-mid-ir-with-a-semi-transparent-and-nonlinear-heavily-doped-semiconductor-mirror",
+      "section": "deep",
+      "title_en": "Plasmonic-cavity Modulator for the Mid-IR with a Semi-transparent and Nonlinear Heavily-doped Semiconductor Mirror",
+      "authors": "Tommaso Venanzi, Raffaella Polito, Andrea Rossetti, Markus Ludwig, Daniele Brida, Adel Bousseksou, Isabelle Sagnes, Gregoire Beaudoin, Raffaele Colombelli, Antonio Valletta, Andrea Notargiacomo, Francesco Mattioli, Gonzalo Alvarez-Pérez, Cristian Ciracì, Valeria Giliberti, Marialilia Pea, Michele Ortolani, Huatian Hu",
+      "date": "2026-06-30",
+      "pdf": "https://arxiv.org/pdf/2606.31438v1",
+      "score": "9.0",
+      "evidence": "重掺杂半导体在等离子频率附近实现近零介电常数非线性调制",
+      "tldr": "中红外自由空间通信缺乏结构简单、高效的调制器，现有技术难以满足8-12微米大气窗口需求。本文提出一种基于单个重掺杂半导体层的等离子体腔调制器，工作频率略低于半导体等离子体频率，利用场效应栅实现电控。实验展示了对线性透射率和反射率的调制，以及对三次谐波产生效率的有效电调控，并讨论了调制速度和深度的优化。该器件有源材料要求简单，为实用中红外等离子体调制器和混频器提供了可行途径。",
+      "tags": "query:enz",
+      "abstract_en": "We present a free-space plasmonic modulator based on a single heavily-doped semiconductor layer. We investigate its ability to modulate both the linear and nonlinear response at mid-infrared frequencies slightly below the plasma frequency of the semiconductor. We demonstrate electric control of the linear transmittance and reflectance, and of the efficiency of third-harmonic generation with a field-effect gate structure. We discuss further performance optimization of the device in terms of modulation speed and depth towards a fast modulator with very simple active material requirements. Our results establish a viable route toward practical plasmonic modulators and mixers operating in the mid-infrared atmospheric window available for free-space communications at wavelengths between 8 and 12 um.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

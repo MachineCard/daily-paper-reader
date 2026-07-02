@@ -1,0 +1,71 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-02T21:58:56.113927+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 1,
+    "deep_cap": 7,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 12,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.31438v1",
+      "source": "arxiv",
+      "title": "Plasmonic-cavity Modulator for the Mid-IR with a Semi-transparent and Nonlinear Heavily-doped Semiconductor Mirror",
+      "abstract": "We present a free-space plasmonic modulator based on a single heavily-doped semiconductor layer. We investigate its ability to modulate both the linear and nonlinear response at mid-infrared frequencies slightly below the plasma frequency of the semiconductor. We demonstrate electric control of the linear transmittance and reflectance, and of the efficiency of third-harmonic generation with a field-effect gate structure. We discuss further performance optimization of the device in terms of modulation speed and depth towards a fast modulator with very simple active material requirements. Our results establish a viable route toward practical plasmonic modulators and mixers operating in the mid-infrared atmospheric window available for free-space communications at wavelengths between 8 and 12 um.",
+      "authors": [
+        "Tommaso Venanzi",
+        "Raffaella Polito",
+        "Andrea Rossetti",
+        "Markus Ludwig",
+        "Daniele Brida",
+        "Adel Bousseksou",
+        "Isabelle Sagnes",
+        "Gregoire Beaudoin",
+        "Raffaele Colombelli",
+        "Antonio Valletta",
+        "Andrea Notargiacomo",
+        "Francesco Mattioli",
+        "Gonzalo Alvarez-Pérez",
+        "Cristian Ciracì",
+        "Valeria Giliberti",
+        "Marialilia Pea",
+        "Michele Ortolani",
+        "Huatian Hu"
+      ],
+      "primary_category": "physics.optics",
+      "categories": [
+        "physics.optics",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-06-30T10:10:37+00:00",
+      "link": "https://arxiv.org/pdf/2606.31438v1",
+      "tags": [
+        "keyword:ENZ",
+        "keyword:TCO",
+        "query:ENZ",
+        "query:TCO"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "heavily-doped semiconductor near plasma frequency enables ENZ-based nonlinear modulation",
+      "llm_evidence_cn": "重掺杂半导体在等离子频率附近实现近零介电常数非线性调制",
+      "llm_evidence": "重掺杂半导体在等离子频率附近实现近零介电常数非线性调制",
+      "canonical_evidence": "重掺杂半导体在等离子频率附近实现近零介电常数非线性调制",
+      "llm_tldr_en": "A plasmonic modulator using a heavily-doped semiconductor mirror operates in the mid-IR near its plasma frequency, where the permittivity approaches zero, enabling electrical tuning of linear transmittance and third-harmonic generation.",
+      "llm_tldr_cn": "本研究利用重掺杂半导体镜在等离子频率附近介电常数趋于零的特性，设计了一种中红外等离子体调制器。通过电场效应栅结构，实现了对线性透射率和三次谐波产生效率的电控调制。该器件结构简单，有望用于快速、低成本的实用化中红外调制器和混频器，展示了近零介电常数材料在非线性光学中的潜力。",
+      "llm_tldr": "本研究利用重掺杂半导体镜在等离子频率附近介电常数趋于零的特性，设计了一种中红外等离子体调制器。通过电场效应栅结构，实现了对线性透射率和三次谐波产生效率的电控调制。该器件结构简单，有望用于快速、低成本的实用化中红外调制器和混频器，展示了近零介电常数材料在非线性光学中的潜力。",
+      "llm_tags": [
+        "query:enz:composite"
+      ],
+      "matched_query_tag": "query:enz:composite",
+      "matched_query_text": "Papers central to 帮我查找epsilon-near-zero相关的论文, especially work that connects or combines: study of materials with epsilon near zero permittivity; permittivity approaching zero in optical materials; metamaterials with epsilon near zero properties; materials with zero refractive index; nonlinear optical behavior in epsilon near zero media; tunable epsilon near zero response; ultrafast response in epsilon near zero materials; research on epsilon near zero materials for optical applications; applications of zero index metamaterials; nonlinear effects in epsilon near zero devices.",
+      "matched_requirement_id": "req-composite-enz",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
