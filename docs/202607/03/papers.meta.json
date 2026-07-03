@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-03",
+  "date": "2026-07-03",
+  "generated_at": "2026-07-03T21:40:44",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/03/2606.31438v1-plasmonic-cavity-modulator-for-the-mid-ir-with-a-semi-transparent-and-nonlinear-heavily-doped-semiconductor-mirror",
+      "section": "deep",
+      "title_en": "Plasmonic-cavity Modulator for the Mid-IR with a Semi-transparent and Nonlinear Heavily-doped Semiconductor Mirror",
+      "authors": "Tommaso Venanzi, Raffaella Polito, Andrea Rossetti, Markus Ludwig, Daniele Brida, Adel Bousseksou, Isabelle Sagnes, Gregoire Beaudoin, Raffaele Colombelli, Antonio Valletta, Andrea Notargiacomo, Francesco Mattioli, Gonzalo Alvarez-Pérez, Cristian Ciracì, Valeria Giliberti, Marialilia Pea, Michele Ortolani, Huatian Hu",
+      "date": "2026-06-30",
+      "pdf": "https://arxiv.org/pdf/2606.31438v1",
+      "score": "9.0",
+      "evidence": "在重掺杂半导体中，在等离子体频率附近调制包括三次谐波产生在内的非线性光学响应，介电常数接近零",
+      "tldr": "中红外8-12微米大气窗口在自由空间通信中极具价值，但传统电光调制器难以同时高速控制线性和非线性光学响应。本文提出一种基于重掺杂半导体的自由空间等离子体调制器，利用其半透明和非线性特性，在稍低于等离子体频率下工作，仅需单层材料，结构极度简化。通过场效应栅压调制载流子密度，在实验上同时实现了对线性透射率、反射率和三次谐波产生效率的有效动态控制。进一步讨论了调制速度与深度的优化空间，证实了该方案在8-12微米大气窗口作为实用化等离子体调制器和混频器的可行性，并为高速自由空间光通信奠定了平台。",
+      "tags": "query:enz",
+      "abstract_en": "We present a free-space plasmonic modulator based on a single heavily-doped semiconductor layer. We investigate its ability to modulate both the linear and nonlinear response at mid-infrared frequencies slightly below the plasma frequency of the semiconductor. We demonstrate electric control of the linear transmittance and reflectance, and of the efficiency of third-harmonic generation with a field-effect gate structure. We discuss further performance optimization of the device in terms of modulation speed and depth towards a fast modulator with very simple active material requirements. Our results establish a viable route toward practical plasmonic modulators and mixers operating in the mid-infrared atmospheric window available for free-space communications at wavelengths between 8 and 12 um.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
